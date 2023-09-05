@@ -21,7 +21,7 @@ export default {
 
   css: [
     '~/assets/styles/main.less',
-    '~/assets/styles/myfile.less',
+    '~/assets/styles/ui-styles.less',
   ],
 
   plugins: [

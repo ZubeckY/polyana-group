@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Gals";
+  src: url("./gals.eot");
+  src: url("./gals.eot?#iefix") format("embedded-opentype"),
+       url("./gals.otf") format("opentype"),
+       url("./gals.svg") format("svg"),
+       url("./gals.ttf") format("truetype"),
+       url("./gals.woff") format("woff"),
+       url("./gals.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
