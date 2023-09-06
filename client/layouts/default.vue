@@ -1,7 +1,10 @@
 <template>
   <v-app>
     <v-main>
-      <nuxt />
+      <v-card class="mt-0 pt-4" color="var(--background)"
+              elevation="0" rounded="0" min-height="100vh">
+        <nuxt />
+      </v-card>
     </v-main>
   </v-app>
 </template>
