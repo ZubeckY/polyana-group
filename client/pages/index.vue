@@ -1,4 +1,4 @@
-<template>
+`<template>
   <div>
     <header class="header">
       <v-card class="header-container ma-4 mt-0"
@@ -352,7 +352,7 @@
                                   width: inherit;
                                   color: #000;
                                   text-align: right;
-                                  font-family: Montserrat;
+
                                   font-size: 16px;
                                   font-style: normal;
                                   font-weight: 400;
@@ -377,7 +377,7 @@
                     <path d="M87.3091 94.4268L93.1786 102.233L92.3411 102.113L95.7043 99.5973L96.985 101.3L89.133 107.174L87.8524 105.471L91.2157 102.955L91.1089 103.781L85.2394 95.975L87.3091 94.4268Z" fill="white"/>
                     <path d="M81.5013 98.6346L86.1041 108.948L81.6282 110.935C80.7024 111.346 79.8368 111.548 79.0312 111.541C78.2301 111.544 77.5223 111.346 76.9081 110.948C76.2938 110.55 75.8136 109.963 75.4672 109.187C75.1253 108.421 75.0116 107.677 75.1261 106.955C75.2406 106.233 75.5648 105.572 76.0985 104.97C76.6367 104.378 77.3686 103.876 78.2944 103.465L81.4408 102.068L80.8573 103.616L79.1082 99.697L81.5013 98.6346ZM80.7389 103.351L82.3088 104.013L79.2953 105.351C78.5567 105.679 78.0753 106.081 77.8512 106.557C77.6271 107.033 77.64 107.551 77.8899 108.111C78.1441 108.681 78.5236 109.042 79.0283 109.195C79.5329 109.347 80.1545 109.259 80.8932 108.932L83.9067 107.594L83.3494 109.2L80.7389 103.351Z" fill="white"/>
                     <path d="M69.9035 110.058L64.5469 111.055L64.1729 109.058L69.5294 108.06L69.9035 110.058ZM68.8577 105.527L62.8018 106.655L62.4159 104.595L71.0308 102.99L73.109 114.087L64.7007 115.653L64.3147 113.592L70.164 112.503L68.8577 105.527Z" fill="white"/>
-                    <path d="M58.0072 104.593L57.6675 114.344L57.0904 113.727L61.2919 113.872L61.2178 116L51.4088 115.66L51.4829 113.532L55.6845 113.678L55.0819 114.254L55.4217 104.503L58.0072 104.593Z" fill="white"/>
+                    <path d="M58.0072 104.593L57.6675   114.344L57.0904 113.727L61.2919 113.872L61.2178 116L51.4088 115.66L51.4829 113.532L55.6845 113.678L55.0819 114.254L55.4217 104.503L58.0072 104.593Z" fill="white"/>
                     <path d="M43.6271 110.196C42.3005 109.859 41.3526 109.302 40.7835 108.525C40.2118 107.759 40.0763 106.787 40.377 105.609C40.6963 104.359 41.3407 103.513 42.31 103.071C43.2689 102.627 44.4535 102.584 45.8637 102.943L50.8151 104.201L48.0209 115.141L45.4981 114.5L46.4163 110.905L43.6271 110.196ZM45.5257 104.854C44.878 104.689 44.3249 104.721 43.8664 104.948C43.4078 105.176 43.1 105.597 42.943 106.211C42.7887 106.816 42.8663 107.296 43.1758 107.652C43.4722 108.016 43.9495 108.281 44.6076 108.448L46.8953 109.03L47.8134 105.435L45.5257 104.854Z" fill="white"/>
                     <path d="M30.1777 95.5851L22.5307 103.908L18.6444 100.356C17.6748 99.4699 17.0909 98.5935 16.8928 97.727C16.6947 96.8605 16.9124 96.0825 17.546 95.3928C18.1723 94.7111 18.9146 94.4125 19.7728 94.4969C20.6238 94.5892 21.4705 95.0204 22.3129 95.7904L21.6276 96.0827C20.6898 95.2256 20.1337 94.3746 19.9594 93.5299C19.7851 92.6852 20.0221 91.9101 20.6703 91.2046C21.3403 90.4754 22.1465 90.1549 23.0888 90.2433C24.0159 90.3323 25.0079 90.8599 26.0649 91.826L30.1777 95.5851ZM26.9475 95.2576L24.8255 93.3182C24.3805 92.9114 23.9626 92.6899 23.5719 92.6536C23.1812 92.6173 22.8183 92.7815 22.4833 93.1461C22.1629 93.4949 22.0414 93.8579 22.1189 94.235C22.1892 94.62 22.4469 95.0159 22.8919 95.4227L25.0139 97.3622L26.9475 95.2576ZM23.7794 98.7058L21.9793 97.0605C21.5581 96.6755 21.1637 96.4682 20.7962 96.4385C20.4214 96.4168 20.0811 96.5724 19.7752 96.9053C19.4693 97.2382 19.3472 97.586 19.4088 97.9486C19.4632 98.3191 19.701 98.6968 20.1222 99.0818L21.9223 100.727L23.7794 98.7058Z" fill="white"/>
                     <path d="M21.9879 87.9041L12.5285 94.1035L11.0989 91.9335L17.2611 87.895L8.13324 87.4317L6.78359 85.383L16.243 79.1837L17.6637 81.3402L11.5151 85.3698L20.6294 85.8419L21.9879 87.9041Z" fill="white"/>
@@ -393,9 +393,12 @@
                     <path d="M94.7337 28.9364L97.4543 26.6255L97.4428 27.4826L95.4299 25.1252C94.7939 24.3803 94.3684 23.6331 94.1533 22.8837C93.9382 22.1344 93.9423 21.4178 94.1654 20.7339C94.3886 20.0501 94.8244 19.4328 95.4727 18.8821C96.1457 18.3105 96.8495 17.9739 97.5841 17.8725C98.3339 17.7723 99.0736 17.8924 99.8033 18.2329C100.533 18.5734 101.219 19.1202 101.862 19.8733L105.028 23.5814L96.4111 30.9009L94.7337 28.9364ZM90.0894 23.497L95.0035 23.0089L96.7228 25.0226L91.8821 25.5966L90.0894 23.497ZM98.0945 26.0818L102.243 22.5579L102.145 23.4882L100.279 21.3027C99.797 20.7379 99.2953 20.4156 98.7741 20.3358C98.2598 20.2642 97.7442 20.4479 97.2272 20.8871C96.7265 21.3123 96.4631 21.7832 96.4369 22.2998C96.4107 22.8163 96.6352 23.3529 97.1105 23.9095L99.0185 26.1442L98.0945 26.0818Z" fill="white"/>
                     <path d="M107.311 26.6896L108.693 29.3722L106.715 33.0145L110.836 33.5325L112.239 36.2581L105.7 35.3841L102.311 41.6889L100.9 38.9488L103.033 34.9009L98.5067 34.3009L97.1251 31.6182L104.121 32.5666L107.311 26.6896Z" fill="white"/>
                   </svg>
+
+                  <v-img style="position: absolute;"
+                         :src="require(`~/assets/img/top-right-arrow.png`)"/>
+
                 </v-card>
               </v-card>
-
 
             </v-card>
           </div>
@@ -404,15 +407,311 @@
       </div>
     </section>
 
+    <section class="hotel-group" style="margin-top: 220px;">
+      <div class="hotel-group-container general-container">
 
-    <!--    <section>-->
-    <!--      <v-card elevation="0"-->
-    <!--              color="transparent"-->
-    <!--              :img="require('assets/img/exclusive-background.png')">-->
-    <!--      </v-card>-->
-    <!--    </section>-->
+        <v-card-title style="color: #32343A;
+        font-family: CharterC;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;">
+          ГРУППА ОТЕЛЕЙ <br>
+          POLYANA GROUP на КрАСНОЙ ПОЛЯНЕ
+        </v-card-title>
+
+        <div class="hotel-group-line"></div>
+
+        <v-expansion-panels accordion>
+          <v-expansion-panel v-for="(item, i) in 3"
+                             :key="i" class="transparent">
+            <v-expansion-panel-header class="ma-0 pa-0" disable-icon-rotate>
+              <div class="d-flex align-center">
+                <div class="d-flex justify-center align-center golden-gradient--text"
+                     style="width: 79px; height: 42px;
+                     border-radius: 100px;
+                     border: 1px solid #CCAB6A;
+                     font-size: 22px;
+                     font-style: normal;
+                     font-weight: 500;
+                     line-height: normal;
+                     text-transform: uppercase;">
+                  <!-- todo костыль -->
+                  {{'00' + Number(i + 1)}}
+                </div>
+
+                <v-card-title class="text-uppercase font-weight-black golden-gradient--text" style="font-family: CharterC; font-size: 60px;">
+                  ULTIMA CLUB   HOTEL & SPA
+                </v-card-title>
+
+                <v-spacer/>
+
+                <v-card-title class="text-uppercase" style="
+                color: #B6B6B6;
+                font-size: 35px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-transform: uppercase;">
+                  От 8600 руб.
+                </v-card-title>
+              </div>
+
+              <template v-slot:actions>
+                <div class="d-flex justify-center align-center" style="
+                width: 66px; height: 66px;
+                border-radius: 16px;
+                background: var(--gradiend-golden)">
+                  <img :src="require(`~/assets/img/top-right-arrow-2.png`)" alt="#">
+                </div>
+              </template>
+            </v-expansion-panel-header>
+
+            <v-expansion-panel-content>
+              содержание вкладки
+            </v-expansion-panel-content>
+
+          </v-expansion-panel>
+        </v-expansion-panels>
+
+        <div class="hotel-group-line"></div>
+
+      </div>
+    </section>
+
+    <section class="season-programs" style="margin-top: 120px;">
+      <div class="season-programs-container general-container">
+
+        <div class="d-flex">
+          <v-card elevation="0"
+                  width="63px"
+                  height="165px"
+                  color="transparent">
+            <div style="position: relative; width: inherit; height: inherit;">
+              <div class="d-flex justify-center align-center"
+                   style="position: absolute;
+                      left: -50px;
+                      top: 50px;
+                      width: 165px;
+                      height: 63px;
+                      background: rgba(217, 217, 217, 1);
+                      border-radius: var(--bordrad23);
+                      transform: rotate(-90deg);">
+                Летом
+              </div>
+            </div>
+          </v-card>
+
+          <v-btn elevation="0"
+                 width="63px"
+                 height="165px"
+                 color="transparent">
+            <div style="position: relative; width: inherit; height: inherit;">
+              <div class="d-flex justify-center align-center"
+                   style="position: absolute;
+                      left: -83px;
+                      top: -30px;
+                      width: 165px;
+                      height: 63px;
+                      background: rgba(217, 217, 217, 1);
+                      border-radius: var(--bordrad23);
+                      transform: rotate(-90deg);">
+                Ещё
+              </div>
+            </div>
+          </v-btn>
+        </div>
+
+        <div class="d-flex mt-8">
+          <v-card elevation="0"
+                  width="63px"
+                  height="165px"
+                  color="transparent">
+            <div style="position: relative; width: inherit; height: inherit;">
+              <div class="d-flex justify-center align-center"
+                   style="position: absolute;
+                      left: -50px;
+                      top: 50px;
+                      width: 165px;
+                      height: 63px;
+                      background: rgba(206, 217, 224, 1);
+                      border-radius: var(--bordrad23);
+                      transform: rotate(-90deg);">
+                Зимой
+              </div>
+            </div>
+          </v-card>
+
+          <v-btn elevation="0"
+                 width="63px"
+                 height="165px"
+                 color="transparent">
+            <div style="position: relative; width: inherit; height: inherit;">
+              <div class="d-flex justify-center align-center"
+                   style="position: absolute;
+                      left: -83px;
+                      top: -30px;
+                      width: 165px;
+                      height: 63px;
+                      background: rgba(206, 217, 224, 1);
+                      border-radius: var(--bordrad23);
+                      transform: rotate(-90deg);">
+                Ещё
+              </div>
+            </div>
+          </v-btn>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="" style="margin-top: 136px;">
+      <v-card class="d-flex justify-center align-center"
+              elevation="0"
+              height="736px"
+              color="transparent"
+              :img="require('assets/img/exclusive-background.png')">
+
+        <v-card class="d-flex align-center"
+                width="100%" max-width="1075px"
+                elevation="0"
+                height="500px" style="
+                    border-radius: 23px;
+                    background: linear-gradient(268deg, rgba(217, 217, 217, 0.40) 3.77%, rgba(217, 217, 217, 0.20) 98.84%);
+                    backdrop-filter: blur(35px);">
+          <v-row class="ma-0 py-0 pr-10 pl-15">
+            <v-col class="ma-0 pa-0">
+              <v-card color="transparent"
+                      elevation="0"
+                      max-width="540px">
+                <v-card-title class="ma-0 pa-0"
+                              style="color: #FFF;
+                                     font-family: CharterC;
+                                     font-size: 36px;
+                                     font-style: normal;
+                                     font-weight: 400;
+                                     line-height: normal;
+                                     text-transform: uppercase;">
+                  Эксклюзивная скидка <br>
+                  за быстрое бронирование
+                </v-card-title>
+
+                <div style="max-width: 492px;">
+                  <v-card-text class="ma-0 mt-7 pa-0"
+                               style="color: #FFF;
+                                      font-size: 20px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: 136.4%;">
+                    Спешите забронировать номер в нашем отеле и получите эксклюзивную скидку до 10% на проживание.
+                  </v-card-text>
+                  <v-card-text class="ma-0 mt-4 pa-0"
+                               style="color: #FFF;
+                                      font-size: 20px;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      line-height: 136.4%;">
+                    Просто оставьте свой номер в форме бронирования и наслаждайтесь комфортом по выгодной цене. Не упустите возможность сэкономить и провести незабываемый отдых в нашем уютном отеле.
+                  </v-card-text>
+
+                  <v-card-text class="ma-0 mt-4 pa-0" style="color: #FFF;
+                                                             font-size: 14px;
+                                                             font-style: normal;
+                                                             font-weight: 400;
+                                                             line-height: 136.4%;">
+                    <div>Акция действует до 11.11.2023 г .</div>
+                    <div>Уточняйте условия акции по телефону:   <b>+7 989 009 5577.</b></div>
+                  </v-card-text>
+                </div>
+              </v-card>
+            </v-col>
+
+            <v-col class="ma-0 pa-0" cols="auto">
+              <v-card class="pa-5"
+                      elevation="0"
+                      max-width="372px"
+                      style="border-radius: var(--bordrad23)"
+                      color="var(--dark-color)">
+                <v-form>
+                  <v-card-title class="ma-0 pa-0" style="
+                      color: #FFF;
+                      font-size: 16px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: normal;
+                      text-transform: uppercase;">
+                    В течение 5 минут перезвоним, сориентируем по стоимости  и предоставим скидку
+                  </v-card-title>
+
+                  <div class="mt-8">
+                    <label class="d-block mb-2"
+                           for="phone"
+                           style="
+                           color: #FFF;
+                           font-size: 14px;
+                           font-style: normal;
+                           font-weight: 400;
+                           line-height: normal;">
+                      Телефон
+                    </label>
+                    <v-text-field id="phone" solo
+                                  placeholder="+7 (9XX) XXX-XX-XX"
+                                  style="
+                                  width: 325px;
+                                  height: 50px;
+                                  border-radius: 12px;
+                                  background: #D9D9D9;"/>
+                  </div>
+
+                  <div class="mt-4">
+                    <label class="d-block mb-2"
+                           for="date"
+                           style="
+                           color: #FFF;
+                           font-size: 14px;
+                           font-style: normal;
+                           font-weight: 400;
+                           line-height: normal;">
+                      Дата заезда
+                    </label>
+                    <v-text-field id="date" solo
+                                  placeholder="03.09.2023"
+                                  style="
+                                  width: 325px;
+                                  height: 50px;
+                                  border-radius: 12px;
+                                  background: #D9D9D9;"/>
+                  </div>
+
+                  <v-card-actions class="mt-4 pa-0">
+                    <v-btn width="325px"
+                           height="55px" dark
+                           style="border-radius: 16px;
+                           background: linear-gradient(90deg, #CCAB6A -1.19%, #C1B397 177.44%);">
+                      Забронировать
+                    </v-btn>
+                  </v-card-actions>
+
+                  <v-card-text class="ma-0 mt-3 ml-1 pa-0"
+                               style="color: #FFF;
+                               font-size: 12px;
+                               font-style: normal;
+                               font-weight: 400;
+                               line-height: normal;">
+                    Нажимая кнопку вы соглашаетесь с условиями Политики конфиденциальности
+                  </v-card-text>
 
 
+                </v-form>
+              </v-card>
+
+            </v-col>
+          </v-row>
+        </v-card>
+
+      </v-card>
+    </section>
 
     <!--    <section>-->
     <!--      <v-card elevation="0"-->
@@ -425,13 +724,11 @@
     <!--      <div class="corner-rounded-block&#45;&#45;corners"></div>-->
     <!--    </div>-->
 
-
-    <!--     <div class="font-weight-black golden-gradient&#45;&#45;text" style="font-size: 40px"></div>-->
-
   </div>
 </template>
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator"
+
 @Component
 export default class Pages extends Vue {
   season: string = 'summer'
