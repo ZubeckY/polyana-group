@@ -418,16 +418,16 @@
         line-height: normal;
         text-transform: uppercase;">
           ГРУППА ОТЕЛЕЙ <br>
-          POLYANA GROUP на КрАСНОЙ ПОЛЯНЕ
+          POLYANA GROUP на КРАСНОЙ ПОЛЯНЕ
         </v-card-title>
 
         <div class="hotel-group-line"></div>
 
-        <v-expansion-panels accordion>
-          <v-expansion-panel v-for="(item, i) in 3"
-                             :key="i" class="transparent">
+        <v-expansion-panels v-model="hotels" accordion>
+          <v-expansion-panel v-for="item in hotelList"
+                             :key="item.id" class="transparent">
             <v-expansion-panel-header class="ma-0 pa-0" disable-icon-rotate>
-              <div class="d-flex align-center">
+              <div class="d-flex align-center my-2">
                 <div class="d-flex justify-center align-center golden-gradient--text"
                      style="width: 79px; height: 42px;
                      border-radius: 100px;
@@ -438,23 +438,23 @@
                      line-height: normal;
                      text-transform: uppercase;">
                   <!-- todo костыль -->
-                  {{'00' + Number(i + 1)}}
+                  {{ item.id }}
                 </div>
 
                 <v-card-title class="text-uppercase font-weight-black golden-gradient--text" style="font-family: CharterC; font-size: 60px;">
-                  ULTIMA CLUB   HOTEL & SPA
+                  {{ item.title }}
                 </v-card-title>
 
                 <v-spacer/>
 
-                <v-card-title class="text-uppercase" style="
+                <v-card-title class="text-uppercase mr-8" style="
                 color: #B6B6B6;
                 font-size: 35px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
                 text-transform: uppercase;">
-                  От 8600 руб.
+                  От {{ thousandSeparator(item.price) }} руб.
                 </v-card-title>
               </div>
 
@@ -480,42 +480,105 @@
       </div>
     </section>
 
+    <section class="" style="margin-top: 85px;">
+      <div class="-container general-container">
+
+        <v-card style="margin-top: 32px;"
+                color="transparent" elevation="0">
+          <v-card-title class="text-uppercase text-break"
+                        style="max-width: 210px !important">
+            Специальные
+            предложения и
+            АКЦИИ отелЕЙ!
+          </v-card-title>
+
+          <div style="max-width: 450px">
+            <v-card-text>
+              Наша группа отелей предлагает множество специальных предложений и акций, таких как раннее бронирование со скидкой до 20%, программу лояльности для постоянных гостей, специальные пакеты с завтраками, ужинами и спа-услугами, а также скидки для групп.
+            </v-card-text>
+
+            <v-card-text>
+              Следите за нашими предложениями на сайте или свяжитесь с нами для получения большей информации по телефону: +7 989 009 5577.
+            </v-card-text>
+          </div>
+
+          <v-card-actions class="pa-0">
+            <v-btn class="font-weight-regular white--text rounded-xxl"
+                   elevation="0"
+                   width="300px"
+                   height="55px"
+                   color="golden-gradient">
+              СМОТРЕТЬ ВСЕ АКЦИИ
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+
+      </div>
+    </section>
+
     <section class="season-programs" style="margin-top: 120px;">
       <div class="season-programs-container general-container">
 
-        <div class="d-flex">
+        <div class="d-flex justify-space-between">
           <v-card elevation="0"
+                  rounded="xxl"
                   width="63px"
                   height="165px"
                   color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
-              <div class="d-flex justify-center align-center"
+              <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
                       left: -50px;
                       top: 50px;
                       width: 165px;
                       height: 63px;
                       background: rgba(217, 217, 217, 1);
-                      border-radius: var(--bordrad23);
                       transform: rotate(-90deg);">
                 Летом
               </div>
             </div>
           </v-card>
 
-          <v-btn elevation="0"
+          <v-card class="mx-2"
+                  rounded="xxl"
+                  elevation="0"
+                  width="380px"
+                  height="165px"
+                  color="var(--card-grey)">
+
+          </v-card>
+
+          <v-card class="mx-1"
+                  rounded="xxl"
+                  elevation="0"
+                  width="380px"
+                  height="165px"
+                  color="var(--card-grey)">
+
+          </v-card>
+
+          <v-card class="mx-1"
+                  rounded="xxl"
+                  elevation="0"
+                  width="570px"
+                  height="165px"
+                  color="var(--card-grey)">
+
+          </v-card>
+
+          <v-btn class="ml-1 rounded-xxl"
+                 elevation="0"
                  width="63px"
                  height="165px"
                  color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
-              <div class="d-flex justify-center align-center"
+              <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
                       left: -83px;
-                      top: -30px;
+                      top: -32px;
                       width: 165px;
                       height: 63px;
                       background: rgba(217, 217, 217, 1);
-                      border-radius: var(--bordrad23);
                       transform: rotate(-90deg);">
                 Ещё
               </div>
@@ -525,37 +588,64 @@
 
         <div class="d-flex mt-8">
           <v-card elevation="0"
+                  rounded="xxl"
                   width="63px"
                   height="165px"
                   color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
-              <div class="d-flex justify-center align-center"
+              <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
                       left: -50px;
                       top: 50px;
                       width: 165px;
                       height: 63px;
-                      background: rgba(206, 217, 224, 1);
-                      border-radius: var(--bordrad23);
+                      background: var(--cold-grey);
                       transform: rotate(-90deg);">
                 Зимой
               </div>
             </div>
           </v-card>
 
-          <v-btn elevation="0"
+          <v-card class="mx-2"
+                  rounded="xxl"
+                  elevation="0"
+                  width="380px"
+                  height="165px"
+                  color="var(--cold-grey)">
+
+          </v-card>
+
+          <v-card class="mx-1"
+                  rounded="xxl"
+                  elevation="0"
+                  width="570px"
+                  height="165px"
+                  color="var(--cold-grey)">
+
+          </v-card>
+
+          <v-card class="mx-1"
+                  rounded="xxl"
+                  elevation="0"
+                  width="392px"
+                  height="165px"
+                  color="var(--cold-grey)">
+
+          </v-card>
+
+          <v-btn class="ml-1 rounded-xxl"
+                 elevation="0"
                  width="63px"
                  height="165px"
                  color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
-              <div class="d-flex justify-center align-center"
+              <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
                       left: -83px;
-                      top: -30px;
+                      top: -32px;
                       width: 165px;
                       height: 63px;
-                      background: rgba(206, 217, 224, 1);
-                      border-radius: var(--bordrad23);
+                      background: var(--cold-grey);
                       transform: rotate(-90deg);">
                 Ещё
               </div>
@@ -728,9 +818,30 @@
 </template>
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator"
+import thousandSeparator from "../assets/scripts/thousandSeparator";
 
-@Component
+@Component({
+  methods: {thousandSeparator}
+})
 export default class Pages extends Vue {
+  hotels: number = 0
   season: string = 'summer'
+  hotelList: any = [
+    {
+      id: '001',
+      title: 'ULTIMA CLUB | HOTEL & SPA',
+      price: 8_600,
+    },
+    {
+      id: '002',
+      title: 'COUNTRY HILLS | RESORT',
+      price: 10_600,
+    },
+    {
+      id: '003',
+      title: 'IKOS POLYANA',
+      price: 5_900,
+    },
+  ]
 }
 </script>
