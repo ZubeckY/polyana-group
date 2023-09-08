@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-auto" style="width: 100%; max-width: 1600px;">
     <header class="header">
       <v-card class="header-container ma-4 mt-0"
               elevation="0" height="800px"
@@ -217,8 +217,8 @@
             </div>
             <v-vertical-spacer/>
             <v-card-text class="d-inline rating-card-text ma-0 pa-0">
-              <span class="rating-card-text font-weight-black mr-1">5,0</span>
-              рейтинг в Яндекс <br> на основе 1300+ отзывов
+              <span class="rating-card-text font-weight-black mr-1">5,0</span>рейтинг в Яндекс
+              на основе 1300+ отзывов
             </v-card-text>
           </div>
         </v-card>
@@ -236,12 +236,13 @@
                 </div>
                 <rating-tl-rep-wreath-right class="rating-tl-rep-right"/>
               </div>
-              <v-card-title class="rating-card-title ma-0 ml-2 pa-0">Высокий <br> рейтинг</v-card-title>
+              <v-card-title class="rating-card-title ma-0 ml-2 pa-0">Высокий
+                рейтинг
+              </v-card-title>
             </div>
             <v-vertical-spacer/>
-            <v-card-text class="rating-card-text ma-0 pa-0">
-              Средний рейтинг отелей по оценкам
-              <br> гостей в TL: Reputation
+            <v-card-text class="rating-card-text ma-0 pa-0">Средний рейтинг отелей по оценкам
+              гостей в TL: Reputation
             </v-card-text>
           </div>
         </v-card>
@@ -253,11 +254,13 @@
           <div class="rating-card-container d-flex flex-column">
             <div class="d-flex">
               <div class="rating-we-care-star text-center pt-2">*</div>
-              <v-card-title class="rating-card-title ma-0 ml-2 pa-0">Отели <br> 4-5 звёзд</v-card-title>
+              <v-card-title class="rating-card-title ma-0 ml-2 pa-0">Отели
+                4-5 звёзд
+              </v-card-title>
             </div>
             <v-vertical-spacer/>
-            <v-card-text class="rating-card-text ma-0 pa-0">
-              Заботимся о вашем <br> отдыхе в каждой детали
+            <v-card-text class="rating-card-text ma-0 pa-0">Заботимся о вашем
+              отдыхе в каждой детали
             </v-card-text>
           </div>
         </v-card>
@@ -271,13 +274,14 @@
                 <path d="M29.5635 1.56925C30.0821 0.951201 31.0331 0.951201 31.5518 1.56925L34.4306 4.99967C34.8291 5.47438 35.5075 5.60119 36.0505 5.30246L39.9742 3.14367C40.6811 2.75473 41.5679 3.09825 41.8282 3.86194L43.2736 8.10069C43.4736 8.68726 44.0603 9.0506 44.6746 8.96817L49.1132 8.37258C49.9128 8.26527 50.6156 8.90591 50.5825 9.7121L50.399 14.1867C50.3737 14.8059 50.7895 15.3567 51.3921 15.5017L55.7461 16.5497C56.5305 16.7385 56.9544 17.5898 56.6324 18.3296L54.8449 22.4358C54.5975 23.004 54.7863 23.6679 55.2959 24.0208L58.9773 26.5708C59.6405 27.0303 59.7282 27.9772 59.1607 28.5507L56.0105 31.7339C55.5747 32.1744 55.5109 32.8616 55.8585 33.3747L58.3701 37.0824C58.8226 37.7505 58.5624 38.6652 57.8259 38.9949L53.7387 40.8251C53.1731 41.0785 52.8653 41.6962 53.0041 42.3003L54.0067 46.6649C54.1874 47.4513 53.6144 48.2101 52.8085 48.2517L48.336 48.4818C47.7171 48.5136 47.2071 48.9786 47.1182 49.592L46.4764 54.0241C46.3608 54.8227 45.5524 55.3233 44.786 55.0708L40.5323 53.6698C39.9437 53.4759 39.3001 53.7252 38.9958 54.265L36.7963 58.166C36.3999 58.8689 35.4652 59.0436 34.8418 58.5313L31.3815 55.6883C30.9028 55.295 30.2125 55.295 29.7336 55.6883L26.2735 58.5313C25.65 59.0436 24.7153 58.8689 24.319 58.166L22.1194 54.265C21.8151 53.7252 21.1714 53.4759 20.5829 53.6698L16.3292 55.0708C15.5629 55.3233 14.7544 54.8227 14.6387 54.0241L13.9969 49.592C13.9082 48.9786 13.3981 48.5136 12.7792 48.4818L8.3067 48.2517C7.50091 48.2101 6.92783 47.4513 7.10847 46.6649L8.11106 42.3003C8.2498 41.6962 7.94217 41.0785 7.37654 40.8251L3.28923 38.9949C2.55283 38.6652 2.2926 37.7505 2.74511 37.0824L5.25672 33.3747C5.60429 32.8616 5.5406 32.1744 5.10467 31.7339L1.95453 28.5507C1.38697 27.9772 1.4747 27.0303 2.13798 26.5708L5.8194 24.0208C6.32884 23.6679 6.51772 23.004 6.27035 22.4358L4.48281 18.3296C4.16075 17.5898 4.58463 16.7385 5.36909 16.5497L9.72311 15.5017C10.3256 15.3567 10.7416 14.8059 10.7162 14.1867L10.5326 9.7121C10.4996 8.90591 11.2023 8.26527 12.002 8.37258L16.4407 8.96817C17.0548 9.0506 17.6416 8.68726 17.8416 8.10069L19.2869 3.86194C19.5474 3.09825 20.4341 2.75473 21.1411 3.14367L25.0648 5.30246C25.6077 5.60119 26.2861 5.47438 26.6845 4.99967L29.5635 1.56925Z" fill="#DEC799"/>
                 <path d="M29.1723 44.0523C27.6201 44.0523 26.3378 43.7037 25.3254 43.0062C24.3355 42.3089 23.5932 41.3527 23.0983 40.1379C22.6259 38.9231 22.3896 37.5396 22.3896 35.9873V24.2104C22.3896 22.6133 22.6259 21.2184 23.0983 20.0261C23.5707 18.8113 24.3018 17.8664 25.2917 17.1915C26.304 16.5166 27.5975 16.1792 29.1723 16.1792C30.747 16.1792 32.0293 16.5166 33.0192 17.1915C34.009 17.8664 34.7402 18.8113 35.2126 20.0261C35.6851 21.2184 35.9213 22.6133 35.9213 24.2104V35.9873C35.9213 37.5622 35.6738 38.9569 35.1789 40.1717C34.7065 41.3865 33.9752 42.3426 32.9855 43.04C31.9956 43.7149 30.7246 44.0523 29.1723 44.0523ZM29.1723 41.0828C30.0271 41.0828 30.6683 40.8354 31.0958 40.3404C31.5456 39.8455 31.8493 39.2157 32.0069 38.4507C32.1868 37.6634 32.2768 36.8535 32.2768 36.0211V24.1767C32.2768 23.2993 32.1981 22.4783 32.0406 21.7133C31.8831 20.926 31.5794 20.2961 31.1295 19.8236C30.702 19.3512 30.0497 19.115 29.1723 19.115C28.295 19.115 27.6312 19.3512 27.1814 19.8236C26.7314 20.2961 26.4277 20.926 26.2703 21.7133C26.1127 22.4783 26.0341 23.2993 26.0341 24.1767V36.0211C26.0341 36.8535 26.1127 37.6634 26.2703 38.4507C26.4502 39.2157 26.7652 39.8455 27.2151 40.3404C27.6876 40.8354 28.3399 41.0828 29.1723 41.0828ZM38.5918 46.2146V36.2469H39.5392V36.8699C39.695 36.6796 39.8896 36.5109 40.1233 36.3637C40.3569 36.208 40.6424 36.1301 40.9799 36.1301C41.3433 36.1301 41.6331 36.2167 41.8494 36.3897C42.0743 36.5541 42.2475 36.779 42.3686 37.0646C42.4897 37.3501 42.572 37.6703 42.6152 38.025C42.6584 38.3798 42.6801 38.7432 42.6801 39.1152V40.6986C42.6801 41.339 42.6282 41.8971 42.5243 42.3729C42.4205 42.8401 42.2345 43.2079 41.9662 43.476C41.7067 43.7356 41.3433 43.8654 40.876 43.8654C40.5732 43.8654 40.3092 43.7875 40.0843 43.6318C39.868 43.4761 39.6863 43.316 39.5392 43.1516V46.2146H38.5918ZM40.7333 43.1126C41.0188 43.1126 41.2307 43.0218 41.3692 42.8401C41.5163 42.6584 41.6115 42.3903 41.6547 42.0354C41.7067 41.672 41.7326 41.2351 41.7326 40.7246V39.1152C41.7326 38.6307 41.7067 38.2241 41.6547 37.8952C41.6115 37.5578 41.5163 37.3026 41.3692 37.1295C41.2222 36.9564 41.0015 36.8699 40.7073 36.8699C40.465 36.8699 40.2401 36.9348 40.0324 37.0646C39.8334 37.1943 39.669 37.3241 39.5392 37.4539V42.5675C39.6777 42.7147 39.8464 42.8445 40.0454 42.9569C40.253 43.0607 40.4824 43.1126 40.7333 43.1126Z" fill="black"/>
               </svg>
-              <v-card-title class="rating-card-title ma-0 pa-0">
-                Удобное <br> бронирование
+              <v-card-title class="rating-card-title ma-0 pa-0">Удобное
+                бронирование
               </v-card-title>
             </div>
             <v-vertical-spacer/>
-            <v-card-text class="rating-card-text ma-0 pa-0">
-              Прямая цена без наценок <br> агенств и партнерских <br> комиссий
+            <v-card-text class="rating-card-text ma-0 pa-0">Прямая цена без наценок
+              агенств и партнерских
+              комиссий
             </v-card-text>
           </div>
         </v-card>
@@ -294,8 +298,7 @@
               </v-card-title>
             </div>
             <v-vertical-spacer/>
-            <v-card-text class="rating-card-text ma-0 pa-0">
-              29 августа, Малооблачно, <br>
+            <v-card-text class="rating-card-text ma-0 pa-0">29 августа, Малооблачно,
               без осадков.
             </v-card-text>
             <v-vertical-spacer/>
@@ -334,9 +337,8 @@
         <v-card class="pinterest-card" height="485px"
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
-            <v-card-title class="pinterest-card-title d-inline-block mt-4">
-              ДИЗАЙНЕРСКИЕ ОТЕЛИ <br> КАК С КАРТИНОК
-              <span class="mt-2" style="position:relative; top: 10px; left: 4px">
+            <v-card-title class="pinterest-card-title d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
+              КАК С КАРТИНОК <span class="mt-2" style="position:relative; top: 10px; left: 4px">
                 <img :src="require(`~/assets/img/pinterest.png`)" alt="#"/>
               </span>
             </v-card-title>
@@ -362,12 +364,14 @@
                 </div>
               </div>
 
-              <v-card elevation="0" width="100%" height="485px" :img="require(`~/assets/img/pinterest-video.png`)">
+              <v-card elevation="0"
+                      width="100%" height="485px"
+                      :img="require(`~/assets/img/pinterest-video.png`)">
                 <v-card class="d-flex justify-center align-center"
-                        style="position:relative; left: 813px; top: 30px"
+                        style="position:relative; left: 813px; top: 30px; border: 11px solid var(--card-grey)"
                         color="var(--dark-color)"
-                        width="145px"
-                        height="145px"
+                        width="160px"
+                        height="160px"
                         rounded="circle">
                   <svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 116 116" fill="none">
                     <path d="M110.276 57.9792C110.276 86.6795 86.9494 109.946 58.1743 109.946C29.3991 109.946 6.07227 86.6795 6.07227 57.9792C6.07227 29.2789 29.3991 6.01279 58.1743 6.01279C86.9494 6.01279 110.276 29.2789 110.276 57.9792Z" fill="#32343A"/>
@@ -410,14 +414,13 @@
     <section class="hotel-group" style="margin-top: 220px;">
       <div class="hotel-group-container general-container">
 
-        <v-card-title style="color: #32343A;
+        <v-card-title class="text-uppercase" style="color: #32343A;
         font-family: CharterC;
         font-size: 40px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        text-transform: uppercase;">
-          ГРУППА ОТЕЛЕЙ <br>
+        white-space: pre-line;">ГРУППА ОТЕЛЕЙ
           POLYANA GROUP на КРАСНОЙ ПОЛЯНЕ
         </v-card-title>
 
@@ -481,23 +484,22 @@
     </section>
 
     <section class="" style="margin-top: 85px;">
-      <div class="-container general-container">
+      <div class="d-flex flex-row -container general-container">
 
         <v-card style="margin-top: 32px;"
                 color="transparent" elevation="0">
           <v-card-title class="text-uppercase text-break"
-                        style="max-width: 210px !important">
-            Специальные
+                        style="font-size: 40px; line-height: normal; white-space: pre-line;">Специальные
             предложения и
             АКЦИИ отелЕЙ!
           </v-card-title>
 
-          <div style="max-width: 450px">
-            <v-card-text>
+          <div style="max-width: 450px;">
+            <v-card-text style="font-size: 16px; line-height: normal;">
               Наша группа отелей предлагает множество специальных предложений и акций, таких как раннее бронирование со скидкой до 20%, программу лояльности для постоянных гостей, специальные пакеты с завтраками, ужинами и спа-услугами, а также скидки для групп.
             </v-card-text>
 
-            <v-card-text>
+            <v-card-text style="font-size: 16px; line-height: normal;">
               Следите за нашими предложениями на сайте или свяжитесь с нами для получения большей информации по телефону: +7 989 009 5577.
             </v-card-text>
           </div>
@@ -512,6 +514,16 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+
+        <div style="width: 60%; margin-left: 155px;">
+          <div class="swiper overflow-hidden" ref="container">
+            <div class="swiper-wrapper d-flex flex-row">
+              <div class="swiper-slide" v-for="i in 3">
+                <corner-card/>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
@@ -675,15 +687,14 @@
               <v-card color="transparent"
                       elevation="0"
                       max-width="540px">
-                <v-card-title class="ma-0 pa-0"
+                <v-card-title class="text-uppercase ma-0 pa-0"
                               style="color: #FFF;
                                      font-family: CharterC;
                                      font-size: 36px;
                                      font-style: normal;
                                      font-weight: 400;
                                      line-height: normal;
-                                     text-transform: uppercase;">
-                  Эксклюзивная скидка <br>
+                                     white-space: pre-line;">Эксклюзивная скидка
                   за быстрое бронирование
                 </v-card-title>
 
@@ -803,20 +814,6 @@
       </v-card>
     </section>
 
-    <svg xmlns="http://www.w3.org/2000/svg"
-         width="333" height="493"
-         viewBox="0 0 333 493">
-      <defs>
-        <mask id='mask-1' x='0' y='0' width='333' height='493'>
-          <path d="M251 23C251 10.2975 240.703 0 228 0H23C10.2975 0 0 10.2975 0 23V470C0 482.703 10.2975 493 23 493H310C322.703 493 333 482.703 333 470V103C333 90.2975 322.703 80 310 80H274C261.297 80 251 69.7025 251 57V23Z" fill="#D9D9D9"/>
-        </mask>
-      </defs>
-      <image width='100%'
-             height='100%'
-             mask='url(#mask-1)'
-             xlink:href='https://wallpapers.com/images/featured/iphone-wltnz5o1xymafqmo.jpg'/>
-    </svg>
-
     <!--    <section>-->
     <!--      <v-card elevation="0"-->
     <!--              color="transparent"-->
@@ -831,13 +828,17 @@
   </div>
 </template>
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator"
+import {Component, Ref, Vue} from "vue-property-decorator"
 import thousandSeparator from "../assets/scripts/thousandSeparator";
+import {Swiper} from "swiper";
 
 @Component({
   methods: {thousandSeparator}
 })
 export default class Pages extends Vue {
+  @Ref()
+  readonly container!: HTMLDivElement;
+
   hotels: number = 0
   season: string = 'summer'
   hotelList: any = [
@@ -857,5 +858,14 @@ export default class Pages extends Vue {
       price: 5_900,
     },
   ]
+
+  swiper: any = Swiper
+
+  mounted () {
+    this.swiper = new Swiper (this.container, {
+      slidesPerView: 'auto',
+      spaceBetween: 25,
+    })
+  }
 }
 </script>

@@ -198,6 +198,7 @@
     }
     &-title {
       color: black;
+      white-space: pre-line;
       font-size: 18px !important;
       font-weight: 700 !important;
       line-height: normal !important;
@@ -205,6 +206,7 @@
     }
     &-text {
       color: black;
+      white-space: pre-line;
       font-size: 16px !important;
       line-height: normal !important;
     }
@@ -276,6 +278,7 @@
       font-size: 40px !important;
       font-weight: 700 !important;
       line-height: normal !important;
+      white-space: pre-line;
       text-transform: uppercase;
     }
   }
@@ -286,5 +289,39 @@
     width: 100%;
     height: 1px;
     background: #d0cfce;
+  }
+}
+
+.corner-card {
+  position: relative;
+  &-header {
+    position: absolute;
+    width: 100%;
+    &-container {
+      width: calc(100% - 72px)
+    }
+  }
+  &-image {
+    width: 333px;
+    height: 493px;
+    object-fit: contain
+  }
+  &-text {
+    position: absolute !important;
+    left: 15px;
+    right: 15px;
+    bottom: 26px;
+    border-radius: 12px;
+    color: var(--dark-color);
+    font-family: 'Montserrat';
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+    white-space: pre-line !important;
+    background: linear-gradient(270deg,
+    rgba(217, 217, 217, 0.40) 2.1%,
+    rgba(217, 217, 217, 0.20) 103.66%);
+    backdrop-filter: blur(25px);
   }
 }
