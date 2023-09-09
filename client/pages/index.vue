@@ -33,10 +33,7 @@
                   <nav-btn>SPA</nav-btn>
                 </div>
 
-                <div class="logo">
-                  <v-img class="logo-img" width="80px" height="60px" :src="require(`~/assets/img/g10.png`)"/>
-                  <div class="logo-text">Polyana group</div>
-                </div>
+                <logo/>
 
                 <div class="nav-button-group d-flex justify-space-between">
                   <nav-btn>Услуги</nav-btn>
@@ -436,7 +433,7 @@
           </v-card-title>
 
           <div class="special-offers-info-text">
-            <v-card-text>   Наша группа отелей предлагает множество
+            <v-card-text> &nbsp; Наша группа отелей предлагает множество
               специальных предложений и акций, таких как
               раннее бронирование со скидкой до 20%, программу
               лояльности для постоянных гостей, специальные
@@ -444,7 +441,7 @@
               также скидки для групп.
 
 
-              Следите за нашими предложениями на сайте или
+              &nbsp; Следите за нашими предложениями на сайте или
               свяжитесь с нами для получения большей
               информации по телефону: <b>+7 989 009 5577.</b>
             </v-card-text>
@@ -820,26 +817,7 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <v-card class="footer-card rounded-xxl"
-              elevation="0" color="var(--card-grey)">
-        <div class="footer-container general-container">
-          fasfa
-        </div>
-      </v-card>
-
-      <div class="footer-mazur">
-        <div class="footer-mazur-container general-container d-flex align-end justify-space-between">
-          <div class="footer-mazur-polyana text-uppercase">Ⓒpolyana group | 2023</div>
-          <div class="footer-mazur-text text-right text-uppercase">
-            <div>
-              РАЗРАБОТАНО <a class="text-decoration-none" href="" target="_blank">mazurgroup.ru</a>
-            </div>
-            <div>Политика конфиденциальности</div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <footer-comp/>
 
   </div>
 </template>
