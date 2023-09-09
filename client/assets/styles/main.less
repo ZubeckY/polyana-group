@@ -11,3 +11,23 @@
   --bordrad23: 23px;
 }
 
+* {
+  font-family: 'Gals' !important;
+  line-height: normal !important;
+  font-style: normal !important;
+}
+.v-expansion-panel::before { box-shadow: none !important; }
+
+.w-100 { width: 100%; }
+.vertical-spacer { flex: 1 1 auto;}
+
+.total-container { width: 100%; max-width: 1600px; }
+.general-container { width: 100%; margin: 0 auto; max-width: 1400px;}
+
+.golden-gradient {
+  background: var(--gradiend-golden);
+  &--text {
+    color: transparent; background-clip: text;
+    background-image: var(--gradiend-golden);
+  }
+}

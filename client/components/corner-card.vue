@@ -8,14 +8,9 @@
       <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3">
         <v-chip class="font-weight-thin mr-1 mb-1" color="var(--dark-color)" dark></v-chip>
       </div>
-      <v-card class="d-flex justify-center align-center rounded-xxl"
-              elevation="0"
-              width="72px"
-              height="72px"
-              color="golden-gradient"
-              style="position: relative; top: 0; right: 0">
-        <img width="41px" height="41px" alt="#"
-             :src="require('~/assets/img/top-right-arrow-2.png')"></img>
+      <v-card class="corner-card-header--arrow d-flex justify-center align-center rounded-xxl"
+              width="72px" height="72px" elevation="0" color="golden-gradient">
+        <img width="41px" height="41px" alt="#" :src="require('~/assets/img/top-right-arrow-2.png')">
       </v-card>
     </div>
 
@@ -28,14 +23,16 @@
       </defs>
       <image class="corner-card-image d-block" mask='url(#mask-1)'
              xlink:href='https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80'/>
+<!--             xlink:href=''/>-->
     </svg>
 
-    <v-card class="corner-card-text d-flex justify-center align-center"
-            elevation="0" color="transparent"
-            width="289px" height="82px">
-      <v-card-text class="text-center px-6 pt-1">
+    <v-card class="d-flex justify-center align-center" width="100%" color="transparent">
+      <v-card class="corner-card-text d-flex justify-center align-center"
+              elevation="0" color="transparent" width="289px" height="82px">
+        <v-card-text class="text-center px-6 pt-1">
 
-      </v-card-text>
+        </v-card-text>
+      </v-card>
     </v-card>
   </v-card>
 </template>

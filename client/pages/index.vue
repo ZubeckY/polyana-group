@@ -1,44 +1,29 @@
 <template>
-  <div class="mx-auto" style="width: 100%; max-width: 1600px;">
+  <div class="total-container mx-auto">
     <header class="header">
       <v-card class="header-container ma-4 mt-0"
               elevation="0" height="800px"
               :img="require('assets/img/_MG_2185_1.png')">
         <v-card class="header-wrapper" height="inherit"
                 color="transparent" elevation="0">
-          <div style="padding: 23px 55px">
 
+          <div class="header-wrapper-inner">
             <nav class="nav">
               <div class="nav-container general-container d-flex flex-row">
 
                 <div class="nav-button-group d-flex justify-space-between">
                   <v-btn v-show="true"
                          text dark
-                         class="px-0"
+                         class="nav-menu px-0"
                          width="auto"
                          height="auto"
                          min-width="0"
                          min-height="0">
-                    <div class="d-flex flex-column align-center justify-center">
-                      <div class="d-flex flex-column">
-                        <div v-for="i in 3"
-                             style="
-                           width: 38px;
-                           height: 3.5px;
-                           margin: 2.75px 0;
-                           border-radius: 1px;
-                           background: white">
-                        </div>
+                    <div class="nav-menu-lineGroup d-flex flex-column align-center justify-center">
+                      <div class="nav-menu-lineGroup-container d-flex flex-column">
+                        <div v-for="i in 3" class="nav-menu-lineGroup-line"></div>
                       </div>
-                      <div class="font-weight-regular"
-                           style="
-                       color: #FFF;
-                       font-family: 'Gals';
-                       font-size: 12.5px;
-                       font-style: normal;
-                       line-height: normal;">
-                        Меню
-                      </div>
+                      <div class="nav-menu-lineGroup-text font-weight-regular mt-1">Меню</div>
                     </div>
                   </v-btn>
 
@@ -49,13 +34,8 @@
                 </div>
 
                 <div class="logo">
-                  <v-img class="logo-img"
-                         width="80px" height="60px"
-                         :src="require(`~/assets/img/g10.png`)">
-                  </v-img>
-                  <div class="logo-text">
-                    Polyana group
-                  </div>
+                  <v-img class="logo-img" width="80px" height="60px" :src="require(`~/assets/img/g10.png`)"/>
+                  <div class="logo-text">Polyana group</div>
                 </div>
 
                 <div class="nav-button-group d-flex justify-space-between">
@@ -79,8 +59,7 @@
                   <div class="header-info-container general-container d-flex flex-row">
 
                     <div class="d-flex flex-row">
-                      <div class="align-self-center mr-16"
-                           style="position:relative; height: 40px; width: 27px;">
+                      <div class="header-info-wrapper align-self-center mr-16">
                         <div class="header-info-switch">
                           <v-btn-toggle v-model="season" active-class="active" mandatory
                                         class="header-info-switch-container ma-0 pa-0">
@@ -128,7 +107,7 @@
                             elevation="0" color="transparent" dark>
                       <v-card-subtitle class="header-booking-card-subtitle d-flex align-center justify-space-between ma-0 mt-3 pa-0">
                         <div>Заезд</div>
-                        <v-icon style="font-size: 23px">mdi-arrow-top-right</v-icon>
+                        <v-icon>mdi-arrow-top-right</v-icon>
                       </v-card-subtitle>
 
                       <v-card-title class="header-booking-card-title ma-0 mt-1 pa-0">4 августа 2023</v-card-title>
@@ -140,7 +119,7 @@
                             elevation="0" color="transparent" dark>
                       <v-card-subtitle class="header-booking-card-subtitle d-flex align-center justify-space-between ma-0 mt-3 pa-0">
                         <div>Выезд</div>
-                        <v-icon style="font-size: 23px">mdi-arrow-top-right</v-icon>
+                        <v-icon>mdi-arrow-top-right</v-icon>
                       </v-card-subtitle>
 
                       <v-card-title class="header-booking-card-title ma-0 mt-1 pa-0">7 августа 2023 </v-card-title>
@@ -152,7 +131,7 @@
                             elevation="0" color="transparent" dark>
                       <v-card-subtitle class="header-booking-card-subtitle d-flex align-center justify-space-between ma-0 mt-3 pa-0">
                         <div>Гости</div>
-                        <v-icon style="font-size: 23px">mdi-arrow-top-right</v-icon>
+                        <v-icon>mdi-arrow-top-right</v-icon>
                       </v-card-subtitle>
                       <v-card-title class="header-booking-card-title ma-0 mt-1 pa-0">2</v-card-title>
                     </v-card>
@@ -338,41 +317,30 @@
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
             <v-card-title class="pinterest-card-title d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
-              КАК С КАРТИНОК <span class="mt-2" style="position:relative; top: 10px; left: 4px">
+              КАК С КАРТИНОК <span class="mt-2">
                 <img :src="require(`~/assets/img/pinterest.png`)" alt="#"/>
               </span>
             </v-card-title>
 
-            <v-card class="general-container mt-6"
+            <v-card class="pinterest-card-welcome general-container mt-6"
                     color="transparent"
                     elevation="0">
-              <div class="d-flex justify-end">
-                <div style="width: 485px; position:relative;">
-                  <v-card-text style="
-                                  position:absolute;
-                                  top: -90px;
-                                  width: inherit;
-                                  color: #000;
-                                  text-align: right;
-
-                                  font-size: 16px;
-                                  font-style: normal;
-                                  font-weight: 400;
-                                  line-height: normal;">
-                    Добро пожаловать в нашу группу отелей на Красной Поляне, где комфорт и неповторимые виды сливаются воедино. Насладитесь шикарными номерами, удивительной кухней, расслабляющим спа-центром и невероятными панорамными видами на окружающие горы. Погрузитесь в атмосферу уюта и природной красоты!
-                  </v-card-text>
+              <div class="pinterest-card-welcome-container d-flex justify-end">
+                <div class="pinterest-card-welcome-wrapper">
+                  <v-card-text class="pinterest-card-text">Добро пожаловать в нашу группу отелей на Красной
+                    Поляне, где комфорт и неповторимые виды сливаются
+                    воедино. Насладитесь шикарными номерами,
+                    удивительной кухней, расслабляющим спа-центром и
+                    невероятными панорамными видами на окружающие
+                    горы. Погрузитесь в атмосферу уюта и природной
+                    красоты!</v-card-text>
                 </div>
               </div>
 
-              <v-card elevation="0"
-                      width="100%" height="485px"
+              <v-card class="pinterest-video" elevation="0" width="100%" height="485px"
                       :img="require(`~/assets/img/pinterest-video.png`)">
-                <v-card class="d-flex justify-center align-center"
-                        style="position:relative; left: 813px; top: 30px; border: 11px solid var(--card-grey)"
-                        color="var(--dark-color)"
-                        width="160px"
-                        height="160px"
-                        rounded="circle">
+                <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
+                        color="var(--dark-color)" width="160px" height="160px" rounded="circle">
                   <svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 116 116" fill="none">
                     <path d="M110.276 57.9792C110.276 86.6795 86.9494 109.946 58.1743 109.946C29.3991 109.946 6.07227 86.6795 6.07227 57.9792C6.07227 29.2789 29.3991 6.01279 58.1743 6.01279C86.9494 6.01279 110.276 29.2789 110.276 57.9792Z" fill="#32343A"/>
                     <path d="M104.322 63.8861C104.423 63.021 104.656 62.2308 105.021 61.5155C105.396 60.8121 105.878 60.2184 106.466 59.7345C107.054 59.2506 107.72 58.8947 108.462 58.6669C109.204 58.4497 109.998 58.3902 110.843 58.4881C111.689 58.5861 112.448 58.8256 113.12 59.2065C113.791 59.5981 114.357 60.0966 114.818 60.7021C115.278 61.3182 115.604 62.0108 115.797 62.78C116 63.5504 116.051 64.3735 115.949 65.2492C115.836 66.2211 115.562 67.077 115.129 67.817C114.705 68.5688 114.135 69.1739 113.42 69.6322L112.072 67.7875C112.556 67.4539 112.932 67.0646 113.201 66.6195C113.481 66.1756 113.653 65.676 113.717 65.1206C113.778 64.5973 113.749 64.1068 113.628 63.6491C113.508 63.1913 113.306 62.7837 113.022 62.4261C112.738 62.0685 112.387 61.7735 111.969 61.541C111.55 61.3193 111.073 61.1774 110.538 61.1154C110.002 61.0534 109.505 61.0824 109.046 61.2024C108.586 61.3331 108.177 61.54 107.818 61.8232C107.459 62.1064 107.169 62.457 106.947 62.875C106.724 63.2931 106.583 63.7637 106.522 64.287C106.457 64.8424 106.505 65.3674 106.664 65.8622C106.834 66.3581 107.122 66.8244 107.527 67.261L105.791 68.7484C105.2 68.1387 104.779 67.4189 104.528 66.5889C104.276 65.7696 104.208 64.8686 104.322 63.8861Z" fill="white"/>
@@ -397,10 +365,7 @@
                     <path d="M94.7337 28.9364L97.4543 26.6255L97.4428 27.4826L95.4299 25.1252C94.7939 24.3803 94.3684 23.6331 94.1533 22.8837C93.9382 22.1344 93.9423 21.4178 94.1654 20.7339C94.3886 20.0501 94.8244 19.4328 95.4727 18.8821C96.1457 18.3105 96.8495 17.9739 97.5841 17.8725C98.3339 17.7723 99.0736 17.8924 99.8033 18.2329C100.533 18.5734 101.219 19.1202 101.862 19.8733L105.028 23.5814L96.4111 30.9009L94.7337 28.9364ZM90.0894 23.497L95.0035 23.0089L96.7228 25.0226L91.8821 25.5966L90.0894 23.497ZM98.0945 26.0818L102.243 22.5579L102.145 23.4882L100.279 21.3027C99.797 20.7379 99.2953 20.4156 98.7741 20.3358C98.2598 20.2642 97.7442 20.4479 97.2272 20.8871C96.7265 21.3123 96.4631 21.7832 96.4369 22.2998C96.4107 22.8163 96.6352 23.3529 97.1105 23.9095L99.0185 26.1442L98.0945 26.0818Z" fill="white"/>
                     <path d="M107.311 26.6896L108.693 29.3722L106.715 33.0145L110.836 33.5325L112.239 36.2581L105.7 35.3841L102.311 41.6889L100.9 38.9488L103.033 34.9009L98.5067 34.3009L97.1251 31.6182L104.121 32.5666L107.311 26.6896Z" fill="white"/>
                   </svg>
-
-                  <v-img style="position: absolute;"
-                         :src="require(`~/assets/img/top-right-arrow.png`)"/>
-
+                  <v-img style="position: absolute" :src="require(`~/assets/img/top-right-arrow.png`)"/>
                 </v-card>
               </v-card>
 
@@ -411,61 +376,39 @@
       </div>
     </section>
 
-    <section class="hotel-group" style="margin-top: 220px;">
+    <section class="hotel-group">
       <div class="hotel-group-container general-container">
 
-        <v-card-title class="text-uppercase" style="color: #32343A;
-        font-family: CharterC;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        white-space: pre-line;">ГРУППА ОТЕЛЕЙ
+        <v-card-title class="hotel-group-title text-uppercase">ГРУППА ОТЕЛЕЙ
           POLYANA GROUP на КРАСНОЙ ПОЛЯНЕ
         </v-card-title>
 
         <div class="hotel-group-line"></div>
 
-        <v-expansion-panels v-model="hotels" accordion>
-          <v-expansion-panel v-for="item in hotelList"
-                             :key="item.id" class="transparent">
-            <v-expansion-panel-header class="ma-0 pa-0" disable-icon-rotate>
-              <div class="d-flex align-center my-2">
-                <div class="d-flex justify-center align-center golden-gradient--text"
-                     style="width: 79px; height: 42px;
-                     border-radius: 100px;
-                     border: 1px solid #CCAB6A;
-                     font-size: 22px;
-                     font-style: normal;
-                     font-weight: 500;
-                     line-height: normal;
-                     text-transform: uppercase;">
-                  <!-- todo костыль -->
+        <v-expansion-panels class="hotel-group-accordion" v-model="hotels" accordion>
+          <v-expansion-panel class="hotel-group-accordion-item transparent"
+                             active-class=""
+                             v-for="item in hotelList"
+                             :key="item.id">
+            <v-expansion-panel-header class="hotel-group-accordion-item--header ma-0 pa-0" disable-icon-rotate>
+              <div class="hotel-group-accordion-item--header-container d-flex align-center my-2">
+                <div class="hotel-group-accordion-item--header-count d-flex justify-center align-center golden-gradient--text">
                   {{ item.id }}
                 </div>
 
-                <v-card-title class="text-uppercase font-weight-black golden-gradient--text" style="font-family: CharterC; font-size: 60px;">
+                <v-card-title class="hotel-group-accordion-item--header-title text-uppercase golden-gradient--text">
                   {{ item.title }}
                 </v-card-title>
 
                 <v-spacer/>
 
-                <v-card-title class="text-uppercase mr-8" style="
-                color: #B6B6B6;
-                font-size: 35px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                text-transform: uppercase;">
+                <v-card-title class="hotel-group-accordion-item--header-price text-uppercase mr-8">
                   От {{ thousandSeparator(item.price) }} руб.
                 </v-card-title>
               </div>
 
               <template v-slot:actions>
-                <div class="d-flex justify-center align-center" style="
-                width: 66px; height: 66px;
-                border-radius: 16px;
-                background: var(--gradiend-golden)">
+                <div class="hotel-group-accordion-item--header-arrow d-flex justify-center align-center">
                   <img :src="require(`~/assets/img/top-right-arrow-2.png`)" alt="#">
                 </div>
               </template>
@@ -483,39 +426,40 @@
       </div>
     </section>
 
-    <section class="" style="margin-top: 85px;">
-      <div class="d-flex flex-row -container general-container">
+    <section class="special-offers">
+      <div class="special-offers-container general-container d-flex flex-row">
 
-        <v-card style="margin-top: 32px;"
-                color="transparent" elevation="0">
-          <v-card-title class="text-uppercase text-break"
-                        style="font-size: 40px; line-height: normal; white-space: pre-line;">Специальные
+        <v-card class="special-offers-info" color="transparent" elevation="0">
+          <v-card-title class="special-offers-info-title text-uppercase text-break">Специальные
             предложения и
             АКЦИИ отелЕЙ!
           </v-card-title>
 
-          <div style="max-width: 450px;">
-            <v-card-text style="font-size: 16px; line-height: normal;">
-              Наша группа отелей предлагает множество специальных предложений и акций, таких как раннее бронирование со скидкой до 20%, программу лояльности для постоянных гостей, специальные пакеты с завтраками, ужинами и спа-услугами, а также скидки для групп.
-            </v-card-text>
+          <div class="special-offers-info-text">
+            <v-card-text>   Наша группа отелей предлагает множество
+              специальных предложений и акций, таких как
+              раннее бронирование со скидкой до 20%, программу
+              лояльности для постоянных гостей, специальные
+              пакеты с завтраками, ужинами и спа-услугами, а
+              также скидки для групп.
 
-            <v-card-text style="font-size: 16px; line-height: normal;">
-              Следите за нашими предложениями на сайте или свяжитесь с нами для получения большей информации по телефону: +7 989 009 5577.
+
+              Следите за нашими предложениями на сайте или
+              свяжитесь с нами для получения большей
+              информации по телефону: <b>+7 989 009 5577.</b>
             </v-card-text>
           </div>
 
-          <v-card-actions class="pa-0">
+          <v-card-actions class="mt-4 pa-0">
             <v-btn class="font-weight-regular white--text rounded-xxl"
-                   elevation="0"
-                   width="300px"
-                   height="55px"
-                   color="golden-gradient">
+                   width="300px" height="55px"
+                   elevation="0" color="golden-gradient">
               СМОТРЕТЬ ВСЕ АКЦИИ
             </v-btn>
           </v-card-actions>
         </v-card>
 
-        <div style="width: 60%; margin-left: 155px;">
+        <div class="special-offers-slider">
           <div class="swiper overflow-hidden" ref="container">
             <div class="swiper-wrapper d-flex flex-row">
               <div class="swiper-slide" v-for="i in 3">
@@ -528,15 +472,12 @@
       </div>
     </section>
 
-    <section class="season-programs" style="margin-top: 120px;">
+    <section class="season-programs">
       <div class="season-programs-container general-container">
 
         <div class="d-flex justify-space-between">
-          <v-card elevation="0"
-                  rounded="xxl"
-                  width="63px"
-                  height="165px"
-                  color="transparent">
+          <v-card elevation="0" rounded="xxl"
+                  width="63px" height="165px" color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
               <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
@@ -551,38 +492,27 @@
             </div>
           </v-card>
 
-          <v-card class="mx-2"
-                  rounded="xxl"
-                  elevation="0"
-                  width="380px"
-                  height="165px"
-                  color="var(--card-grey)">
+          <v-card class="mx-2" rounded="xxl"
+                  width="380px" height="165px"
+                  elevation="0" color="var(--card-grey)">
 
           </v-card>
 
-          <v-card class="mx-1"
-                  rounded="xxl"
-                  elevation="0"
-                  width="380px"
-                  height="165px"
-                  color="var(--card-grey)">
+          <v-card class="mx-1" rounded="xxl"
+                  width="380px" height="165px"
+                  elevation="0" color="var(--card-grey)">
 
           </v-card>
 
-          <v-card class="mx-1"
-                  rounded="xxl"
-                  elevation="0"
-                  width="570px"
-                  height="165px"
-                  color="var(--card-grey)">
+          <v-card class="mx-1" rounded="xxl"
+                  width="570px" height="165px"
+                  elevation="0" color="var(--card-grey)">
 
           </v-card>
 
           <v-btn class="ml-1 rounded-xxl"
-                 elevation="0"
-                 width="63px"
-                 height="165px"
-                 color="transparent">
+                 width="63px" height="165px"
+                 elevation="0" color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
               <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
@@ -599,10 +529,8 @@
         </div>
 
         <div class="d-flex mt-8">
-          <v-card elevation="0"
-                  rounded="xxl"
-                  width="63px"
-                  height="165px"
+          <v-card elevation="0" rounded="xxl"
+                  width="63px" height="165px"
                   color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
               <div class="d-flex justify-center align-center rounded-xxl"
@@ -618,38 +546,27 @@
             </div>
           </v-card>
 
-          <v-card class="mx-2"
-                  rounded="xxl"
-                  elevation="0"
-                  width="380px"
-                  height="165px"
-                  color="var(--cold-grey)">
+          <v-card class="mx-2" rounded="xxl"
+                  width="380px" height="165px"
+                  elevation="0" color="var(--cold-grey)">
 
           </v-card>
 
-          <v-card class="mx-1"
-                  rounded="xxl"
-                  elevation="0"
-                  width="570px"
-                  height="165px"
-                  color="var(--cold-grey)">
+          <v-card class="mx-1" rounded="xxl"
+                  width="570px" height="165px"
+                  elevation="0" color="var(--cold-grey)">
 
           </v-card>
 
-          <v-card class="mx-1"
-                  rounded="xxl"
-                  elevation="0"
-                  width="392px"
-                  height="165px"
-                  color="var(--cold-grey)">
+          <v-card class="mx-1" rounded="xxl"
+                  width="392px" height="165px"
+                  elevation="0" color="var(--cold-grey)">
 
           </v-card>
 
           <v-btn class="ml-1 rounded-xxl"
-                 elevation="0"
-                 width="63px"
-                 height="165px"
-                 color="transparent">
+                 width="63px" height="165px"
+                 elevation="0" color="transparent">
             <div style="position: relative; width: inherit; height: inherit;">
               <div class="d-flex justify-center align-center rounded-xxl"
                    style="position: absolute;
@@ -668,16 +585,15 @@
       </div>
     </section>
 
-    <section class="" style="margin-top: 136px;">
-      <v-card class="d-flex justify-center align-center"
-              elevation="0"
-              height="736px"
-              color="transparent"
+    <section class="exclusive" style="margin-top: 136px;">
+      <v-card class="exclusive-background d-flex justify-center align-center"
+              elevation="0" height="736px" color="transparent"
               :img="require('assets/img/exclusive-background.png')">
 
-        <v-card class="d-flex align-center"
-                width="100%" max-width="1075px"
+        <v-card class="exclusive-container d-flex align-center"
+                width="100%"
                 elevation="0"
+                max-width="1075px"
                 height="500px" style="
                     border-radius: 23px;
                     background: linear-gradient(268deg, rgba(217, 217, 217, 0.40) 3.77%, rgba(217, 217, 217, 0.20) 98.84%);
@@ -814,16 +730,116 @@
       </v-card>
     </section>
 
-    <!--    <section>-->
-    <!--      <v-card elevation="0"-->
-    <!--              color="transparent"-->
-    <!--              :img="require('assets/img/line-background.png')">-->
-    <!--      </v-card>-->
-    <!--    </section>-->
+    <section class="route-map overflow-hidden">
+      <v-card class="route-map-background"
+              elevation="0" height="904px" color="transparent"
+              :img="require('assets/img/line-background.png')">
 
-    <!--    <div class="corner-rounded-block">-->
-    <!--      <div class="corner-rounded-block&#45;&#45;corners"></div>-->
-    <!--    </div>-->
+        <div class="route-map-gradient-up"></div>
+
+        <div class="route-map-container general-container">
+          <v-card-title class="route-map-title text-uppercase">ЧТО ПОСЕТИТЬ
+            НА КРАСНОЙ ПОЛЯНЕ</v-card-title>
+
+          <div class="d-flex justify-space-between">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="142" height="869" viewBox="0 0 142 869" fill="none">
+                <path d="M140.766 0.731445C88.8965 37.8983 95.6619 42.2345 100.173 54.004C104.682 65.7735 124.077 79.711 108.742 91.4805C87.3878 107.869 67.947 101.053 58.2259 119.356C44.2438 145.683 130.392 181.301 138.962 208.556C147.531 235.812 100.671 228.24 95.2107 256.254C87.5433 295.589 82.1309 307.358 79.8757 318.818C77.6205 330.278 66.8062 348.166 64.5404 354.126C60.9615 363.542 83.9351 364.038 79.8757 373.33C75.8164 382.621 40.6254 382.856 28.0064 397.178C18.7393 407.696 23.068 416.128 17.6325 427.841C12.6174 438.648 4.96095 443.648 1.84624 454.787C-8.84074 493.007 74.3628 501.974 74.9143 540.89C75.3755 573.434 28.4251 584.589 25.7512 617.082C22.6945 654.227 49.6338 660.788 68.1488 695.752C73.5613 705.973 76.0866 716.044 68.1488 725.485C60.4185 734.678 46.979 734.254 41.0866 744.07C23.7922 772.883 120.338 765.115 137.608 793.935C155.501 823.794 98.8191 868.268 98.8191 868.268" stroke="black" stroke-dasharray="5 5"/>
+              </svg>
+            </div>
+
+            <div>
+              <v-card-subtitle class="route-map-subtitle">ЛОКАЦИИ, ЭКСКУРСИИ</v-card-subtitle>
+              <ul class="route-map-text">
+                <li>Горный курорт «Красная Поляна»</li>
+                <li>Поляна 540</li>
+                <li>Казино Сочи</li>
+                <li>Аквапарк Mountain Beach</li>
+                <li>Музей друзей</li>
+                <li>RED arena</li>
+                <li>Парк «Времена года»</li>
+                <li>Скейт-парк</li>
+                <li>Байк-парк</li>
+                <li>Поляна 960</li>
+                <li>Веревочный парк</li>
+                <li>Водопад Поликаря - высота 1600 метров</li>
+                <li>Поляна 2200</li>
+                <li>Маршрут Черная Пирамида</li>
+                <li>Маршрут в Цирк-2</li>
+                <li>Маршрут на перевал Седой и озеро Айсберг</li>
+                <li>Поход на перевал Аигба</li>
+                <li>Перевал Седой</li>
+              </ul>
+            </div>
+
+            <v-card class="rounded-xxl py-8 px-5"
+                    width="415px"
+                    height="412px"
+                    elevation="0"
+                    color="var(--card-grey)">
+              <v-card-title class="route-map-title--card text-uppercase">ПОЛУЧИТЕ&nbsp;<b>ПОЛНЫЙ</b>
+                СПИСОК АКТИВНОСТЕЙ </v-card-title>
+
+              <div class="d-flex justify-space-between">
+                <v-card-text class="route-map-text">37 страниц в формате
+                  PDF (подробно о
+                  ЛОКАЦИЯХ С
+                  ОПИСАНИЕМ,
+                  ЭКСКУРСИЯХ, чек-
+                  листе перед
+                  поездкой и т.д)
+                </v-card-text>
+                <div class="route-map-phone">
+                  <img class="d-block" alt="phone"
+                       :src="require('assets/img/0da12411fb92130097858e070b805526.gif')">
+                </div>
+              </div>
+
+              <v-card-actions>
+                <v-btn class="rounded-xxl"
+                       width="359px"
+                       height="66px"
+                       elevation="0" dark
+                       color="golden-gradient">
+                  СКАЧАТЬ PDF ФАЙЛ
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+
+          </div>
+        </div>
+
+        <div class="route-map-gradient-down"></div>
+
+      </v-card>
+    </section>
+
+    <section class="reviews">
+      <div class="reviews-container general-container">
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <v-card class="footer-card rounded-xxl"
+              elevation="0" color="var(--card-grey)">
+        <div class="footer-container general-container">
+          fasfa
+        </div>
+      </v-card>
+
+      <div class="footer-mazur">
+        <div class="footer-mazur-container general-container d-flex align-end justify-space-between">
+          <div class="footer-mazur-polyana text-uppercase">Ⓒpolyana group | 2023</div>
+          <div class="footer-mazur-text text-right text-uppercase">
+            <div>
+              РАЗРАБОТАНО <a class="text-decoration-none" href="" target="_blank">mazurgroup.ru</a>
+            </div>
+            <div>Политика конфиденциальности</div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
   </div>
 </template>
@@ -841,6 +857,7 @@ export default class Pages extends Vue {
 
   hotels: number = 0
   season: string = 'summer'
+  swiper: any = Swiper
   hotelList: any = [
     {
       id: '001',
@@ -858,8 +875,6 @@ export default class Pages extends Vue {
       price: 5_900,
     },
   ]
-
-  swiper: any = Swiper
 
   mounted () {
     this.swiper = new Swiper (this.container, {
