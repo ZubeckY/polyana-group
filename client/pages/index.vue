@@ -582,24 +582,17 @@
       </div>
     </section>
 
-    <section class="exclusive" style="margin-top: 136px;">
-      <v-card class="exclusive-background d-flex justify-center align-center"
+    <section class="exclusive">
+      <v-card class="exclusive-background d-flex justify-center align-center rounded-xxl"
               elevation="0" height="736px" color="transparent"
               :img="require('assets/img/exclusive-background.png')">
 
         <v-card class="exclusive-container d-flex align-center"
-                width="100%"
-                elevation="0"
-                max-width="1075px"
-                height="500px" style="
-                    border-radius: 23px;
-                    background: linear-gradient(268deg, rgba(217, 217, 217, 0.40) 3.77%, rgba(217, 217, 217, 0.20) 98.84%);
-                    backdrop-filter: blur(35px);">
+                width="100%" height="500px"
+                max-width="1075px" elevation="0">
           <v-row class="ma-0 py-0 pr-10 pl-15">
             <v-col class="ma-0 pa-0">
-              <v-card color="transparent"
-                      elevation="0"
-                      max-width="540px">
+              <v-card color="transparent" elevation="0" max-width="540px">
                 <v-card-title class="text-uppercase ma-0 pa-0"
                               style="color: #FFF;
                                      font-family: CharterC;
@@ -614,6 +607,7 @@
                 <div style="max-width: 492px;">
                   <v-card-text class="ma-0 mt-7 pa-0"
                                style="color: #FFF;
+                                      font-family: 'Montserrat';
                                       font-size: 20px;
                                       font-style: normal;
                                       font-weight: 400;
@@ -622,6 +616,7 @@
                   </v-card-text>
                   <v-card-text class="ma-0 mt-4 pa-0"
                                style="color: #FFF;
+                                      font-family: 'Montserrat';
                                       font-size: 20px;
                                       font-style: normal;
                                       font-weight: 400;
@@ -630,6 +625,7 @@
                   </v-card-text>
 
                   <v-card-text class="ma-0 mt-4 pa-0" style="color: #FFF;
+                                                             font-family: 'Montserrat';
                                                              font-size: 14px;
                                                              font-style: normal;
                                                              font-weight: 400;
@@ -642,83 +638,8 @@
             </v-col>
 
             <v-col class="ma-0 pa-0" cols="auto">
-              <v-card class="pa-5"
-                      elevation="0"
-                      max-width="372px"
-                      style="border-radius: var(--bordrad23)"
-                      color="var(--dark-color)">
-                <v-form>
-                  <v-card-title class="ma-0 pa-0" style="
-                      color: #FFF;
-                      font-size: 16px;
-                      font-style: normal;
-                      font-weight: 400;
-                      line-height: normal;
-                      text-transform: uppercase;">
-                    В течение 5 минут перезвоним, сориентируем по стоимости  и предоставим скидку
-                  </v-card-title>
 
-                  <div class="mt-8">
-                    <label class="d-block mb-2"
-                           for="phone"
-                           style="
-                           color: #FFF;
-                           font-size: 14px;
-                           font-style: normal;
-                           font-weight: 400;
-                           line-height: normal;">
-                      Телефон
-                    </label>
-                    <v-text-field id="phone" solo
-                                  placeholder="+7 (9XX) XXX-XX-XX"
-                                  style="
-                                  width: 325px;
-                                  height: 50px;
-                                  border-radius: 12px;
-                                  background: #D9D9D9;"/>
-                  </div>
-
-                  <div class="mt-4">
-                    <label class="d-block mb-2"
-                           for="date"
-                           style="
-                           color: #FFF;
-                           font-size: 14px;
-                           font-style: normal;
-                           font-weight: 400;
-                           line-height: normal;">
-                      Дата заезда
-                    </label>
-                    <v-text-field id="date" solo
-                                  placeholder="03.09.2023"
-                                  style="
-                                  width: 325px;
-                                  height: 50px;
-                                  border-radius: 12px;
-                                  background: #D9D9D9;"/>
-                  </div>
-
-                  <v-card-actions class="mt-4 pa-0">
-                    <v-btn width="325px"
-                           height="55px" dark
-                           style="border-radius: 16px;
-                           background: linear-gradient(90deg, #CCAB6A -1.19%, #C1B397 177.44%);">
-                      Забронировать
-                    </v-btn>
-                  </v-card-actions>
-
-                  <v-card-text class="ma-0 mt-3 ml-1 pa-0"
-                               style="color: #FFF;
-                               font-size: 12px;
-                               font-style: normal;
-                               font-weight: 400;
-                               line-height: normal;">
-                    Нажимая кнопку вы соглашаетесь с условиями Политики конфиденциальности
-                  </v-card-text>
-
-
-                </v-form>
-              </v-card>
+              <feedback-form/>
 
             </v-col>
           </v-row>

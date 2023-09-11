@@ -1,10 +1,7 @@
 <template>
   <v-card class="footer-slide"
-          elevation="0"
-          width="364px"
-          height="290px"
-          color="transparent"
-          style="border-radius: 50px">
+          width="364px" height="290px"
+          elevation="0" color="transparent">
 
     <svg xmlns="http://www.w3.org/2000/svg"
          width="364" height="290"
