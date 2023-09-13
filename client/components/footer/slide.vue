@@ -19,6 +19,12 @@
              :href="item.url"/>
     </svg>
 
+    <div class="footer-slide-corner">
+      <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
+              width="62px" height="62px" elevation="0" color="golden-gradient">
+        <img width="35px" height="35px" alt="#" :src="require('~/assets/img/top-right-arrow-2.png')">
+      </v-card>
+    </div>
   </v-card>
 </template>
 <script lang="ts">
@@ -26,12 +32,5 @@ import {Vue, Component, Prop} from 'vue-property-decorator'
 @Component({})
 export default class footerSlide extends Vue {
   @Prop() item!: any
-
-
-
-  get logger () {
-    return console.log('ITEM')
-  }
-
 }
 </script>

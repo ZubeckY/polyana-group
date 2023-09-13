@@ -6,6 +6,7 @@
 .header {
   &-container {
     border-radius: var(--bordrad23) !important;
+    background: url("~/assets/img/_MG_2185_1.png") top right no-repeat;
   }
   &-wrapper {
     background: linear-gradient(90deg, #313339 26.72%, rgba(0, 0, 0, 0.00) 63.37%);
@@ -98,8 +99,8 @@
       }
       &-text {
         color: #FFF;
-        font-family: 'Gals';
         font-size: 12.5px;
+        font-family: 'Gals' !important;
       }
     }
   }
@@ -118,7 +119,9 @@
       font-size: 18px;
       font-weight: 700;
       border-radius: 4px;
-      background: linear-gradient(93deg, rgba(255, 255, 255, 0.10) -3.44%, rgba(255, 255, 255, 0.06) 113.56%) !important;
+      background: linear-gradient(93deg,
+        rgba(255, 255, 255, 0.10) -3.44%,
+      rgba(255, 255, 255, 0.06) 113.56%) !important;
       backdrop-filter: blur(25px);
     }
   }
@@ -176,9 +179,7 @@
       font-family: 'Montserrat' !important;
       border-radius: 12px !important;
       background: #D9D9D9 !important;
-      & * {
-        box-shadow: none !important;
-      }
+      & * { box-shadow: none !important; }
     }
   }
 
@@ -187,7 +188,9 @@
     font-weight: 500;
     font-family: 'Montserrat' !important;
     border-radius: 16px !important;
-    background: linear-gradient(90deg, #CCAB6A -1.19%, #C1B397 177.44%) !important;
+    background: linear-gradient(90deg,
+      #CCAB6A -1.19%, #C1B397 177.44%)
+    !important;
   }
 
   &-conditions {
@@ -306,11 +309,12 @@
     &-aboutHotels {
       position: relative; left: 813px; top: 30px;
       border: 11px solid var(--card-grey) !important;
+      &-play { position: absolute !important; }
     }
   }
 }
 
-.hotel-group {
+.hotelGroup {
   margin-top: 220px;
   &-line { width: 100%; height: 1px; background: #d0cfce; }
   &-title {
@@ -342,8 +346,7 @@
           font-weight: 400 !important;
         }
         &-arrow {
-          width: 66px;
-          height: 66px;
+          width: 66px; height: 66px;
           border-radius: 16px;
           background: var(--gradiend-golden);
         }
@@ -352,7 +355,7 @@
   }
 }
 
-.special-offers {
+.specialOffers {
   margin-top: 85px;
   &-info {
     margin-top: 32px;
@@ -373,8 +376,30 @@
   &-slider { width: 60%; margin-left: 155px; }
 }
 
-.season-programs {
+.seasonPrograms {
   margin-top: 120px;
+  &-item {
+    &-container { position: relative; width: inherit; height: inherit; }
+    &-text {
+      position: absolute;
+      left: -50px; top: 50px;
+      width: 165px; height: 63px;
+      background: rgba(217, 217, 217, 1);
+      transform: rotate(-90deg);
+      &.summer { background: rgba(217, 217, 217, 1); }
+      &.winter { background: var(--cold-grey); }
+    }
+  }
+  &-more {
+    &-container { position: relative; width: inherit; height: inherit; }
+    &-text { position: absolute;
+      left: -83px; top: -32px;
+      width: 165px; height: 63px;
+      transform: rotate(-90deg);
+      &.summer { background: rgba(217, 217, 217, 1); }
+      &.winter { background: var(--cold-grey); }
+    }
+  }
 }
 
 .exclusive {
@@ -387,16 +412,41 @@
     rgba(217, 217, 217, 0.20) 98.84%) !important;
     backdrop-filter: blur(35px) !important;
   }
+
+  &-title {
+    color: #FFF !important;
+    font-family: 'CharterC';
+    font-size: 36px !important;
+    font-weight: 400 !important;
+    white-space: pre-line !important;
+  }
+
+  &-text {
+    color: #FFF !important;
+    font-family: 'Montserrat' !important;
+    font-size: 20px !important;
+    line-height: 136.4% !important;
+
+    &-container { max-width: 492px; }
+    &-promotion {
+      color: #FFF !important;
+      font-family: 'Montserrat' !important;
+      font-size: 14px !important;
+      line-height: 136.4% !important;
+      white-space: pre-line !important;
+    }
+  }
 }
 
-.route-map {
+.routeMap {
   margin-top: 142px;
   &-background { position: relative; }
   &-title {
+    position: relative;
+    z-index: 1000;
     color: var(--dark-color);
     font-family: 'CharterC' !important;
     font-size: 40px !important;
-    font-weight: 400;
     white-space: pre-line !important;
     &--card {
       color: #32343A;
@@ -404,6 +454,7 @@
       font-weight: 400;
     }
   }
+  &-line { position: relative; top: -40px; }
   &-subtitle {
     color: var(--dark-color);
     font-size: 20px !important;
@@ -411,10 +462,17 @@
   }
   &-text {
     color: #000;
+    font-family: 'Montserrat' !important;
     font-size: 20px !important;
     text-transform: uppercase;
     font-weight: 300;
     white-space: pre-line !important;
+    &.list {
+      font-weight: 400;
+      text-transform: uppercase;
+      & * { line-height: 135% !important; }
+      & li::marker { font-size: 24px; color: var(--golden-2); }
+    }
   }
   &-phone {
     position: relative;
@@ -422,26 +480,24 @@
     width: 86px;
     height: 177px;
     transform: rotate(16deg);
-    & img {
-      width: 86px;
-      height: 177px;
-    }
+    & img { width: 86px; height: 177px; }
   }
   &-gradient {
-    position: absolute;
-    &-up {
+    &.up {
+      position: absolute;
       top: 0;
       width: 100%;
       height: 159px;
       background: linear-gradient(178deg, #E5E4E2 1.64%,
       rgba(217, 217, 217, 0.00) 98.36%);
     }
-    &-down {
+    &.down {
+      position: absolute;
       bottom: 0;
       width: 100%;
       height: 159px;
-      background: linear-gradient(178deg, #E5E4E2 1.64%,
-      rgba(217, 217, 217, 0.00) 98.36%);
+      background: linear-gradient(0deg, #E5E4E2 6%,
+      rgba(217, 217, 217, 0.2) 92%);
     }
   }
 }
@@ -456,10 +512,7 @@
   }
 
   &-booking {
-    &-btn {
-      font-weight: 400;
-      font-size: 14px !important;
-    }
+    &-btn { font-weight: 400; font-size: 14px !important; }
     &-text {
       color: #FFF !important;
       font-weight: 500;
@@ -482,6 +535,14 @@
 
     &-photo {
       &-carousel { width: 364px; border-radius: 22px; }
+    }
+  }
+
+  &-slide {
+    position: relative;
+    &-corner {
+      position: absolute; right: 0; bottom: 0;
+      &--arrow { position: relative; bottom: 0; right: 0; }
     }
   }
 
