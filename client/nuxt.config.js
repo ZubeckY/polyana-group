@@ -25,6 +25,7 @@ export default {
   ],
 
   plugins: [
+    '~/plugins/v_mask.js',
   ],
 
   components: true,

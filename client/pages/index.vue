@@ -100,12 +100,8 @@
                             elevation="0" color="transparent" dark>
                       <v-card-actions class="d-flex justify-center align-center pa-0">
                         <v-btn class="header-booking-card-button text-none my-4 mx-2 pa-0"
-                               elevation="0"
-                               width="204px"
-                               height="57px"
-                               min-height="0"
-                               min-width="0"
-                               color="var(--dark-color)">
+                               width="204px" height="57px" elevation="0"
+                               min-height="0" min-width="0" color="var(--dark-color)">
                           <v-icon>mdi-magnify</v-icon>
                           Найти номер
                         </v-btn>
@@ -185,8 +181,7 @@
         </v-card>
 
         <v-card class="rating-card rating-we-care"
-                height="165px"
-                elevation="0"
+                height="165px" elevation="0"
                 color="var(--card-grey)">
           <div class="rating-card-container d-flex flex-column">
             <div class="d-flex">
@@ -241,24 +236,18 @@
             <v-vertical-spacer/>
             <div class="d-flex justify-space-between align-center">
               <v-card class="mr-1"
-                      color="var(--golden-1)"
-                      elevation="0"
-                      width="73px"
-                      height="35px">
+                      color="var(--golden-1)" elevation="0"
+                      width="73px" height="35px">
 
               </v-card>
               <v-card class="mx-1"
-                      color="var(--golden-1)"
-                      elevation="0"
-                      width="73px"
-                      height="35px">
+                      color="var(--golden-1)" elevation="0"
+                      width="73px" height="35px">
 
               </v-card>
               <v-card class="ml-1"
-                      color="var(--golden-1)"
-                      elevation="0"
-                      width="73px"
-                      height="35px">
+                      color="var(--golden-1)" elevation="0"
+                      width="73px" height="35px">
 
               </v-card>
             </div>
@@ -568,7 +557,6 @@
 
               <route-map-line/>
 
-              <div class="routeMap-gradient down"></div>
             </div>
 
             <div>
@@ -595,13 +583,13 @@
               </ul>
             </div>
 
-            <v-card class="rounded-xxl py-8 px-5" width="415px" height="412px"
+            <v-card class="rounded-xxl pa-5" width="415px" height="412px"
                     elevation="0" color="var(--card-grey)">
-              <v-card-title class="routeMap-title--card text-uppercase">ПОЛУЧИТЕ&nbsp;<b>ПОЛНЫЙ</b>
+              <v-card-title class="routeMap-title--card text-uppercase py-3">ПОЛУЧИТЕ&nbsp;<b>ПОЛНЫЙ</b>
                 СПИСОК АКТИВНОСТЕЙ </v-card-title>
 
               <div class="d-flex justify-space-between">
-                <v-card-text class="routeMap-text">37 страниц в формате
+                <v-card-text class="routeMap-text pt-2 pb-5">37 страниц в формате
                   PDF (подробно о
                   ЛОКАЦИЯХ С
                   ОПИСАНИЕМ,
@@ -615,10 +603,9 @@
                 </div>
               </div>
 
-              <v-card-actions>
-                <v-btn class="rounded-xxl"
-                       width="359px"
-                       height="66px"
+              <v-card-actions class="pa-0">
+                <v-btn class="routeMap-button rounded-xxl mx-auto"
+                       width="359px" height="66px"
                        elevation="0" dark
                        color="golden-gradient">
                   СКАЧАТЬ PDF ФАЙЛ
@@ -636,7 +623,7 @@
 
     <section class="reviews">
       <div class="reviews-container general-container">
-
+        
       </div>
     </section>
 
