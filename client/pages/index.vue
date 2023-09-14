@@ -3,9 +3,12 @@
     <!-- хедер -->
     <header class="header mt-3">
       <!-- Картинка -->
-      <v-card class="header-container" elevation="0" height="750px">
+      <v-img class="header-container"
+             elevation="0" height="750px"
+             position="top right" contain
+             :src="require('assets/img/header/slider/' + activeImage)">
         <!-- Градиент -->
-        <v-card class="header-wrapper" color="transparent" elevation="0">
+        <v-card class="header-wrapper" color="transparent" height="750px" elevation="0">
           <div class="header-wrapper-inner general-container">
             <!-- Навигация -->
             <nav-polyana/>
@@ -34,11 +37,11 @@
               </div>
               <v-spacer/>
               <!-- Слайдер -->
-              <header-slider/>
+              <header-slider @changeActiveSlide="changeActiveSlide"/>
             </div>
           </div>
         </v-card>
-      </v-card>
+      </v-img>
     </header>
 
     <!-- рейтинг карточки -->
@@ -545,10 +548,10 @@
   </div>
 </template>
 <script lang="ts">
-import {Component, Ref, Vue} from "vue-property-decorator"
-import thousandSeparator from "../assets/scripts/thousandSeparator";
 import {Swiper} from "swiper";
+import {Component, Ref, Vue} from "vue-property-decorator"
 import openWeatherAPI from "~/assets/scripts/openWeatherAPI";
+import thousandSeparator from "../assets/scripts/thousandSeparator";
 @Component({
   methods: {thousandSeparator}
 })
@@ -557,6 +560,7 @@ export default class Pages extends Vue {
   readonly container!: HTMLDivElement;
   weather: any = {}
   showButtons: boolean = true
+  activeImage: string = '_MG_2185_1.png'
   hotels: number = 0
   swiper: any = Swiper
   hotelList: any = [
@@ -587,6 +591,10 @@ export default class Pages extends Vue {
     window.addEventListener('resize', () => {
       this.resizer()
     })
+  }
+
+  changeActiveSlide (value: string) {
+    return this.activeImage = value
   }
 
   resizer () {
