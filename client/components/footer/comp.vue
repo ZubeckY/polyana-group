@@ -139,7 +139,7 @@
           <v-card class="footer-booking d-flex flex-column justify-center rounded-xxl"
                   width="318px" height="439px" color="#454850" elevation="0">
 
-            <logo/>
+            <logo class="mx-auto"/>
 
             <v-card-actions class="pa-0 mt-10">
               <v-btn class="footer-booking-btn rounded-xxl mx-auto" width="237px" height="37px"
@@ -210,7 +210,7 @@
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
 @Component({})
-export default class footerComp extends Vue {
+export default class FooterComp extends Vue {
   activeChip: number = 0
   activeSlide: number = 0
   localMapping: any = [

@@ -21,6 +21,7 @@ export default {
 
   css: [
     '~/assets/styles/main.less',
+    '~/assets/styles/screen.less',
     '~/assets/styles/ui-styles.less',
   ],
 

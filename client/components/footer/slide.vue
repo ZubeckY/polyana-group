@@ -30,7 +30,7 @@
 <script lang="ts">
 import {Vue, Component, Prop} from 'vue-property-decorator'
 @Component({})
-export default class footerSlide extends Vue {
+export default class FooterSlide extends Vue {
   @Prop() item!: any
 }
 </script>
