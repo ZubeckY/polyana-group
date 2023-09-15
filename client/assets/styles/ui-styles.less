@@ -416,6 +416,30 @@
       &.winter { background: var(--cold-grey); }
     }
   }
+  &-card {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    &-container {
+      display: flex;
+      flex-direction: column;
+      width: 90%; height: 78%;
+    }
+    &-header {
+      display: flex;
+    }
+    &-image {
+      width: 60px; height: 60px;
+    }
+    &-title {
+      color: black;
+      font-family: 'Montserrat' !important;
+      font-size: 18px !important;
+      white-space: pre-line;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+    }
+  }
   &-more {
     &-container { position: relative; width: inherit; height: inherit; }
     &-text { position: absolute;
@@ -480,7 +504,7 @@
     font-family: 'Montserrat' !important;
   }
   &-card {
-    padding: 40px 15px !important;
+    padding: 40px 15px;
   }
   &-title {
     color: black;

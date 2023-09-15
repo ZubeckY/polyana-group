@@ -7,14 +7,14 @@
                width="68px" height="27px" min-width="0" min-height="0" value="summer">
           <div>Лето</div>
           <img class="ml-1" width="15px" height="15px"
-               :src="require(`~/assets/img/sun_1.png`)" alt="#"/>
+               :src="require(`~/assets/img/header/season/sun_1.png`)" alt="#"/>
         </v-btn>
 
         <v-btn class="header-info-switch--button font-weight-thin ma-0 pa-0"
                width="68px" height="27px" min-width="0" min-height="0" value="winter">
           <div>Зима</div>
           <img class="ml-1" width="15px" height="15px"
-               :src="require(`~/assets/img/snowflake_1.png`)" alt="#"/>
+               :src="require(`~/assets/img/header/season/snowflake_1.png`)" alt="#"/>
         </v-btn>
       </v-btn-toggle>
     </div>
