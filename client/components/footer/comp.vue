@@ -1,25 +1,26 @@
 <template>
   <footer class="footer">
     <v-card class="footer-card d-flex align-center rounded-xxl"
-            elevation="0" height="520px"
-            color="var(--card-grey)">
+            elevation="0" color="var(--card-grey)">
       <div class="footer-container general-container">
-        <div class="d-flex">
+        <div class="footer-inner d-flex">
 
           <div class="footer-seeYouAtHotel">
+            <!-- До встречи в наших отелях -->
             <v-card-title class="footer-seeYouAtHotel-title footer-title pb-3">До встречи в наших отелях</v-card-title>
             <v-chip-group class="footer-seeYouAtHotel-group ml-3 mb-2"
                           v-model="activeChip" mandatory column
                           active-class="golden-gradient white--text">
-              <v-chip class="footer-seeYouAtHotel-chip text-uppercase"
+              <v-chip class="footer-seeYouAtHotel-chip text-uppercase py-3 px-4"
                       v-for="(item, i) in localMapping"
                       :key="item.id" :value="i" color="#FAFAFD">
                 {{ item.title }}
               </v-chip>
             </v-chip-group>
 
-            <v-row class="footer-seeYouAtHotel-address mt-3">
-              <v-col cols="auto">
+            <div class="footer-seeYouAtHotel-address d-flex">
+              <!-- Контакты адрес -->
+              <div>
                 <v-card-title class="footer-seeYouAtHotel-address-title footer-title pt-0 pb-3">Контакты</v-card-title>
                 <v-card-text class="footer-seeYouAtHotel-address-text py-1"><span class="text-uppercase">Адрес:</span>
                   Краснодарский край,
@@ -35,159 +36,46 @@
                 <v-card-text class="footer-seeYouAtHotel-address-text text-uppercase py-1"><span class="text-decoration-underline">8 938 555 5551</span>
                   Рецепция (круглосуточно)
                 </v-card-text>
-              </v-col>
+              </div>
 
-              <v-col class="footer-seeYouAtHotel-photo">
-                <v-carousel class="footer-seeYouAtHotel-photo-carousel"
-                            v-model="activeSlide" height="290px" hide-delimiters>
-                  <v-carousel-item class="footer-seeYouAtHotel-photo-carousel-slide"
+              <!-- Слайдер -->
+              <div class="footer-seeYouAtHotel-photo">
+                <v-carousel class="footer-carousel" style="height: 290px"
+                            v-model="activeSlide" hide-delimiters>
+                  <v-carousel-item class="footer-slide"
                                    v-for="(item, i) in localMapping[activeChip]['photos']"
                                    :key="'photo-' + item.id">
                     <footer-slide :item="item"/>
                   </v-carousel-item>
                 </v-carousel>
+              </div>
 
-              </v-col>
-            </v-row>
+            </div>
           </div>
 
-          <div class="footer-helpInfo ml-5">
-            <v-card-title class="footer-helpInfo-title footer-title">помощь и информация</v-card-title>
-            <v-card-subtitle class="footer-helpInfo-subtitle my-2 pb-0 text-uppercase">О Комплексе</v-card-subtitle>
+          <div class="footer-service d-flex">
+            <!-- помощь и информация, кнопки -->
+            <div class="footer-helpInfo">
+              <v-card-title class="footer-helpInfo-title footer-title">помощь и информация</v-card-title>
+              <v-card-subtitle class="footer-helpInfo-subtitle my-2 pb-0 text-uppercase">О Комплексе</v-card-subtitle>
 
-            <v-card-actions class="d-flex flex-column align-start pt-0 pl-2">
-              <v-btn class="footer-helpInfo-link text-none pl-2 pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                О нас
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Блог
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Размещение
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Услуги
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Специальные предложения
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Как добраться
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Трансфер
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Реквизиты
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Контакты
-              </v-btn>
-            </v-card-actions>
-
-            <v-card-actions class="d-flex flex-column align-start pl-2">
-              <v-btn class="footer-helpInfo-link text-none pa-0 pl-2 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Частые вопросы
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Инфраструктура
-              </v-btn>
-              <v-btn class="footer-helpInfo-link text-none pa-0"
-                     width="auto" height="auto"
-                     min-width="0" min-height="0"
-                     color="black" text>
-                Активности на Красной поляне
-              </v-btn>
-            </v-card-actions>
+              <v-card-actions class="pa-0 ml-4">
+                <div class="d-flex flex-column align-start">
+                  <v-btn v-for="(item, i) in links"
+                         :key="item.link+'-'+i"
+                         class="footer-helpInfo-link text-none pa-0 mb-1"
+                         min-width="0" min-height="0"
+                         width="auto" height="auto"
+                         color="black" text>
+                    {{ item['title'] }}
+                  </v-btn>
+                </div>
+              </v-card-actions>
+            </div>
+            <v-spacer/>
+            <!-- Забронировать -->
+            <footer-booking/>
           </div>
-
-          <v-spacer/>
-
-          <v-card class="footer-booking d-flex flex-column justify-center rounded-xxl"
-                  width="318px" height="439px" color="#454850" elevation="0">
-
-            <logo class="mx-auto"/>
-
-            <v-card-actions class="pa-0 mt-10">
-              <v-btn class="footer-booking-btn rounded-xxl mx-auto" width="237px" height="37px"
-                     color="golden-gradient" elevation="0" dark v-text="'Забронировать'"></v-btn>
-            </v-card-actions>
-
-            <v-card-text class="footer-booking-text text-center mt-3">Забронируйте номер
-              через удобный для вас
-              мессенджер на прямую:
-            </v-card-text>
-
-            <v-card-actions class="d-flex justify-center pa-0 mt-3">
-              <v-btn class="rounded-lg"
-                     width="36px" height="36px"
-                     min-width="0" min-height="0"
-                     elevation="0" color="#2787f5">
-                <svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Capa_1"
-                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 363.301 363.301" xml:space="preserve" stroke="#ffffff">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M347.506,240.442c-7.91-9.495-16.899-18.005-25.592-26.235c-3.091-2.927-6.287-5.953-9.368-8.962 c-8.845-8.648-9.167-11.897-2.164-21.72c4.845-6.771,9.982-13.551,14.95-20.108c4.506-5.949,9.166-12.101,13.632-18.273l0.917-1.269 c8.536-11.811,17.364-24.024,22.062-38.757c1.22-3.887,2.501-9.607-0.428-14.39c-2.927-4.779-8.605-6.237-12.622-6.918 c-1.987-0.337-3.96-0.383-5.791-0.383l-55.901-0.04l-0.462-0.004c-8.452,0-14.148,3.983-17.412,12.178 c-3.116,7.83-6.539,16.168-10.445,24.096c-7.773,15.787-17.645,33.97-31.93,49.135l-0.604,0.645 c-1.687,1.813-3.598,3.866-4.995,3.866c-0.214,0-0.447-0.041-0.711-0.124c-2.959-1.153-4.945-8.316-4.855-11.648 c0.001-0.046,0.002-0.092,0.002-0.138l-0.039-64.61c0-0.224-0.016-0.446-0.045-0.668c-1.422-10.503-4.572-17.041-16.474-19.372 c-0.316-0.063-0.639-0.094-0.961-0.094h-58.126c-9.47,0-14.688,3.849-19.593,9.61c-1.324,1.54-4.08,4.746-2.714,8.635 c1.386,3.947,5.885,4.791,7.35,5.065c7.272,1.384,11.371,5.832,12.532,13.604c2.027,13.496,2.276,27.901,0.784,45.334 c-0.416,4.845-1.239,8.587-2.595,11.784c-0.315,0.746-1.432,3.181-2.571,3.182c-0.362,0-1.409-0.142-3.316-1.456 c-4.509-3.089-7.808-7.497-11.654-12.942c-13.084-18.491-24.065-38.861-33.575-62.288c-3.527-8.624-10.114-13.452-18.556-13.594 c-9.276-0.141-17.686-0.209-25.707-0.209c-8.764,0-16.889,0.081-24.823,0.246C8.914,83.74,4.216,85.776,1.744,89.676 c-2.476,3.903-2.315,9.03,0.479,15.236c22.366,49.723,42.645,85.876,65.755,117.228c16.193,21.938,32.435,37.123,51.109,47.784 c19.674,11.255,41.722,16.727,67.402,16.727c2.911,0,5.921-0.071,8.956-0.213c14.922-0.727,20.458-6.128,21.158-20.657 c0.333-7.425,1.145-15.212,4.795-21.853c2.304-4.184,4.452-4.184,5.158-4.184c1.36,0,3.046,0.626,4.857,1.799 c3.248,2.12,6.033,4.96,8.316,7.441c2.149,2.357,4.274,4.738,6.401,7.12c4.59,5.141,9.336,10.456,14.294,15.497 c10.852,11.041,22.807,15.897,36.538,14.843h51.252c0.109,0,0.219-0.004,0.328-0.011c5.107-0.337,9.53-3.17,12.135-7.772 c3.227-5.701,3.162-12.974-0.174-19.46C356.718,251.867,351.808,245.601,347.506,240.442z"></path>
-                  </g>
-                </svg>
-              </v-btn>
-              <v-btn class="rounded-lg"
-                     width="36px" height="36px"
-                     min-width="0" min-height="0"
-                     elevation="0" color="#24A2DF">
-                <v-img :src="require(`~/assets/img/footer/telegram.png`)"/>
-              </v-btn>
-              <v-btn class="rounded-lg"
-                     width="36px" height="36px"
-                     min-width="0" min-height="0"
-                     elevation="0" color="#60a55f">
-                <svg fill="#ffffff" height="24px" width="24px"
-                     viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M17.6 6.31999C16.8669 5.58141 15.9943 4.99596 15.033 4.59767C14.0716 4.19938 13.0406 3.99622 12 3.99999C10.6089 4.00135 9.24248 4.36819 8.03771 5.06377C6.83294 5.75935 5.83208 6.75926 5.13534 7.96335C4.4386 9.16745 4.07046 10.5335 4.06776 11.9246C4.06507 13.3158 4.42793 14.6832 5.12 15.89L4 20L8.2 18.9C9.35975 19.5452 10.6629 19.8891 11.99 19.9C14.0997 19.9001 16.124 19.0668 17.6222 17.5816C19.1205 16.0965 19.9715 14.0796 19.99 11.97C19.983 10.9173 19.7682 9.87634 19.3581 8.9068C18.948 7.93725 18.3505 7.05819 17.6 6.31999ZM12 18.53C10.8177 18.5308 9.65701 18.213 8.64 17.61L8.4 17.46L5.91 18.12L6.57 15.69L6.41 15.44C5.55925 14.0667 5.24174 12.429 5.51762 10.8372C5.7935 9.24545 6.64361 7.81015 7.9069 6.80322C9.1702 5.79628 10.7589 5.28765 12.3721 5.37368C13.9853 5.4597 15.511 6.13441 16.66 7.26999C17.916 8.49818 18.635 10.1735 18.66 11.93C18.6442 13.6859 17.9355 15.3645 16.6882 16.6006C15.441 17.8366 13.756 18.5301 12 18.53ZM15.61 13.59C15.41 13.49 14.44 13.01 14.26 12.95C14.08 12.89 13.94 12.85 13.81 13.05C13.6144 13.3181 13.404 13.5751 13.18 13.82C13.07 13.96 12.95 13.97 12.75 13.82C11.6097 13.3694 10.6597 12.5394 10.06 11.47C9.85 11.12 10.26 11.14 10.64 10.39C10.6681 10.3359 10.6827 10.2759 10.6827 10.215C10.6827 10.1541 10.6681 10.0941 10.64 10.04C10.64 9.93999 10.19 8.95999 10.03 8.56999C9.87 8.17999 9.71 8.23999 9.58 8.22999H9.19C9.08895 8.23154 8.9894 8.25465 8.898 8.29776C8.8066 8.34087 8.72546 8.403 8.66 8.47999C8.43562 8.69817 8.26061 8.96191 8.14676 9.25343C8.03291 9.54495 7.98287 9.85749 8 10.17C8.0627 10.9181 8.34443 11.6311 8.81 12.22C9.6622 13.4958 10.8301 14.5293 12.2 15.22C12.9185 15.6394 13.7535 15.8148 14.58 15.72C14.8552 15.6654 15.1159 15.5535 15.345 15.3915C15.5742 15.2296 15.7667 15.0212 15.91 14.78C16.0428 14.4856 16.0846 14.1583 16.03 13.84C15.94 13.74 15.81 13.69 15.61 13.59Z" fill="#ffffff"></path>
-                  </g>
-                </svg>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
         </div>
       </div>
     </v-card>
@@ -254,6 +142,57 @@ export default class FooterComp extends Vue {
           url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
         },
       ]
+    },
+  ]
+
+  links: any = [
+    {
+      link: '/',
+      title: 'О нас',
+    },
+    {
+      link: '/',
+      title: 'Блог',
+    },
+    {
+      link: '/',
+      title: 'Размещение',
+    },
+    {
+      link: '/',
+      title: 'Услуги',
+    },
+    {
+      link: '/',
+      title: 'Специальные предложения',
+    },
+    {
+      link: '/',
+      title: 'Как добраться',
+    },
+    {
+      link: '/',
+      title: 'Трансфер',
+    },
+    {
+      link: '/',
+      title: 'Реквизиты',
+    },
+    {
+      link: '/',
+      title: 'Контакты',
+    },
+    {
+      link: '/',
+      title: 'Частые вопросы',
+    },
+    {
+      link: '/',
+      title: 'Инфраструктура',
+    },
+    {
+      link: '/',
+      title: 'Активности на Красной поляне',
     },
   ]
 

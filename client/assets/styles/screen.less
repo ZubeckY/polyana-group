@@ -1,3 +1,40 @@
+@media (max-width: 1400px) {
+  .footer {
+    &-carousel,
+    &-slide {
+      width: 347px !important;
+      height: 277px !important;
+      &-corner {
+        &--arrow {
+          width: 58px !important;
+          height: 58px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1360px) {
+  .footer {
+    &-carousel,
+    &-slide {
+      width: 310px !important;
+      height: 247px !important;
+      &-corner {
+        &--arrow {
+          width: 53px !important;
+          height: 53px !important;
+          & img {
+            width: 30px !important;
+            height: 30px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 @media (max-width: 1200px) {
   .rating {
     &-container {
@@ -5,9 +42,65 @@
       justify-content: start !important;
     }
   }
+  .footer {
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center !important;
+      justify-content: center;
+    }
+    &-service {
+      flex-wrap: wrap;
+      margin: 30px auto 15px !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+    &-seeYouAtHotel {
+      &-address {
+        flex-wrap: wrap;
+        margin: 30px auto 15px !important;
+      }
+      &-photo {
+        margin-top: 35px;
+      }
+    }
+    &-booking {
+      margin-top: 35px;
+    }
+    &-helpInfo {
+      flex-wrap: wrap;
+    }
+  }
 }
 
-@media (max-width: 945px) {
+@media (max-width: 960px) {
+  .fontSize {
+    &-m {
+      &--l   { font-size: 16px !important; }
+    }
+    &-xl {
+      &--m  { font-size: 26px !important; }
+      &--l  { font-size: 26px !important; }
+    }
+  }
+
+  .exclusive {
+    margin-bottom: 90px;
+    &-content {
+      margin-right: 0 !important;
+    }
+    &-form {
+      position: relative !important;
+      bottom: 10px !important;
+      &.inside {
+        display: none !important;
+      }
+      &.outside {
+        display: block !important;
+      }
+    }
+  }
+
   .rating {
     &-container {
       flex-direction: column !important;
@@ -15,6 +108,35 @@
     &-card {
       width: 100% !important;
       margin-right: 0 !important;
+    }
+  }
+  .footer {
+    &-inner {
+      flex-wrap: wrap;
+    }
+    &-seeYouAtHotel {
+      &-address {
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+      }
+    }
+    &-service {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column !important;
+    }
+    &-carousel,
+    &-slide {
+      width: 294px !important;
+      height: 234px !important;
+      &-corner {
+        &--arrow {
+          width: 50px !important;
+          height: 50px !important;
+        }
+      }
     }
   }
 }
