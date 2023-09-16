@@ -34,7 +34,7 @@ export default class NavPolyana extends Vue {
   }
 
   resizer () {
-    return this.showButtons = window.innerWidth >= 960
+    return this.showButtons = window.innerWidth > 960
   }
 }
 </script>

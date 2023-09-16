@@ -1,6 +1,6 @@
 <template>
   <section class="specialOffers">
-    <div class="specialOffers-container general-container d-flex flex-row">
+    <div class="specialOffers-container d-flex">
 
       <v-card class="specialOffers-info" color="transparent" elevation="0">
         <v-card-title class="specialOffers-info-title section-title fontSize-xl--l text-uppercase">Специальные
@@ -23,7 +23,7 @@
           </v-card-text>
         </div>
 
-        <v-card-actions class="mt-4 pa-0">
+        <v-card-actions class="mt-4 ml-2 pa-0">
           <v-btn class="font-weight-regular white--text rounded-xxl"
                  width="300px" height="55px"
                  elevation="0" color="golden-gradient">
@@ -33,7 +33,7 @@
       </v-card>
 
       <!-- Слайдер -->
-      <special-offers-slider v-if="showButtons"/>
+      <special-offers-slider/>
 
     </div>
   </section>
@@ -52,7 +52,7 @@ export default class SpecialOffers extends Vue {
     })
   }
   resizer () {
-    return this.showButtons = window.innerWidth >= 960
+    return this.showButtons = window.innerWidth > 960
   }
 
 }

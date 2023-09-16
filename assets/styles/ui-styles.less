@@ -12,6 +12,7 @@
 .header {
   &-container {
     height: 750px;
+    background-color: #31333990;
     border-radius: var(--bordrad23) !important;
   }
   &-wrapper {
@@ -218,12 +219,11 @@
 }
 
 .relax-in-comfort {
-  width: 684px;
   color: white;
   font-family: 'Cormorant Garamond' !important;
-  font-size: 40px;
-  font-weight: 700 !important;
+  white-space: pre-line;
   text-transform: uppercase;
+  font-weight: 700 !important;
   .golden {
     color: var(--golden-2);
     font-family: inherit !important;
@@ -233,11 +233,14 @@
 .rating {
   display: flex;
   justify-content: center;
-  &-container { justify-content: space-between; padding: 0; }
+  &-container {
+    width: 100%;
+    justify-content: space-between;
+  }
   &-card {
     margin-top: 20px;
     padding: 15px 20px;
-    margin-right: 15px;
+    margin-right: 5px;
     border-radius: var(--bordrad23) !important;
     &-container { height: 100%; }
     &:last-child { margin-right: 0; }
@@ -356,8 +359,8 @@
     &-item {
       &--header {
         &-count {
-          width: 79px; height: 42px;
-          font-size: 22px;
+          width: 79px;
+          height: 42px;
           font-weight: 500;
           border-radius: 100px;
           border: 1px solid #CCAB6A;
@@ -365,16 +368,15 @@
         }
         &-title {
           font-family: 'CharterC' !important;
-          font-size: 60px !important;
           font-weight: 400 !important;
         }
         &-price {
           color: #B6B6B6;
-          font-size: 35px !important;
           font-weight: 400 !important;
         }
         &-arrow {
-          width: 66px; height: 66px;
+          width: 66px;
+          height: 66px;
           border-radius: 16px;
           background: var(--gradiend-golden);
         }
@@ -385,26 +387,36 @@
 
 .specialOffers {
   margin-top: 85px;
+  &-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   &-info {
-    margin-top: 32px;
+    width: 100% !important;
+    max-width: 400px !important;
     &-title {
       color: var(--dark-color);
       white-space: pre-line !important;
     }
     &-text {
-      max-width: 450px;
+      white-space: pre-line;
       & * {
         font-size: 16px !important;
         white-space: pre-line !important;
       }
     }
   }
-  &-slider { width: 60%; margin-left: 155px; }
+  &-slider {
+    width: 100%;
+    max-width: calc(80% - 360px);
+    margin-left: 155px;
+  }
 }
 
 .seasonPrograms {
   margin-top: 120px;
   &-item {
+    margin-right: 5px;
     &-container { position: relative; width: inherit; height: inherit; }
     &-text {
       position: absolute;
@@ -417,9 +429,10 @@
     }
   }
   &-card {
+    margin: 0 5px;
     display: flex !important;
-    justify-content: center !important;
     align-items: center !important;
+    justify-content: center !important;
     &-container {
       display: flex;
       flex-direction: column;
@@ -439,8 +452,24 @@
       font-weight: 700 !important;
       text-transform: uppercase;
     }
+    &.free-transfer {
+      width: 380px;
+    }
+    &.live-music {
+      width: 380px;
+    }
+    &.fun-for-kids {
+      width: 570px;
+    }
+    &.ski-room {
+      width: 570px;
+    }
+    &.heated-pool {
+      width: 392px;
+    }
   }
   &-more {
+    margin-left: 5px;
     &-container { position: relative; width: inherit; height: inherit; }
     &-text { position: absolute;
       left: -83px; top: -32px;
@@ -495,6 +524,49 @@
       line-height: 136.4% !important;
       white-space: pre-line !important;
     }
+  }
+}
+
+.reviews {
+  margin-top: 80px;
+  &-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &-title {
+    color: var(--dark-color);
+    font-family: 'CharterC' !important;
+    white-space: pre-line;
+  }
+  &-cards {
+    width: 100%;
+    max-width: 50%;
+    &-group {
+      &-gradient {
+        & * {
+          font-family: 'Montserrat' !important;
+        }
+        &-title {
+          color: white !important;
+          font-weight: 400 !important;
+          white-space: pre-line !important;
+        }
+      }
+      &-transparent {
+        &-title {
+          white-space: pre-line;
+        }
+        &-button {
+          border-radius: 0 !important;
+          font-size: 16px !important;
+          border-bottom: 3px dashed #CCAC6C;
+        }
+      }
+    }
+  }
+  &-slider {
+    width: 100%;
+    max-width: 50%;
   }
 }
 

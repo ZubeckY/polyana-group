@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 const ImageminPlugin = require('imagemin-webpack-plugin').default
-const isDev = process.env.NODE_ENV !== 'production' ?? false
+// const isDev = process.env.NODE_ENV !== 'production' ?? false
+const isDev = true
 export default {
   server: {
     host: '0.0.0.0'

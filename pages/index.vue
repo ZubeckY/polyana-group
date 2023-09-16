@@ -1,67 +1,24 @@
 <template>
   <div>
+    <is-demo/>
+
     <!-- хедер -->
-    <header class="header mt-3">
-      <!-- Картинка -->
-      <v-img class="header-container"
-             style="background-color: #31333990"
-             elevation="0" position="top right" contain
-             :src="require('assets/img/header/slider/' + activeImage)">
-        <!-- Градиент -->
-        <v-card class="header-wrapper" color="transparent">
-          <div class="header-wrapper-inner general-container">
-            <!-- Навигация -->
-            <nav-polyana/>
-            <!-- Контент -->
-            <div class="header-wrapper d-flex flex-row">
-              <div class="header-wrapper-container d-flex flex-column">
-                <v-vertical-spacer v-if="showButtons"/>
-                <!-- Отдыхайте с комфортом, ( Лето/Зима ) -->
-                <section class="header-info">
-                  <div class="header-info-container general-container d-flex">
-                    <div class="d-flex flex-row">
-                      <!-- Лето/Зима -->
-                      <header-switch v-if="showButtons"/>
-                      <!-- Отдыхайте с комфортом -->
-                      <div class="relax-in-comfort">
-                        Отдыхайте с комфортом и наслаждайтесь
-                        <span class="golden">красотами Красной Поляны</span>
-                        в наших уникальных отелях!
-                      </div>
-                    </div>
-                  </div>
-                </section>
-                <v-vertical-spacer/>
-                <!-- Панель бронирования -->
-                <header-booking/>
-              </div>
-              <v-spacer/>
-              <!-- Слайдер -->
-              <header-slider @changeActiveSlide="changeActiveSlide"/>
-            </div>
-          </div>
-        </v-card>
-      </v-img>
-    </header>
+    <header-main :activeImage="activeImage"
+                 @changeActiveSlide="changeActiveSlide"/>
 
     <!-- рейтинг карточки -->
     <section class="rating mt-5">
-      <div class="rating-container general-container d-flex">
+      <div class="rating-container justify-space-between d-flex">
         <!-- Яндекс -->
         <rating-yandex/>
-
         <!-- Высокий рейтинг -->
         <rating-tl-rep/>
-
         <!-- Отели 4-5 звёзд -->
         <rating-we-care/>
-
         <!-- Удобное бронирование -->
         <rating-booking-comfort/>
-
         <!-- Актуальное (погода) -->
         <rating-weather/>
-
       </div>
     </section>
 
@@ -126,17 +83,16 @@
                              v-for="item in hotelList" :key="item.id">
             <v-expansion-panel-header class="hotelGroup-accordion-item--header ma-0 pa-0" disable-icon-rotate>
               <div class="hotelGroup-accordion-item--header-container d-flex align-center my-2">
-                <div class="hotelGroup-accordion-item--header-count d-flex justify-center align-center golden-gradient--text">
+
+                <div class="hotelGroup-accordion-item--header-count fontSize-m--xl d-flex justify-center align-center golden-gradient--text">
                   {{ item.id }}
                 </div>
 
-                <v-card-title class="hotelGroup-accordion-item--header-title text-uppercase golden-gradient--text">
+                <v-card-title class="hotelGroup-accordion-item--header-title fontSize-xxl text-uppercase golden-gradient--text">
                   {{ item.title }}
                 </v-card-title>
 
-                <v-spacer/>
-
-                <v-card-title class="hotelGroup-accordion-item--header-price text-uppercase mr-8">
+                <v-card-title class="hotelGroup-accordion-item--header-price fontSize-xl--s text-uppercase mr-8">
                   От {{ thousandSeparator(item.price) }} руб.
                 </v-card-title>
               </div>
@@ -167,6 +123,8 @@
     <section class="seasonPrograms">
       <div class="seasonPrograms-container">
 
+
+        <!-- Летом  -->
         <div class="seasonPrograms-group d-flex justify-space-between">
           <v-card class="seasonPrograms-summer seasonPrograms-item"
                   elevation="0" rounded="xxl"
@@ -177,8 +135,10 @@
             </div>
           </v-card>
 
-          <v-card class="seasonPrograms-card mx-2" rounded="xxl"
-                  width="380px" height="165px"
+
+          <!-- Бесплатный трансфер до пляжа -->
+          <v-card class="seasonPrograms-card free-transfer"
+                  rounded="xxl" height="165px"
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -197,8 +157,10 @@
             </div>
           </v-card>
 
-          <v-card class="seasonPrograms-card mx-1" rounded="xxl"
-                  width="380px" height="165px"
+
+          <!-- Живая музыка в баре у бассейна -->
+          <v-card class="seasonPrograms-card live-music"
+                  rounded="xxl" height="165px"
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -216,8 +178,11 @@
             </div>
           </v-card>
 
-          <v-card class="seasonPrograms-card mx-1" rounded="xxl"
-                  width="570px" height="165px"
+
+          <!-- Анимация для детей: веселье и игры -->
+          <v-card class="seasonPrograms-card fun-for-kids"
+                  rounded="xxl" height="165px"
+
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -236,27 +201,34 @@
             </div>
           </v-card>
 
-          <v-btn class="seasonPrograms-more ml-1 rounded-xxl"
+
+          <!-- Ещё -->
+          <v-btn class="seasonPrograms-more rounded-xxl"
                  width="63px" height="165px" elevation="0" color="transparent">
             <div class="seasonPrograms-more-container">
               <div class="seasonPrograms-more-text summer d-flex justify-center align-center rounded-xxl">Ещё</div>
             </div>
           </v-btn>
+
+
         </div>
 
+        <!-- Зимой -->
         <div class="seasonPrograms-group d-flex justify-space-between mt-8">
 
+
           <v-card class="seasonPrograms-winter seasonPrograms-item"
-                  elevation="0" rounded="xxl"
-                  width="63px" height="165px"
-                  color="transparent">
+                  rounded="xxl" width="63px" height="165px"
+                  elevation="0" color="transparent">
             <div class="seasonPrograms-item-container">
               <div class="seasonPrograms-item-text winter d-flex justify-center align-center rounded-xxl">Зимой</div>
             </div>
           </v-card>
 
-          <v-card class="seasonPrograms-card mx-2" rounded="xxl"
-                  width="380px" height="165px"
+
+          <!-- бесплатный трансфер до подъёмников -->
+          <v-card class="seasonPrograms-card free-transfer"
+                  rounded="xxl" height="165px"
                   elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -275,8 +247,10 @@
             </div>
           </v-card>
 
-          <v-card class="seasonPrograms-card mx-1" rounded="xxl"
-                  width="570px" height="165px"
+
+          <!-- ski-room хранилище для зимнего спортивного снаряжения -->
+          <v-card class="seasonPrograms-card ski-room"
+                  rounded="xxl" height="165px"
                   elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -295,8 +269,10 @@
             </div>
           </v-card>
 
-          <v-card class="seasonPrograms-card mx-1" rounded="xxl"
-                  width="392px" height="165px"
+
+          <!-- подогреваемый бассеин -->
+          <v-card class="seasonPrograms-card heated-pool"
+                  rounded="xxl" height="165px"
                   elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -314,12 +290,16 @@
             </div>
           </v-card>
 
-          <v-btn class="seasonPrograms-more ml-1 rounded-xxl"
+
+          <!-- Ещё -->
+          <v-btn class="seasonPrograms-more rounded-xxl"
                  width="63px" height="165px" elevation="0" color="transparent">
             <div class="seasonPrograms-more-container">
               <div class="seasonPrograms-more-text winter d-flex justify-center align-center rounded-xxl">Ещё</div>
             </div>
           </v-btn>
+
+
         </div>
 
       </div>
@@ -328,25 +308,19 @@
     <!-- Эксклюзивная скидка за звонок -->
     <exclusive/>
 
-    <section class="reviews">
-      <div class="reviews-container general-container">
-
-        <div></div>
-
-
-      </div>
-    </section>
+    <!-- Наши гости делятся своими впечатлениями об отдыхе -->
+    <reviews/>
 
   </div>
 </template>
 <script lang="ts">
-import {Component, Ref, Vue} from "vue-property-decorator";
+import {Component, Vue} from "vue-property-decorator";
 import thousandSeparator from "../assets/scripts/thousandSeparator";
+
 @Component({
   methods: {thousandSeparator}
 })
 export default class Pages extends Vue {
-  showButtons: boolean = true
   activeImage: string = '_MG_2185_1.png'
   hotels: number = 0
   hotelList: any = [
@@ -367,19 +341,8 @@ export default class Pages extends Vue {
     },
   ]
 
-  mounted () {
-    this.resizer ()
-    window.addEventListener('resize', () => {
-      this.resizer()
-    })
-  }
-
   changeActiveSlide (value: string) {
     return this.activeImage = value
-  }
-
-  resizer () {
-    return this.showButtons = window.innerWidth >= 960
   }
 
 }
