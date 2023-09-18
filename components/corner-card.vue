@@ -13,7 +13,7 @@
     <v-lazy>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333 493">
         <defs>
-          <mask id='mask-1' x='0' y='0' width='inherit' height='inherit'>
+          <mask id='mask-1' x='0' y='0'>
             <path d="M251 23C251 10.2975 240.703 0 228 0H23C10.2975 0 0 10.2975 0 23V470C0 482.703 10.2975 493 23 493H310C322.703 493 333 482.703 333 470V103C333 90.2975 322.703 80 310 80H274C261.297 80 251 69.7025 251 57V23Z" fill="#D9D9D9"/>
           </mask>
         </defs>
