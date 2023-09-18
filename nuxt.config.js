@@ -1,7 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 const ImageminPlugin = require('imagemin-webpack-plugin').default
-// const isDev = process.env.NODE_ENV !== 'production' ?? false
-const isDev = true
 export default {
   server: {
     host: '0.0.0.0'
@@ -70,11 +68,9 @@ export default {
       }
     }
   },
-
   image: {
     inject: true
   },
-
   render: {
     resourceHints: false,
     etag: false,
@@ -84,38 +80,44 @@ export default {
   },
 
   build: {
-    optimizeCss: false,
-    transpile: [
-      "swiper"
-    ],
+    html:{
+      minify:{
+        minifyURLs: true,
+        minifyJS: true,
+        minifyCSS: true,
+        decodeEntities: true,
+        useShortDoctype: true,
+        collapseWhitespace: true,
+        trimCustomFragments: true,
+        preserveLineBreaks: false,
+        collapseBooleanAttributes: true,
+        processConditionalComments: true,
+        removeRedundantAttributes: true,
+        removeEmptyAttributes: true,
+        removeEmptyElements: true,
+        removeComments: true
+      }
+    },
+    optimizeCss: true,
+    extractCSS: { ignoreOrder: true },
+    transpile: ["swiper"],
     optimization: {
-      minimize: !isDev
+      minimize: true,
     },
     splitChunks: {
       layouts: true,
       pages: true,
-      commons: true
-    },
-    ...(!isDev && {
-      extractCSS: {
-        ignoreOrder: true
-      }
-    }),
-    ...(!isDev && {
-      html: {
-        minify: {
-          collapseBooleanAttributes: true,
-          decodeEntities: true,
-          minifyCSS: true,
-          minifyJS: true,
-          processConditionalComments: true,
-          removeEmptyAttributes: true,
-          removeRedundantAttributes: true,
-          trimCustomFragments: true,
-          useShortDoctype: true
+      commons: true,
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.(less|css|vue)$/,
+          chunks: 'all',
+          enforce: true
         }
       }
-    }),
+    },
+
     extend (config, ctx) {
       const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
       const vueSvgLoader = [
@@ -141,7 +143,6 @@ export default {
         }
       })
       if (!ctx.isDev) config.plugins.push(imageMinPlugin)
-
       config.module.rules.forEach(rule => {
         if (rule.test.toString() === ORIGINAL_TEST) {
           rule.test = /\.(png|jpe?g|gif|webp)$/i
@@ -156,7 +157,6 @@ export default {
           ]
         }
       })
-
       const svgRule = {
         test: /\.svg$/,
         oneOf: [
