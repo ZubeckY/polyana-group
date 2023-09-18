@@ -2,22 +2,22 @@
   <nav class="nav pt-4">
     <div v-if="showButtons" class="nav-container general-container d-flex flex-row">
       <div class="nav-button-group d-flex align-center justify-space-between">
-        <nav-menu class="mr-auto"/>
-        <nav-btn class="mx-auto">Главная</nav-btn>
-        <nav-btn class="mx-auto">Отели</nav-btn>
-        <nav-btn class="mx-auto">Номера</nav-btn>
-        <nav-btn class="mx-auto">SPA</nav-btn>
-        <logo class="mx-auto"/>
-        <nav-btn class="mx-auto">Услуги</nav-btn>
-        <nav-btn class="mx-auto">Ресторан</nav-btn>
-        <nav-btn class="mx-auto">Контакты</nav-btn>
-        <nav-buttons class="ml-auto"/>
+        <lazy-nav-menu class="mr-auto"/>
+        <lazy-nav-btn class="mx-auto">Главная</lazy-nav-btn>
+        <lazy-nav-btn class="mx-auto">Отели</lazy-nav-btn>
+        <lazy-nav-btn class="mx-auto">Номера</lazy-nav-btn>
+        <lazy-nav-btn class="mx-auto">SPA</lazy-nav-btn>
+        <lazy-logo class="mx-auto"/>
+        <lazy-nav-btn class="mx-auto">Услуги</lazy-nav-btn>
+        <lazy-nav-btn class="mx-auto">Ресторан</lazy-nav-btn>
+        <lazy-nav-btn class="mx-auto">Контакты</lazy-nav-btn>
+        <lazy-nav-buttons class="ml-auto"/>
       </div>
     </div>
     <div v-else class="nav-container general-container d-flex flex-row justify-space-between align-center">
-      <logo/>
-      <nav-menu/>
-      <nav-buttons/>
+      <lazy-logo/>
+      <lazy-nav-menu/>
+      <lazy-nav-buttons/>
     </div>
   </nav>
 </template>

@@ -45,7 +45,7 @@
                   <v-carousel-item class="footer-slide"
                                    v-for="(item, i) in localMapping[activeChip]['photos']"
                                    :key="'photo-' + item.id">
-                    <footer-slide :item="item"/>
+                    <lazy-footer-slide :item="item"/>
                   </v-carousel-item>
                 </v-carousel>
               </div>
@@ -74,7 +74,7 @@
             </div>
             <v-spacer/>
             <!-- Забронировать -->
-            <footer-booking/>
+            <lazy-footer-booking/>
           </div>
         </div>
       </div>

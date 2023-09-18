@@ -6,14 +6,14 @@
       <div class="d-flex justify-space-between align-center">
         <v-card-title class="rating-card-title d-flex justify-space-between ma-0 pa-0 w-100">
           <div>Актуальное</div>
-          <rating-yandex-arrow/>
+          <lazy-rating-yandex-arrow/>
         </v-card-title>
       </div>
-      <v-vertical-spacer/>
+      <lazy-v-vertical-spacer/>
       <v-card-text class="rating-card-text ma-0 pa-0">29 августа, Малооблачно,
         без осадков.
       </v-card-text>
-      <v-vertical-spacer/>
+      <lazy-v-vertical-spacer/>
       <div class="d-flex align-center">
         <v-card class="rating-weather-text py-2 mr-1 mr-1"
                 color="var(--golden-1)" elevation="0"

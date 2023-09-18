@@ -3,7 +3,7 @@
     <div class="swiper overflow-hidden" ref="container">
       <div class="swiper-wrapper d-flex flex-row">
         <div class="swiper-slide" v-for="i in 3">
-          <corner-card/>
+          <lazy-corner-card/>
         </div>
       </div>
     </div>

@@ -4,14 +4,14 @@
           color="var(--card-grey)">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex justify-space-between align-center">
-        <rating-yandex-icon/>
-        <rating-yandex-arrow/>
+        <lazy-rating-yandex-icon/>
+        <lazy-rating-yandex-arrow/>
       </div>
-      <v-vertical-spacer/>
+      <lazy-v-vertical-spacer/>
       <div>
-        <rating-yandex-star v-for="i in 5" :key="'star'+i"/>
+        <lazy-rating-yandex-star v-for="i in 5" :key="'star'+i"/>
       </div>
-      <v-vertical-spacer/>
+      <lazy-v-vertical-spacer/>
       <v-card-text class="d-inline rating-card-text ma-0 pa-0">
         <span class="rating-card-text font-weight-black mr-1">5,0</span>рейтинг в Яндекс
         на основе 1300+ отзывов

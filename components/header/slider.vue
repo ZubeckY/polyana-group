@@ -16,7 +16,9 @@
                    :input-value="active"
                    width="70px" height="70px" fab
                    color="rgba(255, 255, 255, 0.75);">
-              <img :src="require('@/assets/img/header/slider/' + item['small'])" alt="img"/>
+              <v-lazy>
+                <img :src="require('@/assets/img/header/slider/' + item['small'])" alt="img"/>
+              </v-lazy>
             </v-btn>
 
           </v-slide-item>

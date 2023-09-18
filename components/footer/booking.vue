@@ -1,6 +1,6 @@
 <template>
   <v-card class="footer-booking d-flex flex-column justify-center rounded-xxl" color="#454850" elevation="0">
-    <logo class="mx-auto"/>
+    <lazy-logo class="mx-auto"/>
     <v-card-actions class="pa-0 mt-10">
       <v-btn class="footer-booking-btn rounded-xxl mx-auto" width="237px" height="37px"
              color="golden-gradient" elevation="0" dark v-text="'Забронировать'"></v-btn>
@@ -30,7 +30,8 @@
              width="36px" height="36px"
              min-width="0" min-height="0"
              elevation="0" color="#24A2DF">
-        <v-img :src="require(`~/assets/img/footer/telegram.png`)"/>
+        <v-img :lazy-src="require(`~/assets/img/footer/telegram.png`)"
+               :src="require(`~/assets/img/footer/telegram.png`)"/>
       </v-btn>
       <v-btn class="rounded-lg"
              width="36px" height="36px"

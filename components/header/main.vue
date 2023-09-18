@@ -5,22 +5,23 @@
            elevation="0"
            position="top right"
            :contain="showButtons"
+           :lazy-src="require('@/assets/img/header/slider/' + activeImage)"
            :src="require('@/assets/img/header/slider/' + activeImage)">
       <!-- Градиент -->
       <div class="header-wrapper">
         <div class="header-wrapper-inner general-container">
           <!-- Навигация -->
-          <nav-polyana/>
+          <lazy-nav-polyana/>
           <!-- Контент -->
           <div class="header-wrapper d-flex flex-row">
             <div class="header-wrapper-container d-flex flex-column">
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <!-- Отдыхайте с комфортом, ( Лето/Зима ) -->
               <section class="header-info">
                 <div class="header-info-container general-container d-flex">
                   <div class="d-flex flex-row mt-4">
                     <!-- Лето/Зима -->
-                    <header-switch v-if="showButtons"/>
+                    <lazy-header-switch v-if="showButtons"/>
                     <!-- Отдыхайте с комфортом -->
                     <div class="relax-in-comfort fontSize-xl--l">Отдыхайте с комфортом
                       и наслаждайтесь <span class="golden">красотами
@@ -30,14 +31,14 @@
                   </div>
                 </div>
               </section>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <!-- Панель бронирования -->
-              <header-booking/>
+              <lazy-header-booking/>
             </div>
             <v-spacer/>
             <!-- Слайдер -->
-            <header-slider v-if="showButtons"
-                           @changeActiveSlide="changeActiveSlide"/>
+            <lazy-header-slider v-if="showButtons"
+                                @changeActiveSlide="changeActiveSlide"/>
           </div>
         </div>
       </div>

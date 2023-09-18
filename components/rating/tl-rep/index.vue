@@ -16,7 +16,7 @@
           рейтинг
         </v-card-title>
       </div>
-      <v-vertical-spacer/>
+      <lazy-v-vertical-spacer/>
       <v-card-text class="rating-card-text ma-0 pa-0">Средний рейтинг отелей по оценкам
         гостей в TL: Reputation
       </v-card-text>

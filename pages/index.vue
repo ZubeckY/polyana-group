@@ -1,24 +1,22 @@
 <template>
   <div>
-    <is-demo/>
-
     <!-- хедер -->
-    <header-main :activeImage="activeImage"
-                 @changeActiveSlide="changeActiveSlide"/>
+    <lazy-header-main :activeImage="activeImage"
+                      @changeActiveSlide="changeActiveSlide"/>
 
     <!-- рейтинг карточки -->
     <section class="rating mt-5">
       <div class="rating-container justify-space-between d-flex">
         <!-- Яндекс -->
-        <rating-yandex/>
+        <lazy-rating-yandex/>
         <!-- Высокий рейтинг -->
-        <rating-tl-rep/>
+        <lazy-rating-tl-rep/>
         <!-- Отели 4-5 звёзд -->
-        <rating-we-care/>
+        <lazy-rating-we-care/>
         <!-- Удобное бронирование -->
-        <rating-booking-comfort/>
+        <lazy-rating-booking-comfort/>
         <!-- Актуальное (погода) -->
-        <rating-weather/>
+        <lazy-rating-weather/>
       </div>
     </section>
 
@@ -49,18 +47,21 @@
                 </div>
               </div>
 
-              <v-card class="pinterest-video rounded-xxl"
-                      elevation="0" width="100%" height="485px"
-                      :img="require(`~/assets/img/pinterest/video.png`)">
-
-                <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
-                        color="var(--dark-color)"
-                        elevation="0" rounded="circle"
-                        width="160px" height="160px">
-                  <pinterest-rotate/>
-                  <v-img class="pinterest-video-aboutHotels-play" :src="require(`~/assets/img/top-right-arrow.png`)"/>
+              <v-lazy>
+                <v-card class="pinterest-video rounded-xxl"
+                        elevation="0" width="100%" height="485px"
+                        :img="require(`~/assets/img/pinterest/video.png`)">
+                  <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
+                          color="var(--dark-color)"
+                          elevation="0" rounded="circle"
+                          width="160px" height="160px">
+                    <lazy-pinterest-rotate/>
+                    <v-img class="pinterest-video-aboutHotels-play"
+                           :lazy-src="require(`~/assets/img/top-right-arrow.png`)"
+                           :src="require(`~/assets/img/top-right-arrow.png`)"/>
+                  </v-card>
                 </v-card>
-              </v-card>
+              </v-lazy>
             </v-card>
           </div>
         </v-card>
@@ -117,7 +118,7 @@
     </section>
 
     <!-- Специальные предложения -->
-    <special-offers/>
+    <lazy-special-offers/>
 
     <!-- Развлекуха летом/зимой-->
     <section class="seasonPrograms">
@@ -150,7 +151,7 @@
                   ТРАНСФЕР
                   ДО ПЛЯЖА</v-card-title>
               </div>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <v-card-text class="pa-0">Наши гости могут воспользоваться
                 бесплатным трансфером до пляжа
               </v-card-text>
@@ -171,7 +172,7 @@
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
               </div>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <v-card-text class="pa-0">Живая музыка в баре у бассейна
                 создает идеальную атмосферу
               </v-card-text>
@@ -194,7 +195,7 @@
                   детей: веселье
                   и ИГРЫ</v-card-title>
               </div>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <v-card-text class="pa-0">Наши маленькие гости не соскучатся благодаря
                 увлекательной детской анимации с играми и развлечениями
               </v-card-text>
@@ -240,7 +241,7 @@
                   ТРАНСФЕР
                   ДО ПОДЪЕМНИКОВ</v-card-title>
               </div>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <v-card-text class="pa-0">Воспользуйтесь бесплатным
                 трансфером до горнолыжных трасс
               </v-card-text>
@@ -262,7 +263,7 @@
                   зимнего спортивного
                   снаряжения</v-card-title>
               </div>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <v-card-text class="pa-0">Обеспечим безопасное хранение вашего зимнего
                 снаряжения с функцией эффективной сушки.
               </v-card-text>
@@ -283,7 +284,7 @@
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>
               </div>
-              <v-vertical-spacer/>
+              <lazy-v-vertical-spacer/>
               <v-card-text class="pa-0">Насладитесь всегда теплым бассейном:
                 +30 градусов круглый год! *
               </v-card-text>
@@ -306,17 +307,16 @@
     </section>
 
     <!-- Эксклюзивная скидка за звонок -->
-    <exclusive/>
+    <lazy-exclusive/>
 
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
-    <reviews/>
+    <lazy-reviews/>
 
   </div>
 </template>
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import thousandSeparator from "../assets/scripts/thousandSeparator";
-
 @Component({
   methods: {thousandSeparator}
 })

@@ -20,12 +20,6 @@
 import {Vue, Component} from 'vue-property-decorator';
 @Component({})
 export default class IsDemo extends  Vue {
-  show: boolean = false
-
-  mounted () {
-    setTimeout(() => {
-      this.show = true
-    }, 500)
-  }
+  show: boolean = true
 }
 </script>

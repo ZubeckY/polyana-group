@@ -8,41 +8,45 @@
         предоставим скидку
       </v-card-title>
 
-      <div class="feedbackForm-inputGroup mt-5">
-        <label class="feedbackForm-inputGroup-label d-block mb-2" for="phone">Телефон</label>
-        <v-text-field v-model="model.phone"
-                      v-mask="'+7 (###) ###-##-##'"
-                      id="phone" solo
-                      class="feedbackForm-inputGroup-input"
-                      prepend-inner-icon="mdi-phone"
-                      placeholder="+7 (9XX) XXX-XX-XX"/>
-      </div>
+      <v-lazy>
+        <div class="feedbackForm-inputGroup mt-5">
+          <label class="feedbackForm-inputGroup-label d-block mb-2" for="phone">Телефон</label>
+          <v-text-field v-model="model.phone"
+                        v-mask="'+7 (###) ###-##-##'"
+                        id="phone" solo
+                        class="feedbackForm-inputGroup-input"
+                        prepend-inner-icon="mdi-phone"
+                        placeholder="+7 (9XX) XXX-XX-XX"/>
+        </div>
+      </v-lazy>
 
-      <div class="feedbackForm-inputGroup mt-4">
-        <label class="feedbackForm-inputGroup-label d-block mb-2" for="date">Дата заезда</label>
-        <v-menu v-model="menu" ref="menu"
-                :close-on-content-click="false"
-                transition="scale-transition"
-                min-width="auto" offset-y>
-          <template v-slot:activator="{ on, attrs }">
-            <v-text-field v-model="model.date"
-                          v-bind="attrs" v-on="on"
-                          :placeholder="maxDate"
-                          id="date" solo readonly clearable
-                          class="feedbackForm-inputGroup-input"
-                          prepend-inner-icon="mdi-calendar-month-outline"
-                          placeholder="03.09.2023"/>
-          </template>
-          <v-date-picker v-model="model.date"
-                         @change="save"
-                         locale="ru-ru"
-                         :max="maxDate"
-                         min="1950-01-01"
-                         no-title scrollable
-                         :first-day-of-week="1"
-                         :active-picker.sync="activePicker"/>
-        </v-menu>
-      </div>
+      <v-lazy>
+        <div class="feedbackForm-inputGroup mt-4">
+          <label class="feedbackForm-inputGroup-label d-block mb-2" for="date">Дата заезда</label>
+          <v-menu v-model="menu" ref="menu"
+                  :close-on-content-click="false"
+                  transition="scale-transition"
+                  min-width="auto" offset-y>
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field v-model="model.date"
+                            v-bind="attrs" v-on="on"
+                            :placeholder="maxDate"
+                            id="date" solo readonly clearable
+                            class="feedbackForm-inputGroup-input"
+                            prepend-inner-icon="mdi-calendar-month-outline"
+                            placeholder="03.09.2023"/>
+            </template>
+            <v-date-picker v-model="model.date"
+                           @change="save"
+                           locale="ru-ru"
+                           :max="maxDate"
+                           min="1950-01-01"
+                           no-title scrollable
+                           :first-day-of-week="1"
+                           :active-picker.sync="activePicker"/>
+          </v-menu>
+        </div>
+      </v-lazy>
 
       <v-card-actions class="feedbackForm-actions mt-4 pa-0">
         <v-btn class="feedbackForm-button" width="325px" height="55px" elevation="0" dark>
