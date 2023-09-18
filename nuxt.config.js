@@ -20,37 +20,29 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  components: true,
   css: [
     '~/assets/styles/main.less',
     '~/assets/styles/screen.less',
-    '~/assets/styles/ui-styles.less',
+    '~/assets/styles/ui-styles.less'
   ],
-
   plugins: [
-    '~/plugins/v_mask.js',
+    '~/plugins/v_mask.js'
   ],
-
-  components: true,
-
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/vuetify',
     "nuxt-storm"
   ],
-
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     'nuxt-webfontloader',
     "cookie-universal-nuxt"
   ],
-
   axios: {
-    baseURL: '/',
-    proxy: true
+    baseURL: '/', proxy: true
   },
-
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -68,17 +60,12 @@ export default {
       }
     }
   },
-  image: {
-    inject: true
-  },
+  image: { inject: true },
   render: {
-    resourceHints: false,
     etag: false,
-    static: {
-      etag: false
-    }
+    resourceHints: false,
+    static: { etag: false }
   },
-
   build: {
     html:{
       minify:{
@@ -102,7 +89,7 @@ export default {
     extractCSS: { ignoreOrder: true },
     transpile: ["swiper"],
     optimization: {
-      minimize: true,
+      minimize: true
     },
     splitChunks: {
       layouts: true,
@@ -120,64 +107,34 @@ export default {
 
     extend (config, ctx) {
       const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
-      const vueSvgLoader = [
-        {
-          loader: 'vue-svg-loader',
-          options: {
-            svgo: false
-          }
-        }
-      ]
+      const vueSvgLoader = [{
+        loader: 'vue-svg-loader',
+        options: { svgo: false }
+      }]
       const imageMinPlugin = new ImageminPlugin({
+        test: ORIGINAL_TEST,
+        loader: 'url-loader',
+        options: {
+          limit: 1000, name: '[path][name].[ext]'
+        },
         pngquant: {
           quality: '5-30',
-          speed: 7,
-          strip: true
+          speed: 7, strip: true
         },
-        jpegtran: {
-          progressive: true
-
-        },
-        gifsicle: {
-          interlaced: true
-        }
-      })
-      if (!ctx.isDev) config.plugins.push(imageMinPlugin)
-      config.module.rules.forEach(rule => {
-        if (rule.test.toString() === ORIGINAL_TEST) {
-          rule.test = /\.(png|jpe?g|gif|webp)$/i
-          rule.use = [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 1000,
-                name: ctx.isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]'
-              }
-            }
-          ]
-        }
+        jpegtran: { progressive: true },
+        gifsicle: { interlaced: true }
       })
       const svgRule = {
         test: /\.svg$/,
         oneOf: [
-          {
-            resourceQuery: /inline/,
-            use: vueSvgLoader
-          },
-          {
-            resourceQuery: /data/,
-            loader: 'url-loader'
-          },
-          {
-            resourceQuery: /raw/,
-            loader: 'raw-loader'
-          },
-          {
-            loader: 'file-loader' // By default, always use file-loader
-          }
+          { resourceQuery: /inline/, use: vueSvgLoader },
+          { resourceQuery: /data/,  loader: 'url-loader' },
+          { resourceQuery: /raw/, loader: 'raw-loader' },
+          { loader: 'file-loader' }
         ]
       }
-      config.module.rules.push(svgRule) // Actually add the rule
+      config.module.rules.push(svgRule)
+      config.plugins.push(imageMinPlugin)
     }
   }
 }
