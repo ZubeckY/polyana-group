@@ -6,7 +6,6 @@
         <v-icon>mdi-chevron-up</v-icon>
       </v-btn>
 
-
       <v-slide-group v-model="activeItem" mandatory>
         <div class="d-flex flex-column">
           <v-slide-item v-for="(item, i) in images" :key="i"
@@ -25,7 +24,6 @@
         </div>
       </v-slide-group>
 
-
       <!-- Кнопка вперёд -->
       <v-btn @click="activeItem++" class="mt-1" width="40px" height="40px" fab>
         <v-icon>mdi-chevron-down</v-icon>
@@ -34,36 +32,22 @@
   </section>
 </template>
 <script lang="ts">
-import {Component, Ref, Vue, Watch} from "vue-property-decorator"
+import {Component, Vue, Watch} from "vue-property-decorator"
 @Component({})
 export default class HeaderSlider extends Vue {
   activeItem: number = 0
   images: any = [
-    {
-      small: `Rectangle91.png`,
-      big: `_MG_2185_1.png`,
-    },
-    {
-      small: `Rectangle92.png`,
-      big: `_MG_2327.jpg`,
-    },
-    {
-      small: `Rectangle93.png`,
-      big: `_MG_7748.jpg`,
-    }
+    { small: `Rectangle91.png`, big: `_MG_2185_1.png`, },
+    { small: `Rectangle92.png`, big: `_MG_2327.jpg`, },
+    { small: `Rectangle93.png`, big: `_MG_7748.jpg`, }
   ]
-
-  created () {
-    this.changeActiveSlide ()
-  }
-
+  created () {this.changeActiveSlide ()}
   @Watch ('activeItem')
   changeActiveSlide () {
-    let i = this.activeItem
+    let i = this.activeItem;
     if (this.activeItem > 2 || this.activeItem < 0) i = 0
     this.$emit('changeActiveSlide', this.images[i]['big'])
   }
-
 }
 </script>
 

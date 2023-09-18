@@ -10,43 +10,18 @@
   --gradiend-golden: linear-gradient(to right, var(--text-golden-1), var(--text-golden-2));
   --bordrad23: 23px;
 }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg);} }
 
-* {
-  font-family: 'Gals' !important;
-  line-height: normal !important;
-  font-style: normal !important;
-}
-.v-expansion-panel::before { box-shadow: none !important; }
-
+* {font-family: 'Gals' !important; line-height: normal !important; font-style: normal !important;}
 .w-100 { width: 100%; }
 .vertical-spacer { flex: 1 1 auto;}
-
-.total-container {
-  width: 100%;
-  max-width: 1600px;
-
-}
-.general-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 1400px;
-}
-
-.v-card {
-  &__title,
-  &__text {
-    word-break: normal !important
-  }
-}
-
-.golden-gradient {
-  background: var(--gradiend-golden);
-  &--text {
-    color: transparent; background-clip: text;
-    background-image: var(--gradiend-golden);
-  }
-}
+.total-container { width: 100%; max-width: 1600px; }
+.general-container { width: 100%; margin: 0 auto; padding: 0 20px; max-width: 1400px; }
+.golden-gradient {background: var(--gradiend-golden); &--text { color: transparent; background-clip: text; background-image: var(--gradiend-golden);} }
+.v-card { &__title, &__text { word-break: normal !important} }
+.v-expansion-panel::before { box-shadow: none !important; }
 
 .fontSize {
   &-s {
@@ -74,17 +49,4 @@
     &--xl  { font-size: 50px !important; }
   }
   &-xxl { font-size: 60px !important; }
-}
-
-@-moz-keyframes spin {
-  100% { -moz-transform: rotate(360deg); }
-}
-@-webkit-keyframes spin {
-  100% { -webkit-transform: rotate(360deg); }
-}
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform:rotate(360deg);
-  }
 }

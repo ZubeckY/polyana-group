@@ -111,9 +111,7 @@
 
           </v-expansion-panel>
         </v-expansion-panels>
-
         <div class="hotelGroup-line"></div>
-
       </div>
     </section>
 
@@ -123,7 +121,6 @@
     <!-- Развлекуха летом/зимой-->
     <section class="seasonPrograms">
       <div class="seasonPrograms-container">
-
 
         <!-- Летом  -->
         <div class="seasonPrograms-group d-flex justify-space-between">
@@ -135,7 +132,6 @@
               <div class="seasonPrograms-item-text summer d-flex justify-center align-center rounded-xxl">Летом</div>
             </div>
           </v-card>
-
 
           <!-- Бесплатный трансфер до пляжа -->
           <v-card class="seasonPrograms-card free-transfer"
@@ -158,7 +154,6 @@
             </div>
           </v-card>
 
-
           <!-- Живая музыка в баре у бассейна -->
           <v-card class="seasonPrograms-card live-music"
                   rounded="xxl" height="165px"
@@ -178,7 +173,6 @@
               </v-card-text>
             </div>
           </v-card>
-
 
           <!-- Анимация для детей: веселье и игры -->
           <v-card class="seasonPrograms-card fun-for-kids"
@@ -202,7 +196,6 @@
             </div>
           </v-card>
 
-
           <!-- Ещё -->
           <v-btn class="seasonPrograms-more rounded-xxl"
                  width="63px" height="165px" elevation="0" color="transparent">
@@ -211,12 +204,10 @@
             </div>
           </v-btn>
 
-
         </div>
 
         <!-- Зимой -->
         <div class="seasonPrograms-group d-flex justify-space-between mt-8">
-
 
           <v-card class="seasonPrograms-winter seasonPrograms-item"
                   rounded="xxl" width="63px" height="165px"
@@ -225,7 +216,6 @@
               <div class="seasonPrograms-item-text winter d-flex justify-center align-center rounded-xxl">Зимой</div>
             </div>
           </v-card>
-
 
           <!-- бесплатный трансфер до подъёмников -->
           <v-card class="seasonPrograms-card free-transfer"
@@ -248,7 +238,6 @@
             </div>
           </v-card>
 
-
           <!-- ski-room хранилище для зимнего спортивного снаряжения -->
           <v-card class="seasonPrograms-card ski-room"
                   rounded="xxl" height="165px"
@@ -270,7 +259,6 @@
             </div>
           </v-card>
 
-
           <!-- подогреваемый бассеин -->
           <v-card class="seasonPrograms-card heated-pool"
                   rounded="xxl" height="165px"
@@ -291,7 +279,6 @@
             </div>
           </v-card>
 
-
           <!-- Ещё -->
           <v-btn class="seasonPrograms-more rounded-xxl"
                  width="63px" height="165px" elevation="0" color="transparent">
@@ -300,18 +287,14 @@
             </div>
           </v-btn>
 
-
         </div>
 
       </div>
     </section>
-
     <!-- Эксклюзивная скидка за звонок -->
     <lazy-exclusive/>
-
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
     <lazy-reviews/>
-
   </div>
 </template>
 <script lang="ts">
@@ -341,9 +324,6 @@ export default class Pages extends Vue {
     },
   ]
 
-  changeActiveSlide (value: string) {
-    return this.activeImage = value
-  }
-
+  changeActiveSlide (value: string) {return this.activeImage = value}
 }
 </script>

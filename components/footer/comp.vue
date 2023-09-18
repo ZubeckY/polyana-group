@@ -146,68 +146,23 @@ export default class FooterComp extends Vue {
   ]
 
   links: any = [
-    {
-      link: '/',
-      title: 'О нас',
-    },
-    {
-      link: '/',
-      title: 'Блог',
-    },
-    {
-      link: '/',
-      title: 'Размещение',
-    },
-    {
-      link: '/',
-      title: 'Услуги',
-    },
-    {
-      link: '/',
-      title: 'Специальные предложения',
-    },
-    {
-      link: '/',
-      title: 'Как добраться',
-    },
-    {
-      link: '/',
-      title: 'Трансфер',
-    },
-    {
-      link: '/',
-      title: 'Реквизиты',
-    },
-    {
-      link: '/',
-      title: 'Контакты',
-    },
-    {
-      link: '/',
-      title: 'Частые вопросы',
-    },
-    {
-      link: '/',
-      title: 'Инфраструктура',
-    },
-    {
-      link: '/',
-      title: 'Активности на Красной поляне',
-    },
+    { link: '/', title: 'О нас', },
+    { link: '/', title: 'Блог', },
+    { link: '/', title: 'Размещение', },
+    { link: '/', title: 'Услуги', },
+    { link: '/', title: 'Специальные предложения', },
+    { link: '/', title: 'Как добраться', },
+    { link: '/', title: 'Трансфер', },
+    { link: '/', title: 'Реквизиты', },
+    { link: '/', title: 'Контакты', },
+    { link: '/', title: 'Частые вопросы', },
+    { link: '/', title: 'Инфраструктура', },
+    { link: '/', title: 'Активности на Красной поляне', },
   ]
 
   @Watch('activeChip')
-  changeController () {
-    this.changeMapping()
-    this.emptyActiveSlide ()
-  }
-
-  changeMapping () {
-    this.$emit('changeMapping', this.localMapping[this.activeChip]['htmltagyandexmap'])
-  }
-
-  emptyActiveSlide () {
-    return this.activeSlide = -1
-  }
+  changeController () {this.changeMapping(); this.emptyActiveSlide ()};
+  changeMapping () {this.$emit('changeMapping', this.localMapping[this.activeChip]['htmltagyandexmap'])};
+  emptyActiveSlide () {return this.activeSlide = -1};
 }
 </script>

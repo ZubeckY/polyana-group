@@ -50,23 +50,15 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 
 @Component({})
 export default class HeaderMain extends Vue {
-  @Prop () activeImage!: string
+  @Prop () activeImage!: string;
   showButtons: boolean = true
 
   mounted () {
     this.resizer ()
-    window.addEventListener('resize', () => {
-      this.resizer()
-    })
+    window.addEventListener('resize', () => {this.resizer()})
   }
-
-  changeActiveSlide (slide: string) {
-    this.$emit('changeActiveSlide', slide)
-  }
-
-  resizer () {
-    return this.showButtons = window.innerWidth > 960
-  }
+  changeActiveSlide (slide: string) {this.$emit('changeActiveSlide', slide)}
+  resizer () {return this.showButtons = window.innerWidth > 960}
 
 }
 </script>

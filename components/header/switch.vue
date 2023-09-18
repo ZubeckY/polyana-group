@@ -21,7 +21,7 @@
   </div>
 </template>
 <script lang="ts">
-import {Component, Ref, Vue} from "vue-property-decorator"
+import {Component, Vue} from "vue-property-decorator"
 @Component({})
 export default class HeaderSwitch extends Vue {
   season: string = 'summer'

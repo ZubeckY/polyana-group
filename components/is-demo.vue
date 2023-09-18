@@ -1,7 +1,5 @@
 <template>
-  <v-alert v-model="show" outlined
-           class="my-4" elevation="0"
-           rounded="xxl" type="error">
+  <v-alert v-model="show" outlined class="my-4" elevation="0" rounded="xxl" type="error">
     <div class="d-flex justify-space-between">
       <div>
         <v-card-title class="fontSize-m--xl pa-0">Внимание!</v-card-title>

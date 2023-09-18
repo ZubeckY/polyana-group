@@ -12,15 +12,9 @@
         <div class="reviews-cards-group d-flex mt-9">
           <div class="reviews-cards-group-gradient">
             <v-card class="d-flex align-center rounded-xl pl-8"
-                    elevation="0"
-                    width="359px"
-                    height="78px"
-                    color="golden-gradient">
+                    elevation="0" width="359px" height="78px" color="golden-gradient">
               <v-card class="d-flex justify-center align-center mr-3"
-                      rounded="circle"
-                      elevation="0"
-                      width="45px"
-                      height="45px">
+                      rounded="circle" elevation="0" width="45px" height="45px">
                 <img class="d-block"
                      :src="require(`~/assets/img/reviews/yandex.png`)" alt="Я">
               </v-card>
@@ -29,15 +23,9 @@
             </v-card>
 
             <v-card class="d-flex align-center rounded-xl mt-4 pl-8"
-                    elevation="0"
-                    width="359px"
-                    height="78px"
-                    color="golden-gradient">
+                    elevation="0" width="359px" height="78px" color="golden-gradient">
               <v-card class="d-flex justify-center align-center mr-3"
-                      rounded="circle"
-                      elevation="0"
-                      width="45px"
-                      height="45px">
+                      rounded="circle" elevation="0" width="45px" height="45px">
                 <img class="d-block"
                      :src="require(`~/assets/img/reviews/tl-rep.png`)" alt="Я">
               </v-card>
@@ -48,26 +36,21 @@
 
 
           <div class="reviews-cards-group-transparent ml-8">
-            <v-card elevation="0" height="78px"
-                    color="transparent">
+            <v-card elevation="0" height="78px" color="transparent">
               <v-card-title class="reviews-cards-group-transparent-title pa-0">5,0 рейтинг в Яндекс
                 на основе 1300+ отзывов
               </v-card-title>
               <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1"
-                     color="#CCAC6C" height="auto"
-                     min-width="0" min-height="0"
+                     color="#CCAC6C" height="auto" min-width="0" min-height="0"
                      text>ОСТАВИТЬ ОТЗЫВ</v-btn>
             </v-card>
 
-            <v-card class="mt-4" elevation="0"
-                    height="78px" color="transparent">
+            <v-card class="mt-4" elevation="0" height="78px" color="transparent">
               <v-card-title class="reviews-cards-group-transparent-title pa-0">5,0 рейтинг в TravelLine
                 на основе 800+ отзывов
               </v-card-title>
               <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1"
-                     color="#CCAC6C" height="auto"
-                     in-width="0" min-height="0"
-                     text>ОСТАВИТЬ ОТЗЫВ</v-btn>
+                     color="#CCAC6C" height="auto" in-width="0" min-height="0" text>ОСТАВИТЬ ОТЗЫВ</v-btn>
             </v-card>
           </div>
         </div>
@@ -77,25 +60,18 @@
         <v-card-actions class="reviews-slider-buttons px-0">
           <v-spacer/>
 
-          <v-btn elevation="0" rounded
-                 width="40px" height="40px"
-                 min-height="0" min-width="0">
+          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0">
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
 
-          <v-btn elevation="0" rounded
-                 width="40px" height="40px"
-                 min-height="0" min-width="0">
+          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0">
             <v-icon>mdi-chevron-right</v-icon>
           </v-btn>
 
         </v-card-actions>
-        <div class="">
-          <v-card class="reviews-slider-card rounded-xxl"
-                  elevation="0"
-                  width="558px"
-                  height="289px">
 
+        <div class="">
+          <v-card class="reviews-slider-card rounded-xxl" elevation="0" width="558px" height="289px">
           </v-card>
         </div>
       </div>
@@ -107,6 +83,5 @@
 import {Vue, Component} from 'vue-property-decorator';
 @Component({})
 export default class Reviews extends Vue {
-
 }
 </script>

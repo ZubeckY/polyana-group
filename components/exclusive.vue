@@ -2,12 +2,10 @@
   <section class="exclusive">
     <v-lazy>
       <v-card class="exclusive-background d-flex flex-column align-center justify-center rounded-xxl pa-4"
-              elevation="0" min-height="736px" color="transparent"
-              :img="require('~/assets/img/exclusive/background.png')">
+              elevation="0" min-height="736px" color="transparent" :img="require('~/assets/img/exclusive/background.png')">
 
         <v-card class="exclusive-container d-flex justify-center align-center"
-                width="100%" height="500px"
-                max-width="1075px" elevation="0">
+                width="100%" height="500px" max-width="1075px" elevation="0">
 
           <v-card class="exclusive-content pa-4" color="transparent" elevation="0" max-width="560px">
             <v-card-title class="exclusive-title section-title fontSize-xl--m text-uppercase ma-0 pt-3 pa-0">Эксклюзивная скидка
@@ -36,20 +34,15 @@
           </v-card>
 
           <lazy-feedback-form class="exclusive-form inside"/>
-
         </v-card>
-
         <lazy-feedback-form class="exclusive-form outside"/>
-
       </v-card>
     </v-lazy>
   </section>
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
-
 @Component({})
 export default class Exclusive extends Vue {
-
 }
 </script>

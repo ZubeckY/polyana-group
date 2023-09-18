@@ -28,13 +28,8 @@ export default class NavPolyana extends Vue {
   showButtons: boolean = true
   mounted () {
     this.resizer ()
-    window.addEventListener('resize', () => {
-      this.resizer()
-    })
+    window.addEventListener('resize', () => {this.resizer()})
   }
-
-  resizer () {
-    return this.showButtons = window.innerWidth > 960
-  }
+  resizer () {return this.showButtons = window.innerWidth > 960}
 }
 </script>

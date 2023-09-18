@@ -25,8 +25,7 @@
 
         <v-card-actions class="mt-4 ml-2 pa-0">
           <v-btn class="font-weight-regular white--text rounded-xxl"
-                 width="300px" height="55px"
-                 elevation="0" color="golden-gradient">
+                 width="300px" height="55px" elevation="0" color="golden-gradient">
             СМОТРЕТЬ ВСЕ АКЦИИ
           </v-btn>
         </v-card-actions>
@@ -40,20 +39,13 @@
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
-
 @Component({})
 export default class SpecialOffers extends Vue {
   showButtons: boolean = true
-
   mounted () {
     this.resizer ()
-    window.addEventListener('resize', () => {
-      this.resizer()
-    })
+    window.addEventListener('resize', () => {this.resizer()})
   }
-  resizer () {
-    return this.showButtons = window.innerWidth > 960
-  }
-
+  resizer () {return this.showButtons = window.innerWidth > 960}
 }
 </script>

@@ -12,17 +12,11 @@
 <script lang="ts">
 import {Vue, Component, Ref} from 'vue-property-decorator';
 import {Swiper} from "swiper";
-
 @Component({})
 export default class SpecialOffersSlider extends Vue {
   @Ref()
   readonly container!: HTMLDivElement;
   swiper: any = Swiper
-  mounted () {
-    this.swiper = new Swiper (this.container, {
-      slidesPerView: 'auto',
-      spaceBetween: 25,
-    })
-  }
+  mounted () {this.swiper = new Swiper (this.container, {slidesPerView: 'auto', spaceBetween: 25,})}
 }
 </script>
