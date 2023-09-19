@@ -16,7 +16,6 @@
               <v-card class="d-flex justify-center align-center mr-3"
                       rounded="circle" elevation="0" width="45px" height="45px">
                 <v-img class="d-block" alt="Я" width="32px" height="32px" contain
-                       :lazy-src="require(`~/assets/img/reviews/yandex.png`)"
                        :src="require(`~/assets/img/reviews/yandex.png`)" />
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
@@ -28,7 +27,6 @@
               <v-card class="d-flex justify-center align-center mr-3"
                       rounded="circle" elevation="0" width="45px" height="45px">
                 <v-img class="d-block" alt="TL" width="32px" height="32px" contain
-                       :lazy-src="require(`~/assets/img/reviews/tl-rep.png`)"
                        :src="require(`~/assets/img/reviews/tl-rep.png`)"/>
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы

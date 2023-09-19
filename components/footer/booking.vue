@@ -30,8 +30,7 @@
              width="36px" height="36px"
              min-width="0" min-height="0"
              elevation="0" color="#24A2DF">
-        <v-img :lazy-src="require(`~/assets/img/footer/telegram.png`)"
-               :src="require(`~/assets/img/footer/telegram.png`)"/>
+        <v-img width="20px" height="20px" contain :src="require(`~/assets/img/footer/telegram.png`)"/>
       </v-btn>
       <v-btn class="rounded-lg" title="whatsapp"
              width="36px" height="36px"

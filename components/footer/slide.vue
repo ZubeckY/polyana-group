@@ -21,7 +21,6 @@
       <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
               elevation="0" color="golden-gradient">
         <v-img width="42px" height="42px" alt="#" contain
-               :lazy-src="require('~/assets/img/top-right-arrow-2.png')"
                :src="require('~/assets/img/top-right-arrow-2.png')"/>
       </v-card>
     </div>

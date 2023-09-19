@@ -11,13 +11,10 @@
           <v-slide-item v-for="(item, i) in images" :key="i"
                         v-slot="{ active, toggle }">
             <v-btn class="d-flex justify-center align-center my-1"
-                   @click="toggle"
-                   :input-value="active"
+                   @click="toggle" :input-value="active"
                    width="70px" height="70px" fab
                    color="rgba(255, 255, 255, 0.75);">
-              <v-img width="60px" height="60px" alt="img" contain
-                     :lazy-src="require('@/assets/img/header/slider/' + item['small'])"
-                     :src="require('@/assets/img/header/slider/' + item['small'])"/>
+              <v-img width="60px" height="60px" alt="img" contain :src="require('@/assets/img/header/slider/' + item['small'])"/>
             </v-btn>
 
           </v-slide-item>
