@@ -37,20 +37,8 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    '@nuxtjs/robots',
     'nuxt-webfontloader',
     "cookie-universal-nuxt"
-  ],
-
-  robots: [
-    {
-      UserAgent: 'Googlebot',
-      Disallow: ['/user', '/admin'],
-    },
-    {
-      UserAgent: '*',
-      Disallow: '/admin',
-    }
   ],
   axios: {
     baseURL: '/', proxy: true
