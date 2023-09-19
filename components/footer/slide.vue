@@ -13,16 +13,16 @@
           </pattern>
         </defs>
 
-        <image :id="'photo'+item.id"
-               width="2731" height="4096"
-               :href="item.url"/>
+        <image :id="'photo'+item.id" width="2731" height="4096" :href="item.url"/>
       </svg>
     </v-lazy>
 
     <div class="footer-slide-corner">
       <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
               elevation="0" color="golden-gradient">
-        <img width="initial" height="initial" alt="#" :src="require('~/assets/img/top-right-arrow-2.png')">
+        <v-img width="42px" height="42px" alt="#" contain
+               :lazy-src="require('~/assets/img/top-right-arrow-2.png')"
+               :src="require('~/assets/img/top-right-arrow-2.png')"/>
       </v-card>
     </div>
   </v-card>

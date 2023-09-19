@@ -6,7 +6,9 @@
       </div>
       <v-card class="corner-card-header--arrow d-flex justify-center align-center rounded-xxl"
               width="72px" height="72px" elevation="0" color="golden-gradient">
-        <img width="41px" height="41px" alt="#" :src="require('~/assets/img/top-right-arrow-2.png')">
+        <v-img width="41px" height="41px" alt="#" contain
+               :lazy-src="require('~/assets/img/top-right-arrow-2.png')"
+               :src="require('~/assets/img/top-right-arrow-2.png')"/>
       </v-card>
     </div>
 

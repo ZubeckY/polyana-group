@@ -5,16 +5,18 @@
                     class="header-info-switch-container ma-0 pa-0">
         <v-btn class="header-info-switch--button font-weight-thin ma-0 pa-0"
                width="68px" height="27px" min-width="0" min-height="0" value="summer">
-          <div>Лето</div>
-          <img class="ml-1" width="15px" height="15px"
-               :src="require(`~/assets/img/header/season/sun_1.png`)" alt="#"/>
+          <div class="ml-1">Лето</div>
+          <v-img width="15px" height="15px" alt="sun" contain
+                 :lazy-src="require(`~/assets/img/header/season/sun_1.png`)"
+                 :src="require(`~/assets/img/header/season/sun_1.png`)"/>
         </v-btn>
 
         <v-btn class="header-info-switch--button font-weight-thin ma-0 pa-0"
                width="68px" height="27px" min-width="0" min-height="0" value="winter">
-          <div>Зима</div>
-          <img class="ml-1" width="15px" height="15px"
-               :src="require(`~/assets/img/header/season/snowflake_1.png`)" alt="#"/>
+          <div class="ml-1">Зима</div>
+          <v-img width="15px" height="15px" alt="snowflake" contain
+                 :lazy-src="require(`~/assets/img/header/season/snowflake_1.png`)"
+                 :src="require(`~/assets/img/header/season/snowflake_1.png`)"/>
         </v-btn>
       </v-btn-toggle>
     </div>

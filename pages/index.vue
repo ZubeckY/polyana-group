@@ -28,7 +28,7 @@
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
             <v-card-title class="pinterest-card-title fontSize-xl--l d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
-              КАК С КАРТИНОК <span><img width="initial" height="initial" :src="require(`~/assets/img/pinterest/index.png`)" alt="#"/></span>
+              КАК С КАРТИНОК <span><img :src="require(`~/assets/img/pinterest/index.png`)" alt="#"/></span>
             </v-card-title>
 
             <v-card class="pinterest-card-welcome general-container mt-6" color="transparent" elevation="0">
@@ -44,21 +44,19 @@
                 </div>
               </div>
 
-              <v-lazy>
-                <v-card class="pinterest-video rounded-xxl"
-                        elevation="0" width="100%" height="485px"
-                        :img="require(`~/assets/img/pinterest/video.png`)">
-                  <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
-                          color="var(--dark-color)"
-                          elevation="0" rounded="circle"
-                          width="160px" height="160px">
-                    <lazy-pinterest-rotate/>
-                    <v-img class="pinterest-video-aboutHotels-play"
-                           :lazy-src="require(`~/assets/img/top-right-arrow.png`)"
-                           :src="require(`~/assets/img/top-right-arrow.png`)"/>
-                  </v-card>
+              <v-card class="pinterest-video rounded-xxl"
+                      elevation="0" width="100%" height="485px"
+                      :img="require(`~/assets/img/pinterest/video.png`)">
+                <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
+                        color="var(--dark-color)"
+                        elevation="0" rounded="circle"
+                        width="160px" height="160px">
+                  <lazy-pinterest-rotate/>
+                  <v-img class="pinterest-video-aboutHotels-play" contain
+                         :lazy-src="require(`~/assets/img/top-right-arrow.png`)"
+                         :src="require(`~/assets/img/top-right-arrow.png`)"/>
                 </v-card>
-              </v-lazy>
+              </v-card>
             </v-card>
           </div>
         </v-card>
@@ -97,7 +95,9 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <img width="initial" height="initial" :src="require(`~/assets/img/top-right-arrow-2.png`)" alt="#">
+                  <v-img :lazy-src="require(`~/assets/img/top-right-arrow-2.png`)"
+                         :src="require(`~/assets/img/top-right-arrow-2.png`)"
+                         alt="#"/>
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -137,7 +137,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/summer/sunbed.png`)" alt="#">
+                  <v-img class="d-block" alt="sunbed" width="60px" height="60px" contain
+                         :lazy-src="require(`~/assets/img/seasonPrograms/summer/sunbed.png`)"
+                         :src="require(`~/assets/img/seasonPrograms/summer/sunbed.png`)"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -157,7 +159,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/summer/music.png`)" alt="#">
+                  <v-img class="d-block" alt="music" width="67px" height="67px" contain
+                         :lazy-src="require(`~/assets/img/seasonPrograms/summer/music.png`)"
+                         :src="require(`~/assets/img/seasonPrograms/summer/music.png`)"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
@@ -177,7 +181,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/summer/party.png`)" alt="#">
+                  <v-img class="d-block" alt="party" width="67px" height="67px" contain
+                         :lazy-src="require(`~/assets/img/seasonPrograms/summer/party.png`)"
+                         :src="require(`~/assets/img/seasonPrograms/summer/party.png`)"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Анимация для
                   детей: веселье
@@ -218,7 +224,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/winter/cable-car.png`)" alt="#">
+                  <v-img class="d-block" alt="#" width="60px" height="60px" contain
+                         :lazy-src="require(`~/assets/img/seasonPrograms/winter/cable-car.png`)"
+                         :src="require(`~/assets/img/seasonPrograms/winter/cable-car.png`)"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -238,7 +246,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/winter/skis.png`)" alt="#">
+                  <v-img class="d-block" alt="#" width="60px" height="60px" contain
+                         :lazy-src="require(`~/assets/img/seasonPrograms/winter/skis.png`)"
+                         :src="require(`~/assets/img/seasonPrograms/winter/skis.png`)"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
                   зимнего спортивного
@@ -258,7 +268,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/winter/pool.png`)" alt="#">
+                  <v-img class="d-block" alt="#" width="63px" height="63px" contain
+                         :lazy-src="require(`~/assets/img/seasonPrograms/winter/pool.png`)"
+                         :src="require(`~/assets/img/seasonPrograms/winter/pool.png`)"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>

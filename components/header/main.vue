@@ -1,10 +1,8 @@
 <template>
   <header class="header mt-3">
     <!-- Картинка -->
-    <v-img class="header-container"
-           elevation="0"
-           position="top right"
-           :contain="showButtons"
+    <v-img class="header-container" elevation="0"
+           position="top right" :contain="showButtons"
            :lazy-src="require('@/assets/img/header/slider/' + activeImage)"
            :src="require('@/assets/img/header/slider/' + activeImage)">
       <!-- Градиент -->

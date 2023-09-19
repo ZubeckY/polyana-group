@@ -15,8 +15,9 @@
                     elevation="0" width="359px" height="78px" color="golden-gradient">
               <v-card class="d-flex justify-center align-center mr-3"
                       rounded="circle" elevation="0" width="45px" height="45px">
-                <img class="d-block"
-                     :src="require(`~/assets/img/reviews/yandex.png`)" alt="Я">
+                <v-img class="d-block" alt="Я" width="32px" height="32px" contain
+                       :lazy-src="require(`~/assets/img/reviews/yandex.png`)"
+                       :src="require(`~/assets/img/reviews/yandex.png`)" />
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
                 в Яндекс</v-card-title>
@@ -26,14 +27,14 @@
                     elevation="0" width="359px" height="78px" color="golden-gradient">
               <v-card class="d-flex justify-center align-center mr-3"
                       rounded="circle" elevation="0" width="45px" height="45px">
-                <img class="d-block"
-                     :src="require(`~/assets/img/reviews/tl-rep.png`)" alt="Я">
+                <v-img class="d-block" alt="TL" width="32px" height="32px" contain
+                       :lazy-src="require(`~/assets/img/reviews/tl-rep.png`)"
+                       :src="require(`~/assets/img/reviews/tl-rep.png`)"/>
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
                 в TL: REPUTATION</v-card-title>
             </v-card>
           </div>
-
 
           <div class="reviews-cards-group-transparent ml-8">
             <v-card elevation="0" height="78px" color="transparent">
