@@ -1,29 +1,32 @@
 import colors from 'vuetify/es5/util/colors'
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 export default {
-  server: {
-    host: '0.0.0.0'
-  },
+  server: { host: '0.0.0.0' },
   head: {
     titleTemplate: '%s - client',
     title: 'client',
-    htmlAttrs: {
-      lang: 'ru'
-    },
+    htmlAttrs: { lang: 'ru' },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', hid: 'description', content: 'Тестовое описание' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   components: true,
   css: [
+    '~/assets/styles/screen/960px.less',
+    '~/assets/styles/screen/1100px.less',
+    '~/assets/styles/screen/1200px.less',
+    '~/assets/styles/screen/1360px.less',
+    '~/assets/styles/screen/1400px.less',
+    '~/assets/styles/cornerCard.less',
+    '~/assets/styles/fontSize.less',
+    '~/assets/styles/footer.less',
+    '~/assets/styles/header.less',
+    '~/assets/styles/items.less',
     '~/assets/styles/main.less',
-    '~/assets/styles/screen.less',
     '~/assets/styles/ui-styles.less'
   ],
   plugins: [
@@ -40,11 +43,8 @@ export default {
     'nuxt-webfontloader',
     "cookie-universal-nuxt"
   ],
-  axios: {
-    baseURL: '/', proxy: true
-  },
+  axios: {baseURL:'/', proxy:true},
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
       themes: {
@@ -88,39 +88,24 @@ export default {
     optimizeCss: true,
     extractCSS: { ignoreOrder: true },
     transpile: ["swiper"],
-    optimization: {
-      minimize: true
-    },
+    optimization: {minimize: true},
     splitChunks: {
       layouts: true,
       pages: true,
       commons: true,
       cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.(less|css|vue)$/,
-          chunks: 'all',
-          enforce: true
-        }
+        styles: {name: 'styles', test: /\.(css|less|vue)$/, chunks: 'all', enforce: true}
       }
     },
 
     extend (config, ctx) {
       const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
-      const vueSvgLoader = [{
-        loader: 'vue-svg-loader',
-        options: { svgo: false }
-      }]
+      const vueSvgLoader = [{loader: 'vue-svg-loader', options: { svgo: false }}]
       const imageMinPlugin = new ImageminPlugin({
         test: ORIGINAL_TEST,
         loader: 'url-loader',
-        options: {
-          limit: 1000, name: '[path][name].[ext]'
-        },
-        pngquant: {
-          quality: '5-30',
-          speed: 7, strip: true
-        },
+        options: { limit: 1000, name: '[path][name].[ext]' },
+        pngquant: {quality: '5-30', speed: 7, strip: true},
         jpegtran: { progressive: true },
         gifsicle: { interlaced: true }
       })

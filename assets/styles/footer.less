@@ -1,0 +1,52 @@
+.footer {
+  margin-top: 82px;
+  & * {font-family: 'Montserrat' !important;}
+  &-card {padding: 40px 15px;}
+  &-title {color: black;font-weight: 500;font-size: 20px !important;text-transform: uppercase;}
+  &-booking {
+    width: 318px;height: 439px;
+    &-btn {font-weight: 400;font-size: 14px !important;}
+    &-text {color: white !important;font-weight: 500;font-size: 16px !important;white-space: pre-line !important;}
+  }
+  &-seeYouAtHotel {
+    &-chip {font-size: 14px !important;}
+    &-address {
+      &-text {
+        color: black;font-size: 16px !important;
+        line-height: 22px !important;
+        font-weight: 400 !important;
+        white-space: pre-line !important;
+      }
+    }
+  }
+  &-carousel,
+  &-slide {width: 364px; height: 290px;}
+  &-carousel {border-radius: 22px;}
+  &-slide {
+    position: relative;
+    &-svg {width: inherit; height: inherit;}
+    &-corner {
+      position: absolute; right: 0; bottom: 0;
+      &--arrow {
+        position: relative;right: 0;bottom: 0;width: 62px;height: 62px;
+        & img {width: 34px;height: 34px;}
+      }
+    }
+  }
+  &-helpInfo {
+    &-subtitle { color: black; font-size: 17px !important; font-weight: 700 !important; }
+    &-link {color: black !important;font-size: 15.2px !important;line-height: 23.275px;}
+  }
+  &-mazur {
+    margin-top: 72px; padding-bottom: 30px;
+    &-text {
+      color: var(--polyanaGrey); text-align: center; font-size: 17px; font-weight: 400;
+      & a { color: #27388F; }
+    }
+    &-polyana {
+      color: var(--polyanaGrey); text-align: center;
+      font-size: 17px; font-weight: 400 !important;
+    }
+  }
+  &-service {width: 100%;max-width: 50%;margin-left: 40px;}
+}
