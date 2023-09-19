@@ -37,7 +37,7 @@ import {Component, Vue, Watch} from "vue-property-decorator"
 export default class HeaderSlider extends Vue {
   activeItem: number = 0
   images: any = [
-    { small: `Rectangle91.png`, big: `_MG_2185_1.png`, },
+    { small: `Rectangle91.png`, big: `_MG_2185_1.jpg`, },
     { small: `Rectangle92.png`, big: `_MG_2327.jpg`, },
     { small: `Rectangle93.png`, big: `_MG_7748.jpg`, }
   ]

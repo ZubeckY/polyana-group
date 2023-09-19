@@ -304,7 +304,7 @@ import thousandSeparator from "../assets/scripts/thousandSeparator";
   methods: {thousandSeparator}
 })
 export default class Pages extends Vue {
-  activeImage: string = '_MG_2185_1.png'
+  activeImage: string = '_MG_2185_1.jpg'
   hotels: number = 0
   hotelList: any = [
     {

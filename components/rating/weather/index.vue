@@ -49,6 +49,5 @@ export default class RatingWeather extends Vue {
   weather: any = {}
   async mounted () {this.weather = await this.getWeather ()}
   async getWeather () {return await openWeatherAPI.getWeather()}
-
 }
 </script>
