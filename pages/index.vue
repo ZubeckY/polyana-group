@@ -28,13 +28,10 @@
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
             <v-card-title class="pinterest-card-title fontSize-xl--l d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
-              КАК С КАРТИНОК <span>
-                <img :src="require(`~/assets/img/pinterest/index.png`)" alt="#"/>
-              </span>
+              КАК С КАРТИНОК <span><img width="initial" height="initial" :src="require(`~/assets/img/pinterest/index.png`)" alt="#"/></span>
             </v-card-title>
 
-            <v-card class="pinterest-card-welcome general-container mt-6"
-                    color="transparent" elevation="0">
+            <v-card class="pinterest-card-welcome general-container mt-6" color="transparent" elevation="0">
               <div class="pinterest-card-welcome-container d-flex justify-end">
                 <div class="pinterest-card-welcome-wrapper">
                   <v-card-text class="pinterest-card-text">Добро пожаловать в нашу группу отелей на Красной
@@ -100,7 +97,7 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <img :src="require(`~/assets/img/top-right-arrow-2.png`)" alt="#">
+                  <img width="initial" height="initial" :src="require(`~/assets/img/top-right-arrow-2.png`)" alt="#">
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -140,8 +137,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img class="d-block"
-                       :src="require(`~/assets/img/seasonPrograms/summer/sunbed.png`)" alt="#">
+                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/summer/sunbed.png`)" alt="#">
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -161,8 +157,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img class="d-block"
-                       :src="require(`~/assets/img/seasonPrograms/summer/music.png`)" alt="#">
+                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/summer/music.png`)" alt="#">
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
@@ -182,8 +177,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img class="d-block"
-                       :src="require(`~/assets/img/seasonPrograms/summer/party.png`)" alt="#">
+                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/summer/party.png`)" alt="#">
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Анимация для
                   детей: веселье
@@ -224,8 +218,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img class="d-block"
-                       :src="require(`~/assets/img/seasonPrograms/winter/cable-car.png`)" alt="#">
+                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/winter/cable-car.png`)" alt="#">
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -245,8 +238,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img class="d-block"
-                       :src="require(`~/assets/img/seasonPrograms/winter/skis.png`)" alt="#">
+                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/winter/skis.png`)" alt="#">
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
                   зимнего спортивного
@@ -266,8 +258,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <img class="d-block"
-                       :src="require(`~/assets/img/seasonPrograms/winter/pool.png`)" alt="#">
+                  <img width="initial" height="initial" class="d-block" :src="require(`~/assets/img/seasonPrograms/winter/pool.png`)" alt="#">
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>

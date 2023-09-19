@@ -2,7 +2,7 @@
   <section class="header-slider d-flex align-center">
     <div class="header-slider-container d-flex flex-column justify-center align-center">
       <!-- Кнопка назад -->
-      <v-btn @click="activeItem--" class="mb-1" width="40px" height="40px" fab>
+      <v-btn @click="activeItem--" class="mb-1" width="40px" height="40px" title="Назад" fab>
         <v-icon>mdi-chevron-up</v-icon>
       </v-btn>
 
@@ -25,7 +25,7 @@
       </v-slide-group>
 
       <!-- Кнопка вперёд -->
-      <v-btn @click="activeItem++" class="mt-1" width="40px" height="40px" fab>
+      <v-btn @click="activeItem++" class="mt-1" width="40px" height="40px" title="Вперёд" fab>
         <v-icon>mdi-chevron-down</v-icon>
       </v-btn>
     </div>

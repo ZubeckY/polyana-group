@@ -60,11 +60,11 @@
         <v-card-actions class="reviews-slider-buttons px-0">
           <v-spacer/>
 
-          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0">
+          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0" title="Назад">
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
 
-          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0">
+          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0" title="Вперёд">
             <v-icon>mdi-chevron-right</v-icon>
           </v-btn>
 

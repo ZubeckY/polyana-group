@@ -22,7 +22,7 @@
     <div class="footer-slide-corner">
       <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
               elevation="0" color="golden-gradient">
-        <img alt="#" :src="require('~/assets/img/top-right-arrow-2.png')">
+        <img width="initial" height="initial" alt="#" :src="require('~/assets/img/top-right-arrow-2.png')">
       </v-card>
     </div>
   </v-card>

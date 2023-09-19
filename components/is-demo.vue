@@ -7,7 +7,7 @@
         <v-card-text class="fontSize-m--s pa-0 mt-1">Данная версия является демонстрационной, и не является конечным результатом.</v-card-text>
       </div>
       <v-card-actions class="pa-0">
-        <v-btn @click="show=false" icon color="error">
+        <v-btn @click="show=false" icon color="error" title="Закрыть">
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-card-actions>
