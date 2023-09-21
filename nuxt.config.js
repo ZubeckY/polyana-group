@@ -3,8 +3,8 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
-  target: "static",
-  // server: { host: '0.0.0.0' },
+  // target: "static",
+  server: { host: '0.0.0.0' },
 
   head: {
     titleTemplate: '%s - client',
