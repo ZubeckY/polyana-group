@@ -28,7 +28,8 @@
       "@nuxtjs/axios",
       "@types/node",
       "cookie-universal",
-      "cookie-universal-nuxt"
+      "cookie-universal-nuxt",
+      "nuxt-webpack-optimisations"
     ]
   },
   "exclude": [
