@@ -3,7 +3,7 @@
     <!-- Картинка -->
     <v-img class="header-container" elevation="0"
            position="top right" :contain="showButtons"
-           :src="require('@/assets/img/header/slider/' + activeImage)">
+           :src="'img/header/slider/' + activeImage">
       <!-- Градиент -->
       <div class="header-wrapper">
         <div class="header-wrapper-inner general-container">

@@ -1,22 +1,23 @@
 <template>
   <div>
+
     <!-- хедер -->
-    <lazy-header-main :activeImage="activeImage"
+    <header-main :activeImage="activeImage"
                       @changeActiveSlide="changeActiveSlide"/>
 
     <!-- рейтинг карточки -->
     <section class="rating mt-5">
       <div class="rating-container justify-space-between d-flex">
         <!-- Яндекс -->
-        <lazy-rating-yandex/>
+        <rating-yandex/>
         <!-- Высокий рейтинг -->
-        <lazy-rating-tl-rep/>
+        <rating-tl-rep/>
         <!-- Отели 4-5 звёзд -->
-        <lazy-rating-we-care/>
+        <rating-we-care/>
         <!-- Удобное бронирование -->
-        <lazy-rating-booking-comfort/>
+        <rating-booking-comfort/>
         <!-- Актуальное (погода) -->
-        <lazy-rating-weather/>
+        <rating-weather/>
       </div>
     </section>
 
@@ -28,7 +29,7 @@
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
             <v-card-title class="pinterest-card-title fontSize-xl--l d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
-              КАК С КАРТИНОК <span><img :src="require(`~/assets/img/pinterest/index.png`)" alt="#"/></span>
+              КАК С КАРТИНОК <span><img src="img/pinterest/index.png" alt="#"/></span>
             </v-card-title>
 
             <v-card class="pinterest-card-welcome general-container mt-6" color="transparent" elevation="0">
@@ -46,14 +47,14 @@
 
               <v-card class="pinterest-video rounded-xxl"
                       elevation="0" width="100%" height="485px"
-                      :img="require(`~/assets/img/pinterest/video.png`)">
+                      img="img/pinterest/video.png">
                 <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
                         color="var(--dark-color)"
                         elevation="0" rounded="circle"
                         width="160px" height="160px">
-                  <lazy-pinterest-rotate/>
+                  <pinterest-rotate/>
                   <v-img class="pinterest-video-aboutHotels-play" contain
-                         :src="require(`~/assets/img/top-right-arrow.png`)"/>
+                         src="img/top-right-arrow.png"/>
                 </v-card>
               </v-card>
             </v-card>
@@ -88,14 +89,13 @@
                 </v-card-title>
 
                 <v-card-title class="hotelGroup-accordion-item--header-price fontSize-xl--s text-uppercase mr-8">
-                  От {{ thousandSeparator(item.price) }} руб.
+                  От {{ getItemPrice(item) }} руб.
                 </v-card-title>
               </div>
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <v-img :src="require(`~/assets/img/top-right-arrow-2.png`)"
-                         alt="#"/>
+                  <v-img src="img/top-right-arrow-2.png" alt="#"/>
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -111,7 +111,7 @@
     </section>
 
     <!-- Специальные предложения -->
-    <lazy-special-offers/>
+    <special-offers/>
 
     <!-- Развлекуха летом/зимой-->
     <section class="seasonPrograms">
@@ -135,14 +135,14 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="sunbed" width="60px" height="60px" contain
-                         :src="require(`~/assets/img/seasonPrograms/summer/sunbed.png`)"/>
+                  <v-img class="d-block" alt="sunbed" width="60px" height="60px"
+                         contain src="img/seasonPrograms/summer/sunbed.png"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
                   ДО ПЛЯЖА</v-card-title>
               </div>
-              <lazy-v-vertical-spacer/>
+              <v-vertical-spacer/>
               <v-card-text class="pa-0">Наши гости могут воспользоваться
                 бесплатным трансфером до пляжа
               </v-card-text>
@@ -156,13 +156,13 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="music" width="67px" height="67px" contain
-                         :src="require(`~/assets/img/seasonPrograms/summer/music.png`)"/>
+                  <v-img class="d-block" alt="music" width="67px" height="67px"
+                         contain src="img/seasonPrograms/summer/music.png"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
               </div>
-              <lazy-v-vertical-spacer/>
+              <v-vertical-spacer/>
               <v-card-text class="pa-0">Живая музыка в баре у бассейна
                 создает идеальную атмосферу
               </v-card-text>
@@ -177,14 +177,14 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="party" width="67px" height="67px" contain
-                         :src="require(`~/assets/img/seasonPrograms/summer/party.png`)"/>
+                  <v-img class="d-block" alt="party" width="67px" height="67px"
+                         contain src="img/seasonPrograms/summer/party.png"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Анимация для
                   детей: веселье
                   и ИГРЫ</v-card-title>
               </div>
-              <lazy-v-vertical-spacer/>
+              <v-vertical-spacer/>
               <v-card-text class="pa-0">Наши маленькие гости не соскучатся благодаря
                 увлекательной детской анимации с играми и развлечениями
               </v-card-text>
@@ -219,14 +219,14 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="#" width="60px" height="60px" contain
-                         :src="require(`~/assets/img/seasonPrograms/winter/cable-car.png`)"/>
+                  <v-img class="d-block" alt="#" width="60px" height="60px"
+                         contain src="img/seasonPrograms/winter/cable-car.png"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
                   ДО ПОДЪЕМНИКОВ</v-card-title>
               </div>
-              <lazy-v-vertical-spacer/>
+              <v-vertical-spacer/>
               <v-card-text class="pa-0">Воспользуйтесь бесплатным
                 трансфером до горнолыжных трасс
               </v-card-text>
@@ -240,14 +240,14 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="#" width="60px" height="60px" contain
-                         :src="require(`~/assets/img/seasonPrograms/winter/skis.png`)"/>
+                  <v-img class="d-block" alt="#" width="60px" height="60px"
+                         contain src="img/seasonPrograms/winter/skis.png"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
                   зимнего спортивного
                   снаряжения</v-card-title>
               </div>
-              <lazy-v-vertical-spacer/>
+              <v-vertical-spacer/>
               <v-card-text class="pa-0">Обеспечим безопасное хранение вашего зимнего
                 снаряжения с функцией эффективной сушки.
               </v-card-text>
@@ -261,13 +261,13 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="#" width="63px" height="63px" contain
-                         :src="require(`~/assets/img/seasonPrograms/winter/pool.png`)"/>
+                  <v-img class="d-block" alt="#" width="63px" height="63px"
+                         contain src="img/seasonPrograms/winter/pool.png"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>
               </div>
-              <lazy-v-vertical-spacer/>
+              <v-vertical-spacer/>
               <v-card-text class="pa-0">Насладитесь всегда теплым бассейном:
                 +30 градусов круглый год! *
               </v-card-text>
@@ -287,14 +287,14 @@
       </div>
     </section>
     <!-- Эксклюзивная скидка за звонок -->
-    <lazy-exclusive/>
+    <exclusive/>
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
-    <lazy-reviews/>
+    <reviews/>
   </div>
 </template>
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
-import thousandSeparator from "../assets/scripts/thousandSeparator";
+import thousandSeparator from "assets/scripts/thousandSeparator";
 @Component({
   methods: {thousandSeparator}
 })
@@ -318,6 +318,10 @@ export default class Pages extends Vue {
       price: 5_900,
     },
   ]
+
+  getItemPrice (item: any) {
+    return item ? thousandSeparator (item['price']) : 0
+  }
 
   changeActiveSlide (value: string) {return this.activeImage = value}
 }

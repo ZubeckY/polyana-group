@@ -3,6 +3,8 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
+  target: "static",
+
   head: {
     titleTemplate: '%s - client',
     title: 'client',
@@ -56,7 +58,6 @@ export default {
 
   vuetify: {
     optionsPath: './vuetify.options.js',
-    // treeShake: true,
     theme: {
       dark: false,
       themes: {
@@ -77,15 +78,15 @@ export default {
     esbuildLoaderOptions: {
       client: {
         minifyIdentifiers: false,
-        target: 'es2015',
+        target: 'es2015'
       },
       server: {
         minifyIdentifiers: false,
-        target: 'node14',
+        target: 'node14'
       },
       modern: {
-        target: 'es2018',
-      },
+        target: 'es2018'
+      }
     }
   },
 
@@ -108,7 +109,6 @@ export default {
         useShortDoctype: true
       }
     },
-
 
     // extractCSS: true,
     // cssSourceMap: false,

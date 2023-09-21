@@ -20,6 +20,6 @@
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
 @Component({})
-export default class RatingYandex extends Vue {
+export default class Yandex extends Vue {
 }
 </script>

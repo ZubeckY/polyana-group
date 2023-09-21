@@ -15,25 +15,25 @@
       <div class="d-flex align-center">
         <v-card class="rating-weather-text py-2 mr-1 mr-1"
                 color="var(--golden-1)" elevation="0"
-                width="81px" height="35px">
+                width="82px" height="35px">
           <div class="d-flex flex-row justify-center align-center">
-            <img :src="require(`~/assets/img/weather/Sunrise.png`)" alt="day"/>
+            <v-img width="12px" height="12px" position="center center" contain src="img/weather/Sunrise.png" alt="day"/>
             <div>{{ weather['main'] ? weather['main']['temp'] : 0 }} °</div>
           </div>
         </v-card>
         <v-card class="rating-weather-text py-2 mx-1"
                 color="var(--golden-1)" elevation="0"
-                width="81px" height="35px">
-          <div class="d-flex flex-row justify-center align-center mt-1">
-            <img :src="require(`~/assets/img/weather/SleepMode.png`)" alt="night"/>
+                width="82px" height="35px">
+          <div class="d-flex flex-row justify-center align-center">
+            <v-img width="12px" height="12px" position="center center" contain src="img/weather/SleepMode.png" alt="night"/>
             <div>{{ weather['main'] ? weather['main']['feels_like'] : 0 }} °</div>
           </div>
         </v-card>
         <v-card class="rating-weather-text py-2 ml-1"
                 color="var(--golden-1)" elevation="0"
-                width="81px" height="35px">
+                width="82px" height="35px">
           <div class="d-flex flex-row justify-center align-center">
-            <img :src="require(`~/assets/img/weather/Wind.png`)" alt="wind"/>
+            <v-img width="12px" height="12px" position="center center" contain src="img/weather/Wind.png" alt="wind"/>
             <div>{{ weather['wind'] ? weather['wind']['speed'] : 0 }} м/с</div>
           </div>
         </v-card>
@@ -45,7 +45,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import openWeatherAPI from "~/assets/scripts/openWeatherAPI";
 @Component({})
-export default class RatingWeather extends Vue {
+export default class Weather extends Vue {
   weather: any = {}
   async mounted () {this.weather = await this.getWeather ()}
   async getWeather () {return await openWeatherAPI.getWeather()}

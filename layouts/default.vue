@@ -3,10 +3,10 @@
     <v-main>
       <v-card color="var(--background)" elevation="0" rounded="0" min-height="100vh">
         <div class="d-flex flex-column total-container mx-auto px-4">
-          <lazy-is-demo/>
+          <is-demo/>
           <nuxt/>
-          <lazy-v-vertical-spacer/>
-          <lazy-footer-comp/>
+          <v-vertical-spacer/>
+          <footer-comp/>
         </div>
       </v-card>
     </v-main>

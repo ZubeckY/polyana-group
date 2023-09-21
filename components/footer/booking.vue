@@ -2,8 +2,12 @@
   <v-card class="footer-booking d-flex flex-column justify-center rounded-xxl" color="#454850" elevation="0">
     <lazy-logo class="mx-auto"/>
     <v-card-actions class="pa-0 mt-10">
-      <v-btn class="footer-booking-btn rounded-xxl mx-auto" width="237px" height="37px"
-             color="golden-gradient" elevation="0" dark v-text="'Забронировать'"></v-btn>
+      <v-btn class="footer-booking-btn rounded-xxl mx-auto"
+             width="237px" height="37px"
+             color="golden-gradient"
+             elevation="0" dark>
+        Забронировать
+      </v-btn>
     </v-card-actions>
 
     <v-card-text class="footer-booking-text text-center mt-3">Забронируйте номер
@@ -30,7 +34,7 @@
              width="36px" height="36px"
              min-width="0" min-height="0"
              elevation="0" color="#24A2DF">
-        <v-img width="20px" height="20px" contain :src="require(`~/assets/img/footer/telegram.png`)"/>
+        <v-img width="20px" height="20px" contain src="img/footer/telegram.png"/>
       </v-btn>
       <v-btn class="rounded-lg" title="whatsapp"
              width="36px" height="36px"
