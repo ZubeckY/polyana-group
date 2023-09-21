@@ -1,19 +1,22 @@
 <template>
   <section class="header-slider d-flex align-center">
-    <div class="header-slider-container d-flex flex-column justify-center align-center">
+    <div class="header-slider-container d-flex justify-center align-center">
       <!-- Кнопка назад -->
-      <v-btn @click="activeItem--" class="mb-1" width="40px" height="40px" title="Назад" fab>
-        <v-icon>mdi-chevron-up</v-icon>
+      <v-btn class="header-slider-left mb-1"
+             width="40px" height="40px"
+             @click="activeItem--"
+             title="Назад" fab>
+        <v-icon> {{ changeMobileStatus ? 'mdi-chevron-left' : 'mdi-chevron-up' }} </v-icon>
       </v-btn>
 
       <v-slide-group v-model="activeItem" mandatory>
-        <div class="d-flex flex-column">
+        <div class="header-slider-slides d-flex">
           <v-slide-item v-for="(item, i) in images" :key="i"
                         v-slot="{ active, toggle }">
             <v-btn class="d-flex justify-center align-center my-1"
                    @click="toggle" :input-value="active"
                    width="70px" height="70px" fab
-                   color="rgba(255, 255, 255, 0.75);">
+                   color="rgba(255, 255, 255, 0.25);">
               <v-img width="60px" height="60px" alt="img"
                      contain :src="'img/header/slider/' + item['small']"/>
             </v-btn>
@@ -23,8 +26,11 @@
       </v-slide-group>
 
       <!-- Кнопка вперёд -->
-      <v-btn @click="activeItem++" class="mt-1" width="40px" height="40px" title="Вперёд" fab>
-        <v-icon>mdi-chevron-down</v-icon>
+      <v-btn class="header-slider-rigth mt-1"
+             width="40px" height="40px"
+             @click="activeItem++"
+             title="Вперёд" fab>
+        <v-icon> {{ changeMobileStatus ? 'mdi-chevron-right' : 'mdi-chevron-down' }} </v-icon>
       </v-btn>
     </div>
   </section>
@@ -40,6 +46,17 @@ export default class HeaderSlider extends Vue {
     { small: `Rectangle93.png`, big: `_MG_7748.jpg`, }
   ]
   created () {this.changeActiveSlide ()}
+  mounted () {
+    this.changeMobileStatus()
+    window.addEventListener('resize', () => {
+      this.changeMobileStatus ()
+    })
+  }
+
+  changeMobileStatus () {
+    return window.innerWidth > 1100
+  }
+
   @Watch ('activeItem')
   changeActiveSlide () {
     let i = this.activeItem;

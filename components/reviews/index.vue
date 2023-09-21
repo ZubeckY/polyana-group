@@ -11,26 +11,30 @@
         <!-- -->
         <div class="reviews-cards-group d-flex mt-9">
           <div class="reviews-cards-group-gradient">
-            <v-card class="d-flex align-center rounded-xl pl-8"
-                    elevation="0" width="359px" height="78px" color="golden-gradient">
-              <v-card class="d-flex justify-center align-center mr-3"
-                      rounded="circle" elevation="0" width="45px" height="45px">
-                <v-img class="d-block" alt="Я" width="32px" height="32px"
+            <v-card class="reviews-cards-group-gradient-card d-flex align-center rounded-xl px-4"
+                    elevation="0" color="golden-gradient">
+
+              <v-card class="reviews-cards-group-gradient-card-round d-flex justify-center align-center mr-3"
+                      rounded="circle" elevation="0">
+                <v-img class="reviews-cards-group-gradient-card-round-img d-block" alt="Я"
                        contain src="img/reviews/yandex.png" />
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
                 в Яндекс</v-card-title>
+
             </v-card>
 
-            <v-card class="d-flex align-center rounded-xl mt-4 pl-8"
-                    elevation="0" width="359px" height="78px" color="golden-gradient">
-              <v-card class="d-flex justify-center align-center mr-3"
-                      rounded="circle" elevation="0" width="45px" height="45px">
-                <v-img class="d-block" alt="TL" width="32px" height="32px"
+            <v-card class="reviews-cards-group-gradient-card d-flex align-center rounded-xl mt-4 px-4"
+                    elevation="0" color="golden-gradient">
+
+              <v-card class="reviews-cards-group-gradient-card-round d-flex justify-center align-center mr-3"
+                      rounded="circle" elevation="0">
+                <v-img class="reviews-cards-group-gradient-card-round-img d-block" alt="TL"
                        contain src="img/reviews/tl-rep.png"/>
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
                 в TL: REPUTATION</v-card-title>
+
             </v-card>
           </div>
 

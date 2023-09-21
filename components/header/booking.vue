@@ -1,6 +1,6 @@
 <template>
   <section class="header-booking mx-auto">
-    <div class="header-booking-container d-flex flex-row">
+    <div class="header-booking-container d-flex">
 
       <!-- Название отеля -->
       <v-card class="header-booking-card white--text ml-9 mr-4"
@@ -56,8 +56,7 @@
               elevation="0" color="transparent" dark>
         <v-card-actions class="d-flex justify-center align-center pa-0">
           <v-btn class="header-booking-card-button text-none my-4 mx-2 pa-0"
-                 width="204px" height="57px" elevation="0"
-                 min-height="0" min-width="0" color="var(--dark-color)">
+                 elevation="0" color="var(--dark-color)">
             <v-icon>mdi-magnify</v-icon>
             Найти номер
           </v-btn>
@@ -73,4 +72,38 @@ import {Component, Ref, Vue} from "vue-property-decorator"
 export default class HeaderBooking extends Vue {
 }
 </script>
+<style lang="less" scoped>
+.header-booking {
+  height: 90px;
+  width: 1202px;
+  border-radius: 12px;
+  background: linear-gradient(270deg,
+  rgba(217, 217, 217, 0.40) 2.1%,
+  rgba(217, 217, 217, 0.20) 103.66%);
+  backdrop-filter: blur(25px);
+  &-delimiter {width: 0; height: 90px; border: thin solid rgba(255, 255, 255, 0.20);}
+  &-card {
+    &-button {
+      width: 204px !important;
+      height: 57px !important;
+      color: white;
+      min-width: 0;
+      min-height: 0;
+      font-size: 22px;
+      font-weight: 400;
+      border-radius: 8px !important;
+    }
+    &-title {color: white; font-size: 22px !important; font-weight: 400;}
+    &-subtitle{
+      width: 100vw;
+      height: 20px;
+      max-width: 200px;
+      color: white;
+      font-size: 16px;
+      font-weight: 400;
+      &v-icon {font-size: 23px !important;}
+    }
+  }
+}
+</style>
 

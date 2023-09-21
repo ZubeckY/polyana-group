@@ -44,3 +44,36 @@ import {Vue, Component} from 'vue-property-decorator';
 export default class Exclusive extends Vue {
 }
 </script>
+<style lang="less" scoped>
+/* exclusive */
+.exclusive {
+  margin-top: 136px;
+  &-form {
+    &.inside {display: block;}
+    &.outside {display: none;position: relative;top: 90px;}
+  }
+  &-content {margin-right: 50px;}
+  &-container {
+    border-radius: 23px;
+    background: linear-gradient(268deg,
+    rgba(217, 217, 217, 0.40) 3.77%,
+    rgba(217, 217, 217, 0.20) 98.84%) !important;
+    backdrop-filter: blur(35px) !important;
+  }
+  &-title {color: white !important;font-weight: 400 !important;white-space: pre-line !important;}
+  &-text {
+    color: white !important;
+    font-family: 'Montserrat' !important;
+    line-height: 136.4% !important;
+
+    &-container { max-width: 492px; }
+    &-promotion {
+      font-family: 'Montserrat' !important;
+      color: white !important;
+      font-size: 14px !important;
+      line-height: 136.4% !important;
+      white-space: pre-line !important;
+    }
+  }
+}
+</style>

@@ -63,3 +63,28 @@ export default class FeedbackForm extends Vue {
   }
 }
 </script>
+<style lang="less" scoped>
+/* feedbackForm */
+.feedbackForm {
+  border-radius: var(--bordrad23) !important;
+  & * {font-family: 'Montserrat' !important;}
+  &-title {
+    color: white; font-size: 16px !important; font-weight: 400 !important;
+    text-transform: uppercase; white-space: pre-line !important;
+  }
+  &-inputGroup {
+    &-label {color: white; font-size: 14px; font-style: normal; font-weight: 400; line-height: normal;}
+    &-input {
+      width: 325px;height: 50px;
+      border-radius: 12px !important;
+      background: #D9D9D9 !important;
+      & * {box-shadow: none !important;}
+    }
+  }
+  &-button {
+    font-size: 16px; font-weight: 500; border-radius: 16px !important;
+    background: linear-gradient(90deg,#CCAB6A -1.19%, #C1B397 177.44%) !important;
+  }
+  &-conditions {color: white; font-size: 12px !important; font-weight: 400 !important;}
+}
+</style>

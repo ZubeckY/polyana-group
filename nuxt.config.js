@@ -3,7 +3,6 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
-  // target: "static",
   server: { host: '0.0.0.0' },
 
   head: {
@@ -24,12 +23,8 @@ export default {
   components: true,
 
   css: [
-    '~/assets/styles/screen/960px.less',
-    '~/assets/styles/screen/1100px.less',
-    '~/assets/styles/screen/1200px.less',
-    '~/assets/styles/screen/1360px.less',
-    '~/assets/styles/screen/1400px.less',
-    '~/assets/styles/cornerCard.less',
+    '~/assets/styles/screen/desktop.less',
+    '~/assets/styles/screen/mobile.less',
     '~/assets/styles/fontSize.less',
     '~/assets/styles/footer.less',
     '~/assets/styles/header.less',

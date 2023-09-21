@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- хедер -->
     <header-main :activeImage="activeImage"
                       @changeActiveSlide="changeActiveSlide"/>
@@ -286,10 +285,13 @@
 
       </div>
     </section>
+
     <!-- Эксклюзивная скидка за звонок -->
     <exclusive/>
+
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
     <reviews/>
+
   </div>
 </template>
 <script lang="ts">

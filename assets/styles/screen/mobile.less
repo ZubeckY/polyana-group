@@ -1,0 +1,258 @@
+
+/* max-width: 1200px */
+
+@media (max-width: 1200px) {
+  /* header */
+  .header {
+    &-wrapper { height: inherit !important; }
+  }
+
+  /* rating */
+  .rating {
+    &-container {
+      flex-wrap: wrap;
+      justify-content: start !important;
+    }
+  }
+
+  /* footer */
+  .footer {
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center !important;
+      justify-content: center;
+    }
+    &-service {
+      flex-wrap: wrap;
+      margin: 30px auto 15px !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+    &-seeYouAtHotel {
+      &-address {
+        flex-wrap: wrap;
+        margin: 30px auto 15px !important;
+      }
+      &-photo { margin-top: 35px; }
+    }
+    &-booking {
+      margin: 10px;
+      margin-top: 35px;
+      width: 298px !important;
+    }
+    &-helpInfo {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* specialOffers */
+  .specialOffers {
+    &-container {
+      padding: 0 !important;
+      width: 100% !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+    &-info {
+      margin: 0 auto !important;
+    }
+    &-slider {
+      margin: 50px auto 0 !important;
+      max-width: 370px !important;
+    }
+  }
+}
+
+/* max-width: 1100px */
+
+@media (max-width: 1100px) {
+  /* relax-in-comfort */
+  .relax-in-comfort { white-space: normal !important; }
+
+  .nav {
+    &-button-group {
+      &--book,
+      &--phone {
+        width: 150px !important;
+        height: 35px !important;
+      }
+    }
+  }
+
+  /* header */
+  .header {
+    &-booking {
+      margin-top: 30px;
+      width: auto !important;
+      height: auto !important;
+      &-container { flex-direction: column; }
+      &-delimiter {
+        width: 100% !important;
+        height: 0 !important;
+        margin: 14px 0;
+      }
+    }
+    &-wrapper,
+    &-container {
+      height: auto !important;
+      min-height: 850px !important;
+    }
+    &-wrapper {
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      &-container {
+        height: auto !important;
+      }
+    }
+
+    &-slider {
+      margin-top: 30px;
+      &-slides,
+      &-container {
+        flex-direction: row !important;
+      }
+    }
+  }
+
+  /* seasonPrograms */
+  .seasonPrograms {
+    &-item { margin-right: 0 !important; }
+    &-more { margin-left: 0 !important; }
+    &-card {
+      width: 100% !important;
+      margin: 10px 0 !important;
+    }
+    &-group {
+      flex-direction: column !important;
+    }
+  }
+
+  /* reviews */
+  .reviews {
+    margin-top: 140px !important;
+    &-container {
+      flex-direction: column !important;
+      justify-content: initial;
+    }
+    &-cards ,
+    &-slider {
+      max-width: none !important;
+    }
+    &-cards {
+      &-group {
+        &-gradient {
+          &-card {
+            height: 65px !important;
+            &-round {
+              width: 25px !important;
+              height: 25px !important;
+              &-img {
+                width: 17px !important;
+                height: 17px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-slider {
+      margin-top: 20px !important;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  /* exclusive */
+  .exclusive {
+    margin-bottom: 90px;
+    &-content {
+      margin-right: 0 !important;
+    }
+    &-form {
+      position: relative !important;
+      bottom: 10px !important;
+      &.inside {
+        display: none !important;
+      }
+      &.outside {
+        display: block !important;
+      }
+    }
+  }
+
+  /* rating */
+  .rating {
+    &-container {
+      flex-direction: column !important;
+    }
+    &-card {
+      width: 100% !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  /* footer */
+  .footer {
+    &-card,
+    &-container {
+      padding: 0 !important;
+    }
+    &-inner {
+      flex-wrap: wrap;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    &-seeYouAtHotel {
+      margin: 0 !important;
+      padding: 0 !important;
+      &-address {
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+      }
+    }
+    &-service {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column !important;
+    }
+    &-carousel,
+    &-slide {
+      width: 294px !important;
+      height: 234px !important;
+      &-corner {
+        &--arrow {
+          width: 50px !important;
+          height: 50px !important;
+        }
+      }
+    }
+  }
+
+  /* hotelGroup */
+  .hotelGroup {
+    &-accordion {
+      &-item {
+        &--header {
+          &-count {
+            width: 62px !important;
+            height: 33px !important;
+          }
+          &-arrow {
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 10px !important;
+            & img {
+              width: 25px !important;
+              height: 25px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
