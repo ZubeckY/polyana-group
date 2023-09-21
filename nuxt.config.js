@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-const ImageminPlugin = require('imagemin-webpack-plugin').default
 export default {
   server: { host: '0.0.0.0' },
   head: {
@@ -40,7 +39,6 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    'nuxt-webfontloader',
     "cookie-universal-nuxt"
   ],
   axios: {baseURL:'/', proxy:true},
@@ -59,12 +57,6 @@ export default {
         }
       }
     }
-  },
-  image: { inject: true },
-  render: {
-    etag: false,
-    resourceHints: false,
-    static: { etag: false }
   },
   build: {
     html:{
@@ -85,10 +77,10 @@ export default {
         removeComments: true
       }
     },
-    optimizeCss: true,
-    extractCSS: { ignoreOrder: true },
     transpile: ["swiper"],
-    optimization: {minimize: true},
+    optimization: {
+      minimize: true
+    },
     splitChunks: {
       layouts: true,
       pages: true,
@@ -97,29 +89,5 @@ export default {
         styles: {name: 'styles', test: /\.(css|less|vue)$/, chunks: 'all', enforce: true}
       }
     },
-
-    extend (config, ctx) {
-      const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
-      const vueSvgLoader = [{loader: 'vue-svg-loader', options: { svgo: false }}]
-      const imageMinPlugin = new ImageminPlugin({
-        test: ORIGINAL_TEST,
-        loader: 'url-loader',
-        options: { limit: 1000, name: '[path][name].[ext]' },
-        pngquant: {quality: '5-30', speed: 7, strip: true},
-        jpegtran: { progressive: true },
-        gifsicle: { interlaced: true }
-      })
-      const svgRule = {
-        test: /\.svg$/,
-        oneOf: [
-          { resourceQuery: /inline/, use: vueSvgLoader },
-          { resourceQuery: /data/,  loader: 'url-loader' },
-          { resourceQuery: /raw/, loader: 'raw-loader' },
-          { loader: 'file-loader' }
-        ]
-      }
-      config.module.rules.push(svgRule)
-      config.plugins.push(imageMinPlugin)
-    }
   }
 }
