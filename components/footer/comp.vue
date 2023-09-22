@@ -62,13 +62,10 @@
               <v-card-actions class="pa-0 ml-4">
                 <div class="d-flex flex-column align-start">
                   <v-btn v-for="(item, i) in links"
-                         :key="item.link+'-'+i"
+                         color="black" v-html="item['title']" text
+                         :key="item.link+'-'+i" :disabled="item.disabled"
                          class="footer-helpInfo-link text-none pa-0 mb-1"
-                         min-width="0" min-height="0"
-                         width="auto" height="auto"
-                         color="black" text>
-                    {{ item['title'] }}
-                  </v-btn>
+                         width="auto" height="auto" min-width="0" min-height="0"/>
                 </div>
               </v-card-actions>
             </div>
@@ -155,6 +152,7 @@ export default class FooterComp extends Vue {
     { link: '/', title: 'Трансфер', },
     { link: '/', title: 'Реквизиты', },
     { link: '/', title: 'Контакты', },
+    { link: '',  title: '&nbsp;', disabled: true },
     { link: '/', title: 'Частые вопросы', },
     { link: '/', title: 'Инфраструктура', },
     { link: '/', title: 'Активности на Красной поляне', },

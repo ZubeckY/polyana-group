@@ -63,12 +63,10 @@ export default class Exclusive extends Vue {
   &-title {color: white !important;font-weight: 400 !important;white-space: pre-line !important;}
   &-text {
     color: white !important;
-    font-family: 'Montserrat' !important;
     line-height: 136.4% !important;
 
     &-container { max-width: 492px; }
     &-promotion {
-      font-family: 'Montserrat' !important;
       color: white !important;
       font-size: 14px !important;
       line-height: 136.4% !important;

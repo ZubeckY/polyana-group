@@ -67,7 +67,6 @@ export default class FeedbackForm extends Vue {
 /* feedbackForm */
 .feedbackForm {
   border-radius: var(--bordrad23) !important;
-  & * {font-family: 'Montserrat' !important;}
   &-title {
     color: white; font-size: 16px !important; font-weight: 400 !important;
     text-transform: uppercase; white-space: pre-line !important;

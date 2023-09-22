@@ -24,7 +24,7 @@
         </div>
 
         <v-card-actions class="mt-4 ml-2 pa-0">
-          <v-btn class="font-weight-regular white--text rounded-xxl"
+          <v-btn class="font-weight-regular white--text" style="border-radius: 16px"
                  width="300px" height="55px" elevation="0" color="golden-gradient">
             СМОТРЕТЬ ВСЕ АКЦИИ
           </v-btn>
