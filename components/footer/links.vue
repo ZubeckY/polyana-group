@@ -1,14 +1,15 @@
 <template>
   <v-card-actions class="pa-0 ml-4">
     <div class="d-flex flex-column align-start">
-      <v-btn v-for="(item, i) in links"
-             color="black" text
-             v-html="item['title']"
+      <v-btn class="footer-helpInfo-link text-none pa-0 mb-1"
+             v-for="(item, i) in links"
              :key="itemLink(item, i)"
              :disabled="itemDisabled(item)"
-             class="footer-helpInfo-link text-none pa-0 mb-1"
+             min-width="0" min-height="0"
              width="auto" height="auto"
-             min-width="0" min-height="0"/>
+             v-html="item['title']"
+             color="black" text>
+      </v-btn>
     </div>
   </v-card-actions>
 </template>
