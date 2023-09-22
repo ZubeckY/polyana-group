@@ -2,7 +2,7 @@
   <div>
     <!-- хедер -->
     <header-main :activeImage="activeImage"
-                      @changeActiveSlide="changeActiveSlide"/>
+                 @changeActiveSlide="changeActiveSlide"/>
 
     <!-- рейтинг карточки -->
     <section class="rating mt-5">
@@ -52,8 +52,9 @@
                         elevation="0" rounded="circle"
                         width="160px" height="160px">
                   <pinterest-rotate/>
-                  <v-img class="pinterest-video-aboutHotels-play" contain
-                         src="img/top-right-arrow.png"/>
+                  <nuxt-img class="pinterest-video-aboutHotels-play"
+                            src="img/top-right-arrow.png"
+                            fit="contain" quality="80" :placeholder="[50]"/>
                 </v-card>
               </v-card>
             </v-card>
@@ -94,7 +95,7 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <v-img src="img/top-right-arrow-2.png" alt="#"/>
+                  <nuxt-img src="img/top-right-arrow-2.png" quality="80" :placeholder="[50]"/>
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -133,9 +134,10 @@
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="sunbed" width="60px" height="60px"
-                         contain src="img/seasonPrograms/summer/sunbed.png"/>
+                <div class="seasonPrograms-card-image mt-2 mr-2">
+                  <nuxt-img class="d-block" alt="sunbed" width="60px" height="60px"
+                            src="img/seasonPrograms/summer/sunbed.png"
+                            quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -154,9 +156,10 @@
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="music" width="67px" height="67px"
-                         contain src="img/seasonPrograms/summer/music.png"/>
+                <div class="seasonPrograms-card-image mt-1 mr-2">
+                  <nuxt-img class="d-block" alt="music" width="67px" height="67px"
+                            src="img/seasonPrograms/summer/music.png"
+                            quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
@@ -175,9 +178,10 @@
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="party" width="67px" height="67px"
-                         contain src="img/seasonPrograms/summer/party.png"/>
+                <div class="seasonPrograms-card-image mt-2 mr-2">
+                  <nuxt-img class="d-block" alt="party" width="67px" height="67px"
+                            src="img/seasonPrograms/summer/party.png"
+                            quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Анимация для
                   детей: веселье
@@ -218,8 +222,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="#" width="60px" height="60px"
-                         contain src="img/seasonPrograms/winter/cable-car.png"/>
+                  <nuxt-img class="d-block" alt="#" width="60px" height="60px"
+                            src="img/seasonPrograms/winter/cable-car.png"
+                            quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -239,8 +244,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="#" width="60px" height="60px"
-                         contain src="img/seasonPrograms/winter/skis.png"/>
+                  <nuxt-img class="d-block" alt="#" width="60px" height="60px"
+                            src="img/seasonPrograms/winter/skis.png"
+                            quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
                   зимнего спортивного
@@ -260,8 +266,9 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <v-img class="d-block" alt="#" width="63px" height="63px"
-                         contain src="img/seasonPrograms/winter/pool.png"/>
+                  <nuxt-img class="d-block" alt="#" width="63px" height="63px"
+                            src="img/seasonPrograms/winter/pool.png"
+                            quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>

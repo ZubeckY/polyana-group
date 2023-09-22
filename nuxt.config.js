@@ -45,6 +45,7 @@ export default {
   ],
 
   modules: [
+    '@nuxt/image',
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     "cookie-universal-nuxt"
@@ -54,20 +55,22 @@ export default {
 
   vuetify: {
     optionsPath: './vuetify.options.js',
-    theme: {
-      dark: false,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+    defaultAssets: false,
+    treeShake: true
+    // theme: {
+    //   dark: false,
+    //   themes: {
+    //     dark: {
+    //       primary: colors.blue.darken2,
+    //       accent: colors.grey.darken3,
+    //       secondary: colors.amber.darken3,
+    //       info: colors.teal.lighten1,
+    //       warning: colors.amber.base,
+    //       error: colors.deepOrange.accent4,
+    //       success: colors.green.accent3
+    //     }
+    //   }
+    // }
   },
 
   webpackOptimisations: {

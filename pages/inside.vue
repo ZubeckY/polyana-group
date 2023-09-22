@@ -1,5 +1,8 @@
 <template>
   <div>
+
+<!-- <nuxt-img src="" quality="80" :placeholder="[50]"/> -->
+
     <header>
       <v-card class="d-flex align-center" height="100px" rounded="xxl" color="var(--dark-color)" elevation="0" dark>
         <div class="mx-auto" style="max-width: 90%; width: 100%;">
@@ -63,11 +66,11 @@
           <div class="example-element-container">
             <div class="example-element">
 
-              <v-card-title class="section-title fontSize-xl--l text-uppercase pa-0" style="color: var(--dark-color);white-space: pre-line">Роскошный
+              <v-card-title class="section-title fontSize-xl--l text-uppercase" style="color: var(--dark-color);white-space: pre-line">Роскошный
                 горный отдых
                 с комфортом!</v-card-title>
 
-              <v-card-text class="mt-5 pa-0" style="white-space: pre-line">&nbsp; <b>ULTIMA CLUB HOTEL & SPA</b> на Красной поляне - идеальное место для тех, кто ищет комфорт и роскошь. Мы предлагаем широкий выбор удобств, включая бассейн, спа-центр, хамам
+              <v-card-text style="white-space: pre-line">&nbsp; <b>ULTIMA CLUB HOTEL & SPA</b> на Красной поляне - идеальное место для тех, кто ищет комфорт и роскошь. Мы предлагаем широкий выбор удобств, включая бассейн, спа-центр, хамам
                 и ski room, кинотеатр на крыше с кальяной зоной. Наши
                 номера оформлены с уникальным дизайном и предлагают великолепный вид на горы. Ресторан отеля предлагают
                 блюда местной и мировой кухни, чтобы удовлетворить
@@ -81,7 +84,7 @@
                 свяжитесь с нами для получения большей информации по телефону: <b>+7 989 009 5577.</b>
               </v-card-text>
 
-              <v-card-actions class="mt-5 pa-0">
+              <v-card-actions>
                 <v-btn elevation="0"
                        width="100%"
                        height="55px"
@@ -102,7 +105,7 @@
 
 
           <style>
-            .example-element-container { height: 1200px }
+            .example-element-container { height: 2000px }
             .example-element {
               position: sticky; position: -webkit-sticky;
               top: 20px; z-index: 1; width: 100%; max-width: 520px;

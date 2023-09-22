@@ -4,7 +4,7 @@
           color="var(--card-grey)">
     <div class="rating-card-container d-flex flex-column pt-1">
       <div class="d-flex">
-        <div class="rating-we-care-star text-center pt-2">*</div>
+        <div class="rating-we-care-star text-center pt-1">*</div>
         <v-card-title class="rating-card-title ma-0 ml-2 pa-0">Отели
           4-5 звёзд
         </v-card-title>
