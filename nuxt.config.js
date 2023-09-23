@@ -48,29 +48,28 @@ export default {
     '@nuxt/image',
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    "cookie-universal-nuxt"
+    "cookie-universal-nuxt",
+    'nuxt-webfontloader',
   ],
 
-  axios: { baseURL:'/' },
+  webfontloader: {
+    google: {
+      families: [
+        'Montserrat:100,200,300,400,500,600,700,800,900&display=swap'
+      ]
+    }
+  },
+
+  axios: { baseURL: '/' },
 
   vuetify: {
     optionsPath: './vuetify.options.js',
-    defaultAssets: false,
-    treeShake: true
-    // theme: {
-    //   dark: false,
-    //   themes: {
-    //     dark: {
-    //       primary: colors.blue.darken2,
-    //       accent: colors.grey.darken3,
-    //       secondary: colors.amber.darken3,
-    //       info: colors.teal.lighten1,
-    //       warning: colors.amber.base,
-    //       error: colors.deepOrange.accent4,
-    //       success: colors.green.accent3
-    //     }
-    //   }
-    // }
+    defaultAssets: {
+      font: { family: 'Montserrat' },
+    },
+    theme: { dark: false, },
+
+    treeShake: true,
   },
 
   webpackOptimisations: {
@@ -90,9 +89,9 @@ export default {
   },
 
   build: {
+
     filenames: {
       chunk: ({ isDev, isModern }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`,
-      img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[name].[contenthash:7].[ext]',
     },
 
     html: {
@@ -109,23 +108,9 @@ export default {
       }
     },
 
-    // extractCSS: true,
-    // cssSourceMap: false,
-
     optimization: {
       minimize: true
     },
-    //   splitChunks: {
-    //     cacheGroups: {
-    //       styles: {
-    //         name: 'styles',
-    //         test: /\.(css|less|vue)$/,
-    //         chunks: 'all',
-    //         enforce: true
-    //       }
-    //     }
-    //   }
-    // },
 
     transpile: ["swiper"]
 
