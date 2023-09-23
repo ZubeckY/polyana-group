@@ -52,7 +52,7 @@
                         elevation="0" rounded="circle"
                         width="160px" height="160px">
                   <pinterest-rotate/>
-                  <nuxt-img class="pinterest-video-aboutHotels-play"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="pinterest-video-aboutHotels-play"
                             src="img/top-right-arrow.png"
                             fit="contain" quality="80" :placeholder="[50]"/>
                 </v-card>
@@ -95,7 +95,7 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <nuxt-img src="img/top-right-arrow-2.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="img/top-right-arrow-2.png" quality="80" :placeholder="[50]"/>
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -135,7 +135,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-2 mr-2">
-                  <nuxt-img class="d-block" alt="sunbed" width="60px" height="60px"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="sunbed" width="60px" height="60px"
                             src="img/seasonPrograms/summer/sunbed.png"
                             quality="80" :placeholder="[50]"/>
                 </div>
@@ -157,7 +157,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-1 mr-2">
-                  <nuxt-img class="d-block" alt="music" width="67px" height="67px"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="music" width="67px" height="67px"
                             src="img/seasonPrograms/summer/music.png"
                             quality="80" :placeholder="[50]"/>
                 </div>
@@ -179,7 +179,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-2 mr-2">
-                  <nuxt-img class="d-block" alt="party" width="67px" height="67px"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="party" width="67px" height="67px"
                             src="img/seasonPrograms/summer/party.png"
                             quality="80" :placeholder="[50]"/>
                 </div>
@@ -222,7 +222,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img class="d-block" alt="#" width="60px" height="60px"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="60px" height="60px"
                             src="img/seasonPrograms/winter/cable-car.png"
                             quality="80" :placeholder="[50]"/>
                 </div>
@@ -244,7 +244,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img class="d-block" alt="#" width="60px" height="60px"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="60px" height="60px"
                             src="img/seasonPrograms/winter/skis.png"
                             quality="80" :placeholder="[50]"/>
                 </div>
@@ -266,7 +266,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img class="d-block" alt="#" width="63px" height="63px"
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="63px" height="63px"
                             src="img/seasonPrograms/winter/pool.png"
                             quality="80" :placeholder="[50]"/>
                 </div>
@@ -308,7 +308,7 @@ import thousandSeparator from "assets/scripts/thousandSeparator";
   methods: {thousandSeparator}
 })
 export default class Pages extends Vue {
-  activeImage: string = '_MG_2185_1.jpg'
+  activeImage: string = '_MG_2185_1.webp'
   hotels: number = 0
   hotelList: any = [
     {

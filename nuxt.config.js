@@ -38,14 +38,14 @@ export default {
   ],
 
   buildModules: [
+    "nuxt-storm",
+    '@nuxt/image',
     '@nuxtjs/vuetify',
-    'nuxt-webpack-optimisations',
     '@nuxt/typescript-build',
-    "nuxt-storm"
+    'nuxt-webpack-optimisations',
   ],
 
   modules: [
-    '@nuxt/image',
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     "cookie-universal-nuxt",
@@ -62,14 +62,19 @@ export default {
 
   axios: { baseURL: '/' },
 
+  image: {
+    quality: 80,
+    inject: true,
+    format: ['webp'],
+    sets: "300,300:600,600:900"
+  },
+
   vuetify: {
     optionsPath: './vuetify.options.js',
     defaultAssets: {
       font: { family: 'Montserrat' },
     },
-    theme: { dark: false, },
-
-    treeShake: true,
+    // theme: { dark: false, },
   },
 
   webpackOptimisations: {

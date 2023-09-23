@@ -1,7 +1,7 @@
 <template>
   <div>
 
-<!-- <nuxt-img src="" quality="80" :placeholder="[50]"/> -->
+<!-- <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="" quality="80" :placeholder="[50]"/> -->
 
     <header>
       <v-card class="d-flex align-center" height="100px" rounded="xxl" color="var(--dark-color)" elevation="0" dark>

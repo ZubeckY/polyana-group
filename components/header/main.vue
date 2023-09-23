@@ -3,6 +3,7 @@
     <!-- Картинка -->
     <v-img class="header-container" elevation="0"
            :position="position" :contain="showButtons"
+           :srcset="`img/header/slider/${activeImage} 360w`"
            :src="'img/header/slider/' + activeImage">
       <!-- Градиент -->
       <div class="header-wrapper">

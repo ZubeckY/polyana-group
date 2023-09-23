@@ -1,7 +1,7 @@
 <template>
   <section class="exclusive">
     <v-card class="exclusive-background d-flex flex-column align-center justify-center rounded-xxl pa-4"
-            elevation="0" min-height="736px" color="transparent" img="img/exclusive/background.jpg">
+            elevation="0" min-height="736px" color="transparent" img="img/exclusive/background.webp">
 
       <v-card class="exclusive-container d-flex justify-center align-center"
               width="100%" height="500px" max-width="1075px" elevation="0">
