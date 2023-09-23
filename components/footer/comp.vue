@@ -8,14 +8,9 @@
           <div class="footer-seeYouAtHotel">
             <!-- До встречи в наших отелях -->
             <v-card-title class="footer-seeYouAtHotel-title footer-title pb-3">До встречи в наших отелях</v-card-title>
-            <v-chip-group class="footer-seeYouAtHotel-group ml-3 mb-2"
-                          v-model="activeChip" mandatory column
-                          active-class="golden-gradient white--text">
-              <v-chip class="footer-seeYouAtHotel-chip text-uppercase py-3 px-4"
-                      v-for="(item, i) in localMapping"
-                      :key="item.id" :value="i" color="#FAFAFD">
-                {{ item.title }}
-              </v-chip>
+            <v-chip-group class="footer-seeYouAtHotel-group ml-3 mb-2" v-model="activeChip"
+                          mandatory column active-class="golden-gradient white--text">
+              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="i" :value="i" :item="item"/>
             </v-chip-group>
 
             <div class="footer-seeYouAtHotel-address d-flex">
@@ -58,9 +53,8 @@
             <div class="footer-helpInfo">
               <v-card-title class="footer-helpInfo-title footer-title">помощь и информация</v-card-title>
               <v-card-subtitle class="footer-helpInfo-subtitle my-2 pb-0 text-uppercase">О Комплексе</v-card-subtitle>
-
+              <!-- Ссылки -->
               <footer-links/>
-
             </div>
             <v-spacer/>
             <!-- Забронировать -->
