@@ -6,8 +6,7 @@
       </div>
       <v-card class=" d-flex justify-center align-center rounded-xxl"
               width="72px" height="72px" elevation="0" color="golden-gradient">
-        <v-img width="41px" height="41px" alt="#" contain
-               src="img/top-right-arrow-2.png"/>
+        <v-img width="41px" height="41px" src="img/top-right-arrow.png" alt="#" contain/>
       </v-card>
     </div>
 

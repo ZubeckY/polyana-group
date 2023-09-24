@@ -1,11 +1,7 @@
 <template>
   <v-card-actions class="pa-0 ml-4">
     <div class="d-flex flex-column align-start">
-      <v-btn :class="'footer-helpInfo-link text-none pa-0 mb-1 ' + item.class"
-             v-for="(item, i) in links" :key="itemLink(item, i)"
-             min-width="0" min-height="0" width="auto" height="auto" color="black" text>
-        {{ item['title'] }}
-      </v-btn>
+      <link-component v-for="(item, i) in links" :key="itemLink(item, i)" :item="item"/>
     </div>
   </v-card-actions>
 </template>

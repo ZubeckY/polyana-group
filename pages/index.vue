@@ -1,8 +1,175 @@
 <template>
   <div>
+
     <!-- хедер -->
-    <header-main :activeImage="activeImage"
-                 @changeActiveSlide="changeActiveSlide"/>
+    <header class="header header-main">
+      <div class="header-container" :style="activeSlide">
+        <div class="header-container-inner">
+          <nav class="header-nav">
+            <div class="header-nav-container general-container d-flex align-center flex-row">
+              <v-btn class="header-nav__menu mr-auto pa-0" text
+                     min-width="0" min-height="0" width="auto" height="0">
+                <div class="header-nav__menu-container d-flex justify-center align-center flex-column">
+                  <div class="d-flex justify-center align-center flex-column">
+                    <div v-for="i in 3" :key="'image'+i" class="header-nav__menu-line"></div>
+                  </div>
+                  <div class="header-nav__menu-title">Меню</div>
+                </div>
+              </v-btn>
+
+              <link-component class="header-nav__link mx-auto" v-for="(item,i) in firstLinks" :key="i" :item="item"/>
+              <logo class="mx-auto"/>
+              <link-component class="header-nav__link mx-auto" v-for="(item,i) in secondLinks" :key="i" :item="item"/>
+
+              <div class="header-nav__reservation ml-auto">
+                <div class="header-nav__reservation-container d-flex flex-column">
+                  <v-btn class="header-nav__reservation-booking font-weight-bold" elevation="0" color="var(--golden-2)">Забронировать</v-btn>
+                  <v-btn class="header-nav__reservation-phone font-weight-bold" elevation="0" dark>+7 989 009 5577</v-btn>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div class="header-body">
+            <div class="header-body-container general-container">
+              <div class="header-content d-flex">
+                <div class="header-content__season">
+                  <div class="header-content__season-container">
+                    <v-btn-toggle active-class="season-active" mandatory
+                                  class="header-content__season-switch ma-0 pa-0">
+                      <v-btn class="header-content__season-switch-button pa-0 ma-0"
+                             elevation="0" min-height="0" min-width="0" value="summer" text>Лето</v-btn>
+                      <v-btn class="header-content__season-switch-button pa-0 ma-0"
+                             elevation="0" min-height="0" min-width="0" value="winter" text>Зима</v-btn>
+                    </v-btn-toggle>
+                  </div>
+                </div>
+                <div class="header-content__title">
+                  <div class="header-content__title-container">
+                    <div class="section-title fontSize-xl--l text-uppercase white--text text-pre-line pa-0">Отдыхайте с комфортом
+                      и наслаждайтесь<span class="golden-gradient--text"> красотами
+                        Красной Поляны</span> в наших
+                      уникальных отелях!
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="header-slider">
+                <div class="header-slider-container">
+
+                  <v-btn class="header-slider-arrow" elevation="0" fab>
+                    <v-icon>mdi-chevron-up</v-icon>
+                  </v-btn>
+
+                  <v-btn-toggle class="header-slider__slider"
+                                color="rgba(255, 255, 255, 0.75)" mandatory>
+                    <v-btn class="header-slider__slide"
+                           color="rgba(255, 255, 255, 0.32)"
+                           min-height="0" min-width="0" fab>
+                    </v-btn>
+                    <v-btn class="header-slider__slide"
+                           color="rgba(255, 255, 255, 0.32)"
+                           min-height="0" min-width="0" fab>
+                    </v-btn>
+                    <v-btn class="header-slider__slide"
+                           color="rgba(255, 255, 255, 0.32)"
+                           min-height="0" min-width="0" fab>
+                    </v-btn>
+                  </v-btn-toggle>
+
+                  <v-btn class="header-slider-arrow" elevation="0" fab>
+                    <v-icon>mdi-chevron-down</v-icon>
+                  </v-btn>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="header-booking">
+            <div class="header-booking-container d-flex">
+
+              <div class="header-booking__card hotel">
+                <div class="header-booking__card-container">
+                  <div class="header-booking__card-head d-flex align-center flex-row">
+                    <v-spacer/>
+                    <div>&nbsp;</div>
+                  </div>
+                  <div class="header-booking__card-title hotel">Ultima Club Hotel&...</div>
+                </div>
+              </div>
+
+              <div class="header-booking-delimiter"></div>
+
+              <div class="header-booking__card">
+                <div class="header-booking__card-container">
+                  <div class="header-booking__card-head d-flex align-center flex-row">
+                    <div>Заезд</div>
+                    <v-spacer/>
+                    <div>&nbsp;</div>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
+                              class="d-block" alt="#" width="23px" height="23px"
+                              src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                  </div>
+                  <div class="header-booking__card-title">4 августа 2023</div>
+                </div>
+              </div>
+
+              <div class="header-booking-delimiter"></div>
+
+              <div class="header-booking__card">
+                <div class="header-booking__card-container">
+                  <div class="header-booking__card-head d-flex align-center flex-row">
+                    <div>Выезд</div>
+                    <v-spacer/>
+                    <div>&nbsp;</div>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
+                              class="d-block" alt="#" width="23px" height="23px"
+                              src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                  </div>
+                  <div class="header-booking__card-title">7 августа 2023</div>
+                </div>
+              </div>
+
+              <div class="header-booking-delimiter"></div>
+
+              <div class="header-booking__card">
+                <div class="header-booking__card-container">
+                  <div class="header-booking__card-head d-flex align-center flex-row">
+                    <div>Гости</div>
+                    <v-spacer/>
+                    <div>&nbsp;</div>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
+                              class="d-block" alt="#" width="23px" height="23px"
+                              src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                  </div>
+                  <div class="header-booking__card-title">2</div>
+                </div>
+              </div>
+
+              <div class="header-booking-delimiter"></div>
+
+              <div class="header-booking__card search">
+                <div class="header-booking__card-container d-flex justify-center align-center">
+                  <v-btn class="header-booking__card-button text-none"
+                         elevation="0" color="var(--dark-color)"
+                         min-height="0" min-width="0" dark>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
+                              class="d-block mr-2" alt="#" width="20px" height="20px"
+                              src="img/search.png" quality="80" :placeholder="[50]"/>
+                    <div>Найти номер</div>
+                  </v-btn>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
 
     <!-- рейтинг карточки -->
     <section class="rating mt-5">
@@ -53,8 +220,7 @@
                         width="160px" height="160px">
                   <pinterest-rotate/>
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="pinterest-video-aboutHotels-play"
-                            src="img/top-right-arrow.png"
-                            fit="contain" quality="80" :placeholder="[50]"/>
+                            src="img/top-right-arrow.png" fit="contain" quality="80" :placeholder="[50]"/>
                 </v-card>
               </v-card>
             </v-card>
@@ -95,7 +261,7 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="img/top-right-arrow-2.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -136,8 +302,7 @@
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-2 mr-2">
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="sunbed" width="60px" height="60px"
-                            src="img/seasonPrograms/summer/sunbed.png"
-                            quality="80" :placeholder="[50]"/>
+                            src="img/seasonPrograms/summer/sunbed.png" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -158,8 +323,7 @@
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-1 mr-2">
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="music" width="67px" height="67px"
-                            src="img/seasonPrograms/summer/music.png"
-                            quality="80" :placeholder="[50]"/>
+                            src="img/seasonPrograms/summer/music.png" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
@@ -223,8 +387,7 @@
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="60px" height="60px"
-                            src="img/seasonPrograms/winter/cable-car.png"
-                            quality="80" :placeholder="[50]"/>
+                            src="img/seasonPrograms/winter/cable-car.png" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -245,8 +408,7 @@
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="60px" height="60px"
-                            src="img/seasonPrograms/winter/skis.png"
-                            quality="80" :placeholder="[50]"/>
+                            src="img/seasonPrograms/winter/skis.png" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
                   зимнего спортивного
@@ -267,8 +429,7 @@
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="63px" height="63px"
-                            src="img/seasonPrograms/winter/pool.png"
-                            quality="80" :placeholder="[50]"/>
+                            src="img/seasonPrograms/winter/pool.png" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>
@@ -304,12 +465,60 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import thousandSeparator from "assets/scripts/thousandSeparator";
+
 @Component({
   methods: {thousandSeparator}
 })
 export default class Pages extends Vue {
   activeImage: string = '_MG_2185_1.webp'
   hotels: number = 0
+  links: any = [
+    {
+      title: 'Главная'
+    },
+    {
+      title: 'Отели'
+    },
+    {
+      title: 'Номера'
+    },
+    {
+      title: 'SPA'
+    },
+    {
+      title: 'Услуги'
+    },
+    {
+      title: 'Ресторан'
+    },
+    {
+      title: 'Контакты'
+    },
+  ]
+
+  get activeSlide () {
+    return `background-image: url('img/header/slider/${this.activeImage}')`
+  }
+
+  get firstLinks () {
+    let array = []
+    for (let i = 0; i < this.links.length; i++) {
+      array.push(this.links[i])
+      if (this.links[i]['title'] === 'SPA') break
+    }
+    return array
+  }
+
+  get secondLinks () {
+    let array = []
+    for (let i = 0; i < this.links.length; i++) {
+      if (i >= 4) {
+        array.push(this.links[i])
+      }
+    }
+    return array
+  }
+
   hotelList: any = [
     {
       id: '001',
@@ -332,6 +541,8 @@ export default class Pages extends Vue {
     return item ? thousandSeparator (item['price']) : 0
   }
 
-  changeActiveSlide (value: string) {return this.activeImage = value}
+  changeActiveSlide (value: string) {
+    return this.activeImage = value
+  }
 }
 </script>

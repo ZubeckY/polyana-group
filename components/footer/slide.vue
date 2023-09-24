@@ -20,8 +20,7 @@
     <div class="footer-slide-corner">
       <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
               elevation="0" color="golden-gradient">
-        <v-img width="42px" height="42px" alt="#"
-               contain src="img/top-right-arrow-2.png"/>
+        <v-img width="42px" height="42px" src="img/top-right-arrow.png" alt="#" contain/>
       </v-card>
     </div>
   </v-card>
