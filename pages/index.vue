@@ -58,27 +58,27 @@
               <div class="header-slider">
                 <div class="header-slider-container">
 
-                  <v-btn class="header-slider-arrow" elevation="0" fab>
+                  <v-btn class="header-slider-arrow" title="Слайд назад" elevation="0" fab>
                     <v-icon>mdi-chevron-up</v-icon>
                   </v-btn>
 
                   <v-btn-toggle class="header-slider__slider"
                                 color="rgba(255, 255, 255, 0.75)" mandatory>
-                    <v-btn class="header-slider__slide"
+                    <v-btn class="header-slider__slide" title="Слайд 1"
                            color="rgba(255, 255, 255, 0.32)"
                            min-height="0" min-width="0" fab>
                     </v-btn>
-                    <v-btn class="header-slider__slide"
+                    <v-btn class="header-slider__slide" title="Слайд 2"
                            color="rgba(255, 255, 255, 0.32)"
                            min-height="0" min-width="0" fab>
                     </v-btn>
-                    <v-btn class="header-slider__slide"
+                    <v-btn class="header-slider__slide" title="Слайд 3"
                            color="rgba(255, 255, 255, 0.32)"
                            min-height="0" min-width="0" fab>
                     </v-btn>
                   </v-btn-toggle>
 
-                  <v-btn class="header-slider-arrow" elevation="0" fab>
+                  <v-btn class="header-slider-arrow" title="Слайд вперёд" elevation="0" fab>
                     <v-icon>mdi-chevron-down</v-icon>
                   </v-btn>
 
@@ -109,9 +109,8 @@
                     <div>Заезд</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
-                              class="d-block" alt="#" width="23px" height="23px"
-                              src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block"
+                              width="23px" height="23px" src="img/top-right-arrow.png" alt="#" quality="80" :placeholder="[50]"/>
                   </div>
                   <div class="header-booking__card-title">4 августа 2023</div>
                 </div>
@@ -125,9 +124,8 @@
                     <div>Выезд</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
-                              class="d-block" alt="#" width="23px" height="23px"
-                              src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="23px" height="23px"
+                              src="img/top-right-arrow.png" alt="#" quality="80" :placeholder="[50]"/>
                   </div>
                   <div class="header-booking__card-title">7 августа 2023</div>
                 </div>
@@ -141,9 +139,8 @@
                     <div>Гости</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
-                              class="d-block" alt="#" width="23px" height="23px"
-                              src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block"  width="23px" height="23px"
+                              src="img/top-right-arrow.png" alt="#" quality="80" :placeholder="[50]"/>
                   </div>
                   <div class="header-booking__card-title">2</div>
                 </div>
@@ -156,9 +153,8 @@
                   <v-btn class="header-booking__card-button text-none"
                          elevation="0" color="var(--dark-color)"
                          min-height="0" min-width="0" dark>
-                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px"
-                              class="d-block mr-2" alt="#" width="20px" height="20px"
-                              src="img/search.png" quality="80" :placeholder="[50]"/>
+                    <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block mr-2" width="20px" height="20px"
+                              src="img/search.png" alt="#" quality="80" :placeholder="[50]"/>
                     <div>Найти номер</div>
                   </v-btn>
                 </div>
@@ -220,7 +216,7 @@
                         width="160px" height="160px">
                   <pinterest-rotate/>
                   <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="pinterest-video-aboutHotels-play"
-                            src="img/top-right-arrow.png" fit="contain" quality="80" :placeholder="[50]"/>
+                            src="img/top-right-arrow.png" alt="#" fit="contain" quality="80" :placeholder="[50]"/>
                 </v-card>
               </v-card>
             </v-card>
@@ -261,7 +257,7 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="img/top-right-arrow.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="img/top-right-arrow.png" alt="#" quality="80" :placeholder="[50]"/>
                 </div>
               </template>
             </v-expansion-panel-header>
@@ -301,8 +297,8 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-2 mr-2">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="sunbed" width="60px" height="60px"
-                            src="img/seasonPrograms/summer/sunbed.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="60px" height="60px"
+                            src="img/seasonPrograms/summer/sunbed.png" alt="sunbed" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -322,8 +318,8 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-1 mr-2">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="music" width="67px" height="67px"
-                            src="img/seasonPrograms/summer/music.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="67px" height="67px"
+                            src="img/seasonPrograms/summer/music.png" alt="music" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
                   В БАРЕ У бассейна</v-card-title>
@@ -343,9 +339,8 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-2 mr-2">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="party" width="67px" height="67px"
-                            src="img/seasonPrograms/summer/party.png"
-                            quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="67px" height="67px"
+                            src="img/seasonPrograms/summer/party.png" alt="party" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">Анимация для
                   детей: веселье
@@ -386,8 +381,8 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="60px" height="60px"
-                            src="img/seasonPrograms/winter/cable-car.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="60px" height="60px"
+                            src="img/seasonPrograms/winter/cable-car.png" alt="cable-car" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
@@ -407,8 +402,8 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="60px" height="60px"
-                            src="img/seasonPrograms/winter/skis.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="60px" height="60px"
+                            src="img/seasonPrograms/winter/skis.png" alt="skis" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
                   зимнего спортивного
@@ -428,8 +423,8 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" alt="#" width="63px" height="63px"
-                            src="img/seasonPrograms/winter/pool.png" quality="80" :placeholder="[50]"/>
+                  <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block" width="63px" height="63px"
+                            src="img/seasonPrograms/winter/pool.png" alt="pool" quality="80" :placeholder="[50]"/>
                 </div>
                 <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
                   БАССЕЙН</v-card-title>
