@@ -17,7 +17,7 @@
                 color="var(--golden-1)" elevation="0"
                 width="82px" height="35px">
           <div class="d-flex flex-row justify-center align-center">
-            <v-img width="12px" height="12px" position="center center" contain src="img/weather/Sunrise.png" alt="day"/>
+            <v-img width="12px" height="12px" position="center center" contain src="img/weather/Sunrise.webp" alt="day"/>
             <div>{{ weather['main'] ? weather['main']['temp'] : 0 }} °</div>
           </div>
         </v-card>
@@ -25,7 +25,7 @@
                 color="var(--golden-1)" elevation="0"
                 width="82px" height="35px">
           <div class="d-flex flex-row justify-center align-center">
-            <v-img width="12px" height="12px" position="center center" contain src="img/weather/SleepMode.png" alt="night"/>
+            <v-img width="12px" height="12px" position="center center" contain src="img/weather/SleepMode.webp" alt="night"/>
             <div>{{ weather['main'] ? weather['main']['feels_like'] : 0 }} °</div>
           </div>
         </v-card>
@@ -33,7 +33,7 @@
                 color="var(--golden-1)" elevation="0"
                 width="82px" height="35px">
           <div class="d-flex flex-row justify-center align-center">
-            <v-img width="12px" height="12px" position="center center" contain src="img/weather/Wind.png" alt="wind"/>
+            <v-img width="12px" height="12px" position="center center" contain src="img/weather/Wind.webp" alt="wind"/>
             <div>{{ weather['wind'] ? weather['wind']['speed'] : 0 }} м/с</div>
           </div>
         </v-card>

@@ -64,9 +64,10 @@ export default {
   axios: { baseURL: '/' },
 
   image: {
-    loading: 'lazy',
-    quality: 80,
+    quality: 100,
     inject: true,
+    format: "webp",
+    loading: "lazy",
     placeholder: [50],
     sets: "300,300:600,600:900",
     sizes: "sm:355px md:320px lg:480px"

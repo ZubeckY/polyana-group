@@ -17,7 +17,7 @@
               <v-card class="reviews-cards-group-gradient-card-round d-flex justify-center align-center mr-3"
                       rounded="circle" elevation="0">
                 <v-img class="reviews-cards-group-gradient-card-round-img d-block" alt="Я"
-                       contain src="img/reviews/yandex.png" />
+                       contain src="img/reviews/yandex.webp" />
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
                 в Яндекс</v-card-title>
@@ -30,7 +30,7 @@
               <v-card class="reviews-cards-group-gradient-card-round d-flex justify-center align-center mr-3"
                       rounded="circle" elevation="0">
                 <v-img class="reviews-cards-group-gradient-card-round-img d-block" alt="TL"
-                       contain src="img/reviews/tl-rep.png"/>
+                       contain src="img/reviews/tl-rep.webp"/>
               </v-card>
               <v-card-title class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
                 в TL: REPUTATION</v-card-title>
