@@ -1,4 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
 const mode = 'production'
 const isDev = mode !== "production"
 
@@ -43,14 +42,14 @@ export default {
     '@nuxt/image',
     '@nuxtjs/vuetify',
     '@nuxt/typescript-build',
-    'nuxt-webpack-optimisations',
+    'nuxt-webpack-optimisations'
   ],
 
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     "cookie-universal-nuxt",
-    'nuxt-webfontloader',
+    'nuxt-webfontloader'
   ],
 
   webfontloader: {
@@ -98,7 +97,7 @@ export default {
   build: {
 
     filenames: {
-      chunk: ({ isDev, isModern }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`,
+      chunk: ({ isDev, isModern }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
     },
 
     html: {

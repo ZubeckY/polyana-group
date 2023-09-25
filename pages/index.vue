@@ -66,15 +66,15 @@
                                 color="rgba(255, 255, 255, 0.75)" mandatory>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 1"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img src="img/header/slider/Rectangle91.webp" alt="#"/>
+                      <nuxt-img class="header-slider__slide-img" src="img/header/slider/Rectangle91.webp" alt="#"/>
                     </v-btn>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 2"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img src="img/header/slider/Rectangle92.webp" alt="#"/>
+                      <nuxt-img class="header-slider__slide-img" src="img/header/slider/Rectangle92.webp" alt="#"/>
                     </v-btn>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 3"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img src="img/header/slider/Rectangle93.webp" alt="#"/>
+                      <nuxt-img class="header-slider__slide-img" src="img/header/slider/Rectangle93.webp" alt="#"/>
                     </v-btn>
                   </v-btn-toggle>
 
@@ -137,7 +137,7 @@
                     <div>Гости</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img class="d-block"  width="23px" height="23px" src="img/top-right-arrow.webp" alt="#"/>
+                    <nuxt-img class="d-block" width="23px" height="23px" src="img/top-right-arrow.webp" alt="#"/>
                   </div>
                   <div class="header-booking__card-title">2</div>
                 </div>
@@ -187,7 +187,7 @@
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
             <v-card-title class="pinterest-card-title fontSize-xl--l d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
-              КАК С КАРТИНОК <span><img src="img/pinterest/index.webp" alt="#"/></span>
+              КАК С КАРТИНОК <span><img width="152px" height="47px" src="img/pinterest/index.webp" alt="#"/></span>
             </v-card-title>
 
             <v-card class="pinterest-card-welcome general-container mt-6" color="transparent" elevation="0">
@@ -252,7 +252,7 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <nuxt-img src="img/top-right-arrow.webp" alt="#"/>
+                  <nuxt-img class="hotelGroup-accordion-item--header-arrow-img" src="img/top-right-arrow.webp" alt="#"/>
                 </div>
               </template>
             </v-expansion-panel-header>
