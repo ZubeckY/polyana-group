@@ -4,7 +4,7 @@
                 v-model="activeSlide" hide-delimiters>
       <v-carousel-item class="footer-slide"
                        v-for="(item, i) in activeChipPhotos"
-                       :key="'photo-' + i">
+                       :key="'photo-'+i">
         <lazy-footer-slide :item="item"/>
       </v-carousel-item>
     </v-carousel>

@@ -10,7 +10,7 @@
             <v-card-title class="footer-seeYouAtHotel-title footer-title pb-3">До встречи в наших отелях</v-card-title>
             <v-chip-group class="footer-seeYouAtHotel-group ml-3 mb-2" v-model="activeChip"
                           mandatory column active-class="golden-gradient white--text">
-              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="i" :value="i" :item="item"/>
+              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
             </v-chip-group>
 
             <div class="footer-seeYouAtHotel-address d-flex">
@@ -38,8 +38,8 @@
                 <v-carousel class="footer-carousel" style="height: 290px"
                             v-model="activeSlide" hide-delimiters>
                   <v-carousel-item class="footer-slide"
-                                   v-for="(item, i) in localMapping[activeChip]['photos']"
-                                   :key="'photo-' + item.id">
+                                   v-for="item in localMapping[activeChip]['photos']"
+                                   :key="'photo-'+item.id">
                     <lazy-footer-slide :item="item"/>
                   </v-carousel-item>
                 </v-carousel>

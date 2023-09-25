@@ -17,9 +17,9 @@
                 </div>
               </v-btn>
 
-              <link-component class="header-nav__link mx-auto" v-for="(item,i) in firstLinks" :key="i" :item="item"/>
+              <link-component class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item"/>
               <logo class="mx-auto"/>
-              <link-component class="header-nav__link mx-auto" v-for="(item,i) in secondLinks" :key="i" :item="item"/>
+              <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i" :item="item"/>
 
               <div class="header-nav__reservation ml-auto">
                 <div class="header-nav__reservation-container d-flex flex-column">
@@ -235,7 +235,7 @@
 
         <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
           <v-expansion-panel class="hotelGroup-accordion-item transparent"
-                             v-for="item in hotelList" :key="item.id">
+                             v-for="item in hotelList" :key="'hotel-group'+item.id">
             <v-expansion-panel-header class="hotelGroup-accordion-item--header ma-0 pa-0" disable-icon-rotate>
               <div class="hotelGroup-accordion-item--header-container d-flex align-center my-2">
 

@@ -2,7 +2,7 @@
   <div class="specialOffers-slider">
     <div class="swiper overflow-hidden" ref="container">
       <div class="swiper-wrapper d-flex flex-row">
-        <div class="swiper-slide" v-for="i in 3">
+        <div class="swiper-slide" v-for="i in 3" :key="'corner-card'-i">
           <lazy-corner-card/>
         </div>
       </div>
