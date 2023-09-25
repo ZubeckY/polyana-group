@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rating-card rating-weather" height="165px" elevation="0" color="var(--card-grey)">
+  <v-card class="rating-card rating-weather" height="150px" elevation="0" color="var(--card-grey)">
     <div class="rating-card-container d-flex flex-column pt-1">
       <div class="d-flex justify-space-between align-center">
         <v-card-title class="rating-card-title d-flex justify-space-between ma-0 pa-0 w-100">

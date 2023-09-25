@@ -3,7 +3,7 @@
   src: url("./CharterC.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url("./CharterC-Italic.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url("./CharterC-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -27,5 +27,5 @@
   src: url("./CharterC-BoldItalic.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }

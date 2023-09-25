@@ -1,6 +1,6 @@
 <template>
   <v-card class="rating-card rating-tl-rep"
-          height="165px" elevation="0"
+          height="150px" elevation="0"
           color="var(--card-grey)">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex">

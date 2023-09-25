@@ -28,7 +28,6 @@ export default {
     '~/assets/styles/fontSize.less',
     '~/assets/styles/footer.less',
     '~/assets/styles/header.less',
-    '~/assets/styles/items.less',
     '~/assets/styles/main.less',
     '~/assets/styles/ui-styles.less'
   ],
@@ -48,17 +47,17 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    "cookie-universal-nuxt",
-    'nuxt-webfontloader'
+    "cookie-universal-nuxt"
+    // 'nuxt-webfontloader'
   ],
 
-  webfontloader: {
-    google: {
-      families: [
-        'Montserrat:100,200,300,400,500,600,700,800,900&display=swap'
-      ]
-    }
-  },
+  // webfontloader: {
+  //   google: {
+  //     families: [
+  //       'Montserrat:100,200,300,400,500,600,700,800,900&display=swap'
+  //     ]
+  //   }
+  // },
 
   axios: { baseURL: '/' },
 
@@ -74,10 +73,10 @@ export default {
   vuetify: {
     optionsPath: './vuetify.options.js',
     defaultAssets: {
+      font: { family: 'Montserrat' },
       icons: {
         defaultSet: 'custom'
-      },
-      font: { family: 'Montserrat' }
+      }
     }
   },
 

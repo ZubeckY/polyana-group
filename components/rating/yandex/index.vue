@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rating-card rating-yandex" height="165px" elevation="0" color="var(--card-grey)">
+  <v-card class="rating-card rating-yandex" height="150px" elevation="0" color="var(--card-grey)">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex justify-space-between align-center">
         <lazy-rating-yandex-icon/>

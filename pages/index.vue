@@ -47,7 +47,7 @@
                 <div class="header-content__title">
                   <div class="header-content__title-container">
                     <div class="section-title fontSize-xl--l text-uppercase white--text text-pre-line pa-0">Отдыхайте с комфортом
-                      и наслаждайтесь<span class="golden-gradient--text"> красотами
+                      и наслаждайтесь<span class="golden-gradient--text section-title"> красотами
                         Красной Поляны</span> в наших
                       уникальных отелях!
                     </div>
@@ -66,15 +66,15 @@
                                 color="rgba(255, 255, 255, 0.75)" mandatory>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 1"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img width="60px" height="60px" src="img/header/slider/Rectangle91.webp" alt="#"/>
+                      <nuxt-img width="51px" height="51px" src="img/header/slider/Rectangle91.webp" alt="#"/>
                     </v-btn>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 2"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img width="60px" height="60px" src="img/header/slider/Rectangle92.webp" alt="#"/>
+                      <nuxt-img width="51px" height="51px" src="img/header/slider/Rectangle92.webp" alt="#"/>
                     </v-btn>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 3"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img width="60px" height="60px" src="img/header/slider/Rectangle93.webp" alt="#"/>
+                      <nuxt-img width="51px" height="51px" src="img/header/slider/Rectangle93.webp" alt="#"/>
                     </v-btn>
                   </v-btn-toggle>
 
@@ -91,11 +91,19 @@
           <div class="header-booking">
             <div class="header-booking-container d-flex">
 
-              <div class="header-booking__card hotel">
+              <div class="header-booking__card">
                 <div class="header-booking__card-container">
                   <div class="header-booking__card-head d-flex align-center flex-row">
+                    <div>Отель</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
+                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                      </g>
+                    </svg>
                   </div>
                   <div class="header-booking__card-title hotel">Ultima Club Hotel&...</div>
                 </div>
@@ -163,7 +171,7 @@
 
               <div class="header-booking-delimiter"></div>
 
-              <div class="header-booking__card search">
+              <div class="header-booking__card">
                 <div class="header-booking__card-container d-flex justify-center align-center">
                   <v-btn class="header-booking__card-button text-none"
                          elevation="0" color="var(--dark-color)"

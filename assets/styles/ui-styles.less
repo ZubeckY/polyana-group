@@ -1,6 +1,6 @@
 /* relax-in-comfort */
 .relax-in-comfort {
-  color: white; font-family: 'Cormorant Garamond' !important;
+  color: white; font-family: 'Cormorant Garamond', sans-serif !important;
   white-space: pre-line; text-transform: uppercase; font-weight: 700 !important;
   .golden { color: var(--golden-2); font-family: inherit !important;}
 }
@@ -16,11 +16,11 @@
     &-title {
       color: black;
       white-space: pre-line;
-      font-size: 18px !important;
+      font-size: 16px !important;
       font-weight: 700 !important;
       text-transform: uppercase;
     }
-    &-text {color: black;white-space: pre-line;font-size: 16px !important;}
+    &-text {color: black;white-space: pre-line;font-size: 14px !important;}
   }
   &-yandex {width: 257px;}
   &-tl-rep {
@@ -67,7 +67,7 @@
     border-radius: var(--bordrad23) !important;
     &-title {
       color: var(--dark-color);
-      font-family: 'Cormorant Garamond' !important;
+      font-family: 'Cormorant Garamond', sans-serif !important;
       font-weight: 700 !important;
       white-space: pre-line;
       text-transform: uppercase;
@@ -110,7 +110,7 @@
     &-item {
       &--header {
         &-count {width: 79px;height: 42px;font-weight: 500;border-radius: 100px;border: 1px solid #CCAB6A;text-transform: uppercase;}
-        &-title {font-family: 'CharterC' !important;font-weight: 400 !important;}
+        &-title {font-family: 'CharterC', sans-serif !important;font-weight: 400 !important;}
         &-price {color: #B6B6B6;font-weight: 400 !important;}
         &-arrow {
           width: 66px;
@@ -128,11 +128,13 @@
   margin-top: 85px;
   &-container {flex-direction: row;justify-content: space-between;}
   &-info {
-    width: 100% !important; max-width: 410px !important;
     &-title {color: var(--dark-color); white-space: pre-line !important;}
     &-text {
       white-space: pre-line;
-      & * {font-size: 16px !important; white-space: pre-line !important;}
+      & * {
+        font-size: 16px;
+        white-space: pre-line;
+      }
     }
   }
   &-slider {width: 100%; max-width: calc(80% - 360px); margin-left: 155px;}
@@ -191,7 +193,7 @@
   &-container {flex-direction: row;justify-content: space-between;}
   &-title {
     color: var(--dark-color);
-    font-family: 'CharterC' !important;
+    font-family: 'CharterC', sans-serif !important;
     white-space: pre-line;
   }
   &-cards {width: 100%;max-width: 50%;
