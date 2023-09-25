@@ -66,7 +66,6 @@ export default {
   image: {
     quality: 100,
     inject: true,
-    format: "webp",
     loading: "lazy",
     placeholder: [50],
     sets: "300,300:600,600:900",
