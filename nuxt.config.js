@@ -64,18 +64,19 @@ export default {
   axios: { baseURL: '/' },
 
   image: {
+    loading: 'lazy',
     quality: 80,
     inject: true,
-    format: ['webp'],
-    sets: "300,300:600,600:900"
+    placeholder: [50],
+    sets: "300,300:600,600:900",
+    sizes: "sm:355px md:320px lg:480px"
   },
 
   vuetify: {
     optionsPath: './vuetify.options.js',
     defaultAssets: {
-      font: { family: 'Montserrat' },
-    },
-    // theme: { dark: false, },
+      font: { family: 'Montserrat' }
+    }
   },
 
   webpackOptimisations: {

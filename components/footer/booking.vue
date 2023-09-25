@@ -34,8 +34,7 @@
              width="36px" height="36px"
              min-width="0" min-height="0"
              elevation="0" color="#24A2DF">
-        <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" class="d-block"
-                  width="20px" height="20px" src="img/footer/telegram.png" alt="#" quality="80" :placeholder="[50]"/>
+        <nuxt-img class="d-block" width="20px" height="20px" src="img/footer/telegram.png" alt="#"/>
       </v-btn>
       <v-btn class="rounded-lg" title="whatsapp"
              width="36px" height="36px"

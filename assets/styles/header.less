@@ -54,7 +54,7 @@
         font-size: 14px !important;
         border-radius: 4px !important;
         background: linear-gradient(93deg,
-        rgba(255, 255, 255, 0.10) -3.44%,
+          rgba(255, 255, 255, 0.10) -3.44%,
         rgba(255, 255, 255, 0.06) 113.56%) !important;
         backdrop-filter: blur(25px) !important;
       }
@@ -79,7 +79,7 @@
       display: flex;
       width: 100%;
       max-width: 86px;
-      align-items: end;
+      align-items: flex-end;
       &-container {
         position: relative;
         width: 28px;
@@ -118,6 +118,9 @@
     rgba(217, 217, 217, 0.40) 2.1%,
     rgba(217, 217, 217, 0.20) 103.66%);
     backdrop-filter: blur(25px) !important;
+    &-container {
+      justify-content: center;
+    }
     &__card {
       width: 100%;
       padding: 10px;
@@ -129,7 +132,7 @@
       }
       &.hotel,
       &.search {
-        max-width: 240px;
+        max-width: none;
       }
       &-head {
         color: white;
@@ -157,7 +160,7 @@
     &-delimiter {
       width: 1px;
       height: 90px;
-      margin: 0 10px;
+      margin: 0 3px;
       background: rgba(255, 255, 255, 0.20);
     }
   }

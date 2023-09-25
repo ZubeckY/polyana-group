@@ -1,7 +1,7 @@
 <template>
   <div>
 
-<!-- <nuxt-img loading="lazy" sizes="sm:355px md:320px lg:480px" src="" quality="80" :placeholder="[50]"/> -->
+<!-- <nuxt-img src=""/> -->
 
 
 
