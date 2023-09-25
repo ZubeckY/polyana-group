@@ -207,12 +207,10 @@
                       elevation="0" width="100%" height="485px"
                       img="img/pinterest/video.webp">
                 <v-card class="pinterest-video-aboutHotels d-flex justify-center align-center"
-                        color="var(--dark-color)"
-                        elevation="0" rounded="circle"
-                        width="160px" height="160px">
+                        color="var(--dark-color)" elevation="0" rounded="circle" width="160px" height="160px">
                   <pinterest-rotate/>
                   <div class="pinterest-video-aboutHotels-play">
-                    <nuxt-img src="img/top-right-arrow.webp" alt="#"/>
+                    <nuxt-img width="50px" height="50px" src="img/top-right-arrow.webp" alt="#"/>
                   </div>
                 </v-card>
               </v-card>
