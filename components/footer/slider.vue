@@ -2,6 +2,15 @@
   <div class="footer-seeYouAtHotel-photo">
     <v-carousel class="footer-carousel" style="height: 290px"
                 v-model="activeSlide" hide-delimiters>
+<!--      <template v-slot:prev="{ on, attrs }">-->
+<!--        <chevron-left  v-bind="attrs"-->
+<!--                       v-on="on"/>-->
+<!--      </template>-->
+<!--      <template v-slot:next="{ on, attrs }">-->
+<!--        <chevron-right v-bind="attrs"-->
+<!--                       v-on="on"/>-->
+<!--      </template>-->
+
       <v-carousel-item class="footer-slide"
                        v-for="(item, i) in activeChipPhotos"
                        :key="'photo-'+i">

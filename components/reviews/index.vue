@@ -3,7 +3,7 @@
     <div class="reviews-container general-container d-flex">
 
       <div class="reviews-cards">
-        <v-card-title class="reviews-title text-uppercase fontSize-xl--l pa-0">Наши гости делятся
+        <v-card-title class="reviews-title text-uppercase fontSize-xl--s pa-0">Наши гости делятся
           своими впечатлениями
           об отдыхе
         </v-card-title>
@@ -40,18 +40,24 @@
 
           <div class="reviews-cards-group-transparent ml-8">
             <v-card elevation="0" height="78px" color="transparent">
-              <v-card-title class="reviews-cards-group-transparent-title pa-0">5,0 рейтинг в Яндекс
+              <div class="reviews-cards-group-transparent-title pa-0"><b>5,0</b> рейтинг в Яндекс
                 на основе 1300+ отзывов
-              </v-card-title>
+              </div>
               <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1"
                      color="#CCAC6C" height="auto" min-width="0" min-height="0"
-                     text>ОСТАВИТЬ ОТЗЫВ</v-btn>
+                     text>ОСТАВИТЬ ОТЗЫВ
+                <!--                <div class="button-arrow">-->
+                <!--                  <span></span>-->
+                <!--                  <span></span>-->
+                <!--                  <span></span>-->
+                <!--                </div>-->
+              </v-btn>
             </v-card>
 
             <v-card class="mt-4" elevation="0" height="78px" color="transparent">
-              <v-card-title class="reviews-cards-group-transparent-title pa-0">5,0 рейтинг в TravelLine
+              <div class="reviews-cards-group-transparent-title pa-0"><b>9,6</b> рейтинг в TravelLine
                 на основе 800+ отзывов
-              </v-card-title>
+              </div>
               <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1"
                      color="#CCAC6C" height="auto" in-width="0" min-height="0" text>ОСТАВИТЬ ОТЗЫВ</v-btn>
             </v-card>

@@ -21,7 +21,7 @@
           <div class="example-element-container">
             <div class="example-element">
 
-              <v-card-title class="section-title fontSize-xl--l text-uppercase" style="color: var(--dark-color);white-space: pre-line">Роскошный
+              <v-card-title class="section-title fontSize-xl--s text-uppercase" style="color: var(--dark-color);white-space: pre-line">Роскошный
                 горный отдых
                 с комфортом!</v-card-title>
 

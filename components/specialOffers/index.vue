@@ -3,7 +3,7 @@
     <div class="specialOffers-container d-flex">
 
       <v-card class="specialOffers-info" color="transparent" elevation="0">
-        <v-card-title class="specialOffers-info-title section-title fontSize-xl--l text-uppercase">Специальные
+        <v-card-title class="specialOffers-info-title section-title fontSize-xl--s text-uppercase">Специальные
           предложения и
           акции отелей!
         </v-card-title>
