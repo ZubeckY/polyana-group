@@ -1,5 +1,5 @@
 <template>
-  <v-btn :class="'text-none pa-0 mb-1 ' + elemClass" text
+  <v-btn :class="'link-component text-none pa-0 mb-1 ' + elemClass" text
          min-width="0" min-height="0" width="auto" height="16px">
     {{ elemTitle }}
   </v-btn>

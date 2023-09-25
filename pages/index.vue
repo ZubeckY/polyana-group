@@ -59,27 +59,27 @@
                 <div class="header-slider-container">
 
                   <v-btn class="header-slider-arrow" title="Слайд назад" elevation="0" fab>
-                    <v-icon>mdi-chevron-up</v-icon>
+                    <chevron-up/>
                   </v-btn>
 
                   <v-btn-toggle class="header-slider__slider"
                                 color="rgba(255, 255, 255, 0.75)" mandatory>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 1"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img  width="60px" height="60px" src="img/header/slider/Rectangle91.webp" alt="#"/>
+                      <nuxt-img width="60px" height="60px" src="img/header/slider/Rectangle91.webp" alt="#"/>
                     </v-btn>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 2"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img  width="60px" height="60px" src="img/header/slider/Rectangle92.webp" alt="#"/>
+                      <nuxt-img width="60px" height="60px" src="img/header/slider/Rectangle92.webp" alt="#"/>
                     </v-btn>
                     <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 3"
                            color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img  width="60px" height="60px" src="img/header/slider/Rectangle93.webp" alt="#"/>
+                      <nuxt-img width="60px" height="60px" src="img/header/slider/Rectangle93.webp" alt="#"/>
                     </v-btn>
                   </v-btn-toggle>
 
                   <v-btn class="header-slider-arrow" title="Слайд вперёд" elevation="0" fab>
-                    <v-icon>mdi-chevron-down</v-icon>
+                    <chevron-down/>
                   </v-btn>
 
                 </div>
@@ -109,7 +109,13 @@
                     <div>Заезд</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img width="23px" height="23px" src="img/top-right-arrow.webp" alt="#"/>
+                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                      </g>
+                    </svg>
                   </div>
                   <div class="header-booking__card-title">4 августа 2023</div>
                 </div>
@@ -123,7 +129,13 @@
                     <div>Выезд</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img width="23px" height="23px" src="img/top-right-arrow.webp" alt="#"/>
+                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                      </g>
+                    </svg>
                   </div>
                   <div class="header-booking__card-title">7 августа 2023</div>
                 </div>
@@ -137,7 +149,13 @@
                     <div>Гости</div>
                     <v-spacer/>
                     <div>&nbsp;</div>
-                    <nuxt-img width="23px" height="23px" src="img/top-right-arrow.webp" alt="#"/>
+                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                      </g>
+                    </svg>
                   </div>
                   <div class="header-booking__card-title">2</div>
                 </div>
@@ -150,8 +168,12 @@
                   <v-btn class="header-booking__card-button text-none"
                          elevation="0" color="var(--dark-color)"
                          min-height="0" min-width="0" dark>
-                    <nuxt-img class="mr-2" width="20px" height="20px" src="img/search.webp" alt="#"/>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><circle class="cls-1" cx="9.14" cy="9.14" r="7.64"></circle><line class="cls-1" x1="22.5" y1="22.5" x2="14.39" y2="14.39"></line></g>
+                    </svg>
+                    <v-spacer/>
                     <div>Найти номер</div>
+                    <v-spacer/>
                   </v-btn>
                 </div>
               </div>
@@ -210,7 +232,13 @@
                         color="var(--dark-color)" elevation="0" rounded="circle" width="160px" height="160px">
                   <pinterest-rotate/>
                   <div class="pinterest-video-aboutHotels-play">
-                    <nuxt-img width="50px" height="50px" src="img/top-right-arrow.webp" alt="#"/>
+                    <svg fill="#ffffff" width="50px" height="50px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                      </g>
+                    </svg>
                   </div>
                 </v-card>
               </v-card>
@@ -252,7 +280,13 @@
 
               <template v-slot:actions>
                 <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <nuxt-img width="41px" height="41px" src="img/top-right-arrow.webp" alt="#"/>
+                  <svg fill="#ffffff" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                      <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                    </g>
+                  </svg>
                 </div>
               </template>
             </v-expansion-panel-header>

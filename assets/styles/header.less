@@ -5,7 +5,6 @@
   &-container {
     height: 100%;
     max-height: 767px;
-    background-color: #31333940;
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center right;
@@ -16,7 +15,7 @@
       height: 100%;
       border-radius: var(--bordrad23) !important;
       background: linear-gradient(90deg,
-      #313339 26.72%, rgba(0, 0, 0, 0.00) 63.37%);
+      #313339 40%, rgba(0, 0, 0, 0) 60%);
     }
   }
   /* header-nav */
@@ -35,8 +34,10 @@
         letter-spacing: .4px !important;
       }
     }
-    &__link * {
-      color: white !important;
+    &__link {
+      & * {
+        color: white !important;
+      }
     }
     &__reservation {
       &-booking {
@@ -145,7 +146,7 @@
         font-weight: 400;
         margin-top: 7px;
         &.hotel {
-          text-align: right;
+          text-align: center;
         }
       }
       &-button {
