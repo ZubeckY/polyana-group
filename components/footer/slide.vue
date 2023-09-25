@@ -20,7 +20,7 @@
     <div class="footer-slide-corner">
       <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
               elevation="0" color="golden-gradient">
-        <nuxt-img class="d-block" width="42px" height="42px" src="img/top-right-arrow.webp" alt="#"/>
+        <nuxt-img width="42px" height="42px" src="img/top-right-arrow.webp" alt="#"/>
       </v-card>
     </div>
   </v-card>
