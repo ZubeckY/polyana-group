@@ -94,7 +94,7 @@ export default class FooterComp extends Vue {
         {
           id: 11,
           priority: 1,
-          url: 'https://via.placeholder.com/1024x1024/eee?text=Бла_бла_бла',
+          url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
         },
         {
           id: 12,
