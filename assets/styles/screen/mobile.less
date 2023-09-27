@@ -1,71 +1,13 @@
-/* max-width: 1200px */
 
-@media (max-width: 1200px) {
-  /* rating */
-  .rating {
-    &-container {
-      flex-wrap: wrap;
-      justify-content: start !important;
-    }
-  }
+/* max-width: 1100px */
 
-  /* footer */
-  .footer {
-    &-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center !important;
-      justify-content: center;
-    }
-    &-service {
-      flex-wrap: wrap;
-      margin: 30px auto 15px !important;
-      width: auto !important;
-      max-width: none !important;
-    }
-    &-seeYouAtHotel {
-      &-address {
-        flex-wrap: wrap;
-        margin: 30px auto 15px !important;
-      }
-      &-photo { margin-top: 35px; }
-    }
+@media (max-width: 1160px) {
+  .header {
     &-booking {
-      margin: 10px;
-      margin-top: 35px;
-      width: 298px !important;
-    }
-    &-helpInfo {
-      flex-wrap: wrap;
-    }
-  }
-
-  /* specialOffers */
-
-  .specialOffers {
-    &-container {
-      padding: 0 !important;
-      width: 100% !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-    }
-    &-info {
-      margin: 0 auto !important;
-      max-width: 410px !important;
-      &-text {
-        & * {
-          font-size: 14px !important;
-        }
-      }
-    }
-    &-slider {
-      margin: 50px auto 0 !important;
-      max-width: 370px !important;
+      max-width: 90% !important;
     }
   }
 }
-
-/* max-width: 1100px */
 
 @media (max-width: 1100px) {
   /* relax-in-comfort */
@@ -73,7 +15,23 @@
 
   .header {
     &-nav {
+      &-container {
+        &-inner {
+          flex-direction: row-reverse !important;
+        }
+      }
+      &__menu {
+        margin: 0 auto !important;
+      }
+      &__logo {
+        margin: 0 !important;
+      }
       &__link {
+        display: none !important;
+      }
+    }
+    &-content {
+      &__season {
         display: none !important;
       }
     }
@@ -128,6 +86,63 @@
 }
 
 @media (max-width: 960px) {
+  .header {
+    &-body {
+      &-container {
+        margin: 20px auto !important;
+      }
+    }
+    &-slider {
+      max-width: none !important;
+      &-arrow {
+        &--desktop {
+          display: none !important;
+        }
+        &--mobile {
+          display: block !important;
+        }
+      }
+      &--desktop {
+        display: none !important;
+      }
+      &--mobile {
+        display: block !important;
+      }
+      &-container {
+        flex-direction: row !important;
+      }
+      &__slider {
+        flex-direction: row !important;
+      }
+      &__slide {
+        margin: 0 7px !important;
+      }
+    }
+    &-container {
+      max-height: none !important;
+    }
+    &-booking {
+      height: auto !important;
+      &-container {
+        flex-direction: column !important;
+      }
+      &-delimiter {
+        width: 100% !important;
+        height: 1px !important;
+      }
+      &__card {
+        max-width: none !important;
+      }
+    }
+    &-container {
+      background-size: 100% auto !important;
+      background-position: bottom !important;
+      &-inner {
+        background: linear-gradient(181deg,
+        #181A23 53.5%, rgba(0, 0, 0, 0.00) 70.79%) !important;
+      }
+    }
+  }
   /* exclusive */
   .exclusive {
     margin-bottom: 90px;
@@ -215,6 +230,18 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 630px) {
+  .header {
+    &-container {
+      &-inner {
+        background: linear-gradient(181deg,
+        #181A23 63.5%, rgba(0, 0, 0, 0.00) 93.79%) !important;
       }
     }
   }

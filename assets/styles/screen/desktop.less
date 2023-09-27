@@ -4,44 +4,74 @@
     &-body {
       height: auto !important;
     }
-  }
-}
-/* max-width: 1400px */
-@media (max-width: 1400px) {
-  /* footer */
-  .footer {
-    &-carousel,
-    &-slide {
-      width: 347px !important;
-      height: 277px !important;
-      &-corner {
-        &--arrow {
-          width: 58px !important;
-          height: 58px !important;
-        }
-      }
+    &-booking {
+      margin-bottom: 10px !important;
     }
   }
 }
-/* max-width: 1360px */
 
-@media (max-width: 1360px) {
+/* max-width: 1200px */
+@media (max-width: 1200px) {
+  /* rating */
+  .rating {
+    &-container {
+      flex-wrap: wrap;
+      justify-content: start !important;
+    }
+  }
+
   /* footer */
   .footer {
-    &-carousel,
-    &-slide {
-      width: 310px !important;
-      height: 247px !important;
-      &-corner {
-        &--arrow {
-          width: 53px !important;
-          height: 53px !important;
-          & img {
-            width: 30px !important;
-            height: 30px !important;
-          }
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center !important;
+      justify-content: center;
+    }
+    &-service {
+      flex-wrap: wrap;
+      margin: 30px auto 15px !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+    &-seeYouAtHotel {
+      &-address {
+        flex-wrap: wrap;
+        margin: 30px auto 15px !important;
+      }
+      &-photo { margin-top: 35px; }
+    }
+    &-booking {
+      margin: 10px;
+      margin-top: 35px;
+      width: 298px !important;
+    }
+    &-helpInfo {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* specialOffers */
+
+  .specialOffers {
+    &-container {
+      padding: 0 !important;
+      width: 100% !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+    }
+    &-info {
+      margin: 0 auto !important;
+      max-width: 410px !important;
+      &-text {
+        & * {
+          font-size: 14px !important;
         }
       }
+    }
+    &-slider {
+      margin: 50px auto 0 !important;
+      max-width: 370px !important;
     }
   }
 }

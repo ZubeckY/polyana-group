@@ -1,7 +1,7 @@
 <template>
-  <v-card class="footer-booking d-flex flex-column justify-center rounded-xxl" color="#454850" elevation="0">
-    <lazy-logo class="mx-auto"/>
-    <v-card-actions class="pa-0 mt-10">
+  <v-card class="footer-booking d-flex flex-column justify-center" color="#454850" elevation="0">
+    <logo-large class="mx-auto"/>
+    <v-card-actions class="pa-0 my-3">
       <v-btn class="footer-booking-btn rounded-xxl mx-auto"
              width="237px" height="37px"
              color="golden-gradient"
@@ -10,14 +10,14 @@
       </v-btn>
     </v-card-actions>
 
-    <v-card-text class="footer-booking-text text-center mt-3">Забронируйте номер
+    <v-card-text class="footer-booking-text text-center pa-0 my-1">Забронируйте номер
       через удобный для вас
       мессенджер на прямую:
     </v-card-text>
 
-    <v-card-actions class="d-flex justify-center pa-0 mt-3">
+    <v-card-actions class="d-flex justify-center pa-0 mt-2">
       <v-btn class="rounded-lg" title="vk"
-             width="36px" height="36px"
+             width="30px" height="30px"
              min-width="0" min-height="0"
              elevation="0" color="#2787f5">
         <svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -28,10 +28,10 @@
         </svg>
       </v-btn>
       <v-btn class="rounded-lg" title="telegram"
-             width="36px" height="36px"
+             width="30px" height="30px"
              min-width="0" min-height="0"
              elevation="0" color="#24A2DF">
-        <svg height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve" fill="#000000">
+        <svg height="17px" width="17px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve" fill="#000000">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
             <path style="fill:#C3C3C7;" d="M165.323,267.452L395.89,125.446c4.144-2.545,8.407,3.058,4.849,6.359L210.454,308.684 c-6.688,6.226-11.003,14.558-12.225,23.602l-6.482,48.036c-0.858,6.414-9.868,7.05-11.638,0.843l-24.929-87.595 C152.325,283.578,156.486,272.907,165.323,267.452z"></path>
@@ -40,7 +40,7 @@
         </svg>
       </v-btn>
       <v-btn class="rounded-lg" title="whatsapp"
-             width="36px" height="36px"
+             width="30px" height="30px"
              min-width="0" min-height="0"
              elevation="0" color="#60a55f">
         <svg fill="#ffffff" height="24px" width="24px"
@@ -58,9 +58,6 @@
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
-
 @Component({})
-export default class FooterBooking extends Vue {
-
-}
+export default class FooterBooking extends Vue {}
 </script>

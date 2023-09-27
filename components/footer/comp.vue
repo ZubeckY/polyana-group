@@ -7,8 +7,8 @@
 
           <div class="footer-seeYouAtHotel">
             <!-- До встречи в наших отелях -->
-            <v-card-title class="footer-seeYouAtHotel-title footer-title pb-3">До встречи в наших отелях</v-card-title>
-            <v-chip-group class="footer-seeYouAtHotel-group ml-3 mb-2" v-model="activeChip"
+            <div class="footer-seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
+            <v-chip-group class="footer-seeYouAtHotel-group mb-2" v-model="activeChip"
                           mandatory column active-class="golden-gradient white--text">
               <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
             </v-chip-group>
@@ -37,6 +37,24 @@
               <div class="footer-seeYouAtHotel-photo">
                 <v-carousel class="footer-carousel" style="height: 290px"
                             v-model="activeSlide" hide-delimiters>
+                  <template v-slot:prev="{ on, attrs }">
+                    <v-btn v-bind="attrs" v-on="on"
+                           min-height="0" min-width="0"
+                           width="34px" height="34px"
+                           elevation="0" rounded
+                           color="#ffffffb8" title="Назад">
+                      <chevron-left/>
+                    </v-btn>
+                  </template>
+                  <template v-slot:next="{ on, attrs }">
+                    <v-btn v-bind="attrs" v-on="on"
+                           min-height="0" min-width="0"
+                           width="34px" height="34px"
+                           elevation="0" rounded
+                           color="#ffffffb8" title="Вперёд">
+                      <chevron-right/>
+                    </v-btn>
+                  </template>
                   <v-carousel-item class="footer-slide"
                                    v-for="item in localMapping[activeChip]['photos']"
                                    :key="'photo-'+item.id">
@@ -51,8 +69,8 @@
           <div class="footer-service d-flex">
             <!-- помощь и информация, кнопки -->
             <div class="footer-helpInfo">
-              <v-card-title class="footer-helpInfo-title footer-title">помощь и информация</v-card-title>
-              <v-card-subtitle class="footer-helpInfo-subtitle my-2 pb-0 text-uppercase">О Комплексе</v-card-subtitle>
+              <div class="footer-helpInfo-title footer-title pa-1">помощь и информация</div>
+              <div class="footer-helpInfo-subtitle pa-1 text-uppercase">О Комплексе</div>
               <!-- Ссылки -->
               <footer-links/>
             </div>
@@ -94,7 +112,7 @@ export default class FooterComp extends Vue {
         {
           id: 11,
           priority: 1,
-          url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
+          url: 'img/footer/subtract.webp',
         },
         {
           id: 12,
@@ -109,8 +127,13 @@ export default class FooterComp extends Vue {
       title: 'IKOS POLYANA',
       photos: [
         {
-          id: 2,
+          id: 21,
           priority: 1,
+          url: 'img/footer/subtract.webp',
+        },
+        {
+          id: 22,
+          priority: 2,
           url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
         },
       ]
@@ -121,8 +144,13 @@ export default class FooterComp extends Vue {
       title: 'COUNTRY hills resort',
       photos: [
         {
-          id: 3,
+          id: 31,
           priority: 1,
+          url: 'img/footer/subtract.webp',
+        },
+        {
+          id: 32,
+          priority: 2,
           url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
         },
       ]

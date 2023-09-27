@@ -18,7 +18,7 @@
     </v-lazy>
 
     <div class="footer-slide-corner">
-      <v-card class="footer-slide-corner--arrow d-flex justify-center align-center rounded-xxl"
+      <v-card class="footer-slide-corner--arrow d-flex justify-center align-center"
               elevation="0" color="golden-gradient">
         <svg fill="#ffffff" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

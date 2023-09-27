@@ -1,5 +1,5 @@
 <template>
-  <v-card-actions class="pa-0 ml-4">
+  <v-card-actions class="pa-0 pl-1 mt-2">
     <div class="d-flex flex-column align-start">
       <link-component v-for="(item, i) in links" :key="itemLink(item, i)" :item="item"/>
     </div>
@@ -19,7 +19,7 @@ export default class links extends Vue {
     { link: '/', title: 'Трансфер', },
     { link: '/', title: 'Реквизиты', },
     { link: '/', title: 'Контакты', },
-    { link: '/', title: 'Частые вопросы', class: 'mt-3' },
+    { link: '/', title: 'Частые вопросы', class: 'mt-5' },
     { link: '/', title: 'Инфраструктура', },
     { link: '/', title: 'Активности на Красной поляне', },
   ]

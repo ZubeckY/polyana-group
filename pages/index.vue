@@ -5,30 +5,8 @@
     <header class="header header-main">
       <div class="header-container" :style="activeSlide">
         <div class="header-container-inner">
-          <nav class="header-nav">
-            <div class="header-nav-container general-container d-flex align-center flex-row">
-              <v-btn class="header-nav__menu mr-auto pa-0" text
-                     min-width="0" min-height="0" width="auto" height="0">
-                <div class="header-nav__menu-container d-flex justify-center align-center flex-column">
-                  <div class="d-flex justify-center align-center flex-column">
-                    <div v-for="i in 3" :key="'image'+i" class="header-nav__menu-line"></div>
-                  </div>
-                  <div class="header-nav__menu-title">Меню</div>
-                </div>
-              </v-btn>
 
-              <link-component class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item"/>
-              <logo class="mx-auto"/>
-              <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i" :item="item"/>
-
-              <div class="header-nav__reservation ml-auto">
-                <div class="header-nav__reservation-container d-flex flex-column">
-                  <v-btn class="header-nav__reservation-booking font-weight-bold" elevation="0" color="var(--golden-2)">Забронировать</v-btn>
-                  <v-btn class="header-nav__reservation-phone font-weight-bold" elevation="0" dark>+7 989 009 5577</v-btn>
-                </div>
-              </div>
-            </div>
-          </nav>
+          <header-nav-polyana/>
 
           <div class="header-body">
             <div class="header-body-container general-container">
@@ -54,141 +32,13 @@
                   </div>
                 </div>
               </div>
-
-              <div class="header-slider">
-                <div class="header-slider-container">
-
-                  <v-btn class="header-slider-arrow" title="Слайд назад" elevation="0" fab>
-                    <chevron-up/>
-                  </v-btn>
-
-                  <v-btn-toggle class="header-slider__slider"
-                                color="rgba(255, 255, 255, 0.75)" mandatory>
-                    <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 1"
-                           color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img width="51px" height="51px" src="img/header/slider/Rectangle91.webp" alt="#"/>
-                    </v-btn>
-                    <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 2"
-                           color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img width="51px" height="51px" src="img/header/slider/Rectangle92.webp" alt="#"/>
-                    </v-btn>
-                    <v-btn class="header-slider__slide d-flex justify-center align-center" title="Слайд 3"
-                           color="rgba(255, 255, 255, 0.32)" min-height="0" min-width="0" fab>
-                      <nuxt-img width="51px" height="51px" src="img/header/slider/Rectangle93.webp" alt="#"/>
-                    </v-btn>
-                  </v-btn-toggle>
-
-                  <v-btn class="header-slider-arrow" title="Слайд вперёд" elevation="0" fab>
-                    <chevron-down/>
-                  </v-btn>
-
-                </div>
-              </div>
-
+              <header-slider class="header-slider--desktop"
+                             @changeActiveSlide="changeActiveSlide"/>
             </div>
           </div>
-
-          <div class="header-booking">
-            <div class="header-booking-container d-flex">
-
-              <div class="header-booking__card">
-                <div class="header-booking__card-container">
-                  <div class="header-booking__card-head d-flex align-center flex-row">
-                    <div>Отель</div>
-                    <v-spacer/>
-                    <div>&nbsp;</div>
-                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
-                      </g>
-                    </svg>
-                  </div>
-                  <div class="header-booking__card-title hotel">Ultima Club Hotel&...</div>
-                </div>
-              </div>
-
-              <div class="header-booking-delimiter"></div>
-
-              <div class="header-booking__card">
-                <div class="header-booking__card-container">
-                  <div class="header-booking__card-head d-flex align-center flex-row">
-                    <div>Заезд</div>
-                    <v-spacer/>
-                    <div>&nbsp;</div>
-                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
-                      </g>
-                    </svg>
-                  </div>
-                  <div class="header-booking__card-title">4 августа 2023</div>
-                </div>
-              </div>
-
-              <div class="header-booking-delimiter"></div>
-
-              <div class="header-booking__card">
-                <div class="header-booking__card-container">
-                  <div class="header-booking__card-head d-flex align-center flex-row">
-                    <div>Выезд</div>
-                    <v-spacer/>
-                    <div>&nbsp;</div>
-                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
-                      </g>
-                    </svg>
-                  </div>
-                  <div class="header-booking__card-title">7 августа 2023</div>
-                </div>
-              </div>
-
-              <div class="header-booking-delimiter"></div>
-
-              <div class="header-booking__card">
-                <div class="header-booking__card-container">
-                  <div class="header-booking__card-head d-flex align-center flex-row">
-                    <div>Гости</div>
-                    <v-spacer/>
-                    <div>&nbsp;</div>
-                    <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
-                      </g>
-                    </svg>
-                  </div>
-                  <div class="header-booking__card-title">2</div>
-                </div>
-              </div>
-
-              <div class="header-booking-delimiter"></div>
-
-              <div class="header-booking__card">
-                <div class="header-booking__card-container d-flex justify-center align-center">
-                  <v-btn class="header-booking__card-button text-none"
-                         elevation="0" color="var(--dark-color)"
-                         min-height="0" min-width="0" dark>
-                    <svg width="20px" height="20px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
-                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><circle class="cls-1" cx="9.14" cy="9.14" r="7.64"></circle><line class="cls-1" x1="22.5" y1="22.5" x2="14.39" y2="14.39"></line></g>
-                    </svg>
-                    <v-spacer/>
-                    <div>Найти номер</div>
-                    <v-spacer/>
-                  </v-btn>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
+          <header-booking/>
+          <header-slider class="header-slider--mobile"
+                         @changeActiveSlide="changeActiveSlide"/>
         </div>
       </div>
     </header>
@@ -506,51 +356,8 @@ import thousandSeparator from "assets/scripts/thousandSeparator";
 export default class Pages extends Vue {
   activeImage: string = '_MG_2185_1.webp'
   hotels: number = 0
-  links: any = [
-    {
-      title: 'Главная'
-    },
-    {
-      title: 'Отели'
-    },
-    {
-      title: 'Номера'
-    },
-    {
-      title: 'SPA'
-    },
-    {
-      title: 'Услуги'
-    },
-    {
-      title: 'Ресторан'
-    },
-    {
-      title: 'Контакты'
-    },
-  ]
-
   get activeSlide () {
     return `background-image: url('img/header/slider/${this.activeImage}')`
-  }
-
-  get firstLinks () {
-    let array = []
-    for (let i = 0; i < this.links.length; i++) {
-      array.push(this.links[i])
-      if (this.links[i]['title'] === 'SPA') break
-    }
-    return array
-  }
-
-  get secondLinks () {
-    let array = []
-    for (let i = 0; i < this.links.length; i++) {
-      if (i >= 4) {
-        array.push(this.links[i])
-      }
-    }
-    return array
   }
 
   hotelList: any = [
