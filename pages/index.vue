@@ -95,7 +95,7 @@
               </div>
 
               <div style="position: relative">
-                <watch style="position: absolute; left: 53%; top: 8%;"/>
+                <watch style="position: absolute; left: 59%; top: 3.5%;"/>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="412" viewBox="0 0 1416 485" fill="none">
                   <path d="M705 23C705 10.2975 694.703 0 682 0H23C10.2975 0 0 10.2975 0 23V462C0 474.703 10.2974 485 23 485H1393C1405.7 485 1416 474.703 1416 462V142C1416 129.297 1405.7 119 1393 119H728C715.297 119 705 108.703 705 96V23Z" fill="url(#pattern0)"/>
                   <defs>
@@ -131,17 +131,15 @@
             <v-expansion-panel-header class="hotelGroup-accordion-item--header ma-0 pa-0" disable-icon-rotate>
               <div class="hotelGroup-accordion-item--header-container d-flex align-center my-2">
 
-                <div class="hotelGroup-accordion-item--header-count fontSize-m--xl d-flex justify-center align-center golden-gradient--text">
+                <div class="hotelGroup-accordion-item--header-count d-flex justify-center align-center golden-gradient--text">
                   {{ item.id }}
                 </div>
 
-                <v-card-title class="hotelGroup-accordion-item--header-title fontSize-xxl text-uppercase golden-gradient--text">
-                  {{ item.title }}
-                </v-card-title>
+                <div class="hotelGroup-accordion-item--header-title text-uppercase golden-gradient--text">{{ item.title }}</div>
 
-                <v-card-title class="hotelGroup-accordion-item--header-price fontSize-xl--s text-uppercase mr-8">
+                <div class="hotelGroup-accordion-item--header-price text-uppercase mr-8">
                   От {{ getItemPrice(item) }} руб.
-                </v-card-title>
+                </div>
               </div>
 
               <template v-slot:actions>

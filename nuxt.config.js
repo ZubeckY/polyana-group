@@ -64,7 +64,7 @@ export default {
   vuetify: {
     optionsPath: './vuetify.options.js',
     defaultAssets: {
-      font: { family: '' },
+      font: false,
       icons: {
         defaultSet: 'custom'
       }
