@@ -48,16 +48,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     "cookie-universal-nuxt"
-    // 'nuxt-webfontloader'
   ],
-
-  // webfontloader: {
-  //   google: {
-  //     families: [
-  //       'Montserrat:100,200,300,400,500,600,700,800,900&display=swap'
-  //     ]
-  //   }
-  // },
 
   axios: { baseURL: '/' },
 
@@ -73,7 +64,7 @@ export default {
   vuetify: {
     optionsPath: './vuetify.options.js',
     defaultAssets: {
-      font: { family: 'Montserrat' },
+      font: { family: '' },
       icons: {
         defaultSet: 'custom'
       }
