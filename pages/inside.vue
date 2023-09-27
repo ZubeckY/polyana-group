@@ -21,9 +21,9 @@
           <div class="example-element-container">
             <div class="example-element">
 
-              <v-card-title class="section-title fontSize-xl--s text-uppercase" style="color: var(--dark-color);white-space: pre-line">Роскошный
+              <div class="section-title fontSize-xl--s text-uppercase" style="color: var(--dark-color);white-space: pre-line">Роскошный
                 горный отдых
-                с комфортом!</v-card-title>
+                с комфортом!</div>
 
               <v-card-text style="white-space: pre-line">&nbsp; <b>ULTIMA CLUB HOTEL & SPA</b> на Красной поляне - идеальное место для тех, кто ищет комфорт и роскошь. Мы предлагаем широкий выбор удобств, включая бассейн, спа-центр, хамам
                 и ski room, кинотеатр на крыше с кальяной зоной. Наши

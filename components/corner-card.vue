@@ -1,12 +1,12 @@
 <template>
-  <v-card class="corner-card" elevation="0" width="333px" height="493px" color="transparent">
+  <v-card class="corner-card" elevation="0" width="283px" height="419px" color="transparent">
     <div class="corner-card-header d-flex justify-space-between">
       <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3">
         <v-chip class="font-weight-thin mr-1 mb-1" color="var(--dark-color)" dark></v-chip>
       </div>
       <v-card class="corner-card-header--arrow d-flex justify-center align-center rounded-xxl"
-              width="72px" height="72px" elevation="0" color="golden-gradient">
-        <svg fill="#ffffff" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              width="61px" height="61px" elevation="0" color="golden-gradient">
+        <svg fill="#ffffff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
@@ -16,34 +16,32 @@
       </v-card>
     </div>
 
-    <v-lazy>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333 493">
-        <defs>
-          <mask id='mask-1' x='0' y='0'>
-            <path d="M251 23C251 10.2975 240.703 0 228 0H23C10.2975 0 0 10.2975 0 23V470C0 482.703 10.2975 493 23 493H310C322.703 493 333 482.703 333 470V103C333 90.2975 322.703 80 310 80H274C261.297 80 251 69.7025 251 57V23Z" fill="#D9D9D9"/>
-          </mask>
-        </defs>
-        <image class="corner-card-image d-block" mask='url(#mask-1)'
-               xlink:href='https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80'/>
-        <!--             xlink:href=''/>-->
-      </svg>
-    </v-lazy>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 284 420" fill="none">
+      <path d="M19.9504 0.899902C9.15323 0.899902 0.400391 9.65274 0.400391 20.4499V400.4C0.400391 411.197 9.15323 419.95 19.9504 419.95H263.9C274.698 419.95 283.45 411.197 283.45 400.4V88.5099C283.45 77.7127 274.698 68.9599 263.9 68.9599H233.09C222.293 68.9599 213.54 60.2071 213.54 49.4099V20.4499C213.54 9.65274 204.788 0.899902 193.99 0.899902H19.9504Z"
+            :fill="'url(#pattern'+item.img+')'"/>
+      <defs>
+        <pattern :id="'pattern'+item.id" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use :href="'#photo'+item.id" transform="matrix(0.00190784 0 0 0.00128866 -0.0113 0)"/>
+        </pattern>
+      </defs>
+      <image :id="'photo'+item.id" width="284" height="420" :href='item.img'/>
+    </svg>
 
     <v-card class="d-flex justify-center align-center" width="100%" color="transparent">
       <v-card class="corner-card-text d-flex justify-center align-center"
-              elevation="0" color="transparent" width="289px" height="82px">
-        <v-card-text class="text-center px-6 pt-1">
-
-        </v-card-text>
+              elevation="0" color="transparent" width="246px" height="70px">
+        <div class="text-center">{{ item.text }}</div>
       </v-card>
     </v-card>
+
   </v-card>
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from 'vue-property-decorator';
 @Component({})
 export default class CornerCard extends Vue {
-  @Prop () model: any
+  @Prop () item!: any
 }
 </script>
 <style lang="less" scoped>
@@ -52,20 +50,31 @@ export default class CornerCard extends Vue {
   &-header {
     position: absolute; width: 100%;
     &-container { width: calc(100% - 72px) }
-    &--arrow {position: relative;top: 0; right: 0;}
+    &--arrow { position: relative; top: 0; right: 0; }
   }
-  &-image {width: 333px;height: 493px;object-fit: contain;}
+  &-image {
+    width: 283px;
+    height: 419px;
+    object-fit: contain;
+  }
   &-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute !important;
     bottom: 26px; color: var(--dark-color);
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    white-space: pre-line !important;
     border-radius: 12px !important;
     backdrop-filter: blur(25px);
     background: linear-gradient(270deg,
     rgba(217, 217, 217, 0.40) 2.1%,
     rgba(217, 217, 217, 0.20) 103.66%);
+    & * {
+      color: var(--dark-color);
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      line-height: normal;
+      white-space: pre-line !important;
+    }
   }
 }
 </style>

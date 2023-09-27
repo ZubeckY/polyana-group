@@ -7,9 +7,9 @@
               width="100%" height="500px" max-width="1075px" elevation="0">
 
         <v-card class="exclusive-content pa-4" color="transparent" elevation="0" max-width="560px">
-          <v-card-title class="exclusive-title section-title fontSize-xl--m text-uppercase ma-0 pt-3 pa-0">Эксклюзивная скидка
+          <div class="exclusive-title section-title fontSize-xl--m text-uppercase ma-0 pt-3 pa-0">Эксклюзивная скидка
             за быстрое бронирование
-          </v-card-title>
+          </div>
 
           <div class="exclusive-text-container">
             <v-card-text class="exclusive-text fontSize-m--l ma-0 mt-5 pa-0">Спешите забронировать номер в нашем отеле

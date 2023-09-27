@@ -119,9 +119,9 @@
     <section class="hotelGroup">
       <div class="hotelGroup-container general-container">
 
-        <v-card-title class="hotelGroup-title section-title fontSize-xl--s text-uppercase">ГРУППА ОТЕЛЕЙ
+        <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">ГРУППА ОТЕЛЕЙ
           POLYANA GROUP на КРАСНОЙ ПОЛЯНЕ
-        </v-card-title>
+        </div>
 
         <div class="hotelGroup-line"></div>
 

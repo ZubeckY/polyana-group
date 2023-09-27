@@ -114,18 +114,25 @@
 /* specialOffers */
 .specialOffers {
   margin-top: 85px;
-  &-container {flex-direction: row;justify-content: space-between;}
+  &-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   &-info {
-    &-title {color: var(--dark-color); white-space: pre-line !important;}
+    &-title {
+      color: var(--dark-color);
+      white-space: pre-line !important;
+    }
     &-text {
+      font-size: 13px ;
       white-space: pre-line;
-      & * {
-        font-size: 16px;
-        white-space: pre-line;
-      }
     }
   }
-  &-slider {width: 100%; max-width: calc(80% - 300px); margin-left: 155px;}
+  &-slider {
+    width: 100%;
+    max-width: calc(80% - 300px);
+    margin-left: 155px;
+  }
 }
 
 /* seasonPrograms */
