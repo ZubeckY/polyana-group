@@ -1,4 +1,4 @@
-/* max-width: 1100px */
+/* max-width: 1160px */
 @media (max-width: 1160px) {
   .header {
     &-booking {
@@ -36,8 +36,32 @@
   }
   /* seasonPrograms */
   .seasonPrograms {
-    &-item { margin-right: 0 !important; }
-    &-more { margin-left: 0 !important; }
+    &-item {
+      width: 100% !important;
+      height: 63px !important;
+      margin: 10px 0 !important;
+      &-text {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: auto !important;
+        height: 100% !important;
+      }
+    }
+    &-more {
+      width: 100% !important;
+      height: 63px !important;
+      margin: 10px 0 !important;
+      &-text {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
     &-card {
       width: 100% !important;
       margin: 10px 0 !important;
@@ -153,6 +177,10 @@
   /* exclusive */
   .exclusive {
     margin-bottom: 90px;
+    &-container {
+      padding: 20px 0;
+      height: auto !important;
+    }
     &-content {
       margin-right: 0 !important;
     }
@@ -166,6 +194,10 @@
         display: block !important;
       }
     }
+  }
+  /* feedbackForm */
+  .feedbackForm {
+    background: #32343ACC !important;
   }
   /* rating */
   .rating {
@@ -252,8 +284,11 @@
         &--desktop {
           display: none !important;
         }
-        &--mobile {
+        &--tablet {
           display: block !important;
+        }
+        &--mobile {
+          display: none !important;
         }
       }
     }
@@ -297,11 +332,20 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .pinterest {
     &-card {
       &-welcome {
         margin-top: 10px;
+        &--desktop {
+          display: none !important;
+        }
+        &--tablet {
+          display: none !important;
+        }
+        &--mobile {
+          display: block !important;
+        }
       }
     }
   }

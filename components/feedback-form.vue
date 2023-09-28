@@ -1,5 +1,5 @@
 <template>
-  <v-card class="feedbackForm px-4 py-6" elevation="0" max-width="372px" color="var(--dark-color)">
+  <div class="feedbackForm px-4 py-6">
     <v-form class="feedbackForm-container">
 
       <v-card-title class="feedbackForm-title ma-0 pa-0">В течение 5 минут перезвоним,
@@ -90,7 +90,7 @@
       </v-card-text>
 
     </v-form>
-  </v-card>
+  </div>
 </template>
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
@@ -112,7 +112,9 @@ export default class FeedbackForm extends Vue {
 <style lang="less" scoped>
 /* feedbackForm */
 .feedbackForm {
-  border-radius: var(--bordrad23) !important;
+  max-width: 372px;
+  background: var(--dark-color);
+  border-radius: var(--bordrad23);
   &-title {
     color: white; font-size: 16px !important; font-weight: 400 !important;
     text-transform: uppercase; white-space: pre-line !important;

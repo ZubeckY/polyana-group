@@ -3,8 +3,7 @@
     <v-card class="exclusive-background d-flex flex-column align-center justify-center rounded-xxl pa-4"
             elevation="0" min-height="736px" color="transparent" img="img/exclusive/background.webp">
 
-      <v-card class="exclusive-container d-flex justify-center align-center"
-              width="100%" height="500px" max-width="1075px" elevation="0">
+      <v-card class="exclusive-container d-flex justify-center align-center" elevation="0">
 
         <v-card class="exclusive-content pa-4" color="transparent" elevation="0" max-width="560px">
           <div class="exclusive-title section-title fontSize-xl--m text-uppercase ma-0 pt-3 pa-0">Эксклюзивная скидка
@@ -50,10 +49,13 @@ export default class Exclusive extends Vue {
   margin-top: 136px;
   &-form {
     &.inside {display: block;}
-    &.outside {display: none;position: relative;top: 90px;}
+    &.outside {display: none;margin-top: 40px;}
   }
   &-content {margin-right: 50px;}
   &-container {
+    width: 100%;
+    height: 500px;
+    max-width: 1075px;
     border-radius: 23px;
     background: linear-gradient(268deg,
     rgba(217, 217, 217, 0.40) 3.77%,

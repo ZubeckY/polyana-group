@@ -97,6 +97,7 @@
               <div class="pinterest-card-welcome-container">
                 <watch class="pinterest-card-welcome-round"/>
                 <pinterest-desktop/>
+                <pinterest-tablet/>
                 <pinterest-mobile/>
               </div>
             </div>
@@ -108,7 +109,9 @@
     </section>
 
     <!-- Группа отелей -->
-    <section class="hotelGroup">
+    <!--   d-none    -->
+
+    <section class="hotelGroup d-none">
       <div class="hotelGroup-container general-container">
 
         <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">ГРУППА ОТЕЛЕЙ
@@ -170,7 +173,7 @@
     </section>
 
     <!-- Специальные предложения -->
-    <special-offers/>
+    <special-offers style="margin-top: 160px"/>
 
     <!-- Развлекуха летом/зимой-->
     <section class="seasonPrograms">
@@ -178,10 +181,7 @@
 
         <!-- Летом  -->
         <div class="seasonPrograms-group d-flex justify-space-between">
-          <v-card class="seasonPrograms-summer seasonPrograms-item"
-                  elevation="0" rounded="xxl"
-                  width="63px" height="165px"
-                  color="transparent">
+          <v-card class="seasonPrograms-summer seasonPrograms-item" elevation="0" width="63px" height="165px" color="transparent">
             <div class="seasonPrograms-item-container">
               <div class="seasonPrograms-item-text summer d-flex justify-center align-center rounded-xxl">Летом</div>
             </div>
@@ -248,23 +248,20 @@
           </v-card>
 
           <!-- Ещё -->
-          <v-btn class="seasonPrograms-more rounded-xxl"
-                 width="63px" height="165px" elevation="0" color="transparent">
-            <div class="seasonPrograms-more-container">
-              <div class="seasonPrograms-more-text summer d-flex justify-center align-center rounded-xxl">Ещё</div>
+          <v-card class="seasonPrograms-summer seasonPrograms-item" elevation="0" width="63px" height="165px" color="transparent">
+            <div class="seasonPrograms-item-container">
+              <div class="seasonPrograms-item-text summer d-flex justify-center align-center text-uppercase">ещё</div>
             </div>
-          </v-btn>
+          </v-card>
 
         </div>
 
         <!-- Зимой -->
         <div class="seasonPrograms-group d-flex justify-space-between mt-8">
 
-          <v-card class="seasonPrograms-winter seasonPrograms-item"
-                  rounded="xxl" width="63px" height="165px"
-                  elevation="0" color="transparent">
+          <v-card class="seasonPrograms-winter seasonPrograms-item" width="63px" height="165px" elevation="0" color="transparent">
             <div class="seasonPrograms-item-container">
-              <div class="seasonPrograms-item-text winter d-flex justify-center align-center rounded-xxl">Зимой</div>
+              <div class="seasonPrograms-item-text winter d-flex justify-center align-center">Зимой</div>
             </div>
           </v-card>
 
@@ -328,15 +325,13 @@
           </v-card>
 
           <!-- Ещё -->
-          <v-btn class="seasonPrograms-more rounded-xxl"
-                 width="63px" height="165px" elevation="0" color="transparent">
-            <div class="seasonPrograms-more-container">
-              <div class="seasonPrograms-more-text winter d-flex justify-center align-center rounded-xxl">Ещё</div>
+          <v-card class="seasonPrograms-summer seasonPrograms-item"
+                  elevation="0" width="63px" height="165px" color="transparent">
+            <div class="seasonPrograms-item-container">
+              <div class="seasonPrograms-item-text winter d-flex justify-center align-center text-uppercase">ещё</div>
             </div>
-          </v-btn>
-
+          </v-card>
         </div>
-
       </div>
     </section>
 
