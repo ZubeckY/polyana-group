@@ -10,27 +10,38 @@
   display: flex; justify-content: center;
   &-container {width: 100%; justify-content: space-between; }
   &-card {
-    margin-top: 20px; margin-right: 5px; padding: 15px 20px; border-radius: var(--bordrad23) !important;
-    &-container { height: 100%; }
+    height: 145px;
+    padding: 16px;
+    margin-top: 20px;
+    margin-right: 5px;
+    border-radius: var(--bordrad23) !important;
     &:last-child { margin-right: 0; }
+    &-container { height: 100%; }
     &-title {
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: pre-line;
+    }
+    &-text {
       color: black;
       white-space: pre-line;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      text-transform: uppercase;
+      font-size: 14px !important;
     }
-    &-text {color: black;white-space: pre-line;font-size: 14px !important;}
   }
   &-yandex {width: 257px;}
   &-tl-rep {
     width: 371px;
     &-title {color: black;}
     &-text {
-      position: relative; top: -5px;
-      color: black !important;
-      font-size: 20px !important;
-      font-weight: 400 !important;
+      position: relative;
+      top: -5px;
+      color: black;
+      font-size: 17px;
+      font-weight: 400;
     }
     &-left, &-right { position: relative; top: 3px; }
     &-left { left: 5px; }
@@ -39,9 +50,12 @@
   &-we-care {
     width: 257px;
     &-star {
-      color: black;width: 50px;height: 50px;
-      font-size: 50px;font-weight: 900 !important;
-      text-transform: uppercase;border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
       background: var(--golden-1)
     }
   }
@@ -49,13 +63,22 @@
   &-weather {
     width: 280px;
     &-text {
-      color: black;
       display: flex;
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-size: 14px !important;
-      font-weight: 500 !important;
+      height: 30px;
+      color: black;
+      padding: 0 5px;
+      margin-right: 3px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: normal;
+      border-radius: 8px;
+      background: var(--golden-1);
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }

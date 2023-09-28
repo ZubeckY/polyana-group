@@ -1,21 +1,20 @@
 <template>
-  <v-card class="rating-card rating-weather" height="150px" elevation="0" color="var(--card-grey)">
+  <v-card class="rating-card rating-weather" elevation="0" color="var(--card-grey)">
     <div class="rating-card-container d-flex flex-column pt-1">
       <div class="d-flex justify-space-between align-center">
-        <v-card-title class="rating-card-title d-flex justify-space-between ma-0 pa-0 w-100">
+        <div class="rating-card-title d-flex justify-space-between ma-0 pa-0 w-100">
           <div>Актуальное</div>
           <lazy-rating-yandex-arrow/>
-        </v-card-title>
+        </div>
       </div>
       <lazy-v-vertical-spacer/>
-      <v-card-text class="rating-card-text ma-0 pa-0">29 августа, Малооблачно,
+      <div class="rating-card-text ma-0 pa-0">29 августа, Малооблачно,
         без осадков.
-      </v-card-text>
+      </div>
       <lazy-v-vertical-spacer/>
       <div class="d-flex align-center">
-        <v-card class="rating-weather-text py-2 mr-1 mr-1"
-                color="var(--golden-1)" elevation="0"
-                width="82px" height="35px">
+
+        <div class="rating-weather-text">
           <div class="d-flex flex-row justify-center align-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="11" viewBox="0 0 19 11" fill="none">
               <path d="M18.9996 9.64045C18.8166 9.98984 18.5098 10.0399 18.1478 10.0395C12.3672 10.0328 6.58614 10.0332 0.805484 10.038C0.456836 10.038 0.16784 9.97836 0.0333457 9.61229C0.0311226 9.606 0.0114857 9.60637 0 9.6034C0 9.51707 0 9.43075 0 9.34405C0.0166728 9.33886 0.0448314 9.33738 0.0485365 9.32738C0.166358 8.98688 0.429418 8.91796 0.753983 8.91908C2.24713 8.92537 3.74027 8.91982 5.23342 8.925C5.37644 8.92537 5.4272 8.88906 5.45943 8.74197C5.8455 6.96354 6.93072 5.84683 8.69804 5.43556C10.6969 4.97058 12.8629 6.27106 13.4454 8.24957C13.4957 8.42074 13.5439 8.59451 13.568 8.7705C13.5876 8.915 13.6628 8.92389 13.7803 8.92389C15.2797 8.92093 16.7788 8.92278 18.2783 8.92093C18.4865 8.92093 18.684 8.9339 18.8407 9.09877C18.9192 9.1814 18.9433 9.28921 19 9.38073V9.64008L18.9996 9.64045ZM9.50611 8.92241H9.70952C10.5665 8.92241 11.4239 8.91796 12.2808 8.92612C12.4513 8.9276 12.4765 8.87536 12.4309 8.72863C12.3561 8.48669 12.2705 8.25068 12.1482 8.02763C11.5443 6.9276 10.369 6.3422 9.06854 6.49633C7.93627 6.63082 6.90886 7.54449 6.60133 8.69047C6.55984 8.8451 6.62159 8.92241 6.78659 8.92241C7.69285 8.92241 8.59948 8.92241 9.50574 8.92241H9.50611Z" fill="#040404"/>
@@ -27,11 +26,9 @@
             </svg>
             <div class="ml-1">{{ weather['main'] ? weather['main']['temp'] : 0 }} °</div>
           </div>
-        </v-card>
+        </div>
 
-        <v-card class="rating-weather-text py-2 mx-1"
-                color="var(--golden-1)" elevation="0"
-                width="82px" height="35px">
+        <div class="rating-weather-text">
           <div class="d-flex flex-row justify-center align-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
               <g clip-path="url(#clip0_1490_757)">
@@ -45,11 +42,9 @@
             </svg>
             <div class="ml-1">{{ weather['main'] ? weather['main']['feels_like'] : 0 }} °</div>
           </div>
-        </v-card>
+        </div>
 
-        <v-card class="rating-weather-text py-2 ml-1"
-                color="var(--golden-1)" elevation="0"
-                width="82px" height="35px">
+        <div class="rating-weather-text">
           <div class="d-flex flex-row justify-center align-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
               <g clip-path="url(#clip0_1490_780)">
@@ -65,7 +60,8 @@
             </svg>
             <div class="ml-1">{{ weather['wind'] ? weather['wind']['speed'] : 0 }} м/с</div>
           </div>
-        </v-card>
+        </div>
+
       </div>
     </div>
   </v-card>

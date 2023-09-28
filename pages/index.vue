@@ -66,7 +66,7 @@
         <v-card class="pinterest-card" height="485px"
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
-            <v-card-title class="pinterest-card-title fontSize-xl--s d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
+            <div class="pinterest-card-title fontSize-xl--s d-inline-block mt-4">ДИЗАЙНЕРСКИЕ ОТЕЛИ
               КАК С КАРТИНОК <span>
                 <svg class="mb-1" xmlns="http://www.w3.org/2000/svg" width="129" height="33" viewBox="0 0 129 33" fill="none">
                   <g clip-path="url(#clip0_1443_3)">
@@ -79,18 +79,18 @@
                   </defs>
                 </svg>
               </span>
-            </v-card-title>
+            </div>
 
-            <v-card class="pinterest-card-welcome general-container mt-6" color="transparent" elevation="0">
+            <v-card class="pinterest-card-welcome mt-6" color="transparent" elevation="0">
               <div class="pinterest-card-welcome-container d-flex justify-end">
                 <div class="pinterest-card-welcome-wrapper">
-                  <v-card-text class="pinterest-card-text">Добро пожаловать в нашу группу отелей на Красной
+                  <div class="pinterest-card-text">Добро пожаловать в нашу группу отелей на Красной
                     Поляне, где комфорт и неповторимые виды сливаются
                     воедино. Насладитесь шикарными номерами,
                     удивительной кухней, расслабляющим спа-центром и
                     невероятными панорамными видами на окружающие
                     горы. Погрузитесь в атмосферу уюта и природной
-                    красоты!</v-card-text>
+                    красоты!</div>
                 </div>
               </div>
 
