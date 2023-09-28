@@ -88,23 +88,44 @@
   &-card {
     position: relative;
     border-radius: var(--bordrad23) !important;
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-head {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
     &-title {
-      color: var(--dark-color);
-      font-family: 'Cormorant Garamond', sans-serif !important;
-      font-weight: 700 !important;
+      font-weight: 700;
       white-space: pre-line;
+      color: var(--dark-color);
       text-transform: uppercase;
-      & span { position: relative; top: 10px; left: 4px; }
+      font-family: 'Cormorant Garamond', sans-serif !important;
+      & span {
+        position: relative;
+        top: 10px; left: 4px;
+      }
     }
     &-text {
-      position: absolute;
-      top: -90px;width: inherit;color: black;
-      white-space: pre-line !important;
-      text-align: right !important;
-      font-size: 14px !important;
-      font-weight: 400 !important;
+      margin-top: 30px;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: right;
+      white-space: pre-line;
+      color: var(--dark-color);
     }
-    &-welcome {&-wrapper { position: relative; width: 485px; }}
+    &-welcome {
+      &-container {
+        position: relative
+      }
+      &-round {
+        position: absolute;
+        left: 59%; top: 3.5%;
+      }
+    }
   }
 }
 
@@ -149,6 +170,16 @@
           height: 66px;
           border-radius: 16px;
           background: var(--gradiend-golden);
+        }
+      }
+
+      &--body {
+        &-head {
+          &-delimiter {
+            width: 2.5px;
+            height: 32px;
+            background: var(--gradiend-golden);
+          }
         }
       }
     }

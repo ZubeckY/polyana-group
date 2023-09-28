@@ -55,7 +55,7 @@ export default class Slider extends Vue {
     this.slide --; if (this.slide < 0) { this.slide = this.slider.length - 1 }
   }
   next () {
-    this.slide ++; if (this.slide > 2) { this.slide = 0 }
+    this.slide ++; if (this.slide > this.slider.length - 1) { this.slide = 0 }
   }
 }
 </script>
