@@ -82,8 +82,7 @@
     }
   }
 }
-
-/* watch */
+/* pinterest */
 .pinterest {
   &-card {
     position: relative;
@@ -108,6 +107,10 @@
         position: relative;
         top: 10px; left: 4px;
       }
+      &--pinterest {
+        width: 129px;
+        height: 33px;
+      }
     }
     &-text {
       margin-top: 30px;
@@ -118,12 +121,31 @@
       color: var(--dark-color);
     }
     &-welcome {
+      width: 100%;
+      display: flex;
+      justify-content: center;
       &-container {
         position: relative
       }
       &-round {
         position: absolute;
-        left: 59%; top: 3.5%;
+        left: 59%;
+        top: 3.5%;
+        z-index: 1000;
+      }
+      &--desktop {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 412px;
+        max-width: 1200px;
+      }
+      &--mobile {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 246px;
+        max-width: 349px;
       }
     }
   }
@@ -368,9 +390,30 @@
     background: var(--dark-color);
   }
   &-play {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    width: 87px;
+    height: 87px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(131deg,
+    rgba(217, 217, 217, 0.50) 13.16%,
+    rgba(217, 217, 217, 0.00) 95.45%);
+    backdrop-filter: blur(13px);
+    border-radius: 100%;
+    &-icon {
+      width: 27px;
+      height: 27px;
+    }
+  }
+  &-arrow {
+    width: 43px; height: 43px;
     position: absolute !important;
   }
   &-rotate {
+    width: 90px; height: 90px;
     -webkit-animation: spin 16s linear infinite;
     -moz-animation: spin 16s linear infinite;
     animation: spin 16s linear infinite;

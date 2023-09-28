@@ -1,6 +1,4 @@
-
 /* max-width: 1100px */
-
 @media (max-width: 1160px) {
   .header {
     &-booking {
@@ -12,7 +10,7 @@
 @media (max-width: 1100px) {
   /* relax-in-comfort */
   .relax-in-comfort { white-space: normal !important; }
-
+  /* header */
   .header {
     &-nav {
       &-container {
@@ -36,7 +34,6 @@
       }
     }
   }
-
   /* seasonPrograms */
   .seasonPrograms {
     &-item { margin-right: 0 !important; }
@@ -49,7 +46,6 @@
       flex-direction: column !important;
     }
   }
-
   /* reviews */
   .reviews {
     margin-top: 140px !important;
@@ -78,7 +74,6 @@
         }
       }
     }
-
     &-slider {
       margin-top: 20px !important;
     }
@@ -86,6 +81,7 @@
 }
 
 @media (max-width: 960px) {
+  /* header */
   .header {
     &-body {
       &-container {
@@ -143,6 +139,17 @@
       }
     }
   }
+  /* pinterest */
+  .pinterest {
+    &-card {
+      &-title {
+        &--pinterest {
+          width: 95px !important;
+          height: 29px !important;
+        }
+      }
+    }
+  }
   /* exclusive */
   .exclusive {
     margin-bottom: 90px;
@@ -160,7 +167,6 @@
       }
     }
   }
-
   /* rating */
   .rating {
     &-container {
@@ -171,7 +177,6 @@
       margin-right: 0 !important;
     }
   }
-
   /* footer */
   .footer {
     &-card,
@@ -210,7 +215,6 @@
       }
     }
   }
-
   /* hotelGroup */
   .hotelGroup {
     &-accordion {
@@ -236,6 +240,7 @@
 }
 
 @media (max-width: 795px) {
+  /* pinterest */
   .pinterest {
     &-card {
       &-text {
@@ -244,11 +249,42 @@
       }
       &-welcome {
         margin-top: 30px;
+        &--desktop {
+          display: none !important;
+        }
+        &--mobile {
+          display: block !important;
+        }
       }
     }
   }
+  /* watch-video */
+  .watch-video {
+    width: 88px !important;
+    height: 88px !important;
+    &-container {
+      width: 72px !important;
+      height: 72px !important;
+    }
+    &-play {
+      left: 46% !important;
+      width: 54px !important;
+      height: 54px !important;
+      &-icon {
+        width: 16px !important;
+        height: 16px !important;
+      }
+    }
+    &-arrow {
+      width: 26px !important;
+      height: 26px !important;
+    }
+    &-rotate {
+      width: 58px !important;
+      height: 58px !important;
+    }
+  }
 }
-
 
 @media (max-width: 630px) {
   .header {
@@ -256,6 +292,16 @@
       &-inner {
         background: linear-gradient(181deg,
         #181A23 63.5%, rgba(0, 0, 0, 0.00) 93.79%) !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pinterest {
+    &-card {
+      &-welcome {
+        margin-top: 10px;
       }
     }
   }
