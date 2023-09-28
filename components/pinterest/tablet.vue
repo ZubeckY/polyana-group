@@ -7,7 +7,7 @@
         <pattern id="pinterestTablet" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlink:href="#imagePinterestTablet" transform="matrix(0.000283521 0 0 0.000402232 -0.0882993 -0.044192)"/>
         </pattern>
-        <image id="imagePinterestTablet" width="4096" height="2731" href="img/pinterest/Subtract.png"/>
+        <image id="imagePinterestTablet" width="4096" height="2731" href="img/pinterest/Subtract.webp"/>
       </defs>
     </svg>
     <watch-play/>
