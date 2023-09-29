@@ -23,12 +23,10 @@
                   </div>
                 </div>
                 <div class="header-content__title">
-                  <div class="header-content__title-container">
-                    <div class="section-title fontSize-xl--s text-uppercase white--text text-pre-line pa-0">Отдыхайте с комфортом
-                      и наслаждайтесь<span class="golden-gradient--text section-title"> красотами
-                        Красной Поляны</span> в наших
-                      уникальных отелях!
-                    </div>
+                  <div class="section-title fontSize-xl--s text-uppercase white--text pa-0">Отдыхайте с комфортом
+                    и наслаждайтесь<span class="golden-gradient--text section-title"> красотами
+                    Красной Поляны</span> в наших
+                    уникальных отелях!
                   </div>
                 </div>
               </div>
@@ -193,17 +191,15 @@
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-2 mr-2">
-                  <nuxt-img width="60px" height="60px" src="img/seasonPrograms/summer/sunbed.webp" alt="sunbed"/>
-                </div>
-                <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
+                <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
+                          src="img/seasonPrograms/summer/sunbed.webp" alt="sunbed"/>
+                <div class="seasonPrograms-card-title">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
-                  ДО ПЛЯЖА</v-card-title>
+                  ДО ПЛЯЖА</div>
               </div>
               <v-vertical-spacer/>
-              <v-card-text class="pa-0">Наши гости могут воспользоваться
-                бесплатным трансфером до пляжа
-              </v-card-text>
+              <div class="seasonPrograms-card-text">Наши гости могут воспользоваться
+                бесплатным трансфером до пляжа</div>
             </div>
           </v-card>
 
@@ -213,16 +209,14 @@
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-1 mr-2">
-                  <nuxt-img width="67px" height="67px" src="img/seasonPrograms/summer/music.webp" alt="music"/>
-                </div>
-                <v-card-title class="seasonPrograms-card-title pt-1">Живая музыка
-                  В БАРЕ У бассейна</v-card-title>
+                <nuxt-img class="seasonPrograms-card-image" width="63px" height="39px"
+                          src="img/seasonPrograms/summer/music.webp" alt="music"/>
+                <div class="seasonPrograms-card-title">Живая музыка
+                  В БАРЕ У бассейна</div>
               </div>
               <v-vertical-spacer/>
-              <v-card-text class="pa-0">Живая музыка в баре у бассейна
-                создает идеальную атмосферу
-              </v-card-text>
+              <div class="seasonPrograms-card-text">Живая музыка в баре у бассейна
+                создает идеальную атмосферу</div>
             </div>
           </v-card>
 
@@ -233,17 +227,16 @@
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-2 mr-2">
-                  <nuxt-img width="67px" height="67px" src="img/seasonPrograms/summer/party.webp" alt="party"/>
-                </div>
-                <v-card-title class="seasonPrograms-card-title pt-1">Анимация для
+                <nuxt-img class="seasonPrograms-card-image" width="57px" height="57px"
+                          src="img/seasonPrograms/summer/party.webp" alt="party"/>
+                <div class="seasonPrograms-card-title">Анимация для
                   детей: веселье
-                  и ИГРЫ</v-card-title>
+                  и ИГРЫ</div>
               </div>
               <v-vertical-spacer/>
-              <v-card-text class="pa-0">Наши маленькие гости не соскучатся благодаря
+              <div class="seasonPrograms-card-text">Наши маленькие гости не соскучатся благодаря
                 увлекательной детской анимации с играми и развлечениями
-              </v-card-text>
+              </div>
             </div>
           </v-card>
 
@@ -271,17 +264,16 @@
                   elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img width="60px" height="60px" src="img/seasonPrograms/winter/cable-car.webp" alt="cable-car"/>
-                </div>
-                <v-card-title class="seasonPrograms-card-title pt-1">БЕСПЛАТНЫЙ
+                <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
+                          src="img/seasonPrograms/winter/cable-car.webp" alt="cable-car"/>
+                <div class="seasonPrograms-card-title">БЕСПЛАТНЫЙ
                   ТРАНСФЕР
-                  ДО ПОДЪЕМНИКОВ</v-card-title>
+                  ДО ПОДЪЕМНИКОВ</div>
               </div>
               <v-vertical-spacer/>
-              <v-card-text class="pa-0">Воспользуйтесь бесплатным
+              <div class="seasonPrograms-card-text">Воспользуйтесь бесплатным
                 трансфером до горнолыжных трасс
-              </v-card-text>
+              </div>
             </div>
           </v-card>
 
@@ -291,17 +283,15 @@
                   elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img width="60px" height="60px" src="img/seasonPrograms/winter/skis.webp" alt="skis"/>
-                </div>
-                <v-card-title class="seasonPrograms-card-title pt-1">ski-room хранилище для
+                <nuxt-img class="seasonPrograms-card-image" width="55px" height="55px"
+                          src="img/seasonPrograms/winter/skis.webp" alt="skis"/>
+                <div class="seasonPrograms-card-title">ski-room хранилище для
                   зимнего спортивного
-                  снаряжения</v-card-title>
+                  снаряжения</div>
               </div>
               <v-vertical-spacer/>
-              <v-card-text class="pa-0">Обеспечим безопасное хранение вашего зимнего
-                снаряжения с функцией эффективной сушки.
-              </v-card-text>
+              <div class="seasonPrograms-card-text">Обеспечим безопасное хранение вашего зимнего
+                снаряжения с функцией эффективной сушки.</div>
             </div>
           </v-card>
 
@@ -311,16 +301,14 @@
                   elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
-                <div class="seasonPrograms-card-image mt-4 mr-2">
-                  <nuxt-img width="63px" height="63px" src="img/seasonPrograms/winter/pool.webp" alt="pool"/>
-                </div>
-                <v-card-title class="seasonPrograms-card-title pt-1">ПОДОГРЕВАЕМЫй
-                  БАССЕЙН</v-card-title>
+                <nuxt-img class="seasonPrograms-card-image" width="55px" height="53px"
+                          src="img/seasonPrograms/winter/pool.webp" alt="pool"/>
+                <div class="seasonPrograms-card-title">ПОДОГРЕВАЕМЫй
+                  БАССЕЙН</div>
               </div>
               <v-vertical-spacer/>
-              <v-card-text class="pa-0">Насладитесь всегда теплым бассейном:
-                +30 градусов круглый год! *
-              </v-card-text>
+              <div class="seasonPrograms-card-text">Насладитесь всегда теплым бассейном:
+                +30 градусов круглый год! *</div>
             </div>
           </v-card>
 
