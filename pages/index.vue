@@ -336,6 +336,9 @@ import {Component, Vue} from "vue-property-decorator";
 import thousandSeparator from "assets/scripts/thousandSeparator";
 
 @Component({
+  head: {
+    title: 'Группа отелей',
+  },
   methods: {thousandSeparator}
 })
 export default class Pages extends Vue {

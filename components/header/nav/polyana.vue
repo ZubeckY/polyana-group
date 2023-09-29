@@ -2,26 +2,10 @@
   <nav class="header-nav">
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
-
-        <v-btn class="header-nav__menu pa-0" text
-               min-width="0" min-height="0" width="auto" height="0">
-          <div class="header-nav__menu-container d-flex justify-center align-center flex-column">
-            <div class="d-flex justify-center align-center flex-column">
-              <div v-for="i in 3" :key="'image'+i" class="header-nav__menu-line"></div>
-            </div>
-            <div class="header-nav__menu-title">Меню</div>
-          </div>
-        </v-btn>
-
-        <link-component class="header-nav__link mx-auto"
-                        v-for="(item, i) in firstLinks"
-                        :key="'f_link'+i" :item="item"/>
-
+        <header-nav-menu/>
+        <link-component class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item"/>
         <logo-small class="header-nav__logo"/>
-
-        <link-component class="header-nav__link mx-auto"
-                        v-for="(item, i) in secondLinks"
-                        :key="'s_link'+i" :item="item"/>
+        <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i" :item="item"/>
       </div>
 
       <div class="header-nav__reservation ml-auto">

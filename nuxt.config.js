@@ -2,11 +2,11 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
+  components: true,
   server: { host: '0.0.0.0' },
-
   head: {
-    titleTemplate: '%s - client',
     title: 'client',
+    titleTemplate: '%s - отдых на красной поляне',
     htmlAttrs: { lang: 'ru' },
     meta: [
       { charset: 'utf-8' },
@@ -19,9 +19,6 @@ export default {
       { rel: 'canonical', href: '/' }
     ]
   },
-
-  components: true,
-
   css: [
     '~/assets/styles/screen/desktop.less',
     '~/assets/styles/screen/mobile.less',
@@ -31,11 +28,9 @@ export default {
     '~/assets/styles/main.less',
     '~/assets/styles/ui-styles.less'
   ],
-
   plugins: [
     '~/plugins/v_mask.js'
   ],
-
   buildModules: [
     "nuxt-storm",
     '@nuxt/image',
@@ -43,15 +38,12 @@ export default {
     '@nuxt/typescript-build',
     'nuxt-webpack-optimisations'
   ],
-
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     "cookie-universal-nuxt"
   ],
-
   axios: { baseURL: '/' },
-
   image: {
     quality: 100,
     inject: true,
@@ -60,7 +52,6 @@ export default {
     sets: "300,300:600,600:900",
     sizes: "sm:355px md:320px lg:480px"
   },
-
   vuetify: {
     optionsPath: './vuetify.options.js',
     defaultAssets: {
@@ -70,7 +61,6 @@ export default {
       }
     }
   },
-
   webpackOptimisations: {
     esbuildLoaderOptions: {
       client: {
@@ -86,13 +76,10 @@ export default {
       }
     }
   },
-
   build: {
-
     filenames: {
       chunk: ({ isDev, isModern }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
     },
-
     html: {
       minify: {
         collapseBooleanAttributes: true,
@@ -106,12 +93,9 @@ export default {
         useShortDoctype: true
       }
     },
-
     optimization: {
       minimize: true
     },
-
     transpile: ["swiper"]
-
   }
 }

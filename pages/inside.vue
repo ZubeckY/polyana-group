@@ -1,75 +1,44 @@
 <template>
   <div>
-
-<!-- <nuxt-img src=""/> -->
-
-
-
-    <section>
-      <div>
-        <v-card-title>
-          Отдых на Красной Поляне <div class="golden-gradient">в отеле 5</div> с кинотеатром и панорамным видом на
-          горы — идеальный способ  <div class="golden-gradient">расслабиться и насладиться</div> природой!
-        </v-card-title>
-      </div>
-    </section>
-
-    <section>
-      <div>
-        <div class="d-flex flex-row">
-
-          <div class="example-element-container">
-            <div class="example-element">
-
-              <div class="section-title fontSize-xl--s text-uppercase" style="color: var(--dark-color);white-space: pre-line">Роскошный
-                горный отдых
-                с комфортом!</div>
-
-              <v-card-text style="white-space: pre-line">&nbsp; <b>ULTIMA CLUB HOTEL & SPA</b> на Красной поляне - идеальное место для тех, кто ищет комфорт и роскошь. Мы предлагаем широкий выбор удобств, включая бассейн, спа-центр, хамам
-                и ski room, кинотеатр на крыше с кальяной зоной. Наши
-                номера оформлены с уникальным дизайном и предлагают великолепный вид на горы. Ресторан отеля предлагают
-                блюда местной и мировой кухни, чтобы удовлетворить
-                любой вкус.
-
-                &nbsp;Также мы рады предложить нашим гостям выгодное бронирование. Забронируйте номер заранее и получите специальные предложения и скидки. Насладитесь
-                роскошью и комфортом в нашем 5-звездочном отеле на
-                Красной поляне!
-
-                &nbsp;Следите за нашими предложениями на сайте или
-                свяжитесь с нами для получения большей информации по телефону: <b>+7 989 009 5577.</b>
-              </v-card-text>
-
-              <v-card-actions>
-                <v-btn elevation="0"
-                       width="100%"
-                       height="55px"
-                       max-width="299px"
-                       style="border-radius: 16px"
-                       color="golden-gradient" dark>
-                  ЗАБРОНИРОВАТЬ
-                </v-btn>
-              </v-card-actions>
-
-
-            </div>
-          </div>
-
-          <div>
-
-          </div>
-
-
-          <style>
-            .example-element-container { height: 2000px }
-            .example-element {
-              position: sticky; position: -webkit-sticky;
-              top: 20px; z-index: 1; width: 100%; max-width: 520px;
-            }
-          </style>
-
+    <header class="header header-inside">
+      <div class="header-inside-container">
+        <div class="header-inside-container-inner">
+          <header-nav-ultima/>
         </div>
       </div>
+    </header>
+
+    <section class="restInPolyana">
+      <div class="restInPolyana-container">
+
+        <div class="restInPolyana-head">
+          <div class="restInPolyana-title">Отдых на Красной Поляне в <span class="restInPolyana-title-chip golden-gradient">отеле 5*</span> с кинотеатром и панорамным видом на
+            горы — идеальный способ <span class="restInPolyana-title-chip golden-gradient">расслабиться и насладиться</span> природой!
+          </div>
+        </div>
+
+        <div class="restInPolyana-body">
+          <div class="restInPolyana-body-container d-flex flex-row">
+            <div class="restInPolyana-pictures-large">
+              <nuxt-img class="restInPolyana-pictures-large-img" width="866px" height="391px"
+                        src="img/images/big-image.webp" alt="big-pic"/>
+            </div>
+            <div class="restInPolyana-pictures-small d-flex flex-row flex-wrap">
+              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+                        src="img/images/rectangle-167.webp" alt="pic-1"/>
+              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+                        src="img/images/rectangle-169.webp" alt="pic-3"/>
+              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+                        src="img/images/rectangle-168.webp" alt="pic-2"/>
+              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+                        src="img/images/rectangle-170.webp" alt="pic-4"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
+
 
     <!-- Специальные предложения -->
     <special-offers/>
@@ -83,8 +52,11 @@
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
-@Component({})
-export default class inside extends Vue {
-
+@Component({
+  head: {
+    title: 'Ultima Club'
+  }
+})
+export default class Inside extends Vue {
 }
 </script>
