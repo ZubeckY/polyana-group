@@ -25,7 +25,7 @@
           <use :href="'#photo'+item.id" transform="matrix(0.00190784 0 0 0.00128866 -0.0113 0)"/>
         </pattern>
       </defs>
-      <image :id="'photo'+item.id" width="284" height="420" :href='item.img'/>
+      <image :id="'photo'+item.id" height="100%" :href='item.img'/>
     </svg>
 
     <v-card class="d-flex justify-center align-center" width="100%" color="transparent">
@@ -47,6 +47,7 @@ export default class CornerCard extends Vue {
 <style lang="less" scoped>
 .corner-card {
   position: relative;
+  border-radius: 19.55px;
   &-header {
     position: absolute; width: 100%;
     &-container { width: calc(100% - 72px) }
