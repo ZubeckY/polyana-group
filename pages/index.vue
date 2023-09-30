@@ -192,6 +192,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
+                          loading="lazy" quality="80" :placeholder="[50]"
                           src="img/seasonPrograms/summer/sunbed.webp" alt="sunbed"/>
                 <div class="seasonPrograms-card-title">БЕСПЛАТНЫЙ
                   ТРАНСФЕР

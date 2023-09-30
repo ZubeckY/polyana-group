@@ -13,7 +13,9 @@
         <v-btn v-for="(item, i) in slider" :key="'header-slide' + i"
                class="header-slider__slide d-flex justify-center align-center"
                title="Слайд 1" color="rgba(255, 255, 255, 0.32)" fab :value="i">
-          <nuxt-img width="51px" height="51px" :src="'img/header/slider/' + item.small " alt="#"/>
+          <nuxt-img width="51px" height="51px"
+                    loading="lazy" quality="80" :placeholder="[50]"
+                    :src="'img/header/slider/' + item.small " alt="#"/>
         </v-btn>
       </v-btn-toggle>
 

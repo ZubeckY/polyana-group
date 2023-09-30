@@ -312,7 +312,6 @@
     }
   }
 }
-
 /* reviews */
 .reviews {
   margin-top: 80px;
@@ -365,6 +364,8 @@
   &-slider {width: 100%;max-width: 50%;}
 }
 
+
+
 .button-arrow {
   position: absolute;
   top: 50%;
@@ -416,8 +417,8 @@
     position: absolute;
     top: -24px;
     left: 51px;
-    width: 113px;
-    height: 113px;
+    width: 106px;
+    height: 106px;
     background: var(--background);
     .watch-video {
       &-container {
@@ -475,8 +476,7 @@
     -webkit-animation: spin 16s linear infinite;
   }
 }
-
-
+/* restInPolyana */
 .restInPolyana {
   &-head {
     margin: 30px auto;
@@ -502,9 +502,10 @@
       position: relative;
       &-img {
         margin: 5px;
-        // width: 100% - mobile
         width: 100vw;
+        height: 391px;
         max-width: 866px;
+        object-fit: cover;
         border-radius: 19.55px;
       }
     }
@@ -513,7 +514,67 @@
         margin: 5px;
         width: 191px;
         height: 191px;
+        object-fit: cover;
         border-radius: 19.55px;
+      }
+    }
+  }
+}
+/* luxHoliday */
+.luxHoliday {
+  margin-top: 140px;
+  &-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    align-self: flex-start; // <-fix
+    height: 540px;
+  }
+  &-body {
+  }
+  &-title {
+    font-family: 'CharterC', sans-serif;
+    white-space: pre-line;
+  }
+  &-text {
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 23px 0 26px;
+    white-space: pre-line;
+  }
+  &-btn {
+    font-weight: 400;
+    font-size: 12px !important;
+  }
+  &-slide {
+    position: relative;
+    width: 757px !important;
+    height: 391px !important;
+    border-radius: 19.55px;
+    &-title {
+      position: absolute;
+      left: 8px;
+      bottom: 0;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--dark-color);
+      line-height: 150.3% !important;
+      font-family: 'CharterC', sans-serif;
+      text-transform: uppercase;
+      white-space: pre-line;
+    }
+    &-arrow {
+      position: relative;
+      top: 2px;
+      left: 25px;
+      width: 26px;
+      height: 26px;
+    }
+    &.slider {
+      margin: 45px 0;
+      &:first-child {
+        margin-top: 0;
       }
     }
   }
