@@ -5,7 +5,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-ExtraLight.ttf') format("truetype");
@@ -13,7 +12,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-Light.ttf') format("truetype");
@@ -21,8 +19,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-Regular.ttf') format("truetype");
@@ -30,7 +26,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-Medium.ttf') format("truetype");
@@ -38,7 +33,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-SemiBold.ttf') format("truetype");
@@ -46,7 +40,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-Bold.ttf') format("truetype");
@@ -54,7 +47,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-ExtraBold.ttf') format("truetype");
@@ -62,7 +54,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Montserrat";
   src: url('Montserrat-Black.ttf') format("truetype");

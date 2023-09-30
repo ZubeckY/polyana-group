@@ -20,22 +20,23 @@
         <div class="restInPolyana-body">
           <div class="restInPolyana-body-container d-flex flex-row">
             <div class="restInPolyana-pictures-large">
-              <nuxt-img class="restInPolyana-pictures-large-img" width="866px" height="391px"
+              <watch class="ultima"/>
+              <nuxt-img class="restInPolyana-pictures-large-img"
                         src="img/images/big-image.webp" alt="big-pic"/>
+              <header-booking-ultima/>
             </div>
             <div class="restInPolyana-pictures-small d-flex flex-row flex-wrap">
-              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+              <nuxt-img class="restInPolyana-pictures-small-img"
                         src="img/images/rectangle-167.webp" alt="pic-1"/>
-              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+              <nuxt-img class="restInPolyana-pictures-small-img"
                         src="img/images/rectangle-169.webp" alt="pic-3"/>
-              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+              <nuxt-img class="restInPolyana-pictures-small-img"
                         src="img/images/rectangle-168.webp" alt="pic-2"/>
-              <nuxt-img class="restInPolyana-pictures-small-img" width="191px" height="191px"
+              <nuxt-img class="restInPolyana-pictures-small-img"
                         src="img/images/rectangle-170.webp" alt="pic-4"/>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 

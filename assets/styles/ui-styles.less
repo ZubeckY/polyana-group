@@ -412,6 +412,28 @@
   height: 143px;
   border-radius: 100%;
   background: var(--card-grey);
+  &.ultima {
+    position: absolute;
+    top: -24px;
+    left: 51px;
+    width: 113px;
+    height: 113px;
+    background: var(--background);
+    .watch-video {
+      &-container {
+        width: 90px;
+        height: 90px;
+      }
+      &-rotate {
+        width: 70px;
+        height: 70px;
+      }
+      &-arrow {
+        width: 31px;
+        height: 31px;
+      }
+    }
+  }
   &-container {
     display: flex;
     justify-content: center;
@@ -425,8 +447,8 @@
   &-play {
     position: absolute;
     display: flex;
-    left: 50%;
     top: 50%;
+    left: 50%;
     width: 87px;
     height: 87px;
     align-items: center;
@@ -446,6 +468,7 @@
     position: absolute !important;
   }
   &-rotate {
+    position: relative; top: 2px;
     width: 90px; height: 90px;
     animation: spin 16s linear infinite;
     -moz-animation: spin 16s linear infinite;
@@ -459,8 +482,8 @@
     margin: 30px auto;
   }
   &-title {
+    font-family: "Cormorant Infant", sans-serif;
     color: black;
-    font-family: "Cormorant Garamond", sans-serif;
     font-size: 28px;
     font-weight: 700;
     line-height: 164% !important;
@@ -471,18 +494,26 @@
       padding: 5px 10px;
       line-height: 173.1%;
       border-radius: 100px;
-      font-family: "Cormorant Garamond", sans-serif;
+      font-family: "Cormorant Infant", sans-serif;
     }
   }
   &-pictures {
     &-large {
+      position: relative;
       &-img {
         margin: 5px;
+        // width: 100% - mobile
+        width: 100vw;
+        max-width: 866px;
+        border-radius: 19.55px;
       }
     }
     &-small {
       &-img {
         margin: 5px;
+        width: 191px;
+        height: 191px;
+        border-radius: 19.55px;
       }
     }
   }
