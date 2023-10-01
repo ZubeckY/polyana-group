@@ -1,16 +1,28 @@
 <template>
   <div class="specialOffers-slider">
+
     <div class="swiper overflow-hidden" ref="container">
+      <v-btn class="swiper-button-prev"
+             min-height="0" min-width="0"
+             width="34px" height="34px"
+             elevation="0" rounded
+             color="#ffffffb8" title="Назад">
+        <chevron-left/>
+      </v-btn>
       <div class="swiper-wrapper d-flex flex-row">
         <div class="swiper-slide" v-for="(item, i) in slides" :key="'corner-card'-i">
           <corner-card :item="item"/>
         </div>
       </div>
-
-      <v-btn class="swiper-button-prev">назад</v-btn>
-      <v-btn class="swiper-button-next">вперёд</v-btn>
-
+      <v-btn class="swiper-button-next"
+             min-height="0" min-width="0"
+             width="34px" height="34px"
+             elevation="0" rounded
+             color="#ffffffb8" title="Вперёд">
+        <chevron-right/>
+      </v-btn>
     </div>
+
   </div>
 </template>
 <script lang="ts">

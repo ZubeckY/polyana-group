@@ -1,11 +1,10 @@
 <template>
-  <div class="feedbackForm px-4 py-6">
+  <div class="feedbackForm py-5">
     <v-form class="feedbackForm-container">
 
-      <v-card-title class="feedbackForm-title ma-0 pa-0">В течение 5 минут перезвоним,
+      <div class="feedbackForm-title">В течение 5 минут перезвоним,
         сориентируем по стоимости и
-        предоставим скидку
-      </v-card-title>
+        предоставим скидку</div>
 
       <div class="feedbackForm-inputGroup mt-5">
         <label class="feedbackForm-inputGroup-label d-block mb-2" for="phone">Телефон</label>
@@ -35,9 +34,8 @@
                 transition="scale-transition" min-width="auto" offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-text-field v-model="model.date" v-bind="attrs" v-on="on"
-                          :placeholder="minDate" id="date" solo readonly
                           class="feedbackForm-inputGroup-input"
-                          placeholder="03.09.2023">
+                          id="date" :placeholder="minDate" solo readonly>
               <template v-slot:prepend-inner>
                 <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <g clip-path="url(#clip0_1490_724)">
@@ -56,38 +54,28 @@
                   </defs>
                 </svg>
               </template>
-              <template v-slot:append>
-                <svg style="cursor: pointer"
-                     fill="#000000A3" width="20px" height="20px" viewBox="0 0 32 32"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path d="M7.004 23.087l7.08-7.081-7.07-7.071L8.929 7.02l7.067 7.069L23.084 7l1.912 1.913-7.089 7.093 7.075 7.077-1.912 1.913-7.074-7.073L8.917 25z"></path>
-                  </g>
-                </svg>
-              </template>
             </v-text-field>
           </template>
           <v-date-picker v-model="model.date"
-                         width="325px"
+                         width="276px"
                          @change="save"
                          locale="ru-ru"
                          :min="minDate"
+                         :max="maxDate"
                          no-title scrollable
-                         :first-day-of-week="1"
+                         first-day-of-week="1"
                          :active-picker.sync="activePicker">
           </v-date-picker>
         </v-menu>
       </div>
 
-      <v-card-actions class="feedbackForm-actions mt-4 pa-0">
-        <v-btn class="feedbackForm-button" width="325px" height="55px" elevation="0" dark>Забронировать</v-btn>
-      </v-card-actions>
+      <div class="feedbackForm-actions mt-6">
+        <v-btn class="feedbackForm-button" elevation="0" dark>Забронировать</v-btn>
+      </div>
 
-      <v-card-text class="feedbackForm-conditions ma-0 mt-3 ml-1 pa-0">
+      <div class="feedbackForm-conditions mt-3">
         Нажимая кнопку вы соглашаетесь с условиями Политики конфиденциальности
-      </v-card-text>
+      </div>
 
     </v-form>
   </div>
@@ -98,11 +86,18 @@ import {Vue, Component, Watch} from 'vue-property-decorator';
 export default class FeedbackForm extends Vue {
   menu: boolean = false
   activePicker: any = null
-  model: object = {phone: '', date: ''}
+  model: any = {phone: '', date: ''}
 
   @Watch('menu')
   changeMenu (val: any) {val && setTimeout(() => (this.activePicker = 'YEAR'))}
-  get minDate () {return (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(0, 10)}
+  get minDate () {return new Date(Date.now()).toISOString().substring(0, 10)}
+  get maxDate () {
+    let currentDate = new Date(Date.now());
+    currentDate.setDate(31);
+    currentDate.setMonth(11);
+    currentDate.setFullYear(new Date(Date.now()).getFullYear() + 2)
+    return new Date(currentDate).toISOString().substring(0, 10)
+  }
   save (date: any) {
     // @ts-ignore
     this.$refs.menu.save(date)
@@ -112,27 +107,67 @@ export default class FeedbackForm extends Vue {
 <style lang="less" scoped>
 /* feedbackForm */
 .feedbackForm {
-  max-width: 372px;
-  background: var(--dark-color);
-  border-radius: var(--bordrad23);
+  width: 100%;
+  max-width: 316px;
+  border-radius: 19.55px;
+  background: rgba(50, 52, 58, 0.80);
+  .dark {
+    background: var(--dark-color);
+  }
+  &-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
   &-title {
-    color: white; font-size: 16px !important; font-weight: 400 !important;
-    text-transform: uppercase; white-space: pre-line !important;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: pre-line;
+    text-transform: uppercase;
   }
   &-inputGroup {
-    &-label {color: white; font-size: 14px; font-style: normal; font-weight: 400; line-height: normal;}
+    &-label {
+      color: white;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: normal;
+    }
     &-input {
-      width: 325px;
-      height: 50px;
-      border-radius: 12px !important;
+      width: 276px;
+      height: 42px;
+      color: #000000A3;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: .765px;
+      border-radius: 10px !important;
       background: #D9D9D9 !important;
-      & * {box-shadow: none !important;}
+      & * {
+        box-shadow: none !important;
+      }
     }
   }
   &-button {
-    font-size: 16px; font-weight: 500; border-radius: 16px !important;
-    background: linear-gradient(90deg,#CCAB6A -1.19%, #C1B397 177.44%) !important;
+    color: white;
+    width: 276px;
+    height: 47px;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+    border-radius: 14px !important;
+    background: linear-gradient(90deg,
+      #CCAB6A -1.19%, #C1B397 177.44%) !important;
   }
-  &-conditions {color: white; font-size: 12px !important; font-weight: 400 !important;}
+  &-conditions {
+    color: white;
+    width: 276px;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }
 </style>
