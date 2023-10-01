@@ -3,24 +3,37 @@
     <div class="swiper overflow-hidden" ref="container">
       <div class="swiper-wrapper d-flex flex-row">
         <div class="swiper-slide" v-for="(item, i) in slides" :key="'corner-card'-i">
-          <lazy-corner-card :item="item"/>
+          <corner-card :item="item"/>
         </div>
       </div>
+
+      <v-btn class="swiper-button-prev">назад</v-btn>
+      <v-btn class="swiper-button-next">вперёд</v-btn>
+
     </div>
   </div>
 </template>
 <script lang="ts">
 import {Vue, Component, Ref} from 'vue-property-decorator';
-import {Swiper} from "swiper";
+import {Swiper, Navigation, Autoplay} from 'swiper'
+// import 'swiper/swiper-bundle.min.css'
 @Component({})
 export default class SpecialOffersSlider extends Vue {
   @Ref()
   readonly container!: HTMLDivElement;
   swiper: any = Swiper
   mounted () {
+    Swiper.use([Navigation, Autoplay])
     this.swiper = new Swiper (this.container, {
       slidesPerView: 'auto',
       spaceBetween: 15,
+      // autoplay: {
+      //   delay: 3000
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     })
   }
 
