@@ -159,6 +159,12 @@
   }
 }
 
+.hotelGroup {
+  &-container {
+
+  }
+}
+
 /* specialOffers */
 .specialOffers {
   margin-top: 85px;
@@ -445,11 +451,15 @@
       position: relative;
       &-img {
         margin: 5px;
-        width: 100vw;
+        width: 866px;
         height: 391px;
-        max-width: 866px;
         object-fit: cover;
-        border-radius: 19.55px;
+        & * {
+          display: block;
+          width: inherit;
+          height: inherit;
+          border-radius: 19.55px;
+        }
       }
     }
     &-small {
@@ -458,7 +468,29 @@
         width: 191px;
         height: 191px;
         object-fit: cover;
-        border-radius: 19.55px;
+        & * {
+          display: block;
+          width: inherit;
+          height: inherit;
+          border-radius: 19.55px;
+        }
+        &:last-child {
+          position: relative;
+        }
+        &-more {
+          display: flex;
+          position: absolute;
+          justify-content: center;
+          align-items: center;
+          width: 191px;
+          height: 191px;
+          top: 0; left: 0;
+          color: #000000CC;
+          font-size: 15px;
+          font-weight: 700;
+          border-radius: 19.55px;
+          background: rgba(217, 217, 217, 0.76);
+        }
       }
     }
   }

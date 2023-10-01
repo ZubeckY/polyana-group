@@ -21,24 +21,37 @@
           <div class="restInPolyana-body-container d-flex flex-row">
             <div class="restInPolyana-pictures-large">
               <watch class="ultima"/>
-              <nuxt-img class="restInPolyana-pictures-large-img"
-                        loading="lazy" quality="80" :placeholder="[50]"
-                        src="img/images/big-image.webp" alt="big-pic"/>
+              <div class="restInPolyana-pictures-large-img">
+                <nuxt-img sizes="xs:200px md:500px lg:1024"
+                          loading="lazy" quality="80" :placeholder="[50]"
+                          src="img/images/big-image.webp" alt="big-pic"/>
+              </div>
               <header-booking-ultima/>
             </div>
             <div class="restInPolyana-pictures-small d-flex flex-row flex-wrap">
-              <nuxt-img class="restInPolyana-pictures-small-img"
-                        loading="lazy" quality="80" :placeholder="[50]"
-                        src="img/images/rectangle-167.webp" alt="pic-1"/>
-              <nuxt-img class="restInPolyana-pictures-small-img"
-                        loading="lazy" quality="80" :placeholder="[50]"
-                        src="img/images/rectangle-169.webp" alt="pic-3"/>
-              <nuxt-img class="restInPolyana-pictures-small-img"
-                        loading="lazy" quality="80" :placeholder="[50]"
-                        src="img/images/rectangle-168.webp" alt="pic-2"/>
-              <nuxt-img class="restInPolyana-pictures-small-img"
-                        loading="lazy" quality="80" :placeholder="[50]"
-                        src="img/images/rectangle-170.webp" alt="pic-4"/>
+              <div class="restInPolyana-pictures-small-img">
+                <nuxt-img sizes="xs:200px md:500px lg:1024"
+                          loading="lazy" quality="80" :placeholder="[50]"
+                          src="img/images/rectangle-167.webp" alt="pic-1"/>
+              </div>
+              <div class="restInPolyana-pictures-small-img">
+                <nuxt-img sizes="xs:200px md:500px lg:1024"
+                          loading="lazy" quality="80" :placeholder="[50]"
+                          src="img/images/rectangle-169.webp" alt="pic-3"/>
+              </div>
+              <div class="restInPolyana-pictures-small-img">
+                <nuxt-img sizes="xs:200px md:500px lg:1024"
+                          loading="lazy" quality="80" :placeholder="[50]"
+                          src="img/images/rectangle-168.webp" alt="pic-2"/>
+              </div>
+              <div class="restInPolyana-pictures-small-img">
+                <nuxt-img sizes="xs:200px md:500px lg:1024"
+                          loading="lazy" quality="80" :placeholder="[50]"
+                          src="img/images/rectangle-170.webp" alt="pic-4"/>
+                <div class="restInPolyana-pictures-small-img-more">
+                  +35 фото
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -63,6 +76,26 @@
               горный отдых
               с комфортом!
             </div>
+<!--            <div class="luxHoliday-text">&nbsp; <b>ULTIMA CLUB HOTEL & SPA</b> на Красной поляне - идеальное-->
+<!--              место для тех, кто ищет комфорт и роскошь. Мы предлагаем-->
+<!--              широкий выбор удобств, включая бассейн, спа-центр, хамам-->
+<!--              и ski room, кинотеатр на крыше с кальяной зоной. Наши-->
+<!--              номера оформлены с уникальным дизайном и предлагают-->
+<!--              великолепный вид на горы. Ресторан отеля предлагают-->
+<!--              блюда местной и мировой кухни, чтобы удовлетворить-->
+<!--              любой вкус.-->
+
+<!--              &nbsp; Также мы рады предложить нашим гостям выгодное-->
+<!--              бронирование. Забронируйте номер заранее и получите-->
+<!--              специальные предложения и скидки. Насладитесь-->
+<!--              роскошью и комфортом в нашем 5-звездочном отеле на-->
+<!--              Красной поляне!-->
+
+<!--              &nbsp; Следите за нашими предложениями на сайте или-->
+<!--              свяжитесь с нами для получения большей информации по-->
+<!--              телефону: <b>+7 989 009 5577.</b>-->
+<!--            </div>  -->
+
             <div class="luxHoliday-text">&nbsp; <b>ULTIMA CLUB HOTEL & SPA</b> на Красной поляне - идеальное
               место для тех, кто ищет комфорт и роскошь. Мы предлагаем
               широкий выбор удобств, включая бассейн, спа-центр, хамам
@@ -80,8 +113,7 @@
 
               &nbsp; Следите за нашими предложениями на сайте или
               свяжитесь с нами для получения большей информации по
-              телефону: <b>+7 989 009 5577.</b>
-            </div>
+              телефону: <b>+7 989 009 5577.</b></div>
             <v-btn class="luxHoliday-btn rounded-xxl mx-auto"
                    color="golden-gradient" elevation="0"
                    width="254px" height="47px" dark>
@@ -191,9 +223,9 @@ export default class Inside extends Vue {
     },
   ]
 
-   getNumSlider (numSlider: string) {
+  getNumSlider (numSlider: string) {
     // @ts-ignore
     return this[numSlider]
-   }
+  }
 }
 </script>

@@ -111,13 +111,20 @@
 
     <section class="hotelGroup">
       <div class="hotelGroup-container">
+        <div class="hotelGroup-head">
+          <div class="hotelGroup-title">ГРУППА ОТЕЛЕЙ
+            POLYANA GROUP на КрАСНОЙ ПОЛЯНЕ</div>
+        </div>
 
+        <div>
+
+        </div>
       </div>
     </section>
 
 
     <!-- Специальные предложения -->
-    <special-offers style="margin-top: 160px"/>
+    <special-offers/>
 
     <!-- Развлекуха летом/зимой-->
     <section class="seasonPrograms">

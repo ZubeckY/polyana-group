@@ -13,9 +13,9 @@
         <v-btn v-for="(item, i) in slider" :key="'header-slide' + i"
                class="header-slider__slide d-flex justify-center align-center"
                title="Слайд 1" color="rgba(255, 255, 255, 0.32)" fab :value="i">
-          <nuxt-img width="51px" height="51px"
+          <nuxt-img width="51px" height="51px" style="border-radius: 100px"
                     loading="lazy" quality="80" :placeholder="[50]"
-                    :src="'img/header/slider/' + item.small " alt="#"/>
+                    :src="'img/header/slider/' + item " alt="#"/>
         </v-btn>
       </v-btn-toggle>
 
@@ -34,23 +34,14 @@ import {Vue, Component, Watch} from 'vue-property-decorator';
 export default class Slider extends Vue {
   slide: number = 0
   slider: any = [
-    {
-      small: "Rectangle91.webp",
-      large: "_MG_2185_1.webp"
-    },
-    {
-      small: "Rectangle92.webp",
-      large: "_MG_2327.webp"
-    },
-    {
-      small: "Rectangle93.webp",
-      large: "_MG_7748.webp"
-    },
+    "_MG_2185_1.webp",
+    "_MG_2327.webp",
+    "_MG_7748.webp"
   ]
 
   @Watch('slide')
   changeMainSlide () {
-    return this.$emit('changeActiveSlide', this.slider[this.slide]['large'])
+    return this.$emit('changeActiveSlide', this.slider[this.slide])
   }
 
   prev () {

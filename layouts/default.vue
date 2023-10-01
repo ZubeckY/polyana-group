@@ -1,13 +1,11 @@
 <template>
   <v-app>
-    <v-main>
-      <v-card color="var(--background)" elevation="0" rounded="0" min-height="100vh">
-        <div class="d-flex flex-column total-container mx-auto px-4">
-          <nuxt/>
-          <v-vertical-spacer/>
-          <footer-comp/>
-        </div>
-      </v-card>
+    <v-main style="background-color: var(--background); min-height: 100vh">
+      <div class="d-flex flex-column total-container mx-auto px-4">
+        <nuxt/>
+        <v-vertical-spacer/>
+        <footer-comp/>
+      </div>
     </v-main>
   </v-app>
 </template>
