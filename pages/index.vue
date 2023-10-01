@@ -107,68 +107,14 @@
     </section>
 
     <!-- Группа отелей -->
-    <!--   d-none    -->
 
-    <section class="hotelGroup d-none">
-      <div class="hotelGroup-container general-container">
 
-        <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">ГРУППА ОТЕЛЕЙ
-          POLYANA GROUP на КРАСНОЙ ПОЛЯНЕ
-        </div>
+    <section class="hotelGroup">
+      <div class="hotelGroup-container">
 
-        <div class="hotelGroup-line"></div>
-
-        <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
-          <v-expansion-panel class="hotelGroup-accordion-item transparent"
-                             v-for="item in hotelList" :key="'hotel-group'+item.id">
-            <v-expansion-panel-header class="hotelGroup-accordion-item--header ma-0 pa-0" disable-icon-rotate>
-              <div class="hotelGroup-accordion-item--header-container d-flex align-center my-2">
-
-                <div class="hotelGroup-accordion-item--header-count d-flex justify-center align-center golden-gradient--text">
-                  {{ item.id }}
-                </div>
-
-                <div class="hotelGroup-accordion-item--header-title text-uppercase golden-gradient--text">{{ item.title }}</div>
-
-                <div class="hotelGroup-accordion-item--header-price text-uppercase mr-8">
-                  От {{ getItemPrice(item) }} руб.
-                </div>
-              </div>
-
-              <template v-slot:actions>
-                <div class="hotelGroup-accordion-item--header-arrow d-flex justify-center align-center">
-                  <svg fill="#ffffff" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                      <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
-                    </g>
-                  </svg>
-                </div>
-              </template>
-            </v-expansion-panel-header>
-
-            <v-expansion-panel-content>
-              <div class="hotelGroup-accordion-item--body">
-                <div class="hotelGroup-accordion-item--body-head d-flex">
-                  <logo-ultima/>
-
-                  <div class="hotelGroup-accordion-item--body-head-rating">
-                    <div>9.6</div>
-                    <div>рейтинг отеля</div>
-                  </div>
-
-                  <div class="hotelGroup-accordion-item--body-head-delimiter"></div>
-
-                </div>
-              </div>
-            </v-expansion-panel-content>
-
-          </v-expansion-panel>
-        </v-expansion-panels>
-        <div class="hotelGroup-line"></div>
       </div>
     </section>
+
 
     <!-- Специальные предложения -->
     <special-offers style="margin-top: 160px"/>
