@@ -15,22 +15,19 @@
 
             <div class="footer-seeYouAtHotel-address d-flex">
               <!-- Контакты адрес -->
-              <div>
-                <v-card-title class="footer-seeYouAtHotel-address-title footer-title pt-0 pb-3">Контакты</v-card-title>
-                <v-card-text class="footer-seeYouAtHotel-address-text py-1"><span class="text-uppercase">Адрес:</span>
+              <div class="footer-seeYouAtHotel-address-container">
+                <div class="footer-seeYouAtHotel-address-title footer-title my-3">Контакты</div>
+                <div class="footer-seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
                   Краснодарский край,
                   Красная поляна,
                   с. Эсто-Садок,
                   Автомобильный
-                  переулок, 4
-                </v-card-text>
-                <v-card-text class="footer-seeYouAtHotel-address-text text-uppercase py-1"><span class="text-decoration-underline">8 938 555 5552</span>
+                  переулок, 4</div>
+                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span class="text-decoration-underline">8 938 555 5552</span>
                   Отдел бронирования
-                  (09:00 - 21:00)
-                </v-card-text>
-                <v-card-text class="footer-seeYouAtHotel-address-text text-uppercase py-1"><span class="text-decoration-underline">8 938 555 5551</span>
-                  Рецепция (круглосуточно)
-                </v-card-text>
+                  (09:00 - 21:00)</div>
+                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span class="text-decoration-underline">8 938 555 5551</span>
+                  Рецепция (круглосуточно)</div>
               </div>
 
               <!-- Слайдер -->

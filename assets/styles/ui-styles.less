@@ -160,8 +160,117 @@
 }
 
 .hotelGroup {
-  &-container {
-
+  margin-top: 187px;
+  &-title {
+    white-space: pre-line;
+  }
+  &-accordion {
+    &-head {
+      &-container {
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+    }
+    &-count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 67px;
+      height: 36px;
+      color: #B6B6B6;
+      font-size: 18px;
+      margin-right: 23px;
+      border-radius: 85px;
+      text-transform: uppercase;
+      border: .85px solid #B6B6B6;
+    }
+    &-title {
+      color: #B6B6B6;
+      font-size: 50px;
+      text-transform: uppercase;
+      font-family: 'CharterC', sans-serif;
+    }
+    &-price {
+      color: #B6B6B6;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    &-card {
+      width: 56px;
+      height: 56px;
+      margin-left: 70px;
+      border-radius: 13px;
+      background: #B6B6B6;
+    }
+    &-body {
+      &-container {
+        display: flex;
+      }
+    }
+    &-info {
+      &-head {
+        display: flex;
+        width: 100%;
+        max-width: 432px;
+        align-items: center;
+      }
+      &-logo {
+        margin-right: 46px;
+      }
+      &-group {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      &-title {
+        color: black;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      &-text {
+        color: black;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: lowercase;
+      }
+      &-delimiter {
+        width: 2.55px;
+        height: 32.3px;
+        margin: 0 25px;
+        background: var(--gradiend-golden);
+      }
+      &-body {
+        color: black;
+        width: 100%;
+        max-width: 432px;
+        font-size: 14px;
+        margin-top: 13px;
+        white-space: pre-line;
+      }
+      &-footer {
+        width: 100%;
+        max-width: 475px;
+        margin-top: 20px;
+      }
+      &-button {
+        height: 34px;
+        min-width: 0;
+        min-height: 0;
+        margin-right: 10px;
+        margin-bottom: 8px;
+        color: var(--dark-color);
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        background: var(--card-grey) !important;
+        &:first-child {
+          color: white !important;
+          background: var(--gradiend-golden) !important;
+        }
+      }
+    }
   }
 }
 
@@ -178,14 +287,27 @@
       white-space: pre-line !important;
     }
     &-text {
-      font-size: 13px ;
+      font-size: 13px;
       white-space: pre-line;
     }
   }
   &-slider {
+    position: relative;
     width: 100%;
     max-width: calc(80% - 300px);
     margin-left: 155px;
+    &-prev {
+      position: absolute;
+      left: 5%;
+      bottom: 50%;
+      z-index: 1000;
+    }
+    &-next {
+      position: absolute;
+      left: 86%;
+      bottom: 50%;
+      z-index: 1000;
+    }
   }
 }
 

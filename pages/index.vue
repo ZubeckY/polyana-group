@@ -112,13 +112,80 @@
     <section class="hotelGroup">
       <div class="hotelGroup-container">
         <div class="hotelGroup-head">
-          <div class="hotelGroup-title">ГРУППА ОТЕЛЕЙ
+          <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">ГРУППА ОТЕЛЕЙ
             POLYANA GROUP на КрАСНОЙ ПОЛЯНЕ</div>
         </div>
+        <div class="hotelGroup-body">
+          <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
+            <v-expansion-panel class="hotelGroup-accordion-panel" v-for="(item, i) in hotelList" :key="'hotel-'+i">
+              <v-expansion-panel-header class="hotelGroup-accordion-head" disable-icon-rotate>
+                <div class="hotelGroup-accordion-head-container">
+                  <div class="hotelGroup-accordion-count">{{ item.id}}</div>
+                  <div class="hotelGroup-accordion-title">{{ item.title }}</div>
+                  <v-spacer/>
+                  <div class="hotelGroup-accordion-price">от {{ getItemPrice(item) }} руб.</div>
+                </div>
+                <template v-slot:actions>
+                  <div class="hotelGroup-accordion-card"></div>
+                </template>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content class="hotelGroup-accordion-body">
+                <div class="hotelGroup-accordion-body-container">
 
-        <div>
+                  <div class="hotelGroup-accordion-info">
+                    <div class="hotelGroup-accordion-info-container">
+                      <div class="hotelGroup-accordion-info-head">
+                        <logo-ultima class="hotelGroup-accordion-info-logo"/>
+
+                        <div class="hotelGroup-accordion-info-group">
+                          <div class="hotelGroup-accordion-info-title">9.6</div>
+                          <div class="hotelGroup-accordion-info-text">рейтинг отеля</div>
+                        </div>
+
+                        <div class="hotelGroup-accordion-info-delimiter"></div>
+
+                        <div class="hotelGroup-accordion-info-group">
+                          <div class="hotelGroup-accordion-info-title">185</div>
+                          <div class="hotelGroup-accordion-info-text">отзывов</div>
+                        </div>
+
+                      </div>
+                      <div class="hotelGroup-accordion-info-body">Наш отель на Красной поляне - идеальное место для тех,
+                        кто ищет комфорт и роскошь. Мы предлагаем широкий
+                        выбор удобств, включая бассейн, спа-центр, хамам и ski
+                        room, кинотеатр на крыше с кальяной зоной. Наши номера
+                        оформлены с уникальным дизайном и предлагают
+                        великолепный вид на горы. Ресторан отеля предлагают
+                        блюда местной и мировой кухни, чтобы удовлетворить
+                        любой вкус.
+
+                        Также мы рады предложить нашим гостям выгодное
+                        бронирование. Забронируйте номер заранее и получите
+                        специальные предложения и скидки. Насладитесь
+                        роскошью и комфортом в нашем 5-звездочном отеле на
+                        Красной поляне!</div>
+                      <div class="hotelGroup-accordion-info-footer">
+                        <v-btn v-for="(button, j) in hotelButtons"
+                               class="hotelGroup-accordion-info-button"
+                               :key="'linkToInsidePage'+j" elevation="0"
+                               @click="$router.push(button.link)">{{button.title}}</v-btn>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hotelGroup-accordion-gallery">
+
+                  </div>
+
+
+                </div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
 
         </div>
+
+
       </div>
     </section>
 
@@ -318,6 +385,53 @@ export default class Pages extends Vue {
       title: 'IKOS POLYANA',
       price: 5_900,
     },
+  ]
+
+  hotelButtons: any = [
+    {
+      title: 'Забронировать',
+      link: '/inside'
+    },
+    {
+      title: 'Об отеле',
+      link: '/inside'
+    },
+    {
+      title: 'Номера',
+      link: '/inside'
+    },
+    {
+      title: 'Акции',
+      link: '/inside'
+    },
+    {
+      title: 'Услуги',
+      link: '/inside'
+    },
+    {
+      title: 'Местоположение',
+      link: '/inside'
+    },
+    {
+      title: 'Что включено',
+      link: '/inside'
+    },
+    {
+      title: 'Fitness центр',
+      link: '/inside'
+    },
+    {
+      title: 'Кинотеатр',
+      link: '/inside'
+    },
+    {
+      title: 'Ski-room',
+      link: '/inside'
+    },
+    {
+      title: 'SPA',
+      link: '/inside'
+    }
   ]
 
   getItemPrice (item: any) {

@@ -10,10 +10,10 @@
       </v-btn>
     </v-card-actions>
 
-    <v-card-text class="footer-booking-text text-center pa-0 my-1">Забронируйте номер
+    <div class="footer-booking-text text-center pa-0 my-1">Забронируйте номер
       через удобный для вас
       мессенджер на прямую:
-    </v-card-text>
+    </div>
 
     <v-card-actions class="d-flex justify-center pa-0 mt-2">
       <v-btn class="rounded-lg" title="vk"

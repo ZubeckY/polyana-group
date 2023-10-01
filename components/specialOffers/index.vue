@@ -29,7 +29,7 @@
       </v-card>
 
       <!-- Слайдер -->
-      <lazy-special-offers-slider/>
+      <special-offers-slider/>
 
     </div>
   </section>
