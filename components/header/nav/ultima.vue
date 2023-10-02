@@ -26,17 +26,16 @@ export default class Ultima extends Vue {
       title: 'Номера'
     },
     {
-      title: 'SPA'
+      title: 'Ресторан'
     },
-    {
-      title: 'Отзывы'
-    },
-
     {
       title: 'Услуги'
     },
     {
-      title: 'Ресторан'
+      title: 'Акции'
+    },
+    {
+      title: 'Отзывы'
     },
     {
       title: 'Контакты'
