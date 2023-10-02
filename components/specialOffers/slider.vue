@@ -1,7 +1,7 @@
 <template>
   <div class="specialOffers-slider swiper overflow-hidden" ref="container">
     <div class="swiper-wrapper d-flex flex-row">
-      <div class="swiper-slide" v-for="(item, i) in slides" :key="'corner-card'-i">
+      <div class="specialOffers-slide swiper-slide" v-for="(item, i) in slides" :key="'corner-card'-i">
         <corner-card :item="item"/>
       </div>
     </div>
@@ -19,28 +19,12 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Ref} from 'vue-property-decorator';
-import {Swiper, Navigation, Autoplay} from 'swiper'
-// import 'swiper/swiper-bundle.min.css'
+import {Swiper, Navigation} from 'swiper'
 @Component({})
 export default class SpecialOffersSlider extends Vue {
   @Ref()
   readonly container!: HTMLDivElement;
   swiper: any = Swiper
-  mounted () {
-    Swiper.use([Navigation, Autoplay])
-    this.swiper = new Swiper (this.container, {
-      slidesPerView: 'auto',
-      spaceBetween: 15,
-      // autoplay: {
-      //   delay: 3000
-      // },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    })
-  }
-
   slides: any = [
     {
       id: 'corner-card-1',
@@ -58,6 +42,15 @@ export default class SpecialOffersSlider extends Vue {
       img: 'img/specialOffers/3.webp'
     },
   ]
-
+  mounted () {
+    Swiper.use([Navigation])
+    this.swiper = new Swiper (this.container, {
+      slidesPerView: 'auto',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    })
+  }
 }
 </script>

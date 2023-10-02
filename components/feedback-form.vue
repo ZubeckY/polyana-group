@@ -51,7 +51,7 @@
               <v-spacer/>
               <v-btn @click="dialog = false" color="error" text
                      elevation="0" width="40px" height="40px"
-                     min-width="0" min-height="0" style="font-size: 20px">⛌</v-btn>
+                     min-width="0" min-height="0" style="font-size: 20px">╳</v-btn>
             </v-card-actions>
             <v-date-picker v-model="model.date"
                            width="360px"

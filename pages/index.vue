@@ -107,13 +107,11 @@
     </section>
 
     <!-- Группа отелей -->
-
-
     <section class="hotelGroup">
       <div class="hotelGroup-container">
         <div class="hotelGroup-head">
-          <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">ГРУППА ОТЕЛЕЙ
-            POLYANA GROUP на КрАСНОЙ ПОЛЯНЕ</div>
+          <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
+            POLYANA GROUP на красной поляне</div>
         </div>
         <div class="hotelGroup-body">
           <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
@@ -126,7 +124,15 @@
                   <div class="hotelGroup-accordion-price">от {{ getItemPrice(item) }} руб.</div>
                 </div>
                 <template v-slot:actions>
-                  <div class="hotelGroup-accordion-card"></div>
+                  <div class="hotelGroup-accordion-card">
+                    <svg class="hotelGroup-accordion-card-svg" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> <g data-name="Layer 2"> <g data-name="diagonal-arrow-right-up"> <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
+                        <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path></g></g>
+                      </g>
+                    </svg>
+                  </div>
                 </template>
               </v-expansion-panel-header>
               <v-expansion-panel-content class="hotelGroup-accordion-body">
@@ -173,10 +179,20 @@
                     </div>
                   </div>
 
-                  <div class="hotelGroup-accordion-gallery">
-
+                  <div class="hotelGroup-accordion-gallery ml-auto" style="margin-top: 25px;">
+                    <div class="hotelGroup-accordion-gallery-container d-flex">
+                      <div class="d-flex flex-wrap mr-2" style="max-width: 420px">
+                        <nuxt-img src="img/hotelGroup/Rectangle83.webp"
+                                  class="mb-2" width="420px" height="238px"/>
+                        <nuxt-img src="img/hotelGroup/Rectangle47.webp"
+                                  class="mr-2" width="204px" height="172px"/>
+                        <nuxt-img src="img/hotelGroup/Rectangle48.webp"
+                                  width="204px" height="172px"/>
+                      </div>
+                      <nuxt-img src="img/hotelGroup/Rectangle49.webp"
+                                width="306px" height="420px"/>
+                    </div>
                   </div>
-
 
                 </div>
               </v-expansion-panel-content>
@@ -244,7 +260,6 @@
           <!-- Анимация для детей: веселье и игры -->
           <v-card class="seasonPrograms-card fun-for-kids"
                   rounded="xxl" height="165px"
-
                   elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
@@ -355,7 +370,6 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import thousandSeparator from "assets/scripts/thousandSeparator";
-
 @Component({
   head: {
     title: 'Группа отелей',
@@ -386,7 +400,6 @@ export default class Pages extends Vue {
       price: 5_900,
     },
   ]
-
   hotelButtons: any = [
     {
       title: 'Забронировать',

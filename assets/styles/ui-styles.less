@@ -162,10 +162,30 @@
 .hotelGroup {
   margin-top: 187px;
   &-title {
+    margin-bottom: 38px;
     white-space: pre-line;
   }
   &-accordion {
+    &-panel {
+      background-color: transparent !important;
+    }
     &-head {
+      &.v-expansion-panel-header--active {
+        .hotelGroup-accordion-count {
+          color: #CCAB6A;
+          border: .85px solid #CCAB6A;
+        }
+        .hotelGroup-accordion-title {
+         color: #CCAB6A;
+        }
+        .hotelGroup-accordion-card {
+          background: #CCAB6A;
+          &-svg {
+            transform: rotate(0deg);
+            transition: transform .15s ease-in;
+          }
+        }
+      }
       &-container {
         display: flex;
         width: 100%;
@@ -197,11 +217,20 @@
       text-transform: uppercase;
     }
     &-card {
+      display: flex;
       width: 56px;
       height: 56px;
       margin-left: 70px;
       border-radius: 13px;
       background: #B6B6B6;
+      align-items: center;
+      justify-content: center;
+      &-svg {
+        width: 34px;
+        height: 34px;
+        transform: rotate(90deg);
+        transition: transform .15s ease-in;
+      }
     }
     &-body {
       &-container {
@@ -245,9 +274,12 @@
       &-body {
         color: black;
         width: 100%;
-        max-width: 432px;
-        font-size: 14px;
         margin-top: 13px;
+        font-weight: 400;
+        font-size: 13.6px;
+        max-width: 432px;
+        font-style: normal;
+        line-height: normal;
         white-space: pre-line;
       }
       &-footer {
@@ -310,7 +342,9 @@
     }
   }
 }
-
+.specialOffers-slide + .specialOffers-slide {
+  margin-left: 15px;
+}
 /* seasonPrograms */
 .seasonPrograms {
   margin-top: 120px;
@@ -550,7 +584,7 @@
 /* restInPolyana */
 .restInPolyana {
   &-head {
-    margin: 30px auto;
+    margin: 15px auto 30px;
   }
   &-title {
     font-family: "Cormorant Infant", sans-serif;
@@ -625,9 +659,6 @@
     position: sticky;
     top: 30px;
     align-self: flex-start; // <-fix
-    height: 620px;
-  }
-  &-body {
   }
   &-title {
     font-family: 'CharterC', sans-serif;
@@ -665,14 +696,41 @@
       position: relative;
       top: 2px;
       left: 25px;
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
     }
     &.slider {
       margin: 45px 0;
       &:first-child {
         margin-top: 0;
       }
+    }
+  }
+}
+.breadcrumbs {
+  margin-top: 30px;
+  &-container {
+    display: flex;
+  }
+  &-button {
+    border-radius: 8px
+  }
+  &-content {
+    display: flex;
+    width: 373px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+    font-style: normal;
+    line-height: normal;
+    border-radius: 10px;
+    background: #D9D9D9;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    &-delimiter {
+      margin: 0 8px;
     }
   }
 }
