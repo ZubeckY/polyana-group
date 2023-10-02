@@ -88,7 +88,7 @@ export default class FeedbackForm extends Vue {
 
 
   @Watch('dialog')
-  changedialog (val: any) {val && setTimeout(() => (this.activePicker = 'YEAR'))}
+  changedialog (val: any) {val && setTimeout(() => (this.activePicker = 'MONTH'))}
   get minDate () {return new Date(Date.now()).toISOString().substring(0, 10)}
   get maxDate () {
     let currentDate = new Date(Date.now());
