@@ -115,14 +115,11 @@
         <div class="hotelGroup-body">
           <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
             <v-expansion-panel class="hotelGroup-accordion-panel" v-for="(item, i) in hotelList" :key="'hotel-'+i">
-              <v-expansion-panel-header class="hotelGroup-accordion-head" disable-icon-rotate>
+              <v-expansion-panel-header class="hotelGroup-accordion-head">
                 <div class="hotelGroup-accordion-head-container">
                   <div class="hotelGroup-accordion-count">{{ item.id}}</div>
-                  <div class="hotelGroup-accordion-title">{{ item.title }}</div>
-                  <v-spacer/>
+                  <div class="hotelGroup-accordion-title desktop">{{ item.title }}</div>
                   <div class="hotelGroup-accordion-price">от {{ getItemPrice(item) }} руб.</div>
-                </div>
-                <template v-slot:actions>
                   <div class="hotelGroup-accordion-card">
                     <svg class="hotelGroup-accordion-card-svg" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -132,7 +129,9 @@
                       </g>
                     </svg>
                   </div>
-                </template>
+                </div>
+                <div class="hotelGroup-accordion-title mobile">{{ item.title }}</div>
+                <template v-slot:actions><div></div></template>
               </v-expansion-panel-header>
               <v-expansion-panel-content class="hotelGroup-accordion-body">
                 <div class="hotelGroup-accordion-body-container">
@@ -153,7 +152,6 @@
                           <div class="hotelGroup-accordion-info-title">185</div>
                           <div class="hotelGroup-accordion-info-text">отзывов</div>
                         </div>
-
                       </div>
                       <div class="hotelGroup-accordion-info-body">Наш отель на Красной поляне - идеальное место для тех,
                         кто ищет комфорт и роскошь. Мы предлагаем широкий
@@ -162,9 +160,8 @@
                         оформлены с уникальным дизайном и предлагают
                         великолепный вид на горы. Ресторан отеля предлагают
                         блюда местной и мировой кухни, чтобы удовлетворить
-                        любой вкус.
-
-                        Также мы рады предложить нашим гостям выгодное
+                        любой вкус.</div>
+                      <div class="hotelGroup-accordion-info-body">Также мы рады предложить нашим гостям выгодное
                         бронирование. Забронируйте номер заранее и получите
                         специальные предложения и скидки. Насладитесь
                         роскошью и комфортом в нашем 5-звездочном отеле на
@@ -178,9 +175,9 @@
                     </div>
                   </div>
 
-                  <div class="hotelGroup-accordion-gallery ml-auto" style="margin-top: 25px;">
+                  <div class="hotelGroup-accordion-gallery">
                     <div class="hotelGroup-accordion-gallery-container d-flex">
-                      <div class="d-flex flex-wrap mr-2" style="max-width: 420px">
+                      <div class="hotelGroup-accordion-gallery-group d-flex flex-wrap mr-2">
                         <nuxt-img src="img/hotelGroup/Rectangle83.webp"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
                                   loading="lazy" quality="80" :placeholder="[50]" format="webp"

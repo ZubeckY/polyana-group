@@ -212,10 +212,40 @@
       max-width: 370px !important;
     }
   }
+  /* hotelGroup-accordion */
+  .hotelGroup-accordion {
+    &-count {
+      width: 62px;
+      height: 33px;
+      font-size: 17px !important;
+    }
+    &-title {
+      font-size: 25px !important;
+      &.desktop {
+        display: none !important;
+      }
+      &.mobile {
+        display: block !important;
+      }
+    }
+    &-price {
+      font-size: 21px !important;
+      margin: 0 auto;
+    }
+    &-card {
+      width: 40px !important;
+      height: 40px !important;
+      margin-left: 0 !important;
+      &-svg {
+        width: 25px !important;
+        height: 25px !important;
+      }
+    }
+  }
+  /* seasonPrograms */
   .seasonPrograms {
     margin-top: 60px !important;
   }
-
   /* feedbackForm */
   .feedbackForm {
     background: #32343ACC !important;
@@ -273,8 +303,16 @@
     }
   }
 }
-
-@media (max-width: 795px) {
+@media (max-width: 800px) {
+  /* hotelGroup */
+  .hotelGroup-accordion {
+    &-info-body {
+      white-space: normal !important;
+    }
+    &-gallery-container {
+      flex-direction: column;
+    }
+  }
   /* pinterest */
   .pinterest {
     &-card {

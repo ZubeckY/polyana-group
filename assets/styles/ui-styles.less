@@ -170,13 +170,15 @@
       background-color: transparent !important;
     }
     &-head {
+      display: flex;
+      flex-direction: column;
       &.v-expansion-panel-header--active {
         .hotelGroup-accordion-count {
           color: #CCAB6A;
           border: .85px solid #CCAB6A;
         }
         .hotelGroup-accordion-title {
-         color: #CCAB6A;
+          color: #CCAB6A;
         }
         .hotelGroup-accordion-card {
           background: #CCAB6A;
@@ -210,10 +212,18 @@
       font-size: 50px;
       text-transform: uppercase;
       font-family: 'CharterC', sans-serif;
+      &.desktop {
+        display: block;
+      }
+      &.mobile {
+        display: none;
+        margin-top: 15px;
+      }
     }
     &-price {
       color: #B6B6B6;
       font-size: 30px;
+      margin-left: auto;
       text-transform: uppercase;
     }
     &-card {
@@ -301,6 +311,13 @@
           color: white !important;
           background: var(--gradiend-golden) !important;
         }
+      }
+    }
+    &-gallery {
+      margin-top: 25px;
+      margin-left: auto;
+      &-group {
+        max-width: 420px
       }
     }
   }
