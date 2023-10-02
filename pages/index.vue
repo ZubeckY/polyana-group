@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- хедер -->
     <header class="header header-main">
       <div class="header-container" :style="activeSlide">
@@ -183,13 +182,21 @@
                     <div class="hotelGroup-accordion-gallery-container d-flex">
                       <div class="d-flex flex-wrap mr-2" style="max-width: 420px">
                         <nuxt-img src="img/hotelGroup/Rectangle83.webp"
+                                  sizes="xs:200px md:500px lg:1024" alt="#"
+                                  loading="lazy" quality="80" :placeholder="[50]"
                                   class="mb-2" width="420px" height="238px"/>
                         <nuxt-img src="img/hotelGroup/Rectangle47.webp"
+                                  sizes="xs:200px md:500px lg:1024" alt="#"
+                                  loading="lazy" quality="80" :placeholder="[50]"
                                   class="mr-2" width="204px" height="172px"/>
                         <nuxt-img src="img/hotelGroup/Rectangle48.webp"
+                                  sizes="xs:200px md:500px lg:1024" alt="#"
+                                  loading="lazy" quality="80" :placeholder="[50]"
                                   width="204px" height="172px"/>
                       </div>
                       <nuxt-img src="img/hotelGroup/Rectangle49.webp"
+                                sizes="xs:200px md:500px lg:1024" alt="#"
+                                loading="lazy" quality="80" :placeholder="[50]"
                                 width="306px" height="420px"/>
                     </div>
                   </div>
@@ -198,13 +205,9 @@
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
-
         </div>
-
-
       </div>
     </section>
-
 
     <!-- Специальные предложения -->
     <special-offers/>

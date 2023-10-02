@@ -2,6 +2,7 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
+  cache: true,
   components: true,
   server: { host: '0.0.0.0' },
   head: {
@@ -41,9 +42,15 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    "cookie-universal-nuxt"
+    "cookie-universal-nuxt",
+    '@drozd/nuxt-performance'
   ],
-  axios: { baseURL: '/' },
+  axios: {
+    baseURL: '/'
+  },
+  render: {
+    resourceHints: false
+  },
   image: {
     inject: true
   },
@@ -71,25 +78,82 @@ export default {
       }
     }
   },
-  build: {
-    filenames: {
-      chunk: ({ isDev, isModern }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
+  performance: {
+    // логирование времени запросов
+    renderRouteTimeCallback: (route, ms) => {
+      console.log(`time render route: ${route} ${ms} ms`);
     },
-    html: {
-      minify: {
-        collapseBooleanAttributes: true,
-        decodeEntities: true,
-        minifyCSS: true,
-        minifyJS: true,
-        processConditionalComments: true,
-        removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
-        trimCustomFragments: true,
-        useShortDoctype: true
+    // отключаем SSR на нужных нам роутах
+    isOnlySPA: (route, _context) => {
+      return route === '/personal';
+    },
+    // кол-во допустимых мс для рендера при SSR
+    maxRenderTime: 1000,
+    // кол-во попыток отрисовать SSR если рендер медленный,
+    // дальше выключаем на указнное время timeDisabledSsrWithRoute
+    maxAttemptSsr: 5,
+    // RegExp страниц исключения для модуля в целом
+    excludeRoutes: /healthcheck/,
+    // на какое время выключаем сср для страницы
+    timeDisabledSsrWithRoute: 1000 * 60,
+    // интервал очистки общего счётчика, когда выключили SSR на всём сайте
+    clearSlowCounterIntervalTime: 1000 * 60 * 5,
+    // Общее кол-во медленных запросов на сайте, потом отключаем SSR везде
+    maxSlowCount: 50
+  },
+  build: {
+    optimizeCss: false,
+    filenames: {
+      app: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
+      css: ({ isDev }) => isDev ? '[name].css' : 'css/[contenthash].css',
+      font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]'
+    },
+    ...(!isDev && {
+      html: {
+        minify: {
+          collapseBooleanAttributes: true,
+          decodeEntities: true,
+          minifyCSS: true,
+          minifyJS: true,
+          processConditionalComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          trimCustomFragments: true,
+          useShortDoctype: true
+        }
       }
+    }),
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
     },
     optimization: {
       minimize: true
+    },
+    postcss: {
+      plugins: {
+        ...(!isDev && {
+          cssnano: {
+            preset: ['advanced', {
+              autoprefixer: false,
+              cssDeclarationSorter: false,
+              zindex: false,
+              discardComments: {
+                removeAll: true
+              }
+            }]
+          }
+        })
+      },
+      ...(!isDev && {
+        preset: {
+          browsers: 'cover 99.5%',
+          autoprefixer: true
+        }
+      }),
+      order: 'cssnanoLast'
     },
     transpile: ["swiper"]
   }
