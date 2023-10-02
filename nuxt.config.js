@@ -2,7 +2,6 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
-  cache: true,
   components: true,
   server: { host: '0.0.0.0' },
   head: {
@@ -13,7 +12,15 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'theme-color', content: '#32343A' },
+      { property: 'og:title', content: 'Polyana group - отдых на красной поляне' },
+      { property: 'og:description', content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana' },
+      { property: 'og:image', content: 'https://cloud.mail.ru/public/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2407.jpg' },
+      { property: 'og:image:width', content: '400' },
+      { property: 'og:image:height', content: '300' },
+      { property: 'og:type', content: 'profile' },
+      { property: 'og:locale ', content: 'ru_RU' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -42,6 +49,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
+    'nuxt-ssr-cache',
     "cookie-universal-nuxt",
     '@drozd/nuxt-performance'
   ],
@@ -76,6 +84,20 @@ export default {
       modern: {
         target: 'es2018'
       }
+    }
+  },
+  cache: {
+    useHostPrefix: false,
+    pages: [
+      '*',
+      /^\/*\/\d+$/,
+      /^\/$/
+    ],
+    key(route, context) {},
+    store: {
+      type: 'memory',
+      max: 100,
+      ttl: 60
     }
   },
   performance: {
@@ -124,36 +146,8 @@ export default {
         }
       }
     }),
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
     optimization: {
       minimize: true
-    },
-    postcss: {
-      plugins: {
-        ...(!isDev && {
-          cssnano: {
-            preset: ['advanced', {
-              autoprefixer: false,
-              cssDeclarationSorter: false,
-              zindex: false,
-              discardComments: {
-                removeAll: true
-              }
-            }]
-          }
-        })
-      },
-      ...(!isDev && {
-        preset: {
-          browsers: 'cover 99.5%',
-          autoprefixer: true
-        }
-      }),
-      order: 'cssnanoLast'
     },
     transpile: ["swiper"]
   }

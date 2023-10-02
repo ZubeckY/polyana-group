@@ -183,20 +183,20 @@
                       <div class="d-flex flex-wrap mr-2" style="max-width: 420px">
                         <nuxt-img src="img/hotelGroup/Rectangle83.webp"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
-                                  loading="lazy" quality="80" :placeholder="[50]"
+                                  loading="lazy" quality="80" :placeholder="[50]" format="webp"
                                   class="mb-2" width="420px" height="238px"/>
                         <nuxt-img src="img/hotelGroup/Rectangle47.webp"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
-                                  loading="lazy" quality="80" :placeholder="[50]"
+                                  loading="lazy" quality="80" :placeholder="[50]" format="webp"
                                   class="mr-2" width="204px" height="172px"/>
                         <nuxt-img src="img/hotelGroup/Rectangle48.webp"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
-                                  loading="lazy" quality="80" :placeholder="[50]"
+                                  loading="lazy" quality="80" :placeholder="[50]" format="webp"
                                   width="204px" height="172px"/>
                       </div>
                       <nuxt-img src="img/hotelGroup/Rectangle49.webp"
                                 sizes="xs:200px md:500px lg:1024" alt="#"
-                                loading="lazy" quality="80" :placeholder="[50]"
+                                loading="lazy" quality="80" :placeholder="[50]" format="webp"
                                 width="306px" height="420px"/>
                     </div>
                   </div>
@@ -231,7 +231,7 @@
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
-                          loading="lazy" quality="80" :placeholder="[50]"
+                          loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/seasonPrograms/summer/sunbed.webp" alt="sunbed"/>
                 <div class="seasonPrograms-card-title">БЕСПЛАТНЫЙ
                   ТРАНСФЕР

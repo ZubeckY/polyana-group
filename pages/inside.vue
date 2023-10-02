@@ -39,7 +39,7 @@
               <watch class="ultima"/>
               <div class="restInPolyana-pictures-large-img">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
-                          loading="lazy" quality="80" :placeholder="[50]"
+                          loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/big-image.webp" alt="big-pic"/>
               </div>
               <header-booking-ultima/>
@@ -47,22 +47,22 @@
             <div class="restInPolyana-pictures-small d-flex flex-row flex-wrap">
               <div class="restInPolyana-pictures-small-img">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
-                          loading="lazy" quality="80" :placeholder="[50]"
+                          loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/rectangle-167.webp" alt="pic-1"/>
               </div>
               <div class="restInPolyana-pictures-small-img">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
-                          loading="lazy" quality="80" :placeholder="[50]"
+                          loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/rectangle-169.webp" alt="pic-3"/>
               </div>
               <div class="restInPolyana-pictures-small-img">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
-                          loading="lazy" quality="80" :placeholder="[50]"
+                          loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/rectangle-168.webp" alt="pic-2"/>
               </div>
               <div class="restInPolyana-pictures-small-img">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
-                          loading="lazy" quality="80" :placeholder="[50]"
+                          loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/rectangle-170.webp" alt="pic-4"/>
                 <div class="restInPolyana-pictures-small-img-more">
                   +35 фото
