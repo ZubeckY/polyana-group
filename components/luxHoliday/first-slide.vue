@@ -2,16 +2,16 @@
   <div class="luxHoliday-slide">
     <svg class="luxHoliday-slide-body" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 757 392" fill="none">
       <path d="M737.4 0.799805C748.197 0.799805 756.95 9.55264 756.95 20.3498V372.25C756.95 383.047 748.197 391.8 737.4 391.8H438.2C427.403 391.8 418.65 383.047 418.65 372.25V358.65C418.65 347.853 409.897 339.1 399.1 339.1H337.9C327.103 339.1 318.35 330.347 318.35 319.55V317.85C318.35 307.053 309.597 298.3 298.8 298.3H20.0002C9.20303 298.3 0.450195 289.547 0.450195 278.75V20.3498C0.450195 9.55264 9.20303 0.799805 20.0002 0.799805H737.4Z"
-            :fill="'url(#luxHolPattern'+item.id+')'"/>
+            :fill="'url(#luxHolPattern'+id+')'"/>
       <defs>
-        <pattern :id="'luxHolPattern'+item.id" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use :href="'#luxHolPhoto'+item.id" transform="matrix(0.000244141 0 0 0.000472359 0 -0.145006)"/>
+        <pattern :id="'luxHolPattern'+id" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use :href="'#luxHolPhoto'+id" transform="matrix(0.000244141 0 0 0.000472359 0 -0.145006)"/>
         </pattern>
-        <image :id="'luxHolPhoto'+item.id" :href="item.img" width="4096" height="2731"/>
+        <image :id="'luxHolPhoto'+id" :href="image.url" width="4096" height="2731"/>
       </defs>
     </svg>
     <div class="luxHoliday-slide-head">
-      <div class="luxHoliday-slide-title">{{ item.title }}<svg class="luxHoliday-slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 26" fill="none">
+      <div class="luxHoliday-slide-title">{{ title }}<svg class="luxHoliday-slide-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 26" fill="none">
           <path opacity="0.8" d="M19.0317 4.39662C18.9219 4.46503 18.7941 4.51665 18.7038 4.60571C12.7379 10.5633 6.77598 16.5247 0.812743 22.4861C0.597572 22.7013 0.596281 22.9146 0.80887 23.1263C1.58348 23.902 2.35939 24.6776 3.1353 25.4533C3.33497 25.6529 3.53336 25.6542 3.73046 25.4572C9.70145 19.4893 15.6711 13.5201 21.6421 7.55223C21.7325 7.46188 21.8267 7.3767 21.9765 7.23344C21.9933 7.43736 22.014 7.57675 22.014 7.71614C22.0152 12.5986 22.0152 17.4811 22.0152 22.3635C22.0152 22.6664 22.1667 22.8178 22.4697 22.8178C23.589 22.8178 24.707 22.8101 25.8263 22.823C26.0845 22.8256 26.1504 22.743 26.1504 22.4926C26.1439 15.1373 26.1452 7.78067 26.1452 0.425346C26.1452 0.331129 26.1336 0.236914 26.1259 0.103979H25.7644C18.4494 0.103979 11.1345 0.105268 3.81954 0.0975246C3.51744 0.0975246 3.41287 0.163347 3.41803 0.483423C3.4374 1.59079 3.42578 2.69815 3.42578 3.8068C3.42578 4.08988 3.56521 4.23185 3.84407 4.23271C8.73834 4.23271 13.6339 4.23271 18.5282 4.23271C18.6637 4.23271 18.7993 4.23271 18.9349 4.23271C18.9671 4.28692 18.9994 4.34242 19.0317 4.39662Z" fill="black"/>
         </svg>
       </div>
@@ -22,6 +22,8 @@
 import {Vue, Component, Prop} from 'vue-property-decorator';
 @Component({})
 export default class FirstSlide extends Vue {
-  @Prop () item: any
+  @Prop () id: any
+  @Prop () image: any
+  @Prop () title: any
 }
 </script>

@@ -14,7 +14,7 @@
                class="header-slider__slide d-flex justify-center align-center"
                title="Слайд 1" color="rgba(255, 255, 255, 0.32)" fab :value="i">
           <nuxt-img width="51px" height="51px" style="border-radius: 100px"
-                    loading="lazy" quality="80" :placeholder="[50]" format="webp"
+                    loading="lazy" quality="80" :placeholder="[50]"
                     :src="'img/header/slider/' + item " alt="#"/>
         </v-btn>
       </v-btn-toggle>
