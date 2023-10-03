@@ -220,7 +220,7 @@
       font-size: 17px !important;
     }
     &-title {
-      font-size: 25px !important;
+      font-size: 24px !important;
       &.desktop {
         display: none !important;
       }
@@ -306,11 +306,44 @@
 @media (max-width: 800px) {
   /* hotelGroup */
   .hotelGroup-accordion {
-    &-info-body {
-      white-space: normal !important;
+    &-info {
+      margin: 15px auto;
+      &-head {
+        justify-content: space-around;
+      }
+      &-title {
+        font-size: 18px !important;
+      }
+      &-text {
+        font-size: 14px !important;
+      }
+      &-body {
+        font-size: 16px !important;
+        white-space: normal !important;
+      }
+      &-footer {
+        max-width: 420px !important;
+        &.desktop {
+          display: none !important;
+        }
+        &.mobile {
+          display: block !important;
+        }
+      }
     }
-    &-gallery-container {
-      flex-direction: column;
+    &-gallery {
+      &-group {
+        margin-right: 0 !important;
+      }
+      &-container {
+        flex-direction: column;
+      }
+      &-image {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        max-width: 420px !important;
+        max-height: none !important;
+      }
     }
   }
   /* pinterest */

@@ -166,7 +166,7 @@
                         специальные предложения и скидки. Насладитесь
                         роскошью и комфортом в нашем 5-звездочном отеле на
                         Красной поляне!</div>
-                      <div class="hotelGroup-accordion-info-footer">
+                      <div class="hotelGroup-accordion-info-footer desktop">
                         <v-btn v-for="(button, j) in hotelButtons"
                                class="hotelGroup-accordion-info-button"
                                :key="'linkToInsidePage'+j" elevation="0"
@@ -177,24 +177,36 @@
 
                   <div class="hotelGroup-accordion-gallery">
                     <div class="hotelGroup-accordion-gallery-container d-flex">
-                      <div class="hotelGroup-accordion-gallery-group d-flex flex-wrap mr-2">
+                      <div class="hotelGroup-accordion-gallery-group d-flex">
                         <nuxt-img src="img/hotelGroup/Rectangle83.webp"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
                                   loading="lazy" quality="80" :placeholder="[50]" format="webp"
                                   class="hotelGroup-accordion-gallery-group-large mb-2"/>
-                        <nuxt-img src="img/hotelGroup/Rectangle47.webp"
-                                  sizes="xs:200px md:500px lg:1024" alt="#"
-                                  loading="lazy" quality="80" :placeholder="[50]" format="webp"
-                                  class="hotelGroup-accordion-gallery-group-small mr-2"/>
-                        <nuxt-img src="img/hotelGroup/Rectangle48.webp"
-                                  sizes="xs:200px md:500px lg:1024" alt="#"
-                                  loading="lazy" quality="80" :placeholder="[50]" format="webp"
-                                  class="hotelGroup-accordion-gallery-group-small"/>
+                        <div class="d-flex flex-row">
+                          <nuxt-img src="img/hotelGroup/Rectangle47.webp"
+                                    sizes="xs:200px md:500px lg:1024" alt="#"
+                                    loading="lazy" quality="80" :placeholder="[50]" format="webp"
+                                    class="hotelGroup-accordion-gallery-group-small mr-2"/>
+                          <nuxt-img src="img/hotelGroup/Rectangle48.webp"
+                                    sizes="xs:200px md:500px lg:1024" alt="#"
+                                    loading="lazy" quality="80" :placeholder="[50]" format="webp"
+                                    class="hotelGroup-accordion-gallery-group-small"/>
+                        </div>
                       </div>
                       <nuxt-img src="img/hotelGroup/Rectangle49.webp"
                                 sizes="xs:200px md:500px lg:1024" alt="#"
                                 loading="lazy" quality="80" :placeholder="[50]" format="webp"
                                 class="hotelGroup-accordion-gallery-image"/>
+
+                      <div>
+                        <div class="hotelGroup-accordion-info-footer mobile">
+                          <v-btn v-for="(button, j) in hotelButtons"
+                                 class="hotelGroup-accordion-info-button"
+                                 :key="'linkToInsidePage'+j" elevation="0"
+                                 @click="$router.push(button.link)">{{button.title}}</v-btn>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
 
