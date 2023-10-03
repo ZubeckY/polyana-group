@@ -679,6 +679,7 @@
           color: #000000CC;
           font-size: 15px;
           font-weight: 700;
+          cursor: pointer;
           border-radius: 19.55px;
           background: rgba(217, 217, 217, 0.76);
         }
@@ -687,7 +688,22 @@
     &-carousel,
     &-slide {
       width: 100% !important;
+      height: auto !important;
       max-width: 800px !important;
+      max-height: 600px !important;
+      border-radius: 19.55px;
+    }
+    &-carousel {
+      position: relative;
+      &-close {
+        position: absolute !important;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        color: #ff5252 !important;
+        font-size: 12px !important;
+        font-weight: bold !important;
+      }
     }
   }
 }

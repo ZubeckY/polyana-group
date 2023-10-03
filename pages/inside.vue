@@ -70,8 +70,18 @@
               </div>
             </div>
             <v-dialog class="restInPolyana-pictures-dialog"
-                      v-model="dialog" max-width="600px">
+                      v-model="dialog" max-width="800px">
+
               <v-carousel class="restInPolyana-pictures-carousel" hide-delimiters>
+
+                  <v-btn @click="dialog = false"
+                         class="restInPolyana-pictures-carousel-close"
+                         min-height="0" min-width="0"
+                         width="34px" height="34px"
+                         elevation="0" rounded
+                         color="#ffffffb8" title="Назад">
+                    ╳
+                  </v-btn>
                 <template v-slot:prev="{ on, attrs }">
                   <v-btn v-bind="attrs" v-on="on"
                          min-height="0" min-width="0"
@@ -94,7 +104,6 @@
                                  v-for="(item, i) in data" :key="'sliderImage'+i" :src="item.src">
                 </v-carousel-item>
               </v-carousel>
-
             </v-dialog>
           </div>
         </div>
