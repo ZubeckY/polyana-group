@@ -69,8 +69,9 @@
                 </div>
               </div>
             </div>
-            <v-dialog v-model="dialog" max-width="600px">
-              <v-carousel hide-delimiters>
+            <v-dialog class="restInPolyana-pictures-dialog"
+                      v-model="dialog" max-width="600px">
+              <v-carousel class="restInPolyana-pictures-carousel" hide-delimiters>
                 <template v-slot:prev="{ on, attrs }">
                   <v-btn v-bind="attrs" v-on="on"
                          min-height="0" min-width="0"
@@ -89,15 +90,8 @@
                     <chevron-right/>
                   </v-btn>
                 </template>
-                <v-carousel-item v-for="(item, i) in data" :key="'sliderImage'+i">
-                  <div class="d-flex justify-center align-center" style="height: inherit;">
-                    <nuxt-img sizes="xs:200px md:500px lg:1024"
-                              fit="cover"
-                              style="width: 100%; max-width: 90%"
-                              loading="lazy" quality="80"
-                              :placeholder="[50]" format="webp"
-                              :src="item.src" alt="big-pic"/>
-                  </div>
+                <v-carousel-item class="restInPolyana-pictures-slide"
+                                 v-for="(item, i) in data" :key="'sliderImage'+i" :src="item.src">
                 </v-carousel-item>
               </v-carousel>
 
