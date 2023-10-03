@@ -1,7 +1,7 @@
 <template>
   <div class="specialOffers-slider swiper overflow-hidden" ref="container">
     <div class="swiper-wrapper d-flex flex-row">
-      <div class="specialOffers-slide swiper-slide" v-for="(item, i) in slides" :key="'corner-card'-i">
+      <div class="specialOffers-slide swiper-slide" v-for="(item, i) in slides" :key="'cornerCard'-i">
         <corner-card :item="item"/>
       </div>
     </div>

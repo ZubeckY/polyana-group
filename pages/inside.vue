@@ -60,7 +60,7 @@
                           loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/rectangle-168.webp" alt="pic-2"/>
               </div>
-              <div class="restInPolyana-pictures-small-img">
+              <div class="restInPolyana-pictures-small-img" @click="dialog = true">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
                           loading="lazy" quality="80" :placeholder="[50]" format="webp"
                           src="img/images/rectangle-170.webp" alt="pic-4"/>
@@ -69,6 +69,39 @@
                 </div>
               </div>
             </div>
+            <v-dialog v-model="dialog" max-width="600px">
+              <v-carousel hide-delimiters>
+                <template v-slot:prev="{ on, attrs }">
+                  <v-btn v-bind="attrs" v-on="on"
+                         min-height="0" min-width="0"
+                         width="34px" height="34px"
+                         elevation="0" rounded
+                         color="#ffffffb8" title="Назад">
+                    <chevron-left/>
+                  </v-btn>
+                </template>
+                <template v-slot:next="{ on, attrs }">
+                  <v-btn v-bind="attrs" v-on="on"
+                         min-height="0" min-width="0"
+                         width="34px" height="34px"
+                         elevation="0" rounded
+                         color="#ffffffb8" title="Вперёд">
+                    <chevron-right/>
+                  </v-btn>
+                </template>
+                <v-carousel-item v-for="(item, i) in data" :key="'sliderImage'+i">
+                  <div class="d-flex justify-center align-center" style="height: inherit;">
+                    <nuxt-img sizes="xs:200px md:500px lg:1024"
+                              fit="cover"
+                              style="width: 100%; max-width: 90%"
+                              loading="lazy" quality="80"
+                              :placeholder="[50]" format="webp"
+                              :src="item.src" alt="big-pic"/>
+                  </div>
+                </v-carousel-item>
+              </v-carousel>
+
+            </v-dialog>
           </div>
         </div>
       </div>
@@ -216,6 +249,8 @@ import {Vue, Component} from 'vue-property-decorator';
   }
 })
 export default class Inside extends Vue {
+  data: any = []
+  dialog: boolean = false
   sliders: any = [
     {
       numSlider: 'firstSlider',
@@ -266,6 +301,11 @@ export default class Inside extends Vue {
       chip: ['Входит в стоимость',]
     },
   ]
+
+  async mounted () {
+    let { data } = await this.$axios.get ('slides.json')
+    this.data = data
+  }
 
   getNumSlider (numSlider: string) {
     // @ts-ignore

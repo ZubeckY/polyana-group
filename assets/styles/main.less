@@ -38,4 +38,18 @@
   &__title,
   &__text{word-break: normal!important}
 };
-.v-expansion-panel::before{ box-shadow: none !important;}
+.v-expansion-panel {
+  &::before {
+    box-shadow: none !important;
+  }
+  &-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  &-content__wrap {
+    padding: 0 !important;
+  }
+}
+.v-dialog {
+  box-shadow: none !important;
+}
