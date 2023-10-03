@@ -2,6 +2,7 @@
   margin-top: 15px;
   border-radius: var(--bordrad23) !important;
   /* header-container */
+
   &-container {
     height: 100%;
     max-height: 767px;
@@ -10,6 +11,7 @@
     background-repeat: no-repeat;
     background-position: center right;
     border-radius: var(--bordrad23) !important;
+
     &-inner {
       padding: 15px 0;
       width: 100%;
@@ -19,15 +21,19 @@
       #313339 40%, rgba(0, 0, 0, 0) 60%);
     }
   }
+
   /* header-nav */
+
   &-nav {
     &-container {
       &-inner {
         flex-direction: row;
       }
     }
+
     &__menu {
       margin-right: auto;
+
       &-line {
         width: 38px;
         height: 3px;
@@ -35,20 +41,24 @@
         border-radius: 1px;
         margin-bottom: 6px;
       }
+
       &-title {
         color: white;
         font-size: 12px !important;
         letter-spacing: .4px !important;
       }
     }
+
     &__logo {
       margin: 0 auto;
     }
+
     &__link {
       & * {
         color: white !important;
       }
     }
+
     &__reservation {
       &-booking {
         width: 150px;
@@ -58,6 +68,7 @@
         background: #FFBF7B !important;
         backdrop-filter: blur(2px) !important;
       }
+
       &-phone {
         width: 150px;
         height: 35px;
@@ -68,6 +79,7 @@
           rgba(255, 255, 255, 0.10) -3.44%,
         rgba(255, 255, 255, 0.06) 113.56%) !important;
         backdrop-filter: blur(25px) !important;
+
         &-ultima {
           width: 159.8px !important;
           height: 42.5px !important;
@@ -78,29 +90,37 @@
       }
     }
   }
+
   /* header-body */
+
   &-body {
     width: 100%;
     height: 460px;
     display: flex;
     align-items: center;
+
     &-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
   }
+
   /* header-content */
+
   &-content {
     width: 100%;
+
     &__title {
       white-space: pre-line;
     }
+
     &__season {
       display: flex;
       width: 100%;
       max-width: 86px;
       align-items: flex-end;
+
       &-container {
         position: relative;
         width: 28px;
@@ -112,11 +132,13 @@
         rgba(217, 217, 217, 0.60) 100%) !important;
         border: 2px solid rgba(212, 211, 218, 0.60) !important;
       }
+
       &-switch {
         position: absolute;
         top: 110px;
         transform: rotate(-90deg);
         background: transparent !important;
+
         &-button {
           color: black !important;
           width: 68px !important;
@@ -128,7 +150,9 @@
       }
     }
   }
+
   /* header-booking */
+
   &-booking {
     width: 100%;
     height: 70px;
@@ -140,57 +164,69 @@
     rgba(217, 217, 217, 0.40) 2.1%,
     rgba(217, 217, 217, 0.20) 103.66%);
     backdrop-filter: blur(25px) !important;
+
     &.ultima {
       position: absolute;
       top: 110px;
       left: 40px;
       width: 270px;
       height: 260px;
+
       .header-booking {
         &-container {
           flex-direction: column;
         }
+
         &__card {
           height: 68px;
           max-width: 100%;
           padding: 5px 10px;
+
           &:last-child {
             padding: 0 0 10px;
           }
+
           &-button {
             width: 186px;
             height: 37px !important;
           }
         }
+
         &-delimiter {
           width: 100%;
           height: 1px;
         }
       }
     }
+
     &-container {
       justify-content: center;
     }
+
     &__card {
       width: 100%;
       padding: 10px;
       height: 70px;
       max-width: 210px;
+
       &-container {
         width: 100%;
         height: calc(70px - 20px);
       }
+
       &-head {
         color: white;
         font-size: 12px;
         font-weight: 400;
       }
+
       &-title {
         color: white;
         font-size: 16px;
         font-weight: 400;
         margin-top: 7px;
       }
+
       &-button {
         width: 204px;
         height: 48px !important;
@@ -200,6 +236,7 @@
         border-radius: 8px !important;
       }
     }
+
     &-delimiter {
       width: 1px;
       height: 70px;
@@ -207,39 +244,49 @@
       background: rgba(255, 255, 255, 0.20);
     }
   }
+
   /* header-slider */
+
   &-slider {
     max-width: 72px;
+
     &--desktop {
       display: block;
     }
+
     &--mobile {
       display: none;
       margin: 0 auto;
     }
+
     &-container {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
     }
+
     &-arrow {
       width: 34px !important;
       height: 34px !important;
       margin: 15px auto;
+
       &--desktop {
         display: block;
       }
+
       &--mobile {
         display: none;
       }
     }
+
     &__slider {
       display: flex;
       border-radius: 100px;
       flex-direction: column;
       background: transparent !important;
     }
+
     &__slide {
       border: none;
       width: 60px !important;
@@ -250,6 +297,7 @@
       border-radius: 100px !important;
     }
   }
+
   &-inside {
     &-container {
       display: flex;
@@ -259,6 +307,7 @@
       justify-content: center;
       border-radius: 19.55px;
       background: var(--dark-color);
+
       &-inner {
         width: 100%;
         height: 52px;
@@ -266,6 +315,7 @@
     }
   }
 }
+
 .season-active {
   background: white !important;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.30);
