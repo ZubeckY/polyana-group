@@ -3,7 +3,14 @@
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
         <header-nav-menu/>
-        <link-component class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item"/>
+        <link-component class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item" v-if="item.title !=='Отели'"/>
+        <hotels-menu v-else>
+          <div class="d-flex align-center">
+            <link-component class="header-nav__link mx-auto" :item="{title: 'Отели'}"/>
+            <chevron-down class="ml-1" :dark="true"/>
+          </div>
+        </hotels-menu>
+
         <logo-small class="header-nav__logo"/>
         <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i" :item="item"/>
       </div>
@@ -25,7 +32,8 @@ import {Vue, Component} from 'vue-property-decorator';
 export default class Polyana extends Vue {
   links: any = [
     {
-      title: 'Главная'
+      title: 'Главная',
+      link: '/'
     },
     {
       title: 'Отели'

@@ -1,5 +1,6 @@
 <template>
-  <v-btn :class="'link-component text-none pa-0 mb-1 ' + elemClass" text
+  <v-btn :class="'link-component text-none pa-0 mb-1 ' + elemClass"
+         @click="$router.push(item.link ? item.link : '')" text
          min-width="0" min-height="0" width="auto" height="16px">
     {{ elemTitle }}
   </v-btn>

@@ -109,7 +109,7 @@ export default class FooterComp extends Vue {
         {
           id: 11,
           priority: 1,
-          url: 'img/footer/subtract.webp',
+          url: '/img/footer/subtract.webp',
         },
         {
           id: 12,
@@ -126,7 +126,7 @@ export default class FooterComp extends Vue {
         {
           id: 21,
           priority: 1,
-          url: 'img/footer/subtract.webp',
+          url: '/img/footer/subtract.webp',
         },
         {
           id: 22,
@@ -143,7 +143,7 @@ export default class FooterComp extends Vue {
         {
           id: 31,
           priority: 1,
-          url: 'img/footer/subtract.webp',
+          url: '/img/footer/subtract.webp',
         },
         {
           id: 32,

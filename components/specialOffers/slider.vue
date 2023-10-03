@@ -29,17 +29,17 @@ export default class SpecialOffersSlider extends Vue {
     {
       id: 'corner-card-1',
       text: 'Дети до 5 лет  — бесплатно \n (если не требуется спальное \n место)',
-      img: 'img/specialOffers/1.webp',
+      img: '/img/specialOffers/1.webp',
     },
     {
       id: 'corner-card-2',
       text: 'Скидки от 5 до 10 %\n при бронировании по телефону или от стойки',
-      img: 'img/specialOffers/2.webp',
+      img: '/img/specialOffers/2.webp',
     },
     {
       id: 'corner-card-3',
       text: 'Трансфер',
-      img: 'img/specialOffers/3.webp'
+      img: '/img/specialOffers/3.webp'
     },
   ]
   mounted () {

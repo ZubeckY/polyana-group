@@ -2,6 +2,7 @@ const mode = 'production'
 const isDev = mode !== "production"
 
 export default {
+  ssr: false,
   components: true,
   server: { host: '0.0.0.0' },
   head: {
@@ -43,15 +44,12 @@ export default {
     "nuxt-storm",
     '@nuxt/image',
     '@nuxtjs/vuetify',
-    '@nuxt/typescript-build',
-    'nuxt-webpack-optimisations'
+    '@nuxt/typescript-build'
   ],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    'nuxt-ssr-cache',
-    "cookie-universal-nuxt",
-    '@drozd/nuxt-performance'
+    "cookie-universal-nuxt"
   ],
   axios: {
     baseURL: '/'
@@ -70,58 +68,6 @@ export default {
         defaultSet: 'custom'
       }
     }
-  },
-  webpackOptimisations: {
-    esbuildLoaderOptions: {
-      client: {
-        minifyIdentifiers: false,
-        target: 'es2015'
-      },
-      server: {
-        minifyIdentifiers: false,
-        target: 'node14'
-      },
-      modern: {
-        target: 'es2018'
-      }
-    }
-  },
-  cache: {
-    useHostPrefix: false,
-    pages: [
-      '*',
-      /^\/*\/\d+$/,
-      /^\/$/
-    ],
-    key(route, context) {},
-    store: {
-      type: 'memory',
-      max: 100,
-      ttl: 60
-    }
-  },
-  performance: {
-    // логирование времени запросов
-    renderRouteTimeCallback: (route, ms) => {
-      console.log(`time render route: ${route} ${ms} ms`);
-    },
-    // отключаем SSR на нужных нам роутах
-    isOnlySPA: (route, _context) => {
-      return route === '/personal';
-    },
-    // кол-во допустимых мс для рендера при SSR
-    maxRenderTime: 1000,
-    // кол-во попыток отрисовать SSR если рендер медленный,
-    // дальше выключаем на указнное время timeDisabledSsrWithRoute
-    maxAttemptSsr: 5,
-    // RegExp страниц исключения для модуля в целом
-    excludeRoutes: /healthcheck/,
-    // на какое время выключаем сср для страницы
-    timeDisabledSsrWithRoute: 1000 * 60,
-    // интервал очистки общего счётчика, когда выключили SSR на всём сайте
-    clearSlowCounterIntervalTime: 1000 * 60 * 5,
-    // Общее кол-во медленных запросов на сайте, потом отключаем SSR везде
-    maxSlowCount: 50
   },
   build: {
     optimizeCss: false,

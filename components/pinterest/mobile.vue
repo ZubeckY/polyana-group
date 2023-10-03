@@ -7,7 +7,7 @@
         <pattern id="pinterestMobile" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlink:href="#imagePinterestMobile" transform="matrix(0.000283521 0 0 0.000402232 -0.0882993 -0.044192)"/>
         </pattern>
-        <image id="imagePinterestMobile" width="4096" height="2731" href="img/pinterest/mobile.webp"/>
+        <image id="imagePinterestMobile" width="4096" height="2731" href="/img/pinterest/mobile.webp"/>
       </defs>
     </svg>
     <watch-play/>
