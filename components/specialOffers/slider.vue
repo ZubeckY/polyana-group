@@ -30,10 +30,10 @@ export default class SpecialOffersSlider extends Vue {
 
   async mounted () {
     await this.getData()
-    this.initSwiper ()
+    await this.initSwiper ()
   }
 
-  initSwiper () {
+  async initSwiper () {
     Swiper.use([Navigation])
     this.swiper = new Swiper (this.container, {
       slidesPerView: 'auto',
