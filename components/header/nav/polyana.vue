@@ -3,21 +3,25 @@
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
         <header-nav-menu/>
-        <link-component class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item" v-if="item.title !=='Отели'"/>
+        <link-component class="header-nav__link mx-8" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item"
+                        v-if="item.title !=='Отели'"/>
         <hotels-menu v-else>
           <div class="d-flex align-center">
-            <link-component class="header-nav__link mx-auto" :item="{title: 'Отели'}"/>
+            <link-component class="header-nav__link" :item="{title: 'Отели'}"/>
             <chevron-down class="ml-1" :dark="true"/>
           </div>
         </hotels-menu>
 
         <logo-small class="header-nav__logo"/>
-        <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i" :item="item"/>
+        <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i"
+                        :item="item"/>
       </div>
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
-          <v-btn class="header-nav__reservation-booking font-weight-bold" elevation="0" color="var(--golden-2)">Забронировать</v-btn>
+          <v-btn class="header-nav__reservation-booking font-weight-bold" elevation="0" color="var(--golden-2)">
+            Забронировать
+          </v-btn>
           <v-btn class="header-nav__reservation-phone font-weight-bold" elevation="0" dark>+7 989 009 5577</v-btn>
         </div>
       </div>
@@ -42,29 +46,33 @@ export default class Polyana extends Vue {
       title: 'Номера'
     },
     {
-      title: 'SPA'
+      title: 'Ресторан'
     },
     {
       title: 'Услуги'
     },
     {
-      title: 'Ресторан'
+      title: 'Акции',
+      link: '/promo'
+    },
+    {
+      title: 'Отзывы'
     },
     {
       title: 'Контакты'
     },
   ]
 
-  get firstLinks () {
+  get firstLinks() {
     let array = []
     for (let i = 0; i < this.links.length; i++) {
       array.push(this.links[i])
-      if (this.links[i]['title'] === 'SPA') break
+      if (this.links[i]['title'] === 'Ресторан') break
     }
     return array
   }
 
-  get secondLinks () {
+  get secondLinks() {
     let array = []
     for (let i = 0; i < this.links.length; i++) {
       if (i >= 4) {

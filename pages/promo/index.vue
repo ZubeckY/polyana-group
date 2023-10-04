@@ -52,8 +52,8 @@
 
         <div v-if="loading">Загрузка</div>
         <div v-else>
-          <div class="d-flex" v-if="data.length >= 1">
-            <div class="specialOffers-slide flex-wrap" v-for="(item, i) in data" :key="'cornerCard'+i">
+          <div class="d-flex flex-wrap" v-if="data.length >= 1">
+            <div class="specialOffers-slide d-flex" v-for="(item, i) in data" :key="'cornerCard'+i">
               <corner-card class="specialOffers-slide-promo" :item="item"/>
             </div>
           </div>

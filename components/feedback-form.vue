@@ -22,8 +22,8 @@
               </clipPath>
             </defs>
           </svg>
-          <input v-model="model.phone" v-mask="'+7 (###) ###-##-##'" type="text" id="phone"
-                 placeholder="+7 (9XX) XXX-XX-XX">
+          <input v-model="model.phone" v-mask="'+7 (###) ###-##-##'"
+                 type="text" id="phone" placeholder="+7 (9XX) XXX-XX-XX">
         </div>
       </div>
 
@@ -184,6 +184,8 @@ export default class FeedbackForm extends Vue {
       & * {
         border: none;
         outline: none;
+        font-size: 15px !important;
+        background: none !important;
         box-shadow: none !important;
       }
     }

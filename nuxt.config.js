@@ -1,6 +1,6 @@
 const mode = 'production'
 const isDev = mode !== "production"
-import { defineNuxtConfig } from "@nuxt/bridge"
+import {defineNuxtConfig} from "@nuxt/bridge"
 
 export default defineNuxtConfig({
   bridge: {
@@ -12,28 +12,45 @@ export default defineNuxtConfig({
   },
   ssr: false,
   components: true,
-  server: { host: '0.0.0.0' },
+  server: {host: '0.0.0.0'},
   head: {
     title: 'client',
     titleTemplate: '%s - отдых на красной поляне',
-    htmlAttrs: { lang: 'ru' },
+    htmlAttrs: {lang: 'ru'},
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana' },
-      { name: 'format-detection', content: 'telephone=no' },
-      { name: 'theme-color', content: '#32343A' },
-      { property: 'og:title', content: 'Polyana group - отдых на красной поляне' },
-      { property: 'og:description', content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana' },
-      { property: 'og:image', content: 'https://cloud.mail.ru/public/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2407.jpg' },
-      { property: 'og:image:width', content: '400' },
-      { property: 'og:image:height', content: '300' },
-      { property: 'og:type', content: 'profile' },
-      { property: 'og:locale ', content: 'ru_RU' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana'
+      },
+      {name: 'format-detection', content: 'telephone=no'},
+      {name: 'theme-color', content: '#32343A'},
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana'
+      },
+      {hid: 'og:title', property: 'og:title', content: 'Polyana group - отдых на красной поляне'},
+      {hid: 'og:url', property: 'og:url', content: process.env.BASE_URL},
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Polyana group, ultima club hotel & SPA, country hills resort, ikos polyana'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://cloud.mail.ru/public/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2407.jpg'
+      },
+      {hid: 'og:image:width', property: 'og:image:width', content: '400'},
+      {hid: 'og:image:height', property: 'og:image:height', content: '300'},
+      {hid: 'og:locale ', property: 'og:locale ', content: 'ru_RU'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'canonical', href: '/' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'canonical', href: '/'}
     ]
   },
   css: [
@@ -53,14 +70,16 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/dotenv',
     '@nuxtjs/vuetify',
-    // '@nuxt/typescript-build'
+    // 'nuxt-webpack-optimisations'
   ],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    "cookie-universal-nuxt"
+    'nuxt-ssr-cache',
+    "cookie-universal-nuxt",
+    '@drozd/nuxt-performance'
   ],
   dotenv: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
@@ -82,7 +101,6 @@ export default defineNuxtConfig({
     inject: true
   },
   vuetify: {
-    // optionsPath: './vuetify.options.js',
     defaultAssets: {
       font: false,
       icons: {
@@ -90,29 +108,74 @@ export default defineNuxtConfig({
       }
     }
   },
+  // webpackOptimisations: {
+  //   esbuildLoaderOptions: {
+  //     client: {
+  //       minifyIdentifiers: false,
+  //       target: 'es2015'
+  //     }
+  //   }
+  // },
+  cache: {
+    useHostPrefix: false,
+    pages: [
+      '*',
+      /^\/*\/\d+$/,
+      /^\/$/
+    ],
+    key(route, context) {
+    },
+    store: {
+      type: 'memory',
+      max: 100,
+      ttl: 60
+    }
+  },
+  performance: {
+    // логирование времени запросов
+    renderRouteTimeCallback: (route, ms) => {
+      console.log(`time render route: ${route} ${ms} ms`);
+    },
+    // отключаем SSR на нужных нам роутах
+    isOnlySPA: (route, _context) => {
+      return route === '/personal';
+    },
+    // кол-во допустимых мс для рендера при SSR
+    maxRenderTime: 1000,
+    // кол-во попыток отрисовать SSR если рендер медленный,
+    // дальше выключаем на указнное время timeDisabledSsrWithRoute
+    maxAttemptSsr: 5,
+    // RegExp страниц исключения для модуля в целом
+    excludeRoutes: /healthcheck/,
+    // на какое время выключаем сср для страницы
+    timeDisabledSsrWithRoute: 1000 * 60,
+    // интервал очистки общего счётчика, когда выключили SSR на всём сайте
+    clearSlowCounterIntervalTime: 1000 * 60 * 5,
+    // Общее кол-во медленных запросов на сайте, потом отключаем SSR везде
+    maxSlowCount: 50
+  },
   build: {
     optimizeCss: false,
     filenames: {
-      app: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
-      chunk: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js',
-      css: ({ isDev }) => isDev ? '[name].css' : 'css/[contenthash].css',
-      font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[contenthash:7].[ext]'
+      app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
+      chunk: ({
+                isDev,
+                isModern
+              }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
     },
-    ...(!isDev && {
-      html: {
-        minify: {
-          collapseBooleanAttributes: true,
-          decodeEntities: true,
-          minifyCSS: true,
-          minifyJS: true,
-          processConditionalComments: true,
-          removeEmptyAttributes: true,
-          removeRedundantAttributes: true,
-          trimCustomFragments: true,
-          useShortDoctype: true
-        }
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true
       }
-    }),
+    },
     optimization: {
       minimize: true
     },

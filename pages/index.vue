@@ -96,12 +96,14 @@
             </div>
 
             <div class="pinterest-card-welcome">
-              <div class="pinterest-card-welcome-container">
-                <watch class="pinterest-card-welcome-round"/>
-                <pinterest-desktop/>
-                <pinterest-tablet/>
-                <pinterest-mobile/>
-              </div>
+              <watch-dialog>
+                <div class="pinterest-card-welcome-container">
+                  <watch class="pinterest-card-welcome-round"/>
+                  <pinterest-desktop/>
+                  <pinterest-tablet/>
+                  <pinterest-mobile/>
+                </div>
+              </watch-dialog>
             </div>
 
           </div>
