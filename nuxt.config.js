@@ -49,8 +49,10 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
+    '@nuxtjs/sitemap',
     "cookie-universal-nuxt"
   ],
+  sitemap: true,
   axios: {
     baseURL: '/'
   },
