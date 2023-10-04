@@ -169,7 +169,7 @@ export default class FeedbackForm extends Vue {
       width: 276px;
       height: 42px;
       color: #000000A3;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
       line-height: normal;
       align-items: center;
@@ -184,7 +184,7 @@ export default class FeedbackForm extends Vue {
       & * {
         border: none;
         outline: none;
-        font-size: 15px !important;
+        font-size: 16px !important;
         background: none !important;
         box-shadow: none !important;
       }
