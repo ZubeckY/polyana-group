@@ -55,16 +55,22 @@ export default class HotelsMenu extends Vue {
     height: 36px;
     font-size: 14px;
     padding: 0 15px;
-    border-radius: 8px;
+    border-radius: 0;
     align-items: center;
     color: var(--dark-color);
     justify-content: space-between;
     transition: background 100ms ease-in;
     & + .hotelsMenu-link {
-      border-radius: 0;
       border-top: 1px solid #32343A42;
     }
+    &:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+    }
     &:hover {
+      cursor: pointer;
       background: #DEC799;
       transition: background 100ms ease-in;
     }

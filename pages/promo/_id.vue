@@ -48,7 +48,7 @@ export default class Promo extends Vue {
   data: any = {}
   loading: boolean = true
 
-  async mounted() {
+  async created() {
     await this.getData()
   }
 
@@ -58,11 +58,10 @@ export default class Promo extends Vue {
       let getIdFromRoute = currentRoute.split('/')
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
-      let {data, error} = await supaBase.from('specialoffer')
+      let {data, error} = await supaBase
+        .from('specialoffer')
         .select('')
         .match({id: currentId})
-
-      console.log(data)
 
       this.data = data
     } catch (e) {

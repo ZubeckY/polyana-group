@@ -10,7 +10,8 @@
             <div class="footer-seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
             <v-chip-group class="footer-seeYouAtHotel-group mb-2" v-model="activeChip"
                           mandatory column active-class="golden-gradient white--text">
-              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
+              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="'see-you-at-hotel'+i" :value="i"
+                                            :item="item"/>
             </v-chip-group>
 
             <div class="footer-seeYouAtHotel-address d-flex">
@@ -22,12 +23,17 @@
                   Красная поляна,
                   с. Эсто-Садок,
                   Автомобильный
-                  переулок, 4</div>
-                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span class="text-decoration-underline">8 938 555 5552</span>
+                  переулок, 4
+                </div>
+                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
+                  class="text-decoration-underline">8 938 555 5552</span>
                   Отдел бронирования
-                  (09:00 - 21:00)</div>
-                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span class="text-decoration-underline">8 938 555 5551</span>
-                  Рецепция (круглосуточно)</div>
+                  (09:00 - 21:00)
+                </div>
+                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
+                  class="text-decoration-underline">8 938 555 5551</span>
+                  Рецепция (круглосуточно)
+                </div>
               </div>
 
               <!-- Слайдер -->
@@ -96,6 +102,7 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
+
 @Component({})
 export default class FooterComp extends Vue {
   activeChip: number = 0
@@ -155,8 +162,17 @@ export default class FooterComp extends Vue {
   ]
 
   @Watch('activeChip')
-  changeController () {this.changeMapping(); this.emptyActiveSlide ()};
-  changeMapping () {this.$emit('changeMapping', this.localMapping[this.activeChip]['htmltagyandexmap'])};
-  emptyActiveSlide () {return this.activeSlide = -1};
+  changeController() {
+    this.changeMapping();
+    this.emptyActiveSlide()
+  };
+
+  changeMapping() {
+    this.$emit('changeMapping', this.localMapping[this.activeChip]['htmltagyandexmap'])
+  };
+
+  emptyActiveSlide() {
+    return this.activeSlide = -1
+  };
 }
 </script>

@@ -20,7 +20,8 @@
 <script lang="ts">
 import {Vue, Component, Ref} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
-import {Swiper, Navigation} from 'swiper';
+import {Swiper, Navigation} from 'swiper/core';
+
 @Component({})
 export default class SpecialOffersSlider extends Vue {
   @Ref()
@@ -28,14 +29,14 @@ export default class SpecialOffersSlider extends Vue {
   swiper: any = Swiper
   slides: any = []
 
-  async mounted () {
+  async mounted() {
     await this.getData()
-    await this.initSwiper ()
+    await this.initSwiper()
   }
 
-  async initSwiper () {
+  async initSwiper() {
     Swiper.use([Navigation])
-    this.swiper = new Swiper (this.container, {
+    this.swiper = new Swiper(this.container, {
       slidesPerView: 'auto',
       navigation: {
         nextEl: '.swiper-button-next',
@@ -44,9 +45,10 @@ export default class SpecialOffersSlider extends Vue {
     })
   }
 
-  async getData () {
+  async getData() {
     try {
-      let { data, error } = await supaBase.from('specialoffer')
+      let {data, error} = await supaBase
+        .from('specialoffer')
         .select('id, title, imgvertical, created_at')
         .order('id')
       this.slides = data
