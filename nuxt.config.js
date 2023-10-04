@@ -1,7 +1,15 @@
 const mode = 'production'
 const isDev = mode !== "production"
+import { defineNuxtConfig } from "@nuxt/bridge"
 
-export default {
+export default defineNuxtConfig({
+  bridge: {
+    typescript: true,
+    nitro: false
+  },
+  alias: {
+    tslib: 'tslib/tslib.es6.js'
+  },
   ssr: false,
   components: true,
   server: { host: '0.0.0.0' },
@@ -44,17 +52,22 @@ export default {
     "nuxt-storm",
     '@nuxt/image',
     '@nuxtjs/vuetify',
-    '@nuxt/typescript-build'
+    // '@nuxt/typescript-build'
   ],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     "cookie-universal-nuxt"
   ],
   sitemap: true,
   axios: {
     baseURL: '/'
+  },
+  robots: {
+    UserAgent: '*',
+    Disallow: ''
   },
   render: {
     resourceHints: false
@@ -63,7 +76,7 @@ export default {
     inject: true
   },
   vuetify: {
-    optionsPath: './vuetify.options.js',
+    // optionsPath: './vuetify.options.js',
     defaultAssets: {
       font: false,
       icons: {
@@ -99,4 +112,4 @@ export default {
     },
     transpile: ["swiper"]
   }
-}
+})
