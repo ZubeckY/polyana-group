@@ -1,6 +1,8 @@
 const mode = 'production'
 const isDev = mode !== "production"
 import { defineNuxtConfig } from "@nuxt/bridge"
+const main_base_URL =  'http://81.200.119.121:3000/';
+
 
 export default defineNuxtConfig({
   bridge: {
@@ -61,7 +63,9 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     "cookie-universal-nuxt"
   ],
-  sitemap: true,
+  sitemap: {
+    hostname: main_base_URL
+  },
   axios: {
     baseURL: '/'
   },
