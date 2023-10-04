@@ -19,30 +19,21 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Ref} from 'vue-property-decorator';
-import {Swiper, Navigation} from 'swiper'
+import supaBase from "~/assets/scripts/supaBase";
+import {Swiper, Navigation} from 'swiper';
 @Component({})
 export default class SpecialOffersSlider extends Vue {
   @Ref()
   readonly container!: HTMLDivElement;
   swiper: any = Swiper
-  slides: any = [
-    {
-      id: 'corner-card-1',
-      text: 'Дети до 5 лет  — бесплатно \n (если не требуется спальное \n место)',
-      img: '/img/specialOffers/1.webp',
-    },
-    {
-      id: 'corner-card-2',
-      text: 'Скидки от 5 до 10 %\n при бронировании по телефону или от стойки',
-      img: '/img/specialOffers/2.webp',
-    },
-    {
-      id: 'corner-card-3',
-      text: 'Трансфер',
-      img: '/img/specialOffers/3.webp'
-    },
-  ]
-  mounted () {
+  slides: any = []
+
+  async mounted () {
+    await this.getData()
+    this.initSwiper ()
+  }
+
+  initSwiper () {
     Swiper.use([Navigation])
     this.swiper = new Swiper (this.container, {
       slidesPerView: 'auto',
@@ -51,6 +42,17 @@ export default class SpecialOffersSlider extends Vue {
         prevEl: '.swiper-button-prev',
       },
     })
+  }
+
+  async getData () {
+    try {
+      let { data, error } = await supaBase.from('specialoffer')
+        .select('id, title, imgvertical, created_at')
+        .order('id')
+      this.slides = data
+    } catch (e) {
+      console.log(e)
+    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    Это индексовская страница
   </div>
 </template>
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="corner-card" elevation="0" width="283px" height="420px" color="transparent">
+  <v-card @click="goToPromo" class="corner-card" elevation="0" width="283px" height="420px" color="transparent">
     <div class="corner-card-header d-flex justify-space-between">
       <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3">
         <v-chip class="font-weight-thin mr-1 mb-1" color="var(--dark-color)" dark></v-chip>
@@ -16,21 +16,21 @@
       </v-card>
     </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg"  width="284" height="420" viewBox="0 0 284 420" fill="none">
-      <path d="M19.9504 0.899902C9.15323 0.899902 0.400391 9.65274 0.400391 20.4499V400.4C0.400391 411.197 9.15323 419.95 19.9504 419.95H263.9C274.698 419.95 283.45 411.197 283.45 400.4V88.5099C283.45 77.7127 274.698 68.9599 263.9 68.9599H233.09C222.293 68.9599 213.54 60.2071 213.54 49.4099V20.4499C213.54 9.65274 204.788 0.899902 193.99 0.899902H19.9504Z"
+    <svg xmlns="http://www.w3.org/2000/svg" width="284" height="420" viewBox="0 0 284 420" fill="none">
+      <path d="M20.2004 0.950195C9.40322 0.950195 0.650391 9.70303 0.650391 20.5002V400.45C0.650391 411.247 9.40323 420 20.2004 420H264.15C274.948 420 283.7 411.247 283.7 400.45V88.5602C283.7 77.763 274.948 69.0102 264.15 69.0102H233.34C222.543 69.0102 213.79 60.2574 213.79 49.4602V20.5002C213.79 9.70303 205.038 0.950195 194.24 0.950195H20.2004Z"
             :fill="'url(#patternCorner'+item.id+')'"/>
       <defs>
         <pattern :id="'patternCorner'+item.id" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use :href="'#photoCorner'+item.id" transform="matrix(0.00190784 0 0 0.00128866 -0.0113 0)"/>
         </pattern>
+        <image :id="'photoCorner'+item.id" :href='item.imgvertical'/>
       </defs>
-      <image :id="'photo'+item.id" height="100%" :href='item.img'/>
     </svg>
 
     <v-card class="d-flex justify-center align-center" width="100%" color="transparent">
       <v-card class="corner-card-text d-flex justify-center align-center"
               elevation="0" color="transparent" width="246px" height="70px">
-        <div class="text-center">{{ item.text }}</div>
+        <div class="text-center">{{ item.title }}</div>
       </v-card>
     </v-card>
 
@@ -41,6 +41,9 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 @Component({})
 export default class CornerCard extends Vue {
   @Prop () item!: any
+  goToPromo () {
+    this.$router.push(`/promo/${this.item.id}`)
+  }
 }
 </script>
 <style lang="less" scoped>

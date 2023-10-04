@@ -11,23 +11,8 @@
 
     <div class="breadcrumbs">
       <div class="breadcrumbs-container">
-        <v-btn @click="$router.push('/')" class="breadcrumbs-button"
-               elevation="0" width="34px" height="34px"
-               min-width="0" min-height="0" color="var(--card-grey)">
-          <chevron-left/>
-        </v-btn>
-        <div class="breadcrumbs-content">
-          Главная
-          <span class="breadcrumbs-content-delimiter">/</span>
-          <hotels-menu>
-            <div class="d-flex align-center">
-              <chevron-down class="mt-1 mr-1"/>
-              <div>Отели</div>
-            </div>
-          </hotels-menu>
-          <span class="breadcrumbs-content-delimiter">/</span>
-          Ultima Club Hotel & SPA
-        </div>
+        <breadcrumbs-button/>
+        <breadcrumbs-content/>
       </div>
     </div>
 
