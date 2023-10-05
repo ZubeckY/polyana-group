@@ -7,7 +7,7 @@
           <div class="header-booking__card-head d-flex align-center flex-row">
             <div>Отель</div>
             <v-spacer/>
-            <div>&nbsp;</div>
+
             <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -27,7 +27,7 @@
           <div class="header-booking__card-head d-flex align-center flex-row">
             <div>Заезд</div>
             <v-spacer/>
-            <div>&nbsp;</div>
+
             <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -47,7 +47,7 @@
           <div class="header-booking__card-head d-flex align-center flex-row">
             <div>Выезд</div>
             <v-spacer/>
-            <div>&nbsp;</div>
+
             <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -67,7 +67,7 @@
           <div class="header-booking__card-head d-flex align-center flex-row">
             <div>Гости</div>
             <v-spacer/>
-            <div>&nbsp;</div>
+
             <svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

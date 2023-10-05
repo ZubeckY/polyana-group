@@ -1,11 +1,13 @@
 /* max-width: 1160px */
 @media (max-width: 1160px) {
+  /* header */
   .header {
     &-booking {
       max-width: 95% !important;
     }
   }
 
+  /* restInPolyana */
   .restInPolyana {
     &-body {
       &-container {
@@ -14,17 +16,14 @@
     }
   }
 
+
+  /* conditions */
   .conditions-form {
     margin-left: 30px;
   }
 }
 
 @media (max-width: 1100px) {
-  /* relax-in-comfort */
-  .relax-in-comfort {
-    white-space: normal !important;
-  }
-
   /* header */
   .header {
     &-nav {
@@ -267,7 +266,7 @@
     }
   }
 
-  /* hotelGroup-accordion */
+  /* hotelGroup= */
   .hotelGroup-accordion {
     &-count {
       width: 62px;
@@ -378,9 +377,60 @@
       }
     }
   }
+
+  /* restInPolyana */
+  .restInPolyana {
+    &-title {
+      font-size: 20px !important;
+      white-space: normal !important;
+
+      &-chip {
+        padding: 3px 6px !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    &-pictures {
+      &-large-img {
+        margin: 0 0 8px !important;
+        width: 100% !important;
+        max-width: 960px !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 800px) {
+  /* header-booking */
+  .header-booking.ultima {
+    top: 20% !important;
+    left: 5% !important;
+  }
+
+  /* luxHoliday */
+  .luxHoliday {
+    &-container {
+      flex-direction: column;
+      justify-content: center !important;
+      align-items: center;
+    }
+
+    &-head {
+      position: relative !important;
+      align-self: auto !important;
+      top: 0 !important;
+    }
+
+    &-body {
+      margin-top: 35px;
+    }
+
+    &-slide {
+      width: 373px !important;
+      height: 263px !important;
+    }
+  }
+
   /* hotelGroup */
   .hotelGroup-accordion {
     &-info {
@@ -497,8 +547,14 @@
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 650px) {
+  /* header */
   .header {
+
+    &-inside-container-inner {
+      height: 43px !important;
+    }
+
     &-promo {
       &-title {
         font-size: 20px !important;
@@ -506,6 +562,36 @@
 
       &-back {
         margin-right: 15px !important;
+      }
+    }
+
+    &-nav {
+      &-container {
+        &.ultima {
+          padding: 0 8px !important;
+        }
+      }
+
+      &__logo {
+        &.ultima {
+          width: 116px;
+          height: 42px;
+        }
+
+        &_chevron {
+          display: none;
+        }
+      }
+
+      &__link_social {
+        display: none !important;
+      }
+
+      &__reservation-phone-ultima {
+        font-size: 15.3px !important;
+        width: 100% !important;
+        height: 42.5px !important;
+        max-width: 160px !important;
       }
     }
 
@@ -517,6 +603,7 @@
     }
   }
 
+  /* conditions */
   .conditions {
     &-container {
       padding: 0 10px !important;
@@ -546,6 +633,19 @@
     }
   }
 
+  /* breadcrumbs */
+  .breadcrumbs {
+    &-content {
+      font-size: 12px !important;
+      max-width: 336px !important;
+
+      &-delimiter {
+        margin: 0 3px !important;
+      }
+    }
+  }
+
+  /* hotelGroup */
   .hotelGroup-accordion-info-logo {
     display: none;
   }
@@ -598,6 +698,41 @@
             font-size: 10px !important;
           }
         }
+      }
+    }
+  }
+
+  /* restInPolyana */
+  .restInPolyana {
+    &-title {
+      &-chip {
+        padding: 3px !important;
+        white-space: nowrap !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 434px) {
+  /* restInPolyana */
+  .restInPolyana-pictures-small-img {
+    width: 154px !important;
+    height: 154px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .luxHoliday-slide {
+    width: 340px !important;
+    height: 240px !important;
+    &-title {
+      font-size: 16px !important;
+    }
+    &-arrow {
+      left: 14px !important;
+      &-arrow {
+        width: 10px !important;
+        height: 10px !important;
       }
     }
   }

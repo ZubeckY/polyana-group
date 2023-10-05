@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <header class="header header-inside">
       <div class="header-inside-container">
         <div class="header-inside-container-inner">
@@ -27,7 +26,7 @@
         </div>
 
         <div class="restInPolyana-body">
-          <div class="restInPolyana-body-container d-flex flex-row" @click="dialog = true">
+          <div class="restInPolyana-body-container d-flex" @click="dialog = true">
             <div class="restInPolyana-pictures-large">
               <watch class="ultima"/>
               <div class="restInPolyana-pictures-large-img">
@@ -39,7 +38,7 @@
                 <header-booking-ultima/>
               </div>
             </div>
-            <div class="restInPolyana-pictures-small d-flex flex-row flex-wrap">
+            <div class="restInPolyana-pictures-small d-flex">
               <div class="restInPolyana-pictures-small-img">
                 <nuxt-img sizes="xs:200px md:500px lg:1024"
                           loading="lazy" quality="80" :placeholder="[50]"
@@ -67,9 +66,7 @@
 
             <v-dialog class="restInPolyana-pictures-dialog"
                       v-model="dialog" max-width="800px">
-
               <v-carousel class="restInPolyana-pictures-carousel" hide-delimiters>
-
                 <v-btn @click="dialog = false"
                        class="restInPolyana-pictures-carousel-close"
                        min-height="0" min-width="0"
@@ -97,7 +94,8 @@
                   </v-btn>
                 </template>
                 <v-carousel-item class="restInPolyana-pictures-slide"
-                                 v-for="(item, i) in data" :key="'sliderImage'+i" :src="item.src">
+                                 v-for="(item, i) in data" style="height: 391px"
+                                 :key="'sliderImage'+i" :src="item.src">
                 </v-carousel-item>
               </v-carousel>
             </v-dialog>
@@ -111,8 +109,6 @@
       .flexbox-wrapper {
         display: flex;
         justify-content: space-between;
-        min-height: 1500px;
-      //<- overflow: auto; //<-
       }
     </style>
 
@@ -229,9 +225,8 @@
               </template>
               <v-carousel-item v-for="(image, j) in slider.img"
                                :key="'lux-slide-'+j">
-                <component v-bind:is="slider.component"
-                           :id="i+'-'+j"
-                           :image="image"
+                <component v-bind:is="getComponent(slider.component)"
+                           :id="i+'-'+j" :image="image"
                            :title="slider.title">
                 </component>
               </v-carousel-item>
@@ -261,6 +256,7 @@ import {Vue, Component} from 'vue-property-decorator';
 })
 export default class Inside extends Vue {
   data: any = []
+  type: string = 'desktop'
   dialog: boolean = false
 
   sliders: any = [
@@ -307,6 +303,19 @@ export default class Inside extends Vue {
       this.sliders[i].img = array
     }
 
+    this.getCurrentType()
+    window.addEventListener('resize', () => {
+      this.getCurrentType()
+    })
+  }
+
+  getComponent(component: string) {
+    return component ? component + '-' + this.type : ''
+  }
+
+
+  getCurrentType() {
+    this.type = window.innerWidth >= 800 ? 'desktop' : 'mobile'
   }
 
   async initImgs(slider: any) {

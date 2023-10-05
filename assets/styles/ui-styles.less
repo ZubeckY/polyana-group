@@ -1,17 +1,3 @@
-/* relax-in-comfort */
-.relax-in-comfort {
-  color: white;
-  font-family: 'Cormorant Garamond', sans-serif !important;
-  white-space: pre-line;
-  text-transform: uppercase;
-  font-weight: 700 !important;
-
-  .golden {
-    color: var(--golden-2);
-    font-family: inherit !important;
-  }
-}
-
 /* rating */
 .rating {
   display: flex;
@@ -883,6 +869,12 @@
     margin: 15px auto 30px;
   }
 
+  &-body {
+    &-container {
+      flex-direction: row;
+    }
+  }
+
   &-title {
     font-family: "Cormorant Infant", sans-serif;
     color: black;
@@ -922,6 +914,8 @@
     }
 
     &-small {
+      flex-wrap: wrap;
+      flex-direction: row;
       &-img {
         margin: 5px;
         width: 191px;
@@ -945,8 +939,6 @@
           position: absolute;
           justify-content: center;
           align-items: center;
-          width: 191px;
-          height: 191px;
           top: 0;
           left: 0;
           color: #000000CC;
@@ -1014,8 +1006,7 @@
 
   &-slide {
     position: relative;
-    width: 757px !important;
-    height: 391px !important;
+    width: 757px;
     border-radius: 19.55px;
 
     &-title {
@@ -1062,10 +1053,11 @@
 
   &-content {
     display: flex;
-    width: 373px;
+    width: 100%;
     height: 35px;
     font-size: 14px;
     font-weight: 400;
+    max-width: 373px;
     margin-left: 10px;
     font-style: normal;
     line-height: normal;

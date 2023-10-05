@@ -1,11 +1,11 @@
 <template>
   <nav class="header-nav">
-    <div class="header-nav-container d-flex align-center flex-row">
+    <div class="header-nav-container ultima d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
         <header-nav-menu/>
         <hotels-menu>
           <div class="d-flex align-center">
-            <chevron-down class="mt-3 mr-2" :dark="true"/>
+            <chevron-down class="header-nav__logo_chevron mt-3 mr-2" :dark="true"/>
             <logo-ultima-dark class="header-nav__logo ultima"/>
           </div>
         </hotels-menu>
@@ -13,11 +13,11 @@
                         :key="'u_link'+i" :item="item"/>
       </div>
 
-      <v-btn min-width="0" min-height="0"
+      <v-btn class="header-nav__link_social"
+             min-width="0" min-height="0"
              width="35px" height="35px"
              color="var(--card-grey)"
-             elevation="0"
-             style="border-radius: 100px">
+             elevation="0">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
           <g clip-path="url(#clip0_1622_571)">
             <path
@@ -32,11 +32,11 @@
         </svg>
       </v-btn>
 
-      <v-btn class="mx-3" min-width="0" min-height="0"
+      <v-btn class="header-nav__link_social mx-3"
+             min-width="0" min-height="0"
              width="35px" height="35px"
              color="var(--card-grey)"
-             elevation="0"
-             style="border-radius: 100px">
+             elevation="0">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
           <g clip-path="url(#clip0_1622_578)">
             <path
