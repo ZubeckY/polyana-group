@@ -1,5 +1,5 @@
 <template>
-  <v-card @click="goToPromo" class="corner-card" elevation="0" width="283px" height="420px" color="transparent">
+  <v-card :href="goToPromo" class="corner-card" elevation="0" width="283px" height="420px" color="transparent">
     <div class="corner-card-header d-flex justify-space-between">
       <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3">
         <v-chip class="font-weight-thin mr-1 mb-1" color="var(--dark-color)" dark></v-chip>
@@ -41,8 +41,8 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 @Component({})
 export default class CornerCard extends Vue {
   @Prop () item!: any
-  goToPromo () {
-    this.$router.push(`/promo/${this.item.id}`)
+  get goToPromo () {
+    return `/promo/${this.item.id}`
   }
 }
 </script>
