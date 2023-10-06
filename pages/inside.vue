@@ -239,12 +239,16 @@
     <!-- start TL Booking form script -->
     <section class="tl-section">
       <div class="tl-section-container">
-        <div class="tl-select-wrap">
-          <div id="tl-block-select">
-            <select id="tl-hotel-select"></select>
-          </div>
-          <div id="tl-booking-form">&nbsp;</div>
-        </div>
+<!--        <div class="tl-select-wrap">-->
+<!--          <div id="tl-block-select">-->
+<!--            <select id="tl-hotel-select"></select>-->
+<!--          </div>-->
+<!--          <div id="tl-booking-form">&nbsp;</div>-->
+<!--        </div>-->
+
+        <!-- start TL Booking form script -->
+        <div id="tl-booking-form-32513">&nbsp;</div>
+        <!-- end TL Booking form script -->
       </div>
     </section>
 
