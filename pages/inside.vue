@@ -239,22 +239,14 @@
     <!-- start TL Booking form script -->
     <section class="tl-section">
       <div class="tl-section-container">
-<!--        <div class="tl-select-wrap">-->
-<!--          <div id="tl-block-select">-->
-<!--            <select id="tl-hotel-select"></select>-->
-<!--          </div>-->
-<!--          <div id="tl-booking-form">&nbsp;</div>-->
-<!--        </div>-->
-
         <!-- start TL Booking form script -->
-        <div id="tl-booking-form-32513">&nbsp;</div>
+        <div id="tl-booking-form">&nbsp;</div>
         <!-- end TL Booking form script -->
       </div>
     </section>
 
     <script type='text/javascript'>
-      let select = document.getElementById("tl-hotel-select");
-      select.addEventListener('change', function () {
+      window.addEventListener('DOMContentLoaded', function () {
         let hotel_id = "hotel_id";
         let regex = new RegExp(/hotel_id=\d+/g);
         let getParams = window.location.search;

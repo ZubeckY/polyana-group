@@ -189,7 +189,7 @@
                         <v-btn v-for="(button, j) in hotelButtons"
                                class="hotelGroup-accordion-info-button"
                                :key="'linkToInsidePage'+j" elevation="0"
-                               @click="$router.push(button.link)">{{ button.title }}
+                               :href="button.link+item.travelLineId">{{ button.title }}
                         </v-btn>
                       </div>
                     </div>
@@ -228,7 +228,7 @@
                           <v-btn v-for="(button, j) in hotelButtons"
                                  class="hotelGroup-accordion-info-button"
                                  :key="'linkToInsidePage'+j" elevation="0"
-                                 @click="$router.push(button.link)">{{ button.title }}
+                                 :href="button.link+item.travelLineId">{{ button.title }}
                           </v-btn>
                         </div>
                       </div>
@@ -439,16 +439,20 @@ export default class Pages extends Vue {
   hotelList: any = [
     {
       id: '001',
+      travelLineId: 32513,
       title: 'ULTIMA CLUB | HOTEL & SPA',
       price: 8_600,
+
     },
     {
       id: '002',
+      travelLineId: 22866,
       title: 'COUNTRY HILLS | RESORT',
       price: 10_600,
     },
     {
       id: '003',
+      travelLineId: 23660,
       title: 'IKOS POLYANA',
       price: 5_900,
     },
@@ -456,47 +460,47 @@ export default class Pages extends Vue {
   hotelButtons: any = [
     {
       title: 'Забронировать',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Об отеле',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Номера',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Акции',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Услуги',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Местоположение',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Что включено',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Fitness центр',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Кинотеатр',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'Ski-room',
-      link: '/inside'
+      link: '/inside?hotel_id='
     },
     {
       title: 'SPA',
-      link: '/inside'
+      link: '/inside?hotel_id='
     }
   ]
 
