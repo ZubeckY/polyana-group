@@ -63,13 +63,14 @@ export default defineNuxtConfig({
     '~/assets/styles/ui-styles.less'
   ],
   plugins: [
-    '~/plugins/v_mask.js'
+    '~/plugins/v_mask.js',
+    '~/plugins/travelline.js'
   ],
   buildModules: [
     "nuxt-storm",
     '@nuxt/image',
     '@nuxtjs/dotenv',
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
     // 'nuxt-webpack-optimisations'
   ],
   modules: [
@@ -78,7 +79,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     'nuxt-ssr-cache',
-    "cookie-universal-nuxt",
+    'cookie-universal-nuxt',
     '@drozd/nuxt-performance'
   ],
   dotenv: {

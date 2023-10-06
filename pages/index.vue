@@ -42,6 +42,92 @@
       </div>
     </header>
 
+
+    <style>
+      #tl-hotel-select {
+        background: rgb(255, 255, 255) url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZD0iTTAgMC41OTk5OThMNiA3LjhMMTIgMC41OTk5OThIMFoiIGZpbGw9IiMzMjM0M0EiLz4NCjwvc3ZnPg0K') no-repeat right 20px top 22px;
+        box-sizing: border-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        width: 100%;
+        -webkit-transition: box-shadow .3s, opacity .3s;
+        transition: box-shadow .3s, opacity .3s;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 15px;
+        font: 16px 'Montserrat', sans-serif;
+        color: #000;
+        line-height: normal;
+        height: auto;
+      }
+
+      .tl-select-wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      #tl-block-select {
+        color: rgb(109, 109, 109) !important;
+        background-color: rgb(255, 255, 255);
+        margin: 8px 0 10px;
+      }
+
+      #tl-booking-form {
+        z-index: 0;
+      }
+
+      #tl-hotel-select:hover,
+      #tl-hotel-select:focus {
+        -webkit-appearance: none;
+        outline: none;
+      }
+
+      select::-ms-expand {
+        display: none;
+      }
+
+
+    </style>
+    <!-- start TL Booking form script -->
+    <div class="tl-select-wrap">
+      <div id="tl-block-select">
+        <select id="tl-hotel-select"></select>
+      </div>
+      <div id="tl-booking-form">&nbsp;</div>
+    </div>
+    <script type='text/javascript'>
+      let select = document.getElementById("tl-hotel-select");
+      select.addEventListener('change', function () {
+        let hotel_id = "hotel_id";
+        let regex = new RegExp(/hotel_id=\d+/g);
+        let getParams = window.location.search;
+        let params_str = hotel_id + "=" + this.value;
+        let path = "";
+        if (getParams.indexOf(hotel_id) != -1) {
+          path = getParams.replace(regex, params_str);
+        } else {
+          if (getParams == "") {
+            path = getParams + '?' + params_str;
+          } else {
+            path = getParams + '&' + params_str;
+          }
+        }
+        window.history.pushState(false, false, path);
+      });
+    </script>
+    <!-- end TL Booking form script -->
+
+
     <!-- рейтинг карточки -->
     <section class="rating mt-5">
       <div class="rating-container justify-space-between d-flex">
@@ -63,7 +149,7 @@
       <div class="pinterest-container">
 
         <v-card class="pinterest-card" height="485px"
-                elevation="0" color="var(--card-grey)">
+                elevation="0" color="let(--card-grey)">
           <div class="pinterest-card-container general-container">
 
             <div class="pinterest-card-head mt-4">
@@ -263,7 +349,7 @@
           <!-- Бесплатный трансфер до пляжа -->
           <v-card class="seasonPrograms-card free-transfer"
                   rounded="xxl" height="165px"
-                  elevation="0" color="var(--card-grey)">
+                  elevation="0" color="let(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
@@ -284,7 +370,7 @@
           <!-- Живая музыка в баре у бассейна -->
           <v-card class="seasonPrograms-card live-music"
                   rounded="xxl" height="165px"
-                  elevation="0" color="var(--card-grey)">
+                  elevation="0" color="let(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="63px" height="39px"
@@ -303,7 +389,7 @@
           <!-- Анимация для детей: веселье и игры -->
           <v-card class="seasonPrograms-card fun-for-kids"
                   rounded="xxl" height="165px"
-                  elevation="0" color="var(--card-grey)">
+                  elevation="0" color="let(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="57px" height="57px"
@@ -343,7 +429,7 @@
           <!-- бесплатный трансфер до подъёмников -->
           <v-card class="seasonPrograms-card free-transfer"
                   rounded="xxl" height="165px"
-                  elevation="0" color="var(--cold-grey)">
+                  elevation="0" color="let(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
@@ -363,7 +449,7 @@
           <!-- ski-room хранилище для зимнего спортивного снаряжения -->
           <v-card class="seasonPrograms-card ski-room"
                   rounded="xxl" height="165px"
-                  elevation="0" color="var(--cold-grey)">
+                  elevation="0" color="let(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="55px" height="55px"
@@ -383,7 +469,7 @@
           <!-- подогреваемый бассеин -->
           <v-card class="seasonPrograms-card heated-pool"
                   rounded="xxl" height="165px"
-                  elevation="0" color="var(--cold-grey)">
+                  elevation="0" color="let(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="55px" height="53px"
