@@ -236,6 +236,40 @@
       </div>
     </section>
 
+    <!-- start TL Booking form script -->
+    <section class="tl-section">
+      <div class="tl-section-container">
+        <div class="tl-select-wrap">
+          <div id="tl-block-select">
+            <select id="tl-hotel-select"></select>
+          </div>
+          <div id="tl-booking-form">&nbsp;</div>
+        </div>
+      </div>
+    </section>
+
+    <script type='text/javascript'>
+      let select = document.getElementById("tl-hotel-select");
+      select.addEventListener('change', function () {
+        let hotel_id = "hotel_id";
+        let regex = new RegExp(/hotel_id=\d+/g);
+        let getParams = window.location.search;
+        let params_str = hotel_id + "=" + this.value;
+        let path = "";
+        if (getParams.indexOf(hotel_id) != -1) {
+          path = getParams.replace(regex, params_str);
+        } else {
+          if (getParams == "") {
+            path = getParams + '?' + params_str;
+          } else {
+            path = getParams + '&' + params_str;
+          }
+        }
+        window.history.pushState(false, false, path);
+      });
+    </script>
+    <!-- end TL Booking form script -->
+
     <!-- Специальные предложения -->
     <special-offers/>
 

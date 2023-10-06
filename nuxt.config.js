@@ -56,6 +56,7 @@ export default defineNuxtConfig({
   css: [
     '~/assets/styles/screen/desktop.less',
     '~/assets/styles/screen/mobile.less',
+    '~/assets/styles/travel-line.css',
     '~/assets/styles/fontSize.less',
     '~/assets/styles/footer.less',
     '~/assets/styles/header.less',
