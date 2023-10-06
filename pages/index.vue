@@ -149,7 +149,7 @@
       <div class="pinterest-container">
 
         <v-card class="pinterest-card" height="485px"
-                elevation="0" color="let(--card-grey)">
+                elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
 
             <div class="pinterest-card-head mt-4">
@@ -349,7 +349,7 @@
           <!-- Бесплатный трансфер до пляжа -->
           <v-card class="seasonPrograms-card free-transfer"
                   rounded="xxl" height="165px"
-                  elevation="0" color="let(--card-grey)">
+                  elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
@@ -370,7 +370,7 @@
           <!-- Живая музыка в баре у бассейна -->
           <v-card class="seasonPrograms-card live-music"
                   rounded="xxl" height="165px"
-                  elevation="0" color="let(--card-grey)">
+                  elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="63px" height="39px"
@@ -389,7 +389,7 @@
           <!-- Анимация для детей: веселье и игры -->
           <v-card class="seasonPrograms-card fun-for-kids"
                   rounded="xxl" height="165px"
-                  elevation="0" color="let(--card-grey)">
+                  elevation="0" color="var(--card-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="57px" height="57px"
@@ -429,7 +429,7 @@
           <!-- бесплатный трансфер до подъёмников -->
           <v-card class="seasonPrograms-card free-transfer"
                   rounded="xxl" height="165px"
-                  elevation="0" color="let(--cold-grey)">
+                  elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="51px" height="51px"
@@ -449,7 +449,7 @@
           <!-- ski-room хранилище для зимнего спортивного снаряжения -->
           <v-card class="seasonPrograms-card ski-room"
                   rounded="xxl" height="165px"
-                  elevation="0" color="let(--cold-grey)">
+                  elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="55px" height="55px"
@@ -469,7 +469,7 @@
           <!-- подогреваемый бассеин -->
           <v-card class="seasonPrograms-card heated-pool"
                   rounded="xxl" height="165px"
-                  elevation="0" color="let(--cold-grey)">
+                  elevation="0" color="var(--cold-grey)">
             <div class="seasonPrograms-card-container">
               <div class="seasonPrograms-card-header">
                 <nuxt-img class="seasonPrograms-card-image" width="55px" height="53px"
