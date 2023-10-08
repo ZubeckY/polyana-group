@@ -57,7 +57,7 @@
                   </template>
                   <v-carousel-item class="footer-slide" style="position: relative"
                                    v-for="(item, j) in localMapping[activeChip]['imgshotel']" :key="'photo-'+j" >
-                    <footer-slide :item="item"/>
+                    <footer-slide :item="item" :isKey="j"/>
                   </v-carousel-item>
                 </v-carousel>
               </div>
