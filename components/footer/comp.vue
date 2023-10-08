@@ -23,12 +23,13 @@
                 </div>
                 <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
                   class="text-decoration-underline"><div>{{localMapping[activeChip]['telbron']}}</div></span>
-                  Отдел бронирования
-                  (09:00 - 21:00)
+                  <span style="font-size: 12px">Отдел бронирования
+                    (09:00 - 21:00)</span>
                 </div>
                 <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
                   class="text-decoration-underline">{{localMapping[activeChip]['telreception']}}</span>
-                  Рецепция (круглосуточно)
+                  <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
+                    Рецепция (круглосуточно)</span>
                 </div>
               </div>
 
@@ -54,9 +55,9 @@
                       <chevron-right/>
                     </v-btn>
                   </template>
-                  <v-carousel-item class="footer-slide"
+                  <v-carousel-item class="footer-slide" style="position: relative"
                                    v-for="(item, j) in localMapping[activeChip]['imgshotel']" :key="'photo-'+j" >
-                    <img :src="item" alt="#" style="display: block; width: 100%; height: 100%; object-fit: cover"/>
+                    <footer-slide :item="item"/>
                   </v-carousel-item>
                 </v-carousel>
               </div>

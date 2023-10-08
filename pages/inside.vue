@@ -225,9 +225,8 @@
                   </v-btn>
                 </template>
                 <v-carousel-item v-for="(image, j) in slider.imgs"
-                                 class="luxHoliday-slide"
-                                 :key="'lux-slide-'+j"
-                                 :src="image">
+                                 class="luxHoliday-slide" :key="'lux-slide-'+j">
+                  <img class="luxHoliday-slide-image" :src="image" alt="#"/>
                 </v-carousel-item>
               </v-carousel>
 
