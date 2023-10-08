@@ -43,7 +43,7 @@ export default class Exclusive extends Vue {
 <style lang="less" scoped>
 /* exclusive */
 .exclusive {
-  margin-top: 136px;
+  margin-top: 70px;
   &-form {
     &.inside {display: block;}
     &.outside {display: none;margin-top: 40px;}

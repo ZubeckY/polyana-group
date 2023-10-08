@@ -6,7 +6,9 @@
         <hotels-menu>
           <div class="d-flex align-center">
             <chevron-down class="header-nav__logo_chevron mt-3 mr-2" :dark="true"/>
-            <logo-ultima-dark class="header-nav__logo ultima"/>
+            <div class="header-nav__logo">
+              <v-img :src="currentLogo" :lazy-src="currentLogo"/>
+            </div>
           </div>
         </hotels-menu>
         <link-component class="header-nav__link mx-auto" v-for="(item, i) in links"
@@ -61,8 +63,25 @@
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
+import supaBase from "~/assets/scripts/supaBase";
 @Component({})
 export default class Ultima extends Vue {
+  currentLogo: any = ''
+  async created () {
+    try {
+      let {hotel_id} = this.$router.currentRoute.query
+      let {data, error} = await supaBase
+        .from('hotels')
+        .select('id, logohotel, travellineid')
+        .eq('travellineid', hotel_id)
+
+      let currentData: any = data
+      this.currentLogo = '' + currentData[0]['logohotel']
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   links: any = [
     {
       title: 'Главная',

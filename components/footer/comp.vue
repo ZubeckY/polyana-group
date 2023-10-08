@@ -10,8 +10,8 @@
             <div class="footer-seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
             <v-chip-group class="footer-seeYouAtHotel-group mb-2" v-model="activeChip"
                           mandatory column active-class="golden-gradient white--text">
-              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="'see-you-at-hotel'+i" :value="i"
-                                            :item="item"/>
+              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
+                                            :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
             </v-chip-group>
 
             <div class="footer-seeYouAtHotel-address d-flex">
@@ -19,26 +19,22 @@
               <div class="footer-seeYouAtHotel-address-container">
                 <div class="footer-seeYouAtHotel-address-title footer-title my-3">Контакты</div>
                 <div class="footer-seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
-                  Краснодарский край,
-                  Красная поляна,
-                  с. Эсто-Садок,
-                  Автомобильный
-                  переулок, 4
+                  <div>{{localMapping[activeChip]['adress']}}</div>
                 </div>
                 <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
-                  class="text-decoration-underline">8 938 555 5552</span>
+                  class="text-decoration-underline"><div>{{localMapping[activeChip]['telbron']}}</div></span>
                   Отдел бронирования
                   (09:00 - 21:00)
                 </div>
                 <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
-                  class="text-decoration-underline">8 938 555 5551</span>
+                  class="text-decoration-underline">{{localMapping[activeChip]['telreception']}}</span>
                   Рецепция (круглосуточно)
                 </div>
               </div>
 
               <!-- Слайдер -->
               <div class="footer-seeYouAtHotel-photo">
-                <v-carousel class="footer-carousel" style="height: 290px"
+                <v-carousel class="footer-carousel" style="height: 247px"
                             v-model="activeSlide" hide-delimiters>
                   <template v-slot:prev="{ on, attrs }">
                     <v-btn v-bind="attrs" v-on="on"
@@ -59,9 +55,8 @@
                     </v-btn>
                   </template>
                   <v-carousel-item class="footer-slide"
-                                   v-for="item in localMapping[activeChip]['photos']"
-                                   :key="'photo-'+item.id">
-                    <lazy-footer-slide :item="item"/>
+                                   v-for="(item, j) in localMapping[activeChip]['imgshotel']" :key="'photo-'+j" >
+                    <img :src="item" alt="#" style="display: block; width: 100%; height: 100%; object-fit: cover"/>
                   </v-carousel-item>
                 </v-carousel>
               </div>
@@ -102,73 +97,29 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
+import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
 export default class FooterComp extends Vue {
   activeChip: number = 0
   activeSlide: number = 0
-  localMapping: any = [
-    {
-      id: 1,
-      priority: 1,
-      title: 'ULTIMA CLUB | HOTEL & SPA',
-      photos: [
-        {
-          id: 11,
-          priority: 1,
-          url: '/img/footer/subtract.webp',
-        },
-        {
-          id: 12,
-          priority: 2,
-          url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
-        },
-      ]
-    },
-    {
-      id: 2,
-      priority: 2,
-      title: 'IKOS POLYANA',
-      photos: [
-        {
-          id: 21,
-          priority: 1,
-          url: '/img/footer/subtract.webp',
-        },
-        {
-          id: 22,
-          priority: 2,
-          url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
-        },
-      ]
-    },
-    {
-      id: 3,
-      priority: 3,
-      title: 'COUNTRY hills resort',
-      photos: [
-        {
-          id: 31,
-          priority: 1,
-          url: '/img/footer/subtract.webp',
-        },
-        {
-          id: 32,
-          priority: 2,
-          url: 'https://via.placeholder.com/1024x1024/eee?text=4:3',
-        },
-      ]
-    },
-  ]
+  localMapping: any = []
+
+  async created() {
+    try {
+      let {data, error} = await supaBase
+        .from('hotels')
+        .select('')
+        .order('id')
+      this.localMapping = data
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   @Watch('activeChip')
   changeController() {
-    this.changeMapping();
     this.emptyActiveSlide()
-  };
-
-  changeMapping() {
-    this.$emit('changeMapping', this.localMapping[this.activeChip]['htmltagyandexmap'])
   };
 
   emptyActiveSlide() {
