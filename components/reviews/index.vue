@@ -48,11 +48,11 @@
               <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1"
                      color="#CCAC6C" height="auto" min-width="0" min-height="0"
                      text>ОСТАВИТЬ ОТЗЫВ
-                <!--                <div class="button-arrow">-->
-                <!--                  <span></span>-->
-                <!--                  <span></span>-->
-                <!--                  <span></span>-->
-                <!--                </div>-->
+                <div class="button-arrow">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </v-btn>
             </div>
 
@@ -69,21 +69,55 @@
       </div>
 
       <div class="reviews-slider">
-        <v-card-actions class="reviews-slider-buttons px-0">
-          <v-spacer/>
+        <v-carousel hide-delimiters style="height: 301px; border-radius: 19.55px">
+          <template v-slot:prev="{ on, attrs }">
+            <v-btn v-bind="attrs" v-on="on"
+                   min-height="0" min-width="0"
+                   width="34px" height="34px"
+                   elevation="0" rounded
+                   color="#ffffffb8" title="Назад">
+              <chevron-left/>
+            </v-btn>
+          </template>
+          <template v-slot:next="{ on, attrs }">
+            <v-btn v-bind="attrs" v-on="on"
+                   min-height="0" min-width="0"
+                   width="34px" height="34px"
+                   elevation="0" rounded
+                   color="#ffffffb8" title="Вперёд">
+              <chevron-right/>
+            </v-btn>
+          </template>
+          <v-carousel-item v-for="(item, i) in data" :key="'reviewIndex'+i">
+            <v-card class="reviews-slider-card" elevation="0">
+              <div class="reviews-slider-card-container">
+                <div class="reviews-slider-card-header">
+                  <div class="reviews-slider-card-header-logo">
+                    <img :src="item.photouser" alt="#">
+                  </div>
+                  <div class="reviews-slider-card-header-context">
+                    <div class="reviews-slider-card-header-name">
+                      {{ item.nameuser }}
+                    </div>
+                  </div>
+                </div>
 
-          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0" title="Назад">
-            <chevron-left/>
-          </v-btn>
+                <div class="reviews-slider-card-body">
+                  <div class="reviews-slider-card-stars">
+                    <rating-yandex-star v-for="j in item.starrating" :key="'reviewIndexStar'+j"/>
+                    <div class="reviews-slider-card-date">{{ getElementDate(item.created_at) }}</div>
+                  </div>
+                  <div class="reviews-slider-card-description">{{ item.description }}</div>
+                  <div class="reviews-slider-card-images">
+                    <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
+                         :key="'reviewIndexImage'+k" :src="imgs" alt="#"/>
+                  </div>
+                </div>
 
-          <v-btn elevation="0" rounded width="40px" height="40px" min-height="0" min-width="0" title="Вперёд">
-            <chevron-right/>
-          </v-btn>
-        </v-card-actions>
-
-        <div class="">
-          <v-card class="reviews-slider-card rounded-xxl" elevation="0" width="558px" height="289px"></v-card>
-        </div>
+              </div>
+            </v-card>
+          </v-carousel-item>
+        </v-carousel>
       </div>
 
     </div>
@@ -91,8 +125,32 @@
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
+import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
 export default class Reviews extends Vue {
+  data: any = []
+
+  async created() {
+    await this.getData()
+  }
+
+  async getData() {
+    try {
+      let {data, error} = await supaBase
+        .from('reviews')
+        .select('')
+        .order('id')
+
+      this.data = data
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  getElementDate(date: any) {
+    const DATE = new Date(date)
+    return ((DATE.getMonth() > 8) ? (DATE.getMonth() + 1) : ('0' + (DATE.getMonth() + 1))) + '.' + ((DATE.getDate() > 9) ? DATE.getDate() : ('0' + DATE.getDate())) + '.' + DATE.getFullYear()
+  }
 }
 </script>

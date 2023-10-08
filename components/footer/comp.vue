@@ -20,15 +20,15 @@
                 <div class="footer-seeYouAtHotel-address-container">
                   <div class="footer-seeYouAtHotel-address-title footer-title my-3">Контакты</div>
                   <div class="footer-seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
-                    <div>{{localMapping[activeChip]['adress']}}</div>
+                    <div>{{ getAddressItem }}</div>
                   </div>
-                  <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a :href="'tel:'+localMapping[activeChip]['telbron']">{{localMapping[activeChip]['telbron']}}</a>
+                  <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a :href="'tel:'+getTelBronItem">{{getTelBronItem}}</a>
                     <span style="font-size: 12px">
                     Отдел бронирования
                     (09:00 - 21:00)</span>
                   </div>
                   <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a
-                    :href="'tel:'+localMapping[activeChip]['telreception']" >{{localMapping[activeChip]['telreception']}}</a>
+                      :href="'tel:'+getTelTelReceptionItem" >{{getTelTelReceptionItem}}</a>
                     <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
                     Рецепция (круглосуточно)</span>
                   </div>
@@ -57,7 +57,7 @@
                       </v-btn>
                     </template>
                     <v-carousel-item class="footer-slide" style="position: relative"
-                                     v-for="(item, j) in localMapping[activeChip]['imgshotel']" :key="'photo-'+j" >
+                                     v-for="(item, j) in getImgSHotel" :key="'photo-'+j" >
                       <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
                     </v-carousel-item>
                   </v-carousel>
@@ -111,9 +111,9 @@ export default class FooterComp extends Vue {
   async created() {
     try {
       let {data, error} = await supaBase
-        .from('hotels')
-        .select('')
-        .order('id')
+          .from('hotels')
+          .select('')
+          .order('id')
       this.localMapping = data
     } catch (e) {
       console.log(e)
@@ -124,6 +124,22 @@ export default class FooterComp extends Vue {
   changeController() {
     this.emptyActiveSlide()
   };
+
+  get getAddressItem () {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
+  }
+
+  get getTelBronItem () {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telbron'] : ''
+  }
+
+  get getTelTelReceptionItem () {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
+  }
+
+  get getImgSHotel () {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
+  }
 
   emptyActiveSlide() {
     return this.activeSlide = -1

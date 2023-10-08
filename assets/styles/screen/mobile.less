@@ -342,11 +342,10 @@
       margin: 0 !important;
       padding: 0 !important;
 
-
       &-container {
-        width: 100%;
+        width: 100% !important;
         margin: 30px auto 0;
-        max-width: 300px;
+        max-width: 300px !important;
       }
 
       &-address {
@@ -650,6 +649,13 @@
       margin: 30px auto 0;
     }
   }
+
+  .reviews-slider {
+    width: 100% !important;
+    &-card {
+      width: 100% !important;
+    }
+  }
 }
 
 @media (max-width: 500px) {
@@ -672,9 +678,11 @@
       font-size: 12px !important;
       max-width: 336px !important;
       padding: 0 10px !important;
+
       &-link {
         font-size: 12px !important;
       }
+
       &-delimiter {
         margin: 0 3px !important;
       }
@@ -756,6 +764,7 @@
   .luxHoliday-slide {
     width: 340px !important;
     height: 240px !important;
+
     &-mask {
       width: 320px !important;
     }

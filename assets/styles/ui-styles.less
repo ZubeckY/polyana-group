@@ -707,9 +707,10 @@
         }
 
         &-button {
+          position: relative;
           font-weight: 700;
-          border-radius: 0 !important;
           font-size: 14px;
+          border-radius: 0 !important;
           border-bottom: 3px dashed #CCAC6C;
         }
       }
@@ -717,27 +718,103 @@
   }
 
   &-slider {
-    width: 100%;
-    max-width: 50%;
+    width: 558px;
+    height: 301px;
+
+    &-card {
+      width: 558px;
+      height: 301px;
+      padding: 13px 10px;
+      border-radius: 19.55px !important;
+
+      &-header {
+        display: flex;
+
+        &-logo {
+          width: 60px;
+          height: 60px;
+          border-radius: 100px;
+
+          & img {
+            display: block;
+            width: inherit;
+            height: inherit;
+            border-radius: 100px;
+          }
+        }
+
+        &-context {
+          display: flex;
+          height: 60px;
+          margin-left: 15px;
+          align-items: center;
+        }
+
+        &-name {
+          color: #00007b;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      &-stars {
+        display: flex;
+        height: 30px;
+        align-items: center;
+      }
+      &-date {
+        margin-top: 5px;
+        margin-left: 10px;
+      }
+      &-description {
+        color: black;
+        height: 70px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        overflow-y: hidden;
+        white-space: pre-line;
+      }
+
+      &-images {
+        display: flex;
+        max-width: 540px;
+        overflow-x: hidden;
+        margin-top: 8px;
+
+        &-img {
+          display: block;
+          margin: 2px;
+          width: 108px;
+          height: 108px;
+          border-radius: 8px;
+          background: #333;
+          object-fit: cover;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
   }
 }
 
 .button-arrow {
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-  transform: rotate(90deg);
+  top: 15%;
+  left: -50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
   cursor: pointer;
 
   & span {
     display: block;
-    width: 10px;
-    height: 10px;
-    margin: -10px;
+    width: 8px;
+    height: 8px;
+    margin: -8px;
     transform: rotate(45deg);
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
     animation: animate 2s infinite;
 
     &:nth-child(2) {
