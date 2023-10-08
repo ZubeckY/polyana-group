@@ -42,7 +42,10 @@
                 <div class="hotelGroup-accordion-info">
                   <div class="hotelGroup-accordion-info-container">
                     <div class="hotelGroup-accordion-info-head">
-                      <logo-ultima class="hotelGroup-accordion-info-logo"/>
+
+                      <div class="hotelGroup-accordion-info-logo">
+                        <v-img :lazy-src="item.logohotel" :src="item.logohotel" alt="#" style="filter: invert(1);"/>
+                      </div>
 
                       <div class="hotelGroup-accordion-info-group">
                         <div class="hotelGroup-accordion-info-title">9.6</div>
@@ -192,7 +195,7 @@ export default class HotelGroup extends Vue {
     try {
       let {data, error} = await supaBase
         .from('hotels')
-        .select('id, title, travellineid, pricefrom')
+        .select('id, title, logohotel, travellineid, pricefrom')
         .order('id')
       this.hotelList = data
     } catch (e) {

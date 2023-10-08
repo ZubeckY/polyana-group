@@ -6,62 +6,64 @@
         <div class="footer-inner d-flex">
 
           <div class="footer-seeYouAtHotel">
-            <!-- До встречи в наших отелях -->
-            <div class="footer-seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
-            <v-chip-group class="footer-seeYouAtHotel-group mb-2" v-model="activeChip"
-                          mandatory column active-class="golden-gradient white--text">
-              <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
-                                            :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
-            </v-chip-group>
+            <div class="footer-seeYouAtHotel-container">
+              <!-- До встречи в наших отелях -->
+              <div class="footer-seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
+              <v-chip-group class="footer-seeYouAtHotel-group mb-2" v-model="activeChip"
+                            mandatory column active-class="golden-gradient white--text">
+                <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
+                                              :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
+              </v-chip-group>
 
-            <div class="footer-seeYouAtHotel-address d-flex">
-              <!-- Контакты адрес -->
-              <div class="footer-seeYouAtHotel-address-container">
-                <div class="footer-seeYouAtHotel-address-title footer-title my-3">Контакты</div>
-                <div class="footer-seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
-                  <div>{{localMapping[activeChip]['adress']}}</div>
-                </div>
-                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
-                  class="text-decoration-underline"><div>{{localMapping[activeChip]['telbron']}}</div></span>
-                  <span style="font-size: 12px">Отдел бронирования
+              <div class="footer-seeYouAtHotel-address d-flex">
+                <!-- Контакты адрес -->
+                <div class="footer-seeYouAtHotel-address-container">
+                  <div class="footer-seeYouAtHotel-address-title footer-title my-3">Контакты</div>
+                  <div class="footer-seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
+                    <div>{{localMapping[activeChip]['adress']}}</div>
+                  </div>
+                  <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a :href="'tel:'+localMapping[activeChip]['telbron']">{{localMapping[activeChip]['telbron']}}</a>
+                    <span style="font-size: 12px">
+                    Отдел бронирования
                     (09:00 - 21:00)</span>
-                </div>
-                <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><span
-                  class="text-decoration-underline">{{localMapping[activeChip]['telreception']}}</span>
-                  <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
+                  </div>
+                  <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a
+                    :href="'tel:'+localMapping[activeChip]['telreception']" >{{localMapping[activeChip]['telreception']}}</a>
+                    <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
                     Рецепция (круглосуточно)</span>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Слайдер -->
-              <div class="footer-seeYouAtHotel-photo">
-                <v-carousel class="footer-carousel" style="height: 247px"
-                            v-model="activeSlide" hide-delimiters>
-                  <template v-slot:prev="{ on, attrs }">
-                    <v-btn v-bind="attrs" v-on="on"
-                           min-height="0" min-width="0"
-                           width="34px" height="34px"
-                           elevation="0" rounded
-                           color="#ffffffb8" title="Назад">
-                      <chevron-left/>
-                    </v-btn>
-                  </template>
-                  <template v-slot:next="{ on, attrs }">
-                    <v-btn v-bind="attrs" v-on="on"
-                           min-height="0" min-width="0"
-                           width="34px" height="34px"
-                           elevation="0" rounded
-                           color="#ffffffb8" title="Вперёд">
-                      <chevron-right/>
-                    </v-btn>
-                  </template>
-                  <v-carousel-item class="footer-slide" style="position: relative"
-                                   v-for="(item, j) in localMapping[activeChip]['imgshotel']" :key="'photo-'+j" >
-                    <footer-slide :item="item" :isKey="j"/>
-                  </v-carousel-item>
-                </v-carousel>
-              </div>
+                <!-- Слайдер -->
+                <div class="footer-seeYouAtHotel-photo">
+                  <v-carousel class="footer-carousel" style="height: 247px"
+                              v-model="activeSlide" hide-delimiters>
+                    <template v-slot:prev="{ on, attrs }">
+                      <v-btn v-bind="attrs" v-on="on"
+                             min-height="0" min-width="0"
+                             width="34px" height="34px"
+                             elevation="0" rounded
+                             color="#ffffffb8" title="Назад">
+                        <chevron-left/>
+                      </v-btn>
+                    </template>
+                    <template v-slot:next="{ on, attrs }">
+                      <v-btn v-bind="attrs" v-on="on"
+                             min-height="0" min-width="0"
+                             width="34px" height="34px"
+                             elevation="0" rounded
+                             color="#ffffffb8" title="Вперёд">
+                        <chevron-right/>
+                      </v-btn>
+                    </template>
+                    <v-carousel-item class="footer-slide" style="position: relative"
+                                     v-for="(item, j) in localMapping[activeChip]['imgshotel']" :key="'photo-'+j" >
+                      <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
+                    </v-carousel-item>
+                  </v-carousel>
+                </div>
 
+              </div>
             </div>
           </div>
 

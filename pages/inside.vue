@@ -231,7 +231,7 @@
               </v-carousel>
 
               <div class="luxHoliday-slide-body">
-                <nuxt-img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg"/>
+                <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg"/>
                 <div class="luxHoliday-slide-title">{{ slider.title }}</div>
               </div>
             </div>

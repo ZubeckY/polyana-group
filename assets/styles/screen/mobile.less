@@ -342,8 +342,15 @@
       margin: 0 !important;
       padding: 0 !important;
 
+
+      &-container {
+        width: 100%;
+        margin: 30px auto 0;
+        max-width: 300px;
+      }
+
       &-address {
-        margin-top: 30px;
+        margin-top: 0 !important;
         align-items: center;
         justify-content: center;
         flex-direction: column !important;
@@ -454,11 +461,6 @@
     &-slide {
       width: 373px !important;
       height: 263px !important;
-
-      &-body {
-        width: 373px !important;
-        height: 263px !important;
-      }
     }
   }
 
@@ -669,6 +671,7 @@
     &-content {
       font-size: 12px !important;
       max-width: 336px !important;
+      padding: 0 10px !important;
       &-link {
         font-size: 12px !important;
       }
@@ -753,14 +756,12 @@
   .luxHoliday-slide {
     width: 340px !important;
     height: 240px !important;
+    &-mask {
+      width: 320px !important;
+    }
 
     &-title {
       font-size: 16px !important;
-    }
-
-    &-body {
-      width: 340px !important;
-      height: 240px !important;
     }
   }
 }
