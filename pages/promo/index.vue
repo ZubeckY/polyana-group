@@ -22,11 +22,11 @@
           <div class="specialOffers-promo-chips-container">
             <div class="specialOffers-promo-chips-title">По отелям:</div>
             <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="hotel" mandatory column
+              <v-chip-group v-model="hotel" column multiple
                             active-class="golden-gradient white--text">
                 <v-chip class="white" style="font-size: 12px; height: 31px;"
-                        v-for="(item, i) in hotels" :key="i"
-                        :value="item.value ? item.value : item.title">
+                        v-for="(item, i) in hotels"
+                        :key="i" :value="item.id">
                   {{ item.title }}
                 </v-chip>
               </v-chip-group>
@@ -38,11 +38,11 @@
           <div class="specialOffers-promo-chips-container">
             <div class="specialOffers-promo-chips-title">По КАТЕГОРИЯМ:</div>
             <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="category" mandatory column
+              <v-chip-group v-model="category" column multiple
                             active-class="golden-gradient white--text">
                 <v-chip class="white" style="font-size: 12px; height: 31px"
-                        v-for="(item, i) in categories" :key="i"
-                        :value="item.value ? item.value : item.title">
+                        v-for="(item, i) in categories"
+                        :key="i" :value="item.id">
                   {{ item.title }}
                 </v-chip>
               </v-chip-group>
@@ -64,26 +64,21 @@
   </div>
 </template>
 <script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
+import {Vue, Component, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
 export default class Promo extends Vue {
   data: any = []
-  hotel: string = '*'
-  category: string = '*'
+  hotel: any = [0]
+  category: any = [0]
   hotels: any = [
     {
-      title: 'Все',
-      value: '*'
+      id: 0,
+      title: 'Все'
     },
   ]
-  categories: any = [
-    {
-      title: 'Все',
-      value: '*'
-    },
-  ]
+  categories: any = []
   loading: boolean = true
   activeSlide: string = `background-image: url("/img/promo/background.webp")`
 
@@ -125,11 +120,41 @@ export default class Promo extends Vue {
     }
   }
 
+  @Watch('hotel')
+  @Watch('category')
+  changeHotelAndCategoryList() {
+    // category
+    if (!this.category.length) {
+      this.category.push(0)
+    } else if (this.category.length > 1) {
+      if (this.category[this.category.length - 1] == 0) {
+        this.category = [0]
+      } else {
+        this.category = this.category.includes(0) ? this.category.filter((num: number) => num !== 0) : this.category
+      }
+    }
+
+    // hotel
+    if (!this.hotel.length) {
+      this.hotel.push(0)
+    } else if (this.hotel.length > 1) {
+      if (this.hotel[this.hotel.length - 1] == 0) {
+        this.hotel = [0]
+      } else {
+        this.hotel = this.hotel.includes(0) ? this.hotel.filter((num: number) => num !== 0) : this.hotel
+      }
+    }
+  }
+
+  @Watch('hotel')
+  @Watch('category')
   async getData() {
     try {
       let {data, error} = await supaBase
         .from('specialoffer')
         .select('')
+        .contains('idhotel', [...this.hotel])
+        .contains('idcategory', [...this.category])
         .order('id')
 
       this.data = data
@@ -139,6 +164,5 @@ export default class Promo extends Vue {
       this.loading = false
     }
   }
-
 }
 </script>
