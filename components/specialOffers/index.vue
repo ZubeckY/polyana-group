@@ -23,7 +23,7 @@
         </div>
 
         <v-btn class="font-weight-regular white--text" style="border-radius: 14px; font-size: 14px"
-               href="'/promo'" width="255px" height="47px" elevation="0" color="golden-gradient">
+               href="/promo" width="255px" height="47px" elevation="0" color="golden-gradient">
           СМОТРЕТЬ ВСЕ АКЦИИ
         </v-btn>
       </v-card>

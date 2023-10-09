@@ -127,22 +127,16 @@ export default class Promo extends Vue {
     if (!this.category.length) {
       this.category.push(0)
     } else if (this.category.length > 1) {
-      if (this.category[this.category.length - 1] == 0) {
-        this.category = [0]
-      } else {
-        this.category = this.category.includes(0) ? this.category.filter((num: number) => num !== 0) : this.category
-      }
+      let item = this.category[this.category.length - 1]
+      this.category = [item]
     }
 
     // hotel
     if (!this.hotel.length) {
       this.hotel.push(0)
     } else if (this.hotel.length > 1) {
-      if (this.hotel[this.hotel.length - 1] == 0) {
-        this.hotel = [0]
-      } else {
-        this.hotel = this.hotel.includes(0) ? this.hotel.filter((num: number) => num !== 0) : this.hotel
-      }
+      let item = this.hotel[this.hotel.length - 1]
+      this.hotel = [item]
     }
   }
 
