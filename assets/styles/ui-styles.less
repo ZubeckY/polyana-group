@@ -850,7 +850,7 @@
   border-radius: 100%;
   background: var(--card-grey);
 
-  &.ultima {
+  &.inside {
     position: absolute;
     top: -24px;
     left: 51px;
@@ -1032,6 +1032,7 @@
 
     &-small {
       &-img {
+        display: block;
         width: 100%;
         height: 100%;
         cursor: pointer;
@@ -1098,6 +1099,8 @@
     position: sticky;
     top: 30px;
     align-self: flex-start; // <-fix
+    width: 100%;
+    max-width: 530px;
   }
 
   &-title {
