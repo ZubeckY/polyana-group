@@ -49,7 +49,7 @@ export default class SpecialOffersSlider extends Vue {
     try {
       let {data, error} = await supaBase
         .from('specialoffer')
-        .select('id, title, imgvertical, created_at')
+        .select('id, title, imgvertical, idcategory, created_at')
         .order('id')
       this.slides = data
     } catch (e) {

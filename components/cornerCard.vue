@@ -1,14 +1,7 @@
 <template>
   <v-card :href="goToPromo" class="corner-card" elevation="0" width="283px" height="420px" color="transparent">
     <div class="corner-card-header d-flex justify-space-between">
-      <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3">
-        <v-chip v-for="(category, j) in chips"
-                :key="'cornerCardChip'+j"
-                class="corner-card-header-chip font-weight-thin mr-1 mb-1"
-                color="var(--dark-color)" dark>
-          {{ category.title }}
-        </v-chip>
-      </div>
+      <corner-card-chips :item="item"/>
       <v-card class="corner-card-header--arrow d-flex justify-center align-center rounded-xxl"
               width="61px" height="61px" elevation="0" color="golden-gradient">
         <svg fill="#ffffff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -50,37 +43,17 @@
 </template>
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
-import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
 export default class CornerCard extends Vue {
   @Prop() item!: any
-  chips: any = []
-
-  async mounted() {
-    await this.getCategoriesToData(this.item.idcategory)
-  }
 
   get goToPromo() {
     return `/promo/${this.item.id}`
   }
-
-  async getCategoriesToData(idList: any) {
-    try {
-      let {data, error} = await supaBase
-        .from('categoryspecialoffer')
-        .select('id, title')
-        .in('id', [...idList])
-        .order('id')
-
-      this.chips = data
-    } catch (e) {
-      console.log(e)
-    }
-  }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .corner-card {
   position: relative;
   border-radius: 19.55px;
@@ -90,8 +63,8 @@ export default class CornerCard extends Vue {
     width: 100%;
 
     &-chip {
-      font-size: 12px !important;
       height: 25px;
+      font-size: 12px !important;
     }
 
     &-container {
