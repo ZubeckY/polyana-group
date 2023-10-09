@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer mb-8">
     <v-card class="footer-card d-flex align-center rounded-xxl"
             elevation="0" color="var(--card-grey)">
       <div class="footer-container general-container">
@@ -83,18 +83,18 @@
       </div>
     </v-card>
 
-    <div class="footer-mazur">
-      <div class="footer-mazur-container general-container d-flex align-end justify-space-between">
-        <div class="footer-mazur-polyana text-uppercase">Ⓒ polyana group | 2023</div>
-        <div class="footer-mazur-text text-right text-uppercase">
-          <div> РАЗРАБОТАНО <a class="text-decoration-none"
-                               href="https://mazurgroup.ru/"
-                               target="_blank">mazurgroup.ru</a>
-          </div>
-          <div>Политика конфиденциальности</div>
-        </div>
-      </div>
-    </div>
+<!--    <div class="footer-mazur">-->
+<!--      <div class="footer-mazur-container general-container d-flex align-end justify-space-between">-->
+<!--        <div class="footer-mazur-polyana text-uppercase">Ⓒ polyana group | 2023</div>-->
+<!--        <div class="footer-mazur-text text-right text-uppercase">-->
+<!--          <div> РАЗРАБОТАНО <a class="text-decoration-none"-->
+<!--                               href="https://mazurgroup.ru/"-->
+<!--                               target="_blank">mazurgroup.ru</a>-->
+<!--          </div>-->
+<!--          <div>Политика конфиденциальности</div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </footer>
 </template>
