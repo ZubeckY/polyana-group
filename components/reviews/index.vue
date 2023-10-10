@@ -69,7 +69,9 @@
       </div>
 
       <div class="reviews-slider">
-        <v-carousel hide-delimiters style="height: 301px; border-radius: 19.55px">
+        <v-carousel hide-delimiters
+                    show-arrows-on-hover
+                    style="height: 301px; border-radius: 19.55px">
           <template v-slot:prev="{ on, attrs }">
             <v-btn v-bind="attrs" v-on="on"
                    min-height="0" min-width="0"
@@ -88,34 +90,9 @@
               <chevron-right/>
             </v-btn>
           </template>
-          <v-carousel-item v-for="(item, i) in data" :key="'reviewIndex'+i">
-            <v-card class="reviews-slider-card" elevation="0">
-              <div class="reviews-slider-card-container">
-                <div class="reviews-slider-card-header">
-                  <div class="reviews-slider-card-header-logo">
-                    <img :src="item.photouser" alt="#">
-                  </div>
-                  <div class="reviews-slider-card-header-context">
-                    <div class="reviews-slider-card-header-name">
-                      {{ item.nameuser }}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="reviews-slider-card-body">
-                  <div class="reviews-slider-card-stars">
-                    <rating-yandex-star v-for="j in item.starrating" :key="'reviewIndexStar'+j"/>
-                    <div class="reviews-slider-card-date">{{ getElementDate(item.created_at) }}</div>
-                  </div>
-                  <div class="reviews-slider-card-description">{{ item.description }}</div>
-                  <div class="reviews-slider-card-images">
-                    <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
-                         :key="'reviewIndexImage'+k" :src="imgs" alt="#"/>
-                  </div>
-                </div>
-
-              </div>
-            </v-card>
+          <v-carousel-item v-for="(item, i) in data"
+                           :key="'reviewIndex'+i">
+            <reviews-card :item="item"/>
           </v-carousel-item>
         </v-carousel>
       </div>
@@ -140,17 +117,12 @@ export default class Reviews extends Vue {
       let {data, error} = await supaBase
         .from('reviews')
         .select('')
-        .order('id')
+        .order('created_at',  { ascending: false })
 
       this.data = data
     } catch (e) {
       console.log(e)
     }
-  }
-
-  getElementDate(date: any) {
-    const DATE = new Date(date)
-    return ((DATE.getMonth() > 8) ? (DATE.getMonth() + 1) : ('0' + (DATE.getMonth() + 1))) + '.' + ((DATE.getDate() > 9) ? DATE.getDate() : ('0' + DATE.getDate())) + '.' + DATE.getFullYear()
   }
 }
 </script>

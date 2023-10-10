@@ -53,41 +53,8 @@
               </div>
             </div>
 
-            <v-dialog class="restInPolyana-pictures-dialog"
-                      v-model="dialog" max-width="800px">
-              <v-carousel class="restInPolyana-pictures-carousel" hide-delimiters>
-                <v-btn @click="dialog = false"
-                       class="restInPolyana-pictures-carousel-close"
-                       min-height="0" min-width="0"
-                       width="34px" height="34px"
-                       elevation="0" rounded
-                       color="#ffffffb8" title="Назад">
-                  ╳
-                </v-btn>
-                <template v-slot:prev="{ on, attrs }">
-                  <v-btn v-bind="attrs" v-on="on"
-                         min-height="0" min-width="0"
-                         width="34px" height="34px"
-                         elevation="0" rounded
-                         color="#ffffffb8" title="Назад">
-                    <chevron-left/>
-                  </v-btn>
-                </template>
-                <template v-slot:next="{ on, attrs }">
-                  <v-btn v-bind="attrs" v-on="on"
-                         min-height="0" min-width="0"
-                         width="34px" height="34px"
-                         elevation="0" rounded
-                         color="#ffffffb8" title="Вперёд">
-                    <chevron-right/>
-                  </v-btn>
-                </template>
-                <v-carousel-item class="restInPolyana-pictures-slide"
-                                 v-for="(image, i) in data" style="height: 391px"
-                                 :key="'sliderImage'+i" :src="image">
-                </v-carousel-item>
-              </v-carousel>
-            </v-dialog>
+            <gallery-dialog @changeDialog="changeDialog"
+                            :dialog="dialog" :data="data"/>
 
           </div>
         </div>
@@ -266,6 +233,10 @@ export default class Inside extends Vue {
       }
       window.history.pushState(false, false, path);
     });
+  }
+
+  changeDialog (dialog: boolean) {
+    this.dialog = dialog
   }
 
   async getHotelSliders() {

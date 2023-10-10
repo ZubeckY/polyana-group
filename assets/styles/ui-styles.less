@@ -718,21 +718,28 @@
   }
 
   &-slider {
-    width: 558px;
+    width: 600px;
     height: 301px;
 
     &-card {
-      width: 558px;
+      width: 600px;
       height: 301px;
-      padding: 13px 10px;
+      padding: 15px 13px;
       border-radius: 19.55px !important;
 
       &-header {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-user {
+          display: flex;
+          align-self: center;
+        }
 
         &-logo {
-          width: 60px;
-          height: 60px;
+          width: 40px;
+          height: 40px;
           border-radius: 100px;
 
           & img {
@@ -743,16 +750,20 @@
           }
         }
 
+        &-hotel {
+          font-size: 14px;
+        }
+
         &-context {
           display: flex;
-          height: 60px;
+          height: 40px;
           margin-left: 15px;
           align-items: center;
         }
 
         &-name {
           color: #00007b;
-          font-size: 18px;
+          font-size: 14px;
           font-weight: bold;
         }
       }
@@ -761,17 +772,25 @@
         display: flex;
         height: 30px;
         align-items: center;
+
+        &-star {
+          width: 18px;
+          height: 18px;
+        }
       }
+
       &-date {
-        margin-top: 5px;
+        font-size: 13px;
+        margin-top: 2px;
         margin-left: 10px;
       }
+
       &-description {
         color: black;
-        height: 70px;
-        font-size: 14px;
+        height: 84px;
+        font-size: 13px;
         font-weight: 500;
-        line-height: 14px;
+        line-height: 13px;
         overflow-y: hidden;
         white-space: pre-line;
       }
@@ -781,6 +800,7 @@
         max-width: 540px;
         overflow-x: hidden;
         margin-top: 8px;
+        cursor: pointer;
 
         &-img {
           display: block;
@@ -1019,12 +1039,12 @@
         width: 100%;
         height: 100%;
         cursor: pointer;
-        object-fit: cover;
 
         & * {
           display: block;
           width: inherit;
           height: inherit;
+          object-fit: cover;
           border-radius: 19.55px;
         }
       }
@@ -1036,12 +1056,12 @@
         width: 100%;
         height: 100%;
         cursor: pointer;
-        object-fit: cover;
 
         & * {
           display: block;
           width: inherit;
           height: inherit;
+          object-fit: cover;
           border-radius: 19.55px;
         }
 
@@ -1065,28 +1085,6 @@
       }
     }
 
-    &-carousel,
-    &-slide {
-      width: 100% !important;
-      height: auto !important;
-      max-width: 800px !important;
-      max-height: 600px !important;
-      border-radius: 19.55px;
-    }
-
-    &-carousel {
-      position: relative;
-
-      &-close {
-        position: absolute !important;
-        top: 10px;
-        right: 10px;
-        z-index: 100;
-        color: #ff5252 !important;
-        font-size: 12px !important;
-        font-weight: bold !important;
-      }
-    }
   }
 }
 
@@ -1210,6 +1208,44 @@
       font-weight: 400;
       text-decoration: none;
       color: var(--dark-color) !important;
+    }
+  }
+}
+
+.gallery {
+  &-carousel {
+    position: relative;
+
+    &-close {
+      position: absolute !important;
+      top: 10px;
+      right: 10px;
+      z-index: 100;
+      color: #ff5252 !important;
+      font-size: 12px !important;
+      font-weight: bold !important;
+    }
+  }
+
+  &-slide {
+    margin: 0 auto;
+    width: 100vw !important;
+    height: auto !important;
+    max-width: 80%;
+    border-radius: 19.55px;
+
+    &-wrapper {
+      width: 100%;
+      height: 100%;
+      background: #51515150;
+      backdrop-filter: blur(50px);
+      border-radius: 19.55px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
