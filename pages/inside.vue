@@ -52,21 +52,11 @@
                 +35 фото
               </div>
             </div>
-
-            <gallery-dialog @changeDialog="changeDialog"
-                            :dialog="dialog" :data="data"/>
-
+            <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data"/>
           </div>
         </div>
       </div>
     </section>
-
-    <style>
-      .flexbox-wrapper {
-        display: flex;
-        justify-content: space-between;
-      }
-    </style>
 
     <section class="luxHoliday">
       <div class="luxHoliday-container flexbox-wrapper">
@@ -173,6 +163,7 @@
 
           </div>
         </div>
+
       </div>
     </section>
 
@@ -216,6 +207,11 @@ export default class Inside extends Vue {
   }
 
   mounted() {
+    let {hotel_id} = this.$router.currentRoute.query
+    if (!hotel_id) {
+      window.location.href = '/inside/?hotel_id=32513'
+    }
+
     window.addEventListener('DOMContentLoaded', function () {
       let hotel_id = "hotel_id";
       let regex = new RegExp(/hotel_id=\d+/g);

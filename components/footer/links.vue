@@ -13,7 +13,7 @@ export default class links extends Vue {
     { link: '/', title: 'О нас', },
     { link: '/', title: 'Блог', },
     { link: '/', title: 'Размещение', },
-    { link: '/', title: 'Услуги', },
+    { link: '/services', title: 'Услуги', },
     { link: '/', title: 'Специальные предложения', },
     { link: '/', title: 'Как добраться', },
     { link: '/', title: 'Трансфер', },

@@ -94,14 +94,16 @@ export default class Ultima extends Vue {
       title: 'Ресторан'
     },
     {
-      title: 'Услуги'
+      title: 'Услуги',
+      link: '/services'
     },
     {
       title: 'Акции',
       link: '/promo'
     },
     {
-      title: 'Отзывы'
+      title: 'Отзывы',
+      link: '/reviews'
     },
     {
       title: 'Контакты'
