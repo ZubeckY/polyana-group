@@ -43,7 +43,7 @@ export default class HotelsMenu extends Vue {
   }
 
   getHotelLink (hotel: any) {
-    return '/inside/?hotel_id=' + hotel.travellineid
+    return '/inside?hotel_id=' + hotel.travellineid
   }
 }
 </script>
