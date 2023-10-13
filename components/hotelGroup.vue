@@ -8,7 +8,9 @@
       </div>
       <div class="hotelGroup-body">
         <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
-          <v-expansion-panel class="hotelGroup-accordion-panel" v-for="(item, i) in hotelList" :key="'hotel-'+i">
+          <v-expansion-panel class="hotelGroup-accordion-panel" v-for="(item, i) in hotelList"
+                             :key="'hotel-'+i" :id="'hotel'+item.travellineid"
+                             @click="$router.push('#hotel'+item.travellineid)">
             <v-expansion-panel-header class="hotelGroup-accordion-head">
               <div class="hotelGroup-accordion-head-container">
                 <div class="hotelGroup-accordion-count">{{ getItemID(item) }}</div>
@@ -70,7 +72,7 @@
                   </div>
                 </div>
 
-                <div class="hotelGroup-accordion-gallery">
+                <div class="hotelGroup-accordion-gallery" @click="dialog = true">
                   <div class="hotelGroup-accordion-gallery-container d-flex">
                     <div class="hotelGroup-accordion-gallery-group d-flex">
                       <nuxt-img :src="item.imgshotel[0]"
@@ -99,7 +101,7 @@
                           Смотреть ещё +35 фото
                         </div>
                       </div>
-                      <div class="hotelGroup-accordion-info-footer mobile">
+                      <div class="hotelGroup-accordion-info-footer mobile" @click.stop>
                         <v-btn v-for="(button, j) in item.hoteltags"
                                class="hotelGroup-accordion-info-button"
                                :key="'linkToInsidePage'+j" elevation="0"
@@ -107,8 +109,8 @@
                         </v-btn>
                       </div>
                     </div>
-
                   </div>
+                  <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="item.imgshotel"/>
                 </div>
 
               </div>
@@ -130,6 +132,11 @@ import supaBase from "~/assets/scripts/supaBase";
 export default class HotelGroup extends Vue {
   hotels: number = 0
   hotelList: any = []
+  dialog: boolean = false
+
+  changeDialog (dialog: boolean) {
+    this.dialog = dialog
+  }
 
   async created() {
     try {
