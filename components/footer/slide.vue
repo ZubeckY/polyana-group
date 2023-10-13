@@ -36,7 +36,7 @@ export default class Slide extends Vue {
   @Prop() hotel!: string
 
   get getHotelLink () {
-    return '/inside?hotel_id=' + this.hotel.travellineid
+    return '/inside/?hotel_id=' + this.hotel.travellineid
   }
 }
 </script>

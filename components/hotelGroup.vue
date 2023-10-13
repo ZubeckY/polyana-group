@@ -147,47 +147,47 @@ export default class HotelGroup extends Vue {
   hotelButtons: any = [
     {
       title: 'Забронировать',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Об отеле',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Номера',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Акции',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Услуги',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Местоположение',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Что включено',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Fitness центр',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Кинотеатр',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'Ski-room',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     },
     {
       title: 'SPA',
-      link: '/inside?hotel_id='
+      link: '/inside/?hotel_id='
     }
   ]
 

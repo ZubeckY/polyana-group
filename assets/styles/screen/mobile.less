@@ -434,10 +434,61 @@
 
 @media (max-width: 800px) {
   /* header-booking */
-  .header-booking.ultima {
-    top: 30% !important;
-    left: 5% !important;
+  .header {
+    &-booking.ultima {
+      top: 30% !important;
+      left: 5% !important;
+    }
+
+
+    &-nav__menu-content {
+      &-body-container {
+        padding-top: 25px !important;
+      }
+
+      &-close {
+        width: 36.5px !important;
+
+        &-button {
+          width: 36px !important;
+          height: 36px !important;
+          font-size: 12px !important;
+        }
+
+        &-text {
+          font-size: 7px !important;
+        }
+      }
+
+      &-link {
+        &-count {
+          width: 50px !important;
+          height: 27px !important;
+          font-size: 14px !important;
+        }
+
+        &-title {
+          font-size: 22px !important;
+        }
+
+        &-arrow {
+          width: 16px !important;
+          height: 16px !important;
+        }
+      }
+
+      &-bookingInfo {
+        margin: 10px 0 !important;
+      }
+
+      &-footer {
+        margin-top: 30px;
+        padding-top: 20px !important;
+
+      }
+    }
   }
+
 
   /* luxHoliday */
   .luxHoliday {
@@ -652,6 +703,7 @@
 
   .reviews-slider {
     width: 100% !important;
+
     &-card {
       padding: 10px !important;
       width: 100% !important;

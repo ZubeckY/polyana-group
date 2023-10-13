@@ -209,7 +209,7 @@ export default class Inside extends Vue {
   mounted() {
     let {hotel_id} = this.$router.currentRoute.query
     if (!hotel_id) {
-      window.location.href = '/inside?hotel_id=32513'
+      window.location.href = '/inside/?hotel_id=32513'
     }
 
     window.addEventListener('DOMContentLoaded', function () {
