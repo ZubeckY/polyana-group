@@ -204,14 +204,13 @@ export default class Promo extends Vue {
       this.hotels.push(...array)
     } catch (e) {
       console.log(e)
-    } finally {
-      this.loading = false
     }
   }
 
   @Watch('hotel')
   async getData() {
     try {
+      this.loading = true
       if (this.hotel == 0) {
         let {data, error} = await supaBase
           .from('services')

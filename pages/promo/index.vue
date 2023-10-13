@@ -99,8 +99,6 @@ export default class Promo extends Vue {
       this.categories.push(...array)
     } catch (e) {
       console.log(e)
-    } finally {
-      this.loading = false
     }
   }
 
@@ -115,8 +113,6 @@ export default class Promo extends Vue {
       this.hotels.push(...array)
     } catch (e) {
       console.log(e)
-    } finally {
-      this.loading = false
     }
   }
 
@@ -144,6 +140,7 @@ export default class Promo extends Vue {
   @Watch('category')
   async getData() {
     try {
+      this.loading = true
       let {data, error} = await supaBase
         .from('specialoffer')
         .select('')

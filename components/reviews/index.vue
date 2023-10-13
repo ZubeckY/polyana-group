@@ -118,6 +118,7 @@ export default class Reviews extends Vue {
         .from('reviews')
         .select('')
         .order('created_at',  { ascending: false })
+        .limit(10)
 
       this.data = data
     } catch (e) {

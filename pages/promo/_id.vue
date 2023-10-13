@@ -54,6 +54,7 @@ export default class Promo extends Vue {
 
   async getData() {
     try {
+      this.loading = true
       let currentRoute = this.$router.currentRoute.path
       let getIdFromRoute = currentRoute.split('/')
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]

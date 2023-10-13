@@ -8,7 +8,7 @@
         <hotels-menu v-else>
           <div class="d-flex align-center">
             <link-component class="header-nav__link" :item="{title: 'Отели'}"/>
-            <chevron-down class="ml-1" :dark="true"/>
+            <chevron-down class="header-nav__link ml-1" :dark="true"/>
           </div>
         </hotels-menu>
 

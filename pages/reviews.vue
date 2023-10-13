@@ -36,9 +36,10 @@
 
         <div v-if="loading">Загрузка</div>
         <div v-else>
-          <div class="d-flex flex-wrap mt-3" v-if="data.length >= 1">
-            <div class="d-flex" v-for="(item, i) in data" :key="'review'+i">
-              <reviews-card style="margin-right: 15px; margin-bottom: 15px" :item="item"/>
+          <div class="specialOffers-promo-reviews mt-3" v-if="data.length >= 1">
+            <div class="specialOffers-promo-reviews-container">
+              <reviews-card class="specialOffers-promo-reviews-card"
+                            v-for="(item, i) in data" :key="'review'+i" :item="item"/>
             </div>
           </div>
           <div v-else>Ничего нет</div>
@@ -80,26 +81,25 @@ export default class Promo extends Vue {
       this.hotels.push(...array)
     } catch (e) {
       console.log(e)
-    } finally {
-      this.loading = false
     }
   }
 
   @Watch('hotel')
   async getData() {
     try {
+      this.loading = true
       if (this.hotel == 0) {
         let {data, error} = await supaBase
           .from('reviews')
           .select('')
-          .order('created_at',  { ascending: false })
+          .order('created_at', {ascending: false})
         this.data = data
       } else {
         let {data, error} = await supaBase
           .from('reviews')
           .select('')
           .eq('hoteltlid', this.hotel)
-          .order('created_at',  { ascending: false })
+          .order('created_at', {ascending: false})
         this.data = data
       }
     } catch (e) {
