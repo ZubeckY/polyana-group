@@ -45,7 +45,7 @@
 
             </div>
           </div>
-          <v-vertical-spacer v-if="!mobileTitle"/>
+          <v-vertical-spacer/>
           <div class="header-nav__menu-content-footer">
             <div class="header-nav__menu-content-footer-container general-container">
 
