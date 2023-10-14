@@ -83,7 +83,7 @@
           </v-card>
         </v-dialog>
       </div>
-      <v-btn class="feedbackForm-button shimmer-effect"
+      <v-btn class="feedbackForm-button shimmer-effect" href="/booking"
              width="276px" height="47px" elevation="0" dark>
         <div class="shimmer"></div>
         <div class="text">Забронировать</div>

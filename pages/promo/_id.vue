@@ -43,7 +43,11 @@
 import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
-@Component({})
+@Component({
+  head: {
+    title: 'Акция',
+  },
+})
 export default class Promo extends Vue {
   data: any = {}
   loading: boolean = true

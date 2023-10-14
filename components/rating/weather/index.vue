@@ -8,8 +8,7 @@
         </div>
       </div>
       <lazy-v-vertical-spacer/>
-      <div class="rating-card-text ma-0 pa-0">29 августа, Малооблачно,
-        без осадков.
+      <div class="rating-card-text ma-0 pa-0">{{ todayDate }}, {{ weather['weather'][0]['description'] }}.
       </div>
       <lazy-v-vertical-spacer/>
       <div class="d-flex align-center">
@@ -69,10 +68,24 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import openWeatherAPI from "~/assets/scripts/openWeatherAPI";
+
 @Component({})
 export default class Weather extends Vue {
   weather: any = {}
   async mounted () {this.weather = await this.getWeather ()}
   async getWeather () {return await openWeatherAPI.getWeather()}
+
+  get todayDate () {
+    let DATE = new Date()
+    let MONTHS = [
+      'января', 'февраля',
+      'марта', 'апреля',
+      'мая', 'июня',
+      'июля', 'августа',
+      'сентября', 'октября',
+      'ноября', 'декабря',
+    ]
+    return DATE.getDate() + ' ' + MONTHS[DATE.getMonth()]
+  }
 }
 </script>

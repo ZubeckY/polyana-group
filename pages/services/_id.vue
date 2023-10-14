@@ -43,7 +43,11 @@
 import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
-@Component({})
+@Component({
+  head: {
+    title: 'Услуга',
+  },
+})
 export default class Services extends Vue {
   data: any = []
   loading: boolean = false

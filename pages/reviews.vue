@@ -52,7 +52,11 @@
 import {Vue, Component, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
-@Component({})
+@Component({
+  head: {
+    title: 'Отзывы',
+  },
+})
 export default class Reviews extends Vue {
   data: any = []
   hotel: any = 0

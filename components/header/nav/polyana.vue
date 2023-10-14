@@ -44,10 +44,12 @@ export default class Polyana extends Vue {
       title: 'Отели'
     },
     {
-      title: 'Номера'
+      title: 'Номера',
+      link: '/booking'
     },
     {
-      title: 'Ресторан'
+      title: 'Ресторан',
+      link: '/restaurant'
     },
     {
       title: 'Услуги',
@@ -62,7 +64,8 @@ export default class Polyana extends Vue {
       link: '/reviews'
     },
     {
-      title: 'Контакты'
+      title: 'Контакты',
+      link: '/contacts'
     },
   ]
 

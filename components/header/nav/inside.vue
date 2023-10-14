@@ -15,8 +15,9 @@
                         :key="'u_link'+i" :item="item"/>
       </div>
 
-      <v-btn class="header-nav__link_social" min-width="0" min-height="0"
-             width="35px" height="35px" color="var(--card-grey)" elevation="0">
+      <v-btn class="header-nav__link_social" min-width="0" min-height="0" target="_blank"
+             width="35px" height="35px" color="var(--card-grey)" elevation="0"
+             href="https://api.whatsapp.com/send/?phone=79385555552&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%EF%BF%BD+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
           <g clip-path="url(#clip0_1622_571)">
             <path
@@ -31,8 +32,8 @@
         </svg>
       </v-btn>
 
-      <v-btn class="header-nav__link_social mx-3" min-width="0" min-height="0"
-             width="35px" height="35px" color="var(--card-grey)" elevation="0">
+      <v-btn class="header-nav__link_social mx-3" min-width="0" min-height="0" target="_blank"
+             width="35px" height="35px" color="var(--card-grey)" elevation="0" href="https://t.me/+79385555552">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
           <g clip-path="url(#clip0_1622_578)">
             <path
@@ -50,7 +51,8 @@
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
           <v-btn class="header-nav__reservation-phone-ultima font-weight-bold"
-                 :href="'tel:'+currentPhone" elevation="0" dark>{{ currentPhone }}</v-btn>
+                 :href="'tel:'+currentPhone" elevation="0" dark>{{ currentPhone }}
+          </v-btn>
         </div>
       </div>
     </div>
@@ -71,10 +73,11 @@ export default class Ultima extends Vue {
       let {path, query} = this.$router.currentRoute
       let {hotel_id} = query
 
+
       this.currentLogo = ''
       this.currentPhone = 'Загрузка...'
 
-      if (path.includes('/booking')) {
+      if (path.includes('/booking') || path.includes('/contacts')) {
         this.currentLogo = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
         this.currentPhone = '+7 989 009 55 77'
         this.showArrow = false
@@ -100,10 +103,12 @@ export default class Ultima extends Vue {
       link: '/'
     },
     {
-      title: 'Номера'
+      title: 'Номера',
+      link: '/booking'
     },
     {
-      title: 'Ресторан'
+      title: 'Ресторан',
+      link: '/restaurant'
     },
     {
       title: 'Услуги',
@@ -118,7 +123,8 @@ export default class Ultima extends Vue {
       link: '/reviews'
     },
     {
-      title: 'Контакты'
+      title: 'Контакты',
+      link: '/contacts'
     },
   ]
 }

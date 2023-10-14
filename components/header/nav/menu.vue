@@ -102,9 +102,8 @@
                         отвечаем онлайн</b>
                       <div class="d-flex ml-5">
                         <v-btn class="header-nav__menu-content-footer-whatsapp mr-2"
-                               min-width="0" min-height="0" width="35px"
-                               height="35px" color="var(--card-grey)"
-                               elevation="0" style="border-radius: 100px">
+                               min-width="0" min-height="0" width="35px" height="35px" color="var(--card-grey)" target="_blank"
+                               elevation="0" style="border-radius: 100px" href="https://api.whatsapp.com/send/?phone=79385555552&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%EF%BF%BD+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0">
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
                                fill="none">
                             <g clip-path="url(#clip0_1622_571)">
@@ -121,9 +120,8 @@
                         </v-btn>
 
                         <v-btn class="header-nav__menu-content-footer-telegram"
-                               min-width="0" min-height="0" width="35px"
-                               height="35px" color="var(--card-grey)"
-                               elevation="0" style="border-radius: 100px">
+                               min-width="0" min-height="0" width="35px" height="35px" color="var(--card-grey)" target="_blank"
+                               elevation="0" style="border-radius: 100px" href="https://t.me/+79385555552">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
                                fill="none">
                             <g clip-path="url(#clip0_1622_578)">
@@ -142,7 +140,7 @@
                     </div>
 
                     <v-btn class="header-nav__menu-content-footer-bookingBtn shimmer-effect white--text"
-                           color="golden-gradient" elevation="0" width="254.15px"
+                           color="golden-gradient" elevation="0" width="254.15px" href="/booking"
                            height="46.75px" style=";font-size: 13.6px; border-radius: 13.6px;">
                       <div class="shimmer"></div>
                       <div class="text">Забронировать</div>

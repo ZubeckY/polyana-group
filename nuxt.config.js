@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   components: true,
   server: {host: '0.0.0.0'},
   head: {
-    title: 'client',
+    title: 'Polyana group',
     titleTemplate: '%s - отдых на красной поляне',
     htmlAttrs: {lang: 'ru'},
     meta: [

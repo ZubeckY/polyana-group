@@ -66,7 +66,7 @@
                 elevation="0" color="var(--card-grey)">
           <div class="pinterest-card-container general-container">
 
-            <div class="pinterest-card-head mt-4">
+            <div class="pinterest-card-head mt-10">
               <div class="pinterest-card-title fontSize-xl--s d-inline-block">ДИЗАЙНЕРСКИЕ ОТЕЛИ
                 КАК С КАРТИНОК <span>
                 <svg class="pinterest-card-title--pinterest mb-1" xmlns="http://www.w3.org/2000/svg"

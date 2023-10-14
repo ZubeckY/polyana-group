@@ -5,37 +5,38 @@
       <div class="footer-container general-container">
         <div class="footer-inner d-flex">
 
-          <div class="footer-seeYouAtHotel">
-            <div class="footer-seeYouAtHotel-container">
+          <div class="seeYouAtHotel">
+            <div class="seeYouAtHotel-container">
               <!-- До встречи в наших отелях -->
-              <div class="footer-seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
-              <v-chip-group class="footer-seeYouAtHotel-group mb-2" v-model="activeChip"
+              <div class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
+              <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
                             mandatory column active-class="golden-gradient white--text">
                 <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
                                               :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
               </v-chip-group>
 
-              <div class="footer-seeYouAtHotel-address d-flex">
+              <div class="seeYouAtHotel-address d-flex">
                 <!-- Контакты адрес -->
-                <div class="footer-seeYouAtHotel-address-container">
-                  <div class="footer-seeYouAtHotel-address-title footer-title my-3">Контакты</div>
-                  <div class="footer-seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
+                <div class="seeYouAtHotel-address-container">
+                  <div class="seeYouAtHotel-address-title footer-title my-3">Контакты</div>
+                  <div class="seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
                     <div>{{ getAddressItem }}</div>
                   </div>
-                  <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a :href="'tel:'+getTelBronItem">{{getTelBronItem}}</a>
+                  <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
+                    :href="'tel:'+getTelBronItem">{{ getTelBronItem }}</a>
                     <span style="font-size: 12px">
                     Отдел бронирования
                     (09:00 - 21:00)</span>
                   </div>
-                  <div class="footer-seeYouAtHotel-address-text text-uppercase mt-2"><a
-                      :href="'tel:'+getTelTelReceptionItem" >{{getTelTelReceptionItem}}</a>
+                  <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
+                    :href="'tel:'+getTelTelReceptionItem">{{ getTelTelReceptionItem }}</a>
                     <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
                     Рецепция (круглосуточно)</span>
                   </div>
                 </div>
 
                 <!-- Слайдер -->
-                <div class="footer-seeYouAtHotel-photo">
+                <div class="seeYouAtHotel-photo">
                   <v-carousel class="footer-carousel" style="height: 247px"
                               v-model="activeSlide" hide-delimiters>
                     <template v-slot:prev="{ on, attrs }">
@@ -57,7 +58,7 @@
                       </v-btn>
                     </template>
                     <v-carousel-item class="footer-slide" style="position: relative"
-                                     v-for="(item, j) in getImgSHotel" :key="'photo-'+j" >
+                                     v-for="(item, j) in getImgSHotel" :key="'photo-'+j">
                       <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
                     </v-carousel-item>
                   </v-carousel>
@@ -83,18 +84,18 @@
       </div>
     </v-card>
 
-<!--    <div class="footer-mazur">-->
-<!--      <div class="footer-mazur-container general-container d-flex align-end justify-space-between">-->
-<!--        <div class="footer-mazur-polyana text-uppercase">Ⓒ polyana group | 2023</div>-->
-<!--        <div class="footer-mazur-text text-right text-uppercase">-->
-<!--          <div> РАЗРАБОТАНО <a class="text-decoration-none"-->
-<!--                               href="https://mazurgroup.ru/"-->
-<!--                               target="_blank">mazurgroup.ru</a>-->
-<!--          </div>-->
-<!--          <div>Политика конфиденциальности</div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <!--    <div class="footer-mazur">-->
+    <!--      <div class="footer-mazur-container general-container d-flex align-end justify-space-between">-->
+    <!--        <div class="footer-mazur-polyana text-uppercase">Ⓒ polyana group | 2023</div>-->
+    <!--        <div class="footer-mazur-text text-right text-uppercase">-->
+    <!--          <div> РАЗРАБОТАНО <a class="text-decoration-none"-->
+    <!--                               href="https://mazurgroup.ru/"-->
+    <!--                               target="_blank">mazurgroup.ru</a>-->
+    <!--          </div>-->
+    <!--          <div>Политика конфиденциальности</div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
 
   </footer>
 </template>
@@ -111,9 +112,9 @@ export default class Comp extends Vue {
   async created() {
     try {
       let {data, error} = await supaBase
-          .from('hotels')
-          .select('')
-          .order('id')
+        .from('hotels')
+        .select('')
+        .order('id')
       this.localMapping = data
     } catch (e) {
       console.log(e)
@@ -125,19 +126,19 @@ export default class Comp extends Vue {
     this.emptyActiveSlide()
   };
 
-  get getAddressItem () {
+  get getAddressItem() {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
   }
 
-  get getTelBronItem () {
+  get getTelBronItem() {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telbron'] : ''
   }
 
-  get getTelTelReceptionItem () {
+  get getTelTelReceptionItem() {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
   }
 
-  get getImgSHotel () {
+  get getImgSHotel() {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
   }
 
