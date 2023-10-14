@@ -95,10 +95,11 @@
                       </div>
                     </div>
                   </div>
-                  <v-btn class="luxHoliday-btn rounded-xxl mx-auto"
+                  <v-btn class="luxHoliday-btn shimmer-effect rounded-xxl mx-auto"
                          color="golden-gradient" elevation="0"
                          width="254px" height="47px" dark>
-                    Забронировать
+                    <div class="shimmer"></div>
+                    <div class="text">Забронировать</div>
                   </v-btn>
                 </div>
               </div>

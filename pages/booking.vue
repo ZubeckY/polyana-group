@@ -3,7 +3,7 @@
     <header class="header header-inside">
       <div class="header-inside-container booking">
         <div class="header-inside-container-inner">
-          <header-nav-ultima/>
+          <header-nav-inside/>
         </div>
       </div>
     </header>

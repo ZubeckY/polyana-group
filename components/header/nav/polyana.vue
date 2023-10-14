@@ -19,7 +19,10 @@
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
-          <v-btn class="header-nav__reservation-booking font-weight-bold" href="/booking" elevation="0" color="var(--golden-2)">Забронировать</v-btn>
+          <v-btn class="header-nav__reservation-booking shimmer-effect font-weight-bold" href="/booking" elevation="0" color="var(--golden-2)">
+            <div class="shimmer"></div>
+            <div class="text">Забронировать</div>
+          </v-btn>
           <v-btn class="header-nav__reservation-phone font-weight-bold" href="tel:+79890095577" elevation="0" dark>+7 989 009 5577</v-btn>
         </div>
       </div>

@@ -141,10 +141,11 @@
                       </div>
                     </div>
 
-                    <v-btn class="header-nav__menu-content-footer-bookingBtn white--text"
+                    <v-btn class="header-nav__menu-content-footer-bookingBtn shimmer-effect white--text"
                            color="golden-gradient" elevation="0" width="254.15px"
                            height="46.75px" style=";font-size: 13.6px; border-radius: 13.6px;">
-                      Забронировать
+                      <div class="shimmer"></div>
+                      <div class="text">Забронировать</div>
                     </v-btn>
                   </div>
 

@@ -83,10 +83,11 @@
           </v-card>
         </v-dialog>
       </div>
-
-      <div class="feedbackForm-actions mt-5">
-        <v-btn class="feedbackForm-button" elevation="0" dark>Забронировать</v-btn>
-      </div>
+      <v-btn class="feedbackForm-button shimmer-effect"
+             width="276px" height="47px" elevation="0" dark>
+        <div class="shimmer"></div>
+        <div class="text">Забронировать</div>
+      </v-btn>
       <div class="feedbackForm-conditions mt-3">
         Нажимая кнопку вы соглашаетесь с условиями Политики конфиденциальности
       </div>
@@ -189,27 +190,14 @@ export default class FeedbackForm extends Vue {
 
   &-button {
     color: white;
-    width: 276px;
-    height: 47px;
     font-size: 14px;
     font-weight: 500;
     font-style: normal;
     line-height: normal;
-    border-radius: 14px !important;
+    margin-top: 13.6px;
+    border-radius: 13.6px !important;
     background: linear-gradient(90deg,
       #CCAB6A -1.19%, #C1B397 177.44%) !important;
-    //box-shadow: 0 0 10px #000;
-    //margin-top: -(100/2)+px;
-    //margin-left: -(100/2)+px;
-    //animation: shimmer 3s ease-in-out infinite;
-    //background: linear-gradient(135deg,
-    //rgba(#CCAB6A, 0.9) 20%,
-    //rgba(#CCAB6A, 0.9) 35%,
-    //rgba(lighten(#CCAB6A, 10%), 0.9) 50%,
-    //rgba(#CCAB6A, 0.9) 65%,
-    //rgba(#CCAB6A, 0.9) 80%);
-    //background-size: 200%;
-    //background-position: 50%;
   }
 
   &-conditions {

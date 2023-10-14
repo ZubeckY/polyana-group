@@ -37,12 +37,12 @@
   }
 }
 
-@keyframes shimmer {
+@keyframes flareAnimation {
   0% {
-    background-position: 150%;
+    left: -150%;
   }
   100% {
-    background-position: -50%;
+    left: 150%;
   }
 }
 
@@ -96,6 +96,26 @@
     color: transparent;
     background-clip: text;
     background-image: var(--gradiend-golden);
+  }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+  & .shimmer {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 45px;
+    height: 60px;
+    transform: skewX(-45deg);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 3s infinite linear;
+  }
+
+  & .text {
+    position: relative;
+    z-index: 100;
   }
 }
 

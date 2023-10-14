@@ -7,7 +7,7 @@
           <div class="d-flex align-center">
             <chevron-down v-if="showArrow" class="header-nav__logo_chevron mt-3 mr-2" :dark="true"/>
             <div class="header-nav__logo">
-              <v-img :src="currentLogo" :lazy-src="currentLogo"/>
+              <v-img :src="currentLogo" :lazy-src="currentLogo" alt="Загрузка..."/>
             </div>
           </div>
         </hotels-menu>
@@ -49,8 +49,8 @@
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
-          <v-btn class="header-nav__reservation-phone-ultima font-weight-bold" elevation="0" dark>+7 989 009 5577
-          </v-btn>
+          <v-btn class="header-nav__reservation-phone-ultima font-weight-bold"
+                 :href="'tel:'+currentPhone" elevation="0" dark>{{ currentPhone }}</v-btn>
         </div>
       </div>
     </div>
@@ -63,6 +63,7 @@ import supaBase from "~/assets/scripts/supaBase";
 @Component({})
 export default class Ultima extends Vue {
   currentLogo: any = ''
+  currentPhone: string = 'Загрузка...'
   showArrow: boolean = true
 
   async created() {
@@ -70,17 +71,22 @@ export default class Ultima extends Vue {
       let {path, query} = this.$router.currentRoute
       let {hotel_id} = query
 
+      this.currentLogo = ''
+      this.currentPhone = 'Загрузка...'
+
       if (path.includes('/booking')) {
         this.currentLogo = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
+        this.currentPhone = '+7 989 009 55 77'
         this.showArrow = false
       } else {
         let {data, error} = await supaBase
           .from('hotels')
-          .select('id, logohotel, travellineid')
+          .select('id, logohotel, travellineid, telbron')
           .eq('travellineid', hotel_id)
 
         let currentData: any = data
         this.currentLogo = '' + currentData[0]['logohotel']
+        this.currentPhone = currentData[0]['telbron']
         this.showArrow = true
       }
     } catch (e) {
