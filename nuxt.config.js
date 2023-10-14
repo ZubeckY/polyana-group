@@ -49,7 +49,7 @@ export default defineNuxtConfig({
       {hid: 'og:locale ', property: 'og:locale ', content: 'ru_RU'}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', type: 'image/x-icon', href: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'},
       {rel: 'canonical', href: '/'}
     ]
   },

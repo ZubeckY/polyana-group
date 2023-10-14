@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header header-promo">
-      <div class="header-container" :style="activeSlide">
+      <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
           <header-nav-polyana/>
           <div class="header-promo-body">

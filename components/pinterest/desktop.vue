@@ -19,6 +19,6 @@
 import {Vue, Component} from 'vue-property-decorator';
 
 @Component({})
-export default class desktop extends Vue {
+export default class Desktop extends Vue {
 }
 </script>

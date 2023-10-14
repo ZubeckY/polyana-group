@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header header-promo">
-      <div class="header-container" :style="activeSlide">
+      <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
           <header-nav-polyana/>
           <div class="header-promo-body">
@@ -53,7 +53,7 @@ import {Vue, Component, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
-export default class Promo extends Vue {
+export default class Reviews extends Vue {
   data: any = []
   hotel: any = 0
   hotels: any = [

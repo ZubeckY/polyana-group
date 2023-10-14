@@ -8,7 +8,7 @@
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
 @Component({})
-export default class links extends Vue {
+export default class Links extends Vue {
   links: any = [
     { link: '/', title: 'О нас', },
     { link: '/', title: 'Блог', },

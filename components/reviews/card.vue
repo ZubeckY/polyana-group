@@ -40,7 +40,7 @@ import supaBase from "~/assets/scripts/supaBase";
 @Component({})
 export default class Card extends Vue {
   @Prop() item: any
-  hotelTitle: string = ''
+  hotelTitle: string = 'Загрузка...'
   dialog: boolean = false
 
   async created() {
@@ -50,6 +50,7 @@ export default class Card extends Vue {
   @Watch('item')
   async getItemHotelTitle() {
     try {
+      this.hotelTitle = 'Загрузка...'
       let {data, error} = await supaBase
         .from('hotels')
         .select('id, title, travellineid')

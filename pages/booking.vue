@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header header-inside">
-      <div class="header-inside-container">
+      <div class="header-inside-container booking">
         <div class="header-inside-container-inner">
           <header-nav-ultima/>
         </div>
@@ -15,11 +15,15 @@
       </div>
     </div>
 
+
     <section class="tl-section">
       <div class="tl-section-container">
-        <!-- start TL Booking form script -->
-        <div id="tl-booking-form">&nbsp;</div>
-        <!-- end TL Booking form script -->
+        <div class="tl-select-wrap">
+          <div id="tl-block-select">
+            <select id="tl-hotel-select"></select>
+          </div>
+          <div id="tl-booking-form">&nbsp;</div>
+        </div>
       </div>
     </section>
   </div>

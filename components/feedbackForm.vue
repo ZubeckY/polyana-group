@@ -72,14 +72,10 @@
                      min-width="0" min-height="0" style="font-size: 20px">╳
               </v-btn>
             </v-card-actions>
-            <v-date-picker v-model="model.date"
-                           width="360px"
-                           locale="ru-ru"
-                           prev-icon="⇦"
-                           next-icon="⇨"
-                           @change="save"
-                           :min="minDate"
-                           :max="maxDate"
+            <v-date-picker v-model="model.date" @change="save"
+                           width="360px" locale="ru-ru"
+                           prev-icon="⇦" next-icon="⇨"
+                           :min="minDate" :max="maxDate"
                            :show-adjacent-months="false"
                            no-title scrollable first-day-of-week="1"
                            :active-picker.sync="activePicker">
@@ -202,6 +198,18 @@ export default class FeedbackForm extends Vue {
     border-radius: 14px !important;
     background: linear-gradient(90deg,
       #CCAB6A -1.19%, #C1B397 177.44%) !important;
+    //box-shadow: 0 0 10px #000;
+    //margin-top: -(100/2)+px;
+    //margin-left: -(100/2)+px;
+    //animation: shimmer 3s ease-in-out infinite;
+    //background: linear-gradient(135deg,
+    //rgba(#CCAB6A, 0.9) 20%,
+    //rgba(#CCAB6A, 0.9) 35%,
+    //rgba(lighten(#CCAB6A, 10%), 0.9) 50%,
+    //rgba(#CCAB6A, 0.9) 65%,
+    //rgba(#CCAB6A, 0.9) 80%);
+    //background-size: 200%;
+    //background-position: 50%;
   }
 
   &-conditions {

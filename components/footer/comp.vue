@@ -103,7 +103,7 @@ import {Vue, Component, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
-export default class FooterComp extends Vue {
+export default class Comp extends Vue {
   activeChip: number = 0
   activeSlide: number = 0
   localMapping: any = []

@@ -5,7 +5,7 @@
         <header-nav-menu/>
         <hotels-menu>
           <div class="d-flex align-center">
-            <chevron-down class="header-nav__logo_chevron mt-3 mr-2" :dark="true"/>
+            <chevron-down v-if="showArrow" class="header-nav__logo_chevron mt-3 mr-2" :dark="true"/>
             <div class="header-nav__logo">
               <v-img :src="currentLogo" :lazy-src="currentLogo"/>
             </div>
@@ -15,11 +15,8 @@
                         :key="'u_link'+i" :item="item"/>
       </div>
 
-      <v-btn class="header-nav__link_social"
-             min-width="0" min-height="0"
-             width="35px" height="35px"
-             color="var(--card-grey)"
-             elevation="0">
+      <v-btn class="header-nav__link_social" min-width="0" min-height="0"
+             width="35px" height="35px" color="var(--card-grey)" elevation="0">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
           <g clip-path="url(#clip0_1622_571)">
             <path
@@ -34,11 +31,8 @@
         </svg>
       </v-btn>
 
-      <v-btn class="header-nav__link_social mx-3"
-             min-width="0" min-height="0"
-             width="35px" height="35px"
-             color="var(--card-grey)"
-             elevation="0">
+      <v-btn class="header-nav__link_social mx-3" min-width="0" min-height="0"
+             width="35px" height="35px" color="var(--card-grey)" elevation="0">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
           <g clip-path="url(#clip0_1622_578)">
             <path
@@ -55,28 +49,40 @@
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
-          <v-btn class="header-nav__reservation-phone-ultima font-weight-bold" elevation="0" dark>+7 989 009 5577</v-btn>
+          <v-btn class="header-nav__reservation-phone-ultima font-weight-bold" elevation="0" dark>+7 989 009 5577
+          </v-btn>
         </div>
       </div>
     </div>
   </nav>
 </template>
 <script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
+import {Vue, Component, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
+
 @Component({})
 export default class Ultima extends Vue {
   currentLogo: any = ''
-  async created () {
-    try {
-      let {hotel_id} = this.$router.currentRoute.query
-      let {data, error} = await supaBase
-        .from('hotels')
-        .select('id, logohotel, travellineid')
-        .eq('travellineid', hotel_id)
+  showArrow: boolean = true
 
-      let currentData: any = data
-      this.currentLogo = '' + currentData[0]['logohotel']
+  async created() {
+    try {
+      let {path, query} = this.$router.currentRoute
+      let {hotel_id} = query
+
+      if (path.includes('/booking')) {
+        this.currentLogo = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
+        this.showArrow = false
+      } else {
+        let {data, error} = await supaBase
+          .from('hotels')
+          .select('id, logohotel, travellineid')
+          .eq('travellineid', hotel_id)
+
+        let currentData: any = data
+        this.currentLogo = '' + currentData[0]['logohotel']
+        this.showArrow = true
+      }
     } catch (e) {
       console.log(e)
     }

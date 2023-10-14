@@ -19,7 +19,7 @@
     <section class="conditions">
       <div class="conditions-container general-container">
         <div class="conditions-head">
-          <div class="conditions-title">Условия акции</div>
+          <div class="conditions-title">Об услуге</div>
         </div>
         <div v-if="loading">Загрузка</div>
         <div v-else>
@@ -44,9 +44,9 @@ import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
-export default class Promo extends Vue {
-  data: any = {}
-  loading: boolean = true
+export default class Services extends Vue {
+  data: any = []
+  loading: boolean = false
 
   async created() {
     await this.getData()
@@ -60,7 +60,7 @@ export default class Promo extends Vue {
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
       let {data, error} = await supaBase
-        .from('specialoffer')
+        .from('services')
         .select('')
         .match({id: currentId})
 
@@ -73,7 +73,7 @@ export default class Promo extends Vue {
   }
 
   get activeSlide() {
-    return `background-image: url('${this.data.length >= 1 ? this.data[0]['imghorisontal'] : ''}')`
+    return `background-image: url('${this.data.length >= 1 ? this.data[0]['imgs'][0] : ''}')`
   }
 
   get activeTitle() {
