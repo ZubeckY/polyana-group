@@ -14,19 +14,19 @@
       </div>
     </header>
 
-    <div class="d-flex justify-space-between mt-14">
+    <div class="contacts d-flex justify-space-between mt-14">
       <div class="contacts-map">
         <div v-html="getYandexMap"></div>
         <div class="contacts-btn-group">
           <div class="contacts-btn-group-container">
             <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" elevation="0" target="_blank" :href="getYandexRoute">
+                   width="296px" height="40px" min-width="0" elevation="0" target="_blank" :href="getYandexRoute">
               <div class="shimmer"></div>
               <div class="text">ПОСМОТРЕТЬ МАРШРУТ</div>
             </v-btn>
 
             <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" elevation="0" href="/booking/?hotel_id=32513" :href="linkToBooking">
+                   width="296px" height="40px" min-width="0" elevation="0" href="/booking/?hotel_id=32513" :href="linkToBooking">
               <div class="shimmer"></div>
               <div class="text">Забронировать номер</div>
             </v-btn>
@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="seeYouAtHotel">
+      <div class="seeYouAtHotel contacts-comp">
         <div class="seeYouAtHotel-container">
           <!-- До встречи в наших отелях -->
           <div class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
@@ -94,19 +94,16 @@
       </div>
     </div>
 
-    <div class="">
-      <div class="">
-        <div class="mb-8 mt-10"
-             style="color: #000;font-size: 14.45px;font-weight: 700;line-height: normal;text-transform: uppercase;">
+    <div class="requisites">
+      <div class="requisites-container">
+        <div class="requisites-title mb-8 mt-10">
           РЕКВИЗИТЫ
         </div>
-        <div class="d-flex justify-space-between">
-          <div
-            style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+        <div class="d-flex flex-wrap justify-space-between">
+          <div style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
             {{ getYandexNameBusiness }}
           </div>
-          <div
-            style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+          <div style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
             {{ getYandexBankDetails }}
           </div>
         </div>
