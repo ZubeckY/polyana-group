@@ -24,7 +24,7 @@ export default class Content extends Vue {
     try {
       let {hotel_id} = this.$router.currentRoute.query
       if (!hotel_id) {
-        this.currentTitle = 'Без отеля'
+        this.currentTitle = 'Бронирование'
       } else {
         let {data, error} = await supaBase
           .from('hotels')

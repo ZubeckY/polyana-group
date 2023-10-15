@@ -26,30 +26,25 @@
             <div class="restInPolyana-pictures-large grid-item">
               <watch-inside/>
               <div class="restInPolyana-pictures-large-img">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                     :src="getImageByIndex(0)" alt="big-pic"/>
+                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
               </div>
               <div class="restInPolyana-pictures-large-body" @click.stop>
                 <header-booking-ultima/>
               </div>
             </div>
-            <div class="restInPolyana-pictures-small-img grid-item">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="getImageByIndex(1)" alt="pic-1"/>
+            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(1)">
+              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
             </div>
-            <div class="restInPolyana-pictures-small-img grid-item">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="getImageByIndex(2)" alt="pic-3"/>
+            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(2)">
+              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
             </div>
-            <div class="restInPolyana-pictures-small-img grid-item">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="getImageByIndex(3)" alt="pic-2"/>
+            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(3)">
+              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
             </div>
-            <div class="restInPolyana-pictures-small-img grid-item">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="getImageByIndex(4)" alt="pic-4"/>
+            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(4)">
+              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
               <div class="restInPolyana-pictures-small-img-more">
-                +35 фото
+                +{{ hotel ? hotel.imgshotel.length : 99 }} фото
               </div>
             </div>
             <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data"/>
@@ -226,7 +221,7 @@ export default class Inside extends Vue {
     });
   }
 
-  changeDialog (dialog: boolean) {
+  changeDialog(dialog: boolean) {
     this.dialog = dialog
   }
 
@@ -245,9 +240,10 @@ export default class Inside extends Vue {
     }
   }
 
-  getImageByIndex (i: number): string {
+  getImageByIndex(i: number): string {
     return this.data.length > 1 ? this.data[i] : 'https://placehold.co/900x600'
   }
+
   async getHotelInfo() {
     try {
       let {hotel_id} = this.$router.currentRoute.query
