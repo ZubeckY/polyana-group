@@ -27,7 +27,7 @@
               <watch-inside/>
               <div class="restInPolyana-pictures-large-img">
                 <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                     :src="data.length ? data[0] : 'https://placehold.co/900x600'" alt="big-pic"/>
+                     :src="getImageByIndex(0)" alt="big-pic"/>
               </div>
               <div class="restInPolyana-pictures-large-body" @click.stop>
                 <header-booking-ultima/>
@@ -35,19 +35,19 @@
             </div>
             <div class="restInPolyana-pictures-small-img grid-item">
               <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="data.length ? data[1] : 'https://placehold.co/200x200'" alt="pic-1"/>
+                   :src="getImageByIndex(1)" alt="pic-1"/>
             </div>
             <div class="restInPolyana-pictures-small-img grid-item">
               <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="data.length ? data[2] : 'https://placehold.co/200x200'" alt="pic-3"/>
+                   :src="getImageByIndex(2)" alt="pic-3"/>
             </div>
             <div class="restInPolyana-pictures-small-img grid-item">
               <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="data.length ? data[3] : 'https://placehold.co/200x200'" alt="pic-2"/>
+                   :src="getImageByIndex(3)" alt="pic-2"/>
             </div>
             <div class="restInPolyana-pictures-small-img grid-item">
               <img sizes="xs:200px md:500px lg:1024" loading="lazy"
-                   :src="data.length ? data[4] : 'https://placehold.co/200x200'" alt="pic-4"/>
+                   :src="getImageByIndex(4)" alt="pic-4"/>
               <div class="restInPolyana-pictures-small-img-more">
                 +35 фото
               </div>
@@ -75,10 +75,8 @@
                   отвечаем онлайн</b>
                 <div class="d-flex ml-4">
                   <v-btn class="mr-2" min-width="0" min-height="0"
-                         width="35px" height="35px"
-                         color="var(--card-grey)"
-                         elevation="0"
-                         style="border-radius: 100px">
+                         width="35px" height="35px" scolor="var(--card-grey)"
+                         elevation="0" style="border-radius: 100px">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
                       <g clip-path="url(#clip0_1622_571)">
                         <path
@@ -93,11 +91,8 @@
                     </svg>
                   </v-btn>
 
-                  <v-btn min-width="0" min-height="0"
-                         width="35px" height="35px"
-                         color="var(--card-grey)"
-                         elevation="0"
-                         style="border-radius: 100px">
+                  <v-btn min-width="0" min-height="0" width="35px" height="35px"
+                         color="var(--card-grey)" elevation="0" style="border-radius: 100px">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
                       <g clip-path="url(#clip0_1622_578)">
                         <path
@@ -250,6 +245,9 @@ export default class Inside extends Vue {
     }
   }
 
+  getImageByIndex (i: number): string {
+    return this.data.length > 1 ? this.data[i] : 'https://placehold.co/900x600'
+  }
   async getHotelInfo() {
     try {
       let {hotel_id} = this.$router.currentRoute.query
