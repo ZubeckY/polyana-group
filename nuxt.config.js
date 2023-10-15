@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   alias: {
     tslib: 'tslib/tslib.es6.js'
   },
-  ssr: true,
+  ssr: false,
   components: true,
   server: {host: '0.0.0.0'},
   head: {

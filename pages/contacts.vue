@@ -26,7 +26,7 @@
             </v-btn>
 
             <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" elevation="0" href="/booking" :href="linkToBooking">
+                   width="296px" height="40px" elevation="0" href="/booking/?hotel_id=32513" :href="linkToBooking">
               <div class="shimmer"></div>
               <div class="text">Забронировать номер</div>
             </v-btn>

@@ -114,7 +114,7 @@
                 </div>
               </div>
             </div>
-            <v-btn class="luxHoliday-btn shimmer-effect rounded-xxl mx-auto" href="/booking"
+            <v-btn class="luxHoliday-btn shimmer-effect rounded-xxl mx-auto" href="/booking/?hotel_id=32513"
                    color="golden-gradient" elevation="0" width="254px" height="47px" dark>
               <div class="shimmer"></div>
               <div class="text">Забронировать</div>
