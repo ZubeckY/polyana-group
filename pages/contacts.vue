@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <header class="header header-promo">
       <div class="header-container conditions" :style="slide">
         <div class="header-container-inner">
@@ -11,27 +10,23 @@
               <div class="header-promo-title mt-2">Контакты</div>
             </div>
           </div>
-
         </div>
       </div>
     </header>
 
-
     <div class="d-flex justify-space-between mt-14">
       <div class="contacts-map">
-        <div v-html="localMapping[0].yandexmap"></div>
-
+        <div v-html="getYandexMap"></div>
         <div class="contacts-btn-group">
           <div class="contacts-btn-group-container">
             <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" elevation="0"
-                   target="_blank" :href="localMapping[0].yandexroute">
+                   width="296px" height="40px" elevation="0" target="_blank" :href="getYandexRoute">
               <div class="shimmer"></div>
               <div class="text">ПОСМОТРЕТЬ МАРШРУТ</div>
             </v-btn>
 
             <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" elevation="0" href="/booking">
+                   width="296px" height="40px" elevation="0" href="/booking" :href="linkToBooking">
               <div class="shimmer"></div>
               <div class="text">Забронировать номер</div>
             </v-btn>
@@ -74,20 +69,16 @@
               <v-carousel class="footer-carousel" style="height: 247px"
                           v-model="activeSlide" hide-delimiters>
                 <template v-slot:prev="{ on, attrs }">
-                  <v-btn v-bind="attrs" v-on="on"
-                         min-height="0" min-width="0"
-                         width="34px" height="34px"
-                         elevation="0" rounded
-                         color="#ffffffb8" title="Назад">
+                  <v-btn v-bind="attrs" v-on="on" min-height="0" min-width="0"
+                         width="34px" height="34px" elevation="0"
+                         color="#ffffffb8" title="Назад" rounded>
                     <chevron-left/>
                   </v-btn>
                 </template>
                 <template v-slot:next="{ on, attrs }">
-                  <v-btn v-bind="attrs" v-on="on"
-                         min-height="0" min-width="0"
-                         width="34px" height="34px"
-                         elevation="0" rounded
-                         color="#ffffffb8" title="Вперёд">
+                  <v-btn v-bind="attrs" v-on="on" min-height="0" min-width="0"
+                         width="34px" height="34px" elevation="0"
+                         color="#ffffffb8" title="Вперёд" rounded>
                     <chevron-right/>
                   </v-btn>
                 </template>
@@ -105,13 +96,18 @@
 
     <div class="">
       <div class="">
-        <div class="mb-8 mt-10" style="color: #000;font-size: 14.45px;font-weight: 700;line-height: normal;text-transform: uppercase;">РЕКВИЗИТЫ</div>
+        <div class="mb-8 mt-10"
+             style="color: #000;font-size: 14.45px;font-weight: 700;line-height: normal;text-transform: uppercase;">
+          РЕКВИЗИТЫ
+        </div>
         <div class="d-flex justify-space-between">
-          <div style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
-            {{ localMapping[0].namebusiness }}
+          <div
+            style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+            {{ getYandexNameBusiness }}
           </div>
-          <div style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
-            {{localMapping[0].bankdetails}}
+          <div
+            style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+            {{ getYandexBankDetails }}
           </div>
         </div>
       </div>
@@ -151,6 +147,22 @@ export default class Contacts extends Vue {
     this.emptyActiveSlide()
   };
 
+  get getYandexMap() {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexmap : ''
+  }
+
+  get getYandexRoute() {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexroute : ''
+  }
+
+  get getYandexNameBusiness() {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].namebusiness : ''
+  }
+
+  get getYandexBankDetails() {
+    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].bankdetails : ''
+  }
+
   get getAddressItem() {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
   }
@@ -163,6 +175,10 @@ export default class Contacts extends Vue {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
   }
 
+  get linkToBooking() {
+    return this.localMapping[this.activeChip] ? '/booking/?hotel_id=' + this.localMapping[this.activeChip].travellineid : '/booking/?hotel_id=32513'
+  }
+
   get getImgSHotel() {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
   }
@@ -172,34 +188,3 @@ export default class Contacts extends Vue {
   };
 }
 </script>
-<style lang="less">
-.contacts {
-  &-map {
-    position: relative;
-    width: 675px;
-    height: 360px;
-  }
-
-  &-iframe {
-    width: 100%;
-    height: 100vh;
-    border: none;
-    outline: none;
-    max-height: 360px;
-    border-radius: 19.55px;
-  }
-
-  &-btn-group {
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-
-    &-container {
-      display: flex;
-      width: 96%;
-      margin: 0 auto;
-      justify-content: space-between;
-    }
-  }
-}
-</style>

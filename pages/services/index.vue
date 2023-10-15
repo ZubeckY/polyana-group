@@ -10,7 +10,6 @@
               <div class="header-promo-title mt-2">Услуги</div>
             </div>
           </div>
-
         </div>
       </div>
     </header>
@@ -55,7 +54,8 @@
                       <div class="d-flex ml-4">
                         <v-btn class="mr-2" min-width="0" min-height="0"
                                width="35px" height="35px" color="var(--card-grey)" target="_blank"
-                               elevation="0" style="border-radius: 100px" href="https://api.whatsapp.com/send/?phone=79385555552&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%EF%BF%BD+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0">
+                               elevation="0" style="border-radius: 100px"
+                               href="https://api.whatsapp.com/send/?phone=79385555552&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%EF%BF%BD+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0">
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19"
                                fill="none">
                             <g clip-path="url(#clip0_1622_571)">
@@ -71,7 +71,8 @@
                           </svg>
                         </v-btn>
 
-                        <v-btn min-width="0" min-height="0" width="35px" height="35px" color="var(--card-grey)" target="_blank"
+                        <v-btn min-width="0" min-height="0" width="35px" height="35px" color="var(--card-grey)"
+                               target="_blank"
                                elevation="0" style="border-radius: 100px" href="https://t.me/+79385555552">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"
                                fill="none">
@@ -100,32 +101,23 @@
 
               <div class="luxHoliday-body">
                 <div class="luxHoliday-body-container">
-                  <div class="luxHoliday-slide slider"
-                       v-for="(slider, i) in data"
-                       :key="'luxHoliday-slide'+i">
-
-                    <v-carousel class="luxHoliday-slide"
-                                style="height: 391px" hide-delimiters>
+                  <div class="luxHoliday-slide slider" v-for="(slider, i) in data" :key="'luxHoliday-slide'+i">
+                    <v-carousel class="luxHoliday-slide" style="height: 391px" hide-delimiters>
 
                       <template v-slot:prev="{ on, attrs }">
-                        <v-btn v-bind="attrs" v-on="on"
-                               min-height="0" min-width="0"
-                               width="34px" height="34px"
-                               elevation="0" rounded
-                               color="#ffffffb8" title="Назад">
+                        <v-btn v-bind="attrs" v-on="on" min-height="0" min-width="0"
+                               width="34px" height="34px" elevation="0"
+                               color="#ffffffb8" title="Назад" rounded>
                           <chevron-left/>
                         </v-btn>
                       </template>
                       <template v-slot:next="{ on, attrs }">
-                        <v-btn v-bind="attrs" v-on="on"
-                               min-height="0" min-width="0"
-                               width="34px" height="34px"
-                               elevation="0" rounded
-                               color="#ffffffb8" title="Вперёд">
+                        <v-btn v-bind="attrs" v-on="on" min-height="0" min-width="0"
+                               width="34px" height="34px" elevation="0"
+                               color="#ffffffb8" title="Вперёд" rounded>
                           <chevron-right/>
                         </v-btn>
                       </template>
-
 
                       <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id"
                                        class="luxHoliday-slide" :key="'lux-slide-'+j">
@@ -133,14 +125,15 @@
                       </v-carousel-item>
                     </v-carousel>
 
-                    <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3" style="position:absolute; top: 0px">
+                    <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3"
+                         style="position:absolute; top: 0">
                       <services-chip :item="slider"/>
                     </div>
 
-                    <div class="luxHoliday-slide-body">
+                    <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
                       <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg"/>
                       <div class="luxHoliday-slide-title">{{ slider.title }}</div>
-                    </div>
+                    </a>
                   </div>
 
                 </div>
@@ -204,8 +197,6 @@ export default class Services extends Vue {
         .from('hotels')
         .select('id, title, description, travellineid')
         .order('id')
-
-      console.log(data)
 
       let array: any = data
       this.hotels.push(...array)

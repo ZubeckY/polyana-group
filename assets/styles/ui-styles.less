@@ -209,10 +209,10 @@
 }
 
 .hotelGroup {
-  margin-top: 140px;
+  margin-top: 150px;
 
   &-title {
-    margin-bottom: 38px;
+    margin-bottom: 20px;
     white-space: pre-line;
   }
 
@@ -467,7 +467,7 @@
 
 /* specialOffers */
 .specialOffers {
-  margin-top: 85px;
+  margin-top: 60px;
 
   &-container {
     flex-direction: row;
@@ -552,9 +552,11 @@
 
 /* seasonPrograms */
 .seasonPrograms {
-  margin-top: 120px;
+  margin-top: 50px;
 
   &-item {
+    width: 63px;
+    height: 140px;
     margin-right: 5px;
     border-radius: 23px !important;
 
@@ -566,9 +568,9 @@
 
     &-text {
       position: absolute;
-      left: -50px;
-      top: 50px;
-      width: 165px;
+      left: -37px;
+      top: 40px;
+      width: 140px;
       height: 63px;
       background: rgba(217, 217, 217, 1);
       transform: rotate(-90deg);
@@ -586,10 +588,12 @@
   }
 
   &-card {
+    display: flex;
     margin: 0 5px;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    height: 140px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 19.55px;
 
     &-container {
       display: flex;
@@ -617,24 +621,24 @@
       font-weight: 400;
     }
 
-    &.free-transfer {
-      width: 380px;
+    &.small {
+      width: 323px;
     }
 
-    &.live-music {
-      width: 380px;
+    &.medium {
+      width: 336px
     }
 
-    &.fun-for-kids {
-      width: 570px;
+    &.large {
+      width: 485px;
     }
 
-    &.ski-room {
-      width: 570px;
+    &.summer {
+      background: rgba(217, 217, 217, 1);
     }
 
-    &.heated-pool {
-      width: 392px;
+    &.winter {
+      background: var(--cold-grey);
     }
   }
 
@@ -1100,7 +1104,7 @@
 
 /* luxHoliday */
 .luxHoliday {
-  margin-top: 80px;
+  margin-top: 60px;
 
   &-head {
     position: -webkit-sticky;
@@ -1304,9 +1308,11 @@
     height: 31.45px !important;
     font-size: 12px !important;
     font-weight: 400 !important;
+
     &:first-child {
       margin-left: 0 !important;
     }
+
     &:last-child {
       margin-right: 0 !important;
     }
@@ -1326,6 +1332,36 @@
       & a {
         color: black !important;
       }
+    }
+  }
+}
+
+.contacts {
+  &-map {
+    position: relative;
+    width: 675px;
+    height: 360px;
+  }
+
+  &-iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    outline: none;
+    max-height: 360px;
+    border-radius: 19.55px;
+  }
+
+  &-btn-group {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+
+    &-container {
+      display: flex;
+      width: 96%;
+      margin: 0 auto;
+      justify-content: space-between;
     }
   }
 }

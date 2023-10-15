@@ -18,18 +18,22 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
 export default class Content extends Vue {
-
   currentTitle: string = ''
-  async created () {
+
+  async created() {
     try {
       let {hotel_id} = this.$router.currentRoute.query
-      let {data, error} = await supaBase
+      if (!hotel_id) {
+        this.currentTitle = 'Без отеля'
+      } else {
+        let {data, error} = await supaBase
           .from('hotels')
           .select('id, title, travellineid')
           .eq('travellineid', hotel_id)
 
-      let currentData: any = data
-      this.currentTitle = '' + currentData[0].title
+        let currentData: any = data
+        this.currentTitle = '' + currentData[0].title
+      }
     } catch (e) {
       console.log(e)
     }

@@ -1,4 +1,4 @@
-(function (w) {
+export default function travelline (window) {
   let q = [
     ['setContext', 'TL-INT-polyanagroup-ru_2023-10-05', 'ru'],
     ['embed', 'booking-form', {
@@ -30,16 +30,16 @@
     }],
   ];
   let h = ["ru-ibe.tlintegration.ru", "ibe.tlintegration.ru", "ibe.tlintegration.com"];
-  let t = w.travelline = (w.travelline || {}),
+  let t = window.travelline = (window.travelline || {}),
     ti = t.integration = (t.integration || {});
   ti.__cq = ti.__cq ? ti.__cq.concat(q) : q;
   if (!ti.__loader) {
     ti.__loader = true;
-    let d = w.document, c = d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0];
+    let d = window.document, c = d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0];
 
     function e(s, f) {
       return function () {
-        w.TL || (c.removeChild(s), f())
+        window.TL || (c.removeChild(s), f())
       }
     }
 
@@ -55,4 +55,4 @@
       c.appendChild(s)
     })(h);
   }
-})(window)
+}

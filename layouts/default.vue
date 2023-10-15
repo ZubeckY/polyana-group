@@ -10,9 +10,12 @@
   </v-app>
 </template>
 <script lang="ts">
+import travelline from "~/assets/scripts/travelline";
 import {Component, Vue} from "vue-property-decorator"
-
 @Component({})
 export default class Default extends Vue {
+  mounted () {
+    travelline(window)
+  }
 }
 </script>

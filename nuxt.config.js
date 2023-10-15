@@ -4,13 +4,13 @@ import {defineNuxtConfig} from "@nuxt/bridge"
 
 export default defineNuxtConfig({
   bridge: {
-    typescript: true,
-    nitro: false
+    nitro: false,
+    typescript: true
   },
   alias: {
     tslib: 'tslib/tslib.es6.js'
   },
-  ssr: false,
+  ssr: true,
   components: true,
   server: {host: '0.0.0.0'},
   head: {
@@ -49,7 +49,11 @@ export default defineNuxtConfig({
       {hid: 'og:locale ', property: 'og:locale ', content: 'ru_RU'}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'},
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
+      },
       {rel: 'canonical', href: '/'}
     ]
   },
@@ -64,15 +68,13 @@ export default defineNuxtConfig({
     '~/assets/styles/ui-styles.less'
   ],
   plugins: [
-    '~/plugins/v_mask.js',
-    '~/plugins/travelline.js'
+    '~/plugins/v_mask.js'
   ],
   buildModules: [
     "nuxt-storm",
     '@nuxt/image',
     '@nuxtjs/dotenv',
     '@nuxtjs/vuetify'
-    // 'nuxt-webpack-optimisations'
   ],
   modules: [
     '@nuxtjs/axios',
@@ -83,9 +85,6 @@ export default defineNuxtConfig({
     'cookie-universal-nuxt',
     '@drozd/nuxt-performance'
   ],
-  dotenv: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-  },
   sitemap: {
     hostname: process.env.BASE_URL || 'http://localhost:3000'
   },
@@ -110,14 +109,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  // webpackOptimisations: {
-  //   esbuildLoaderOptions: {
-  //     client: {
-  //       minifyIdentifiers: false,
-  //       target: 'es2015'
-  //     }
-  //   }
-  // },
   cache: {
     useHostPrefix: false,
     pages: [
@@ -161,8 +152,7 @@ export default defineNuxtConfig({
     filenames: {
       app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
       chunk: ({
-                isDev,
-                isModern
+                isDev, isModern
               }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
     },
     html: {

@@ -22,7 +22,7 @@
           <div id="tl-block-select">
             <select id="tl-hotel-select"></select>
           </div>
-          <div id="tl-booking -form">&nbsp;</div>
+          <div id="tl-booking-form">&nbsp;</div>
         </div>
       </div>
     </section>
