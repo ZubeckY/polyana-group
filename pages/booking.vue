@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="header header-inside">
-      <div class="header-inside-container booking">
+      <div class="header-inside-container">
         <div class="header-inside-container-inner">
           <header-nav-inside/>
         </div>

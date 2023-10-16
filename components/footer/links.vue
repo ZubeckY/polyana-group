@@ -10,13 +10,13 @@ import {Vue, Component} from 'vue-property-decorator';
 @Component({})
 export default class Links extends Vue {
   links: any = [
-    { link: '/', title: 'О нас', },
-    { link: '/', title: 'Блог', },
-    { link: '/', title: 'Размещение', },
+    { link: '/services', title: 'О нас', },
+    { link: 'https://vk.com/ultimaclub', title: 'Блог', },
+    { link: '/booking', title: 'Размещение', },
     { link: '/services', title: 'Услуги', },
     { link: '/promo', title: 'Специальные предложения', },
     { link: '/contacts', title: 'Как добраться', },
-    { link: '/', title: 'Трансфер', },
+    // { link: '/', title: 'Трансфер', },
     { link: '/contacts', title: 'Реквизиты', },
     { link: '/contacts', title: 'Контакты', },
     { link: '/', title: 'Частые вопросы', class: 'mt-5' },

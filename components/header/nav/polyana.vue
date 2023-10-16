@@ -3,7 +3,7 @@
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
         <header-nav-menu/>
-        <div v-for="(item, i) in firstLinks" :key="'f_link'+i">
+        <div class="mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i">
           <hotels-menu v-if="item.title === 'Отели'">
             <div class="d-flex align-center">
               <link-component class="header-nav__link" :item="{title: 'Отели'}"/>
@@ -18,7 +18,7 @@
             </div>
           </hotels-menu>
 
-          <link-component class="header-nav__link mx-8" :item="item" v-else/>
+          <link-component class="header-nav__link" :item="item" v-else/>
         </div>
 
 

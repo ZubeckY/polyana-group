@@ -5,22 +5,21 @@
         <header-nav-menu/>
         <hotels-menu>
           <div class="d-flex align-center">
-            <chevron-down v-if="showArrow" class="header-nav__logo_chevron mt-3 mr-2" :dark="true"/>
-            <div class="header-nav__logo">
+            <div class="header-nav__logo ml-2">
               <v-img :src="currentLogo" :lazy-src="currentLogo" alt="Загрузка..."/>
             </div>
           </div>
         </hotels-menu>
 
-        <div v-for="(item, i) in links" :key="'f_link'+i">
+        <div class="mx-auto" v-for="(item, i) in links" :key="'f_link'+i">
           <hotels-menu v-if="item.title === 'Ресторан'" mode="restaurant">
-            <div class="header-nav__link restaurant d-flex align-center">
+            <div class="header-nav__link d-flex align-center">
               <link-component class="header-nav__link" :item="{title: 'Ресторан'}"/>
               <chevron-down class="header-nav__link ml-1" :dark="true"/>
             </div>
           </hotels-menu>
 
-          <link-component class="header-nav__link mx-8" :item="item" v-else/>
+          <link-component class="header-nav__link" :item="item" v-else/>
         </div>
       </div>
 
@@ -75,7 +74,6 @@ import supaBase from "~/assets/scripts/supaBase";
 export default class Ultima extends Vue {
   currentLogo: any = ''
   currentPhone: string = 'Загрузка...'
-  showArrow: boolean = true
 
   async created() {
     try {
@@ -89,7 +87,6 @@ export default class Ultima extends Vue {
       if (path.includes('/booking') || path.includes('/contacts')) {
         this.currentLogo = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
         this.currentPhone = '+7 989 009 55 77'
-        this.showArrow = false
       } else {
         let {data, error} = await supaBase
           .from('hotels')
@@ -99,7 +96,6 @@ export default class Ultima extends Vue {
         let currentData: any = data
         this.currentLogo = '' + currentData[0]['logohotel']
         this.currentPhone = currentData[0]['telbron']
-        this.showArrow = true
       }
     } catch (e) {
       console.log(e)
