@@ -10,7 +10,7 @@
     </template>
 
     <div style="width: 100%; margin: 0 auto; max-width: 1240px;">
-      <div class="py-4 px-2" style="background: #E8E8E8; border-radius: 16px;">
+      <div class="py-4 px-5" style="background: #E8E8E8; border-radius: 16px;">
         <div>
           <div class="d-flex justify-space-between mx-3 mt-2 mb-6">
             <div style="color: #000;
