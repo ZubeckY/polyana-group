@@ -3,14 +3,24 @@
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
         <header-nav-menu/>
-        <link-component class="header-nav__link mx-8" v-for="(item, i) in firstLinks" :key="'f_link'+i" :item="item"
-                        v-if="item.title !=='Отели'"/>
-        <hotels-menu v-else>
-          <div class="d-flex align-center">
-            <link-component class="header-nav__link" :item="{title: 'Отели'}"/>
-            <chevron-down class="header-nav__link ml-1" :dark="true"/>
-          </div>
-        </hotels-menu>
+        <div v-for="(item, i) in firstLinks" :key="'f_link'+i">
+          <hotels-menu v-if="item.title === 'Отели'">
+            <div class="d-flex align-center">
+              <link-component class="header-nav__link" :item="{title: 'Отели'}"/>
+              <chevron-down class="header-nav__link ml-1" :dark="true"/>
+            </div>
+          </hotels-menu>
+
+          <hotels-menu v-else-if="item.title === 'Ресторан'" mode="restaurant">
+            <div class="d-flex align-center">
+              <link-component class="header-nav__link" :item="{title: 'Ресторан'}"/>
+              <chevron-down class="header-nav__link ml-1" :dark="true"/>
+            </div>
+          </hotels-menu>
+
+          <link-component class="header-nav__link mx-8" :item="item" v-else/>
+        </div>
+
 
         <logo-small class="header-nav__logo"/>
         <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i"
@@ -49,7 +59,6 @@ export default class Polyana extends Vue {
     },
     {
       title: 'Ресторан',
-      link: '/restaurant'
     },
     {
       title: 'Услуги',

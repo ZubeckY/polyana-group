@@ -16,7 +16,7 @@
       </div>
     </header>
 
-    <section class="conditions">
+    <section class="conditions mt-8">
       <div class="conditions-container general-container">
         <div class="conditions-head">
           <div class="conditions-title">Условия акции</div>

@@ -408,6 +408,7 @@
         flex-direction: column;
 
         &-large {
+          cursor: pointer;
           width: 100%;
           height: auto;
           max-width: 420px;
@@ -416,6 +417,7 @@
         }
 
         &-small {
+          cursor: pointer;
           width: 49%;
           height: auto;
           max-width: 204px;
@@ -425,6 +427,7 @@
       }
 
       &-image {
+        cursor: pointer;
         width: 100%;
         height: auto;
         max-width: 306px;
@@ -590,7 +593,7 @@
   &-card {
     display: flex;
     margin: 0 5px;
-    height: 140px;
+    height: 150px;
     align-items: center;
     justify-content: center;
     border-radius: 19.55px;
@@ -631,6 +634,10 @@
 
     &.large {
       width: 485px;
+    }
+
+    &.superLarge {
+      width: 664px;
     }
 
     &.summer {
@@ -690,7 +697,9 @@
 
   &-cards {
     width: 100%;
-    max-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &-group {
       &-gradient {
@@ -703,6 +712,8 @@
           &-round {
             width: 38px;
             height: 38px;
+            background: white;
+            border-radius: 100%;
 
             &-img {
               width: 20px;
@@ -720,8 +731,6 @@
       }
 
       &-transparent {
-        margin-left: 30px;
-
         &-title {
           color: #000;
           font-size: 13px;
@@ -741,8 +750,32 @@
   }
 
   &-slider {
-    width: 585px;
+    width: 100%;
     height: 301px;
+    margin-top: 40px;
+
+    &-carousel {
+      width: 100%;
+      max-width: 585px !important;
+    }
+
+    &-arrow {
+      position:absolute;
+      width: 6.5px;
+      height: 6.5px;
+      transform: rotate(45deg);
+
+      &.prev {
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+      }
+
+      &.next {
+        left: -3px;
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+      }
+    }
 
     &-card {
       width: 585px;
@@ -845,19 +878,19 @@
 
 .button-arrow {
   position: absolute;
-  top: 15%;
+  top: -3px;
   left: -50%;
   transform: translate(-50%, -50%) rotate(-90deg);
   cursor: pointer;
 
   & span {
     display: block;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     margin: -8px;
     transform: rotate(45deg);
-    border-bottom: 3px solid white;
-    border-right: 3px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
     animation: animate 2s infinite;
 
     &:nth-child(2) {
@@ -1264,8 +1297,6 @@
 }
 
 .conditions {
-  //margin-top: 45px;
-
   &-head {
     margin-bottom: 23px;
   }
@@ -1355,11 +1386,11 @@
   &-btn-group {
     position: absolute;
     width: 100%;
-    bottom: 10px;
+    bottom: 20px;
 
     &-container {
       display: flex;
-      width: 96%;
+      width: 90%;
       margin: 0 auto;
       justify-content: space-between;
     }

@@ -11,8 +11,17 @@
             </div>
           </div>
         </hotels-menu>
-        <link-component class="header-nav__link mx-auto" v-for="(item, i) in links"
-                        :key="'u_link'+i" :item="item"/>
+
+        <div v-for="(item, i) in links" :key="'f_link'+i">
+          <hotels-menu v-if="item.title === 'Ресторан'" mode="restaurant">
+            <div class="header-nav__link restaurant d-flex align-center">
+              <link-component class="header-nav__link" :item="{title: 'Ресторан'}"/>
+              <chevron-down class="header-nav__link ml-1" :dark="true"/>
+            </div>
+          </hotels-menu>
+
+          <link-component class="header-nav__link mx-8" :item="item" v-else/>
+        </div>
       </div>
 
       <v-btn class="header-nav__link_social" min-width="0" min-height="0" target="_blank"

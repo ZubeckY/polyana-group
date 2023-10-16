@@ -139,16 +139,16 @@
                     <chevron-right/>
                   </v-btn>
                 </template>
-                <v-carousel-item v-for="(image, j) in slider.imgs"
+                <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id"
                                  class="luxHoliday-slide" :key="'lux-slide-'+j">
                   <img class="luxHoliday-slide-image" :src="image" alt="#"/>
                 </v-carousel-item>
               </v-carousel>
 
-              <div class="luxHoliday-slide-body">
+              <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
                 <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg"/>
                 <div class="luxHoliday-slide-title">{{ slider.title }}</div>
-              </div>
+              </a>
             </div>
 
           </div>
@@ -172,7 +172,7 @@
     <exclusive/>
 
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
-    <reviews/>
+    <reviews :hotelId="hotelId"/>
   </div>
 </template>
 <script lang="ts">
@@ -188,6 +188,7 @@ export default class Inside extends Vue {
   data: any = []
   hotel: any = []
   type: string = 'desktop'
+  hotelId: any = null
   dialog: boolean = false
   sliders: any = []
 
@@ -201,6 +202,8 @@ export default class Inside extends Vue {
     if (!hotel_id) {
       window.location.href = '/inside/?hotel_id=32513'
     }
+
+    this.hotelId = hotel_id
 
     window.addEventListener('DOMContentLoaded', function () {
       let hotel_id = "hotel_id";

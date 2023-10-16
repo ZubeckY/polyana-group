@@ -36,6 +36,10 @@
             <!-- подогреваемый бассеин -->
             <season-programs-heated-pool/>
           </div>
+          <div class="d-flex justify-space-between flex-wrap mt-2">
+            <season-programs-leisure/>
+            <season-programs-atmosphere/>
+          </div>
         </div>
       </div>
     </div>

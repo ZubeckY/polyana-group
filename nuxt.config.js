@@ -68,7 +68,8 @@ export default defineNuxtConfig({
     '~/assets/styles/ui-styles.less'
   ],
   plugins: [
-    '~/plugins/v_mask.js'
+    '~/plugins/v_mask.js',
+    '~/plugins/vue-slick-carousel.js'
   ],
   buildModules: [
     "nuxt-storm",

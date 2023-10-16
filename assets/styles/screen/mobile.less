@@ -43,6 +43,10 @@
 
       &__link {
         display: none !important;
+
+        &.restaurant {
+          margin: 0 !important;
+        }
       }
     }
 
@@ -97,16 +101,9 @@
 
   /* reviews */
   .reviews {
-    margin-top: 140px !important;
-
     &-container {
       flex-direction: column !important;
       justify-content: initial;
-    }
-
-    &-cards,
-    &-slider {
-      max-width: none !important;
     }
 
     &-cards {
@@ -799,6 +796,8 @@
 
   /* reviews-cards */
   .reviews {
+    margin-top: 10px !important;
+
     &-container {
       padding: 0 !important;
     }
@@ -857,6 +856,7 @@
   .header-nav__logo {
     max-width: 110px !important;
   }
+
   .header-nav__reservation-phone-ultima {
     width: 130px !important;
     font-size: 12px !important;
