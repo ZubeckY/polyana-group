@@ -30,15 +30,15 @@
             </linearGradient>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">ski-room хранилище для
+        <h4 class="seasonPrograms-card-title">ski-room хранилище для
           зимнего спортивного
           снаряжения
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Обеспечим безопасное хранение вашего зимнего
+      <p class="seasonPrograms-card-text">Обеспечим безопасное хранение вашего зимнего
         снаряжения с функцией эффективной сушки.
-      </div>
+      </p>
     </div>
   </div>
 </template>

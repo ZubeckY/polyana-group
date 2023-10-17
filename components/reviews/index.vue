@@ -3,9 +3,9 @@
     <div class="reviews-container general-container">
 
       <div class="reviews-cards">
-        <div class="reviews-title text-uppercase fontSize-xl--s pa-0">Наши гости делятся своими
+        <h3 class="reviews-title section-title text-uppercase fontSize-xl--s pa-0">Наши гости делятся своими
           впечатлениями об отдыхе
-        </div>
+        </h3>
 
         <div class="reviews-cards-group d-flex mt-4">
           <div class="reviews-cards-group-gradient">
@@ -50,7 +50,7 @@
           </template>
           <template #nextArrow="arrowOption">
             <v-btn style="right: -40px; z-index: 1000" min-height="0" min-width="0" width="34px" height="34px"
-                   elevation="0" rounded color="#ffffffb8" title="Назад">
+                   elevation="0" rounded color="#ffffffb8" title="Вперёд">
               <div class="reviews-slider-arrow next">&nbsp;</div>
             </v-btn>
           </template>
@@ -62,13 +62,13 @@
 <script lang="ts">
 import {Vue, Component, Prop} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import {eq} from "dom7";
 @Component
 export default class Reviews extends Vue {
-  @Prop() hotelId: any = null
-
+  @Prop() hotelId!: number
+  data: any = []
   settings: any = {
     arrows: true,
     slidesToShow: 3,
@@ -100,7 +100,6 @@ export default class Reviews extends Vue {
       }
     ]
   }
-  data: any = []
 
   async created() {
     await this.getData()

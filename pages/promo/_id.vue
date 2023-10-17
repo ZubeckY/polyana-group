@@ -8,7 +8,7 @@
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
               <breadcrumbs-button class="header-promo-back"/>
-              <div class="header-promo-title">{{ activeTitle }}</div>
+              <h1 class="header-promo-title">{{ activeTitle }}</h1>
             </div>
           </div>
 
@@ -19,14 +19,14 @@
     <section class="conditions mt-8">
       <div class="conditions-container general-container">
         <div class="conditions-head">
-          <div class="conditions-title">Условия акции</div>
+          <h2 class="conditions-title">Условия акции</h2>
         </div>
         <div v-if="loading">Загрузка</div>
         <div v-else>
           <div v-if="data.length >= 1">
             <div class="conditions-body">
               <div class="conditions-body-container">
-                <div class="conditions-text" v-html="activeDescription"></div>
+                <p class="conditions-text" v-html="activeDescription"></p>
                 <div class="conditions-form">
                   <feedback-form/>
                 </div>

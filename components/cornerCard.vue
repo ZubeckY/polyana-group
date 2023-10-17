@@ -1,9 +1,8 @@
 <template>
-  <v-card :href="goToPromo" class="corner-card" elevation="0" width="283px" height="420px" color="transparent">
+  <v-card class="corner-card" elevation="0" width="283px" height="420px" color="transparent" :href="goToPromo">
     <div class="corner-card-header d-flex justify-space-between">
       <corner-card-chips :item="item"/>
-      <v-card class="corner-card-header--arrow d-flex justify-center align-center rounded-xxl"
-              width="61px" height="61px" elevation="0" color="golden-gradient">
+      <div class="corner-card-header--arrow golden-gradient">
         <svg fill="#ffffff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -11,13 +10,12 @@
             <g data-name="Layer 2">
               <g data-name="diagonal-arrow-right-up">
                 <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                <path
-                  d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path>
+                <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path>
               </g>
             </g>
           </g>
         </svg>
-      </v-card>
+      </div>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" width="284" height="420" viewBox="0 0 284 420" fill="none">
@@ -33,10 +31,9 @@
     </svg>
 
     <v-card class="d-flex justify-center align-center" width="100%" color="transparent">
-      <v-card class="corner-card-text d-flex justify-center align-center"
-              elevation="0" color="transparent" width="246px" height="70px">
-        <div class="text-center">{{ item.title }}</div>
-      </v-card>
+      <div class="corner-card-text d-flex justify-center align-center">
+        <h4 class="text-center"> {{ item.title }}</h4>
+      </div>
     </v-card>
 
   </v-card>
@@ -72,9 +69,15 @@ export default class CornerCard extends Vue {
     }
 
     &--arrow {
+      display: flex;
       position: relative;
+      align-items: center;
+      justify-content: center;
       top: 0;
       right: 0;
+      width: 61px;
+      height: 61px;
+      border-radius: 19.55px;
     }
   }
 
@@ -86,12 +89,14 @@ export default class CornerCard extends Vue {
 
   &-text {
     display: flex;
+    position: absolute;
+    width: 246px;
+    height: 70px;
+    bottom: 26px;
     align-items: center;
     justify-content: center;
-    position: absolute !important;
-    bottom: 26px;
+    border-radius: 12px;
     color: var(--dark-color);
-    border-radius: 12px !important;
     backdrop-filter: blur(25px);
     background: linear-gradient(270deg,
     rgba(217, 217, 217, 0.40) 2.1%,
@@ -99,10 +104,10 @@ export default class CornerCard extends Vue {
 
     & * {
       color: var(--dark-color);
-      font-size: 13px !important;
-      font-weight: 500 !important;
+      font-size: 13px;
+      font-weight: 500;
       line-height: normal;
-      white-space: pre-line !important;
+      white-space: pre-line;
     }
   }
 }

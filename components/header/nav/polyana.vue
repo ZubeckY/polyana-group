@@ -3,28 +3,29 @@
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
         <header-nav-menu/>
-        <div class="mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i">
+        <div class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i">
           <hotels-menu v-if="item.title === 'Отели'">
             <div class="d-flex align-center">
-              <link-component class="header-nav__link" :item="{title: 'Отели'}"/>
-              <chevron-down class="header-nav__link ml-1" :dark="true"/>
+              <link-component :item="{title: 'Отели'}"/>
+              <chevron-down class="ml-1" :dark="true"/>
             </div>
           </hotels-menu>
 
           <hotels-menu v-else-if="item.title === 'Ресторан'" mode="restaurant">
             <div class="d-flex align-center">
-              <link-component class="header-nav__link" :item="{title: 'Ресторан'}"/>
-              <chevron-down class="header-nav__link ml-1" :dark="true"/>
+              <link-component :item="{title: 'Ресторан'}"/>
+              <chevron-down class="ml-1" :dark="true"/>
             </div>
           </hotels-menu>
 
-          <link-component class="header-nav__link" :item="item" v-else/>
+          <link-component :item="item" v-else/>
         </div>
 
-
         <logo-small class="header-nav__logo"/>
-        <link-component class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i"
-                        :item="item"/>
+
+        <div class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i">
+          <link-component :item="item"/>
+        </div>
       </div>
 
       <div class="header-nav__reservation ml-auto">

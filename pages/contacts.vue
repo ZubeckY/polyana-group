@@ -7,7 +7,7 @@
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
               <breadcrumbs-button class="header-promo-back"/>
-              <div class="header-promo-title mt-2">Контакты</div>
+              <h1 class="header-promo-title mt-2">Контакты</h1>
             </div>
           </div>
         </div>
@@ -26,7 +26,8 @@
             </v-btn>
 
             <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" min-width="0" elevation="0" href="/booking/?hotel_id=32513" :href="linkToBooking">
+                   width="296px" height="40px" min-width="0" elevation="0" href="/booking/?hotel_id=32513"
+                   :href="linkToBooking">
               <div class="shimmer"></div>
               <div class="text">Забронировать номер</div>
             </v-btn>
@@ -37,7 +38,7 @@
       <div class="seeYouAtHotel contacts-comp">
         <div class="seeYouAtHotel-container">
           <!-- До встречи в наших отелях -->
-          <div class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</div>
+          <h4 class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</h4>
           <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
                         mandatory column active-class="golden-gradient white--text">
             <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
@@ -47,8 +48,8 @@
           <div class="seeYouAtHotel-address d-flex">
             <!-- Контакты адрес -->
             <div class="seeYouAtHotel-address-container">
-              <div class="seeYouAtHotel-address-title footer-title my-3">Контакты</div>
-              <div class="seeYouAtHotel-address-text"><span class="text-uppercase">Адрес:</span>
+              <h4 class="seeYouAtHotel-address-title footer-title my-3">Контакты</h4>
+              <div class="seeYouAtHotel-address-text"><h4 class="text-uppercase">Адрес:</h4>
                 <div>{{ getAddressItem }}</div>
               </div>
               <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
@@ -69,18 +70,14 @@
               <v-carousel class="footer-carousel" style="height: 247px"
                           v-model="activeSlide" hide-delimiters>
                 <template v-slot:prev="{ on, attrs }">
-                  <v-btn v-bind="attrs" v-on="on" min-height="0" min-width="0"
-                         width="34px" height="34px" elevation="0"
-                         color="#ffffffb8" title="Назад" rounded>
-                    <chevron-left/>
-                  </v-btn>
+                  <div v-bind="attrs" v-on="on">
+                    <carousel-button-prev/>
+                  </div>
                 </template>
                 <template v-slot:next="{ on, attrs }">
-                  <v-btn v-bind="attrs" v-on="on" min-height="0" min-width="0"
-                         width="34px" height="34px" elevation="0"
-                         color="#ffffffb8" title="Вперёд" rounded>
-                    <chevron-right/>
-                  </v-btn>
+                  <div v-bind="attrs" v-on="on">
+                    <carousel-button-next/>
+                  </div>
                 </template>
                 <v-carousel-item class="footer-slide" style="position: relative"
                                  v-for="(item, j) in getImgSHotel" :key="'photo-'+j">
@@ -100,10 +97,12 @@
           РЕКВИЗИТЫ
         </div>
         <div class="d-flex flex-wrap justify-space-between">
-          <div style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+          <div
+            style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
             {{ getYandexNameBusiness }}
           </div>
-          <div style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+          <div
+            style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
             {{ getYandexBankDetails }}
           </div>
         </div>

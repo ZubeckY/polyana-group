@@ -8,7 +8,7 @@
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
               <breadcrumbs-button class="header-promo-back"/>
-              <div class="header-promo-title">{{ activeTitle }}</div>
+              <h1 class="header-promo-title">{{ activeTitle }}</h1>
             </div>
           </div>
 
@@ -19,14 +19,14 @@
     <section class="conditions mt-8">
       <div class="conditions-container general-container">
         <div class="conditions-head">
-          <div class="conditions-title">Об услуге</div>
+          <h2 class="conditions-title">Об услуге</h2>
         </div>
         <div v-if="loading">Загрузка</div>
         <div v-else>
           <div v-if="data.id">
             <div class="conditions-body">
               <div class="conditions-body-container">
-                <div class="conditions-text" v-html="activeDescription"></div>
+                <p class="conditions-text" v-html="activeDescription"></p>
                 <div class="conditions-form">
                   <feedback-form/>
                 </div>
@@ -65,43 +65,6 @@
         </div>
       </div>
     </section>
-
-<!--    <section class="service-gallery" @click="dialog = true">-->
-<!--      <div class="service-gallery-container general-container">-->
-<!--        <div class="service-gallery-img-1">-->
-<!--          <nuxt-img :src="getImageByIndex(0)"-->
-<!--                    sizes="xs:200px md:500px lg:1024" alt="#"-->
-<!--                    loading="lazy" quality="80" :placeholder="[50]"/>-->
-<!--        </div>-->
-<!--        <div class="service-gallery-img-2">-->
-<!--          <nuxt-img :src="getImageByIndex(1)"-->
-<!--                    sizes="xs:200px md:500px lg:1024" alt="#"-->
-<!--                    loading="lazy" quality="80" :placeholder="[50]"/>-->
-<!--        </div>-->
-<!--        <div class="service-gallery-img-3">-->
-<!--          <nuxt-img :src="getImageByIndex(2)"-->
-<!--                    sizes="xs:200px md:500px lg:1024" alt="#"-->
-<!--                    loading="lazy" quality="80" :placeholder="[50]"/>-->
-<!--        </div>-->
-<!--        <div class="service-gallery-img-4">-->
-<!--          <nuxt-img :src="getImageByIndex(3)"-->
-<!--                    sizes="xs:200px md:500px lg:1024" alt="#"-->
-<!--                    loading="lazy" quality="80" :placeholder="[50]"/>-->
-<!--        </div>-->
-<!--        <div class="service-gallery-img-5">-->
-<!--          <nuxt-img :src="getImageByIndex(4)"-->
-<!--                    sizes="xs:200px md:500px lg:1024" alt="#"-->
-<!--                    loading="lazy" quality="80" :placeholder="[50]"/>-->
-<!--        </div>-->
-<!--        <div class="service-gallery-img-6">-->
-<!--          <nuxt-img :src="getImageByIndex(5)"-->
-<!--                    sizes="xs:200px md:500px lg:1024" alt="#"-->
-<!--                    loading="lazy" quality="80" :placeholder="[50]"/>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data.imgs"/>-->
-<!--    </section>-->
-
   </div>
 </template>
 <script lang="ts">

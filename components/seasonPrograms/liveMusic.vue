@@ -105,14 +105,14 @@
             </linearGradient>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">Живая музыка
+        <h4 class="seasonPrograms-card-title">Живая музыка
           В БАРЕ У бассейна
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Живая музыка в баре у бассейна
+      <p class="seasonPrograms-card-text">Живая музыка в баре у бассейна
         создает идеальную атмосферу
-      </div>
+      </p>
     </div>
   </div>
 </template>

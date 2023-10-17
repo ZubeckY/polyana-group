@@ -42,8 +42,8 @@
           </g>
         </svg>
       </v-btn>
-      <v-btn class="rounded-lg" title="whatsapp" width="30px" height="30px" min-width="0" min-height="0"
-             elevation="0" color="#60a55f" target="_blank"
+      <v-btn class="rounded-lg" title="whatsapp" width="30px" height="30px"
+             min-width="0" min-height="0" elevation="0" color="#60a55f" target="_blank"
              href="https://api.whatsapp.com/send/?phone=79385555552&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%EF%BF%BD+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82&type=phone_number&app_absent=0">
         <svg fill="#ffffff" height="24px" width="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

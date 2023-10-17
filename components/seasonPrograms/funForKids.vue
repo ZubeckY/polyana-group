@@ -75,15 +75,15 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">Анимация для
+        <h4 class="seasonPrograms-card-title">Анимация для
           детей: веселье
           и ИГРЫ
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Наши маленькие гости не соскучатся благодаря
+      <p class="seasonPrograms-card-text">Наши маленькие гости не соскучатся благодаря
         увлекательной детской анимации с играми и развлечениями
-      </div>
+      </p>
     </div>
   </div>
 </template>

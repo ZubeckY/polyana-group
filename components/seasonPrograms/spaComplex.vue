@@ -35,14 +35,14 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">спа-комплекс: место
+        <h4 class="seasonPrograms-card-title">спа-комплекс: место
           Идеальное для отдыха
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Источник гармонии и ухода для полного
+      <p class="seasonPrograms-card-text">Источник гармонии и ухода для полного
         расслабления и восстановления здоровья
-      </div>
+      </p>
     </div>
   </div>
 </template>

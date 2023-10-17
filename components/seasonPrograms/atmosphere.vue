@@ -11,14 +11,14 @@
             </linearGradient>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">Сказочная зимняя атмосфера в отелЯХ ГРУППЫ
+        <h4 class="seasonPrograms-card-title">Сказочная зимняя атмосфера в отелЯХ ГРУППЫ
           ПОЛЯНА ГРУП
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">В зимнем отелях на Поляне уютно, тепло, сказочно, романтично, волшебно, украшено,
+      <p class="seasonPrograms-card-text">В зимнем отелях на Поляне уютно, тепло, сказочно, романтично, волшебно, украшено,
         празднично, вкусно, развлекательно, новогодне и незабываемо!
-      </div>
+      </p>
     </div>
   </div>
 </template>

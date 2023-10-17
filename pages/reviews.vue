@@ -7,7 +7,7 @@
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
               <breadcrumbs-button class="header-promo-back"/>
-              <div class="header-promo-title mt-2">ОТЗЫВЫ</div>
+              <h1 class="header-promo-title mt-2">ОТЗЫВЫ</h1>
             </div>
           </div>
 

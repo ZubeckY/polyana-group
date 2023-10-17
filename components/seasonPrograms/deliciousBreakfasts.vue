@@ -21,14 +21,14 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">Вкусные завтраки
+        <h4 class="seasonPrograms-card-title">Вкусные завтраки
           включены в стоимость
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">В отелях предоставляются бесплатные завтраки, которые
+      <p class="seasonPrograms-card-text">В отелях предоставляются бесплатные завтраки, которые
         отличаются высоким качеством и разнообразием блюд
-      </div>
+      </p>
     </div>
   </div>
 </template>

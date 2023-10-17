@@ -1,6 +1,5 @@
 <template>
-  <v-dialog class="watch-video-dialog"
-            persistent
+  <v-dialog class="watch-video-dialog" persistent
             v-model="dialog" max-width="800px"
             transition="scale-transition">
     <template v-slot:activator="{ on, attrs }">
@@ -19,22 +18,21 @@
           ╳
         </v-btn>
         <div class="watch-video-player-container">
-          <iframe width="95%" height="450px"
-                  style="border-radius: 19.55px;"
-                  src="https://www.youtube.com/embed/igFTm9rzAco?si=CcV-gj-Wqr9eYJ1r"
-                  title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
+          <iframe width="95%" height="450px" style="border-radius: 19.55px;" :src="link"
+                  title="YouTube video player" frameborder="0" allowfullscreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
         </div>
       </div>
     </div>
   </v-dialog>
 </template>
 <script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
+import {Vue, Component, Prop} from 'vue-property-decorator';
 
 @Component({})
 export default class Dialog extends Vue {
+
+  @Prop() link!: string
   dialog: boolean = false
 }
 </script>

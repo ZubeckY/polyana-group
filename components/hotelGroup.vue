@@ -2,9 +2,9 @@
   <section class="hotelGroup">
     <div class="hotelGroup-container">
       <div class="hotelGroup-head">
-        <div class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
+        <h3 class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
           POLYANA GROUP на красной поляне
-        </div>
+        </h3>
       </div>
       <div class="hotelGroup-body">
         <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
@@ -14,7 +14,7 @@
             <v-expansion-panel-header class="hotelGroup-accordion-head">
               <div class="hotelGroup-accordion-head-container">
                 <div class="hotelGroup-accordion-count">{{ getItemID(item) }}</div>
-                <div class="hotelGroup-accordion-title desktop">{{ item.title }}</div>
+                <h4 class="hotelGroup-accordion-title desktop">{{ item.title }}</h4>
                 <div class="hotelGroup-accordion-price">от {{ getItemPrice(item) }} руб.</div>
                 <div class="hotelGroup-accordion-card">
                   <svg class="hotelGroup-accordion-card-svg" fill="#ffffff" viewBox="0 0 24 24"
@@ -33,7 +33,7 @@
                   </svg>
                 </div>
               </div>
-              <div class="hotelGroup-accordion-title mobile">{{ item.title }}</div>
+              <h4 class="hotelGroup-accordion-title mobile">{{ item.title }}</h4>
               <template v-slot:actions>
                 <div></div>
               </template>
@@ -61,7 +61,7 @@
                         <div class="hotelGroup-accordion-info-text">отзывов</div>
                       </div>
                     </div>
-                    <div class="hotelGroup-accordion-info-body">{{ item.hoteldescription }}</div>
+                    <p class="hotelGroup-accordion-info-body">{{ item.hoteldescription }}</p>
                     <div class="hotelGroup-accordion-info-footer desktop">
                       <v-btn v-for="(button, j) in item.hoteltags"
                              class="hotelGroup-accordion-info-button"

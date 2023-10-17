@@ -43,14 +43,14 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">ПОДОГРЕВАЕМЫй
+        <h4 class="seasonPrograms-card-title">ПОДОГРЕВАЕМЫй
           БАССЕЙН
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Насладитесь всегда теплым бассейном:
+      <p class="seasonPrograms-card-text">Насладитесь всегда теплым бассейном:
         +30 градусов круглый год! *
-      </div>
+      </p>
     </div>
   </div>
 </template>

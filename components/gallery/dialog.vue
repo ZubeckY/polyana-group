@@ -10,22 +10,14 @@
         ╳
       </v-btn>
       <template v-slot:prev="{ on, attrs }">
-        <v-btn v-bind="attrs" v-on="on"
-               min-height="0" min-width="0"
-               width="34px" height="34px"
-               elevation="0" rounded
-               color="#ffffffb8" title="Назад">
-          <chevron-left/>
-        </v-btn>
+        <div v-bind="attrs" v-on="on">
+          <carousel-button-prev/>
+        </div>
       </template>
       <template v-slot:next="{ on, attrs }">
-        <v-btn v-bind="attrs" v-on="on"
-               min-height="0" min-width="0"
-               width="34px" height="34px"
-               elevation="0" rounded
-               color="#ffffffb8" title="Вперёд">
-          <chevron-right/>
-        </v-btn>
+        <div v-bind="attrs" v-on="on">
+          <carousel-button-next/>
+        </div>
       </template>
       <v-carousel-item class="gallery-slide"
                        v-for="(image, i) in data" :key="'sliderImage'+i">

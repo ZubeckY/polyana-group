@@ -27,15 +27,15 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">БЕСПЛАТНЫЙ
+        <h4 class="seasonPrograms-card-title">БЕСПЛАТНЫЙ
           ТРАНСФЕР
           ДО ПЛЯЖА
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Наши гости могут воспользоваться
+      <p class="seasonPrograms-card-text">Наши гости могут воспользоваться
         бесплатным трансфером до пляжа
-      </div>
+      </p>
     </div>
   </div>
 </template>

@@ -16,15 +16,15 @@
             </clipPath>
           </defs>
         </svg>
-        <div class="seasonPrograms-card-title">Активный отдых на Красной
+        <h4 class="seasonPrograms-card-title">Активный отдых на Красной
           Поляне: аренда зимнего
           спортивного снаряжения
-        </div>
+        </h4>
       </div>
       <v-vertical-spacer/>
-      <div class="seasonPrograms-card-text">Арендуйте спортивное снаряжение для активного отдыха и
+      <p class="seasonPrograms-card-text">Арендуйте спортивное снаряжение для активного отдыха и
         наслаждайтесь зимними видами спорта без лишних затрат.
-      </div>
+      </p>
     </div>
   </div>
 </template>
