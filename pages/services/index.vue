@@ -45,7 +45,7 @@
                     с комфортом!
                   </h3>
                   <div class="luxHoliday-text">
-                    <div v-html="hotels[hotel].description"></div>
+                    <p v-html="hotels[hotel].description"></p>
 
                     <div class="d-flex mt-4">
                       <b>Спрашивайте,

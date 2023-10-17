@@ -10,9 +10,9 @@
     </template>
 
     <div style="width: 100%; margin: 0 auto; max-width: 1240px;">
-      <div class="py-4 px-5" style="background: #E8E8E8; border-radius: 16px;">
+      <div class="py-4" style="background: #E8E8E8; border-radius: 16px;">
         <div>
-          <div class="d-flex justify-space-between mx-3 mt-2 mb-6">
+          <div class="d-flex justify-space-between mx-3 mt-2 mb-6 py-2 px-5" style="position:sticky; top: 0; background: #E8E8E8">
             <div style="color: #000;
                   font-size: 36px;
                   font-weight: 700;
@@ -28,7 +28,7 @@
               </svg>
             </v-btn>
           </div>
-          <div class="d-flex justify-space-between flex-wrap">
+          <div class="d-flex justify-space-between flex-wrap px-5">
             <!-- Бесплатный трансфер до пляжа -->
             <season-programs-free-transfer-beach/>
             <!-- Живая музыка в баре у бассейна -->
@@ -36,7 +36,7 @@
             <!-- Анимация для детей: веселье и игры -->
             <season-programs-fun-for-kids/>
           </div>
-          <div class="d-flex justify-space-between flex-wrap mt-2">
+          <div class="d-flex justify-space-between flex-wrap mt-2 px-5">
             <!-- Вкусные завтраки включены в стоимость -->
             <season-programs-delicious-breakfasts/>
             <!-- Подогреваемый бассеин -->
