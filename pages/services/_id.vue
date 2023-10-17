@@ -16,9 +16,15 @@
       </div>
     </header>
 
-    <section class="conditions mt-8">
+    <section class="conditions mt-6">
       <div class="conditions-container general-container">
         <div class="conditions-head">
+
+          <div class="mb-3">
+            <div class="conditions-title mb-2">Отель</div>
+            <services-chip :item="data" style="margin-left: -5px"/>
+          </div>
+
           <h2 class="conditions-title">Об услуге</h2>
         </div>
         <div v-if="loading">Загрузка</div>
@@ -99,7 +105,7 @@ export default class Services extends Vue {
 
       let DATA: any = data
       this.data = DATA[0]
-      console.log(this.data)
+
     } catch (e) {
       console.log(e)
     } finally {

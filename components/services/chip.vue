@@ -10,6 +10,7 @@ import supaBase from "~/assets/scripts/supaBase";
 @Component({})
 export default class Chip extends Vue {
   @Prop() item: any
+  @Prop() isValue?: boolean
   hotelTitle: string = 'Загрузка...'
 
   async created() {
@@ -21,13 +22,18 @@ export default class Chip extends Vue {
     try {
       this.hotelTitle = 'Загрузка...'
 
-      let {data, error} = await supaBase
-        .from('hotels')
-        .select('id, title, travellineid')
-        .eq('travellineid', this.item.travellineid)
+      if (!this.isValue) {
+        let {data, error} = await supaBase
+          .from('hotels')
+          .select('id, title, travellineid')
+          .eq('travellineid', this.item.travellineid)
 
-      const DATA: any = data
-      this.hotelTitle = DATA[0].title
+        const DATA: any = data
+        this.hotelTitle = DATA[0].title
+      } else {
+        this.hotelTitle = this.item.title
+      }
+
     } catch (e) {
       console.log(e)
     }

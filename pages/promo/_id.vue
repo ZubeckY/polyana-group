@@ -16,9 +16,10 @@
       </div>
     </header>
 
-    <section class="conditions mt-8">
+    <section class="conditions mt-6">
       <div class="conditions-container general-container">
         <div class="conditions-head">
+          <services-chip-list :data="data.length >= 1 ? data : []"/>
           <h2 class="conditions-title">Условия акции</h2>
         </div>
         <div v-if="loading">Загрузка</div>
