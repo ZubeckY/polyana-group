@@ -45,7 +45,7 @@ export default class HotelsMenu extends Vue {
   }
 
   getHotelLink(hotel: any) {
-    return this.mode === 'restaurant' ? this.switchRestaurantLink(hotel.travellineid) : '/inside/?hotel_id=' + hotel.travellineid
+    return this.mode === 'restaurant' ? this.switchRestaurantLink(hotel.travellineid) : '/hotel?hotel_id=' + hotel.travellineid
   }
 
   switchRestaurantLink(hotelId: any) {

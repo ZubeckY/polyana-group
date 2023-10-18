@@ -124,12 +124,11 @@
     </section>
 
     <!-- TL Booking form script -->
-    <section class="tl-section">
+    <section class="tl-section" id="tl-section">
       <div class="tl-section-container">
         <div id="tl-booking-form">&nbsp;</div>
       </div>
     </section>
-
 
     <!-- Специальные предложения -->
     <special-offers/>
@@ -153,7 +152,7 @@ import supaBase from "~/assets/scripts/supaBase";
 export default class Inside extends Vue {
   data: any = []
   hotel: any = {}
-  hotelId: any = 0
+  hotelId: any = this.$router.currentRoute.query.hotel_id
   sliders: any = []
   type: string = 'desktop'
   dialog: boolean = false
@@ -166,10 +165,8 @@ export default class Inside extends Vue {
   mounted() {
     let {hotel_id} = this.$router.currentRoute.query
     if (!hotel_id) {
-      window.location.href = '/inside/?hotel_id=32513'
+      window.location.href = '/hotel?hotel_id=32513'
     }
-
-    this.hotelId = hotel_id
 
     window.addEventListener('DOMContentLoaded', function () {
       let hotel_id = "hotel_id";

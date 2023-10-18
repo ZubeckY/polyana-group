@@ -47,12 +47,30 @@ export default class SpecialOffersSlider extends Vue {
   }
 
   async getData() {
+    let {hotel_id}:any = this.$router.currentRoute.query
+    let idArr = []
+    let restId: any = {
+      32513: 1,
+      22866: 2,
+      23660: 3,
+    }
+
     try {
-      let {data, error} = await supaBase
-        .from('specialoffer')
-        .select('id, title, imgvertical, idcategory, created_at')
-        .order('id')
-      this.slides = data
+      if (!hotel_id) {
+        let {data, error} = await supaBase
+          .from('specialoffer')
+          .select('id, title, imgvertical, idcategory, created_at')
+          .order('id')
+        this.slides = data
+      } else {
+        idArr.push(restId[hotel_id])
+        let {data, error} = await supaBase
+          .from('specialoffer')
+          .select('id, title, imgvertical, idcategory, created_at')
+          .contains('idhotel', [...idArr])
+          .order('id')
+        this.slides = data
+      }
     } catch (e) {
       console.log(e)
     }

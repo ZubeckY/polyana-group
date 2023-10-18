@@ -138,15 +138,15 @@ export default class Menu extends Vue {
   menu: any = [
     {
       title: 'ULTIMA CLUB | HOTEL & SPA',
-      link: '/inside/?hotel_id=32513'
+      link: '/hotel?hotel_id=32513'
     },
     {
       title: 'COUNTRY HILLS | RESORT',
-      link: '/inside/?hotel_id=22866'
+      link: '/hotel?hotel_id=22866'
     },
     {
       title: 'IKOS POLYANA',
-      link: '/inside/?hotel_id=23660'
+      link: '/hotel?hotel_id=23660'
     },
     {
       title: 'АКЦИИ',

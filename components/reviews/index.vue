@@ -106,8 +106,8 @@ export default class Reviews extends Vue {
   }
 
   async getData() {
-    if (!this.hotelId) {
-      try {
+    try {
+      if (!this.hotelId) {
         let {data, error} = await supaBase
           .from('reviews')
           .select('')
@@ -115,11 +115,7 @@ export default class Reviews extends Vue {
           .limit(10)
 
         this.data = data
-      } catch (e) {
-        console.log(e)
-      }
-    } else {
-      try {
+      } else {
         let {data, error} = await supaBase
           .from('reviews')
           .select('')
@@ -128,9 +124,9 @@ export default class Reviews extends Vue {
           .limit(10)
 
         this.data = data
-      } catch (e) {
-        console.log(e)
       }
+    } catch (e) {
+      console.log(e)
     }
   }
 }

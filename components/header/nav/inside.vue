@@ -12,12 +12,31 @@
         </hotels-menu>
 
         <div class="header-nav__link mx-auto" v-for="(item, i) in links" :key="'f_link'+i">
-          <hotels-menu v-if="item.title === 'Ресторан'" mode="restaurant">
-            <div class="d-flex align-center">
-              <link-component :item="{title: 'Ресторан'}"/>
-              <chevron-down class="ml-1" :dark="true"/>
-            </div>
-          </hotels-menu>
+
+          <div v-if="item.title === 'Отели'">
+<!--            <link-component v-if="showArrows" :item="{title: 'Отели', link: getCurrentLink('booking')}"/>-->
+            <hotels-menu>
+              <div class="d-flex align-center">
+                <link-component :item="{title: 'Отели'}"/>
+                <chevron-down class="ml-1" :dark="true"/>
+              </div>
+            </hotels-menu>
+          </div>
+
+          <div v-else-if="item.title === 'Ресторан'">
+            <link-component v-if="showArrows" :item="{title: 'Ресторан', link: getCurrentLink('restaurant')}"/>
+            <hotels-menu v-else mode="restaurant">
+              <div class="d-flex align-center">
+                <link-component :item="{title: 'Ресторан'}"/>
+                <chevron-down class="ml-1" :dark="true"/>
+              </div>
+            </hotels-menu>
+          </div>
+
+          <div v-else-if="item.title === 'Номера'">
+            <link-component v-if="item" :item="{ title: 'Номера', link: '#tl-section'}"/>
+            <link-component v-else :item="item"/>
+          </div>
 
           <link-component :item="item" v-else/>
         </div>
@@ -44,12 +63,13 @@ import supaBase from "~/assets/scripts/supaBase";
 export default class Ultima extends Vue {
   currentLogo: any = ''
   currentPhone: string = 'Загрузка...'
+  showArrows: boolean = true
 
   async created() {
     try {
       let {path, query} = this.$router.currentRoute
       let {hotel_id} = query
-
+      this.showArrows = path.includes('/hotel')
 
       this.currentLogo = ''
       this.currentPhone = 'Загрузка...'
@@ -78,6 +98,9 @@ export default class Ultima extends Vue {
       link: '/'
     },
     {
+      title: 'Отели',
+    },
+    {
       title: 'Номера',
       link: '/booking'
     },
@@ -102,5 +125,22 @@ export default class Ultima extends Vue {
       link: '/contacts'
     },
   ]
+
+  getCurrentLink(to: string) {
+    let {query} = this.$router.currentRoute
+    let {hotel_id}: any = query
+    let restId: any = {
+      32513: 3,
+      22866: 10,
+      23660: 14,
+    }
+
+    switch (to) {
+      case 'booking':
+        return '/booking?hotel_id' + hotel_id
+      case 'restaurant':
+        return '/services/' + restId[hotel_id]
+    }
+  }
 }
 </script>
