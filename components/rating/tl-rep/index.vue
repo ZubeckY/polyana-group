@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rating-card rating-tl-rep" elevation="0" color="var(--card-grey)">
+  <div class="rating-card rating-tl-rep">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex">
         <div class="d-flex">
@@ -19,7 +19,7 @@
         гостей в TL: Reputation
       </div>
     </div>
-  </v-card>
+  </div>
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';

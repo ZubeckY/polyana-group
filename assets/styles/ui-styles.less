@@ -13,7 +13,8 @@
     height: 145px;
     padding: 16px;
     margin-right: 5px;
-    border-radius: var(--bordrad23) !important;
+    background: var(--card-grey);
+    border-radius: var(--bordrad23);
 
     &:last-child {
       margin-right: 0;
@@ -1277,6 +1278,13 @@
       color: #ff5252 !important;
       font-size: 12px !important;
       font-weight: bold !important;
+      &.weather {
+        position: relative !important;
+        top: 50px !important;
+        right: 30px !important;
+        background: var(--card-grey) !important;
+        z-index: 1000 !important;
+      }
     }
   }
 

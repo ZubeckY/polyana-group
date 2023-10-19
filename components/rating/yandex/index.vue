@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rating-card rating-yandex" elevation="0" color="var(--card-grey)">
+  <a class="rating-card text-decoration-none rating-yandex" href="/reviews">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex justify-space-between align-center">
         <lazy-rating-yandex-icon/>
@@ -15,7 +15,7 @@
         на основе 1300+ отзывов
       </div>
     </div>
-  </v-card>
+  </a>
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';

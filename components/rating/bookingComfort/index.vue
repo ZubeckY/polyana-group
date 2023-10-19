@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rating-card rating-booking-comfort" elevation="0" color="var(--card-grey)">
+  <div class="rating-card rating-booking-comfort">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="51" viewBox="0 0 50 51" fill="none">
@@ -17,7 +17,7 @@
         комиссий
       </div>
     </div>
-  </v-card>
+  </div>
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
