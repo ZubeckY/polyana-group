@@ -755,9 +755,32 @@
   }
 
   &-slider {
+    position: relative;
     width: 100%;
     height: 301px;
     margin-top: 40px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 100%;
+      background: linear-gradient(90deg, var(--background) 0, hsla(30, 10%, 96%, 0) 100%) !important;
+      z-index: 500;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      background: linear-gradient(270deg, var(--background) 0, hsla(30, 10%, 96%, 0) 100%) !important;
+      z-index: 500;
+    }
 
     &-carousel {
       width: 100%;
@@ -1278,6 +1301,7 @@
       color: #ff5252 !important;
       font-size: 12px !important;
       font-weight: bold !important;
+
       &.weather {
         position: relative !important;
         top: 50px !important;

@@ -73,8 +73,12 @@ export default class Reviews extends Vue {
   viewReviewLink: string = ''
   settings: any = {
     arrows: true,
+    autoplay: true,
+    centerMode: true,
+    speed: 1000,
+    autoplaySpeed: 3000,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     touchThreshold: 5,
     responsive: [
       {
@@ -82,12 +86,18 @@ export default class Reviews extends Vue {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          autoplay: true,
+          centerMode: true,
+          speed: 1000,
+          autoplaySpeed: 3000,
         }
       },
       {
         breakpoint: 600,
         settings: {
+          dots: true,
           arrows: false,
+          centerMode: false,
           slidesToShow: 1,
           slidesToScroll: 1,
         }
