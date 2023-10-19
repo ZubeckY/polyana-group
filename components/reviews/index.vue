@@ -15,7 +15,7 @@
                        contain src="/img/reviews/yandex.webp"/>
               </div>
               <div class="reviews-cards-group-gradient-title text-uppercase pa-0">Смотреть отзывы
-                в Яндекс
+                Яндекс
               </div>
             </div>
           </div>
