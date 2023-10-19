@@ -213,15 +213,13 @@ export default class Inside extends Vue {
   async getHotelInfo() {
     try {
       let {hotel_id} = this.$router.currentRoute.query
-      let {data, error} = await supaBase
+      let {data, error}: any = await supaBase
         .from('hotels')
         .select('id, offer, description, youtube, travellineid, imgshotel')
         .eq('travellineid', hotel_id)
         .order('id')
-      const DATA: any = data
-      this.hotel = DATA[0]
-
-      this.data = DATA[0].imgshotel
+      this.hotel = data[0]
+      this.data = data[0].imgshotel
     } catch (e) {
       console.log(e)
     }

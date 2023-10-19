@@ -26,13 +26,11 @@ export default class Content extends Vue {
       if (!hotel_id) {
         this.currentTitle = 'Бронирование'
       } else {
-        let {data, error} = await supaBase
+        let {data, error}: any  = await supaBase
           .from('hotels')
           .select('id, title, travellineid')
           .eq('travellineid', hotel_id)
-
-        let currentData: any = data
-        this.currentTitle = '' + currentData[0].title
+        this.currentTitle = '' + data[0].title
       }
     } catch (e) {
       console.log(e)

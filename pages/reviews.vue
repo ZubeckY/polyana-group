@@ -81,13 +81,11 @@ export default class Reviews extends Vue {
 
   async getHotels() {
     try {
-      let {data, error} = await supaBase
+      let {data, error}: any = await supaBase
         .from('hotels')
         .select('id, title, travellineid')
         .order('id')
-
-      let array: any = data
-      this.hotels.push(...array)
+      this.hotels.push(...data)
     } catch (e) {
       console.log(e)
     }

@@ -98,14 +98,13 @@ export default class Ultima extends Vue {
         this.currentLogo = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
         this.currentPhone = '+7 989 009 55 77'
       } else {
-        let {data, error} = await supaBase
+        let {data, error}: any = await supaBase
           .from('hotels')
           .select('id, logohotel, travellineid, telbron')
           .eq('travellineid', hotel_id)
 
-        let currentData: any = data
-        this.currentLogo = '' + currentData[0]['logohotel']
-        this.currentPhone = currentData[0]['telbron']
+        this.currentLogo = '' + data[0]['logohotel']
+        this.currentPhone = data[0]['telbron']
       }
     } catch (e) {
       console.log(e)

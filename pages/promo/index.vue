@@ -108,13 +108,11 @@ export default class Promo extends Vue {
 
   async getCategories() {
     try {
-      let {data, error} = await supaBase
+      let {data, error}: any = await supaBase
         .from('categoryspecialoffer')
         .select('id, title')
         .order('id')
-
-      let array: any = data
-      this.categories.push(...array)
+      this.categories.push(...data)
     } catch (e) {
       console.log(e)
     }
@@ -122,13 +120,11 @@ export default class Promo extends Vue {
 
   async getHotels() {
     try {
-      let {data, error} = await supaBase
+      let {data, error}: any = await supaBase
         .from('hotels')
         .select('id, title')
         .order('id')
-
-      let array: any = data
-      this.hotels.push(...array)
+      this.hotels.push(...data)
     } catch (e) {
       console.log(e)
     }

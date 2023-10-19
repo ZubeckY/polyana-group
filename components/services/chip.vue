@@ -23,13 +23,11 @@ export default class Chip extends Vue {
       this.hotelTitle = 'Загрузка...'
 
       if (!this.isValue) {
-        let {data, error} = await supaBase
+        let {data, error}: any = await supaBase
           .from('hotels')
           .select('id, title, travellineid')
           .eq('travellineid', this.item.travellineid)
-
-        const DATA: any = data
-        this.hotelTitle = DATA[0].title
+        this.hotelTitle = data[0].title
       } else {
         this.hotelTitle = this.item.title
       }

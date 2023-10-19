@@ -98,14 +98,11 @@ export default class Services extends Vue {
       let getIdFromRoute = currentRoute.split('/')
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
-      let {data, error} = await supaBase
+      let {data, error}:any = await supaBase
         .from('services')
         .select('')
         .match({id: currentId})
-
-      let DATA: any = data
-      this.data = DATA[0]
-
+      this.data = data[0]
     } catch (e) {
       console.log(e)
     } finally {

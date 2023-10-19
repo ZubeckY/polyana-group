@@ -168,13 +168,11 @@ export default class Services extends Vue {
 
   async getHotels() {
     try {
-      let {data, error} = await supaBase
+      let {data, error}: any = await supaBase
         .from('hotels')
         .select('id, title, description, travellineid')
         .order('id')
-
-      let array: any = data
-      this.hotels.push(...array)
+      this.hotels.push(...data)
     } catch (e) {
       console.log(e)
     }
@@ -190,7 +188,6 @@ export default class Services extends Vue {
           .select('')
           .order('id')
         this.data = data
-
       } else {
         let {data, error} = await supaBase
           .from('services')

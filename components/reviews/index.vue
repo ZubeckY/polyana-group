@@ -8,7 +8,7 @@
         </h3>
 
         <div class="reviews-cards-group d-flex mt-4">
-          <div class="reviews-cards-group-gradient">
+          <a class="reviews-cards-group-gradient text-decoration-none" :href="viewReviewLink">
             <div class="reviews-cards-group-gradient-card golden-gradient d-flex align-center rounded-xl">
               <div class="reviews-cards-group-gradient-card-round d-flex justify-center align-center mr-3">
                 <v-img class="reviews-cards-group-gradient-card-round-img d-block" alt="Я"
@@ -18,15 +18,14 @@
                 Яндекс
               </div>
             </div>
-          </div>
+          </a>
 
           <div class="reviews-cards-group-transparent ml-6 pt-1">
             <div class="reviews-cards-group-transparent-title pa-0"><b>5,0</b> рейтинг в Яндекс
               на основе 1300+ отзывов
             </div>
-            <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1"
-                   color="#CCAC6C" height="auto" min-width="0" min-height="0"
-                   text>ОСТАВИТЬ ОТЗЫВ
+            <v-btn class="reviews-cards-group-transparent-button pa-0 mt-1" color="#CCAC6C" height="auto"
+                   min-width="0" min-height="0" target="_blank" :href="addReviewLink" text>ОСТАВИТЬ ОТЗЫВ
               <div class="button-arrow">
                 <span></span>
                 <span></span>
@@ -65,10 +64,13 @@ import supaBase from "~/assets/scripts/supaBase";
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import {eq} from "dom7";
+
 @Component
 export default class Reviews extends Vue {
   @Prop() hotelId!: number
   data: any = []
+  addReviewLink: string = ''
+  viewReviewLink: string = ''
   settings: any = {
     arrows: true,
     slidesToShow: 3,
@@ -103,25 +105,45 @@ export default class Reviews extends Vue {
 
   async created() {
     await this.getData()
+    await this.getReviewLink()
+  }
+
+  async getReviewLink() {
+    try {
+      let {hotel_id}: any = this.$router.currentRoute.query
+      if (!hotel_id) {
+        this.viewReviewLink = '/reviews'
+        this.addReviewLink = 'https://yandex.ru/maps/org/ultima_klab/30635971283/reviews/?add-review=true&ll=40.258516%2C43.684815&mode=search&sll=40.258516%2C43.684815&source=serp_navig&tab=reviews&text=ultima%20club%20hotel&z=16'
+        return
+      }
+      let {data, error}: any = await supaBase
+          .from('hotels')
+          .select('travellineid, yandexaddreview')
+          .eq('travellineid', hotel_id)
+      this.viewReviewLink = '/reviews?hotel_id=' + hotel_id
+      this.addReviewLink = data[0].yandexaddreview
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   async getData() {
     try {
       if (!this.hotelId) {
         let {data, error} = await supaBase
-          .from('reviews')
-          .select('')
-          .order('created_at', {ascending: false})
-          .limit(10)
+            .from('reviews')
+            .select('')
+            .order('created_at', {ascending: false})
+            .limit(10)
 
         this.data = data
       } else {
         let {data, error} = await supaBase
-          .from('reviews')
-          .select('')
-          .eq('hoteltlid', this.hotelId)
-          .order('created_at', {ascending: false})
-          .limit(10)
+            .from('reviews')
+            .select('')
+            .eq('hoteltlid', this.hotelId)
+            .order('created_at', {ascending: false})
+            .limit(10)
 
         this.data = data
       }
