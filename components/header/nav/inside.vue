@@ -14,7 +14,6 @@
         <div class="header-nav__link mx-auto" v-for="(item, i) in links" :key="'f_link'+i">
 
           <div v-if="item.title === 'Отели'">
-<!--            <link-component v-if="showArrows" :item="{title: 'Отели', link: getCurrentLink('booking')}"/>-->
             <hotels-menu>
               <div class="d-flex align-center">
                 <link-component :item="{title: 'Отели'}"/>
@@ -24,7 +23,7 @@
           </div>
 
           <div v-else-if="item.title === 'Ресторан'">
-            <link-component v-if="showArrows" :item="{title: 'Ресторан', link: getCurrentLink('restaurant')}"/>
+            <link-component v-if="isHotelPage" :item="{title: 'Ресторан', link: getCurrentLink('restaurant')}"/>
             <hotels-menu v-else mode="restaurant">
               <div class="d-flex align-center">
                 <link-component :item="{title: 'Ресторан'}"/>
@@ -34,8 +33,28 @@
           </div>
 
           <div v-else-if="item.title === 'Номера'">
-            <link-component v-if="item" :item="{ title: 'Номера', link: '#tl-section'}"/>
-            <link-component v-else :item="item"/>
+            <link-component v-if="isHotelPage" :item="{title: 'Номера', link: getCurrentLink('booking')}"/>
+            <link-component :item="item" v-else/>
+          </div>
+
+          <div v-else-if="item.title === 'Услуги'">
+            <link-component v-if="isHotelPage" :item="{title: 'Услуги', link: getCurrentLink('services')}"/>
+            <link-component :item="item" v-else/>
+          </div>
+
+          <div v-else-if="item.title === 'Акции'">
+            <link-component v-if="isHotelPage" :item="{title: 'Акции', link: getCurrentLink('promo')}"/>
+            <link-component :item="item" v-else/>
+          </div>
+
+          <div v-else-if="item.title === 'Отзывы'">
+            <link-component v-if="isHotelPage" :item="{title: 'Отзывы', link: getCurrentLink('reviews')}"/>
+            <link-component :item="item" v-else/>
+          </div>
+
+          <div v-else-if="item.title === 'Контакты'">
+            <link-component v-if="isHotelPage" :item="{title: 'Контакты', link: getCurrentLink('contacts')}"/>
+            <link-component :item="item" v-else/>
           </div>
 
           <link-component :item="item" v-else/>
@@ -63,13 +82,14 @@ import supaBase from "~/assets/scripts/supaBase";
 export default class Ultima extends Vue {
   currentLogo: any = ''
   currentPhone: string = 'Загрузка...'
-  showArrows: boolean = true
+  isHotelPage: boolean = true
+  hotelId: any = this.$router.currentRoute.query.hotel_id
 
   async created() {
     try {
       let {path, query} = this.$router.currentRoute
       let {hotel_id} = query
-      this.showArrows = path.includes('/hotel')
+      this.isHotelPage = !!path.includes('/hotel')
 
       this.currentLogo = ''
       this.currentPhone = 'Загрузка...'
@@ -126,9 +146,9 @@ export default class Ultima extends Vue {
     },
   ]
 
+
   getCurrentLink(to: string) {
-    let {query} = this.$router.currentRoute
-    let {hotel_id}: any = query
+    let {hotel_id}: any = this.$router.currentRoute.query
     let restId: any = {
       32513: 3,
       22866: 10,
@@ -137,9 +157,17 @@ export default class Ultima extends Vue {
 
     switch (to) {
       case 'booking':
-        return '/booking?hotel_id' + hotel_id
+        return this.isHotelPage ? '#tl-section' : '/booking'
       case 'restaurant':
-        return '/services/' + restId[hotel_id]
+        return this.isHotelPage ? '/services/' + restId[hotel_id] : ''
+      case 'services':
+        return this.isHotelPage ? '#services' : '/services'
+      case 'promo':
+        return this.isHotelPage ? '#promo' : '/promo'
+      case 'reviews':
+        return this.isHotelPage ? '#reviews' : '/reviews'
+      case 'contacts':
+        return this.isHotelPage ? '/contacts?hotel_id=' + hotel_id : '/contacts'
     }
   }
 }

@@ -57,7 +57,7 @@
       </div>
     </section>
 
-    <section class="luxHoliday">
+    <section class="luxHoliday" id="services">
       <div class="luxHoliday-container flexbox-wrapper">
 
         <div class="luxHoliday-head">
@@ -131,13 +131,13 @@
     </section>
 
     <!-- Специальные предложения -->
-    <special-offers/>
+    <special-offers id="promo"/>
 
     <!-- Эксклюзивная скидка за звонок -->
     <exclusive/>
 
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
-    <reviews :hotelId="hotelId"/>
+    <reviews :hotelId="hotelId" id="reviews"/>
   </div>
 </template>
 <script lang="ts">
@@ -220,9 +220,6 @@ export default class Inside extends Vue {
         .order('id')
       const DATA: any = data
       this.hotel = DATA[0]
-
-
-      console.log(this.hotel.youtube)
 
       this.data = DATA[0].imgshotel
     } catch (e) {

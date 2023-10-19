@@ -19,7 +19,7 @@
 
         <div class="specialOffers-promo-chips">
           <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">По отелям:</div>
+            <div class="specialOffers-promo-chips-title">Отели: {{hotel}}</div>
             <div class="specialOffers-promo-chips-body">
               <v-chip-group v-model="hotel" column
                             active-class="golden-gradient white--text">
@@ -150,6 +150,20 @@ export default class Services extends Vue {
   async created() {
     await this.getHotels()
     await this.getData()
+    this.getCurrentHotel()
+  }
+
+  getCurrentHotel() {
+    let {hotel_id}: any = this.$router.currentRoute.query
+    if (!hotel_id) return
+
+    let restId: any = {
+      32513: 1,
+      22866: 2,
+      23660: 3,
+    }
+
+    return this.hotel = restId[hotel_id]
   }
 
   async getHotels() {
@@ -176,6 +190,7 @@ export default class Services extends Vue {
           .select('')
           .order('id')
         this.data = data
+
       } else {
         let {data, error} = await supaBase
           .from('services')

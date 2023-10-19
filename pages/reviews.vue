@@ -20,13 +20,11 @@
 
         <div class="specialOffers-promo-chips">
           <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">По отелям:</div>
+            <div class="specialOffers-promo-chips-title">Отели</div>
             <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="hotel" column
-                            active-class="golden-gradient white--text">
-                <v-chip class="white" style="font-size: 12px; height: 31px;"
-                        v-for="(item, i) in hotels"
-                        :key="i" :value="item.travellineid">
+              <v-chip-group v-model="hotel" column active-class="golden-gradient white--text">
+                <v-chip class="white" v-for="(item, i) in hotels" :key="i"
+                        :value="item.travellineid" style="font-size: 12px; height: 31px;">
                   {{ item.title }}
                 </v-chip>
               </v-chip-group>
@@ -72,6 +70,13 @@ export default class Reviews extends Vue {
   async created() {
     await this.getHotels()
     await this.getData()
+    this.getCurrentHotel ()
+  }
+
+  getCurrentHotel() {
+    let {hotel_id}: any = this.$router.currentRoute.query
+    if (!hotel_id) return
+    this.hotel = Number(hotel_id)
   }
 
   async getHotels() {

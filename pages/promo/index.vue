@@ -90,6 +90,20 @@ export default class Promo extends Vue {
     await this.getHotels()
     await this.getCategories()
     await this.getData()
+    this.getCurrentHotel ()
+  }
+
+  getCurrentHotel() {
+    let {hotel_id}: any = this.$router.currentRoute.query
+    if (!hotel_id) return
+
+    let restId: any = {
+      32513: 1,
+      22866: 2,
+      23660: 3,
+    }
+
+    return this.hotel = [restId[hotel_id]]
   }
 
   async getCategories() {

@@ -1,6 +1,6 @@
 <template>
   <v-dialog class="gallery-dialog" v-model="localDialog" max-width="1240">
-    <v-carousel class="gallery-carousel" hide-delimiters>
+    <v-carousel class="gallery-carousel" hide-delimiters height="85vh">
       <v-btn @click="localDialog = false" class="gallery-carousel-close"
              min-height="0" min-width="0" width="34px" height="34px"
              elevation="0" color="#ffffffb8" title="Назад" rounded>

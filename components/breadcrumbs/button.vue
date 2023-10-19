@@ -11,12 +11,12 @@ import {Vue, Component} from 'vue-property-decorator';
 export default class Button extends Vue {
   getBack() {
     if (!document.referrer) {
-      location.href = '/'
+      return location.href = '/'
+    } else if (document.referrer.split('?')[0] == window.location.href.split('?')[0]) {
+      return location.href = '/'
+    } else {
+      return location.href = document.referrer
     }
-    if (document.referrer.split('?')[0] == window.location.href.split('?')[0]) {
-      location.href = document.referrer
-    }
-    location.href = document.referrer
   }
 }
 </script>
