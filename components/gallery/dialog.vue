@@ -1,12 +1,9 @@
 <template>
-  <v-dialog class="gallery-dialog" v-model="localDialog">
+  <v-dialog class="gallery-dialog" v-model="localDialog" max-width="1240">
     <v-carousel class="gallery-carousel" hide-delimiters>
-      <v-btn @click="localDialog = false"
-             class="gallery-carousel-close"
-             min-height="0" min-width="0"
-             width="34px" height="34px"
-             elevation="0" rounded
-             color="#ffffffb8" title="Назад">
+      <v-btn @click="localDialog = false" class="gallery-carousel-close"
+             min-height="0" min-width="0" width="34px" height="34px"
+             elevation="0" color="#ffffffb8" title="Назад" rounded>
         ╳
       </v-btn>
       <template v-slot:prev="{ on, attrs }">
@@ -19,8 +16,7 @@
           <carousel-button-next/>
         </div>
       </template>
-      <v-carousel-item class="gallery-slide"
-                       v-for="(image, i) in data" :key="'sliderImage'+i">
+      <v-carousel-item class="gallery-slide" v-for="(image, i) in data" :key="'sliderImage'+i">
         <div class="gallery-slide-wrapper">
           <img class="gallery-slide-img" :src="image" alt="#">
         </div>

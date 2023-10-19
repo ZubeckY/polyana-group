@@ -43,13 +43,13 @@
             <reviews-card :item="item"/>
           </div>
           <template #prevArrow="arrowOption">
-            <v-btn style="left: -40px; z-index: 1000" min-height="0" min-width="0" width="34px" height="34px"
+            <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
                    elevation="0" rounded color="#ffffffb8" title="Назад">
               <div class="reviews-slider-arrow prev">&nbsp;</div>
             </v-btn>
           </template>
           <template #nextArrow="arrowOption">
-            <v-btn style="right: -40px; z-index: 1000" min-height="0" min-width="0" width="34px" height="34px"
+            <v-btn style="right: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
                    elevation="0" rounded color="#ffffffb8" title="Вперёд">
               <div class="reviews-slider-arrow next">&nbsp;</div>
             </v-btn>

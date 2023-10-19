@@ -9,10 +9,9 @@
       <div class="hotelGroup-body">
         <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
           <v-expansion-panel class="hotelGroup-accordion-panel" v-for="(item, i) in hotelList"
-                             :key="'hotel-'+i" :id="'hotel'+item.travellineid"
-                             @click="$router.push('#hotel'+item.travellineid)">
+                             :key="'hotel-'+i" @click="$router.push('#hotel-'+item.travellineid)">
             <v-expansion-panel-header class="hotelGroup-accordion-head">
-              <div class="hotelGroup-accordion-head-container">
+              <div class="hotelGroup-accordion-head-container" :id="'hotel-'+item.travellineid">
                 <div class="hotelGroup-accordion-count">{{ getItemID(item) }}</div>
                 <h4 class="hotelGroup-accordion-title desktop">{{ item.title }}</h4>
                 <div class="hotelGroup-accordion-price">от {{ getItemPrice(item) }} руб.</div>
