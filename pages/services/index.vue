@@ -19,7 +19,7 @@
 
         <div class="specialOffers-promo-chips">
           <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">Отели: {{hotel}}</div>
+            <div class="specialOffers-promo-chips-title">Отели:</div>
             <div class="specialOffers-promo-chips-body">
               <v-chip-group v-model="hotel" column
                             active-class="golden-gradient white--text">
