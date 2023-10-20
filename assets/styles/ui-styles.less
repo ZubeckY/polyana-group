@@ -217,39 +217,21 @@
     margin-bottom: 20px;
   }
 
-  &-accordion {
-    &-panel {
-      background-color: transparent !important;
+  &-panel {
+    & + .hotelGroup-panel {
+      padding-top: 15px;
+      margin-top: 15px;
+      border-top: 1px solid var(--card-grey);
     }
 
     &-head {
       display: flex;
       flex-direction: column;
 
-      &.v-expansion-panel-header--active {
-        .hotelGroup-accordion-count {
-          color: #CCAB6A;
-          border: .85px solid #CCAB6A;
-        }
-
-        .hotelGroup-accordion-title {
-          color: #CCAB6A;
-        }
-
-        .hotelGroup-accordion-card {
-          background: #CCAB6A;
-
-          &-svg {
-            transform: rotate(0deg);
-            transition: transform .15s ease-in;
-          }
-        }
-      }
-
       &-container {
         position: relative;
-        display: flex;
         width: 100%;
+        display: flex;
         align-items: center;
 
         &::before {
@@ -266,19 +248,23 @@
       align-items: center;
       width: 67px;
       height: 36px;
-      color: #B6B6B6;
       font-size: 18px;
+      color: transparent;
       border-radius: 85px;
+      background-clip: text;
       text-transform: uppercase;
-      border: .85px solid #B6B6B6;
+      border: .85px solid var(--text-golden-1);
+      background-image: var(--gradiend-golden);
     }
 
     &-title {
-      color: #B6B6B6;
       font-size: 50px;
       font-weight: 400;
+      color: transparent;
+      background-clip: text;
       text-transform: uppercase;
       font-family: 'CharterC', sans-serif;
+      background-image: var(--gradiend-golden);
 
       &.desktop {
         display: block;
@@ -300,19 +286,19 @@
 
     &-card {
       display: flex;
+      cursor: pointer;
       width: 56px;
       height: 56px;
       margin-left: 70px;
       border-radius: 13px;
-      background: #B6B6B6;
       align-items: center;
       justify-content: center;
+      background: var(--gradiend-golden);
 
       &-svg {
         width: 34px;
         height: 34px;
-        transform: rotate(90deg);
-        transition: transform .15s ease-in;
+        transform: rotate(0deg);
       }
     }
 
@@ -366,10 +352,11 @@
         color: black;
         width: 100%;
         margin-top: 13px;
+        padding-right: 20px;
         margin-bottom: 0 !important;
         font-weight: 400;
         font-size: 13.6px;
-        max-width: 432px;
+        max-width: 650px;
         font-style: normal;
         line-height: normal;
         white-space: pre-line;
@@ -377,7 +364,7 @@
 
       &-footer {
         width: 100%;
-        max-width: 475px;
+        max-width: 650px;
         margin-top: 20px;
 
         &.desktop {

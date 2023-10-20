@@ -63,6 +63,10 @@ export default class HotelsMenu extends Vue {
 </script>
 <style scoped lang="less">
 .hotelsMenu {
+  &-activator {
+    cursor: pointer;
+  }
+
   &-card {
     width: 100%;
     margin-top: 10px;

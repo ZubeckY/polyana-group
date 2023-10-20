@@ -7,16 +7,15 @@
         </h3>
       </div>
       <div class="hotelGroup-body">
-        <v-expansion-panels class="hotelGroup-accordion" v-model="hotels" accordion>
-          <v-expansion-panel class="hotelGroup-accordion-panel" v-for="(item, i) in hotelList"
-                             :key="'hotel-'+i" @click="$router.push('#hotel-'+item.travellineid)">
-            <v-expansion-panel-header class="hotelGroup-accordion-head">
-              <div class="hotelGroup-accordion-head-container" :id="'hotel-'+item.travellineid">
-                <div class="hotelGroup-accordion-count">{{ getItemID(item) }}</div>
-                <h4 class="hotelGroup-accordion-title desktop">{{ item.title }}</h4>
-                <div class="hotelGroup-accordion-price">от {{ getItemPrice(item) }} руб.</div>
-                <div class="hotelGroup-accordion-card">
-                  <svg class="hotelGroup-accordion-card-svg" fill="#ffffff" viewBox="0 0 24 24"
+        <div class="hotelGroup-panel" v-for="(item, i) in hotelList" :key="'hotel-'+i">
+          <div class="hotelGroup-panel-container">
+            <a class="hotelGroup-panel-head text-decoration-none" :href="'/hotel?hotel_id='+item.travellineid">
+              <div class="hotelGroup-panel-head-container" :id="'hotel-'+item.travellineid">
+                <div class="hotelGroup-panel-count">{{ getItemID(item) }}</div>
+                <h4 class="hotelGroup-panel-title desktop">{{ item.title }}</h4>
+                <div class="hotelGroup-panel-price">от {{ getItemPrice(item) }} руб.</div>
+                <div class="hotelGroup-panel-card">
+                  <svg class="hotelGroup-panel-card-svg" fill="#ffffff" viewBox="0 0 24 24"
                        xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -32,77 +31,73 @@
                   </svg>
                 </div>
               </div>
-              <h4 class="hotelGroup-accordion-title mobile">{{ item.title }}</h4>
-              <template v-slot:actions>
-                <div></div>
-              </template>
-            </v-expansion-panel-header>
-            <v-expansion-panel-content class="hotelGroup-accordion-body">
-              <div class="hotelGroup-accordion-body-container">
+              <h4 class="hotelGroup-panel-title mobile">{{ item.title }}</h4>
+            </a>
+            <div class="hotelGroup-panel-body">
+              <div class="hotelGroup-panel-body-container">
 
-                <div class="hotelGroup-accordion-info">
-                  <div class="hotelGroup-accordion-info-container">
-                    <div class="hotelGroup-accordion-info-head">
+                <div class="hotelGroup-panel-info">
+                  <div class="hotelGroup-panel-info-container">
+                    <div class="hotelGroup-panel-info-head">
 
-                      <div class="hotelGroup-accordion-info-logo">
+                      <div class="hotelGroup-panel-info-logo">
                         <v-img :lazy-src="item.logohotel" :src="item.logohotel" alt="#" style="filter: invert(1);"/>
                       </div>
 
-                      <div class="hotelGroup-accordion-info-group">
-                        <div class="hotelGroup-accordion-info-title">{{ item.hotelrating }}</div>
-                        <div class="hotelGroup-accordion-info-text">рейтинг отеля</div>
+                      <div class="hotelGroup-panel-info-group">
+                        <div class="hotelGroup-panel-info-title">{{ item.hotelrating }}</div>
+                        <div class="hotelGroup-panel-info-text">рейтинг отеля</div>
                       </div>
 
-                      <div class="hotelGroup-accordion-info-delimiter"></div>
+                      <div class="hotelGroup-panel-info-delimiter"></div>
 
-                      <div class="hotelGroup-accordion-info-group">
-                        <div class="hotelGroup-accordion-info-title">{{ item.hotelreviews }}</div>
-                        <div class="hotelGroup-accordion-info-text">отзывов</div>
+                      <div class="hotelGroup-panel-info-group">
+                        <div class="hotelGroup-panel-info-title">{{ item.hotelreviews }}</div>
+                        <div class="hotelGroup-panel-info-text">отзывов</div>
                       </div>
                     </div>
-                    <p class="hotelGroup-accordion-info-body">{{ item.hoteldescription }}</p>
-                    <div class="hotelGroup-accordion-info-footer desktop">
-                      <v-btn v-for="(button, j) in item.hoteltags"
-                             class="hotelGroup-accordion-info-button"
-                             :key="'linkToInsidePage'+j" elevation="0"
-                             :href="getLinkToHref(button, item)">{{ button.title }}
+                    <p class="hotelGroup-panel-info-body" v-html="item.hoteldescription"></p>
+                    <div class="hotelGroup-panel-info-footer desktop">
+                      <v-btn v-for="(button, j) in item.hoteltags" class="hotelGroup-panel-info-button"
+                             :key="'linkToInsidePage'+j" elevation="0" :href="getLinkToHref(button, item)">
+                        {{ button.title }}
                       </v-btn>
                     </div>
                   </div>
                 </div>
 
-                <div class="hotelGroup-accordion-gallery" @click="dialog = true">
-                  <div class="hotelGroup-accordion-gallery-container d-flex">
-                    <div class="hotelGroup-accordion-gallery-group d-flex">
+                <div class="hotelGroup-panel-gallery" @click="dialog = true">
+                  <div class="hotelGroup-panel-gallery-container d-flex">
+                    <div class="hotelGroup-panel-gallery-group d-flex">
                       <nuxt-img :src="item.imgshotel[0]"
                                 sizes="xs:200px md:500px lg:1024" alt="#"
                                 loading="lazy" quality="80" :placeholder="[50]"
-                                class="hotelGroup-accordion-gallery-group-large mb-2"/>
+                                class="hotelGroup-panel-gallery-group-large mb-2"/>
                       <div class="d-flex flex-row">
                         <nuxt-img :src="item.imgshotel[1]"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
                                   loading="lazy" quality="80" :placeholder="[50]"
-                                  class="hotelGroup-accordion-gallery-group-small mr-2"/>
+                                  class="hotelGroup-panel-gallery-group-small mr-2"/>
                         <nuxt-img :src="item.imgshotel[2]"
                                   sizes="xs:200px md:500px lg:1024" alt="#"
                                   loading="lazy" quality="80" :placeholder="[50]"
-                                  class="hotelGroup-accordion-gallery-group-small"/>
+                                  class="hotelGroup-panel-gallery-group-small"/>
                       </div>
                     </div>
                     <nuxt-img :src="item.imgshotel[3]"
                               sizes="xs:200px md:500px lg:1024" alt="#"
                               loading="lazy" quality="80" :placeholder="[50]"
-                              class="hotelGroup-accordion-gallery-image"/>
+                              class="hotelGroup-panel-gallery-image"/>
 
-                    <div class="hotelGroup-accordion-gallery-footer">
-                      <div class="hotelGroup-accordion-gallery-button">
-                        <div class="hotelGroup-accordion-gallery-button-container">
+                    <div class="hotelGroup-panel-gallery-footer">
+                      <div class="hotelGroup-panel-gallery-button">
+                        <div class="hotelGroup-panel-gallery-button-container">
                           Смотреть ещё +35 фото
                         </div>
                       </div>
-                      <div class="hotelGroup-accordion-info-footer mobile" @click.stop>
+                      <div class="hotelGroup-panel-info-footer mobile" @click.stop>
                         <v-btn v-for="(button, j) in item.hoteltags"
-                               class="hotelGroup-accordion-info-button"
+                               class="hotelGroup-panel-info-button"
                                :key="'linkToInsidePage'+j" elevation="0"
                                :href="getLinkToHref(button, item)">{{ button.title }}
                         </v-btn>
@@ -113,9 +108,9 @@
                 </div>
 
               </div>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -133,7 +128,7 @@ export default class HotelGroup extends Vue {
   hotelList: any = []
   dialog: boolean = false
 
-  changeDialog (dialog: boolean) {
+  changeDialog(dialog: boolean) {
     this.dialog = dialog
   }
 
