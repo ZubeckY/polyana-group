@@ -31,7 +31,6 @@
     "nuxt-ssr-cache": "^1.5.2",
     "nuxt-start": "^2.17.1",
     "pm2": "^5.3.0",
-    "swiper": "6",
     "v-mask": "^2.3.0",
     "vue": "2.7.14",
     "vue-class-component": "^7.2.6",
@@ -45,7 +44,6 @@
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/vuetify": "^1.12.3",
-    "@types/swiper": "^6.0.0",
     "cache-loader": "^4.1.0",
     "nuxi": "^3.9.0",
     "nuxt-storm": "^1.1.3"

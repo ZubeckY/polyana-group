@@ -491,18 +491,22 @@
     max-width: calc(80% - 300px);
     margin-left: 155px;
 
-    &-prev {
+    &-arrow {
       position: absolute;
-      left: 3%;
-      bottom: 50%;
-      z-index: 100;
-    }
+      width: 6.5px;
+      height: 6.5px;
+      transform: rotate(45deg);
 
-    &-next {
-      position: absolute;
-      left: 87.5%;
-      bottom: 50%;
-      z-index: 100;
+      &.prev {
+        border-left: 2px solid black;
+        border-bottom: 2px solid black;
+      }
+
+      &.next {
+        left: -3px;
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+      }
     }
   }
 

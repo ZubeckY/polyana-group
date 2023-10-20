@@ -171,7 +171,6 @@ export default defineNuxtConfig({
     },
     optimization: {
       minimize: true
-    },
-    transpile: ["swiper"]
+    }
   }
 })

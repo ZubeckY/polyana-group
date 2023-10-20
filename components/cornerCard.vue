@@ -1,8 +1,8 @@
 <template>
-  <v-card class="corner-card" elevation="0" width="283px" height="420px" color="transparent" :href="goToPromo">
+  <div class="corner-card">
     <div class="corner-card-header d-flex justify-space-between">
       <corner-card-chips :item="item"/>
-      <div class="corner-card-header--arrow golden-gradient">
+      <a class="corner-card-header--arrow golden-gradient" :href="goToPromo">
         <svg fill="#ffffff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -15,7 +15,7 @@
             </g>
           </g>
         </svg>
-      </div>
+      </a>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" width="284" height="420" viewBox="0 0 284 420" fill="none">
@@ -36,7 +36,7 @@
       </div>
     </v-card>
 
-  </v-card>
+  </div>
 </template>
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
@@ -52,6 +52,8 @@ export default class CornerCard extends Vue {
 </script>
 <style lang="less">
 .corner-card {
+  width: 283px;
+  height: 420px;
   position: relative;
   border-radius: 19.55px;
 

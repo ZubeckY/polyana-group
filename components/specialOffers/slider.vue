@@ -1,53 +1,105 @@
 <template>
-  <div class="specialOffers-slider swiper overflow-hidden" ref="container">
-    <div class="swiper-wrapper d-flex flex-row">
-      <div class="specialOffers-slide swiper-slide"
-           v-if="slides.length > 0" v-for="(item, i) in slides" :key="'cornerCard'+i">
+  <div class="specialOffers-slider" v-if="slides.length > 0">
+    <VueSlickCarousel v-bind="settings">
+      <div v-for="(item, i) in slides" :key="'reviewIndex'+i" class="px-1">
         <corner-card :item="item"/>
       </div>
-    </div>
-    <v-btn class="specialOffers-slider-prev swiper-button-prev"
-           min-height="0" min-width="0" width="34px" height="34px"
-           elevation="0" rounded color="#ffffffb8" title="Назад">
-      <chevron-left/>
-    </v-btn>
-    <v-btn class="specialOffers-slider-next swiper-button-next"
-           min-height="0" min-width="0" width="34px" height="34px"
-           elevation="0" rounded color="#ffffffb8" title="Вперёд">
-      <chevron-right/>
-    </v-btn>
+      <template #prevArrow="arrowOption">
+        <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
+               elevation="0" rounded color="#ffffffb8" title="Назад">
+          <div class="specialOffers-slider-arrow prev">&nbsp;</div>
+        </v-btn>
+      </template>
+      <template #nextArrow="arrowOption">
+        <v-btn style="right: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
+               elevation="0" rounded color="#ffffffb8" title="Вперёд">
+          <div class="specialOffers-slider-arrow next">&nbsp;</div>
+        </v-btn>
+      </template>
+    </VueSlickCarousel>
   </div>
 </template>
 <script lang="ts">
-import {Vue, Component, Ref} from 'vue-property-decorator';
+import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
-import {Swiper, Navigation} from 'swiper/core';
 
 @Component({})
 export default class SpecialOffersSlider extends Vue {
-  @Ref()
-  readonly container!: HTMLDivElement;
-  swiper: any = Swiper
   slides: any = []
+  settings: any = {
+    arrows: true,
+    infinite: false,
+    slidesToShow: 2.4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1250,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1150,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1080,
+        settings: {
+          slidesToShow: 1.6,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 960,
+        settings: {
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '30px',
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '30px',
+        }
+      },
+      {
+        breakpoint: 390,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '15px',
+        }
+      },
+    ]
+  }
 
   async mounted() {
     await this.getData()
-    await this.initSwiper()
-  }
-
-  async initSwiper() {
-    Swiper.use([Navigation])
-    this.swiper = new Swiper(this.container, {
-      slidesPerView: 'auto',
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    })
   }
 
   async getData() {
-    let {hotel_id}:any = this.$router.currentRoute.query
+    let {hotel_id}: any = this.$router.currentRoute.query
     let idArr = []
     let restId: any = {
       32513: 1,
@@ -61,6 +113,7 @@ export default class SpecialOffersSlider extends Vue {
           .from('specialoffer')
           .select('id, title, imgvertical, idcategory, created_at')
           .order('id')
+          .limit(10)
         this.slides = data
       } else {
         idArr.push(restId[hotel_id])
@@ -69,6 +122,7 @@ export default class SpecialOffersSlider extends Vue {
           .select('id, title, imgvertical, idcategory, created_at')
           .contains('idhotel', [...idArr])
           .order('id')
+          .limit(10)
         this.slides = data
       }
     } catch (e) {
