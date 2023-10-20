@@ -95,9 +95,23 @@ export default class Comp extends Vue {
         .select('')
         .order('id')
       this.localMapping = data
+      this.getCurrentHotel()
     } catch (e) {
       console.log(e)
     }
+  }
+
+  getCurrentHotel() {
+    let {hotel_id}: any = this.$router.currentRoute.query
+    if (!hotel_id) return
+
+    let restId: any = {
+      32513: 0,
+      22866: 1,
+      23660: 2,
+    }
+
+    return this.activeChip = restId[hotel_id]
   }
 
   @Watch('activeChip')
