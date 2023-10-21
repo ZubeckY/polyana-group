@@ -184,6 +184,20 @@ import {Component, Vue} from "vue-property-decorator";
         name: "keywords",
         content: "Ключевые слова для поиска"
       },
+
+
+
+
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "http://81.200.119.121:3000/"
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website"
+      },
       {
         hid: "og:title",
         property: "og:title",
@@ -199,15 +213,50 @@ import {Component, Vue} from "vue-property-decorator";
         property: "og:image",
         content: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2455.jpg"
       },
+
+
+      {
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "Ключевые слова для поиска"
+      },
+      {
+        hid: "twitter:url",
+        name: "twitter:url",
+        content: "http://81.200.119.121:3000/"
+      },
+      {
+        hid: "twitter:domain",
+        property: "twitter:domain",
+        content: "81.200.119.121"
+      },
+
       {
         hid: "og:type",
-        property: "og:image",
+        property: "og:type",
         content: "website"
-      }
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Polyana Group - группа курортных отелей на Красной поляне"
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2455.jpg"
+      },
+
     ],
   }
 })
-export default class Pages extends Vue {
+
+    export default class Pages extends Vue {
   activeImage: string = 'https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2455.jpg'
 
   get activeSlide() {
