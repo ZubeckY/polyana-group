@@ -7,7 +7,7 @@
         <pattern id="pinterestTablet" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlink:href="#imagePinterestTablet" transform="matrix(0.000283521 0 0 0.000402232 -0.0882993 -0.044192)"/>
         </pattern>
-        <image id="imagePinterestTablet" width="4096" height="2731" href="/img/pinterest/mobile.webp"/>
+        <image id="imagePinterestTablet" width="4096" height="2731" href="https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp"/>
       </defs>
     </svg>
     <watch-play/>
