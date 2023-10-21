@@ -13,9 +13,7 @@
         <v-btn v-for="(item, i) in slider" :key="'header-slide' + i"
                class="header-slider__slide d-flex justify-center align-center"
                title="Слайд 1" color="rgba(255, 255, 255, 0.32)" fab :value="i">
-          <nuxt-img width="51px" height="51px" style="border-radius: 100px"
-                    loading="lazy" quality="80" :placeholder="[50]"
-                    :src="'/img/header/slider/' + item " alt="#"/>
+          <img width="51px" height="51px" style="border-radius: 100px" loading="lazy" :src="item " alt="#"/>
         </v-btn>
       </v-btn-toggle>
 
@@ -30,25 +28,33 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
+
 @Component({})
 export default class Slider extends Vue {
   slide: number = 0
   slider: any = [
-    "_MG_2185_1.webp",
-    "_MG_2327.webp",
-    "_MG_7748.webp"
+    "https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2455.jpg",
+    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp",
+    "https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/%D0%9E%D1%82%D0%B5%D0%BB%D1%8C%20Ultima%20Club%202/%D1%8D%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80/_MG_7748.jpg"
   ]
 
   @Watch('slide')
-  changeMainSlide () {
+  changeMainSlide() {
     return this.$emit('changeActiveSlide', this.slider[this.slide])
   }
 
-  prev () {
-    this.slide --; if (this.slide < 0) { this.slide = this.slider.length - 1 }
+  prev() {
+    this.slide--;
+    if (this.slide < 0) {
+      this.slide = this.slider.length - 1
+    }
   }
-  next () {
-    this.slide ++; if (this.slide > this.slider.length - 1) { this.slide = 0 }
+
+  next() {
+    this.slide++;
+    if (this.slide > this.slider.length - 1) {
+      this.slide = 0
+    }
   }
 }
 </script>

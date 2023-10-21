@@ -1,5 +1,5 @@
 <template>
-  <v-card class="reviews-slider-card" elevation="0">
+  <v-card tag="article" class="reviews-slider-card" elevation="0">
     <div class="reviews-slider-card-container">
       <div class="reviews-slider-card-header">
         <div class="reviews-slider-card-header-user">

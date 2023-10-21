@@ -1,5 +1,5 @@
 <template>
-  <div class="seasonPrograms-card winter large">
+  <article class="seasonPrograms-card winter large">
     <div class="seasonPrograms-card-container">
       <div class="seasonPrograms-card-header">
         <svg xmlns="http://www.w3.org/2000/svg" width="52" height="46" viewBox="0 0 52 46" fill="none">
@@ -26,7 +26,7 @@
         наслаждайтесь зимними видами спорта без лишних затрат.
       </p>
     </div>
-  </div>
+  </article>
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';

@@ -21,8 +21,8 @@
             </p>
 
             <div class="exclusive-text-promotion">
-              <p>Акция действует до 11.11.2023 г .</p>
-              <p>Уточняйте условия акции по телефону: <b>+7 989 009 5577.</b></p>
+              <span>Акция действует до 11.11.2023 г .</span>
+              <span>Уточняйте условия акции по телефону: <b>+7 989 009 5577.</b></span>
             </div>
           </div>
         </v-card>
@@ -91,16 +91,17 @@ export default class Exclusive extends Vue {
     }
 
     &-promotion {
+      display: flex;
       color: white;
       margin-top: 10px;
       font-size: 12px;
       font-weight: 400;
       line-height: 136.4%;
       white-space: pre-line;
+      flex-direction: column;
 
-      & p {
+      & * {
         margin-top: 3px;
-        margin-bottom: 0 !important;
       }
     }
   }

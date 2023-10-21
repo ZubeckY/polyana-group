@@ -34,7 +34,19 @@ import {Vue, Component} from 'vue-property-decorator';
 @Component({
   head: {
     title: 'Бронирование',
-  },
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Бронирование"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "Ключевые слова для поиска"
+      },
+    ],
+  }
 })
 export default class Booking extends Vue {
 }

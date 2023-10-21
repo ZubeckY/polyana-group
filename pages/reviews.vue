@@ -52,8 +52,20 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Отзывы',
-  },
+    title: 'Отзывы на отели',
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Отзывы на отели"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "Ключевые слова для поиска"
+      },
+    ],
+  }
 })
 export default class Reviews extends Vue {
   data: any = []
@@ -70,7 +82,7 @@ export default class Reviews extends Vue {
   async created() {
     await this.getHotels()
     await this.getData()
-    this.getCurrentHotel ()
+    this.getCurrentHotel()
   }
 
   getCurrentHotel() {
@@ -82,9 +94,9 @@ export default class Reviews extends Vue {
   async getHotels() {
     try {
       let {data, error}: any = await supaBase
-        .from('hotels')
-        .select('id, title, travellineid')
-        .order('id')
+          .from('hotels')
+          .select('id, title, travellineid')
+          .order('id')
       this.hotels.push(...data)
     } catch (e) {
       console.log(e)
@@ -97,16 +109,16 @@ export default class Reviews extends Vue {
       this.loading = true
       if (this.hotel == 0) {
         let {data, error} = await supaBase
-          .from('reviews')
-          .select('')
-          .order('created_at', {ascending: false})
+            .from('reviews')
+            .select('')
+            .order('created_at', {ascending: false})
         this.data = data
       } else {
         let {data, error} = await supaBase
-          .from('reviews')
-          .select('')
-          .eq('hoteltlid', this.hotel)
-          .order('created_at', {ascending: false})
+            .from('reviews')
+            .select('')
+            .eq('hoteltlid', this.hotel)
+            .order('created_at', {ascending: false})
         this.data = data
       }
     } catch (e) {

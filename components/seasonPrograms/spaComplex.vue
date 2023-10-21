@@ -1,5 +1,5 @@
 <template>
-  <div class="seasonPrograms-card summer medium">
+  <article class="seasonPrograms-card summer medium">
     <div class="seasonPrograms-card-container">
       <div class="seasonPrograms-card-header">
         <svg xmlns="http://www.w3.org/2000/svg" width="58" height="44" viewBox="0 0 58 44" fill="none">
@@ -44,7 +44,7 @@
         расслабления и восстановления здоровья
       </p>
     </div>
-  </div>
+  </article>
 </template>
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';

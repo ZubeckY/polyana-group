@@ -1,5 +1,5 @@
 <template>
-  <div class="corner-card">
+  <article class="corner-card">
     <div class="corner-card-header d-flex justify-space-between">
       <corner-card-chips :item="item"/>
       <a class="corner-card-header--arrow golden-gradient" :href="goToPromo">
@@ -36,7 +36,7 @@
       </div>
     </v-card>
 
-  </div>
+  </article>
 </template>
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';

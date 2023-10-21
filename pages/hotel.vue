@@ -88,10 +88,7 @@
 
         <div class="luxHoliday-body">
           <div class="luxHoliday-body-container">
-            <div class="luxHoliday-slide slider"
-                 v-for="(slider, i) in sliders"
-                 :key="'luxHoliday-slide'+i">
-
+            <article class="luxHoliday-slide slider" v-for="(slider, i) in sliders" :key="'luxHoliday-slide'+i">
               <v-carousel class="luxHoliday-slide"
                           style="height: 391px" hide-delimiters>
 
@@ -115,7 +112,7 @@
                 <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg"/>
                 <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
               </a>
-            </div>
+            </article>
 
           </div>
         </div>
@@ -146,7 +143,19 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Отель'
+    title: 'Отель',
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Описание отеля"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "Ключевые слова для поиска"
+      },
+    ],
   }
 })
 export default class Inside extends Vue {

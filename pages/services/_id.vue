@@ -79,8 +79,20 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Услуга',
-  },
+    title: 'Услуги',
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Услуги"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "Ключевые слова для поиска"
+      },
+    ],
+  }
 })
 export default class Services extends Vue {
   data: any = []

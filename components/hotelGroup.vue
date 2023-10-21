@@ -7,7 +7,7 @@
         </h3>
       </div>
       <div class="hotelGroup-body">
-        <div class="hotelGroup-panel" v-for="(item, i) in hotelList" :key="'hotel-'+i">
+        <article class="hotelGroup-panel" v-for="(item, i) in hotelList" :key="'hotel-'+i">
           <div class="hotelGroup-panel-container">
             <a class="hotelGroup-panel-head text-decoration-none" :href="'/hotel?hotel_id='+item.travellineid">
               <div class="hotelGroup-panel-head-container" :id="'hotel-'+item.travellineid">
@@ -41,7 +41,7 @@
                     <div class="hotelGroup-panel-info-head">
 
                       <div class="hotelGroup-panel-info-logo">
-                        <v-img :lazy-src="item.logohotel" :src="item.logohotel" alt="#" style="filter: invert(1);"/>
+                        <v-img :lazy-src="item.logohotel" :src="item.logohotel" alt="логотип отеля" style="filter: invert(1);"/>
                       </div>
 
                       <div class="hotelGroup-panel-info-group">
@@ -70,22 +70,22 @@
                   <div class="hotelGroup-panel-gallery-container d-flex">
                     <div class="hotelGroup-panel-gallery-group d-flex">
                       <nuxt-img :src="item.imgshotel[0]"
-                                sizes="xs:200px md:500px lg:1024" alt="#"
+                                sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
                                 loading="lazy" quality="80" :placeholder="[50]"
                                 class="hotelGroup-panel-gallery-group-large mb-2"/>
                       <div class="d-flex flex-row">
                         <nuxt-img :src="item.imgshotel[1]"
-                                  sizes="xs:200px md:500px lg:1024" alt="#"
+                                  sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
                                   loading="lazy" quality="80" :placeholder="[50]"
                                   class="hotelGroup-panel-gallery-group-small mr-2"/>
                         <nuxt-img :src="item.imgshotel[2]"
-                                  sizes="xs:200px md:500px lg:1024" alt="#"
+                                  sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
                                   loading="lazy" quality="80" :placeholder="[50]"
                                   class="hotelGroup-panel-gallery-group-small"/>
                       </div>
                     </div>
                     <nuxt-img :src="item.imgshotel[3]"
-                              sizes="xs:200px md:500px lg:1024" alt="#"
+                              sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
                               loading="lazy" quality="80" :placeholder="[50]"
                               class="hotelGroup-panel-gallery-image"/>
 
@@ -110,7 +110,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>

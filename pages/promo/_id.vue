@@ -46,8 +46,20 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Акция',
-  },
+    title: 'Специальные предложения и акции',
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Специальные предложения и акции"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "Ключевые слова для поиска"
+      },
+    ],
+  }
 })
 export default class Promo extends Vue {
   data: any = {}

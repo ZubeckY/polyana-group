@@ -117,8 +117,20 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Контакты'
-  },
+    title: 'Контакты',
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Контакты"
+      },
+      {
+        hid: "keywords",
+        name: "keywords",
+        content: "Ключевые слова для поиска"
+      },
+    ],
+  }
 })
 export default class Contacts extends Vue {
   activeChip: number = 0

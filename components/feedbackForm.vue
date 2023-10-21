@@ -1,6 +1,6 @@
 <template>
-  <div class="feedbackForm py-5 px-3">
-    <v-form class="feedbackForm-container">
+  <v-form class="feedbackForm py-5 px-3">
+    <div class="feedbackForm-container">
       <h4 class="feedbackForm-title">В течение 5 минут перезвоним,
         сориентируем по стоимости и
         предоставим скидку
@@ -75,8 +75,8 @@
       <span class="feedbackForm-conditions mt-3">
         Нажимая кнопку вы соглашаетесь с условиями Политики конфиденциальности
       </span>
-    </v-form>
-  </div>
+    </div>
+  </v-form>
 </template>
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
