@@ -994,17 +994,23 @@
   &-play {
     position: absolute;
     display: flex;
+    width: 100%;
     top: 50%;
-    left: 46.5%;
-    width: 87px;
-    height: 87px;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(131deg,
-    rgba(217, 217, 217, 0.50) 13.16%,
-    rgba(217, 217, 217, 0.00) 95.45%);
-    backdrop-filter: blur(13px);
-    border-radius: 100%;
+
+    &-button {
+      display: flex;
+      width: 87px;
+      height: 87px;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(131deg,
+      rgba(217, 217, 217, 0.50) 13.16%,
+      rgba(217, 217, 217, 0.00) 95.45%);
+      backdrop-filter: blur(13px);
+      border-radius: 100%;
+    }
 
     &-icon {
       width: 27px;
