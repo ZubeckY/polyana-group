@@ -78,20 +78,44 @@ import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
-  head: {
-    title: 'Услуги',
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Услуги"
-      },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content: "Ключевые слова для поиска"
-      },
-    ],
+  head(this: Services): object {
+    return {
+      title: this.data.id >= 1 ? this.data.title : 'Загрузка...',
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.data.id >= 1 ? this.data.description.substr(0,250) : ''
+        },
+
+        // og:tags
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: window.location.href
+        },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: "website"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.data.id >= 1 ? this.data.title : ''
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.data.id >= 1 ? this.data.description.substring(0,250) : ''
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: this.data.id ? this.data['imgs'][0] : 'https://placehold.co/900x600/dddddd/dddddd'
+        }
+      ]
+    }
   }
 })
 export default class Services extends Vue {
@@ -110,10 +134,10 @@ export default class Services extends Vue {
       let getIdFromRoute = currentRoute.split('/')
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
-      let {data, error}:any = await supaBase
-        .from('services')
-        .select('')
-        .match({id: currentId})
+      let {data, error}: any = await supaBase
+          .from('services')
+          .select('')
+          .match({id: currentId})
       this.data = data[0]
     } catch (e) {
       console.log(e)

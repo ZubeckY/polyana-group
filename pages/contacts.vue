@@ -117,18 +117,40 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Контакты',
+    title: 'Контакты - группа отелей Polyana group',
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "Контакты"
+        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+      },
+
+      // og:tags
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: window.location.href
       },
       {
-        hid: "keywords",
-        name: "keywords",
-        content: "Ключевые слова для поиска"
+        hid: "og:type",
+        property: "og:type",
+        content: "website"
       },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Контакты - группа отелей Polyana group"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
+      }
     ],
   }
 })

@@ -45,20 +45,44 @@ import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
-  head: {
-    title: 'Специальные предложения и акции',
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Специальные предложения и акции"
-      },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content: "Ключевые слова для поиска"
-      },
-    ],
+  head(this: Promo): object {
+    return {
+      title: this.data.length >= 1 ? this.data[0].title : 'Загрузка...',
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.data.length >= 1 ? this.data[0].description.substring(0,250) : ''
+        },
+
+        // og:tags
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: window.location.href
+        },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: "website"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.data.length >= 1 ? this.data[0].title : ''
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.data.length >= 1 ? this.data[0].description.substr(0,250) : ''
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: this.data.length ? this.data[0]['imghorisontal'] : ''
+        }
+      ]
+    }
   }
 })
 export default class Promo extends Vue {
@@ -77,9 +101,9 @@ export default class Promo extends Vue {
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
       let {data, error} = await supaBase
-        .from('specialoffer')
-        .select('')
-        .match({id: currentId})
+          .from('specialoffer')
+          .select('')
+          .match({id: currentId})
 
       this.data = data
     } catch (e) {

@@ -52,19 +52,46 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Отзывы на отели',
+    title: 'Отзывы на отели - группа отелей Polyana group',
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "Отзывы на отели"
+        content: "Гости наших отелей группы Polyana Group остаются впечатлены высоким уровнем сервиса, комфортом номеров и прекрасной территорией в окружении гор. Отзывы на Яндексе подтверждают высокую оценку гостей и рекомендуют эти отели для великолепного отдыха."
       },
       {
         hid: "keywords",
         name: "keywords",
-        content: "Ключевые слова для поиска"
+        content: "Отзывы Ultima Club Ikos Polyana Country Hills"
       },
-    ],
+
+      // og:tags
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: window.location.href
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website"
+      },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Отзывы на отели - группа отелей Polyana group"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "Гости наших отелей группы Polyana Group остаются впечатлены высоким уровнем сервиса, комфортом номеров и прекрасной территорией в окружении гор. Отзывы на Яндексе подтверждают высокую оценку гостей и рекомендуют эти отели для великолепного отдыха."
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://avatars.mds.yandex.net/get-altay/3935166/2a00000189acec0329037e5937c9615a03fd/XXXL"
+      }
+    ]
   }
 })
 export default class Reviews extends Vue {

@@ -89,8 +89,8 @@
         <div class="luxHoliday-body">
           <div class="luxHoliday-body-container">
             <article class="luxHoliday-slide slider" v-for="(slider, i) in sliders" :key="'luxHoliday-slide'+i">
-              <v-carousel class="luxHoliday-slide"
-                          style="height: 391px" hide-delimiters>
+              <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px"
+                          hide-delimiters>
 
                 <template v-slot:prev="{ on, attrs }">
                   <div v-bind="attrs" v-on="on">
@@ -142,33 +142,79 @@ import {Vue, Component} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
-  head: {
-    title: 'Отель',
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Описание отеля"
-      },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content: "Ключевые слова для поиска"
-      },
-    ],
+  head(this: Hotel): object {
+    return {
+      title: this.OG_CONTENT_CURRENT.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.OG_CONTENT_CURRENT.description
+        },
+
+        // og:tags
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: this.OG_CONTENT_CURRENT.url
+        },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: "website"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.OG_CONTENT_CURRENT.title
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.OG_CONTENT_CURRENT.description
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: this.OG_CONTENT_CURRENT.image
+        }
+      ]
+    }
   }
 })
-export default class Inside extends Vue {
+export default class Hotel extends Vue {
+  hotelId: any = this.$router.currentRoute.query.hotel_id
   data: any = []
   hotel: any = {}
-  hotelId: any = this.$router.currentRoute.query.hotel_id
   sliders: any = []
   type: string = 'desktop'
   dialog: boolean = false
+  OG_CONTENT_CURRENT: any = {}
+  OG_CONTENT_DATA: any = [
+    {
+      title: 'Отель Ultima Club | Hotel & Spa - группа отелей Polyana group',
+      description: 'Отдых на Красной Поляне в отеле 5* с кинотеатром и панорамным видом на горы на открытой терассе — идеальный способ расслабиться и насладиться природой',
+      url: '/hotel?hotel_id=32513',
+      image: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main4.webp'
+    },
+    {
+      title: 'Отель Country Hills | Resort - группа отелей Polyana group',
+      description: 'Откройте для себя идеальное место для отдыха и релаксации на Красной Поляне. Наслаждайтесь беззаботным отдыхом в 5* отеле Country Hills со СПА-пространством и бассейном в окружении природы',
+      url: '/hotel?hotel_id=22866',
+      image: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp'
+    },
+    {
+      title: 'Отель Ikos Polyana - группа отелей Polyana group',
+      description: 'Насладитесь роскошью и красотой гор в Ikos Polyana! Вас ждет авторский 4* отель с дизайнерским интерьером и незабываемый горный отдых.',
+      url: '/hotel?hotel_id=23660',
+      image: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ikos%20Polyana/main/main1.webp'
+    }
+  ]
 
   async created() {
     await this.getHotelInfo()
     await this.getHotelSliders()
+    this.getMetaData()
   }
 
   mounted() {
@@ -204,10 +250,10 @@ export default class Inside extends Vue {
     try {
       let {hotel_id} = this.$router.currentRoute.query
       let {data, error} = await supaBase
-        .from('services')
-        .select('')
-        .eq('travellineid', hotel_id)
-        .order('id')
+          .from('services')
+          .select('')
+          .eq('travellineid', hotel_id)
+          .order('id')
 
       this.sliders = data
     } catch (e) {
@@ -223,15 +269,22 @@ export default class Inside extends Vue {
     try {
       let {hotel_id} = this.$router.currentRoute.query
       let {data, error}: any = await supaBase
-        .from('hotels')
-        .select('id, offer, description, youtube, travellineid, imgshotel')
-        .eq('travellineid', hotel_id)
-        .order('id')
+          .from('hotels')
+          .select('id, offer, description, youtube, travellineid, imgshotel')
+          .eq('travellineid', hotel_id)
+          .order('id')
       this.hotel = data[0]
       this.data = data[0].imgshotel
     } catch (e) {
       console.log(e)
     }
+  }
+
+  getMetaData() {
+    let link = window.location.pathname + window.location.search
+    let DATA: any = this.OG_CONTENT_DATA.filter((data: any) => data.url == link)[0]
+    DATA.url = window.location.href
+    this.OG_CONTENT_CURRENT = DATA
   }
 }
 </script>

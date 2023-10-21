@@ -69,19 +69,46 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Специальные предложения и акции',
+    title: 'Специальные предложения и акции - группа отелей Polyana group',
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "Специальные предложения и акции"
+        content: "Наша группа отелей предлагает множество специальных предложений и акций, таких как раннее бронирование со скидкой до 20%, программу лояльности для постоянных гостей, специальные пакеты с завтраками, ужинами и спа-услугами, а также скидки для групп."
       },
       {
         hid: "keywords",
         name: "keywords",
         content: "Ключевые слова для поиска"
       },
-    ],
+
+      // og:tags
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: window.location.href
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website"
+      },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Специальные предложения и акции - группа отелей Polyana group"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "Наша группа отелей предлагает множество специальных предложений и акций, таких как раннее бронирование со скидкой до 20%, программу лояльности для постоянных гостей, специальные пакеты с завтраками, ужинами и спа-услугами, а также скидки для групп."
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/sauna/spa9.webp"
+      }
+    ]
   }
 })
 export default class Promo extends Vue {
@@ -102,7 +129,7 @@ export default class Promo extends Vue {
     await this.getHotels()
     await this.getCategories()
     await this.getData()
-    this.getCurrentHotel ()
+    this.getCurrentHotel()
   }
 
   getCurrentHotel() {
@@ -121,9 +148,9 @@ export default class Promo extends Vue {
   async getCategories() {
     try {
       let {data, error}: any = await supaBase
-        .from('categoryspecialoffer')
-        .select('id, title')
-        .order('id')
+          .from('categoryspecialoffer')
+          .select('id, title')
+          .order('id')
       this.categories.push(...data)
     } catch (e) {
       console.log(e)
@@ -133,9 +160,9 @@ export default class Promo extends Vue {
   async getHotels() {
     try {
       let {data, error}: any = await supaBase
-        .from('hotels')
-        .select('id, title')
-        .order('id')
+          .from('hotels')
+          .select('id, title')
+          .order('id')
       this.hotels.push(...data)
     } catch (e) {
       console.log(e)
@@ -168,11 +195,11 @@ export default class Promo extends Vue {
     try {
       this.loading = true
       let {data, error} = await supaBase
-        .from('specialoffer')
-        .select('')
-        .contains('idhotel', [...this.hotel])
-        .contains('idcategory', [...this.category])
-        .order('id')
+          .from('specialoffer')
+          .select('')
+          .contains('idhotel', [...this.hotel])
+          .contains('idcategory', [...this.category])
+          .order('id')
 
       this.data = data
     } catch (e) {

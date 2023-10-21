@@ -67,7 +67,7 @@
               <div class="luxHoliday-body">
                 <div class="luxHoliday-body-container">
                   <article class="luxHoliday-slide slider" v-for="(slider, i) in data" :key="'luxHoliday-slide'+i">
-                    <v-carousel class="luxHoliday-slide" style="height: 391px" hide-delimiters>
+                    <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px" hide-delimiters>
 
                       <template v-slot:prev="{ on, attrs }">
                         <div v-bind="attrs" v-on="on">
@@ -115,19 +115,41 @@ import supaBase from "~/assets/scripts/supaBase";
 
 @Component({
   head: {
-    title: 'Услуги',
+    title: 'Услуги - группа отелей Polyana group',
     meta: [
       {
         hid: "description",
         name: "description",
-        content: "Услуги"
+        content: "Добро пожаловать в Polyana Group – группу курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+      },
+
+      // og:tags
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: window.location.href
       },
       {
-        hid: "keywords",
-        name: "keywords",
-        content: "Ключевые слова для поиска"
+        hid: "og:type",
+        property: "og:type",
+        content: "website"
       },
-    ],
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Услуги - группа отелей Polyana group"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: "Добро пожаловать в Polyana Group – группу курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/skiroom/skiroom1.webp"
+      }
+    ]
   }
 })
 export default class Services extends Vue {
