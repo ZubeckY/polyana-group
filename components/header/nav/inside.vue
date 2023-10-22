@@ -6,7 +6,7 @@
         <hotels-menu>
           <div class="d-flex align-center">
             <div class="header-nav__logo ml-2">
-              <v-img :src="currentLogo" :src="currentLogo" alt="Загрузка..."/>
+              <v-img :lazy-src="currentLogo" :src="currentLogo" alt="Загрузка..."/>
             </div>
           </div>
         </hotels-menu>

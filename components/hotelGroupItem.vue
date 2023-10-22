@@ -32,7 +32,7 @@
               <div class="hotelGroup-panel-info-head">
 
                 <div class="hotelGroup-panel-info-logo">
-                  <v-img :src="item.logohotel" :src="item.logohotel" alt="логотип отеля"
+                  <v-img :lazy-src="item.logohotel" :src="item.logohotel" alt="логотип отеля"
                          style="filter: invert(1);"/>
                 </div>
 
