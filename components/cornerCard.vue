@@ -10,7 +10,8 @@
             <g data-name="Layer 2">
               <g data-name="diagonal-arrow-right-up">
                 <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path>
+                <path
+                  d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path>
               </g>
             </g>
           </g>
@@ -50,67 +51,67 @@ export default class CornerCard extends Vue {
   }
 }
 </script>
-<style lang="less">
+<style>
 .corner-card {
   width: 283px;
   height: 420px;
   position: relative;
   border-radius: 19.55px;
+}
 
-  &-header {
-    position: absolute;
-    width: 100%;
+.corner-card-header {
+  position: absolute;
+  width: 100%;
+}
 
-    &-chip {
-      height: 25px;
-      font-size: 12px !important;
-    }
+.corner-card-header-chip {
+  height: 25px;
+  font-size: 12px !important;
+}
 
-    &-container {
-      width: calc(100% - 72px)
-    }
+.corner-card-header-container {
+  width: calc(100% - 72px)
+}
 
-    &--arrow {
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      top: 0;
-      right: 0;
-      width: 61px;
-      height: 61px;
-      border-radius: 19.55px;
-    }
-  }
+.corner-card-header--arrow {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 61px;
+  height: 61px;
+  border-radius: 19.55px;
+}
 
-  &-image {
-    width: 283px;
-    height: 420px;
-    object-fit: contain;
-  }
+.corner-card-image {
+  width: 283px;
+  height: 420px;
+  object-fit: contain;
+}
 
-  &-text {
-    display: flex;
-    position: absolute;
-    width: 246px;
-    height: 70px;
-    bottom: 26px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    color: var(--dark-color);
-    backdrop-filter: blur(25px);
-    background: linear-gradient(270deg,
-    rgba(217, 217, 217, 0.40) 2.1%,
-    rgba(217, 217, 217, 0.20) 103.66%);
+.corner-card-text {
+  display: flex;
+  position: absolute;
+  width: 246px;
+  height: 70px;
+  bottom: 26px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--dark-color);
+  backdrop-filter: blur(25px);
+  background: linear-gradient(270deg,
+  rgba(217, 217, 217, 0.40) 2.1%,
+  rgba(217, 217, 217, 0.20) 103.66%);
+}
 
-    & * {
-      color: var(--dark-color);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: normal;
-      white-space: pre-line;
-    }
-  }
+.corner-card-text * {
+  color: var(--dark-color);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  white-space: pre-line;
 }
 </style>

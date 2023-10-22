@@ -36,74 +36,71 @@
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
 
-@Component({})
-export default class Exclusive extends Vue {
+@Component export default class Exclusive extends Vue {
 }
 </script>
-<style lang="less" scoped>
+<style scoped>
 /* exclusive */
 .exclusive {
   margin-top: 70px;
+}
 
-  &-form {
-    &.inside {
-      display: block;
-    }
+.exclusive-container {
+  width: 100%;
+  height: 425px;
+  max-width: 914px;
+  border-radius: 23px;
+  background: linear-gradient(268deg,
+  rgba(217, 217, 217, 0.40) 3.77%,
+  rgba(217, 217, 217, 0.20) 98.84%) !important;
+  backdrop-filter: blur(35px) !important;
+}
 
-    &.outside {
-      display: none;
-      margin-top: 40px;
-    }
-  }
+.exclusive-title {
+  color: white;
+  font-weight: 400;
+  line-height: normal;
+  white-space: pre-line;
+}
 
-  &-content {
-    margin-right: 50px;
-  }
+.exclusive-text {
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 136.4%;
+  white-space: pre-line;
+  margin-bottom: 0 !important;
+}
 
-  &-container {
-    width: 100%;
-    height: 425px;
-    max-width: 914px;
-    border-radius: 23px;
-    background: linear-gradient(268deg,
-    rgba(217, 217, 217, 0.40) 3.77%,
-    rgba(217, 217, 217, 0.20) 98.84%) !important;
-    backdrop-filter: blur(35px) !important;
-  }
+.exclusive-text-container {
+  max-width: 492px;
+}
 
-  &-title {
-    color: white;
-    font-weight: 400;
-    line-height: normal;
-    white-space: pre-line;
-  }
+.exclusive-text-promotion {
+  display: flex;
+  color: white;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 136.4%;
+  white-space: pre-line;
+  flex-direction: column;
+}
 
-  &-text {
-    color: white;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 136.4%;
-    white-space: pre-line;
-    margin-bottom: 0 !important;
+.exclusive-text-promotion * {
+  margin-top: 3px;
+}
 
-    &-container {
-      max-width: 492px;
-    }
+.exclusive-content {
+  margin-right: 50px;
+}
 
-    &-promotion {
-      display: flex;
-      color: white;
-      margin-top: 10px;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 136.4%;
-      white-space: pre-line;
-      flex-direction: column;
+.exclusive-form.inside {
+  display: block;
+}
 
-      & * {
-        margin-top: 3px;
-      }
-    }
-  }
+.exclusive-form.outside {
+  display: none;
+  margin-top: 40px;
 }
 </style>

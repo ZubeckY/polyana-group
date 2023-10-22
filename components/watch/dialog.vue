@@ -36,6 +36,3 @@ export default class Dialog extends Vue {
   dialog: boolean = false
 }
 </script>
-<style scoped lang="less">
-
-</style>

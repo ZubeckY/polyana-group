@@ -28,8 +28,6 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/node",
-      "cookie-universal",
-      "cookie-universal-nuxt"
     ]
   },
   "exclude": [

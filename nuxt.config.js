@@ -54,10 +54,11 @@ export default defineNuxtConfig({
     '~/assets/styles/screen/desktop.less',
     '~/assets/styles/screen/mobile.less',
     '~/assets/styles/travel-line.css',
-    '~/assets/styles/fontSize.less',
-    '~/assets/styles/footer.less',
+    '~/assets/styles/fontSize.css',
+    '~/assets/styles/footer.css',
     '~/assets/styles/header.less',
-    '~/assets/styles/main.less',
+    '~/assets/styles/main.css',
+    '~/assets/styles/animations.css',
     '~/assets/styles/ui-styles.less'
   ],
 
@@ -80,7 +81,6 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     'nuxt-ssr-cache',
-    'cookie-universal-nuxt',
     '@drozd/nuxt-performance'
   ],
 

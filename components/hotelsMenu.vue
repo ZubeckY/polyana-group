@@ -58,55 +58,53 @@ export default class HotelsMenu extends Vue {
         return '/services/14'
     }
   }
-
 }
 </script>
-<style scoped lang="less">
-.hotelsMenu {
-  &-activator {
-    cursor: pointer;
-  }
+<style scoped>
+.hotelsMenu-activator {
+  cursor: pointer;
+}
 
-  &-card {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 8px;
-    background: #D9D9D9;
-  }
+.hotelsMenu-card {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #D9D9D9;
+}
 
-  &-link {
-    display: flex;
-    height: 36px;
-    font-size: 14px;
-    padding: 0 15px;
-    border-radius: 0;
-    align-items: center;
-    color: var(--dark-color);
-    text-decoration: none;
-    justify-content: space-between;
-    transition: background 100ms ease-in;
+.hotelsMenu-link {
+  display: flex;
+  height: 36px;
+  font-size: 14px;
+  padding: 0 15px;
+  border-radius: 0;
+  align-items: center;
+  color: var(--dark-color);
+  text-decoration: none;
+  justify-content: space-between;
+  transition: background 100ms ease-in;
+}
 
-    & + .hotelsMenu-link {
-      border-top: 1px solid #32343A42;
-    }
+.hotelsMenu-link +
+.hotelsMenu-link {
+  border-top: 1px solid #32343A42;
+}
 
-    & svg {
-      margin-left: 10px;
-    }
+.hotelsMenu-link svg {
+  margin-left: 10px;
+}
 
-    &:first-child {
-      border-radius: 8px 8px 0 0;
-    }
+.hotelsMenu-link:first-child {
+  border-radius: 8px 8px 0 0;
+}
 
-    &:last-child {
-      border-radius: 0 0 8px 8px;
-    }
+.hotelsMenu-link:last-child {
+  border-radius: 0 0 8px 8px;
+}
 
-    &:hover {
-      cursor: pointer;
-      background: #DEC799;
-      transition: background 100ms ease-in;
-    }
-  }
+.hotelsMenu-link:hover {
+  cursor: pointer;
+  background: #DEC799;
+  transition: background 100ms ease-in;
 }
 </style>
