@@ -10,7 +10,6 @@ export default defineNuxtConfig({
   },
 
   ssr: false,
-  debug: false,
   devtool: 'none',
   components: true,
   server: {host: '0.0.0.0'},
@@ -26,10 +25,7 @@ export default defineNuxtConfig({
       {charset: 'utf-8'},
       {'http-equiv': 'cleartype', content: 'on'},
       {'http-equiv': 'imagetoolbar', content: 'no'},
-      {'http-equiv': 'msthemecompatible', content: 'no'},
       {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'},
-      {'http-equiv': 'http-equiv', content: 'text/html; charset=UTF-8'},
-      {'http-equiv': 'Cache-Control', content: 'max-age=3600, must-revalidate'},
       {name: 'theme-color', content: '#32343A'},
       {name: 'HandheldFriendly', content: 'True'},
       {name: 'format-detection', content: 'address=no'},
@@ -109,23 +105,9 @@ export default defineNuxtConfig({
 
     optimization: {
       minimize: false,
-      runtimeChunk: 'single',
       splitChunks: {
         chunks: 'all',
-        minSize: 0,
-        maxSize: 300000,
-        maxInitialRequests: Infinity,
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name(module) {
-              const packageName = module.context.match(
-                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-              )[1]
-              return `npm.${packageName.replace('@', '')}`
-            }
-          }
-        }
+        minSize: 0
       }
     }
   }
