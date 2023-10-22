@@ -1,6 +1,7 @@
 const mode = 'production'
 const isDev = mode !== "production"
 import {defineNuxtConfig} from "@nuxt/bridge"
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 export default defineNuxtConfig({
   // Конфигурация
@@ -102,6 +103,9 @@ export default defineNuxtConfig({
 
   build: {
     optimizeCss: false,
+    transpile: [
+      "swiper"
+    ],
     optimization: {
       minimize: !isDev
     },
@@ -114,7 +118,85 @@ export default defineNuxtConfig({
       extractCSS: {
         ignoreOrder: true
       }
-    })
+    }),
+    ...(!isDev && {
+      html: {
+        minify: {
+          collapseBooleanAttributes: true,
+          decodeEntities: true,
+          minifyCSS: true,
+          minifyJS: true,
+          processConditionalComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          trimCustomFragments: true,
+          useShortDoctype: true
+        }
+      }
+    }),
+    extend (config, ctx) {
+      const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
+      const vueSvgLoader = [
+        {
+          loader: 'vue-svg-loader',
+          options: {
+            svgo: false
+          }
+        }
+      ]
+      const imageMinPlugin = new ImageminPlugin({
+        pngquant: {
+          quality: '5-30',
+          speed: 7,
+          strip: true
+        },
+        jpegtran: {
+          progressive: true
+
+        },
+        gifsicle: {
+          interlaced: true
+        }
+      })
+      if (!ctx.isDev) config.plugins.push(imageMinPlugin)
+
+      config.module.rules.forEach(rule => {
+        if (rule.test.toString() === ORIGINAL_TEST) {
+          rule.test = /\.(png|jpe?g|gif|webp)$/i
+          rule.use = [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 1000,
+                name: ctx.isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]'
+              }
+            }
+          ]
+        }
+      })
+
+      const svgRule = {
+        test: /\.svg$/,
+        oneOf: [
+          {
+            resourceQuery: /inline/,
+            use: vueSvgLoader
+          },
+          {
+            resourceQuery: /data/,
+            loader: 'url-loader'
+          },
+          {
+            resourceQuery: /raw/,
+            loader: 'raw-loader'
+          },
+          {
+            loader: 'file-loader' // By default, always use file-loader
+          }
+        ]
+      }
+      config.module.rules.push(svgRule) // Actually add the rule
+    }
   }
 })
 
