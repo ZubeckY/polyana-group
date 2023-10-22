@@ -3,10 +3,10 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="slide">
         <div class="header-container-inner">
-          <header-nav-polyana/>
+          <lazy-header-nav-polyana/>
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
-              <breadcrumbs-button class="header-promo-back"/>
+              <lazy-breadcrumbs-button class="header-promo-back"/>
               <h1 class="header-promo-title mt-2">Контакты</h1>
             </div>
           </div>
@@ -41,7 +41,7 @@
           <h4 class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</h4>
           <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
                         mandatory column active-class="golden-gradient white--text">
-            <footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
+            <lazy-footer-see-you-at-hotel-chip v-for="(item, i) in localMapping"
                                           :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
           </v-chip-group>
 
@@ -71,17 +71,17 @@
                           v-model="activeSlide" hide-delimiters>
                 <template v-slot:prev="{ on, attrs }">
                   <div v-bind="attrs" v-on="on">
-                    <carousel-button-prev/>
+                    <lazy-carousel-button-prev/>
                   </div>
                 </template>
                 <template v-slot:next="{ on, attrs }">
                   <div v-bind="attrs" v-on="on">
-                    <carousel-button-next/>
+                    <lazy-carousel-button-next/>
                   </div>
                 </template>
                 <v-carousel-item class="footer-slide" style="position: relative"
                                  v-for="(item, j) in getImgSHotel" :key="'photo-'+j">
-                  <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
+                  <lazy-footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
                 </v-carousel-item>
               </v-carousel>
             </div>
@@ -167,7 +167,7 @@ export default class Contacts extends Vue {
         .select('')
         .order('id')
       this.localMapping = data
-      this.getCurrentHotel ()
+      this.getCurrentHotel()
     } catch (e) {
       console.log(e)
     }

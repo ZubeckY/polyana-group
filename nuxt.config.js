@@ -3,6 +3,7 @@ const isDev = mode !== "production"
 import {defineNuxtConfig} from "@nuxt/bridge"
 
 export default defineNuxtConfig({
+  // Конфигурация
   bridge: {
     nitro: false,
     typescript: true
@@ -13,6 +14,8 @@ export default defineNuxtConfig({
   ssr: false,
   components: true,
   server: {host: '0.0.0.0'},
+
+  // head
   head: {
     title: 'Polyana group - отдых на красной поляне',
     htmlAttrs: {
@@ -25,7 +28,7 @@ export default defineNuxtConfig({
       {'http-equiv': 'imagetoolbar', content: 'no'},
       {'http-equiv': 'msthemecompatible', content: 'no'},
       {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'},
-      {'http-equiv': 'http-equiv', content:'text/html; charset=UTF-8'},
+      {'http-equiv': 'http-equiv', content: 'text/html; charset=UTF-8'},
       {'http-equiv': 'Cache-Control', content: 'max-age=3600, must-revalidate'},
       {name: 'theme-color', content: '#32343A'},
       {name: 'HandheldFriendly', content: 'True'},
@@ -34,14 +37,16 @@ export default defineNuxtConfig({
       {hid: 'robots', name: 'robots', content: 'index, follow'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'}
     ],
+
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
         href: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
-      },
+      }
     ]
   },
+
   css: [
     '~/assets/styles/screen/desktop.less',
     '~/assets/styles/screen/mobile.less',
@@ -56,12 +61,15 @@ export default defineNuxtConfig({
     '~/plugins/v_mask.js',
     '~/plugins/vue-slick-carousel.js'
   ],
+
+  // modules
   buildModules: [
     "nuxt-storm",
     '@nuxt/image',
     '@nuxtjs/dotenv',
     '@nuxtjs/vuetify'
   ],
+
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
@@ -71,22 +79,21 @@ export default defineNuxtConfig({
     'cookie-universal-nuxt',
     '@drozd/nuxt-performance'
   ],
+
+  //
   sitemap: {
     hostname: process.env.BASE_URL || 'http://localhost:3000'
   },
-  axios: {
-    baseURL: '/'
-  },
+
   robots: {
     UserAgent: '*',
     Disallow: ''
   },
-  render: {
-    resourceHints: false
-  },
-  image: {
-    inject: true
-  },
+
+  axios: {baseURL: '/'},
+  image: {inject: true},
+  render: {resourceHints: false},
+
   vuetify: {
     defaultAssets: {
       font: false,
@@ -95,6 +102,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   cache: {
     useHostPrefix: false,
     pages: [
@@ -110,6 +118,7 @@ export default defineNuxtConfig({
       ttl: 60
     }
   },
+
   performance: {
     // логирование времени запросов
     renderRouteTimeCallback: (route, ms) => {
@@ -131,16 +140,19 @@ export default defineNuxtConfig({
     // интервал очистки общего счётчика, когда выключили SSR на всём сайте
     clearSlowCounterIntervalTime: 1000 * 60 * 5,
     // Общее кол-во медленных запросов на сайте, потом отключаем SSR везде
-    maxSlowCount: 50
+    maxSlowCount: 100
   },
+
   build: {
     optimizeCss: false,
     filenames: {
       app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
       chunk: ({
-                isDev, isModern
+                isDev,
+                isModern
               }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
     },
+
     html: {
       minify: {
         collapseBooleanAttributes: true,
@@ -154,8 +166,27 @@ export default defineNuxtConfig({
         useShortDoctype: true
       }
     },
+
     optimization: {
-      minimize: true
+      minimize: false,
+      runtimeChunk: 'single',
+      splitChunks: {
+        chunks: 'all',
+        minSize: 0,
+        maxSize: 300000,
+        maxInitialRequests: Infinity,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              const packageName = module.context.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+              )[1]
+              return `npm.${packageName.replace('@', '')}`
+            }
+          }
+        }
+      }
     }
   }
 })

@@ -3,11 +3,11 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
-          <header-nav-polyana/>
+          <lazy-header-nav-polyana/>
 
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
-              <breadcrumbs-button class="header-promo-back"/>
+              <lazy-breadcrumbs-button class="header-promo-back"/>
               <h1 class="header-promo-title">{{ activeTitle }}</h1>
             </div>
           </div>
@@ -22,7 +22,7 @@
 
           <div class="mb-3">
             <div class="conditions-title mb-2">Отель</div>
-            <services-chip :item="data" style="margin-left: -5px"/>
+            <lazy-services-chip :item="data" style="margin-left: -5px"/>
           </div>
 
           <h2 class="conditions-title">Об услуге</h2>
@@ -34,7 +34,7 @@
               <div class="conditions-body-container">
                 <p class="conditions-text" v-html="activeDescription"></p>
                 <div class="conditions-form">
-                  <feedback-form/>
+                  <lazy-feedback-form/>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
               <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
               <div class="restInPolyana-pictures-small-img-more">+{{ data.imgs ? data.imgs.length : 99 }} фото</div>
             </div>
-            <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data.imgs"/>
+            <lazy-gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data.imgs"/>
           </div>
         </div>
       </div>
