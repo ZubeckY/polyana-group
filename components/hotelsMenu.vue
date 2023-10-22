@@ -1,10 +1,9 @@
 <template>
   <v-menu class="hotelsMenu" v-model="menu" open-on-hover offset-y>
     <template v-slot:activator="{ on, attrs }">
-      <div class="hotelsMenu-activator"
-           v-bind="attrs" v-on="on">
-        <slot/>
-      </div>
+      <button class="hotelsMenu-activator" v-bind="attrs" v-on="on">
+        <slot></slot>
+      </button>
     </template>
     <div class="hotelsMenu-container">
       <div class="hotelsMenu-card">

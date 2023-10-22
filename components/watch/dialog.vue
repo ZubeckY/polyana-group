@@ -3,9 +3,9 @@
             v-model="dialog" max-width="800px"
             transition="scale-transition">
     <template v-slot:activator="{ on, attrs }">
-      <div class="hotelsMenu-activator" v-bind="attrs" v-on="on">
+      <button class="hotelsMenu-activator" title="Смотреть видео" v-bind="attrs" v-on="on">
         <slot></slot>
-      </div>
+      </button>
     </template>
     <div class="watch-video-player">
       <div style="position:relative;  height: 480px">
