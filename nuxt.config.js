@@ -8,9 +8,7 @@ export default defineNuxtConfig({
     nitro: false,
     typescript: true
   },
-  alias: {
-    tslib: 'tslib/tslib.es6.js'
-  },
+
   ssr: false,
   debug: false,
   devtool: 'none',
@@ -19,10 +17,9 @@ export default defineNuxtConfig({
 
   // head
   head: {
-    title: 'Polyana group - отдых на красной поляне',
+    title: 'Polyana Group - отдых на красной поляне',
     htmlAttrs: {
-      lang: 'ru',
-      manifest: 'default.appcache'
+      lang: 'ru'
     },
 
     meta: [
@@ -79,12 +76,9 @@ export default defineNuxtConfig({
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
-    'nuxt-ssr-cache',
-    '@drozd/nuxt-performance'
+    '@nuxtjs/sitemap'
   ],
 
-  //
   sitemap: {
     hostname: process.env.BASE_URL || 'http://localhost:3000'
   },
@@ -96,10 +90,6 @@ export default defineNuxtConfig({
 
   axios: {baseURL: '/'},
   image: {inject: true},
-  render: {resourceHints: false},
-  router: {
-    prefetchLinks: false
-  },
 
   vuetify: {
     defaultAssets: {
@@ -110,68 +100,11 @@ export default defineNuxtConfig({
     }
   },
 
-  cache: {
-    useHostPrefix: false,
-    pages: [
-      '*',
-      /^\/*\/\d+$/,
-      /^\/$/
-    ],
-    key(route, context) {
-    },
-    store: {
-      type: 'memory',
-      max: 100,
-      ttl: 60
-    }
-  },
-
-  performance: {
-    // логирование времени запросов
-    renderRouteTimeCallback: (route, ms) => {
-      console.log(`time render route: ${route} ${ms} ms`);
-    },
-    // отключаем SSR на нужных нам роутах
-    isOnlySPA: (route, _context) => {
-      return route === '/personal';
-    },
-    // кол-во допустимых мс для рендера при SSR
-    maxRenderTime: 1000,
-    // кол-во попыток отрисовать SSR если рендер медленный,
-    // дальше выключаем на указнное время timeDisabledSsrWithRoute
-    maxAttemptSsr: 5,
-    // RegExp страниц исключения для модуля в целом
-    excludeRoutes: /healthcheck/,
-    // на какое время выключаем сср для страницы
-    timeDisabledSsrWithRoute: 1000 * 60,
-    // интервал очистки общего счётчика, когда выключили SSR на всём сайте
-    clearSlowCounterIntervalTime: 1000 * 60 * 5,
-    // Общее кол-во медленных запросов на сайте, потом отключаем SSR везде
-    maxSlowCount: 100
-  },
-
   build: {
     optimizeCss: false,
     filenames: {
       app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
-      chunk: ({
-                isDev,
-                isModern
-              }) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
-    },
-
-    html: {
-      minify: {
-        collapseBooleanAttributes: true,
-        decodeEntities: true,
-        minifyCSS: true,
-        minifyJS: true,
-        processConditionalComments: true,
-        removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
-        trimCustomFragments: true,
-        useShortDoctype: true
-      }
+      chunk: ({isDev, isModern}) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
     },
 
     optimization: {
