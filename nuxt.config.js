@@ -3,6 +3,7 @@ const isDev = mode !== "production"
 import {defineNuxtConfig} from "@nuxt/bridge"
 
 export default defineNuxtConfig({
+  mode: 'universal',
   // Конфигурация
   bridge: {
     nitro: false,
@@ -10,9 +11,12 @@ export default defineNuxtConfig({
   },
 
   ssr: false,
-  devtool: 'none',
   components: true,
-  server: {host: '0.0.0.0'},
+
+  server: {
+    host: '0.0.0.0',
+    port: 3000
+  },
 
   // head
   head: {
@@ -98,17 +102,18 @@ export default defineNuxtConfig({
 
   build: {
     optimizeCss: false,
-    filenames: {
-      app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
-      chunk: ({isDev, isModern}) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
-    },
-
     optimization: {
-      minimize: false,
-      splitChunks: {
-        chunks: 'all',
-        minSize: 0
+      minimize: !isDev
+    },
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
+    },
+    ...(!isDev && {
+      extractCSS: {
+        ignoreOrder: true
       }
-    }
+    })
   }
 })
