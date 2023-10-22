@@ -3,7 +3,6 @@ const isDev = mode !== "production"
 import {defineNuxtConfig} from "@nuxt/bridge"
 
 export default defineNuxtConfig({
-  mode: 'universal',
   // Конфигурация
   bridge: {
     nitro: false,
@@ -11,6 +10,7 @@ export default defineNuxtConfig({
   },
 
   ssr: false,
+  debug: false,
   components: true,
 
   server: {
@@ -102,5 +102,31 @@ export default defineNuxtConfig({
 
   build: {
     optimizeCss: false,
+    filenames: {
+      app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
+      chunk: ({isDev, isModern}) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
+    },
+
+    optimization: {
+      minimize: false,
+      runtimeChunk: 'single',
+      splitChunks: {
+        chunks: 'all',
+        minSize: 0,
+        maxSize: 300000,
+        maxInitialRequests: Infinity,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              const packageName = module.context.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+              )[1]
+              return `npm.${packageName.replace('@', '')}`
+            }
+          }
+        }
+      }
+    }
   }
 })
