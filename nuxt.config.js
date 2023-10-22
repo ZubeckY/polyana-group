@@ -102,31 +102,20 @@ export default defineNuxtConfig({
 
   build: {
     optimizeCss: false,
-    filenames: {
-      app: ({isDev}) => isDev ? '[name].js' : 'js/[contenthash].js',
-      chunk: ({isDev, isModern}) => isDev ? `[name]${isModern ? '.modern' : ''}.js` : `[contenthash:7]${isModern ? '.modern' : ''}.js`
-    },
-
     optimization: {
-      minimize: false,
-      runtimeChunk: 'single',
-      splitChunks: {
-        chunks: 'all',
-        minSize: 0,
-        maxSize: 300000,
-        maxInitialRequests: Infinity,
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name(module) {
-              const packageName = module.context.match(
-                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-              )[1]
-              return `npm.${packageName.replace('@', '')}`
-            }
-          }
-        }
+      minimize: !isDev
+    },
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true
+    },
+    ...(!isDev && {
+      extractCSS: {
+        ignoreOrder: true
       }
-    }
+    })
   }
 })
+
+
