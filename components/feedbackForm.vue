@@ -22,7 +22,7 @@
             </defs>
           </svg>
           <input v-model="model.phone" v-mask="'+7 (###) ###-##-##'"
-                 type="text" role="textbox" id="phone" placeholder="+7 (9XX) XXX-XX-XX">
+                 type="text" id="phone" placeholder="+7 (9XX) XXX-XX-XX">
         </div>
       </div>
 
@@ -59,7 +59,7 @@
               </clipPath>
             </defs>
           </svg>
-          <input v-model="model.date" id="date" role="button" type="text" readonly :placeholder="minDate">
+          <input v-model="model.date" id="date" type="text" readonly :placeholder="minDate">
         </div>
         <v-dialog v-model="dialog" ref="dialog" max-width="360px"
                   transition="scale-transition">
