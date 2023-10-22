@@ -35,14 +35,14 @@ import {Vue, Component, Watch} from 'vue-property-decorator';
 export default class Slider extends Vue {
   slide: number = 0
   slider: any = [
-    "https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/Country%20Hills%20Resort%202/1%20%D0%AD%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80%20%2B%20Ikos/_MG_2455.jpg",
+    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_2455-_1_.webp",
     "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp",
-    "https://thumb.cloud.mail.ru/weblink/thumb/xw1/DWvM/gXMjkb9TC/%D0%9E%D1%82%D0%B5%D0%BB%D1%8C%20Ultima%20Club%202/%D1%8D%D0%BA%D1%81%D1%82%D0%B5%D1%80%D1%8C%D0%B5%D1%80/_MG_7748.jpg"
+    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp"
   ]
 
   small: any = [
     'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-16.webp',
-    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp",
+    'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-14.webp',
     'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-13.webp'
   ]
 
