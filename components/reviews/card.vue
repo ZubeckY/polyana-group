@@ -4,8 +4,8 @@
       <div class="reviews-slider-card-header">
         <div class="reviews-slider-card-header-user">
           <div class="reviews-slider-card-header-logo">
-            <nuxt-img :src="item.photouser" alt="аватарка пользователя на отзыв"
-                      loading="lazy" quality="80" :placeholder="[50]"/>
+            <img :src="item.photouser" alt="аватарка пользователя на отзыв"
+                 loading="lazy"/>
           </div>
           <div class="reviews-slider-card-header-context">
             <div class="reviews-slider-card-header-name">
@@ -24,9 +24,8 @@
         </div>
         <div class="reviews-slider-card-description">{{ item.description }}</div>
         <div class="reviews-slider-card-images" @click="dialog = true">
-          <nuxt-img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
-                    :key="'reviewIndexImage'+k" :src="imgs" alt="изображение на отзыв"
-                    loading="lazy" quality="80" :placeholder="[50]"/>
+          <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
+               :key="'reviewIndexImage'+k" :src="imgs" alt="изображение на отзыв" loading="lazy"/>
         </div>
         <lazy-gallery-dialog @changeDialog="changeDialog"
                              :dialog="dialog" :data="item.imgurls"/>
@@ -53,9 +52,9 @@ export default class Card extends Vue {
     try {
       this.hotelTitle = 'Загрузка...'
       let {data, error} = await supaBase
-        .from('hotels')
-        .select('id, title, travellineid')
-        .eq('travellineid', this.item.hoteltlid)
+          .from('hotels')
+          .select('id, title, travellineid')
+          .eq('travellineid', this.item.hoteltlid)
 
       const DATA: any = data
       this.hotelTitle = DATA[0].title

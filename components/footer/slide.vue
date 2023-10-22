@@ -1,6 +1,6 @@
 <template>
   <div class="footer-slide-container">
-    <nuxt-img class="footer-slide-image" :src="item" alt="#"
+    <nuxt-img class="footer-slide-image" :src="item ? item : 'https://placehold.co/900x600/dddddd/dddddd'" alt="#"
               loading="lazy" quality="80" :placeholder="[50]"/>
     <a :href="getHotelLink" class="footer-slide-svg">
       <svg viewBox="0 0 82 80" fill="none" xmlns="http://www.w3.org/2000/svg">

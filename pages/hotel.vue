@@ -262,7 +262,7 @@ export default class Hotel extends Vue {
   }
 
   getImageByIndex(i: number): string {
-    return this.data.length > 1 ? this.data[i] : 'https://placehold.co/900x600'
+    return this.data.length > 1 ? this.data[i] : 'https://placehold.co/900x600/dddddd/dddddd'
   }
 
   async getHotelInfo() {

@@ -18,7 +18,7 @@
       </template>
       <v-carousel-item class="gallery-slide" v-for="(image, i) in data" :key="'sliderImage'+i">
         <div class="gallery-slide-wrapper">
-          <nuxt-img class="gallery-slide-img" :src="image" alt="#"
+          <nuxt-img class="gallery-slide-img" :src="image ? image : 'https://placehold.co/900x600/dddddd/dddddd'" alt="#"
                     loading="lazy" quality="80" :placeholder="[50]"/>
         </div>
       </v-carousel-item>
