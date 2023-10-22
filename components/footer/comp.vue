@@ -11,7 +11,7 @@
               <h4 class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</h4>
               <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
                             mandatory column active-class="golden-gradient white--text">
-                <lazy-see-you-at-hotel-chip v-for="(item, i) in localMapping"
+                <see-you-at-hotel-chip v-for="(item, i) in localMapping"
                                             :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
               </v-chip-group>
 
@@ -41,17 +41,17 @@
                               v-model="activeSlide" hide-delimiters>
                     <template v-slot:prev="{ on, attrs }">
                       <div v-bind="attrs" v-on="on">
-                        <lazy-carousel-button-prev/>
+                        <carousel-button-prev/>
                       </div>
                     </template>
                     <template v-slot:next="{ on, attrs }">
                       <div v-bind="attrs" v-on="on">
-                        <lazy-carousel-button-next/>
+                        <carousel-button-next/>
                       </div>
                     </template>
                     <v-carousel-item class="footer-slide" style="position: relative"
                                      v-for="(item, j) in getImgSHotel" :key="'photo-'+j">
-                      <lazy-footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
+                      <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
                     </v-carousel-item>
                   </v-carousel>
                 </div>
@@ -66,11 +66,11 @@
               <h5 class="footer-helpInfo-title footer-title pa-1">помощь и информация</h5>
               <h6 class="footer-helpInfo-subtitle pa-1 text-uppercase">О Комплексе</h6>
               <!-- Ссылки -->
-              <lazy-footer-links/>
+              <footer-links/>
             </div>
             <v-spacer/>
             <!-- Забронировать -->
-            <lazy-footer-booking/>
+            <footer-booking/>
           </div>
         </div>
       </div>

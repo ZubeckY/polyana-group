@@ -29,17 +29,17 @@
           </div>
           <div class="d-flex justify-space-between flex-wrap px-5">
             <!-- бесплатный трансфер до подъёмников -->
-            <lazy-season-programs-free-transfer-lift/>
+            <season-programs-free-transfer-lift/>
             <!-- ski-room хранилище для зимнего спортивного снаряжения -->
-            <lazy-season-programs-ski-room/>
+            <season-programs-ski-room/>
             <!-- подогреваемый бассеин -->
-            <lazy-season-programs-heated-pool/>
+            <season-programs-heated-pool/>
           </div>
           <div class="d-flex justify-space-between flex-wrap mt-2 px-5">
             <!-- Активный отдых на Красной Поляне: аренда зимнего спортивного снаряжения -->
-            <lazy-season-programs-leisure/>
+            <season-programs-leisure/>
             <!-- Сказочная зимняя атмосфера в отелЯХ ГРУППЫ ПОЛЯНА ГРУП -->
-            <lazy-season-programs-atmosphere/>
+            <season-programs-atmosphere/>
           </div>
         </div>
       </div>

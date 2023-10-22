@@ -3,15 +3,15 @@
     <header class="header header-inside">
       <div class="header-inside-container">
         <div class="header-inside-container-inner">
-          <lazy-header-nav-inside/>
+          <header-nav-inside/>
         </div>
       </div>
     </header>
 
     <div class="breadcrumbs">
       <div class="breadcrumbs-container">
-        <lazy-breadcrumbs-button/>
-        <lazy-breadcrumbs-content/>
+        <breadcrumbs-button/>
+        <breadcrumbs-content/>
       </div>
     </div>
 
@@ -25,15 +25,15 @@
           <div class="restInPolyana-body-container" @click="dialog = true">
             <div class="restInPolyana-pictures-large grid-item">
               <div @click.stop>
-                <lazy-watch-dialog :link="hotel.youtube">
-                  <lazy-watch-inside/>
-                </lazy-watch-dialog>
+                <watch-dialog :link="hotel.youtube">
+                  <watch-inside/>
+                </watch-dialog>
               </div>
               <div class="restInPolyana-pictures-large-img">
                 <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
               </div>
               <div class="restInPolyana-pictures-large-body" @click.stop>
-                <lazy-header-booking-ultima/>
+                <header-booking-ultima/>
               </div>
             </div>
             <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(1)">
@@ -51,7 +51,7 @@
                 +{{ data ? data.length : 99 }} фото
               </div>
             </div>
-            <lazy-gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data"/>
+            <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data"/>
           </div>
         </div>
       </div>
@@ -73,8 +73,8 @@
                 <b>Спрашивайте,
                   отвечаем онлайн</b>
                 <div class="d-flex ml-4">
-                  <lazy-contact-button-whatsapp class="mr-2"/>
-                  <lazy-contact-button-telegram/>
+                  <contact-button-whatsapp class="mr-2"/>
+                  <contact-button-telegram/>
                 </div>
               </div>
             </div>
@@ -128,13 +128,13 @@
     </section>
 
     <!-- Специальные предложения -->
-    <lazy-special-offers id="promo"/>
+    <special-offers id="promo"/>
 
     <!-- Эксклюзивная скидка за звонок -->
-    <lazy-exclusive/>
+    <exclusive/>
 
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
-    <lazy-reviews :hotelId="hotelId" id="reviews"/>
+    <reviews :hotelId="hotelId" id="reviews"/>
   </div>
 </template>
 <script lang="ts">

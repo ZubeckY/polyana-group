@@ -7,7 +7,7 @@
         </h3>
       </div>
       <div class="hotelGroup-body">
-        <lazy-hotel-group-item v-for="(item, i) in hotelList"
+        <hotel-group-item v-for="(item, i) in hotelList"
                                :key="'hotel-'+i" :item="item"/>
       </div>
     </div>

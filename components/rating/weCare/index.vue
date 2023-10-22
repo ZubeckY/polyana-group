@@ -11,7 +11,7 @@
           4-5 звёзд
         </div>
       </div>
-      <lazy-v-vertical-spacer/>
+      <v-vertical-spacer/>
       <div class="rating-card-text ma-0 pa-0">Заботимся о вашем
         отдыхе в каждой детали
       </div>

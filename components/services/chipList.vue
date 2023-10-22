@@ -3,7 +3,7 @@
     <div class="conditions-title mb-2">Отель</div>
     <div class="d-flex flex-wrap">
       <div class="mr-2" v-for="(hotel, j) in hotelList" :key="'hotelList'+j">
-        <lazy-services-chip :item="hotel" :isValue="true" style="margin-left: -5px;"/>
+        <services-chip :item="hotel" :isValue="true" style="margin-left: -5px;"/>
       </div>
     </div>
   </div>

@@ -18,7 +18,7 @@
 
       <div class="reviews-slider-card-body">
         <div class="reviews-slider-card-stars">
-          <lazy-rating-yandex-star class="reviews-slider-card-stars-star"
+          <rating-yandex-star class="reviews-slider-card-stars-star"
                                    v-for="j in item.starrating" :key="'reviewIndexStar'+j"/>
           <div class="reviews-slider-card-date">{{ getElementDate(item.created_at) }}</div>
         </div>
@@ -27,7 +27,7 @@
           <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
                :key="'reviewIndexImage'+k" :src="imgs" alt="изображение на отзыв" loading="lazy"/>
         </div>
-        <lazy-gallery-dialog @changeDialog="changeDialog"
+        <gallery-dialog @changeDialog="changeDialog"
                              :dialog="dialog" :data="item.imgurls"/>
       </div>
     </div>

@@ -2,12 +2,12 @@
   <div class="breadcrumbs-content">
     <a class="breadcrumbs-content-link" href="/">Главная</a>
     <span class="breadcrumbs-content-delimiter">/</span>
-    <lazy-hotels-menu>
+    <hotels-menu>
       <div class="d-flex align-center">
-        <lazy-chevron-down class="mt-1 mr-1"/>
+        <chevron-down class="mt-1 mr-1"/>
         <div>Отели</div>
       </div>
-    </lazy-hotels-menu>
+    </hotels-menu>
     <span class="breadcrumbs-content-delimiter">/</span>
     <div class="breadcrumbs-content-link">{{ currentTitle }}</div>
   </div>

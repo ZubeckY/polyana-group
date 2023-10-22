@@ -2,14 +2,14 @@
   <a class="rating-card text-decoration-none rating-yandex" href="/reviews">
     <div class="rating-card-container d-flex flex-column">
       <div class="d-flex justify-space-between align-center">
-        <lazy-rating-yandex-icon/>
-        <lazy-rating-yandex-arrow/>
+        <rating-yandex-icon/>
+        <rating-yandex-arrow/>
       </div>
-      <lazy-v-vertical-spacer/>
+      <v-vertical-spacer/>
       <div>
-        <lazy-rating-yandex-star v-for="i in 5" :key="'star'+i"/>
+        <rating-yandex-star v-for="i in 5" :key="'star'+i"/>
       </div>
-      <lazy-v-vertical-spacer/>
+      <v-vertical-spacer/>
       <div class="d-inline rating-card-text ma-0 pa-0">
         <span class="rating-card-text font-weight-black mr-1">5,0</span>рейтинг в Яндекс
         на основе 1300+ отзывов

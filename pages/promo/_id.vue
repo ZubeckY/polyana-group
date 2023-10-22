@@ -3,11 +3,11 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
-          <lazy-header-nav-polyana/>
+          <header-nav-polyana/>
 
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
-              <lazy-breadcrumbs-button class="header-promo-back"/>
+              <breadcrumbs-button class="header-promo-back"/>
               <h1 class="header-promo-title">{{ activeTitle }}</h1>
             </div>
           </div>
@@ -19,7 +19,7 @@
     <section class="conditions mt-6">
       <div class="conditions-container general-container">
         <div class="conditions-head">
-          <lazy-services-chip-list :data="data.length >= 1 ? data : []"/>
+          <services-chip-list :data="data.length >= 1 ? data : []"/>
           <h2 class="conditions-title">Условия акции</h2>
         </div>
         <div v-if="loading">Загрузка</div>
@@ -29,7 +29,7 @@
               <div class="conditions-body-container">
                 <p class="conditions-text" v-html="activeDescription"></p>
                 <div class="conditions-form">
-                  <lazy-feedback-form/>
+                  <feedback-form/>
                 </div>
               </div>
             </div>

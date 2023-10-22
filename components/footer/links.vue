@@ -1,7 +1,7 @@
 <template>
   <v-card-actions class="pa-0 pl-1 mt-2">
     <div class="d-flex flex-column align-start">
-      <lazy-link-component v-for="(item, i) in links" :key="itemLink(item, i)" :item="item"/>
+      <link-component v-for="(item, i) in links" :key="itemLink(item, i)" :item="item"/>
     </div>
   </v-card-actions>
 </template>

@@ -6,12 +6,12 @@
           <div class="d-flex justify-space-between align-center">
             <div class="rating-card-title d-flex justify-space-between ma-0 pa-0 w-100">
               <div>Актуальное</div>
-              <lazy-rating-yandex-arrow/>
+              <rating-yandex-arrow/>
             </div>
           </div>
-          <lazy-v-vertical-spacer/>
+          <v-vertical-spacer/>
           <div class="rating-card-text ma-0 pa-0">{{ todayDate }}, {{ weatherDescription }}</div>
-          <lazy-v-vertical-spacer/>
+          <v-vertical-spacer/>
           <div class="d-flex align-center">
 
             <div class="rating-weather-text">

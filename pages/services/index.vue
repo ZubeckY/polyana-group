@@ -3,10 +3,10 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
-          <lazy-header-nav-polyana/>
+          <header-nav-polyana/>
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
-              <lazy-breadcrumbs-button class="header-promo-back"/>
+              <breadcrumbs-button class="header-promo-back"/>
               <h1 class="header-promo-title mt-2">Услуги</h1>
             </div>
           </div>
@@ -51,8 +51,8 @@
                       <b>Спрашивайте,
                         отвечаем онлайн</b>
                       <div class="d-flex ml-4">
-                        <lazy-contact-button-whatsapp class="mr-2"/>
-                        <lazy-contact-button-telegram/>
+                        <contact-button-whatsapp class="mr-2"/>
+                        <contact-button-telegram/>
                       </div>
                     </div>
                   </div>
@@ -71,12 +71,12 @@
 
                       <template v-slot:prev="{ on, attrs }">
                         <div v-bind="attrs" v-on="on">
-                          <lazy-carousel-button-prev/>
+                          <carousel-button-prev/>
                         </div>
                       </template>
                       <template v-slot:next="{ on, attrs }">
                         <div v-bind="attrs" v-on="on">
-                          <lazy-carousel-button-next/>
+                          <carousel-button-next/>
                         </div>
                       </template>
 
@@ -88,7 +88,7 @@
 
                     <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3"
                          style="position:absolute; top: 0">
-                      <lazy-services-chip :item="slider"/>
+                      <services-chip :item="slider"/>
                     </div>
 
                     <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">

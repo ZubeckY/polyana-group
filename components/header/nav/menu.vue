@@ -77,14 +77,14 @@
 
             </div>
           </div>
-          <lazy-v-vertical-spacer/>
+          <v-vertical-spacer/>
           <div class="header-nav__menu-content-footer">
             <div class="header-nav__menu-content-footer-container general-container">
 
               <!-- До встречи в наших отелях -->
               <v-chip-group class="header-nav__menu-content-group mb-2" v-model="activeChip"
                             mandatory column active-class="golden-gradient white--text">
-                <lazy-see-you-at-hotel-chip v-for="(item, i) in localMapping"
+                <see-you-at-hotel-chip v-for="(item, i) in localMapping"
                                               :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
               </v-chip-group>
 
@@ -122,8 +122,8 @@
                       <b class="white--text text-pre-line">Спрашивайте,
                         отвечаем онлайн</b>
                       <div class="d-flex ml-5">
-                        <lazy-contact-button-whatsapp class="header-nav__menu-content-footer-whatsapp mr-2"/>
-                        <lazy-contact-button-telegram class="header-nav__menu-content-footer-telegram"/>
+                        <contact-button-whatsapp class="header-nav__menu-content-footer-whatsapp mr-2"/>
+                        <contact-button-telegram class="header-nav__menu-content-footer-telegram"/>
                       </div>
                     </div>
 

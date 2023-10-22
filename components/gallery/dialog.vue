@@ -8,12 +8,12 @@
       </v-btn>
       <template v-slot:prev="{ on, attrs }">
         <div v-bind="attrs" v-on="on">
-          <lazy-carousel-button-prev/>
+          <carousel-button-prev/>
         </div>
       </template>
       <template v-slot:next="{ on, attrs }">
         <div v-bind="attrs" v-on="on">
-          <lazy-carousel-button-next/>
+          <carousel-button-next/>
         </div>
       </template>
       <v-carousel-item class="gallery-slide" v-for="(image, i) in data" :key="'sliderImage'+i">

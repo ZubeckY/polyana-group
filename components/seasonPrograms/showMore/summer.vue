@@ -29,19 +29,19 @@
           </div>
           <div class="d-flex justify-space-between flex-wrap px-5">
             <!-- Бесплатный трансфер до пляжа -->
-            <lazy-season-programs-free-transfer-beach/>
+            <season-programs-free-transfer-beach/>
             <!-- Живая музыка в баре у бассейна -->
-            <lazy-season-programs-live-music/>
+            <season-programs-live-music/>
             <!-- Анимация для детей: веселье и игры -->
-            <lazy-season-programs-fun-for-kids/>
+            <season-programs-fun-for-kids/>
           </div>
           <div class="d-flex justify-space-between flex-wrap mt-2 px-5">
             <!-- Вкусные завтраки включены в стоимость -->
-            <lazy-season-programs-delicious-breakfasts/>
+            <season-programs-delicious-breakfasts/>
             <!-- Подогреваемый бассеин -->
-            <lazy-season-programs-heated-pool-summer/>
+            <season-programs-heated-pool-summer/>
             <!-- Спа-комплекс:  место Идеальное для отдыха -->
-            <lazy-season-programs-spa-complex/>
+            <season-programs-spa-complex/>
           </div>
         </div>
       </div>

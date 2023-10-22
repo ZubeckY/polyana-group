@@ -3,10 +3,10 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
-          <lazy-header-nav-polyana/>
+          <header-nav-polyana/>
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
-              <lazy-breadcrumbs-button class="header-promo-back"/>
+              <breadcrumbs-button class="header-promo-back"/>
               <h1 class="header-promo-title mt-2">СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ И АКЦИИ</h1>
             </div>
           </div>
@@ -54,7 +54,7 @@
         <div v-else>
           <div class="d-flex flex-wrap" v-if="data.length >= 1">
             <div class="specialOffers-slide d-flex" v-for="(item, i) in data" :key="'cornerCard'+i">
-              <lazy-corner-card class="specialOffers-slide-promo" :item="item"/>
+              <corner-card class="specialOffers-slide-promo" :item="item"/>
             </div>
           </div>
           <div v-else>Ничего нет</div>

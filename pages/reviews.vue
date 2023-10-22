@@ -3,10 +3,10 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
-          <lazy-header-nav-polyana/>
+          <header-nav-polyana/>
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
-              <lazy-breadcrumbs-button class="header-promo-back"/>
+              <breadcrumbs-button class="header-promo-back"/>
               <h1 class="header-promo-title mt-2">ОТЗЫВЫ</h1>
             </div>
           </div>
@@ -36,7 +36,7 @@
         <div v-else>
           <div class="specialOffers-promo-reviews mt-3" v-if="data.length >= 1">
             <div class="specialOffers-promo-reviews-container">
-              <lazy-reviews-card class="specialOffers-promo-reviews-card"
+              <reviews-card class="specialOffers-promo-reviews-card"
                             v-for="(item, i) in data" :key="'review'+i" :item="item"/>
             </div>
           </div>

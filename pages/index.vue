@@ -5,7 +5,7 @@
       <div class="header-container" :style="activeSlide">
         <div class="header-container-inner">
 
-          <lazy-header-nav-polyana/>
+          <header-nav-polyana/>
 
           <div class="header-body">
             <div class="header-body-container general-container">
@@ -31,12 +31,12 @@
                   </h1>
                 </div>
               </div>
-              <lazy-header-slider class="header-slider--desktop"
+              <header-slider class="header-slider--desktop"
                              @changeActiveSlide="changeActiveSlide"/>
             </div>
           </div>
-          <lazy-header-booking/>
-          <lazy-header-slider class="header-slider--mobile"
+          <header-booking/>
+          <header-slider class="header-slider--mobile"
                          @changeActiveSlide="changeActiveSlide"/>
         </div>
       </div>
@@ -46,15 +46,15 @@
     <section class="rating">
       <div class="rating-container justify-space-between d-flex">
         <!-- Яндекс -->
-        <lazy-rating-yandex/>
+        <rating-yandex/>
         <!-- Высокий рейтинг -->
-        <lazy-rating-tl-rep/>
+        <rating-tl-rep/>
         <!-- Отели 4-5 звёзд -->
-        <lazy-rating-we-care/>
+        <rating-we-care/>
         <!-- Удобное бронирование -->
-        <lazy-rating-booking-comfort/>
+        <rating-booking-comfort/>
         <!-- Актуальное (погода) -->
-        <lazy-rating-weather/>
+        <rating-weather/>
       </div>
     </section>
 
@@ -96,14 +96,14 @@
             </div>
 
             <div class="pinterest-card-welcome">
-              <lazy-watch-dialog link="https://www.youtube.com/embed/igFTm9rzAco?si=CcV-gj-Wqr9eYJ1r">
+              <watch-dialog link="https://www.youtube.com/embed/igFTm9rzAco?si=CcV-gj-Wqr9eYJ1r">
                 <div class="pinterest-card-welcome-container">
-                  <lazy-watch class="pinterest-card-welcome-round"/>
-                  <lazy-pinterest-desktop/>
-                  <lazy-pinterest-tablet/>
-                  <lazy-pinterest-mobile/>
+                  <watch class="pinterest-card-welcome-round"/>
+                  <pinterest-desktop/>
+                  <pinterest-tablet/>
+                  <pinterest-mobile/>
                 </div>
-              </lazy-watch-dialog>
+              </watch-dialog>
             </div>
 
           </div>
@@ -113,10 +113,10 @@
     </section>
 
     <!-- Группа отелей -->
-    <lazy-hotel-group/>
+    <hotel-group/>
 
     <!-- Специальные предложения -->
-    <lazy-special-offers/>
+    <special-offers/>
 
     <!-- Развлекуха летом/зимой-->
     <section class="seasonPrograms">
@@ -130,13 +130,13 @@
             </div>
           </div>
           <!-- Бесплатный трансфер до пляжа -->
-          <lazy-season-programs-free-transfer-beach/>
+          <season-programs-free-transfer-beach/>
           <!-- Живая музыка в баре у бассейна -->
-          <lazy-season-programs-live-music/>
+          <season-programs-live-music/>
           <!-- Анимация для детей: веселье и игры -->
-          <lazy-season-programs-fun-for-kids/>
+          <season-programs-fun-for-kids/>
           <!-- Ещё -->
-          <lazy-season-programs-show-more-summer/>
+          <season-programs-show-more-summer/>
         </div>
 
         <!-- Зимой -->
@@ -148,22 +148,22 @@
             </div>
           </div>
           <!-- бесплатный трансфер до подъёмников -->
-          <lazy-season-programs-free-transfer-lift/>
+          <season-programs-free-transfer-lift/>
           <!-- ski-room хранилище для зимнего спортивного снаряжения -->
-          <lazy-season-programs-ski-room/>
+          <season-programs-ski-room/>
           <!-- подогреваемый бассеин -->
-          <lazy-season-programs-heated-pool/>
+          <season-programs-heated-pool/>
           <!-- Ещё -->
-          <lazy-season-programs-show-more-winter/>
+          <season-programs-show-more-winter/>
         </div>
       </div>
     </section>
 
     <!-- Эксклюзивная скидка за звонок -->
-    <lazy-exclusive/>
+    <exclusive/>
 
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
-    <lazy-reviews/>
+    <reviews/>
 
   </div>
 </template>

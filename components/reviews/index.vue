@@ -39,7 +39,7 @@
       <div class="reviews-slider" v-if="data.length > 1">
         <VueSlickCarousel v-bind="settings">
           <div v-for="(item, i) in data" :key="'reviewIndex'+i" class="px-1">
-            <lazy-reviews-card :item="item"/>
+            <reviews-card :item="item"/>
           </div>
           <template #prevArrow="arrowOption">
             <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"

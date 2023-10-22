@@ -2,67 +2,67 @@
   <nav class="header-nav">
     <div class="header-nav-container ultima d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
-        <lazy-header-nav-menu/>
-        <lazy-hotels-menu>
+        <header-nav-menu/>
+        <hotels-menu>
           <div class="d-flex align-center">
             <div class="header-nav__logo ml-2">
-              <v-img :src="currentLogo" :lazy-src="currentLogo" alt="Загрузка..."/>
+              <v-img :src="currentLogo" :src="currentLogo" alt="Загрузка..."/>
             </div>
           </div>
-        </lazy-hotels-menu>
+        </hotels-menu>
 
         <div class="header-nav__link mx-auto" v-for="(item, i) in links" :key="'f_link'+i">
 
           <div v-if="item.title === 'Отели'">
-            <lazy-hotels-menu>
+            <hotels-menu>
               <div class="d-flex align-center">
-                <lazy-link-component :item="{title: 'Отели'}"/>
-                <lazy-chevron-down class="ml-1" :dark="true"/>
+                <link-component :item="{title: 'Отели'}"/>
+                <chevron-down class="ml-1" :dark="true"/>
               </div>
-            </lazy-hotels-menu>
+            </hotels-menu>
           </div>
 
           <div v-else-if="item.title === 'Ресторан'">
-            <lazy-link-component v-if="isHotelPage" :item="{title: 'Ресторан', link: getCurrentLink('restaurant')}"/>
-            <lazy-hotels-menu v-else mode="restaurant">
+            <link-component v-if="isHotelPage" :item="{title: 'Ресторан', link: getCurrentLink('restaurant')}"/>
+            <hotels-menu v-else mode="restaurant">
               <div class="d-flex align-center">
-                <lazy-link-component :item="{title: 'Ресторан'}"/>
-                <lazy-chevron-down class="ml-1" :dark="true"/>
+                <link-component :item="{title: 'Ресторан'}"/>
+                <chevron-down class="ml-1" :dark="true"/>
               </div>
-            </lazy-hotels-menu>
+            </hotels-menu>
           </div>
 
           <div v-else-if="item.title === 'Номера'">
-            <lazy-link-component v-if="isHotelPage" :item="{title: 'Номера', link: getCurrentLink('booking')}"/>
-            <lazy-link-component :item="item" v-else/>
+            <link-component v-if="isHotelPage" :item="{title: 'Номера', link: getCurrentLink('booking')}"/>
+            <link-component :item="item" v-else/>
           </div>
 
           <div v-else-if="item.title === 'Услуги'">
-            <lazy-link-component v-if="isHotelPage" :item="{title: 'Услуги', link: getCurrentLink('services')}"/>
-            <lazy-link-component :item="item" v-else/>
+            <link-component v-if="isHotelPage" :item="{title: 'Услуги', link: getCurrentLink('services')}"/>
+            <link-component :item="item" v-else/>
           </div>
 
           <div v-else-if="item.title === 'Акции'">
-            <lazy-link-component v-if="isHotelPage" :item="{title: 'Акции', link: getCurrentLink('promo')}"/>
-            <lazy-link-component :item="item" v-else/>
+            <link-component v-if="isHotelPage" :item="{title: 'Акции', link: getCurrentLink('promo')}"/>
+            <link-component :item="item" v-else/>
           </div>
 
           <div v-else-if="item.title === 'Отзывы'">
-            <lazy-link-component v-if="isHotelPage" :item="{title: 'Отзывы', link: getCurrentLink('reviews')}"/>
-            <lazy-link-component :item="item" v-else/>
+            <link-component v-if="isHotelPage" :item="{title: 'Отзывы', link: getCurrentLink('reviews')}"/>
+            <link-component :item="item" v-else/>
           </div>
 
           <div v-else-if="item.title === 'Контакты'">
-            <lazy-link-component v-if="isHotelPage" :item="{title: 'Контакты', link: getCurrentLink('contacts')}"/>
-            <lazy-link-component :item="item" v-else/>
+            <link-component v-if="isHotelPage" :item="{title: 'Контакты', link: getCurrentLink('contacts')}"/>
+            <link-component :item="item" v-else/>
           </div>
 
-          <lazy-link-component :item="item" v-else/>
+          <link-component :item="item" v-else/>
         </div>
       </div>
 
-      <lazy-contact-button-whatsapp class="header-nav__link_social"/>
-      <lazy-contact-button-telegram class="header-nav__link_social mx-3"/>
+      <contact-button-whatsapp class="header-nav__link_social"/>
+      <contact-button-telegram class="header-nav__link_social mx-3"/>
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">

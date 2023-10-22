@@ -3,15 +3,15 @@
     <header class="header header-inside">
       <div class="header-inside-container">
         <div class="header-inside-container-inner">
-          <lazy-header-nav-inside/>
+          <header-nav-inside/>
         </div>
       </div>
     </header>
 
     <div class="breadcrumbs">
       <div class="breadcrumbs-container">
-        <lazy-breadcrumbs-button/>
-        <lazy-breadcrumbs-content/>
+        <breadcrumbs-button/>
+        <breadcrumbs-content/>
       </div>
     </div>
 
