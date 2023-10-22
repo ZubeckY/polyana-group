@@ -2,7 +2,9 @@
   <article class="corner-card">
     <div class="corner-card-header d-flex justify-space-between">
       <corner-card-chips :item="item"/>
-      <a class="corner-card-header--arrow golden-gradient" :href="goToPromo">
+      <v-btn class="corner-card-header--arrow golden-gradient"
+             width="61px" height="61px" elevation="0" title="Смотреть акицю"
+             min-width="0" min-height="0" :href="goToPromo">
         <svg fill="#ffffff" width="35px" height="35px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -16,7 +18,7 @@
             </g>
           </g>
         </svg>
-      </a>
+      </v-btn>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" width="284" height="420" viewBox="0 0 284 420" fill="none">
@@ -80,8 +82,6 @@ export default class CornerCard extends Vue {
   justify-content: center;
   top: 0;
   right: 0;
-  width: 61px;
-  height: 61px;
   border-radius: 19.55px;
 }
 
