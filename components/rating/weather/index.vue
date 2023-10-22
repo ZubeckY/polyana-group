@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" max-width="800px">
     <template v-slot:activator="{ on, attrs }">
-      <article v-bind="attrs" v-on="on" class="rating-card rating-weather">
+      <div v-bind="attrs" v-on="on" class="rating-card rating-weather">
         <div class="rating-card-container d-flex flex-column pt-1">
           <div class="d-flex justify-space-between align-center">
             <div class="rating-card-title d-flex justify-space-between ma-0 pa-0 w-100">
@@ -84,7 +84,7 @@
 
           </div>
         </div>
-      </article>
+      </div>
     </template>
 
     <div>
