@@ -102,18 +102,5 @@ export default defineNuxtConfig({
 
   build: {
     optimizeCss: false,
-    optimization: {
-      minimize: !isDev
-    },
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
-    ...(!isDev && {
-      extractCSS: {
-        ignoreOrder: true
-      }
-    })
   }
 })
