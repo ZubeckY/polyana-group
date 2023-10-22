@@ -28,7 +28,7 @@
       </div>
 
       <!-- Слайдер -->
-      <special-offers-slider/>
+      <lazy-special-offers-slider/>
 
     </div>
   </section>

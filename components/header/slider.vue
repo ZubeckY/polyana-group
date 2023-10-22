@@ -13,7 +13,8 @@
         <v-btn v-for="(item, i) in slider" :key="'header-slide' + i"
                class="header-slider__slide d-flex justify-center align-center"
                title="Слайд 1" color="rgba(255, 255, 255, 0.32)" fab :value="i">
-          <img width="51px" height="51px" style="border-radius: 100px" loading="lazy" :src="item " alt="#"/>
+          <nuxt-img width="51px" height="51px" style="border-radius: 100px" loading="lazy"
+                    :src="item" alt="Маленькое изображение со слайдера"/>
         </v-btn>
       </v-btn-toggle>
 

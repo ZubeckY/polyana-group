@@ -3,8 +3,7 @@
     <template v-slot:activator="{ on, attrs }">
       <div class="seasonPrograms-summer seasonPrograms-item" v-bind="attrs" v-on="on">
         <div class="seasonPrograms-item-container">
-          <div class="seasonPrograms-item-text summer d-flex justify-center align-center text-uppercase">ещё
-          </div>
+          <div class="seasonPrograms-item-text summer d-flex justify-center align-center text-uppercase">ещё</div>
         </div>
       </div>
     </template>
@@ -30,19 +29,19 @@
           </div>
           <div class="d-flex justify-space-between flex-wrap px-5">
             <!-- Бесплатный трансфер до пляжа -->
-            <season-programs-free-transfer-beach/>
+            <lazy-season-programs-free-transfer-beach/>
             <!-- Живая музыка в баре у бассейна -->
-            <season-programs-live-music/>
+            <lazy-season-programs-live-music/>
             <!-- Анимация для детей: веселье и игры -->
-            <season-programs-fun-for-kids/>
+            <lazy-season-programs-fun-for-kids/>
           </div>
           <div class="d-flex justify-space-between flex-wrap mt-2 px-5">
             <!-- Вкусные завтраки включены в стоимость -->
-            <season-programs-delicious-breakfasts/>
+            <lazy-season-programs-delicious-breakfasts/>
             <!-- Подогреваемый бассеин -->
-            <season-programs-heated-pool-summer/>
+            <lazy-season-programs-heated-pool-summer/>
             <!-- Спа-комплекс:  место Идеальное для отдыха -->
-            <season-programs-spa-complex/>
+            <lazy-season-programs-spa-complex/>
           </div>
         </div>
       </div>

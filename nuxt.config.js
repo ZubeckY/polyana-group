@@ -12,6 +12,8 @@ export default defineNuxtConfig({
     tslib: 'tslib/tslib.es6.js'
   },
   ssr: false,
+  debug: false,
+  devtool: 'none',
   components: true,
   server: {host: '0.0.0.0'},
 
@@ -22,6 +24,7 @@ export default defineNuxtConfig({
       lang: 'ru',
       manifest: 'default.appcache'
     },
+
     meta: [
       {charset: 'utf-8'},
       {'http-equiv': 'cleartype', content: 'on'},
@@ -57,6 +60,7 @@ export default defineNuxtConfig({
     '~/assets/styles/main.less',
     '~/assets/styles/ui-styles.less'
   ],
+
   plugins: [
     '~/plugins/v_mask.js',
     '~/plugins/vue-slick-carousel.js'
@@ -93,6 +97,9 @@ export default defineNuxtConfig({
   axios: {baseURL: '/'},
   image: {inject: true},
   render: {resourceHints: false},
+  router: {
+    prefetchLinks: false
+  },
 
   vuetify: {
     defaultAssets: {

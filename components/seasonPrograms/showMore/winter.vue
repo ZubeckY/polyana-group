@@ -3,8 +3,7 @@
     <template v-slot:activator="{ on, attrs }">
       <div class="seasonPrograms-summer seasonPrograms-item" v-bind="attrs" v-on="on">
         <div class="seasonPrograms-item-container">
-          <div class="seasonPrograms-item-text winter d-flex justify-center align-center text-uppercase">ещё
-          </div>
+          <div class="seasonPrograms-item-text winter d-flex justify-center align-center text-uppercase">ещё</div>
         </div>
       </div>
     </template>
@@ -30,17 +29,17 @@
           </div>
           <div class="d-flex justify-space-between flex-wrap px-5">
             <!-- бесплатный трансфер до подъёмников -->
-            <season-programs-free-transfer-lift/>
+            <lazy-season-programs-free-transfer-lift/>
             <!-- ski-room хранилище для зимнего спортивного снаряжения -->
-            <season-programs-ski-room/>
+            <lazy-season-programs-ski-room/>
             <!-- подогреваемый бассеин -->
-            <season-programs-heated-pool/>
+            <lazy-season-programs-heated-pool/>
           </div>
           <div class="d-flex justify-space-between flex-wrap mt-2 px-5">
             <!-- Активный отдых на Красной Поляне: аренда зимнего спортивного снаряжения -->
-            <season-programs-leisure/>
+            <lazy-season-programs-leisure/>
             <!-- Сказочная зимняя атмосфера в отелЯХ ГРУППЫ ПОЛЯНА ГРУП -->
-            <season-programs-atmosphere/>
+            <lazy-season-programs-atmosphere/>
           </div>
         </div>
       </div>

@@ -8,17 +8,18 @@
       </v-btn>
       <template v-slot:prev="{ on, attrs }">
         <div v-bind="attrs" v-on="on">
-          <carousel-button-prev/>
+          <lazy-carousel-button-prev/>
         </div>
       </template>
       <template v-slot:next="{ on, attrs }">
         <div v-bind="attrs" v-on="on">
-          <carousel-button-next/>
+          <lazy-carousel-button-next/>
         </div>
       </template>
       <v-carousel-item class="gallery-slide" v-for="(image, i) in data" :key="'sliderImage'+i">
         <div class="gallery-slide-wrapper">
-          <img class="gallery-slide-img" :src="image" alt="#">
+          <nuxt-img class="gallery-slide-img" :src="image" alt="#"
+                    loading="lazy" quality="80" :placeholder="[50]"/>
         </div>
       </v-carousel-item>
     </v-carousel>

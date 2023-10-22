@@ -1,7 +1,6 @@
 <template>
   <div class="pinterest-card-welcome--desktop">
     <svg xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
          style="max-width: 1200px; width: 100%" height="auto" viewBox="0 0 1410 495" fill="none">
       <path d="M705 23C705 10.2975 694.703 0 682 0H23C10.2975 0 0 10.2975 0 23V462C0 474.703 10.2974 485 23 485H1393C1405.7 485 1416 474.703 1416 462V142C1416 129.297 1405.7 119 1393 119H728C715.297 119 705 108.703 705 96V23Z"
             fill="url(#pinterestDesktop)"/>
@@ -12,7 +11,7 @@
         <image id="imagePinterestDesktop" width="4096" height="2731" href="https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp"/>
       </defs>
     </svg>
-    <watch-play/>
+    <lazy-watch-play/>
   </div>
 </template>
 <script lang="ts">

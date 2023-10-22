@@ -4,7 +4,8 @@
       <div class="reviews-slider-card-header">
         <div class="reviews-slider-card-header-user">
           <div class="reviews-slider-card-header-logo">
-            <img :src="item.photouser" alt="#">
+            <nuxt-img :src="item.photouser" alt="аватарка пользователя на отзыв"
+                      loading="lazy" quality="80" :placeholder="[50]"/>
           </div>
           <div class="reviews-slider-card-header-context">
             <div class="reviews-slider-card-header-name">
@@ -17,19 +18,19 @@
 
       <div class="reviews-slider-card-body">
         <div class="reviews-slider-card-stars">
-          <rating-yandex-star class="reviews-slider-card-stars-star"
-                              v-for="j in item.starrating" :key="'reviewIndexStar'+j"/>
+          <lazy-rating-yandex-star class="reviews-slider-card-stars-star"
+                                   v-for="j in item.starrating" :key="'reviewIndexStar'+j"/>
           <div class="reviews-slider-card-date">{{ getElementDate(item.created_at) }}</div>
         </div>
         <div class="reviews-slider-card-description">{{ item.description }}</div>
         <div class="reviews-slider-card-images" @click="dialog = true">
-          <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
-               :key="'reviewIndexImage'+k" :src="imgs" alt="#"/>
+          <nuxt-img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
+                    :key="'reviewIndexImage'+k" :src="imgs" alt="изображение на отзыв"
+                    loading="lazy" quality="80" :placeholder="[50]"/>
         </div>
-        <gallery-dialog @changeDialog="changeDialog"
-                        :dialog="dialog" :data="item.imgurls"/>
+        <lazy-gallery-dialog @changeDialog="changeDialog"
+                             :dialog="dialog" :data="item.imgurls"/>
       </div>
-
     </div>
   </v-card>
 </template>

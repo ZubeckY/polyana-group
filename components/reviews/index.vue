@@ -36,25 +36,27 @@
         </div>
       </div>
 
-      <div class="reviews-slider" v-if="data.length > 1">
-        <VueSlickCarousel v-bind="settings">
-          <div v-for="(item, i) in data" :key="'reviewIndex'+i" class="px-1">
-            <reviews-card :item="item"/>
-          </div>
-          <template #prevArrow="arrowOption">
-            <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
-                   elevation="0" rounded color="#ffffffb8" title="Назад">
-              <div class="reviews-slider-arrow prev">&nbsp;</div>
-            </v-btn>
-          </template>
-          <template #nextArrow="arrowOption">
-            <v-btn style="right: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
-                   elevation="0" rounded color="#ffffffb8" title="Вперёд">
-              <div class="reviews-slider-arrow next">&nbsp;</div>
-            </v-btn>
-          </template>
-        </VueSlickCarousel>
-      </div>
+      <v-lazy>
+        <div class="reviews-slider" v-if="data.length > 1">
+          <VueSlickCarousel v-bind="settings">
+            <div v-for="(item, i) in data" :key="'reviewIndex'+i" class="px-1">
+              <lazy-reviews-card :item="item"/>
+            </div>
+            <template #prevArrow="arrowOption">
+              <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
+                     elevation="0" rounded color="#ffffffb8" title="Назад">
+                <div class="reviews-slider-arrow prev">&nbsp;</div>
+              </v-btn>
+            </template>
+            <template #nextArrow="arrowOption">
+              <v-btn style="right: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
+                     elevation="0" rounded color="#ffffffb8" title="Вперёд">
+                <div class="reviews-slider-arrow next">&nbsp;</div>
+              </v-btn>
+            </template>
+          </VueSlickCarousel>
+        </div>
+      </v-lazy>
     </div>
   </section>
 </template>
@@ -63,7 +65,6 @@ import {Vue, Component, Prop} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
-import {eq} from "dom7";
 
 @Component
 export default class Reviews extends Vue {
@@ -80,6 +81,7 @@ export default class Reviews extends Vue {
     slidesToShow: 3,
     slidesToScroll: 1,
     touchThreshold: 5,
+    lazyLoad: 'progressive',
     responsive: [
       {
         breakpoint: 1024,
@@ -127,9 +129,9 @@ export default class Reviews extends Vue {
         return
       }
       let {data, error}: any = await supaBase
-          .from('hotels')
-          .select('travellineid, yandexaddreview')
-          .eq('travellineid', hotel_id)
+        .from('hotels')
+        .select('travellineid, yandexaddreview')
+        .eq('travellineid', hotel_id)
       this.viewReviewLink = '/reviews?hotel_id=' + hotel_id
       this.addReviewLink = data[0].yandexaddreview
     } catch (e) {
@@ -141,19 +143,19 @@ export default class Reviews extends Vue {
     try {
       if (!this.hotelId) {
         let {data, error} = await supaBase
-            .from('reviews')
-            .select('')
-            .order('created_at', {ascending: false})
-            .limit(10)
+          .from('reviews')
+          .select('*')
+          .order('created_at', {ascending: false})
+          .limit(10)
 
         this.data = data
       } else {
         let {data, error} = await supaBase
-            .from('reviews')
-            .select('')
-            .eq('hoteltlid', this.hotelId)
-            .order('created_at', {ascending: false})
-            .limit(10)
+          .from('reviews')
+          .select('*')
+          .eq('hoteltlid', this.hotelId)
+          .order('created_at', {ascending: false})
+          .limit(6)
 
         this.data = data
       }

@@ -10,7 +10,7 @@
         <image id="imagePinterestTablet" width="4096" height="2731" href="https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp"/>
       </defs>
     </svg>
-    <watch-play/>
+    <lazy-watch-play/>
   </div>
 </template>
 <script lang="ts">

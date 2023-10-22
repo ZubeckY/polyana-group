@@ -1,6 +1,6 @@
 <template>
   <v-card class="footer-booking d-flex flex-column justify-center" color="#454850" elevation="0">
-    <logo-large class="mx-auto"/>
+    <lazy-logo-large class="mx-auto"/>
     <v-card-actions class="pa-0 my-3">
       <v-btn class="footer-booking-btn shimmer-effect rounded-xxl mx-auto"
              width="237px" height="37px" href="/booking"

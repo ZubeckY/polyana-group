@@ -2,29 +2,29 @@
   <nav class="header-nav">
     <div class="header-nav-container general-container d-flex align-center flex-row">
       <div class="header-nav-container-inner d-flex align-center w-100">
-        <header-nav-menu/>
+        <lazy-header-nav-menu/>
         <div class="header-nav__link mx-auto" v-for="(item, i) in firstLinks" :key="'f_link'+i">
-          <hotels-menu v-if="item.title === 'Отели'">
+          <lazy-hotels-menu v-if="item.title === 'Отели'">
             <div class="d-flex align-center">
-              <link-component :item="{title: 'Отели'}"/>
-              <chevron-down class="ml-1" :dark="true"/>
+              <lazy-link-component :item="{title: 'Отели'}"/>
+              <lazy-chevron-down class="ml-1" :dark="true"/>
             </div>
-          </hotels-menu>
+          </lazy-hotels-menu>
 
-          <hotels-menu v-else-if="item.title === 'Ресторан'" mode="restaurant">
+          <lazy-hotels-menu v-else-if="item.title === 'Ресторан'" mode="restaurant">
             <div class="d-flex align-center">
-              <link-component :item="{title: 'Ресторан'}"/>
-              <chevron-down class="ml-1" :dark="true"/>
+              <lazy-link-component :item="{title: 'Ресторан'}"/>
+              <lazy-chevron-down class="ml-1" :dark="true"/>
             </div>
-          </hotels-menu>
+          </lazy-hotels-menu>
 
-          <link-component :item="item" v-else/>
+          <lazy-link-component :item="item" v-else/>
         </div>
 
-        <logo-small class="header-nav__logo"/>
+        <lazy-logo-small class="header-nav__logo"/>
 
         <div class="header-nav__link mx-auto" v-for="(item, i) in secondLinks" :key="'s_link'+i">
-          <link-component :item="item"/>
+          <lazy-link-component :item="item"/>
         </div>
       </div>
 
