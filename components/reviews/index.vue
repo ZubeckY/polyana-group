@@ -36,27 +36,25 @@
         </div>
       </div>
 
-      <v-lazy>
-        <div class="reviews-slider" v-if="data.length > 1">
-          <VueSlickCarousel v-bind="settings">
-            <div v-for="(item, i) in data" :key="'reviewIndex'+i" class="px-1">
-              <lazy-reviews-card :item="item"/>
-            </div>
-            <template #prevArrow="arrowOption">
-              <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
-                     elevation="0" rounded color="#ffffffb8" title="Назад">
-                <div class="reviews-slider-arrow prev">&nbsp;</div>
-              </v-btn>
-            </template>
-            <template #nextArrow="arrowOption">
-              <v-btn style="right: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
-                     elevation="0" rounded color="#ffffffb8" title="Вперёд">
-                <div class="reviews-slider-arrow next">&nbsp;</div>
-              </v-btn>
-            </template>
-          </VueSlickCarousel>
-        </div>
-      </v-lazy>
+      <div class="reviews-slider" v-if="data.length > 1">
+        <VueSlickCarousel v-bind="settings">
+          <div v-for="(item, i) in data" :key="'reviewIndex'+i" class="px-1">
+            <lazy-reviews-card :item="item"/>
+          </div>
+          <template #prevArrow="arrowOption">
+            <v-btn style="left: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
+                   elevation="0" rounded color="#ffffffb8" title="Назад">
+              <div class="reviews-slider-arrow prev">&nbsp;</div>
+            </v-btn>
+          </template>
+          <template #nextArrow="arrowOption">
+            <v-btn style="right: -40px; z-index: 200" min-height="0" min-width="0" width="34px" height="34px"
+                   elevation="0" rounded color="#ffffffb8" title="Вперёд">
+              <div class="reviews-slider-arrow next">&nbsp;</div>
+            </v-btn>
+          </template>
+        </VueSlickCarousel>
+      </div>
     </div>
   </section>
 </template>
