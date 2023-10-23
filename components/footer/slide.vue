@@ -2,7 +2,7 @@
   <div class="footer-slide-container">
     <nuxt-img class="footer-slide-image" :src="item ? item : 'https://placehold.co/900x600/dddddd/dddddd'" alt="#"
               loading="lazy" quality="80" :placeholder="[50]"/>
-    <a :href="getHotelLink" class="footer-slide-svg">
+    <a :href="getHotelLink" class="footer-slide-svg" title="Перейти на страницу отеля">
       <svg viewBox="0 0 82 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1807_236)">
           <path fill-rule="evenodd" clip-rule="evenodd"

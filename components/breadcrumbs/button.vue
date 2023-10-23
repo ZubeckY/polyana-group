@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="breadcrumbs-button" elevation="0" @click="getBack"
+  <v-btn class="breadcrumbs-button" elevation="0" @click="getBack" title="Назад"
          width="34px" height="34px" min-width="0" min-height="0" color="var(--card-grey)">
     <chevron-left/>
   </v-btn>
