@@ -16,50 +16,52 @@
     </header>
 
     <section class="specialOffers-promo">
-      <div class="specialOffers-promo-container general-container">
+      <v-lazy>
+        <div class="specialOffers-promo-container general-container">
 
-        <div class="specialOffers-promo-chips">
-          <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">По отелям:</div>
-            <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="hotel" column multiple
-                            active-class="golden-gradient white--text">
-                <v-chip class="white" style="font-size: 12px; height: 31px;"
-                        v-for="(item, i) in hotels"
-                        :key="i" :value="item.id">
-                  {{ item.title }}
-                </v-chip>
-              </v-chip-group>
+          <div class="specialOffers-promo-chips">
+            <div class="specialOffers-promo-chips-container">
+              <div class="specialOffers-promo-chips-title">По отелям:</div>
+              <div class="specialOffers-promo-chips-body">
+                <v-chip-group v-model="hotel" column multiple
+                              active-class="golden-gradient white--text">
+                  <v-chip class="white" style="font-size: 12px; height: 31px;"
+                          v-for="(item, i) in hotels"
+                          :key="i" :value="item.id">
+                    {{ item.title }}
+                  </v-chip>
+                </v-chip-group>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="specialOffers-promo-chips">
-          <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">По КАТЕГОРИЯМ:</div>
-            <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="category" column multiple
-                            active-class="golden-gradient white--text">
-                <v-chip class="white" style="font-size: 12px; height: 31px"
-                        v-for="(item, i) in categories"
-                        :key="i" :value="item.id">
-                  {{ item.title }}
-                </v-chip>
-              </v-chip-group>
+          <div class="specialOffers-promo-chips">
+            <div class="specialOffers-promo-chips-container">
+              <div class="specialOffers-promo-chips-title">По КАТЕГОРИЯМ:</div>
+              <div class="specialOffers-promo-chips-body">
+                <v-chip-group v-model="category" column multiple
+                              active-class="golden-gradient white--text">
+                  <v-chip class="white" style="font-size: 12px; height: 31px"
+                          v-for="(item, i) in categories"
+                          :key="i" :value="item.id">
+                    {{ item.title }}
+                  </v-chip>
+                </v-chip-group>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div v-if="loading">Загрузка</div>
-        <div v-else>
-          <div class="d-flex flex-wrap" v-if="data.length >= 1">
-            <div class="specialOffers-slide d-flex" v-for="(item, i) in data" :key="'cornerCard'+i">
-              <corner-card class="specialOffers-slide-promo" :item="item"/>
+          <div v-if="loading">Загрузка</div>
+          <div v-else>
+            <div class="d-flex flex-wrap" v-if="data.length >= 1">
+              <div class="specialOffers-slide d-flex" v-for="(item, i) in data" :key="'cornerCard'+i">
+                <corner-card class="specialOffers-slide-promo" :item="item"/>
+              </div>
             </div>
+            <div v-else>Ничего нет</div>
           </div>
-          <div v-else>Ничего нет</div>
         </div>
-      </div>
+      </v-lazy>
     </section>
   </div>
 </template>
@@ -148,9 +150,9 @@ export default class Promo extends Vue {
   async getCategories() {
     try {
       let {data, error}: any = await supaBase
-          .from('categoryspecialoffer')
-          .select('id, title')
-          .order('id')
+        .from('categoryspecialoffer')
+        .select('id, title')
+        .order('id')
       this.categories.push(...data)
     } catch (e) {
       console.log(e)
@@ -160,9 +162,9 @@ export default class Promo extends Vue {
   async getHotels() {
     try {
       let {data, error}: any = await supaBase
-          .from('hotels')
-          .select('id, title')
-          .order('id')
+        .from('hotels')
+        .select('id, title')
+        .order('id')
       this.hotels.push(...data)
     } catch (e) {
       console.log(e)
@@ -195,11 +197,11 @@ export default class Promo extends Vue {
     try {
       this.loading = true
       let {data, error} = await supaBase
-          .from('specialoffer')
-          .select('')
-          .contains('idhotel', [...this.hotel])
-          .contains('idcategory', [...this.category])
-          .order('id')
+        .from('specialoffer')
+        .select('')
+        .contains('idhotel', [...this.hotel])
+        .contains('idcategory', [...this.category])
+        .order('id')
 
       this.data = data
     } catch (e) {

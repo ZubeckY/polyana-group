@@ -17,26 +17,28 @@
     </header>
 
     <section class="conditions mt-6">
-      <div class="conditions-container general-container">
-        <div class="conditions-head">
-          <services-chip-list :data="data.length >= 1 ? data : []"/>
-          <h2 class="conditions-title">Условия акции</h2>
-        </div>
-        <div v-if="loading">Загрузка</div>
-        <div v-else>
-          <div v-if="data.length >= 1">
-            <div class="conditions-body">
-              <div class="conditions-body-container">
-                <p class="conditions-text" v-html="activeDescription"></p>
-                <div class="conditions-form">
-                  <feedback-form/>
+      <v-lazy>
+        <div class="conditions-container general-container">
+          <div class="conditions-head">
+            <services-chip-list :data="data.length >= 1 ? data : []"/>
+            <h2 class="conditions-title">Условия акции</h2>
+          </div>
+          <div v-if="loading">Загрузка</div>
+          <div v-else>
+            <div v-if="data.length >= 1">
+              <div class="conditions-body">
+                <div class="conditions-body-container">
+                  <p class="conditions-text" v-html="activeDescription"></p>
+                  <div class="conditions-form">
+                    <feedback-form/>
+                  </div>
                 </div>
               </div>
             </div>
+            <div v-else>Ничего нет</div>
           </div>
-          <div v-else>Ничего нет</div>
         </div>
-      </div>
+      </v-lazy>
     </section>
   </div>
 </template>
@@ -101,9 +103,9 @@ export default class Promo extends Vue {
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
       let {data, error} = await supaBase
-          .from('specialoffer')
-          .select('')
-          .match({id: currentId})
+        .from('specialoffer')
+        .select('')
+        .match({id: currentId})
 
       this.data = data
     } catch (e) {

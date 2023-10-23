@@ -14,101 +14,104 @@
       </div>
     </header>
 
-    <div class="contacts d-flex justify-space-between mt-14">
-      <div class="contacts-map">
-        <div v-html="getYandexMap"></div>
-        <div class="contacts-btn-group">
-          <div class="contacts-btn-group-container">
-            <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" min-width="0" elevation="0" target="_blank" :href="getYandexRoute">
-              <div class="shimmer"></div>
-              <div class="text">ПОСМОТРЕТЬ МАРШРУТ</div>
-            </v-btn>
+    <v-lazy>
+      <div class="contacts d-flex justify-space-between mt-14">
+        <div class="contacts-map">
+          <v-lazy>
+            <div v-html="getYandexMap"></div>
+          </v-lazy>
+          <div class="contacts-btn-group">
+            <div class="contacts-btn-group-container">
+              <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
+                     width="296px" height="40px" min-width="0" elevation="0" target="_blank" :href="getYandexRoute">
+                <div class="shimmer"></div>
+                <div class="text">ПОСМОТРЕТЬ МАРШРУТ</div>
+              </v-btn>
 
-            <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
-                   width="296px" height="40px" min-width="0" elevation="0" href="/booking/?hotel_id=32513"
-                   :href="linkToBooking">
-              <div class="shimmer"></div>
-              <div class="text">Забронировать номер</div>
-            </v-btn>
+              <v-btn class="contacts-btn golden-gradient shimmer-effect white--text rounded-xl"
+                     width="296px" height="40px" min-width="0" elevation="0" href="/booking/?hotel_id=32513"
+                     :href="linkToBooking">
+                <div class="shimmer"></div>
+                <div class="text">Забронировать номер</div>
+              </v-btn>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="seeYouAtHotel contacts-comp">
-        <div class="seeYouAtHotel-container">
-          <!-- До встречи в наших отелях -->
-          <h4 class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</h4>
-          <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
-                        mandatory column active-class="golden-gradient white--text">
-            <see-you-at-hotel-chip v-for="(item, i) in localMapping"
-                                          :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
-          </v-chip-group>
+        <div class="seeYouAtHotel contacts-comp">
+          <div class="seeYouAtHotel-container">
+            <!-- До встречи в наших отелях -->
+            <h4 class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</h4>
+            <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
+                          mandatory column active-class="golden-gradient white--text">
+              <see-you-at-hotel-chip v-for="(item, i) in localMapping"
+                                     :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
+            </v-chip-group>
 
-          <div class="seeYouAtHotel-address d-flex">
-            <!-- Контакты адрес -->
-            <div class="seeYouAtHotel-address-container">
-              <h4 class="seeYouAtHotel-address-title footer-title my-3">Контакты</h4>
-              <div class="seeYouAtHotel-address-text"><h4 class="text-uppercase">Адрес:</h4>
-                <div>{{ getAddressItem }}</div>
-              </div>
-              <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
-                :href="'tel:'+getTelBronItem">{{ getTelBronItem }}</a>
-                <span style="font-size: 12px">
+            <div class="seeYouAtHotel-address d-flex">
+              <!-- Контакты адрес -->
+              <div class="seeYouAtHotel-address-container">
+                <h4 class="seeYouAtHotel-address-title footer-title my-3">Контакты</h4>
+                <div class="seeYouAtHotel-address-text"><h4 class="text-uppercase">Адрес:</h4>
+                  <div>{{ getAddressItem }}</div>
+                </div>
+                <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
+                  :href="'tel:'+getTelBronItem">{{ getTelBronItem }}</a>
+                  <span style="font-size: 12px">
                     Отдел бронирования
                     (09:00 - 21:00)</span>
-              </div>
-              <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
-                :href="'tel:'+getTelTelReceptionItem">{{ getTelTelReceptionItem }}</a>
-                <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
+                </div>
+                <div class="seeYouAtHotel-address-text text-uppercase mt-2"><a
+                  :href="'tel:'+getTelTelReceptionItem">{{ getTelTelReceptionItem }}</a>
+                  <span style="color: #000; font-size: 12px; font-weight: 400;line-height: 126.9%;">
                     Рецепция (круглосуточно)</span>
+                </div>
               </div>
-            </div>
 
-            <!-- Слайдер -->
-            <div class="seeYouAtHotel-photo">
-              <v-carousel class="footer-carousel" style="height: 247px"
-                          v-model="activeSlide" hide-delimiters>
-                <template v-slot:prev="{ on, attrs }">
-                  <div v-bind="attrs" v-on="on">
-                    <carousel-button-prev/>
-                  </div>
-                </template>
-                <template v-slot:next="{ on, attrs }">
-                  <div v-bind="attrs" v-on="on">
-                    <carousel-button-next/>
-                  </div>
-                </template>
-                <v-carousel-item class="footer-slide" style="position: relative"
-                                 v-for="(item, j) in getImgSHotel" :key="'photo-'+j">
-                  <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
-                </v-carousel-item>
-              </v-carousel>
-            </div>
+              <!-- Слайдер -->
+              <div class="seeYouAtHotel-photo">
+                <v-carousel class="footer-carousel" style="height: 247px"
+                            v-model="activeSlide" hide-delimiters>
+                  <template v-slot:prev="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on">
+                      <carousel-button-prev/>
+                    </div>
+                  </template>
+                  <template v-slot:next="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on">
+                      <carousel-button-next/>
+                    </div>
+                  </template>
+                  <v-carousel-item class="footer-slide" style="position: relative"
+                                   v-for="(item, j) in getImgSHotel" :key="'photo-'+j">
+                    <footer-slide :item="item" :isKey="j" :hotel="localMapping[activeChip]"/>
+                  </v-carousel-item>
+                </v-carousel>
+              </div>
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="requisites">
-      <div class="requisites-container">
-        <div class="requisites-title mb-8 mt-10">
-          РЕКВИЗИТЫ
-        </div>
-        <div class="d-flex flex-wrap justify-space-between">
-          <div
-            style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
-            {{ getYandexNameBusiness }}
+      <div class="requisites">
+        <div class="requisites-container">
+          <div class="requisites-title mb-8 mt-10">
+            РЕКВИЗИТЫ
           </div>
-          <div
-            style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
-            {{ getYandexBankDetails }}
+          <div class="d-flex flex-wrap justify-space-between">
+            <div
+              style="width: 352px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+              {{ getYandexNameBusiness }}
+            </div>
+            <div
+              style="width: 773px; height: 66px; color: #000; font-size: 13.6px; font-weight: 500; line-height: 20.825px;">
+              {{ getYandexBankDetails }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </v-lazy>
   </div>
 </template>
 <script lang="ts">

@@ -16,33 +16,35 @@
     </header>
 
     <section class="specialOffers-promo">
-      <div class="specialOffers-promo-container general-container">
+      <v-lazy>
+        <div class="specialOffers-promo-container general-container">
 
-        <div class="specialOffers-promo-chips">
-          <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">Отели</div>
-            <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="hotel" column active-class="golden-gradient white--text">
-                <v-chip class="white" v-for="(item, i) in hotels" :key="i"
-                        :value="item.travellineid" style="font-size: 12px; height: 31px;">
-                  {{ item.title }}
-                </v-chip>
-              </v-chip-group>
+          <div class="specialOffers-promo-chips">
+            <div class="specialOffers-promo-chips-container">
+              <div class="specialOffers-promo-chips-title">Отели</div>
+              <div class="specialOffers-promo-chips-body">
+                <v-chip-group v-model="hotel" column active-class="golden-gradient white--text">
+                  <v-chip class="white" v-for="(item, i) in hotels" :key="i"
+                          :value="item.travellineid" style="font-size: 12px; height: 31px;">
+                    {{ item.title }}
+                  </v-chip>
+                </v-chip-group>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div v-if="loading">Загрузка</div>
-        <div v-else>
-          <div class="specialOffers-promo-reviews mt-3" v-if="data.length >= 1">
-            <div class="specialOffers-promo-reviews-container">
-              <reviews-card class="specialOffers-promo-reviews-card"
-                            v-for="(item, i) in data" :key="'review'+i" :item="item"/>
+          <div v-if="loading">Загрузка</div>
+          <div v-else>
+            <div class="specialOffers-promo-reviews mt-3" v-if="data.length >= 1">
+              <div class="specialOffers-promo-reviews-container">
+                <reviews-card class="specialOffers-promo-reviews-card"
+                              v-for="(item, i) in data" :key="'review'+i" :item="item"/>
+              </div>
             </div>
+            <div v-else>Ничего нет</div>
           </div>
-          <div v-else>Ничего нет</div>
         </div>
-      </div>
+      </v-lazy>
     </section>
   </div>
 </template>
@@ -121,9 +123,9 @@ export default class Reviews extends Vue {
   async getHotels() {
     try {
       let {data, error}: any = await supaBase
-          .from('hotels')
-          .select('id, title, travellineid')
-          .order('id')
+        .from('hotels')
+        .select('id, title, travellineid')
+        .order('id')
       this.hotels.push(...data)
     } catch (e) {
       console.log(e)
@@ -136,16 +138,16 @@ export default class Reviews extends Vue {
       this.loading = true
       if (this.hotel == 0) {
         let {data, error} = await supaBase
-            .from('reviews')
-            .select('')
-            .order('created_at', {ascending: false})
+          .from('reviews')
+          .select('')
+          .order('created_at', {ascending: false})
         this.data = data
       } else {
         let {data, error} = await supaBase
-            .from('reviews')
-            .select('')
-            .eq('hoteltlid', this.hotel)
-            .order('created_at', {ascending: false})
+          .from('reviews')
+          .select('')
+          .eq('hoteltlid', this.hotel)
+          .order('created_at', {ascending: false})
         this.data = data
       }
     } catch (e) {

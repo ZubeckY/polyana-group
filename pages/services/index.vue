@@ -15,97 +15,101 @@
     </header>
 
     <section class="specialOffers-promo">
-      <div class="specialOffers-promo-container general-container">
+      <v-lazy>
+        <div class="specialOffers-promo-container general-container">
 
-        <div class="specialOffers-promo-chips">
-          <div class="specialOffers-promo-chips-container">
-            <div class="specialOffers-promo-chips-title">Отели:</div>
-            <div class="specialOffers-promo-chips-body">
-              <v-chip-group v-model="hotel" column
-                            active-class="golden-gradient white--text">
-                <v-chip class="white" style="font-size: 12px; height: 31px;" v-for="(item, i) in hotels"
-                        :key="i" :value="item.id">
-                  {{ item.title }}
-                </v-chip>
-              </v-chip-group>
+          <div class="specialOffers-promo-chips">
+            <div class="specialOffers-promo-chips-container">
+              <div class="specialOffers-promo-chips-title">Отели:</div>
+              <div class="specialOffers-promo-chips-body">
+                <v-chip-group v-model="hotel" column
+                              active-class="golden-gradient white--text">
+                  <v-chip class="white" style="font-size: 12px; height: 31px;" v-for="(item, i) in hotels"
+                          :key="i" :value="item.id">
+                    {{ item.title }}
+                  </v-chip>
+                </v-chip-group>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div v-if="loading">Загрузка</div>
-        <div v-else>
+          <div v-if="loading">Загрузка</div>
+          <div v-else>
 
-          <section class="luxHoliday" v-if="data.length >= 1">
-            <div class="luxHoliday-container flexbox-wrapper">
+            <section class="luxHoliday" v-if="data.length >= 1">
+              <v-lazy>
+                <div class="luxHoliday-container flexbox-wrapper">
 
-              <div class="luxHoliday-head" style="max-width: 400px">
-                <div class="luxHoliday-head-container">
-                  <h3 class="luxHoliday-title section-title fontSize-xl--s text-uppercase">Роскошный
-                    горный отдых
-                    с комфортом!
-                  </h3>
-                  <div class="luxHoliday-text">
-                    <p v-html="hotels[hotel].description"></p>
+                  <div class="luxHoliday-head" style="max-width: 400px">
+                    <div class="luxHoliday-head-container">
+                      <h3 class="luxHoliday-title section-title fontSize-xl--s text-uppercase">Роскошный
+                        горный отдых
+                        с комфортом!
+                      </h3>
+                      <div class="luxHoliday-text">
+                        <p v-html="hotels[hotel].description"></p>
 
-                    <div class="d-flex mt-4">
-                      <b>Спрашивайте,
-                        отвечаем онлайн</b>
-                      <div class="d-flex ml-4">
-                        <contact-button-whatsapp class="mr-2"/>
-                        <contact-button-telegram/>
+                        <div class="d-flex mt-4">
+                          <b>Спрашивайте,
+                            отвечаем онлайн</b>
+                          <div class="d-flex ml-4">
+                            <contact-button-whatsapp class="mr-2"/>
+                            <contact-button-telegram/>
+                          </div>
+                        </div>
                       </div>
+                      <v-btn class="luxHoliday-btn shimmer-effect rounded-xxl mx-auto" href="/booking/?hotel_id=32513"
+                             color="golden-gradient" elevation="0" width="254px" height="47px" dark>
+                        <div class="shimmer"></div>
+                        <div class="text">Забронировать</div>
+                      </v-btn>
                     </div>
                   </div>
-                  <v-btn class="luxHoliday-btn shimmer-effect rounded-xxl mx-auto" href="/booking/?hotel_id=32513"
-                         color="golden-gradient" elevation="0" width="254px" height="47px" dark>
-                    <div class="shimmer"></div>
-                    <div class="text">Забронировать</div>
-                  </v-btn>
-                </div>
-              </div>
 
-              <div class="luxHoliday-body">
-                <div class="luxHoliday-body-container">
-                  <article class="luxHoliday-slide slider" v-for="(slider, i) in data" :key="'luxHoliday-slide'+i">
-                    <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px" hide-delimiters>
+                  <div class="luxHoliday-body">
+                    <div class="luxHoliday-body-container">
+                      <article class="luxHoliday-slide slider" v-for="(slider, i) in data" :key="'luxHoliday-slide'+i">
+                        <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px" hide-delimiters>
 
-                      <template v-slot:prev="{ on, attrs }">
-                        <div v-bind="attrs" v-on="on">
-                          <carousel-button-prev/>
+                          <template v-slot:prev="{ on, attrs }">
+                            <div v-bind="attrs" v-on="on">
+                              <carousel-button-prev/>
+                            </div>
+                          </template>
+                          <template v-slot:next="{ on, attrs }">
+                            <div v-bind="attrs" v-on="on">
+                              <carousel-button-next/>
+                            </div>
+                          </template>
+
+                          <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id"
+                                           class="luxHoliday-slide" :key="'lux-slide-'+j">
+                            <img class="luxHoliday-slide-image" :src="image" alt="#" loading="lazy"/>
+                          </v-carousel-item>
+                        </v-carousel>
+
+                        <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3"
+                             style="position:absolute; top: 0">
+                          <services-chip :item="slider"/>
                         </div>
-                      </template>
-                      <template v-slot:next="{ on, attrs }">
-                        <div v-bind="attrs" v-on="on">
-                          <carousel-button-next/>
-                        </div>
-                      </template>
 
-                      <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id"
-                                       class="luxHoliday-slide" :key="'lux-slide-'+j">
-                        <img class="luxHoliday-slide-image" :src="image" alt="#"/>
-                      </v-carousel-item>
-                    </v-carousel>
+                        <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
+                          <img :class="'luxHoliday-slide-mask ' + slider.classelement" alt="#" :src="slider.titlesvg" loading="lazy"/>
+                          <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
+                        </a>
+                      </article>
 
-                    <div class="corner-card-header-container d-flex flex-row flex-wrap px-3 py-3"
-                         style="position:absolute; top: 0">
-                      <services-chip :item="slider"/>
                     </div>
-
-                    <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
-                      <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg"/>
-                      <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
-                    </a>
-                  </article>
+                  </div>
 
                 </div>
-              </div>
+              </v-lazy>
+            </section>
 
-            </div>
-          </section>
-
-          <div v-else>Ничего нет</div>
+            <div v-else>Ничего нет</div>
+          </div>
         </div>
-      </div>
+      </v-lazy>
     </section>
   </div>
 </template>

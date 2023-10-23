@@ -17,59 +17,63 @@
     </header>
 
     <section class="conditions mt-6">
-      <div class="conditions-container general-container">
-        <div class="conditions-head">
+      <v-lazy>
+        <div class="conditions-container general-container">
+          <div class="conditions-head">
 
-          <div class="mb-3">
-            <div class="conditions-title mb-2">Отель</div>
-            <services-chip :item="data" style="margin-left: -5px"/>
+            <div class="mb-3">
+              <div class="conditions-title mb-2">Отель</div>
+              <services-chip :item="data" style="margin-left: -5px"/>
+            </div>
+
+            <h2 class="conditions-title">Об услуге</h2>
           </div>
-
-          <h2 class="conditions-title">Об услуге</h2>
-        </div>
-        <div v-if="loading">Загрузка</div>
-        <div v-else>
-          <div v-if="data.id">
-            <div class="conditions-body">
-              <div class="conditions-body-container">
-                <p class="conditions-text" v-html="activeDescription"></p>
-                <div class="conditions-form">
-                  <feedback-form/>
+          <div v-if="loading">Загрузка</div>
+          <div v-else>
+            <div v-if="data.id">
+              <div class="conditions-body">
+                <div class="conditions-body-container">
+                  <p class="conditions-text" v-html="activeDescription"></p>
+                  <div class="conditions-form">
+                    <feedback-form/>
+                  </div>
                 </div>
               </div>
             </div>
+            <div v-else>Ничего нет</div>
           </div>
-          <div v-else>Ничего нет</div>
         </div>
-      </div>
+      </v-lazy>
     </section>
 
     <section class="restInPolyana mt-8">
-      <div class="restInPolyana-container general-container">
-        <div class="restInPolyana-body">
-          <div class="restInPolyana-body-container" @click="dialog = true">
-            <div class="restInPolyana-pictures-large grid-item">
-              <div class="restInPolyana-pictures-large-img" v-if="getImageByIndex(0)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
+      <v-lazy>
+        <div class="restInPolyana-container general-container">
+          <div class="restInPolyana-body">
+            <div class="restInPolyana-body-container" @click="dialog = true">
+              <div class="restInPolyana-pictures-large grid-item">
+                <div class="restInPolyana-pictures-large-img" v-if="getImageByIndex(0)">
+                  <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
+                </div>
               </div>
+              <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(1)">
+                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
+              </div>
+              <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(2)">
+                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
+              </div>
+              <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(3)">
+                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
+              </div>
+              <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(4)">
+                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
+                <div class="restInPolyana-pictures-small-img-more">+{{ data.imgs ? data.imgs.length : 99 }} фото</div>
+              </div>
+              <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data.imgs"/>
             </div>
-            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(1)">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
-            </div>
-            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(2)">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
-            </div>
-            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(3)">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
-            </div>
-            <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(4)">
-              <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
-              <div class="restInPolyana-pictures-small-img-more">+{{ data.imgs ? data.imgs.length : 99 }} фото</div>
-            </div>
-            <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data.imgs"/>
           </div>
         </div>
-      </div>
+      </v-lazy>
     </section>
   </div>
 </template>
@@ -135,9 +139,9 @@ export default class Services extends Vue {
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
       let {data, error}: any = await supaBase
-          .from('services')
-          .select('')
-          .match({id: currentId})
+        .from('services')
+        .select('')
+        .match({id: currentId})
       this.data = data[0]
     } catch (e) {
       console.log(e)

@@ -1,16 +1,18 @@
 <template>
   <section class="hotelGroup">
-    <div class="hotelGroup-container">
-      <div class="hotelGroup-head">
-        <h3 class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
-          POLYANA GROUP на красной поляне
-        </h3>
+    <v-lazy>
+      <div class="hotelGroup-container">
+        <div class="hotelGroup-head">
+          <h3 class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
+            POLYANA GROUP на красной поляне
+          </h3>
+        </div>
+        <div class="hotelGroup-body">
+          <hotel-group-item v-for="(item, i) in hotelList"
+                            :key="'hotel-'+i" :item="item"/>
+        </div>
       </div>
-      <div class="hotelGroup-body">
-        <hotel-group-item v-for="(item, i) in hotelList"
-                               :key="'hotel-'+i" :item="item"/>
-      </div>
-    </div>
+    </v-lazy>
   </section>
 </template>
 <script lang="ts">
