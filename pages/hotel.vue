@@ -24,7 +24,7 @@
         <div class="restInPolyana-body">
           <div class="restInPolyana-body-container" @click="dialog = true">
             <div class="restInPolyana-pictures-large grid-item">
-              <div @click.stop>
+              <div @click.stop style="position:absolute;">
                 <watch-dialog :link="hotel.youtube">
                   <watch-inside/>
                 </watch-dialog>
