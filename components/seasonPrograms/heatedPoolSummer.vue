@@ -1,4 +1,4 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <article class="seasonPrograms-card summer small">
     <div class="seasonPrograms-card-container">
       <div class="seasonPrograms-card-header">
@@ -32,7 +32,26 @@
       </div>
       <v-vertical-spacer/>
       <p class="seasonPrograms-card-text">Насладитесь всегда теплым бассейном:
-        +30 градусов круглый год! *
+        +30 градусов круглый год!
+
+        <v-menu open-on-hover
+                offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <span v-bind="attrs" v-on="on">
+              <svg style="position:relative; top: 4px;" fill="#CCAB6A" width="18px" height="18px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="none">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M128.00146,23.99963a104,104,0,1,0,104,104A104.11791,104.11791,0,0,0,128.00146,23.99963ZM126.002,72a12,12,0,1,1-12,12A12,12,0,0,1,126.002,72Zm9.99951,111.99963h-8a8.0004,8.0004,0,0,1-8-8v-48a8,8,0,1,1,0-16h8a8.00039,8.00039,0,0,1,8,8v48a8,8,0,0,1,0,16Z"></path>
+                </g>
+              </svg>
+            </span>
+          </template>
+
+          <div style="background: #fff; padding: 4px 9px; border-radius: 7px">
+            Расписание работы бассейна
+          </div>
+        </v-menu>
       </p>
     </div>
   </article>
