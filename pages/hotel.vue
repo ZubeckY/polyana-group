@@ -105,7 +105,7 @@
                       <carousel-button-next/>
                     </div>
                   </template>
-                  <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id"
+                  <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id+'?hotel_id='+slider.travellineid"
                                    class="luxHoliday-slide" :key="'lux-slide-'+j">
                     <img class="luxHoliday-slide-image" :src="image" alt="#" loading="lazy"/>
                   </v-carousel-item>
