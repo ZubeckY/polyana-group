@@ -1,5 +1,5 @@
 <template>
-  <v-chip class="corner-card-header-chip font-weight-medium mr-1 mb-1" color="var(--dark-color)" dark>
+  <v-chip :href="hotelLink" class="corner-card-header-chip font-weight-medium mr-1 mb-1" color="var(--dark-color)" dark>
     {{ hotelTitle }}
   </v-chip>
 </template>
@@ -12,6 +12,7 @@ export default class Chip extends Vue {
   @Prop() item: any
   @Prop() isValue?: boolean
   hotelTitle: string = 'Загрузка...'
+  hotelLink: any = ''
 
   async created() {
     await this.getItemHotelTitle()
@@ -28,6 +29,7 @@ export default class Chip extends Vue {
           .select('id, title, travellineid')
           .eq('travellineid', this.item.travellineid)
         this.hotelTitle = data[0].title
+        this.hotelLink = '/hotel?hotel_id=' + data[0].travellineid
       } else {
         this.hotelTitle = this.item.title
       }

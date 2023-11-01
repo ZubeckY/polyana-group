@@ -220,7 +220,7 @@ import {Component, Vue} from "vue-property-decorator";
 })
 
 export default class Pages extends Vue {
-  activeImage: string = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_2455-_1_.webp'
+  activeImage: string = "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp"
 
   get activeSlide() {
     return `background-image: url('${this.activeImage}')`
