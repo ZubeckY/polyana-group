@@ -7,7 +7,7 @@
         <pattern id="pinterestDesktop" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlink:href="#imagePinterestDesktop" transform="matrix(0.000285003 0 0 0.000832092 -0.115113 -0.539295)"/>
         </pattern>
-        <image id="imagePinterestDesktop" width="4096" height="2731" href="https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp"/>
+        <image id="imagePinterestDesktop" width="4096" height="2731" href="/img/pinterest-video-background.webp"/>
       </defs>
     </svg>
     <watch-play/>
