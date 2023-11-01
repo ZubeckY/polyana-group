@@ -51,7 +51,7 @@
               <p class="hotelGroup-panel-info-body" v-html="item.hoteldescription"></p>
               <div class="hotelGroup-panel-info-footer desktop">
                 <v-btn v-for="(button, j) in item.hoteltags" class="hotelGroup-panel-info-button"
-                       :key="'linkToInsidePage'+j" elevation="0" :href="getLinkToHref(button, item)">
+                       :key="'linkToInsidePage'+j" elevation="0" :href="button.link">
                   {{ button.title }}
                 </v-btn>
               </div>
@@ -91,7 +91,7 @@
                   <v-btn v-for="(button, j) in item.hoteltags"
                          class="hotelGroup-panel-info-button"
                          :key="'linkToInsidePage'+j" elevation="0"
-                         :href="getLinkToHref(button, item)">{{ button.title }}
+                         :href="button.link">{{ button.title }}
                   </v-btn>
                 </div>
               </div>
@@ -123,10 +123,6 @@ export default class HotelGroupItem extends Vue {
 
   getItemPrice(item: any) {
     return item ? thousandSeparator(item['pricefrom']) : 0
-  }
-
-  getLinkToHref(button: any, item: any) {
-    return button.link + item.travellineid
   }
 }
 </script>
