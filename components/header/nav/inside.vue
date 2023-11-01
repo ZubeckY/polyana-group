@@ -158,7 +158,7 @@ export default class Ultima extends Vue {
       case 'booking':
         return this.isHotelPage ? '#tl-section' : '/booking'
       case 'restaurant':
-        return this.isHotelPage ? '/services/' + restId[hotel_id] : ''
+        return this.isHotelPage ? '/services/' + restId[hotel_id] + '?hotel_id=' + hotel_id : ''
       case 'services':
         return this.isHotelPage ? '#services' : '/services'
       case 'promo':

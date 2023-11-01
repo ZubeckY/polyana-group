@@ -50,11 +50,11 @@ export default class HotelsMenu extends Vue {
   switchRestaurantLink(hotelId: any) {
     switch (hotelId) {
       case 32513:
-        return '/services/3'
+        return '/services/3?hotel_id=32513'
       case 22866:
-        return '/services/10'
+        return '/services/10?hotel_id=22866'
       case 23660:
-        return '/services/14'
+        return '/services/14?hotel_id=23660'
     }
   }
 }
