@@ -3,7 +3,10 @@
     <header class="header header-promo">
       <div class="header-container conditions" :style="activeSlide">
         <div class="header-container-inner">
-          <header-nav-polyana/>
+
+          <div style="margin: 12px auto; max-width: 1260px; width: 100%;">
+            <header-nav-inside :data="data"/>
+          </div>
 
           <div class="header-promo-body">
             <div class="header-promo-body-container general-container">
@@ -135,6 +138,7 @@ export default class Services extends Vue {
     try {
       this.loading = true
       let currentRoute = this.$router.currentRoute.path
+      let {hotel_id} = this.$router.currentRoute.query
       let getIdFromRoute = currentRoute.split('/')
       let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
@@ -143,6 +147,9 @@ export default class Services extends Vue {
         .select('')
         .match({id: currentId})
       this.data = data[0]
+      if (!hotel_id) {
+        window.location.href = '?hotel_id=' + this.data.travellineid
+      }
     } catch (e) {
       console.log(e)
     } finally {
