@@ -132,11 +132,18 @@
               </div>
             </div>
             <!-- Бесплатный трансфер до пляжа -->
-            <season-programs-free-transfer-beach/>
+<!--            <season-programs-free-transfer-beach/>-->
+
+            <!-- Подогреваемый бассеин -->
+            <season-programs-heated-pool-summer/>
             <!-- Живая музыка в баре у бассейна -->
             <season-programs-live-music/>
+            <!-- Вкусные завтраки включены в стоимость -->
+            <season-programs-delicious-breakfasts/>
+
+
             <!-- Анимация для детей: веселье и игры -->
-            <season-programs-fun-for-kids/>
+<!--            <season-programs-fun-for-kids/>-->
             <!-- Ещё -->
             <season-programs-show-more-summer/>
           </div>

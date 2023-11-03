@@ -27,19 +27,22 @@
               </svg>
             </v-btn>
           </div>
-          <div class="d-flex justify-space-between flex-wrap px-5">
+          <div class="d-flex justify-center flex-wrap px-5">
             <!-- Бесплатный трансфер до пляжа -->
-            <season-programs-free-transfer-beach/>
+<!--            <season-programs-free-transfer-beach/>-->
+
             <!-- Живая музыка в баре у бассейна -->
             <season-programs-live-music/>
-            <!-- Анимация для детей: веселье и игры -->
-            <season-programs-fun-for-kids/>
-          </div>
-          <div class="d-flex justify-space-between flex-wrap mt-2 px-5">
-            <!-- Вкусные завтраки включены в стоимость -->
-            <season-programs-delicious-breakfasts/>
             <!-- Подогреваемый бассеин -->
             <season-programs-heated-pool-summer/>
+
+
+            <!-- Анимация для детей: веселье и игры -->
+<!--            <season-programs-fun-for-kids/>-->
+          </div>
+          <div class="d-flex justify-center flex-wrap mt-2 px-5">
+            <!-- Вкусные завтраки включены в стоимость -->
+            <season-programs-delicious-breakfasts/>
             <!-- Спа-комплекс:  место Идеальное для отдыха -->
             <season-programs-spa-complex/>
           </div>
