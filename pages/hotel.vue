@@ -257,7 +257,7 @@ export default class Hotel extends Vue {
         .from('services')
         .select('')
         .eq('travellineid', hotel_id)
-        .order('id')
+        .order('sortingfactor, id')
 
       this.sliders = data
     } catch (e) {

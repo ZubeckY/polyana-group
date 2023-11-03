@@ -224,14 +224,14 @@ export default class Services extends Vue {
         let {data, error} = await supaBase
           .from('services')
           .select('')
-          .order('id')
+          .order('sortingfactor, id')
         this.data = data
       } else {
         let {data, error} = await supaBase
           .from('services')
           .select('')
           .eq('travellineid', this.hotels[this.hotel].travellineid)
-          .order('id')
+          .order('sortingfactor, id')
         this.data = data
       }
     } catch (e) {
