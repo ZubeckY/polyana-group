@@ -22,10 +22,9 @@
             <div class="specialOffers-promo-chips-container">
               <div class="specialOffers-promo-chips-title">Отели:</div>
               <div class="specialOffers-promo-chips-body">
-                <v-chip-group v-model="hotel" column
-                              active-class="golden-gradient white--text">
+                <v-chip-group v-model="hotel" column active-class="golden-gradient white--text" mandatory>
                   <v-chip class="white" style="font-size: 12px; height: 31px;" v-for="(item, i) in hotels"
-                          :key="i" :value="item.id">
+                          @click="returnCurrentHash(item)" :key="i" :value="item.id">
                     {{ item.title }}
                   </v-chip>
                 </v-chip-group>
@@ -47,7 +46,7 @@
                         с комфортом!
                       </h3>
                       <div class="luxHoliday-text">
-                        <p v-html="hotels[hotel].description"></p>
+                        <p v-html="getDescription"></p>
 
                         <div class="d-flex mt-4">
                           <b>Спрашивайте,
@@ -69,7 +68,8 @@
                   <div class="luxHoliday-body">
                     <div class="luxHoliday-body-container">
                       <article class="luxHoliday-slide slider" v-for="(slider, i) in data" :key="'luxHoliday-slide'+i">
-                        <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px" hide-delimiters>
+                        <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px"
+                                    hide-delimiters>
 
                           <template v-slot:prev="{ on, attrs }">
                             <div v-bind="attrs" v-on="on">
@@ -82,7 +82,8 @@
                             </div>
                           </template>
 
-                          <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id+'?hotel_id='+slider.travellineid"
+                          <v-carousel-item v-for="(image, j) in slider.imgs"
+                                           :href="'/services/'+slider.id+'?hotel_id='+slider.travellineid"
                                            class="luxHoliday-slide" :key="'lux-slide-'+j">
                             <img class="luxHoliday-slide-image" :src="image" alt="#" loading="lazy"/>
                           </v-carousel-item>
@@ -94,7 +95,8 @@
                         </div>
 
                         <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
-                          <img :class="'luxHoliday-slide-mask ' + slider.classelement" alt="#" :src="slider.titlesvg" loading="lazy"/>
+                          <img :class="'luxHoliday-slide-mask ' + slider.classelement" alt="#" :src="slider.titlesvg"
+                               loading="lazy"/>
                           <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
                         </a>
                       </article>
@@ -191,6 +193,11 @@ export default class Services extends Vue {
     this.getCurrentHotel()
   }
 
+  returnCurrentHash(item: any) {
+    if (!item || item.travellineid == 0) return this.$router.push('/services')
+    return this.$router.push('?hotel_id=' + item.travellineid)
+  }
+
   getCurrentHotel() {
     let {hotel_id}: any = this.$router.currentRoute.query
     if (!hotel_id) return
@@ -202,6 +209,10 @@ export default class Services extends Vue {
     }
 
     return this.hotel = restId[hotel_id]
+  }
+
+  get getDescription() {
+    return this.hotels[this.hotel].description
   }
 
   async getHotels() {
