@@ -34,7 +34,7 @@
             <div class="shimmer"></div>
             <div class="text">Забронировать</div>
           </v-btn>
-          <v-btn class="header-nav__reservation-phone font-weight-bold" href="tel:+79890095577" elevation="0" dark>+7 989 009 5577</v-btn>
+          <v-btn class="header-nav__reservation-phone font-weight-bold" href="tel:+79385555552" elevation="0" dark>+7 938 555 5552</v-btn>
         </div>
       </div>
 
