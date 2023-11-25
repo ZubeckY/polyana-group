@@ -18,7 +18,7 @@
 
             &nbsp; Следите за нашими предложениями на сайте или
             свяжитесь с нами для получения большей
-            информации по телефону: <b>+7 989 009 5577.</b>
+            информации по телефону: <a class="text-decoration-none black--text" href="tel:+79385555552"><b>+7 938 555 5552.</b></a>
           </p>
 
           <v-btn class="font-weight-regular shimmer-effect white--text" style="border-radius: 14px; font-size: 14px"
