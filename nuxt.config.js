@@ -32,7 +32,6 @@ export default defineNuxtConfig({
       {'http-equiv': 'imagetoolbar', content: 'no'},
       {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'},
       {name: 'theme-color', content: '#32343A'},
-      {name: 'yandex-verification', content: '3a9a284d2faa247b'},
       {name: 'HandheldFriendly', content: 'True'},
       {name: 'format-detection', content: 'address=no'},
       {name: 'format-detection', content: 'telephone=no'},
