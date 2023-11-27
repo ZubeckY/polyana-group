@@ -1,6 +1,8 @@
 const mode = 'production'
 const isDev = mode !== "production"
 import {defineNuxtConfig} from "@nuxt/bridge"
+import supaBase from './assets/scripts/supaBase'
+
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 export default defineNuxtConfig({
@@ -36,7 +38,9 @@ export default defineNuxtConfig({
       {name: 'format-detection', content: 'address=no'},
       {name: 'format-detection', content: 'telephone=no'},
       {hid: 'robots', name: 'robots', content: 'index, follow'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'}
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: ''},
+      {hid: 'keywords', name: 'keywords', content: ''}
     ],
 
     link: [
@@ -81,12 +85,40 @@ export default defineNuxtConfig({
   ],
 
   sitemap: {
-    hostname: process.env.BASE_URL || 'http://localhost:3000'
+    hostname: process.env.BASE_URL,
+    cacheTime: 100 * 60 * 15,
+    gzip: true,
+    sitemaps: [
+      {
+        path: '/sitemap.xml',
+        routes: async () => {
+          let result = []
+
+          const hotels = await supaBase
+            .from('hotels').select('travellineid')
+          const hotelsArray = hotels.data.map(v => `/hotel?hotel_id=${v.travellineid}`)
+
+          const services = await supaBase
+            .from('services').select('id, travellineid')
+          const servicesArray = services.data.map(v => `/services/${v.id}/?hotel_id=${v.travellineid}`)
+
+          const specialOffers = await supaBase
+            .from('specialoffer').select('id')
+          const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}/`)
+          console.log(specialOffersArray)
+
+          result = [...servicesArray, ...hotelsArray, ...specialOffersArray];
+          return result
+        }
+      }
+
+    ]
   },
 
   robots: {
     UserAgent: '*',
-    Disallow: ''
+    Disallow: '/',
+    Sitemap: process.env.BASE_URL + 'sitemap.xml'
   },
 
   axios: {baseURL: '/'},
@@ -134,7 +166,7 @@ export default defineNuxtConfig({
         }
       }
     }),
-    extend (config, ctx) {
+    extend(config, ctx) {
       const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
       const vueSvgLoader = [
         {
