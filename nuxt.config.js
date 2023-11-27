@@ -81,7 +81,22 @@ export default defineNuxtConfig({
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/robots',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['nuxt-mail', {
+      message: [
+        {name: 'contact', to: 'oleg_zub00@mail.ru'},
+        {name: 'support', to: 'oleg_zub00@mail.ru'}
+      ],
+      smtp: {
+        host: 'smtp.beget.com',
+        port: 2525,
+        auth: {
+          user: 'test@polyanagroup.ru',
+          pass: '&3KaujA5'
+        }
+      }
+    }]
+
   ],
 
   sitemap: {
