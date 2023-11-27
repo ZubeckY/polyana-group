@@ -104,7 +104,7 @@ export default defineNuxtConfig({
 
           const specialOffers = await supaBase
             .from('specialoffer').select('id')
-          const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}/`)
+          const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}`)
           console.log(specialOffersArray)
 
           result = [...servicesArray, ...hotelsArray, ...specialOffersArray];
