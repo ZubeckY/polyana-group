@@ -35,17 +35,17 @@
             <season-programs-live-music/>
             <!-- Подогреваемый бассеин -->
             <season-programs-heated-pool-summer/>
-
+            <!-- Спа-комплекс:  место Идеальное для отдыха -->
+            <season-programs-spa-complex/>
 
             <!-- Анимация для детей: веселье и игры -->
 <!--            <season-programs-fun-for-kids/>-->
           </div>
-          <div class="d-flex justify-center flex-wrap mt-2 px-5">
+<!--          <div class="d-flex justify-center flex-wrap mt-2 px-5">-->
             <!-- Вкусные завтраки включены в стоимость -->
-            <season-programs-delicious-breakfasts/>
-            <!-- Спа-комплекс:  место Идеальное для отдыха -->
-            <season-programs-spa-complex/>
-          </div>
+<!--            <season-programs-delicious-breakfasts/>-->
+
+<!--          </div>-->
         </div>
       </div>
     </div>

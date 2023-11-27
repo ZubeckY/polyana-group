@@ -134,13 +134,12 @@
             <!-- Бесплатный трансфер до пляжа -->
 <!--            <season-programs-free-transfer-beach/>-->
 
-            <!-- Подогреваемый бассеин -->
-            <season-programs-heated-pool-summer/>
             <!-- Живая музыка в баре у бассейна -->
             <season-programs-live-music/>
-            <!-- Вкусные завтраки включены в стоимость -->
-            <season-programs-delicious-breakfasts/>
-
+            <!-- Подогреваемый бассеин -->
+            <season-programs-heated-pool-summer/>
+            <!-- Спа-комплекс:  место Идеальное для отдыха -->
+            <season-programs-spa-complex/>
 
             <!-- Анимация для детей: веселье и игры -->
 <!--            <season-programs-fun-for-kids/>-->
