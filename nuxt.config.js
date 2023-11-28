@@ -84,8 +84,10 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     ['nuxt-mail', {
       message: [
-        {name: 'contact', to: 'oleg_zub00@mail.ru'},
-        {name: 'support', to: 'oleg_zub00@mail.ru'}
+        {name: 'polyana', to: 'oleg_zub00@mail.ru'},
+        {name: 'ultima', to: 'oz@mazurgroup.ru'},
+        {name: 'country', to: 'oz@mazurgroup.ru'},
+        {name: 'ikos', to: 'oz@mazurgroup.ru'}
       ],
       smtp: {
         host: 'smtp.beget.com',

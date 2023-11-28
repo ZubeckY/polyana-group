@@ -83,7 +83,7 @@
         </v-dialog>
       </div>
 
-      <v-btn class="feedbackForm-button shimmer-effect" href="/booking"
+      <v-btn class="feedbackForm-button shimmer-effect" @click="send"
              width="276px" height="47px" elevation="0" dark>
         <div class="shimmer"></div>
         <div class="text">Забронировать</div>
@@ -103,10 +103,68 @@ export default class FeedbackForm extends Vue {
   activePicker: any = null
   model: any = {phone: '', date: ''}
 
+  configs: any = {
+    0: 'polyana',
+    32513: 'ultima',
+    22866: 'country',
+    23660: 'ikos',
+  }
+
+  hotels: any = {
+    0: 'Polyana Group',
+    32513: 'Ultima club',
+    22866: 'Country hills ',
+    23660: 'Ikos polyana',
+  }
+
+
   @Watch('dialog')
   changedialog(val: any) {
     val && setTimeout(() => (this.activePicker = 'MONTH'))
   }
+
+  send() {
+    // @ts-ignore
+    this.$mail.send({
+      config: this.currentConfig,
+      from: 'test@polyanagroup.ru',
+      subject: `Заявка в отель ${this.currentHotels}`,
+      html: `
+        <div>
+      <div style="display: flex; flex-direction: row">
+        <div style="width: 180px;">Отель: </div>
+        <div>Ultima Club</div>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-top: 5px;">
+        <div style="width: 180px;">Заявка от: </div>
+        <div>${this.currentDate}</div>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-top: 5px;">
+        <div style="width: 180px;">Номер телефона: </div>
+        <div><a style="text-decoration: none;" href="tel: ${this.model.phone}">${this.model.phone}</a></div>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-top: 5px;">
+        <div style="width: 180px;">Дата бронирования:</div>
+        <div>11.12.2023</div>
+      </div>
+    </div>
+      `
+    })
+  }
+
+  get currentDate() {
+    let date = new Date()
+    return `${date.toLocaleString()}`
+  }
+
+  get currentConfig() {
+    return this.configs[String(this.$router.currentRoute.query.hotel_id ?? 0)]
+  }
+
+  get currentHotels() {
+    return this.hotels[String(this.$router.currentRoute.query.hotel_id ?? 0)]
+  }
+
 
   get minDate() {
     return new Date(Date.now()).toISOString().substring(0, 10)
