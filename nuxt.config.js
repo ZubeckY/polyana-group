@@ -64,6 +64,10 @@ export default defineNuxtConfig({
     '~/assets/styles/ui-styles.less'
   ],
 
+  runtimeConfig: {
+    indexable: true
+  },
+
   plugins: [
     '~/plugins/v_mask.js',
     '~/plugins/vue-slick-carousel.js'
