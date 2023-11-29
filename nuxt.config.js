@@ -84,17 +84,17 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     ['nuxt-mail', {
       message: [
-        {name: 'polyana', to: 'oleg_zub00@mail.ru'},
-        {name: 'ultima', to: 'oz@mazurgroup.ru'},
-        {name: 'country', to: 'oz@mazurgroup.ru'},
-        {name: 'ikos', to: 'oz@mazurgroup.ru'}
+        {name: 'polyana', to: process.env.POLYANA_MAIL},
+        {name: 'ultima', to: process.env.ULTIMA_MAIL},
+        {name: 'country', to: process.env.COUNTRY_MAIL},
+        {name: 'ikos', to: process.env.IKOS_MAIL}
       ],
       smtp: {
         host: 'smtp.beget.com',
         port: 2525,
         auth: {
-          user: 'test@polyanagroup.ru',
-          pass: '&3KaujA5'
+          user: process.env.POLYANA_MAILER_LOGIN,
+          pass: process.env.POLYANA_MAILER_PASSWORD
         }
       }
     }]

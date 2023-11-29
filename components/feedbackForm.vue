@@ -26,6 +26,25 @@
         </div>
       </div>
 
+      <div style="display: none; width: 0; height: 0; tab-index: 1000">
+        <label class="feedbackForm-inputGroup-label d-block mb-2" for="phone">Имя</label>
+        <div class="feedbackForm-inputGroup-input">
+          <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <g clip-path="url(#clip0_1490_709)">
+              <path
+                d="M4.59398 0C4.84939 0.102227 4.94224 0.325752 5.03572 0.561157C5.65158 2.11458 6.27433 3.66518 6.89488 5.21704C7.05401 5.61532 6.96147 5.82978 6.56194 5.98953C5.90918 6.25088 5.25737 6.51411 4.60274 6.77046C4.5027 6.80954 4.47112 6.85424 4.48081 6.96366C4.69402 9.35209 6.60445 11.29 8.98789 11.5383C9.14545 11.5545 9.22392 11.527 9.28519 11.3654C9.53247 10.7132 9.79789 10.068 10.0577 9.42055C10.1943 9.08042 10.4272 8.97976 10.7686 9.11606C12.3936 9.76475 14.0186 10.4144 15.643 11.0643C15.9234 11.1766 16.0016 11.2963 16 11.5989C15.9881 13.7995 14.3297 15.6802 12.1441 15.9753C12.0853 15.9831 12.0063 15.95 11.969 16.0319H11.8127C11.5939 16.0019 11.3754 16.0044 11.1565 16.0319H10.969C10.9033 15.9716 10.8252 15.9972 10.7501 16.0003C10.667 15.9781 10.5826 15.9706 10.4969 15.9803C10.4578 15.96 10.4172 15.9565 10.375 15.9684C10.3131 15.9459 10.2496 15.9397 10.1846 15.9481C10.1565 15.929 10.1261 15.9253 10.0939 15.9365C10.043 15.9143 9.98984 15.9078 9.93482 15.9159C9.91731 15.8971 9.8973 15.8946 9.87542 15.9072C9.83478 15.8853 9.79164 15.879 9.74631 15.8875C9.7188 15.8671 9.68847 15.864 9.65627 15.8734C9.62626 15.8537 9.59375 15.8478 9.55873 15.8559C9.54217 15.8368 9.52278 15.8331 9.50059 15.8453C9.46026 15.8227 9.41712 15.8171 9.37179 15.8231C9.35459 15.8059 9.3349 15.8018 9.31239 15.8112C9.28331 15.7899 9.25111 15.7834 9.21579 15.7902C9.19828 15.7727 9.17859 15.769 9.15608 15.779C9.09418 15.753 9.03071 15.733 8.96225 15.7396C8.93755 15.7149 8.90786 15.7099 8.87503 15.7174C8.85283 15.7118 8.83064 15.7058 8.80844 15.7002C8.79187 15.6824 8.77249 15.6774 8.74998 15.6864C8.72778 15.6808 8.70559 15.6752 8.68339 15.6696C8.66714 15.6517 8.64775 15.6467 8.62524 15.6555L8.55866 15.6374C8.5424 15.6192 8.52302 15.6133 8.49988 15.6217C8.37765 15.5717 8.25135 15.5348 8.1213 15.5117C8.04314 15.4726 7.9628 15.4413 7.87495 15.4335C7.84494 15.4076 7.81024 15.396 7.77085 15.3998C7.74865 15.3741 7.72083 15.3644 7.68738 15.3694C7.64986 15.3526 7.61329 15.3332 7.57483 15.3188C4.93818 14.3306 2.91364 12.6156 1.50809 10.1784C0.660571 8.70934 0.189762 7.11778 0.0450176 5.42837C0.0409535 5.37991 0.0750293 5.31114 0 5.28144V4.00031C0.0756546 3.97562 0.0484564 3.9059 0.0556467 3.85776C0.353888 1.86104 1.90418 0.328878 3.90559 0.0531458C3.94842 0.0472059 4.01626 0.0787808 4.03126 0H4.59367H4.59398ZM11.1887 15.0778C11.2928 15.0778 11.397 15.0778 11.5011 15.0778C13.314 15.0787 14.8533 13.7282 15.0465 11.9722C15.0581 11.8681 15.0287 11.8271 14.9358 11.7899C13.5953 11.2569 12.2557 10.7217 10.918 10.1821C10.8083 10.1377 10.7683 10.1577 10.7261 10.2656C10.4797 10.8958 10.2268 11.5236 9.97421 12.1516C9.86979 12.4111 9.7263 12.5036 9.44557 12.4996C6.19492 12.4527 3.58671 9.85229 3.52825 6.60008C3.52263 6.29121 3.61266 6.15741 3.90152 6.04205C4.52052 5.79508 5.13857 5.54498 5.75912 5.30207C5.86354 5.26112 5.89105 5.22485 5.84541 5.112C5.30551 3.77491 4.76999 2.43595 4.23791 1.09574C4.19758 0.994138 4.15162 0.96694 4.04345 0.98007C2.43908 1.17358 1.12075 2.50598 0.973505 4.11567C0.888785 5.04166 1.00445 5.95764 1.21297 6.85924C2.30215 11.5667 6.3578 14.903 11.1881 15.0778H11.1887Z"
+                fill="#4C4C4C"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_1490_709">
+                <rect width="16" height="16.0316" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <input v-model="model.name" type="text" id="phone" placeholder="+7 (9XX) XXX-XX-XX">
+        </div>
+      </div>
+
       <div class="feedbackForm-inputGroup mt-4">
         <label class="feedbackForm-inputGroup-label d-block mb-2" for="date">Дата заезда</label>
         <div class="feedbackForm-inputGroup-input" @click="dialog = true">
@@ -92,16 +111,29 @@
         Нажимая кнопку вы соглашаетесь с условиями Политики конфиденциальности
       </span>
     </div>
+
+    <v-dialog v-model="submitDialog" max-width="400px">
+      <v-card>
+        <v-card-title class="pt-2 px-3 pb-2">Ваша заявка отправлена</v-card-title>
+        <v-btn color="primary" @click="submitDialog=!submitDialog" block text>Ок</v-btn>
+      </v-card>
+    </v-dialog>
+
   </v-form>
 </template>
 <script lang="ts">
-import {Component, Vue, Watch} from 'vue-property-decorator';
+import {Component, Vue, Watch} from 'vue-property-decorator'
 
 @Component({})
 export default class FeedbackForm extends Vue {
   dialog: boolean = false
+  submitDialog: boolean = false
   activePicker: any = null
-  model: any = {phone: '', date: ''}
+  model: any = {
+    name: '',
+    date: '',
+    phone: ''
+  }
 
   configs: any = {
     0: 'polyana',
@@ -117,6 +149,19 @@ export default class FeedbackForm extends Vue {
     23660: 'Ikos polyana',
   }
 
+  dateOptionsCurrent: any = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+  }
+
+  dateOptionsBooking: any = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }
 
   @Watch('dialog')
   changedialog(val: any) {
@@ -124,6 +169,9 @@ export default class FeedbackForm extends Vue {
   }
 
   send() {
+    if (this.model.name) return
+    if (!this.model.date.length || !this.model.phone.length) return
+
     // @ts-ignore
     this.$mail.send({
       config: this.currentConfig,
@@ -131,30 +179,41 @@ export default class FeedbackForm extends Vue {
       subject: `Заявка в отель ${this.currentHotels}`,
       html: `
         <div>
-      <div style="display: flex; flex-direction: row">
-        <div style="width: 180px;">Отель: </div>
-        <div>Ultima Club</div>
-      </div>
-      <div style="display: flex; flex-direction: row; margin-top: 5px;">
-        <div style="width: 180px;">Заявка от: </div>
-        <div>${this.currentDate}</div>
-      </div>
-      <div style="display: flex; flex-direction: row; margin-top: 5px;">
-        <div style="width: 180px;">Номер телефона: </div>
-        <div><a style="text-decoration: none;" href="tel: ${this.model.phone}">${this.model.phone}</a></div>
-      </div>
-      <div style="display: flex; flex-direction: row; margin-top: 5px;">
-        <div style="width: 180px;">Дата бронирования:</div>
-        <div>11.12.2023</div>
-      </div>
-    </div>
+          <div style="display: flex; flex-direction: row">
+            <div style="width: 180px;">Отель: </div>
+            <div>${this.currentHotels}</div>
+          </div>
+          <div style="display: flex; flex-direction: row; margin-top: 5px;">
+            <div style="width: 180px;">Заявка от: </div>
+            <div>${this.currentDate}</div>
+          </div>
+          <div style="display: flex; flex-direction: row; margin-top: 5px;">
+            <div style="width: 180px;">Номер телефона: </div>
+            <div><a style="text-decoration: none;" href="tel: ${this.model.phone}">${this.model.phone}</a></div>
+          </div>
+          <div style="display: flex; flex-direction: row; margin-top: 5px;">
+            <div style="width: 180px;">Дата бронирования:</div>
+            <div>${this.bookingDate}</div>
+          </div>
+          <div style="display: flex; flex-direction: row; margin-top: 5px;">
+            <div style="width: 180px;">Страница отправки: </div>
+            <div><a href="${this.currentLink}">${this.currentLink}</a></div>
+          </div>
+        </div>
       `
     })
+
+    this.submitDialog = true
+    return this.model = {
+      phone: '',
+      name: '',
+      date: ''
+    }
   }
 
   get currentDate() {
     let date = new Date()
-    return `${date.toLocaleString()}`
+    return `${date.toLocaleString('ru', this.dateOptionsCurrent)}`
   }
 
   get currentConfig() {
@@ -165,6 +224,13 @@ export default class FeedbackForm extends Vue {
     return this.hotels[String(this.$router.currentRoute.query.hotel_id ?? 0)]
   }
 
+  get bookingDate() {
+    return new Date(this.model.date).toLocaleString('ru', this.dateOptionsBooking)
+  }
+
+  get currentLink() {
+    return window.location.href
+  }
 
   get minDate() {
     return new Date(Date.now()).toISOString().substring(0, 10)
