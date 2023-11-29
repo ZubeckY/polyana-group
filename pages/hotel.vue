@@ -31,23 +31,23 @@
                   </watch-dialog>
                 </div>
                 <div class="restInPolyana-pictures-large-img">
-                  <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
+                  <img loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
                 </div>
                 <div class="restInPolyana-pictures-large-body" @click.stop>
                   <header-booking-ultima/>
                 </div>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(1)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
+                <img loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(2)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
+                <img loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(3)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
+                <img loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(4)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
+                <img loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
                 <div class="restInPolyana-pictures-small-img-more">
                   +{{ data ? data.length : 99 }} фото
                 </div>
@@ -105,14 +105,16 @@
                       <carousel-button-next/>
                     </div>
                   </template>
-                  <v-carousel-item v-for="(image, j) in slider.imgs" :href="'/services/'+slider.id+'?hotel_id='+slider.travellineid"
+                  <v-carousel-item v-for="(image, j) in slider.imgs"
+                                   :href="'/services/'+slider.id+'?hotel_id='+slider.travellineid"
                                    class="luxHoliday-slide" :key="'lux-slide-'+j">
                     <img class="luxHoliday-slide-image" :src="image" alt="#" loading="lazy"/>
                   </v-carousel-item>
                 </v-carousel>
 
                 <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
-                  <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg" alt="#" loading="lazy"/>
+                  <img :class="'luxHoliday-slide-mask ' + slider.classelement" :src="slider.titlesvg" alt="#"
+                       loading="lazy"/>
                   <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
                 </a>
               </article>
@@ -216,34 +218,39 @@ export default class Hotel extends Vue {
   ]
 
   async created() {
-    await this.getHotelInfo()
-    await this.getHotelSliders()
-    this.getMetaData()
+    if (process.client) {
+      await this.getHotelInfo()
+      await this.getHotelSliders()
+      this.getMetaData()
+    }
   }
 
   mounted() {
-    let {hotel_id} = this.$router.currentRoute.query
-    if (!hotel_id) {
-      window.location.href = '/hotel?hotel_id=32513'
-    }
-
-    window.addEventListener('DOMContentLoaded', function () {
-      let hotel_id = "hotel_id";
-      let regex = new RegExp(/hotel_id=\d+/g);
-      let getParams = window.location.search;
-      let params_str = hotel_id + "=" + this.value;
-      let path = "";
-      if (getParams.indexOf(hotel_id) != -1) {
-        path = getParams.replace(regex, params_str);
-      } else {
-        if (getParams == "") {
-          path = getParams + '?' + params_str;
-        } else {
-          path = getParams + '&' + params_str;
-        }
+    if (process.client) {
+      let {hotel_id} = this.$router.currentRoute.query
+      if (!hotel_id) {
+        window.location.href = '/hotel?hotel_id=32513'
       }
-      window.history.pushState(false, false, path);
-    });
+
+      window.addEventListener('DOMContentLoaded', function () {
+        let hotel_id = "hotel_id";
+        let regex = new RegExp(/hotel_id=\d+/g);
+        let getParams = window.location.search;
+        // @ts-ignore
+        let params_str = hotel_id + "=" + this.value;
+        let path = "";
+        if (getParams.indexOf(hotel_id) != -1) {
+          path = getParams.replace(regex, params_str);
+        } else {
+          if (getParams == "") {
+            path = getParams + '?' + params_str;
+          } else {
+            path = getParams + '&' + params_str;
+          }
+        }
+        window.history.pushState(false, '', path);
+      });
+    }
   }
 
   changeDialog(dialog: boolean) {
@@ -285,10 +292,12 @@ export default class Hotel extends Vue {
   }
 
   getMetaData() {
-    let link = window.location.pathname + window.location.search
-    let DATA: any = this.OG_CONTENT_DATA.filter((data: any) => data.url == link)[0]
-    DATA.url = window.location.href
-    this.OG_CONTENT_CURRENT = DATA
+    if (process.client) {
+      let link = window.location.pathname + window.location.search
+      let DATA: any = this.OG_CONTENT_DATA.filter((data: any) => data.url == link)[0]
+      DATA.url = window.location.href
+      this.OG_CONTENT_CURRENT = DATA
+    }
   }
 }
 </script>

@@ -4,8 +4,7 @@
       <div class="reviews-slider-card-header">
         <div class="reviews-slider-card-header-user">
           <div class="reviews-slider-card-header-logo">
-            <img :src="item.photouser" alt="аватарка пользователя на отзыв"
-                 loading="lazy"/>
+            <img :src="item.photouser" alt="аватарка пользователя на отзыв" loading="lazy"/>
           </div>
           <div class="reviews-slider-card-header-context">
             <div class="reviews-slider-card-header-name">

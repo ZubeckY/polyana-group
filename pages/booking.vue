@@ -45,7 +45,7 @@ import {Vue, Component} from 'vue-property-decorator';
       {
         hid: "og:url",
         property: "og:url",
-        content: window.location.href
+        content: process.client ? window.location.href : ''
       },
       {
         hid: "og:type",

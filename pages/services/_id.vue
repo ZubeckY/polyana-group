@@ -56,20 +56,20 @@
             <div class="restInPolyana-body-container" @click="dialog = true">
               <div class="restInPolyana-pictures-large grid-item">
                 <div class="restInPolyana-pictures-large-img" v-if="getImageByIndex(0)">
-                  <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
+                  <img loading="lazy" :src="getImageByIndex(0)" alt="big-pic"/>
                 </div>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(1)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
+                <img loading="lazy" :src="getImageByIndex(1)" alt="pic-1"/>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(2)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
+                <img loading="lazy" :src="getImageByIndex(2)" alt="pic-3"/>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(3)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
+                <img loading="lazy" :src="getImageByIndex(3)" alt="pic-2"/>
               </div>
               <div class="restInPolyana-pictures-small-img grid-item" v-if="getImageByIndex(4)">
-                <img sizes="xs:200px md:500px lg:1024" loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
+                <img loading="lazy" :src="getImageByIndex(4)" alt="pic-4"/>
                 <div class="restInPolyana-pictures-small-img-more">+{{ data.imgs ? data.imgs.length : 99 }} фото</div>
               </div>
               <gallery-dialog @changeDialog="changeDialog" :dialog="dialog" :data="data.imgs"/>
@@ -92,14 +92,14 @@ import supaBase from "~/assets/scripts/supaBase";
         {
           hid: "description",
           name: "description",
-          content: this.data.id >= 1 ? this.data.description.substr(0,250) : ''
+          content: this.data.id >= 1 ? this.data.description.substr(0, 250) : ''
         },
 
         // og:tags
         {
           hid: "og:url",
           property: "og:url",
-          content: window.location.href
+          content: process.client ? window.location.href : ''
         },
         {
           hid: "og:type",
@@ -114,7 +114,7 @@ import supaBase from "~/assets/scripts/supaBase";
         {
           hid: "og:description",
           property: "og:description",
-          content: this.data.id >= 1 ? this.data.description.substring(0,250) : ''
+          content: this.data.id >= 1 ? this.data.description.substring(0, 250) : ''
         },
         {
           hid: "og:image",
@@ -135,25 +135,27 @@ export default class Services extends Vue {
   }
 
   async getData() {
-    try {
-      this.loading = true
-      let currentRoute = this.$router.currentRoute.path
-      let {hotel_id} = this.$router.currentRoute.query
-      let getIdFromRoute = currentRoute.split('/')
-      let currentId = getIdFromRoute[getIdFromRoute.length - 1]
+    if (process.client) {
+      try {
+        this.loading = true
+        let currentRoute = this.$router.currentRoute.path
+        let {hotel_id} = this.$router.currentRoute.query
+        let getIdFromRoute = currentRoute.split('/')
+        let currentId = getIdFromRoute[getIdFromRoute.length - 1]
 
-      let {data, error}: any = await supaBase
-        .from('services')
-        .select('')
-        .match({id: currentId})
-      this.data = data[0]
-      if (!hotel_id) {
-        window.location.href = '?hotel_id=' + this.data.travellineid
+        let {data, error}: any = await supaBase
+          .from('services')
+          .select('')
+          .match({id: currentId})
+        this.data = data[0]
+        if (!hotel_id) {
+          window.location.href = '?hotel_id=' + this.data.travellineid
+        }
+      } catch (e) {
+        console.log(e)
+      } finally {
+        this.loading = false
       }
-    } catch (e) {
-      console.log(e)
-    } finally {
-      this.loading = false
     }
   }
 

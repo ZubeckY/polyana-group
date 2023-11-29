@@ -229,7 +229,9 @@ export default class FeedbackForm extends Vue {
   }
 
   get currentLink() {
-    return window.location.href
+    if (process.client) {
+      return window.location.href
+    }
   }
 
   get minDate() {

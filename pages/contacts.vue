@@ -132,7 +132,7 @@ import supaBase from "~/assets/scripts/supaBase";
       {
         hid: "og:url",
         property: "og:url",
-        content: window.location.href
+        content: process.client ? window.location.href : ''
       },
       {
         hid: "og:type",

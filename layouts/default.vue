@@ -15,7 +15,7 @@ import {Component, Vue} from "vue-property-decorator"
 @Component({})
 export default class Default extends Vue {
   mounted () {
-    travelline(window)
+    process.client && travelline(window)
   }
 }
 </script>

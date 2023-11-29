@@ -95,8 +95,8 @@
                         </div>
 
                         <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
-                          <img :class="'luxHoliday-slide-mask ' + slider.classelement" alt="#" :src="slider.titlesvg"
-                               loading="lazy"/>
+                          <img :class="'luxHoliday-slide-mask ' + slider.classelement"
+                               :src="slider.titlesvg" alt="#" loading="lazy"/>
                           <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
                         </a>
                       </article>
@@ -133,7 +133,7 @@ import supaBase from "~/assets/scripts/supaBase";
       {
         hid: "og:url",
         property: "og:url",
-        content: window.location.href
+        content: process.client ? window.location.href : ''
       },
       {
         hid: "og:type",

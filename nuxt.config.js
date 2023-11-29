@@ -1,21 +1,10 @@
 const mode = 'production'
 const isDev = mode !== "production"
-import {defineNuxtConfig} from "@nuxt/bridge"
 import supaBase from './assets/scripts/supaBase'
 
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 
-export default defineNuxtConfig({
-  // Конфигурация
-  bridge: {
-    nitro: false,
-    typescript: true
-  },
-
-  ssr: false,
-  debug: false,
-  components: true,
-
+export default {
   server: {
     host: '0.0.0.0',
     port: 3000
@@ -58,15 +47,15 @@ export default defineNuxtConfig({
     '~/assets/styles/travel-line.css',
     '~/assets/styles/fontSize.css',
     '~/assets/styles/footer.css',
-    '~/assets/styles/header.less',
+    '~/assets/styles/header.css',
     '~/assets/styles/main.css',
     '~/assets/styles/animations.css',
     '~/assets/styles/ui-styles.less'
   ],
 
-  runtimeConfig: {
-    indexable: true
-  },
+  rootDir: __dirname,
+  serverMiddleware: [
+  ],
 
   plugins: [
     '~/plugins/v_mask.js',
@@ -74,17 +63,20 @@ export default defineNuxtConfig({
   ],
 
   // modules
+
   buildModules: [
-    "nuxt-storm",
-    '@nuxt/image',
+    '@nuxt/typescript-build',
+    '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
-    '@nuxtjs/vuetify'
+    "nuxt-storm"
   ],
+
+  components: true,
 
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    '@nuxtjs/robots',
+    // 'nuxt-webfontloader',
     '@nuxtjs/sitemap',
     ['nuxt-mail', {
       message: [
@@ -136,14 +128,7 @@ export default defineNuxtConfig({
     ]
   },
 
-  robots: {
-    UserAgent: '*',
-    Disallow: '/',
-    Sitemap: process.env.BASE_URL + 'sitemap.xml'
-  },
-
   axios: {baseURL: '/'},
-  image: {inject: true},
 
   vuetify: {
     defaultAssets: {
@@ -154,11 +139,21 @@ export default defineNuxtConfig({
     }
   },
 
+
+  image: {
+    inject: true
+  },
+
+  render: {
+    resourceHints: false,
+    etag: false,
+    static: {
+      etag: false
+    }
+  },
+
   build: {
     optimizeCss: false,
-    transpile: [
-      "swiper"
-    ],
     optimization: {
       minimize: !isDev
     },
@@ -187,7 +182,7 @@ export default defineNuxtConfig({
         }
       }
     }),
-    extend(config, ctx) {
+    extend (config, ctx) {
       const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
       const vueSvgLoader = [
         {
@@ -251,6 +246,4 @@ export default defineNuxtConfig({
       config.module.rules.push(svgRule) // Actually add the rule
     }
   }
-})
-
-
+}

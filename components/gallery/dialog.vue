@@ -18,8 +18,8 @@
       </template>
       <v-carousel-item class="gallery-slide" v-for="(image, i) in data" :key="'sliderImage'+i">
         <div class="gallery-slide-wrapper">
-          <nuxt-img class="gallery-slide-img" :src="image ? image : 'https://placehold.co/900x600/dddddd/dddddd'" alt="#"
-                    loading="lazy" quality="80" :placeholder="[50]"/>
+          <img :src="image ? image : 'https://placehold.co/900x600/dddddd/dddddd'"
+               class="gallery-slide-img" alt="#" loading="lazy"/>
         </div>
       </v-carousel-item>
     </v-carousel>
@@ -42,7 +42,7 @@ export default class Dialog extends Vue {
   }
 
   @Watch('localDialog')
-  closeDialog () {
+  closeDialog() {
     if (this.localDialog !== this.dialog) {
       this.$emit('changeDialog', this.localDialog)
     }

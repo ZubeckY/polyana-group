@@ -15,7 +15,8 @@
                 <g data-name="Layer 2">
                   <g data-name="diagonal-arrow-right-up">
                     <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect>
-                    <path d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path>
+                    <path
+                      d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1 1 1 0 0 0 1-1z"></path>
                   </g>
                 </g>
               </g>
@@ -61,26 +62,17 @@
           <div class="hotelGroup-panel-gallery" @click="dialog = true">
             <div class="hotelGroup-panel-gallery-container d-flex">
               <div class="hotelGroup-panel-gallery-group d-flex">
-                <nuxt-img :src="item ? item.imgshotel[0] : 'https://placehold.co/900x600/dddddd/dddddd'"
-                          sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
-                          loading="lazy" quality="80" :placeholder="[50]"
-                          class="hotelGroup-panel-gallery-group-large mb-2"/>
+                <img :src="item ? item.imgshotel[0] : 'https://placehold.co/900x600/dddddd/dddddd'"
+                     alt="изображение отеля" loading="lazy" class="hotelGroup-panel-gallery-group-large mb-2"/>
                 <div class="d-flex flex-row">
-                  <nuxt-img :src="item ? item.imgshotel[1] : 'https://placehold.co/900x600/dddddd/dddddd'"
-                            sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
-                            loading="lazy" quality="80" :placeholder="[50]"
-                            class="hotelGroup-panel-gallery-group-small mr-2"/>
-                  <nuxt-img :src="item ? item.imgshotel[2] : 'https://placehold.co/900x600/dddddd/dddddd'"
-                            sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
-                            loading="lazy" quality="80" :placeholder="[50]"
-                            class="hotelGroup-panel-gallery-group-small"/>
+                  <img :src="item ? item.imgshotel[1] : 'https://placehold.co/900x600/dddddd/dddddd'"
+                       alt="изображение отеля" loading="lazy" class="hotelGroup-panel-gallery-group-small mr-2"/>
+                  <img :src="item ? item.imgshotel[2] : 'https://placehold.co/900x600/dddddd/dddddd'"
+                       alt="изображение отеля" loading="lazy" class="hotelGroup-panel-gallery-group-small"/>
                 </div>
               </div>
-              <nuxt-img :src="item ? item.imgshotel[3] : 'https://placehold.co/900x600/dddddd/dddddd'"
-                        sizes="xs:200px md:500px lg:1024" alt="изображение отеля"
-                        loading="lazy" quality="80" :placeholder="[50]"
-                        class="hotelGroup-panel-gallery-image"/>
-
+              <img :src="item ? item.imgshotel[3] : 'https://placehold.co/900x600/dddddd/dddddd'"
+                   alt="изображение отеля" loading="lazy" class="hotelGroup-panel-gallery-image"/>
               <div class="hotelGroup-panel-gallery-footer">
                 <div class="hotelGroup-panel-gallery-button">
                   <div class="hotelGroup-panel-gallery-button-container">
