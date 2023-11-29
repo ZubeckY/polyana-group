@@ -189,7 +189,7 @@ import supaBase from "~/assets/scripts/supaBase";
   }
 })
 export default class Hotel extends Vue {
-  hotelId: any = this.$router.currentRoute.query.hotel_id
+  hotelId: any = 0
   data: any = []
   hotel: any = {}
   sliders: any = []
@@ -219,6 +219,7 @@ export default class Hotel extends Vue {
 
   async created() {
     if (process.client) {
+      this.hotelId = this.$router.currentRoute.query.hotel_id
       await this.getHotelInfo()
       await this.getHotelSliders()
       this.getMetaData()
@@ -227,29 +228,14 @@ export default class Hotel extends Vue {
 
   mounted() {
     if (process.client) {
-      let {hotel_id} = this.$router.currentRoute.query
-      if (!hotel_id) {
-        window.location.href = '/hotel?hotel_id=32513'
+      switch (this.hotelId) {
+        case '32513':
+        case '22866':
+        case '23660':
+          return true
+        default:
+          return window.location.href = '/hotel?hotel_id=32513'
       }
-
-      window.addEventListener('DOMContentLoaded', function () {
-        let hotel_id = "hotel_id";
-        let regex = new RegExp(/hotel_id=\d+/g);
-        let getParams = window.location.search;
-        // @ts-ignore
-        let params_str = hotel_id + "=" + this.value;
-        let path = "";
-        if (getParams.indexOf(hotel_id) != -1) {
-          path = getParams.replace(regex, params_str);
-        } else {
-          if (getParams == "") {
-            path = getParams + '?' + params_str;
-          } else {
-            path = getParams + '&' + params_str;
-          }
-        }
-        window.history.pushState(false, '', path);
-      });
     }
   }
 
@@ -259,11 +245,10 @@ export default class Hotel extends Vue {
 
   async getHotelSliders() {
     try {
-      let {hotel_id} = this.$router.currentRoute.query
       let {data, error} = await supaBase
         .from('services')
         .select('')
-        .eq('travellineid', hotel_id)
+        .eq('travellineid', this.hotelId)
         .order('sortingfactor, id')
 
       this.sliders = data
@@ -278,11 +263,10 @@ export default class Hotel extends Vue {
 
   async getHotelInfo() {
     try {
-      let {hotel_id} = this.$router.currentRoute.query
       let {data, error}: any = await supaBase
         .from('hotels')
         .select('id, offer, description, youtube, travellineid, imgshotel')
-        .eq('travellineid', hotel_id)
+        .eq('travellineid', this.hotelId)
         .order('id')
       this.hotel = data[0]
       this.data = data[0].imgshotel
