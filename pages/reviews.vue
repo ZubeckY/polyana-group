@@ -39,6 +39,9 @@
                 <reviews-card class="specialOffers-promo-reviews-card"
                               v-for="(item, i) in data" :key="'review'+i" :item="item"/>
               </div>
+              <div>
+                <v-progress-linear v-if="isLoading" indeterminate color="grey"/>
+              </div>
             </div>
           </div>
         </div>
@@ -189,7 +192,7 @@ export default class Reviews extends Vue {
     const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
     const clientHeight = window.innerHeight || document.documentElement.clientHeight
 
-    if (scrollTop + clientHeight >= scrollHeight - 1200) {
+    if (scrollTop + clientHeight >= (scrollHeight > 1200 ? scrollHeight - 1900 : scrollHeight - 1000)) {
       if (this.isNeedLoading) {
         this.page += 1
         this.loadItems()
