@@ -33,15 +33,13 @@
             </div>
           </div>
 
-          <div v-if="loading">Загрузка</div>
-          <div v-else>
-            <div class="specialOffers-promo-reviews mt-3" v-if="data.length >= 1">
+          <div>
+            <div class="specialOffers-promo-reviews mt-3">
               <div class="specialOffers-promo-reviews-container">
                 <reviews-card class="specialOffers-promo-reviews-card"
                               v-for="(item, i) in data" :key="'review'+i" :item="item"/>
               </div>
             </div>
-            <div v-else>Ничего нет</div>
           </div>
         </div>
       </v-lazy>
@@ -105,13 +103,21 @@ export default class Reviews extends Vue {
       travellineid: 0,
     },
   ]
-  loading: boolean = true
   activeSlide: string = `background-image: url("/img/promo/background.webp")`
+  isLoading: boolean = false
+  isNeedLoading: boolean = false
+  page: number = 1
+  limit: number = 20
 
-  async created() {
+  async mounted() {
+    window.addEventListener('scroll', this.handleScroll)
     await this.getHotels()
-    await this.getData()
+    await this.loadItems()
     this.getCurrentHotel()
+  }
+
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   getCurrentHotel() {
@@ -133,27 +139,61 @@ export default class Reviews extends Vue {
   }
 
   @Watch('hotel')
-  async getData() {
-    try {
-      this.loading = true
-      if (this.hotel == 0) {
-        let {data, error} = await supaBase
-          .from('reviews')
-          .select('')
-          .order('created_at', {ascending: false})
-        this.data = data
-      } else {
-        let {data, error} = await supaBase
-          .from('reviews')
-          .select('')
-          .eq('hoteltlid', this.hotel)
-          .order('created_at', {ascending: false})
-        this.data = data
+  async loadItems() {
+    this.isLoading = true
+    this.isNeedLoading = false
+
+    if (this.hotel == 0) {
+      return await this.getItemsWithOutHotelId()
+    } else {
+      return await this.getItemsWithHotelId()
+    }
+  }
+
+  async getItemsWithHotelId() {
+    const {data, error} = await supaBase
+      .from('reviews')
+      .select()
+      .order('id')
+      .eq('hoteltlid', this.hotel)
+      .range(this.page * this.limit - this.limit, this.page * this.limit - 1)
+
+    if (error) {
+      console.error(error)
+    } else {
+      this.isLoading = false
+      this.isNeedLoading = true
+      return this.data = [...data]
+    }
+  }
+
+  async getItemsWithOutHotelId() {
+    const {data, error} = await supaBase
+      .from('reviews')
+      .select()
+      .order('id')
+      .range(this.page * this.limit - this.limit, this.page * this.limit - 1)
+
+    if (error) {
+      console.error(error)
+    } else {
+      this.isLoading = false
+      this.isNeedLoading = true
+      return this.data = [...this.data, ...data]
+    }
+  }
+
+
+  handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+    const clientHeight = window.innerHeight || document.documentElement.clientHeight
+
+    if (scrollTop + clientHeight >= scrollHeight - 1200) {
+      if (this.isNeedLoading) {
+        this.page += 1
+        this.loadItems()
       }
-    } catch (e) {
-      console.log(e)
-    } finally {
-      this.loading = false
     }
   }
 }
