@@ -5,6 +5,9 @@ import supaBase from './assets/scripts/supaBase'
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 export default {
+
+  target: 'static',
+
   server: {
     host: '0.0.0.0',
     port: 3000
