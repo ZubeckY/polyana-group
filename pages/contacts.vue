@@ -42,8 +42,8 @@
           <div class="seeYouAtHotel-container">
             <!-- До встречи в наших отелях -->
             <h4 class="seeYouAtHotel-title footer-title pa-1 pb-3">До встречи в наших отелях</h4>
-            <v-chip-group class="seeYouAtHotel-group mb-2" v-model="activeChip"
-                          mandatory column active-class="golden-gradient white--text">
+            <v-chip-group class="seeYouAtHotel-group mb-2" mandatory column
+                          v-model="activeChip" active-class="golden-gradient white--text">
               <see-you-at-hotel-chip v-for="(item, i) in localMapping"
                                      :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
             </v-chip-group>

@@ -65,7 +65,7 @@ export default {
     '~/assets/styles/header.css',
     '~/assets/styles/main.css',
     '~/assets/styles/animations.css',
-    '~/assets/styles/ui-styles.less'
+    '~/assets/styles/ui-styles.css'
   ],
 
   plugins: [
