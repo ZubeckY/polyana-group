@@ -10,7 +10,8 @@
           <div class="header-body">
             <div class="header-body-container general-container">
               <div class="header-content d-flex">
-                <div class="header-content__season">
+                <!-- Скрываем блок -->
+                <div class="header-content__season d-none">
                   <div class="header-content__season-container">
                     <v-btn-toggle active-class="season-active" mandatory
                                   class="header-content__season-switch ma-0 pa-0">
@@ -132,7 +133,7 @@
               </div>
             </div>
             <!-- Бесплатный трансфер до пляжа -->
-<!--            <season-programs-free-transfer-beach/>-->
+            <!--            <season-programs-free-transfer-beach/>-->
 
             <!-- Живая музыка в баре у бассейна -->
             <season-programs-live-music/>
@@ -142,7 +143,7 @@
             <season-programs-spa-complex/>
 
             <!-- Анимация для детей: веселье и игры -->
-<!--            <season-programs-fun-for-kids/>-->
+            <!--            <season-programs-fun-for-kids/>-->
             <!-- Ещё -->
             <season-programs-show-more-summer/>
           </div>

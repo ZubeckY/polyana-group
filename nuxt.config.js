@@ -5,8 +5,20 @@ import supaBase from './assets/scripts/supaBase'
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 export default {
-
+  ssr: true,
+  dev: false,
+  cache: true,
   target: 'static',
+  mode: "universal",
+  components: true,
+  rootDir: __dirname,
+  serverMiddleware: [],
+  image: {
+    inject: true
+  },
+  extractCSS: {
+    allChunks: true
+  },
 
   server: {
     host: '0.0.0.0',
@@ -56,30 +68,15 @@ export default {
     '~/assets/styles/ui-styles.less'
   ],
 
-  rootDir: __dirname,
-  serverMiddleware: [
-  ],
-
   plugins: [
     '~/plugins/v_mask.js',
     '~/plugins/vue-slick-carousel.js'
   ],
 
   // modules
-
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv',
-    "nuxt-storm"
-  ],
-
-  components: true,
-
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
-    // 'nuxt-webfontloader',
     '@nuxtjs/sitemap',
     ['nuxt-mail', {
       message: [
@@ -97,8 +94,26 @@ export default {
         }
       }
     }]
-
   ],
+
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
+  ],
+
+  generate: {
+    routes: [
+      '/',
+      '/promo',
+      '/services',
+      '/contacts',
+      '/reviews',
+      '/hotel?hotel_id=32513',
+      '/hotel?hotel_id=22866',
+      '/hotel?hotel_id=23660'
+    ]
+  },
 
   sitemap: {
     hostname: process.env.BASE_URL,
@@ -115,8 +130,8 @@ export default {
           const hotelsArray = hotels.data.map(v => `/hotel?hotel_id=${v.travellineid}`)
 
           const services = await supaBase
-            .from('services').select('id, travellineid')
-          const servicesArray = services.data.map(v => `/services/${v.id}/?hotel_id=${v.travellineid}`)
+            .from('services').select('id')
+          const servicesArray = services.data.map(v => `/services/${v.id}`)
 
           const specialOffers = await supaBase
             .from('specialoffer').select('id')
@@ -142,19 +157,6 @@ export default {
     }
   },
 
-
-  image: {
-    inject: true
-  },
-
-  render: {
-    resourceHints: false,
-    etag: false,
-    static: {
-      etag: false
-    }
-  },
-
   build: {
     optimizeCss: false,
     optimization: {
@@ -167,6 +169,7 @@ export default {
     },
     ...(!isDev && {
       extractCSS: {
+        allChunks: true,
         ignoreOrder: true
       }
     }),
@@ -185,7 +188,8 @@ export default {
         }
       }
     }),
-    extend (config, ctx) {
+
+    extend(config, ctx) {
       const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
       const vueSvgLoader = [
         {
