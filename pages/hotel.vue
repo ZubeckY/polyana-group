@@ -157,6 +157,11 @@ import supaBase from "~/assets/scripts/supaBase";
           name: "description",
           content: this.OG_CONTENT_CURRENT.description
         },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: 'красная поляна отели, отели красная поляна 4, красная поляна сочи отели, спа отель красная поляна, отель роза хутор, отель +с открытым бассейном красная поляна',
+        },
 
         // og:tags
         {

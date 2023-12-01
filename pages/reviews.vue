@@ -65,7 +65,7 @@ import supaBase from "~/assets/scripts/supaBase";
       {
         hid: "keywords",
         name: "keywords",
-        content: "Отзывы Ultima Club Ikos Polyana Country Hills"
+        content: "красная поляна отели отзывы, ultima club отзывы, country hills отзывы, ikos polyana отзывы, отели роза хутор отзывы"
       },
 
       // og:tags

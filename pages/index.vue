@@ -192,7 +192,7 @@ import {Component, Vue} from "vue-property-decorator";
       {
         hid: "keywords",
         name: "keywords",
-        content: "Ключевые слова для поиска"
+        content: "красная поляна отели, красная поляна сочи отели, красная поляна отели цены, красная поляна отели 5 звезд, сочи красная поляна отели, отели polyana group, отель ultima club, отель country hills, отель ikos polyana"
       },
 
       // og:tags
