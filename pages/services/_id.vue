@@ -87,12 +87,12 @@ import supaBase from "~/assets/scripts/supaBase";
 @Component({
   head(this: Services): object {
     return {
-      title: this.data.id >= 1 ? this.data.title : 'Загрузка...',
+      title: this.data.id >= 1 ? this.data.title : 'Услуги отелей',
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.data.id >= 1 ? this.data.description.substr(0, 250) : ''
+          content: this.data.id >= 1 ? this.data.description.substr(0, 250) : 'Узнайте больше об услугах отеля'
         },
 
         // og:tags

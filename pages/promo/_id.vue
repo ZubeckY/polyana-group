@@ -49,12 +49,12 @@ import supaBase from "~/assets/scripts/supaBase";
 @Component({
   head(this: Promo): object {
     return {
-      title: this.data.length >= 1 ? this.data[0].title : 'Загрузка...',
+      title: this.data.length >= 1 ? this.data[0].title : 'Акции отелей',
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.data.length >= 1 ? this.data[0].description.substring(0,250) : ''
+          content: this.data.length >= 1 ? this.data[0].description.substring(0,250) : 'Узнайте больше об акциях отеля'
         },
 
         // og:tags
