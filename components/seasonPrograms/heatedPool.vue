@@ -50,8 +50,7 @@
       <v-vertical-spacer/>
       <p class="seasonPrograms-card-text">Насладитесь всегда теплым бассейном:
         +30 градусов круглый год!
-        <v-menu open-on-hover
-                offset-y>
+        <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on, attrs }">
             <span v-bind="attrs" v-on="on">
               <svg style="position:relative; top: 4px;" fill="#008AE1" width="18px" height="18px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" stroke="none">
@@ -64,8 +63,8 @@
             </span>
           </template>
 
-          <div style="background: #fff; padding: 4px 9px; border-radius: 7px">
-            Расписание работы бассейна
+          <div style="background: #fff; padding: 4px 9px; border-radius: 7px; width: 430px">
+            <pool-schedule-winter/>
           </div>
         </v-menu>
       </p>

@@ -48,8 +48,8 @@
             </span>
           </template>
 
-          <div style="background: #fff; padding: 4px 9px; border-radius: 7px">
-            Расписание работы бассейна
+          <div style="background: #fff; padding: 4px 9px; border-radius: 7px; width: 260px">
+            <pool-schedule-summer/>
           </div>
         </v-menu>
       </p>
