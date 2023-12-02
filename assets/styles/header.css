@@ -315,6 +315,15 @@
 .header-nav__menu-content-bookingInfo {
   margin-left: 40px;
 }
+.header-nav__menu-content-bookingInfo-department *,
+.header-nav__menu-content-bookingInfo-reception * {
+  color: white !important;
+  text-decoration: none;
+}
+
+.header-nav__menu-content-bookingInfo-reception {
+  margin-top: 10px;
+}
 
 .header-nav__menu-content-footer {
   height: 220px;

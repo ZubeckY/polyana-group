@@ -22,7 +22,7 @@
               </p>
 
               <div class="exclusive-text-promotion">
-                <span>Акция действует до 11.11.2023 г .</span>
+                <span>Акция действует до 20.12.2023 г .</span>
                 <span>Уточняйте условия акции по телефону: <a class="text-decoration-none white--text" href="tel:+7 938 555-55-52"><b>+7 938 555-55-52.</b></a></span>
               </div>
             </div>
