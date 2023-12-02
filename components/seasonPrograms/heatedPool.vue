@@ -64,7 +64,7 @@
           </template>
 
           <div style="background: #fff; padding: 4px 9px; border-radius: 7px; width: 430px">
-            <pool-schedule-winter/>
+            <pool-schedule/>
           </div>
         </v-menu>
       </p>
