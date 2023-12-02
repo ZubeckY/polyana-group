@@ -1,24 +1,14 @@
 const mode = 'production'
-const isDev = mode !== "production"
+const isDev = false
 import supaBase from './assets/scripts/supaBase'
-
-const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 export default {
   ssr: true,
   dev: false,
-  cache: true,
-  target: 'static',
+  cache: false,
+  target: 'server',
   mode: "universal",
   components: true,
-  rootDir: __dirname,
-  serverMiddleware: [],
-  image: {
-    inject: true
-  },
-  extractCSS: {
-    allChunks: true
-  },
 
   server: {
     host: '0.0.0.0',
@@ -95,23 +85,24 @@ export default {
   ],
 
   buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv'
+    "@nuxtjs/pwa",
+    "@nuxtjs/dotenv",
+    "@nuxtjs/vuetify",
+    "@nuxt/typescript-build"
   ],
 
-  generate: {
-    routes: [
-      '/',
-      '/promo',
-      '/services',
-      '/contacts',
-      '/reviews',
-      '/hotel?hotel_id=32513',
-      '/hotel?hotel_id=22866',
-      '/hotel?hotel_id=23660'
-    ]
-  },
+  // generate: {
+  //   routes: [
+  //     '/',
+  //     '/promo',
+  //     '/services',
+  //     '/contacts',
+  //     '/reviews',
+  //     '/hotel?hotel_id=32513',
+  //     '/hotel?hotel_id=22866',
+  //     '/hotel?hotel_id=23660'
+  //   ]
+  // },
 
   sitemap: {
     hostname: process.env.BASE_URL,
@@ -155,100 +146,5 @@ export default {
     }
   },
 
-  build: {
-    optimizeCss: false,
-    optimization: {
-      minimize: !isDev
-    },
-    splitChunks: {
-      layouts: true,
-      pages: true,
-      commons: true
-    },
-    ...(!isDev && {
-      extractCSS: {
-        allChunks: true,
-        ignoreOrder: true
-      }
-    }),
-    ...(!isDev && {
-      html: {
-        minify: {
-          collapseBooleanAttributes: true,
-          decodeEntities: true,
-          minifyCSS: true,
-          minifyJS: true,
-          processConditionalComments: true,
-          removeEmptyAttributes: true,
-          removeRedundantAttributes: true,
-          trimCustomFragments: true,
-          useShortDoctype: true
-        }
-      }
-    }),
-
-    extend(config, ctx) {
-      const ORIGINAL_TEST = '/\\.(png|jpe?g|gif|svg|webp)$/i'
-      const vueSvgLoader = [
-        {
-          loader: 'vue-svg-loader',
-          options: {
-            svgo: false
-          }
-        }
-      ]
-      const imageMinPlugin = new ImageminPlugin({
-        pngquant: {
-          quality: '5-30',
-          speed: 7,
-          strip: true
-        },
-        jpegtran: {
-          progressive: true
-
-        },
-        gifsicle: {
-          interlaced: true
-        }
-      })
-      if (!ctx.isDev) config.plugins.push(imageMinPlugin)
-
-      config.module.rules.forEach(rule => {
-        if (rule.test.toString() === ORIGINAL_TEST) {
-          rule.test = /\.(png|jpe?g|gif|webp)$/i
-          rule.use = [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 1000,
-                name: ctx.isDev ? '[path][name].[ext]' : 'img/[contenthash:7].[ext]'
-              }
-            }
-          ]
-        }
-      })
-
-      const svgRule = {
-        test: /\.svg$/,
-        oneOf: [
-          {
-            resourceQuery: /inline/,
-            use: vueSvgLoader
-          },
-          {
-            resourceQuery: /data/,
-            loader: 'url-loader'
-          },
-          {
-            resourceQuery: /raw/,
-            loader: 'raw-loader'
-          },
-          {
-            loader: 'file-loader' // By default, always use file-loader
-          }
-        ]
-      }
-      config.module.rules.push(svgRule) // Actually add the rule
-    }
-  }
+  build: {}
 }
