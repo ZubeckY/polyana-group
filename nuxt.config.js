@@ -2,24 +2,11 @@ const mode = 'production'
 const isDev = false
 import supaBase from './assets/scripts/supaBase'
 
-const _ = require('lodash')
-
 export default {
-  components: true,
-
-  server: {
-    host: '0.0.0.0',
-    port: 3000
-  },
-
   // head
   head: {
     title: 'Polyana Group - отдых на красной поляне',
-
-    htmlAttrs: {
-      lang: 'ru'
-    },
-
+    htmlAttrs: {lang: 'ru'},
     meta: [
       {charset: 'utf-8'},
       {'http-equiv': 'cleartype', content: 'on'},
@@ -32,7 +19,6 @@ export default {
       {hid: 'robots', name: 'robots', content: 'index, follow'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
     ],
-
     link: [
       {
         rel: 'icon',
@@ -41,24 +27,6 @@ export default {
       }
     ]
   },
-
-  css: [
-    '~/assets/styles/screen/desktop.less',
-    '~/assets/styles/screen/mobile.less',
-    '~/assets/styles/travel-line.css',
-    '~/assets/styles/fontSize.css',
-    '~/assets/styles/footer.css',
-    '~/assets/styles/header.css',
-    '~/assets/styles/main.css',
-    '~/assets/styles/animations.css',
-    '~/assets/styles/ui-styles.css'
-  ],
-
-  plugins: [
-    '~/plugins/v_mask.js',
-    '~/plugins/vue-slick-carousel.js'
-  ],
-
   // modules
   modules: [
     '@nuxtjs/axios',
@@ -81,33 +49,49 @@ export default {
       }
     }]
   ],
-
+  components: true,
   buildModules: [
     "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
     "@nuxtjs/vuetify",
     "@nuxt/typescript-build"
   ],
-
+  css: [
+    '~/assets/styles/screen/desktop.less',
+    '~/assets/styles/screen/mobile.less',
+    '~/assets/styles/travel-line.css',
+    '~/assets/styles/fontSize.css',
+    '~/assets/styles/footer.css',
+    '~/assets/styles/header.css',
+    '~/assets/styles/main.css',
+    '~/assets/styles/animations.css',
+    '~/assets/styles/ui-styles.css'
+  ],
+  plugins: [
+    '~/plugins/v_mask.js',
+    '~/plugins/vue-slick-carousel.js'
+  ],
+  server: {
+    host: '0.0.0.0',
+    port: 3000
+  },
 
   generate: {
-    routes:
-      async function () {
-        let {data, error} = await supaBase
-          .from('promo')
-          .select('id')
-          .order('id')
+    routes: async () => {
+      let result = []
 
-        return _.map(data, function (promo, key) {
-          return `/promo/${promo.id}`
-        })
-      }
-    // return axios.get('https://jsonplaceholder.typicode.com/posts')
-    //   .then((res) => {
-    //     return _.map(res.data, function(post, key) {
-    //       return `/posts/${post.id}`
-    //     })
-    //   })
+      const services = await supaBase
+        .from('services').select('id')
+        .from('services').select('id')
+      const servicesArray = services.data.map(v => `/services/${v.id}`)
+
+      const specialOffers = await supaBase
+        .from('specialoffer').select('id')
+      const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}`)
+
+      result = [...servicesArray, ...specialOffersArray];
+      return result
+    }
   },
 
   sitemap: {
@@ -122,7 +106,7 @@ export default {
 
           const hotels = await supaBase
             .from('hotels').select('travellineid')
-          const hotelsArray = hotels.data.map(v => `/hotel?hotel_id=${v.travellineid}`)
+          const hotelsArray = hotels.data.map(v => `/hotel/?hotel_id=${v.travellineid}`)
 
           const services = await supaBase
             .from('services').select('id')
@@ -131,7 +115,6 @@ export default {
           const specialOffers = await supaBase
             .from('specialoffer').select('id')
           const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}`)
-          console.log(specialOffersArray)
 
           result = [...servicesArray, ...hotelsArray, ...specialOffersArray];
           return result
