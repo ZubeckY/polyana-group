@@ -321,10 +321,5 @@ export default class Menu extends Vue {
     return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
   }
 
-  get getImgSHotel() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
-  }
-
-
 }
 </script>

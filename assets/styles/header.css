@@ -321,6 +321,11 @@
   text-decoration: none;
 }
 
+.header-nav__menu-content-bookingInfo-department a,
+.header-nav__menu-content-bookingInfo-reception a {
+  text-decoration: underline;
+}
+
 .header-nav__menu-content-bookingInfo-reception {
   margin-top: 10px;
 }
