@@ -100,7 +100,8 @@
                   </div>
                 </div>
 
-                <v-btn class="whatVisit-cart__button shimmer-effect mx-auto" height="56px" elevation="0" dark>
+                <v-btn class="whatVisit-cart__button shimmer-effect mx-auto"
+                       href="files/pdf_test.pdf" download height="56px" elevation="0" dark>
                   <div class="shimmer"></div>
                   <div class="text">Скачать файл</div>
                 </v-btn>
