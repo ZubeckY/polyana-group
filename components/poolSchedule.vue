@@ -1,5 +1,5 @@
 <template>
-  <div style="background: #fff;">
+  <div class="px-2 py-1" style="background: #fff; border-radius: 13px">
     <div class="d-flex mb-1 font-weight-bold">
       <div style="width: 120px; font-size: 12px">Отель</div>
       <div style="width: 120px; font-size: 12px">Лето</div>
