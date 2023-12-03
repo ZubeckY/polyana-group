@@ -1,6 +1,7 @@
 const mode = 'production'
 const isDev = false
 import supaBase from './assets/scripts/supaBase'
+
 const _ = require('lodash')
 
 export default {
@@ -87,6 +88,27 @@ export default {
     "@nuxtjs/vuetify",
     "@nuxt/typescript-build"
   ],
+
+
+  generate: {
+    routes:
+      async function () {
+        let {data, error} = await supaBase
+          .from('promo')
+          .select('id')
+          .order('id')
+
+        return _.map(data, function (promo, key) {
+          return `/promo/${promo.id}`
+        })
+      }
+    // return axios.get('https://jsonplaceholder.typicode.com/posts')
+    //   .then((res) => {
+    //     return _.map(res.data, function(post, key) {
+    //       return `/posts/${post.id}`
+    //     })
+    //   })
+  },
 
   sitemap: {
     hostname: process.env.BASE_URL,
