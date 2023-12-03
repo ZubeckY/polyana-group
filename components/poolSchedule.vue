@@ -26,6 +26,6 @@
 import {Vue, Component} from 'vue-property-decorator';
 
 @Component({})
-export default class PoolScheduleWinter extends Vue {
+export default class PoolSchedule extends Vue {
 }
 </script>
