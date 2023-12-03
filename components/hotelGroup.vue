@@ -25,19 +25,33 @@ import supaBase from "~/assets/scripts/supaBase";
 })
 export default class HotelGroup extends Vue {
   hotels: number = 0
-  hotelList: any = []
+  // hotelList: any = []
 
-  async created() {
-    try {
-      let {data, error} = await supaBase
-        .from('hotels')
-        .select('id, title, logohotel, imgshotel, travellineid, pricefrom, hotelrating, hotelreviews, hoteldescription, hoteltags')
-        .order('id')
-      this.hotelList = data
-    } catch (e) {
-      console.log(e)
-    }
+  created() {
+    this.$store.dispatch('getHotels')
+    // .then(() => {
+    //   this.hotelList = this.$store.state.hotels
+    // })
+    // .catch((e: any) => {
+    //   console.log(e)
+    // })
   }
+
+  get hotelList() {
+    return this.$store.state.hotels
+  }
+
+  // async created() {
+  //   try {
+  //     let {data, error} = await supaBase
+  //       .from('hotels')
+  //       .select('id, title, logohotel, imgshotel, travellineid, pricefrom, hotelrating, hotelreviews, hoteldescription, hoteltags')
+  //       .order('id')
+  //     this.hotelList = data
+  //   } catch (e) {
+  //     console.log(e)
+  //   }
+  // }
 }
 </script>
 
