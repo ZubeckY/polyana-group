@@ -68,10 +68,8 @@
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
-import CornerCard from "~/components/cornerCard.vue";
 
 @Component({
-  components: {CornerCard},
   head: {
     title: 'Специальные предложения и акции - группа отелей Polyana group',
     meta: [

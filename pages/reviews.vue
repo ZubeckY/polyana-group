@@ -40,7 +40,7 @@
                               v-for="(item, i) in data" :key="'review'+i" :item="item"/>
               </div>
               <div>
-                <v-progress-linear v-if="isLoading" indeterminate color="grey"/>
+                <v-progress-linear v-if="isFullData && isLoading" indeterminate color="grey"/>
               </div>
             </div>
           </div>
@@ -108,6 +108,7 @@ export default class Reviews extends Vue {
   ]
   activeSlide: string = `background-image: url("/img/promo/background.webp")`
   isLoading: boolean = false
+  isFullData: boolean = false
   isNeedLoading: boolean = false
   page: number = 1
   limit: number = 20
@@ -142,6 +143,14 @@ export default class Reviews extends Vue {
   }
 
   @Watch('hotel')
+  async loadItemsByHotel() {
+    this.page = 1
+    this.data = []
+
+    await this.loadItems()
+  }
+
+
   async loadItems() {
     this.isLoading = true
     this.isNeedLoading = false
@@ -161,12 +170,20 @@ export default class Reviews extends Vue {
       .eq('hoteltlid', this.hotel)
       .range(this.page * this.limit - this.limit, this.page * this.limit - 1)
 
+    console.log(data)
+
     if (error) {
       console.error(error)
     } else {
-      this.isLoading = false
-      this.isNeedLoading = true
-      return this.data = [...data]
+      if (!this.isFullData) {
+        if (data.length) {
+          this.data = [...this.data, ...data]
+        }
+        this.isLoading = false
+        this.isNeedLoading = true
+        return
+      }
+      return this.isFullData = true
     }
   }
 
@@ -180,9 +197,15 @@ export default class Reviews extends Vue {
     if (error) {
       console.error(error)
     } else {
-      this.isLoading = false
-      this.isNeedLoading = true
-      return this.data = [...this.data, ...data]
+      if (!this.isFullData) {
+        if (data.length) {
+          this.data = [...this.data, ...data]
+        }
+        this.isLoading = false
+        this.isNeedLoading = true
+        return
+      }
+      return this.isFullData = true
     }
   }
 
