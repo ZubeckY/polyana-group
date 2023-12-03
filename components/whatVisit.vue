@@ -1,5 +1,5 @@
 <template>
-  <section class="whatVisit">
+  <section class="whatVisit" id="actives">
     <v-lazy>
       <v-img class="d-flex align-center whatVisit-background" src="/img/line-background.svg" width="100%">
         <div class="whatVisit-background--upper"></div>
