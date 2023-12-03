@@ -82,7 +82,6 @@ export default {
 
       const services = await supaBase
         .from('services').select('id')
-        .from('services').select('id')
       const servicesArray = services.data.map(v => `/services/${v.id}`)
 
       const specialOffers = await supaBase
