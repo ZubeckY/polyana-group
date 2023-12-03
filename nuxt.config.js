@@ -1,13 +1,9 @@
 const mode = 'production'
 const isDev = false
 import supaBase from './assets/scripts/supaBase'
+const _ = require('lodash')
 
 export default {
-  ssr: true,
-  dev: false,
-  cache: false,
-  target: 'server',
-  mode: "universal",
   components: true,
 
   server: {
@@ -18,6 +14,7 @@ export default {
   // head
   head: {
     title: 'Polyana Group - отдых на красной поляне',
+
     htmlAttrs: {
       lang: 'ru'
     },
@@ -90,19 +87,6 @@ export default {
     "@nuxtjs/vuetify",
     "@nuxt/typescript-build"
   ],
-
-  // generate: {
-  //   routes: [
-  //     '/',
-  //     '/promo',
-  //     '/services',
-  //     '/contacts',
-  //     '/reviews',
-  //     '/hotel?hotel_id=32513',
-  //     '/hotel?hotel_id=22866',
-  //     '/hotel?hotel_id=23660'
-  //   ]
-  // },
 
   sitemap: {
     hostname: process.env.BASE_URL,

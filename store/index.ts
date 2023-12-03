@@ -8,9 +8,6 @@ export const mutations = {
   setHotels(state: any, hotels: any) {
     state.hotels = hotels
   },
-  setCurrentHotel(state: any, hotel: any) {
-
-  }
 }
 
 export const actions = {

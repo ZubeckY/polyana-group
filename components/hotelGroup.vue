@@ -1,18 +1,16 @@
 <template>
   <section class="hotelGroup">
-    <v-lazy>
-      <div class="hotelGroup-container">
-        <div class="hotelGroup-head">
-          <h3 class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
-            POLYANA GROUP на красной поляне
-          </h3>
-        </div>
-        <div class="hotelGroup-body">
-          <hotel-group-item v-for="(item, i) in hotelList"
-                            :key="'hotel-'+i" :item="item"/>
-        </div>
+    <div class="hotelGroup-container">
+      <div class="hotelGroup-head">
+        <h3 class="hotelGroup-title section-title fontSize-xl--s text-uppercase">Группа отелей
+          POLYANA GROUP на красной поляне
+        </h3>
       </div>
-    </v-lazy>
+      <div class="hotelGroup-body">
+        <hotel-group-item v-for="(item, i) in hotelList"
+                          :key="'hotel-'+i" :item="item"/>
+      </div>
+    </div>
   </section>
 </template>
 <script lang="ts">
@@ -25,6 +23,7 @@ import supaBase from "~/assets/scripts/supaBase";
 })
 export default class HotelGroup extends Vue {
   hotels: number = 0
+
   // hotelList: any = []
 
   created() {
