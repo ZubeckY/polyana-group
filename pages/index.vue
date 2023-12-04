@@ -66,66 +66,69 @@
 
     <!-- Наши гости делятся своими впечатлениями об отдыхе -->
     <reviews/>
-
   </div>
 </template>
-<script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
+<script>
+export default {
+  head() {
+    return {
+      title: 'Polyana Group - группа курортных отелей на Красной поляне',
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "красная поляна отели, красная поляна сочи отели, красная поляна отели цены, красная поляна отели 5 звезд, сочи красная поляна отели, отели polyana group, отель ultima club, отель country hills, отель ikos polyana"
+        },
 
-@Component({
-  head: {
-    title: 'Polyana Group - группа курортных отелей на Красной поляне',
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
-      },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content: "красная поляна отели, красная поляна сочи отели, красная поляна отели цены, красная поляна отели 5 звезд, сочи красная поляна отели, отели polyana group, отель ultima club, отель country hills, отель ikos polyana"
-      },
+        // og:tags
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: process.client ? window.location.href : ''
+        },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: "website"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "Polyana Group - группа курортных отелей на Красной поляне"
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
+        },
+      ],
+    }
+  },
 
-      // og:tags
-      {
-        hid: "og:url",
-        property: "og:url",
-        content: process.client ? window.location.href : ''
-      },
-      {
-        hid: "og:type",
-        property: "og:type",
-        content: "website"
-      },
-      {
-        hid: "og:title",
-        property: "og:title",
-        content: "Polyana Group - группа курортных отелей на Красной поляне"
-      },
-      {
-        hid: "og:description",
-        property: "og:description",
-        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
-      },
-      {
-        hid: "og:image",
-        property: "og:image",
-        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
-      },
-    ],
-  }
-})
+  data: () => ({
+    activeImage: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp",
+  }),
 
-export default class Pages extends Vue {
-  activeImage: string = "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp"
+  computed: {
+    activeSlide() {
+      return `background-image: url('${this.activeImage}')`
+    },
+  },
 
-  get activeSlide() {
-    return `background-image: url('${this.activeImage}')`
-  }
-
-  changeActiveSlide(value: string) {
-    return this.activeImage = value
+  methods: {
+    changeActiveSlide(value) {
+      return this.activeImage = value
+    }
   }
 }
 </script>

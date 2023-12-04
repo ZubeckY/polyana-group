@@ -110,8 +110,8 @@
         </h4>
       </div>
       <v-vertical-spacer/>
-      <p class="seasonPrograms-card-text">Живая музыка в баре у бассейна
-        создает идеальную атмосферу
+      <p class="seasonPrograms-card-text">Живая музыка в баре у бассейна создает
+        идеальную атмосферу для отдыха и досуга
       </p>
     </div>
   </article>

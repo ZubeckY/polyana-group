@@ -49,7 +49,7 @@
       </div>
       <v-vertical-spacer/>
       <p class="seasonPrograms-card-text">Насладитесь всегда теплым бассейном:
-        +30 градусов круглый год!
+        30°C круглый год!
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on, attrs }">
             <span v-bind="attrs" v-on="on">
