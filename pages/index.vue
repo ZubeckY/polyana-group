@@ -70,6 +70,7 @@
 </template>
 <script>
 export default {
+  name: 'Index',
   head() {
     return {
       title: 'Polyana Group - группа курортных отелей на Красной поляне',

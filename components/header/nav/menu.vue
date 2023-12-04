@@ -1,15 +1,14 @@
 <template>
-  <v-dialog v-model="dialog" hide-overlay fullscreen transition="fade-transition">
+  <v-dialog v-model="dialog" transition="fade-transition" hide-overlay fullscreen>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn class="header-nav__menu pa-0" v-bind="attrs" v-on="on"
-             min-width="0" min-height="0" width="auto" height="0" text>
-        <div class="header-nav__menu-container d-flex justify-center align-center flex-column">
-          <div class="d-flex justify-center align-center flex-column">
-            <span v-for="i in 3" :key="'image'+i" class="header-nav__menu-line"></span>
-          </div>
+      <button class="header-nav__menu pa-0" v-bind="attrs" v-on="on">
+        <span class="header-nav__menu-container">
+          <span class="header-nav__menu-wrapper">
+            <span class="header-nav__menu-line" v-for="i in 3" :key="'image'+i"></span>
+          </span>
           <span class="header-nav__menu-title">Меню</span>
-        </div>
-      </v-btn>
+        </span>
+      </button>
     </template>
 
     <div class="header-nav__menu-content">

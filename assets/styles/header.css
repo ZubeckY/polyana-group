@@ -128,9 +128,14 @@
 }
 
 .header-slider-arrow {
-  width: 34px !important;
-  height: 34px !important;
+  display: flex;
+  width: 34px;
+  height: 34px;
   margin: 15px auto;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .header-slider-arrow--desktop {
@@ -168,7 +173,23 @@
 }
 
 .header-nav__menu {
+  outline: none;
+  border: none;
   margin-right: auto;
+}
+
+.header-nav__menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-nav__menu-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .header-nav__menu-line {
@@ -315,6 +336,7 @@
 .header-nav__menu-content-bookingInfo {
   margin-left: 40px;
 }
+
 .header-nav__menu-content-bookingInfo-department *,
 .header-nav__menu-content-bookingInfo-reception * {
   color: white !important;
@@ -412,7 +434,7 @@
   font-size: 14px !important;
   border-radius: 4px !important;
   background: linear-gradient(93deg,
-    rgba(255, 255, 255, 0.10) -3.44%,
+  rgba(255, 255, 255, 0.10) -3.44%,
   rgba(255, 255, 255, 0.06) 113.56%) !important;
   backdrop-filter: blur(25px) !important;
 }

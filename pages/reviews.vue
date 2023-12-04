@@ -150,7 +150,6 @@ export default class Reviews extends Vue {
     await this.loadItems()
   }
 
-
   async loadItems() {
     this.isLoading = true
     this.isNeedLoading = false
@@ -169,8 +168,6 @@ export default class Reviews extends Vue {
       .order('id')
       .eq('hoteltlid', this.hotel)
       .range(this.page * this.limit - this.limit, this.page * this.limit - 1)
-
-    console.log(data)
 
     if (error) {
       console.error(error)

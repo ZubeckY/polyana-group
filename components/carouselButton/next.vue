@@ -1,15 +1,23 @@
 <template>
-  <v-btn min-height="0" min-width="0"
-         width="34px" height="34px" elevation="0"
-         color="#ffffffb8" title="Вперёд" rounded>
+  <button class="carousel-button-next" title="Вперёд">
     <chevron-right/>
-  </v-btn>
+  </button>
 </template>
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
-
-@Component({})
-export default class Next extends Vue {
-
+<script>
+export default {
+  name: "Next"
 }
 </script>
+<style scoped>
+.carousel-button-next {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background: #ffffffb8;
+  border-radius: 50%;
+}
+</style>
+

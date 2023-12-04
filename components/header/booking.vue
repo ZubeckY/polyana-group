@@ -8,11 +8,9 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
-@Component({})
-export default class Booking extends Vue {
-
+<script>
+export default {
+  name: "HeaderBooking"
 }
 </script>
 <style>

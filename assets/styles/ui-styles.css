@@ -637,7 +637,14 @@
 }
 
 .breadcrumbs-button {
-  border-radius: 8px
+  display: flex;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-grey);
 }
 
 .breadcrumbs-content {

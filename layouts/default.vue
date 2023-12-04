@@ -35,7 +35,10 @@ if (process.client) {
   });
 }
 
-export default {}
+export default {
+  name: 'Default',
+  layout: 'empty'
+}
 </script>
 <noscript>
 <div><img src="https://mc.yandex.ru/watch/95763245" style="position:absolute; left:-9999px;" alt=""/></div>

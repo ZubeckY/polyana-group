@@ -6,9 +6,8 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
-@Component({})
-export default class Watch extends Vue {
+<script>
+export default {
+  name: "Watch"
 }
 </script>

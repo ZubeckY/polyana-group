@@ -3,10 +3,8 @@
     <v-lazy>
       <div class="pinterest-container">
 
-        <v-card class="pinterest-card" height="485px"
-                elevation="0" color="var(--card-grey)">
+        <article class="pinterest-card">
           <div class="pinterest-card-container general-container">
-
             <div class="pinterest-card-head mt-10">
               <h3 class="pinterest-card-title fontSize-xl--s">ДИЗАЙНЕРСКИЕ ОТЕЛИ
                 КАК С КАРТИНОК <span>
@@ -26,8 +24,8 @@
               </span>
               </h3>
 
-              <p class="pinterest-card-text">Добро пожаловать в нашу группу отелей на Красной
-                Поляне. Насладитесь шикарными номерами,
+              <p class="pinterest-card-text">Добро пожаловать в нашу группу отелей на
+                Красной Поляне. Насладитесь шикарными номерами,
                 удивительной кухней, расслабляющим спа-центром и
                 невероятными панорамными видами на окрестные
                 горы. Погрузитесь в атмосферу уюта наших отелей и
@@ -47,7 +45,7 @@
             </div>
 
           </div>
-        </v-card>
+        </article>
 
       </div>
     </v-lazy>
@@ -68,6 +66,8 @@ export default class Pinterest extends Vue {
 
 .pinterest-card {
   position: relative;
+  height: 485px;
+  background: var(--card-grey);
   border-radius: var(--bordrad23) !important;
 }
 

@@ -13,9 +13,8 @@
     <watch-play/>
   </div>
 </template>
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
-@Component({})
-export default class Tablet extends Vue {
+<script>
+export default {
+  name: "Tablet",
 }
 </script>

@@ -9,14 +9,14 @@
     <!-- end TL Search form script -->
   </div>
 </template>
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
-@Component({})
-export default class BookingUltima extends Vue {
-  TL_ID: any = 'tl-search-form-32513'
-
-  created () {
-    let {hotel_id}:any = this.$router.currentRoute.query
+<script>
+export default {
+  name: "HeaderBookingUltima",
+  data: () => ({
+    TL_ID: 'tl-search-form-32513'
+  }),
+  created() {
+    let {hotel_id} = this.$router.currentRoute.query
     return this.TL_ID = 'tl-search-form-' + hotel_id
   }
 }
@@ -31,6 +31,4 @@ export default class BookingUltima extends Vue {
   background: linear-gradient(270deg, rgba(217, 217, 217, 0.40) 2.1%, rgba(217, 217, 217, 0.20) 103.66%);
   backdrop-filter: blur(25px);
 }
-
-
 </style>

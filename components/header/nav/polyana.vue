@@ -30,73 +30,76 @@
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
-          <v-btn class="header-nav__reservation-booking shimmer-effect font-weight-bold" href="/booking" elevation="0" color="var(--golden-2)">
+          <v-btn class="header-nav__reservation-booking shimmer-effect font-weight-bold" href="/booking" elevation="0"
+                 color="var(--golden-2)">
             <div class="shimmer"></div>
             <div class="text">Забронировать</div>
           </v-btn>
-          <v-btn class="header-nav__reservation-phone font-weight-bold" href="tel:+7 938 555-55-52" elevation="0" dark>+7 938 555-55-52</v-btn>
+          <v-btn class="header-nav__reservation-phone font-weight-bold" href="tel:+7 938 555-55-52" elevation="0" dark>
+            +7 938 555-55-52
+          </v-btn>
         </div>
       </div>
 
     </div>
   </nav>
 </template>
-<script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
+<script>
+export default {
+  name: "HeaderNavPolyana",
+  data: () => ({
+    links: [
+      {
+        title: 'Главная',
+        link: '/'
+      },
+      {
+        title: 'Отели'
+      },
+      {
+        title: 'Номера',
+        link: '/booking'
+      },
+      {
+        title: 'Ресторан',
+      },
+      {
+        title: 'Услуги',
+        link: '/services'
+      },
+      {
+        title: 'Акции',
+        link: '/promo'
+      },
+      {
+        title: 'Отзывы',
+        link: '/reviews'
+      },
+      {
+        title: 'Контакты',
+        link: '/contacts'
+      },
+    ]
+  }),
 
-@Component({})
-export default class Polyana extends Vue {
-  links: any = [
-    {
-      title: 'Главная',
-      link: '/'
-    },
-    {
-      title: 'Отели'
-    },
-    {
-      title: 'Номера',
-      link: '/booking'
-    },
-    {
-      title: 'Ресторан',
-    },
-    {
-      title: 'Услуги',
-      link: '/services'
-    },
-    {
-      title: 'Акции',
-      link: '/promo'
-    },
-    {
-      title: 'Отзывы',
-      link: '/reviews'
-    },
-    {
-      title: 'Контакты',
-      link: '/contacts'
-    },
-  ]
-
-  get firstLinks() {
-    let array = []
-    for (let i = 0; i < this.links.length; i++) {
-      array.push(this.links[i])
-      if (this.links[i]['title'] === 'Ресторан') break
-    }
-    return array
-  }
-
-  get secondLinks() {
-    let array = []
-    for (let i = 0; i < this.links.length; i++) {
-      if (i >= 4) {
+  computed: {
+    firstLinks() {
+      let array = []
+      for (let i = 0; i < this.links.length; i++) {
         array.push(this.links[i])
+        if (this.links[i]['title'] === 'Ресторан') break
       }
+      return array
+    },
+    secondLinks() {
+      let array = []
+      for (let i = 0; i < this.links.length; i++) {
+        if (i >= 4) {
+          array.push(this.links[i])
+        }
+      }
+      return array
     }
-    return array
   }
-
 }
 </script>

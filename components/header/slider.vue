@@ -2,11 +2,10 @@
   <div class="header-slider">
     <div class="header-slider-container">
 
-      <v-btn @click="prev" color="rgba(255, 255, 255, 0.72)"
-             class="header-slider-arrow" title="Слайд назад" elevation="0" fab>
+      <button class="header-slider-arrow" title="Слайд назад" @click="prev">
         <chevron-up class="header-slider-arrow--desktop"/>
         <chevron-left class="header-slider-arrow--mobile"/>
-      </v-btn>
+      </button>
 
       <v-btn-toggle class="header-slider__slider" v-model="slide"
                     color="rgba(255, 255, 255, 0.85)" mandatory>
@@ -19,11 +18,10 @@
         </v-btn>
       </v-btn-toggle>
 
-      <v-btn @click="next" color="rgba(255, 255, 255, 0.72)"
-             class="header-slider-arrow" title="Слайд вперёд" elevation="0" fab>
+      <button class="header-slider-arrow" title="Слайд вперёд" @click="next">
         <chevron-down class="header-slider-arrow--desktop"/>
         <chevron-right class="header-slider-arrow--mobile"/>
-      </v-btn>
+      </button>
 
     </div>
   </div>

@@ -1,17 +1,15 @@
 <template>
   <section class="whatVisit" id="actives">
     <v-lazy>
-      <v-img class="d-flex align-center whatVisit-background" src="/img/line-background.svg" width="100%">
+      <div class="whatVisit-background">
         <div class="whatVisit-background--upper"></div>
         <div class="whatVisit-container">
 
-          <div class="whatVisit__title text-pre-line">ЧТО ПОСЕТИТЬ
+          <h6 class="whatVisit__title">ЧТО ПОСЕТИТЬ
             НА КРАСНОЙ ПОЛЯНЕ
-          </div>
+          </h6>
 
-          <div class="d-flex flex-wrap justify-space-between align-center">
-
-
+          <div class="whatVisit-block__wrapper">
             <div class="whatVisit-block">
               <!-- карта свг-шка -->
               <div class="whatVisit-map">
@@ -79,14 +77,13 @@
               </div>
             </div>
 
-            <div class="whatVisit-cart">
+            <article class="whatVisit-cart">
               <div class="whatVisit-cart__container">
-                <span class="whatVisit-cart__title text-pre-line">ПОЛУЧИТЕ <b>ПОЛНЫЙ</b>
+                <span class="whatVisit-cart__title">ПОЛУЧИТЕ <b>ПОЛНЫЙ</b>
                   СПИСОК АКТИВНОСТЕЙ
                 </span>
-
-                <div class="whatVisit-cart__body d-flex">
-                  <p class="whatVisit-cart__text text-pre-line">37 страниц в формате
+                <div class="whatVisit-cart__body">
+                  <p class="whatVisit-cart__text">37 страниц в формате
                     PDF (подробно о
                     ЛОКАЦИЯХ С
                     ОПИСАНИЕМ,
@@ -94,34 +91,28 @@
                     листе перед
                     поездкой и т.д)
                   </p>
-
                   <div class="whatVisit-cart__phone">
-                    <v-img src="/img/phone.webp"/>
+                    <img src="/img/phone.webp" loading="lazy" alt="phone" title="PDF телефон"/>
                   </div>
                 </div>
 
-                <v-btn class="whatVisit-cart__button shimmer-effect mx-auto"
-                       href="files/locationkp-polyanagroup.ru.pdf" download height="56px" elevation="0" dark>
+                <a class="whatVisit-cart__button shimmer-effect"
+                   href="/files/locationkp-polyanagroup.ru.pdf" download>
                   <div class="shimmer"></div>
                   <div class="text">Скачать файл</div>
-                </v-btn>
-
+                </a>
               </div>
-            </div>
-
+            </article>
           </div>
-
         </div>
         <div class="whatVisit-background--lower"></div>
-      </v-img>
+      </div>
     </v-lazy>
   </section>
 </template>
 <script lang="ts">
-import {Vue, Component} from 'vue-property-decorator';
-
-@Component({})
-export default class WhatVisit extends Vue {
+export default {
+  name: 'WhatVisit'
 }
 </script>
 
@@ -135,17 +126,21 @@ export default class WhatVisit extends Vue {
 
 .whatVisit__title {
   color: var(--dark-color);
-  font-family: 'CharterC';
+  font-family: 'CharterC', sans-serif;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-bottom: 30px;
+  white-space: pre-line;
   text-transform: uppercase;
 }
 
 .whatVisit-background {
   position: relative;
+  display: flex;
+  align-items: center;
+  background: url("/img/line-background.svg") center no-repeat;
 }
 
 .whatVisit-background--upper {
@@ -169,6 +164,13 @@ export default class WhatVisit extends Vue {
 .whatVisit-block {
   display: flex;
   width: calc(100% - 360px);
+  justify-content: space-between;
+}
+
+.whatVisit-block__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -234,6 +236,7 @@ export default class WhatVisit extends Vue {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  white-space: pre-line;
   text-transform: uppercase;
 }
 
@@ -253,6 +256,7 @@ export default class WhatVisit extends Vue {
   line-height: 17px;
   margin: 0 !important;
   padding: 0 !important;
+  white-space: pre-line;
   text-transform: uppercase;
 }
 
@@ -264,14 +268,21 @@ export default class WhatVisit extends Vue {
   transform: rotate(16deg);
 }
 
+.whatVisit-cart__phone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .whatVisit-cart__button {
   color: white;
   width: 100%;
+  height: 56px;
   font-size: 14px;
   font-weight: 500;
   font-style: normal;
   line-height: normal;
-  margin-top: 13.6px;
+  margin: 13.6px auto 0;
   border-radius: 13.6px !important;
   background: linear-gradient(90deg, #CCAB6A -1.19%,
   #C1B397 177.44%) !important;
