@@ -114,59 +114,61 @@
     </v-lazy>
   </div>
 </template>
-<script lang="ts">
-import {Vue, Component, Watch} from 'vue-property-decorator';
+<script>
 import supaBase from "~/assets/scripts/supaBase";
 
-@Component({
-  head: {
-    title: 'Контакты - группа отелей Polyana group',
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
-      },
-      {
-        hid: "keywords",
-        name: "keywords",
-        content: "красная поляна отели контакты, красная поляна отели телефон, ultima club телефон, ultima club контакты, ultima club адрес, country hills телефон, country hills контакты, country hills адрес, ikos polyana телефон, ikos polyana контакты, ikos polyana адрес"
-      },
+export default {
+  head() {
+    return {
+      title: 'Контакты - группа отелей Polyana group',
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "красная поляна отели контакты, красная поляна отели телефон, ultima club телефон, ultima club контакты, ultima club адрес, country hills телефон, country hills контакты, country hills адрес, ikos polyana телефон, ikos polyana контакты, ikos polyana адрес"
+        },
 
-      // og:tags
-      {
-        hid: "og:url",
-        property: "og:url",
-        content: process.client ? window.location.href : ''
-      },
-      {
-        hid: "og:type",
-        property: "og:type",
-        content: "website"
-      },
-      {
-        hid: "og:title",
-        property: "og:title",
-        content: "Контакты - группа отелей Polyana group"
-      },
-      {
-        hid: "og:description",
-        property: "og:description",
-        content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
-      },
-      {
-        hid: "og:image",
-        property: "og:image",
-        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
-      }
-    ],
-  }
-})
-export default class Contacts extends Vue {
-  activeChip: number = 0
-  activeSlide: number = 0
-  slide: string = `background-image: url("/img/promo/background.webp")`
-  localMapping: any = []
+        // og:tags
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: process.client ? window.location.href : ''
+        },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: "website"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "Контакты - группа отелей Polyana group"
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: "Polyana Group – группа курортных отелей на Красной поляне, где вы сможете полностью расслабиться и насладиться окружающей природой. Наши отели Ultima club hotel&spa, Country hills resort и Ikos Polyana предлагают широкий спектр услуг, чтобы сделать ваш отдых незабываемым."
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
+        }
+      ],
+    }
+  },
+
+  data: () => ({
+    activeChip: 0,
+    activeSlide: 0,
+    slide: `background-image: url("/img/promo/background.webp")`,
+    localMapping: []
+  }),
 
   async created() {
     try {
@@ -179,64 +181,65 @@ export default class Contacts extends Vue {
     } catch (e) {
       console.log(e)
     }
-  }
+  },
 
-  getCurrentHotel() {
-    let {hotel_id}: any = this.$router.currentRoute.query
-    if (!hotel_id) return
+  watch: {
+    activeChip: 'emptyActiveSlide'
+  },
 
-    let restId: any = {
-      32513: 0,
-      22866: 1,
-      23660: 2,
+  methods: {
+    getCurrentHotel() {
+      let {hotel_id} = this.$router.currentRoute.query
+      if (!hotel_id) return
+      let restId = {
+        32513: 0,
+        22866: 1,
+        23660: 2,
+      }
+      return this.activeChip = restId[hotel_id]
+    },
+
+    emptyActiveSlide() {
+      return this.activeSlide = -1
     }
+  },
 
-    return this.activeChip = restId[hotel_id]
+  computed: {
+    getYandexMap() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexmap : ''
+    },
+
+    getYandexRoute() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexroute : ''
+    },
+
+    getYandexNameBusiness() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].namebusiness : ''
+    },
+
+    getYandexBankDetails() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].bankdetails : ''
+    },
+
+    getAddressItem() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
+    },
+
+    getTelBronItem() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telbron'] : ''
+    },
+
+    getTelTelReceptionItem() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
+    },
+
+    linkToBooking() {
+      return this.localMapping[this.activeChip] ? '/booking/?hotel_id=' + this.localMapping[this.activeChip].travellineid : '/booking/?hotel_id=32513'
+    },
+
+    getImgSHotel() {
+      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
+    }
   }
-
-  @Watch('activeChip')
-  changeController() {
-    this.emptyActiveSlide()
-  };
-
-  get getYandexMap() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexmap : ''
-  }
-
-  get getYandexRoute() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexroute : ''
-  }
-
-  get getYandexNameBusiness() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].namebusiness : ''
-  }
-
-  get getYandexBankDetails() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].bankdetails : ''
-  }
-
-  get getAddressItem() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
-  }
-
-  get getTelBronItem() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telbron'] : ''
-  }
-
-  get getTelTelReceptionItem() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
-  }
-
-  get linkToBooking() {
-    return this.localMapping[this.activeChip] ? '/booking/?hotel_id=' + this.localMapping[this.activeChip].travellineid : '/booking/?hotel_id=32513'
-  }
-
-  get getImgSHotel() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
-  }
-
-  emptyActiveSlide() {
-    return this.activeSlide = -1
-  };
 }
 </script>

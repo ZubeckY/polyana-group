@@ -26,40 +26,43 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import {Vue, Component, Watch} from 'vue-property-decorator';
+<script>
+export default {
+  data: () => ({
+    slide: 0,
+    slider: [
+      "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp",
+      "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp",
+      "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_2455-_1_.webp"
+    ],
+    small: [
+      'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-13.webp',
+      'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-14.webp',
+      'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-16.webp'
+    ]
+  }),
 
-@Component({})
-export default class Slider extends Vue {
-  slide: number = 0
-  slider: any = [
-    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp",
-    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp",
-    "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_2455-_1_.webp"
-  ]
+  watch: {
+    slide: 'changeMainSlide'
+  },
 
-  small: any = [
-    'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-13.webp',
-    'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-14.webp',
-    'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-16.webp'
-  ]
+  methods: {
+    changeMainSlide() {
+      return this.$emit('changeActiveSlide', this.slider[this.slide])
+    },
 
-  @Watch('slide')
-  changeMainSlide() {
-    return this.$emit('changeActiveSlide', this.slider[this.slide])
-  }
+    prev() {
+      this.slide--;
+      if (this.slide < 0) {
+        this.slide = this.slider.length - 1
+      }
+    },
 
-  prev() {
-    this.slide--;
-    if (this.slide < 0) {
-      this.slide = this.slider.length - 1
-    }
-  }
-
-  next() {
-    this.slide++;
-    if (this.slide > this.slider.length - 1) {
-      this.slide = 0
+    next() {
+      this.slide++;
+      if (this.slide > this.slider.length - 1) {
+        this.slide = 0
+      }
     }
   }
 }

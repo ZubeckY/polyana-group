@@ -30,14 +30,13 @@
 
       <div class="header-nav__reservation ml-auto">
         <div class="header-nav__reservation-container d-flex flex-column">
-          <v-btn class="header-nav__reservation-booking shimmer-effect font-weight-bold" href="/booking" elevation="0"
-                 color="var(--golden-2)">
+          <a class="header-nav__reservation-booking shimmer-effect" href="/booking">
             <div class="shimmer"></div>
             <div class="text">Забронировать</div>
-          </v-btn>
-          <v-btn class="header-nav__reservation-phone font-weight-bold" href="tel:+7 938 555-55-52" elevation="0" dark>
+          </a>
+          <a class="header-nav__reservation-phone" href="tel:+7 938 555-55-52">
             +7 938 555-55-52
-          </v-btn>
+          </a>
         </div>
       </div>
 
