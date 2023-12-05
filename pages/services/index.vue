@@ -95,8 +95,8 @@
                         </div>
 
                         <a class="luxHoliday-slide-body" :href="'/services/'+slider.id">
-                          <img :class="'luxHoliday-slide-mask ' + slider.classelement"
-                               :src="slider.titlesvg" alt="#" loading="lazy"/>
+                          <img :class="'luxHoliday-slide-mask ' + slider['classelement']"
+                               :src="slider['titlesvg']" alt="#" loading="lazy"/>
                           <h4 class="luxHoliday-slide-title">{{ slider.title }}</h4>
                         </a>
                       </article>
@@ -158,7 +158,7 @@ import supaBase from "~/assets/scripts/supaBase";
       {
         hid: "og:image",
         property: "og:image",
-        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/skiroom/skiroom1.webp"
+        content: "https://polyanagroup.ru/public_image/hotels/Country%20Hills/skiroom/skiroom1.webp"
       }
     ]
   }

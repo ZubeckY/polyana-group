@@ -23,7 +23,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
+        href: 'https://polyanagroup.ru/public_image/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
       }
     ]
   },

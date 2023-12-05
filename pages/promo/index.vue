@@ -108,7 +108,7 @@ import supaBase from "~/assets/scripts/supaBase";
       {
         hid: "og:image",
         property: "og:image",
-        content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/sauna/spa9.webp"
+        content: "https://polyanagroup.ru/public_image/hotels/Ultima/sauna/spa9.webp"
       }
     ]
   }

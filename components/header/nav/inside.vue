@@ -95,7 +95,7 @@ export default class Ultima extends Vue {
       this.currentPhone = 'Загрузка...'
 
       if (path.includes('/booking') || path.includes('/contacts')) {
-        this.currentLogo = 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
+        this.currentLogo = 'https://polyanagroup.ru/public_image/logo/logo.svg?t=2023-10-14T11%3A13%3A29.296Z'
         this.currentPhone = '+7 938 555-55-52'
       } else {
         let {data, error}: any = await supaBase

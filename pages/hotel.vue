@@ -206,19 +206,19 @@ export default class Hotel extends Vue {
       title: 'Отель Ultima Club | Hotel & Spa - группа отелей Polyana group',
       description: 'Отдых на Красной Поляне в отеле 5* с кинотеатром и панорамным видом на горы на открытой терассе — идеальный способ расслабиться и насладиться природой',
       url: '/hotel?hotel_id=32513',
-      image: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main4.webp'
+      image: 'https://polyanagroup.ru/public_image/hotels/Ultima/main/main4.webp'
     },
     {
       title: 'Отель Country Hills | Resort - группа отелей Polyana group',
       description: 'Откройте для себя идеальное место для отдыха и релаксации на Красной Поляне. Наслаждайтесь беззаботным отдыхом в 5* отеле Country Hills со СПА-пространством и бассейном в окружении природы',
       url: '/hotel?hotel_id=22866',
-      image: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp'
+      image: 'https://polyanagroup.ru/public_image/hotels/Country%20Hills/main/main1.webp'
     },
     {
       title: 'Отель Ikos Polyana - группа отелей Polyana group',
       description: 'Насладитесь роскошью и красотой гор в Ikos Polyana! Вас ждет авторский 4* отель с дизайнерским интерьером и незабываемый горный отдых.',
       url: '/hotel?hotel_id=23660',
-      image: 'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ikos%20Polyana/main/main1.webp'
+      image: 'https://polyanagroup.ru/public_image/hotels/Ikos%20Polyana/main/main1.webp'
     }
   ]
 

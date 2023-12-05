@@ -64,7 +64,7 @@ export default {
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main3.webp"
+          content: "https://polyanagroup.ru/public_image/hotels/Country%20Hills/main/main3.webp"
         }
       ]
     }

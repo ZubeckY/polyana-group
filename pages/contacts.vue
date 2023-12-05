@@ -157,7 +157,7 @@ export default {
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
+          content: "https://polyanagroup.ru/public_image/hotels/Ultima/main/main6.webp"
         }
       ],
     }

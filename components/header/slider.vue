@@ -31,14 +31,14 @@ export default {
   data: () => ({
     slide: 0,
     slider: [
-      "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp",
-      "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Country%20Hills/main/main1.webp",
-      "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_2455-_1_.webp"
+      "https://polyanagroup.ru/public_image/mainbanner/large/MG_7748-_1_.webp",
+      "https://polyanagroup.ru/public_image/hotels/Country%20Hills/main/main1.webp",
+      "https://polyanagroup.ru/public_image/mainbanner/large/MG_2455-_1_.webp"
     ],
     small: [
-      'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-13.webp',
-      'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-14.webp',
-      'https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/small/Frame-16.webp'
+      'https://polyanagroup.ru/public_image/mainbanner/small/Frame-13.webp',
+      'https://polyanagroup.ru/public_image/mainbanner/small/Frame-14.webp',
+      'https://polyanagroup.ru/public_image/mainbanner/small/Frame-16.webp'
     ]
   }),
 

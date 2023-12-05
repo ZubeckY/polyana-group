@@ -110,14 +110,14 @@ export default {
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/hotels/Ultima/main/main6.webp"
+          content: "https://polyanagroup.ru/public_image/hotels/Ultima/main/main6.webp"
         },
       ],
     }
   },
 
   data: () => ({
-    activeImage: "https://ztgxmhicyraofyrgiitp.supabase.co/storage/v1/object/public/publicimg/mainbanner/large/MG_7748-_1_.webp",
+    activeImage: "https://polyanagroup.ru/public_image/mainbanner/large/MG_7748-_1_.webp",
   }),
 
   computed: {
