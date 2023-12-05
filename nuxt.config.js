@@ -12,6 +12,7 @@ export default {
       {'http-equiv': 'cleartype', content: 'on'},
       {'http-equiv': 'imagetoolbar', content: 'no'},
       {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'},
+      {'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests'},
       {name: 'theme-color', content: '#32343A'},
       {name: 'HandheldFriendly', content: 'True'},
       {name: 'format-detection', content: 'address=no'},
