@@ -124,7 +124,14 @@ export default {
     ]
   },
 
-  axios: {baseURL: '/'},
+  axios: {
+    baseURL: '/',
+    proxy: true
+  },
+
+  proxy: {
+    '/api/v1/data-base/': { target: process.env.SUPA_BASE_URL, pathRewrite: {'^/api/v1/data-base/': ''} },
+  },
 
   vuetify: {
     defaultAssets: {
