@@ -68,7 +68,7 @@
                   <div class="luxHoliday-body">
                     <div class="luxHoliday-body-container">
                       <article class="luxHoliday-slide slider" v-for="(slider, i) in data" :key="'luxHoliday-slide'+i">
-                        <v-carousel class="luxHoliday-slide" :show-arrows="slider.imgs.length > 1" style="height: 391px"
+                        <v-carousel class="luxHoliday-slide" :show-arrows="slider['imgs'] && slider['imgs'].length > 1" style="height: 391px"
                                     hide-delimiters>
 
                           <template v-slot:prev="{ on, attrs }">
@@ -82,7 +82,7 @@
                             </div>
                           </template>
 
-                          <v-carousel-item v-for="(image, j) in slider.imgs"
+                          <v-carousel-item v-for="(image, j) in slider['imgs']"
                                            :href="'/services/'+slider.id+'?hotel_id='+slider.travellineid"
                                            class="luxHoliday-slide" :key="'lux-slide-'+j">
                             <img class="luxHoliday-slide-image" :src="image" alt="#" loading="lazy"/>
