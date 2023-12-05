@@ -99,7 +99,7 @@
                 <a class="whatVisit-cart__button shimmer-effect"
                    href="/files/locationkp-polyanagroup.ru.pdf" download>
                   <div class="shimmer"></div>
-                  <div class="text">Скачать файл</div>
+                  <div class="text">СКАЧАТЬ PDF ФАЙЛ</div>
                 </a>
               </div>
             </article>
@@ -275,14 +275,19 @@ export default {
 }
 
 .whatVisit-cart__button {
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  margin: 13.6px auto 0;
   width: 100%;
   height: 56px;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   font-style: normal;
   line-height: normal;
-  margin: 13.6px auto 0;
+  text-transform: uppercase;
+  text-decoration: none !important;
   border-radius: 13.6px !important;
   background: linear-gradient(90deg, #CCAB6A -1.19%,
   #C1B397 177.44%) !important;
