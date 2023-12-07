@@ -36,7 +36,10 @@
                              @changeActiveSlide="changeActiveSlide"/>
             </div>
           </div>
+
           <header-booking/>
+          <div class="header-spacer"></div>
+
           <header-slider class="header-slider--mobile"
                          @changeActiveSlide="changeActiveSlide"/>
         </div>

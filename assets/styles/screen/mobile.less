@@ -214,7 +214,7 @@
 
       &-inner {
         background: linear-gradient(181deg,
-        #181A23 53.5%, rgba(0, 0, 0, 0.00) 70.79%) !important;
+        #181A23 15.5%, rgba(0, 0, 0, 0.00) 70.79%) !important;
       }
     }
   }
@@ -663,7 +663,7 @@
     &-container {
       &-inner {
         background: linear-gradient(181deg,
-        #181A23 63.5%, rgba(0, 0, 0, 0.00) 93.79%) !important;
+        #181A23 42.5%, rgba(0, 0, 0, 0.00) 93.79%) !important;
       }
     }
   }
@@ -714,6 +714,15 @@
 }
 
 @media (max-width: 500px) {
+  .header-booking {
+    display: none !important;
+  }
+  .header-spacer {
+    display: block;
+    width: 100%;
+    height: 200px;
+  }
+
   /* header */
   .header {
     &-content {
@@ -817,7 +826,6 @@
     }
   }
 
-
   .luxHoliday-slide {
     width: 340px !important;
     height: 240px !important;
@@ -838,6 +846,13 @@
   }
 }
 
+@media (max-width: 410px) {
+  .header-container-inner {
+    background: linear-gradient(181deg,
+    #181A23 50.5%, rgba(0, 0, 0, 0.00) 93.79%) !important;
+  }
+}
+
 @media (max-width: 380px) {
   .header-nav__logo {
     max-width: 110px !important;
@@ -846,5 +861,12 @@
   .header-nav__reservation-phone-ultima {
     width: 130px !important;
     font-size: 12px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-container-inner {
+    background: linear-gradient(181deg,
+    #181A23 62.5%, rgba(0, 0, 0, 0.00) 93.79%) !important;
   }
 }
