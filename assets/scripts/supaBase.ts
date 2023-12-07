@@ -1,7 +1,7 @@
 require('dotenv').config()
 import { createClient } from '@supabase/supabase-js'
 
-const devMode = process.env.DEV_MODE
+const devMode = Boolean(process.env.DEV_MODE)
 
 const baseUrl:any = process.env.BASE_URL
 const apiPrefix: any = process.env.SUPA_BASE_API_PREFIX
