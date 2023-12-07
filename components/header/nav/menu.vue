@@ -85,8 +85,8 @@
               <!-- До встречи в наших отелях -->
               <v-chip-group class="header-nav__menu-content-group mb-2" v-model="activeChip"
                             mandatory column active-class="golden-gradient white--text">
-                <see-you-at-hotel-chip v-for="(item, i) in localMapping"
-                                       :key="'see-you-at-hotel'+i" :value="i" :item="item"/>
+                <see-you-at-hotel-chip v-for="(item, i) in localMapping" :key="'see-you-at-hotel'+i"
+                                       :value="i" :item="item"/>
               </v-chip-group>
 
               <div class="header-nav__menu-content-contacts">
@@ -309,15 +309,15 @@ export default class Menu extends Vue {
   }
 
   get getAddressItem() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
+    return this.localMapping.length ? this.localMapping[this.activeChip]['adress'] : ''
   }
 
   get getTelBronItem() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telbron'] : ''
+    return this.localMapping.length ? this.localMapping[this.activeChip]['telbron'] : ''
   }
 
   get getTelTelReceptionItem() {
-    return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
+    return this.localMapping.length ? this.localMapping[this.activeChip]['telreception'] : ''
   }
 
 }

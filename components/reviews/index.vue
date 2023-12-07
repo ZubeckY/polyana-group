@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="reviews-slider" v-if="data.length > 1">
+        <div class="reviews-slider" v-if="getDataLength">
           <VueSlickCarousel v-bind="settings">
             <div v-for="(item, i) in data" :key="'reviewIndex'+i" class="px-1">
               <reviews-card :item="item"/>
@@ -162,6 +162,10 @@ export default class Reviews extends Vue {
     } catch (e) {
       console.log(e)
     }
+  }
+
+  get getDataLength () {
+    return this.data?.length > 1
   }
 }
 </script>

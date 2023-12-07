@@ -52,7 +52,6 @@ export default {
   ],
   components: true,
   buildModules: [
-    "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
     "@nuxtjs/vuetify",
     "@nuxt/typescript-build"

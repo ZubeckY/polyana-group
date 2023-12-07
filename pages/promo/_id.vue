@@ -20,7 +20,7 @@
       <v-lazy>
         <div class="conditions-container general-container">
           <div class="conditions-head">
-            <services-chip-list :data="data.length >= 1 ? data : []"/>
+            <services-chip-list :data="getDataLength"/>
             <h2 class="conditions-title">Условия акции</h2>
           </div>
           <div v-if="loading">Загрузка</div>
@@ -56,7 +56,6 @@ import supaBase from "~/assets/scripts/supaBase";
           name: "description",
           content: this.data.length >= 1 ? this.data[0].description.substring(0,250) : 'Узнайте больше об акциях отеля'
         },
-
         // og:tags
         {
           hid: "og:url",
@@ -125,6 +124,10 @@ export default class Promo extends Vue {
 
   get activeDescription() {
     return this.loading ? 'Загрузка...' : this.data.length >= 1 ? this.data[0].description : ''
+  }
+
+  get getDataLength () {
+    return this.data.length >= 1 ? this.data : []
   }
 
 }

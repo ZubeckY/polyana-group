@@ -4,6 +4,7 @@
 
 .footer-card {
   padding: 40px 15px;
+  background: var(--card-grey);
 }
 
 .footer-title {
@@ -13,6 +14,7 @@
   text-transform: uppercase;
 }
 
+/*footer-booking*/
 .footer-booking {
   display: flex;
   width: 270px;
@@ -35,6 +37,8 @@
   white-space: pre-line !important;
 }
 
+/* footer-carousel */
+/* footer-slide */
 .footer-carousel,
 .footer-slide {
   width: 309px;
@@ -65,6 +69,7 @@
   border-radius: 14px;
 }
 
+/* footer-helpInfo */
 .footer-helpInfo {
   color: black !important;
 }
@@ -81,39 +86,100 @@
   color: black !important;
 }
 
+/* footer-service */
+.footer-service {
+  width: 100%;
+  max-width: 580px;
+  margin-left: 30px;
+}
+
+/* footer-mazur */
 .footer-mazur {
-  margin-top: 72px;
+  margin-top: 60px;
   padding-bottom: 30px;
 }
 
 .footer-mazur-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
 }
 
-.footer-mazur-text {
-  color: var(--polyanaGrey);
-  font-size: 14px;
+.footer-mazur-copyright,
+.footer-mazur-mailPolyana,
+.footer-mazur-privacyPolicy {
+  margin-top: 12px;
+  font-size: 14.45px;
+  font-style: normal;
   font-weight: 400;
-  text-align: right;
+  line-height: normal;
   text-transform: uppercase;
+  text-decoration: none !important;
+  color: var(--polyanaGrey) !important;
 }
 
-.footer-mazur-text a {
-  color: #27388F;
+/* media */
+@media (max-width: 1200px) {
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+  }
+
+  .footer-service {
+    flex-wrap: wrap;
+    margin: 30px auto 15px !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  .footer-booking {
+    margin: 35px 10px 10px;
+    width: 298px !important;
+  }
+
+  .footer-helpInfo {
+    flex-wrap: wrap;
+  }
 }
 
-.footer-mazur-polyana {
-  color: var(--polyanaGrey);
-  font-size: 14px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 400 !important;
+@media (max-width: 960px) {
+  .footer-card,
+  .footer-container {
+    padding: 0 !important;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-service {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column !important;
+  }
+
+  .footer-carousel,
+  .footer-slide {
+    width: 294px !important;
+    height: 234px !important;
+  }
+
+  .footer-slide-svg {
+    bottom: 12px !important;
+    width: 62px !important;
+    height: 60px !important;
+  }
 }
 
-.footer-service {
-  width: 100%;
-  max-width: 580px;
-  margin-left: 30px;
+@media (max-width: 790px) {
+  .footer-mazur-container {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

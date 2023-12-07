@@ -16,7 +16,7 @@ export default {
   name: 'Default',
   layout: 'empty',
   created() {
-    process.client &&travelline(window)
+    process.client && travelline(window)
   }
 }
 </script>

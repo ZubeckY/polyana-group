@@ -206,39 +206,39 @@ export default {
 
   computed: {
     getYandexMap() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexmap : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip].yandexmap : ''
     },
 
     getYandexRoute() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].yandexroute : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip].yandexroute : ''
     },
 
     getYandexNameBusiness() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].namebusiness : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip].namebusiness : ''
     },
 
     getYandexBankDetails() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip].bankdetails : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip].bankdetails : ''
     },
 
     getAddressItem() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['adress'] : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip]['adress'] : ''
     },
 
     getTelBronItem() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telbron'] : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip]['telbron'] : ''
     },
 
     getTelTelReceptionItem() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['telreception'] : ''
+      return this.localMapping.length ? this.localMapping[this.activeChip]['telreception'] : ''
     },
 
     linkToBooking() {
-      return this.localMapping[this.activeChip] ? '/booking/?hotel_id=' + this.localMapping[this.activeChip].travellineid : '/booking/?hotel_id=32513'
+      return this.localMapping.length ? '/booking/?hotel_id=' + this.localMapping[this.activeChip].travellineid : '/booking/?hotel_id=32513'
     },
 
     getImgSHotel() {
-      return this.localMapping[this.activeChip] ? this.localMapping[this.activeChip]['imgshotel'] : []
+      return this.localMapping.length ? this.localMapping[this.activeChip]['imgshotel'] : []
     }
   }
 }

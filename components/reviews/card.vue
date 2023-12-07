@@ -4,11 +4,11 @@
       <div class="reviews-slider-card-header">
         <div class="reviews-slider-card-header-user">
           <div class="reviews-slider-card-header-logo">
-            <img :src="item.photouser" alt="аватарка пользователя на отзыв" loading="lazy"/>
+            <img :src="item['photouser']" alt="аватарка пользователя на отзыв" loading="lazy"/>
           </div>
           <div class="reviews-slider-card-header-context">
             <div class="reviews-slider-card-header-name">
-              {{ item.nameuser }}
+              {{ item['nameuser'] }}
             </div>
           </div>
         </div>
@@ -18,22 +18,22 @@
       <div class="reviews-slider-card-body">
         <div class="reviews-slider-card-stars">
           <rating-yandex-star class="reviews-slider-card-stars-star"
-                                   v-for="j in item.starrating" :key="'reviewIndexStar'+j"/>
-          <div class="reviews-slider-card-date">{{ getElementDate(item.created_at) }}</div>
+                                   v-for="j in item['starrating']" :key="'reviewIndexStar'+j"/>
+          <div class="reviews-slider-card-date">{{ getElementDate(item) }}</div>
         </div>
-        <div class="reviews-slider-card-description">{{ item.description }}</div>
+        <div class="reviews-slider-card-description">{{ item['description'] }}</div>
         <div class="reviews-slider-card-images" @click="dialog = true">
-          <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item.imgurls"
+          <img class="reviews-slider-card-images-img" v-for="(imgs, k) in item['imgurls']"
                :key="'reviewIndexImage'+k" :src="imgs" alt="изображение на отзыв" loading="lazy"/>
         </div>
         <gallery-dialog @changeDialog="changeDialog"
-                             :dialog="dialog" :data="item.imgurls"/>
+                             :dialog="dialog" :data="item['imgurls']"/>
       </div>
     </div>
   </v-card>
 </template>
 <script lang="ts">
-import {Vue, Component, Prop, Watch} from 'vue-property-decorator';
+import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
 import supaBase from "~/assets/scripts/supaBase";
 
 @Component({})
@@ -53,10 +53,9 @@ export default class Card extends Vue {
       let {data, error} = await supaBase
           .from('hotels')
           .select('id, title, travellineid')
-          .eq('travellineid', this.item.hoteltlid)
+          .eq('travellineid', this.item['hoteltlid'])
 
-      const DATA: any = data
-      this.hotelTitle = DATA[0].title
+      this.hotelTitle = data[0].title
     } catch (e) {
       console.log(e)
     }
@@ -67,7 +66,7 @@ export default class Card extends Vue {
   }
 
   getElementDate(date: any) {
-    const DATE = new Date(date)
+    const DATE = new Date(date['created_at'])
     return ((DATE.getDate() > 8) ? (DATE.getDate() + 1) : ('0' + (DATE.getDate() + 1))) + '.' + ((DATE.getMonth() > 9) ? DATE.getMonth() : ('0' + DATE.getMonth())) + '.' + DATE.getFullYear()
   }
 }

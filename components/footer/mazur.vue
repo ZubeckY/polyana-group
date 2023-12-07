@@ -1,19 +1,19 @@
 <template>
   <div class="footer-mazur">
     <div class="footer-mazur-container general-container">
-      <div class="footer-mazur-polyana">Ⓒ polyana group | 2023</div>
-      <div class="footer-mazur-text">
-        <div> РАЗРАБОТАНО <a style="text-decoration: none"
-                             href="https://mazurgroup.ru/"
-                             target="_blank">mazurgroup.ru</a>
-        </div>
-        <div>Политика конфиденциальности</div>
-      </div>
+      <div class="footer-mazur-copyright">Ⓒpolyana group | {{ getTodayYear }}</div>
+      <a class="footer-mazur-privacyPolicy" href="/files/fz152.pdf" download>Политика конфиденциальности</a>
+      <a class="footer-mazur-mailPolyana" href="mailto:info@polyanagroup.ru">info@polyanagroup.ru</a>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "FooterMazur"
+  name: "FooterMazur",
+  computed: {
+    getTodayYear() {
+      return new Date().getFullYear()
+    }
+  }
 }
 </script>
