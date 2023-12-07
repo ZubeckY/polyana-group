@@ -82,11 +82,11 @@ export default {
 
       const services = await supaBase
         .from('services').select('id')
-      const servicesArray = services.data.map(v => `/services/${v.id}`)
+      const servicesArray = services.data.length && services.data.map(v => `/services/${v.id}`)
 
       const specialOffers = await supaBase
         .from('specialoffer').select('id')
-      const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}`)
+      const specialOffersArray = specialOffers.data.length && specialOffers.data.map(v => `/promo/${v.id}`)
 
       result = [...servicesArray, ...specialOffersArray];
       return result
@@ -129,7 +129,7 @@ export default {
   },
 
   proxy: {
-    '/api/v1/data-base/': { target: process.env.SUPA_BASE_URL, pathRewrite: {'^/api/v1/data-base/': ''} },
+    '/api/v1/data-base/': {target: process.env.SUPA_BASE_URL, pathRewrite: {'^/api/v1/data-base/': ''}},
   },
 
   vuetify: {
