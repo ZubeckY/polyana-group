@@ -103,10 +103,6 @@ export default {
         routes: async () => {
           let result = []
 
-          const hotels = await supaBase
-            .from('hotels').select('travellineid')
-          const hotelsArray = hotels.data.map(v => `/hotel/?hotel_id=${v.travellineid}`)
-
           const services = await supaBase
             .from('services').select('id')
           const servicesArray = services.data.map(v => `/services/${v.id}`)
@@ -115,7 +111,7 @@ export default {
             .from('specialoffer').select('id')
           const specialOffersArray = specialOffers.data.map(v => `/promo/${v.id}`)
 
-          result = [...servicesArray, ...hotelsArray, ...specialOffersArray];
+          result = [...servicesArray, ...specialOffersArray];
           return result
         }
       }
