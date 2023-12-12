@@ -339,7 +339,7 @@ export default {
   .whatVisit-block::after {
     position: absolute;
     content: "";
-    width: 100vw;
+    width: 100%;
     height: 180px;
     left: 0;
     bottom: 0;
