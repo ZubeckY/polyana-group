@@ -12,7 +12,8 @@ export default {
       {'http-equiv': 'cleartype', content: 'on'},
       {'http-equiv': 'imagetoolbar', content: 'no'},
       {'http-equiv': 'X-UA-Compatible', content: 'IE=edge'},
-      {'http-equiv': 'Content-Security-Policy', content: 'upgrade-insecure-requests'},
+      {name: 'Access-Control-Allow-Origin', content: '*'},
+      {name: 'Access-Control-Allow-Headers', content: '*'},
       {name: 'theme-color', content: '#32343A'},
       {name: 'HandheldFriendly', content: 'True'},
       {name: 'format-detection', content: 'address=no'},
@@ -31,7 +32,6 @@ export default {
   // modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
     '@nuxtjs/sitemap',
     ['nuxt-mail', {
       message: [
@@ -76,23 +76,6 @@ export default {
     port: 3000
   },
 
-  generate: {
-    routes: async () => {
-      let result = []
-
-      const services = await supaBase
-        .from('services').select('id')
-      const servicesArray = services.data.length && services.data.map(v => `/services/${v.id}`)
-
-      const specialOffers = await supaBase
-        .from('specialoffer').select('id')
-      const specialOffersArray = specialOffers.data.length && specialOffers.data.map(v => `/promo/${v.id}`)
-
-      result = [...servicesArray, ...specialOffersArray];
-      return result
-    }
-  },
-
   sitemap: {
     hostname: process.env.BASE_URL,
     cacheTime: 100 * 60 * 15,
@@ -115,17 +98,11 @@ export default {
           return result
         }
       }
-
     ]
   },
 
   axios: {
-    baseURL: '/',
-    proxy: true
-  },
-
-  proxy: {
-    '/api/v1/data-base/': {target: process.env.SUPA_BASE_URL, pathRewrite: {'^/api/v1/data-base/': ''}},
+    baseURL: '/'
   },
 
   vuetify: {
